@@ -31,7 +31,6 @@ rel="stylesheet">
 ========================================================= */
 
 :root {
-
   --navy: #001f3f;
   --navy-dark: #00152b;
   --navy-light: #063b69;
@@ -48,44 +47,27 @@ rel="stylesheet">
 
   --shadow:
     0 4px 16px rgba(0,31,63,.08);
-
 }
-
-
-/* =========================================================
-   RESET
-========================================================= */
 
 * {
   box-sizing: border-box;
 }
 
-
 html {
   scroll-behavior: smooth;
 }
 
-
 body {
-
   margin: 0;
-
   background:
     linear-gradient(
       180deg,
       #edf2f7 0%,
       #f7f9fb 100%
     );
-
   color: var(--text);
-
-  font-family:
-    "Oswald",
-    Arial,
-    sans-serif;
-
+  font-family: "Oswald", Arial, sans-serif;
   min-height: 100vh;
-
 }
 
 
@@ -94,42 +76,24 @@ body {
 ========================================================= */
 
 header {
-
   position: relative;
-
   overflow: hidden;
-
   background:
     linear-gradient(
       135deg,
       #00152b,
       #003b6f
     );
-
   color: white;
-
   text-align: center;
-
-  padding:
-    24px
-    18px
-    25px;
-
-  border-bottom:
-    4px solid
-    var(--gold);
-
+  padding: 24px 18px 25px;
+  border-bottom: 4px solid var(--gold);
 }
 
-
 header::before {
-
   content: "";
-
   position: absolute;
-
   inset: 0;
-
   background:
     repeating-linear-gradient(
       135deg,
@@ -138,69 +102,36 @@ header::before {
       transparent 2px,
       transparent 12px
     );
-
   pointer-events: none;
-
 }
-
 
 .logo {
-
   position: relative;
-
   width: 105px;
-
   height: 105px;
-
   object-fit: contain;
-
   display: block;
-
-  margin:
-    0 auto
-    8px;
-
+  margin: 0 auto 8px;
 }
-
 
 header h1 {
-
   position: relative;
-
   margin: 0;
-
-  font-family:
-    "Teko",
-    sans-serif;
-
+  font-family: "Teko", sans-serif;
   font-size: 42px;
-
   line-height: .9;
-
   font-weight: 700;
-
   letter-spacing: 2px;
-
   text-transform: uppercase;
-
 }
 
-
 header p {
-
   position: relative;
-
-  margin:
-    7px 0 0;
-
+  margin: 7px 0 0;
   color: #dbe7f2;
-
   font-size: 12px;
-
   text-transform: uppercase;
-
   letter-spacing: 1.5px;
-
 }
 
 
@@ -209,91 +140,44 @@ header p {
 ========================================================= */
 
 nav {
-
   position: sticky;
-
   top: 0;
-
   z-index: 100;
-
   display: flex;
-
-  background:
-    rgba(255,255,255,.97);
-
-  border-bottom:
-    1px solid
-    var(--border);
-
-  box-shadow:
-    0 3px 12px
-    rgba(0,31,63,.08);
-
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 3px 12px rgba(0,31,63,.08);
 }
-
 
 nav button {
-
   position: relative;
-
   flex: 1;
-
   border: 0;
-
   background: transparent;
-
   color: #5c6d7d;
-
-  padding:
-    12px 4px;
-
-  font-family:
-    "Oswald",
-    sans-serif;
-
+  padding: 12px 4px;
+  font-family: "Oswald", sans-serif;
   font-size: 12px;
-
   font-weight: 600;
-
   text-transform: uppercase;
-
   letter-spacing: .5px;
-
   cursor: pointer;
-
 }
-
 
 nav button.active {
-
   color: var(--navy);
-
-  background:
-    #f7f9fb;
-
+  background: #f7f9fb;
 }
 
-
 nav button.active::after {
-
   content: "";
-
   position: absolute;
-
   bottom: 0;
-
   left: 20%;
-
   right: 20%;
-
   height: 3px;
-
-  background:
-    var(--gold);
-
-  border-radius:
-    3px 3px 0 0;
-
+  background: var(--gold);
+  border-radius: 3px 3px 0 0;
 }
 
 
@@ -302,326 +186,162 @@ nav button.active::after {
 ========================================================= */
 
 main {
-
   width: 100%;
-
   max-width: 720px;
-
   margin: 0 auto;
-
-  padding:
-    14px 12px 25px;
-
+  padding: 14px 12px 25px;
 }
-
 
 .page {
   display: none;
 }
 
-
 .page.active {
   display: block;
 }
 
-
-/* =========================================================
-   CARDS
-========================================================= */
-
 .card {
-
-  background:
-    var(--card);
-
-  border:
-    1px solid
-    var(--border);
-
-  border-radius:
-    14px;
-
-  margin-bottom:
-    12px;
-
-  padding:
-    15px;
-
-  box-shadow:
-    var(--shadow);
-
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 12px;
+  padding: 15px;
+  box-shadow: var(--shadow);
 }
 
 
 /* =========================================================
-   SECTION HEADINGS
+   HEADINGS
 ========================================================= */
 
 .page-heading {
-
   display: flex;
-
   align-items: center;
-
   gap: 8px;
-
-  margin:
-    0 0 13px;
-
-  color:
-    var(--navy);
-
-  font-family:
-    "Teko",
-    sans-serif;
-
+  margin: 0 0 13px;
+  color: var(--navy);
+  font-family: "Teko", sans-serif;
   font-size: 30px;
-
   line-height: 1;
-
-  text-transform:
-    uppercase;
-
-  letter-spacing:
-    .7px;
-
+  text-transform: uppercase;
+  letter-spacing: .7px;
 }
 
-
 .page-heading::after {
-
   content: "";
-
   flex: 1;
-
   height: 2px;
-
   background:
     linear-gradient(
       90deg,
       var(--gold),
       transparent
     );
-
 }
 
 
 /* =========================================================
-   HOME HERO
+   HOME
 ========================================================= */
 
 .hero-card {
-
   overflow: hidden;
-
   padding: 0;
-
 }
 
-
 .hero-top {
-
   background:
     linear-gradient(
       90deg,
       var(--navy-dark),
       var(--navy-light)
     );
-
   color: white;
-
-  padding:
-    9px 14px;
-
+  padding: 9px 14px;
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
 }
-
 
 .hero-top span {
-
-  font-family:
-    "Teko",
-    sans-serif;
-
+  font-family: "Teko", sans-serif;
   font-size: 21px;
-
   line-height: 1;
-
   letter-spacing: 1px;
-
 }
-
 
 .hero-top small {
-
-  color:
-    var(--gold);
-
+  color: var(--gold);
   font-size: 10px;
-
-  text-transform:
-    uppercase;
-
-  letter-spacing:
-    1px;
-
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
-
 
 .hero-body {
-
   text-align: center;
-
-  padding:
-    18px 14px 20px;
-
+  padding: 18px 14px 20px;
 }
-
 
 .next-label {
-
-  color:
-    var(--muted);
-
+  color: var(--muted);
   font-size: 10px;
-
-  text-transform:
-    uppercase;
-
-  letter-spacing:
-    1.5px;
-
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
-
 
 .next-matchup {
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 9px;
-
-  margin:
-    4px 0 8px;
-
+  margin: 4px 0 8px;
 }
-
 
 .next-team {
-
-  color:
-    var(--navy);
-
-  font-family:
-    "Teko",
-    sans-serif;
-
+  color: var(--navy);
+  font-family: "Teko", sans-serif;
   font-size: 31px;
-
   font-weight: 700;
-
   line-height: 1;
-
-  text-transform:
-    uppercase;
-
+  text-transform: uppercase;
 }
-
 
 .next-vs {
-
-  color:
-    var(--gold-dark);
-
-  font-family:
-    "Teko",
-    sans-serif;
-
+  color: var(--gold-dark);
+  font-family: "Teko", sans-serif;
   font-size: 19px;
-
 }
-
 
 .game-info {
-
-  color:
-    #627487;
-
+  color: #627487;
   font-size: 12px;
-
   line-height: 1.8;
-
 }
-
 
 .home-away {
-
   display: inline-flex;
-
   align-items: center;
-
   gap: 4px;
-
   margin-top: 5px;
-
-  padding:
-    4px 8px;
-
-  background:
-    #f1f5f8;
-
-  border-radius:
-    6px;
-
-  color:
-    var(--navy);
-
+  padding: 4px 8px;
+  background: #f1f5f8;
+  border-radius: 6px;
+  color: var(--navy);
   font-size: 11px;
-
   font-weight: 600;
-
 }
-
 
 .countdown {
-
   display: inline-block;
-
-  background:
-    #fff7d6;
-
-  color:
-    #765900;
-
-  border:
-    1px solid
-    #efd36a;
-
-  border-radius:
-    7px;
-
-  padding:
-    6px 9px;
-
-  margin-top:
-    10px;
-
-  font-size:
-    11px;
-
-  font-weight:
-    600;
-
+  background: #fff7d6;
+  color: #765900;
+  border: 1px solid #efd36a;
+  border-radius: 7px;
+  padding: 6px 9px;
+  margin-top: 10px;
+  font-size: 11px;
+  font-weight: 600;
 }
-
 
 .hidden {
   display: none !important;
@@ -633,63 +353,30 @@ main {
 ========================================================= */
 
 .record-card {
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 15px;
-
 }
-
 
 .record-label {
-
-  color:
-    var(--muted);
-
+  color: var(--muted);
   font-size: 10px;
-
-  text-transform:
-    uppercase;
-
-  letter-spacing:
-    1.3px;
-
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
 }
-
 
 .record {
-
-  color:
-    var(--navy);
-
-  font-family:
-    "Teko",
-    sans-serif;
-
-  font-size:
-    46px;
-
-  line-height:
-    .9;
-
-  font-weight:
-    700;
-
+  color: var(--navy);
+  font-family: "Teko", sans-serif;
+  font-size: 46px;
+  line-height: .9;
+  font-weight: 700;
 }
 
-
 .record-sub {
-
-  color:
-    var(--muted);
-
-  font-size:
-    10px;
-
+  color: var(--muted);
+  font-size: 10px;
 }
 
 
@@ -698,94 +385,41 @@ main {
 ========================================================= */
 
 .last-game {
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 10px;
-
 }
-
 
 .last-label {
-
-  color:
-    var(--muted);
-
-  font-size:
-    10px;
-
-  text-transform:
-    uppercase;
-
-  letter-spacing:
-    1.3px;
-
-  margin-bottom:
-    4px;
-
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  margin-bottom: 4px;
 }
-
 
 .last-matchup {
-
-  color:
-    var(--navy);
-
-  font-family:
-    "Teko",
-    sans-serif;
-
-  font-size:
-    24px;
-
-  line-height:
-    1;
-
-  text-transform:
-    uppercase;
-
+  color: var(--navy);
+  font-family: "Teko", sans-serif;
+  font-size: 24px;
+  line-height: 1;
+  text-transform: uppercase;
 }
-
 
 .last-date {
-
-  color:
-    var(--muted);
-
-  font-size:
-    11px;
-
-  margin-top:
-    4px;
-
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 4px;
 }
 
-
 .last-score {
-
-  color:
-    var(--navy);
-
-  font-family:
-    "Teko",
-    sans-serif;
-
-  font-size:
-    32px;
-
-  line-height:
-    1;
-
-  font-weight:
-    700;
-
-  white-space:
-    nowrap;
-
+  color: var(--navy);
+  font-family: "Teko", sans-serif;
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 
@@ -794,288 +428,125 @@ main {
 ========================================================= */
 
 .game {
-
   position: relative;
-
-  background:
-    var(--white);
-
-  border:
-    1px solid
-    var(--border);
-
-  border-left:
-    4px solid
-    var(--navy);
-
-  border-radius:
-    11px;
-
-  margin-bottom:
-    9px;
-
-  padding:
-    11px 12px;
-
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--navy);
+  border-radius: 11px;
+  margin-bottom: 9px;
+  padding: 11px 12px;
   box-shadow:
-    0 2px 9px
-    rgba(0,31,63,.055);
-
+    0 2px 9px rgba(0,31,63,.055);
 }
-
 
 .game:last-child {
   margin-bottom: 0;
 }
 
-
 .game-top {
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 10px;
-
 }
-
 
 .game-date {
-
-  color:
-    var(--muted);
-
-  font-size:
-    10px;
-
-  margin-bottom:
-    3px;
-
+  color: var(--muted);
+  font-size: 10px;
+  margin-bottom: 3px;
 }
-
 
 .game-opponent {
-
-  color:
-    var(--navy);
-
-  font-family:
-    "Teko",
-    sans-serif;
-
-  font-size:
-    25px;
-
-  line-height:
-    .95;
-
-  text-transform:
-    uppercase;
-
-  letter-spacing:
-    .4px;
-
+  color: var(--navy);
+  font-family: "Teko", sans-serif;
+  font-size: 25px;
+  line-height: .95;
+  text-transform: uppercase;
+  letter-spacing: .4px;
 }
-
 
 .game-matchup {
-
   display: flex;
-
   align-items: center;
-
   gap: 5px;
-
-  color:
-    #5f7182;
-
-  font-size:
-    11px;
-
-  margin-top:
-    6px;
-
+  color: #5f7182;
+  font-size: 11px;
+  margin-top: 6px;
 }
-
 
 .game-team {
-
-  color:
-    var(--navy);
-
-  font-weight:
-    700;
-
+  color: var(--navy);
+  font-weight: 700;
 }
-
 
 .game-vs {
-
-  color:
-    var(--gold-dark);
-
-  font-weight:
-    700;
-
+  color: var(--gold-dark);
+  font-weight: 700;
 }
-
 
 .game-details {
-
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 5px 11px;
-
-  margin-top:
-    7px;
-
-  color:
-    #637487;
-
-  font-size:
-    10px;
-
+  margin-top: 7px;
+  color: #637487;
+  font-size: 10px;
 }
-
 
 .detail {
-
   display: inline-flex;
-
   align-items: center;
-
   gap: 3px;
-
 }
-
 
 .game-score {
-
-  color:
-    var(--navy);
-
-  font-family:
-    "Teko",
-    sans-serif;
-
-  font-size:
-    28px;
-
-  font-weight:
-    700;
-
-  line-height:
-    1;
-
-  margin-top:
-    6px;
-
+  color: var(--navy);
+  font-family: "Teko", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 6px;
 }
 
-
 .game-notes {
-
-  color:
-    #647688;
-
-  font-size:
-    10px;
-
-  line-height:
-    1.5;
-
-  margin:
-    7px 0 0;
-
-  padding-top:
-    6px;
-
-  border-top:
-    1px solid
-    #edf1f4;
-
+  color: #647688;
+  font-size: 10px;
+  line-height: 1.5;
+  margin: 7px 0 0;
+  padding-top: 6px;
+  border-top: 1px solid #edf1f4;
 }
 
 
 /* =========================================================
-   BADGES
+   FINAL BADGE
 ========================================================= */
 
 .badge {
-
   display: inline-flex;
-
   align-items: center;
-
-  padding:
-    4px 7px;
-
-  border-radius:
-    5px;
-
-  font-size:
-    9px;
-
-  font-weight:
-    700;
-
-  text-transform:
-    uppercase;
-
-  letter-spacing:
-    .4px;
-
-  white-space:
-    nowrap;
-
+  padding: 4px 7px;
+  border-radius: 5px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  white-space: nowrap;
 }
-
 
 .badge.win {
-
-  background:
-    #e3f5e9;
-
-  color:
-    var(--green);
-
+  background: #e3f5e9;
+  color: var(--green);
 }
-
 
 .badge.loss {
-
-  background:
-    #fde8e8;
-
-  color:
-    var(--red);
-
+  background: #fde8e8;
+  color: var(--red);
 }
-
-
-.badge.scheduled {
-
-  background:
-    #e8f0f8;
-
-  color:
-    var(--navy);
-
-}
-
 
 .badge.tie {
-
-  background:
-    #eee9fb;
-
-  color:
-    #7252a6;
-
+  background: #eee9fb;
+  color: #7252a6;
 }
 
 
@@ -1084,47 +555,24 @@ main {
 ========================================================= */
 
 .photo-grid {
-
   display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap:
-    7px;
-
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
 }
-
 
 .photo-item img {
-
   width: 100%;
-
   aspect-ratio: 1;
-
   object-fit: cover;
-
   display: block;
-
-  border-radius:
-    8px;
-
+  border-radius: 8px;
   cursor: pointer;
-
 }
 
-
 .photo-caption {
-
-  color:
-    var(--muted);
-
-  font-size:
-    9px;
-
-  margin:
-    4px 2px;
-
+  color: var(--muted);
+  font-size: 9px;
+  margin: 4px 2px;
 }
 
 
@@ -1133,317 +581,135 @@ main {
 ========================================================= */
 
 .admin-login-header {
-
   background:
     linear-gradient(
       135deg,
       var(--navy-dark),
       var(--navy-light)
     );
-
-  color:
-    white;
-
-  border-radius:
-    12px;
-
-  padding:
-    15px;
-
-  margin-bottom:
-    11px;
-
-  border-bottom:
-    3px solid
-    var(--gold);
-
+  color: white;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 11px;
+  border-bottom: 3px solid var(--gold);
 }
-
 
 .admin-login-header h2 {
-
   margin: 0;
-
-  font-family:
-    "Teko",
-    sans-serif;
-
-  font-size:
-    28px;
-
-  line-height:
-    1;
-
+  font-family: "Teko", sans-serif;
+  font-size: 28px;
+  line-height: 1;
 }
-
 
 .admin-login-header p {
-
-  margin:
-    4px 0 0;
-
-  color:
-    #d9e5ef;
-
-  font-size:
-    10px;
-
+  margin: 4px 0 0;
+  color: #d9e5ef;
+  font-size: 10px;
 }
 
-
 .admin-dashboard-header {
-
   background:
     linear-gradient(
       135deg,
       var(--navy-dark),
       var(--navy-light)
     );
-
-  color:
-    white;
-
-  border-radius:
-    12px;
-
-  padding:
-    13px 14px;
-
-  margin-bottom:
-    11px;
-
-  display:
-    flex;
-
-  align-items:
-    center;
-
-  justify-content:
-    space-between;
-
-  gap:
-    10px;
-
-  border-bottom:
-    3px solid
-    var(--gold);
-
+  color: white;
+  border-radius: 12px;
+  padding: 13px 14px;
+  margin-bottom: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 3px solid var(--gold);
 }
-
 
 .admin-dashboard-header h2 {
-
-  margin:
-    0 0 2px;
-
-  font-family:
-    "Teko",
-    sans-serif;
-
-  font-size:
-    26px;
-
-  line-height:
-    1;
-
+  margin: 0 0 2px;
+  font-family: "Teko", sans-serif;
+  font-size: 26px;
+  line-height: 1;
 }
-
 
 .admin-dashboard-header p {
-
-  margin:
-    0;
-
-  color:
-    #d9e5ef;
-
-  font-size:
-    9px;
-
+  margin: 0;
+  color: #d9e5ef;
+  font-size: 9px;
 }
-
 
 .admin-section {
-
-  background:
-    white;
-
-  border:
-    1px solid
-    var(--border);
-
-  border-radius:
-    11px;
-
-  overflow:
-    hidden;
-
-  margin-bottom:
-    10px;
-
-  box-shadow:
-    var(--shadow);
-
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow);
 }
-
 
 .admin-section-header {
-
-  display:
-    flex;
-
-  align-items:
-    center;
-
-  gap:
-    9px;
-
-  padding:
-    10px 12px;
-
-  background:
-    #f7f9fb;
-
-  border-bottom:
-    1px solid
-    var(--border);
-
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 12px;
+  background: #f7f9fb;
+  border-bottom: 1px solid var(--border);
 }
-
 
 .admin-section-icon {
-
-  width:
-    31px;
-
-  height:
-    31px;
-
-  border-radius:
-    7px;
-
-  background:
-    var(--navy);
-
-  color:
-    white;
-
-  display:
-    flex;
-
-  align-items:
-    center;
-
-  justify-content:
-    center;
-
-  font-size:
-    14px;
-
+  width: 31px;
+  height: 31px;
+  border-radius: 7px;
+  background: var(--navy);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
 }
-
 
 .admin-section-title h3 {
-
-  margin:
-    0;
-
-  color:
-    var(--navy);
-
-  font-family:
-    "Teko",
-    sans-serif;
-
-  font-size:
-    21px;
-
-  line-height:
-    1;
-
+  margin: 0;
+  color: var(--navy);
+  font-family: "Teko", sans-serif;
+  font-size: 21px;
+  line-height: 1;
 }
-
 
 .admin-section-title p {
-
-  margin:
-    2px 0 0;
-
-  color:
-    var(--muted);
-
-  font-size:
-    9px;
-
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 9px;
 }
-
 
 .admin-section-body {
-
-  padding:
-    10px;
-
+  padding: 10px;
 }
-
 
 .admin-subsection {
-
-  background:
-    #f8fafc;
-
-  border:
-    1px solid
-    var(--border);
-
-  border-radius:
-    9px;
-
-  padding:
-    10px;
-
-  margin-bottom:
-    9px;
-
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 10px;
+  margin-bottom: 9px;
 }
-
 
 .admin-subsection:last-child {
   margin-bottom: 0;
 }
 
-
 .admin-subsection h4 {
-
-  margin:
-    0;
-
-  color:
-    var(--navy);
-
-  font-family:
-    "Teko",
-    sans-serif;
-
-  font-size:
-    20px;
-
-  line-height:
-    1;
-
+  margin: 0;
+  color: var(--navy);
+  font-family: "Teko", sans-serif;
+  font-size: 20px;
+  line-height: 1;
 }
 
-
 .admin-description {
-
-  color:
-    var(--muted);
-
-  font-size:
-    9px;
-
-  margin:
-    3px 0 8px;
-
+  color: var(--muted);
+  font-size: 9px;
+  margin: 3px 0 8px;
 }
 
 
@@ -1452,103 +718,46 @@ main {
 ========================================================= */
 
 label {
-
-  display:
-    block;
-
-  color:
-    #40566b;
-
-  font-size:
-    9px;
-
-  font-weight:
-    700;
-
-  text-transform:
-    uppercase;
-
-  margin-bottom:
-    3px;
-
+  display: block;
+  color: #40566b;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 3px;
 }
-
 
 input,
 select,
 textarea {
-
-  width:
-    100%;
-
-  border:
-    1px solid
-    #ccd7e1;
-
-  border-radius:
-    6px;
-
-  padding:
-    8px;
-
-  margin:
-    0 0 8px;
-
-  background:
-    white;
-
-  color:
-    var(--text);
-
-  font-family:
-    "Oswald",
-    sans-serif;
-
-  font-size:
-    12px;
-
+  width: 100%;
+  border: 1px solid #ccd7e1;
+  border-radius: 6px;
+  padding: 8px;
+  margin: 0 0 8px;
+  background: white;
+  color: var(--text);
+  font-family: "Oswald", sans-serif;
+  font-size: 12px;
 }
-
 
 textarea {
-
-  min-height:
-    60px;
-
-  resize:
-    vertical;
-
+  min-height: 60px;
+  resize: vertical;
 }
-
 
 input:focus,
 select:focus,
 textarea:focus {
-
-  outline:
-    none;
-
-  border-color:
-    var(--navy);
-
+  outline: none;
+  border-color: var(--navy);
   box-shadow:
-    0 0 0 2px
-    rgba(0,31,63,.07);
-
+    0 0 0 2px rgba(0,31,63,.07);
 }
 
-
 .form-row {
-
-  display:
-    grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap:
-    8px;
-
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
 }
 
 
@@ -1559,70 +768,32 @@ textarea:focus {
 button.primary,
 button.secondary,
 button.danger {
-
-  border:
-    0;
-
-  border-radius:
-    6px;
-
-  padding:
-    8px 11px;
-
-  font-family:
-    "Oswald",
-    sans-serif;
-
-  font-size:
-    11px;
-
-  font-weight:
-    700;
-
-  cursor:
-    pointer;
-
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 11px;
+  font-family: "Oswald", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
 }
-
 
 button.primary {
-
-  background:
-    var(--navy);
-
-  color:
-    white;
-
+  background: var(--navy);
+  color: white;
 }
-
 
 button.primary:hover {
-
-  background:
-    var(--navy-light);
-
+  background: var(--navy-light);
 }
-
 
 button.secondary {
-
-  background:
-    #e8edf2;
-
-  color:
-    var(--navy);
-
+  background: #e8edf2;
+  color: var(--navy);
 }
 
-
 button.danger {
-
-  background:
-    #fde7e7;
-
-  color:
-    var(--red);
-
+  background: #fde7e7;
+  color: var(--red);
 }
 
 
@@ -1631,242 +802,103 @@ button.danger {
 ========================================================= */
 
 .compact-game {
-
-  background:
-    white;
-
-  border:
-    1px solid
-    var(--border);
-
-  border-radius:
-    7px;
-
-  margin-bottom:
-    5px;
-
-  overflow:
-    hidden;
-
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  margin-bottom: 5px;
+  overflow: hidden;
 }
-
 
 .compact-game-top {
-
-  display:
-    flex;
-
-  align-items:
-    center;
-
-  justify-content:
-    space-between;
-
-  gap:
-    8px;
-
-  padding:
-    8px;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px;
 }
-
 
 .compact-game-info {
-
-  min-width:
-    0;
-
+  min-width: 0;
 }
-
 
 .compact-game-title {
-
-  color:
-    var(--navy);
-
-  font-family:
-    "Teko",
-    sans-serif;
-
-  font-size:
-    18px;
-
-  line-height:
-    .9;
-
-  text-transform:
-    uppercase;
-
-  white-space:
-    nowrap;
-
-  overflow:
-    hidden;
-
-  text-overflow:
-    ellipsis;
-
+  color: var(--navy);
+  font-family: "Teko", sans-serif;
+  font-size: 18px;
+  line-height: .9;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
 
 .compact-game-meta {
-
-  color:
-    var(--muted);
-
-  font-size:
-    8px;
-
-  margin-top:
-    3px;
-
-  white-space:
-    nowrap;
-
-  overflow:
-    hidden;
-
-  text-overflow:
-    ellipsis;
-
+  color: var(--muted);
+  font-size: 8px;
+  margin-top: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
 
 .compact-game-score {
-
-  color:
-    var(--navy);
-
-  font-size:
-    9px;
-
-  font-weight:
-    700;
-
-  margin-top:
-    2px;
-
+  color: var(--navy);
+  font-size: 9px;
+  font-weight: 700;
+  margin-top: 2px;
 }
-
 
 .compact-game-actions {
-
-  display:
-    flex;
-
-  gap:
-    3px;
-
-  flex-shrink:
-    0;
-
+  display: flex;
+  gap: 3px;
+  flex-shrink: 0;
 }
-
 
 .edit-button,
 .delete-small {
-
-  border:
-    0;
-
-  border-radius:
-    5px;
-
-  padding:
-    6px 7px;
-
-  font-family:
-    "Oswald",
-    sans-serif;
-
-  font-size:
-    9px;
-
-  font-weight:
-    700;
-
-  cursor:
-    pointer;
-
+  border: 0;
+  border-radius: 5px;
+  padding: 6px 7px;
+  font-family: "Oswald", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  cursor: pointer;
 }
-
 
 .edit-button {
-
-  background:
-    #e8eff6;
-
-  color:
-    var(--navy);
-
+  background: #e8eff6;
+  color: var(--navy);
 }
-
 
 .delete-small {
-
-  background:
-    #fde7e7;
-
-  color:
-    var(--red);
-
+  background: #fde7e7;
+  color: var(--red);
 }
-
 
 .compact-edit {
-
-  display:
-    none;
-
-  padding:
-    9px;
-
-  background:
-    #f7f9fb;
-
-  border-top:
-    1px solid
-    var(--border);
-
+  display: none;
+  padding: 9px;
+  background: #f7f9fb;
+  border-top: 1px solid var(--border);
 }
-
 
 .compact-edit.open {
-  display:
-    block;
+  display: block;
 }
-
 
 .compact-edit-grid {
-
-  display:
-    grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap:
-    0 8px;
-
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 8px;
 }
-
 
 .compact-full {
-
-  grid-column:
-    1 / -1;
-
+  grid-column: 1 / -1;
 }
 
-
 .compact-save {
-
-  width:
-    100%;
-
-  margin:
-    0 !important;
-
+  width: 100%;
+  margin: 0 !important;
 }
 
 
@@ -1875,173 +907,71 @@ button.danger {
 ========================================================= */
 
 .photo-upload {
-
-  background:
-    #f8fafc;
-
-  border:
-    1px dashed
-    #b9c8d6;
-
-  border-radius:
-    8px;
-
-  padding:
-    9px;
-
-  margin-bottom:
-    9px;
-
+  background: #f8fafc;
+  border: 1px dashed #b9c8d6;
+  border-radius: 8px;
+  padding: 9px;
+  margin-bottom: 9px;
 }
-
 
 .photo-upload h4 {
-
-  margin:
-    0;
-
-  color:
-    var(--navy);
-
-  font-family:
-    "Teko",
-    sans-serif;
-
-  font-size:
-    19px;
-
-  line-height:
-    1;
-
+  margin: 0;
+  color: var(--navy);
+  font-family: "Teko", sans-serif;
+  font-size: 19px;
+  line-height: 1;
 }
-
 
 .photo-upload p {
-
-  margin:
-    3px 0 8px;
-
-  color:
-    var(--muted);
-
-  font-size:
-    9px;
-
+  margin: 3px 0 8px;
+  color: var(--muted);
+  font-size: 9px;
 }
-
 
 .upload-photo-button {
-
-  width:
-    100%;
-
+  width: 100%;
 }
-
 
 .admin-photo-grid {
-
-  display:
-    grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap:
-    5px;
-
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 5px;
 }
-
 
 .admin-photo-card {
-
-  background:
-    white;
-
-  border:
-    1px solid
-    var(--border);
-
-  border-radius:
-    6px;
-
-  padding:
-    3px;
-
-  overflow:
-    hidden;
-
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 3px;
+  overflow: hidden;
 }
-
 
 .admin-photo-card img {
-
-  width:
-    100%;
-
-  aspect-ratio:
-    1;
-
-  object-fit:
-    cover;
-
-  display:
-    block;
-
-  border-radius:
-    4px;
-
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
 }
-
 
 .admin-photo-caption {
-
-  color:
-    var(--muted);
-
-  font-size:
-    7px;
-
-  margin:
-    3px 1px;
-
-  white-space:
-    nowrap;
-
-  overflow:
-    hidden;
-
-  text-overflow:
-    ellipsis;
-
+  color: var(--muted);
+  font-size: 7px;
+  margin: 3px 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-
 .admin-photo-delete {
-
-  width:
-    100%;
-
-  border:
-    0;
-
-  border-radius:
-    4px;
-
-  background:
-    #fde7e7;
-
-  color:
-    var(--red);
-
-  padding:
-    4px 1px;
-
-  font-size:
-    7px;
-
-  font-weight:
-    700;
-
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  background: #fde7e7;
+  color: var(--red);
+  padding: 4px 1px;
+  font-size: 7px;
+  font-weight: 700;
 }
 
 
@@ -2050,51 +980,23 @@ button.danger {
 ========================================================= */
 
 footer {
-
-  text-align:
-    center;
-
-  padding:
-    25px 12px 30px;
-
-  color:
-    #8291a0;
-
-  font-size:
-    9px;
-
-  line-height:
-    1.7;
-
+  text-align: center;
+  padding: 25px 12px 30px;
+  color: #8291a0;
+  font-size: 9px;
+  line-height: 1.7;
 }
-
 
 .footer-title {
-
-  color:
-    var(--navy);
-
-  font-family:
-    "Teko",
-    sans-serif;
-
-  font-size:
-    17px;
-
-  line-height:
-    1;
-
-  text-transform:
-    uppercase;
-
+  color: var(--navy);
+  font-family: "Teko", sans-serif;
+  font-size: 17px;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
-
 .footer-built {
-
-  margin-top:
-    4px;
-
+  margin-top: 4px;
 }
 
 
@@ -2103,42 +1005,19 @@ footer {
 ========================================================= */
 
 .message {
-
-  background:
-    #edf2f7;
-
-  border-radius:
-    6px;
-
-  padding:
-    7px;
-
-  margin:
-    6px 0;
-
-  color:
-    #536779;
-
-  font-size:
-    10px;
-
+  background: #edf2f7;
+  border-radius: 6px;
+  padding: 7px;
+  margin: 6px 0;
+  color: #536779;
+  font-size: 10px;
 }
 
-
 .empty {
-
-  text-align:
-    center;
-
-  color:
-    var(--muted);
-
-  padding:
-    20px 5px;
-
-  font-size:
-    11px;
-
+  text-align: center;
+  color: var(--muted);
+  padding: 20px 5px;
+  font-size: 11px;
 }
 
 
@@ -2149,122 +1028,64 @@ footer {
 @media(max-width:520px) {
 
   main {
-
-    padding:
-      10px 9px 20px;
-
+    padding: 10px 9px 20px;
   }
-
 
   header {
-
-    padding:
-      18px
-      14px
-      20px;
-
+    padding: 18px 14px 20px;
   }
-
 
   .logo {
-
-    width:
-      82px;
-
-    height:
-      82px;
-
+    width: 82px;
+    height: 82px;
   }
-
 
   header h1 {
-
-    font-size:
-      35px;
-
+    font-size: 35px;
   }
-
 
   .next-team {
-
-    font-size:
-      27px;
-
+    font-size: 27px;
   }
-
 
   .next-vs {
-
-    font-size:
-      16px;
-
+    font-size: 16px;
   }
-
 
   .form-row {
-
-    grid-template-columns:
-      1fr;
-
+    grid-template-columns: 1fr;
   }
-
 
   .compact-edit-grid {
-
-    grid-template-columns:
-      1fr;
-
+    grid-template-columns: 1fr;
   }
-
 
   .compact-full {
-
-    grid-column:
-      auto;
-
+    grid-column: auto;
   }
-
 
   .admin-dashboard-header {
-
-    align-items:
-      flex-start;
-
+    align-items: flex-start;
   }
 
-
   .admin-dashboard-header .secondary {
-
-    padding:
-      6px 8px;
-
-    font-size:
-      9px;
-
+    padding: 6px 8px;
+    font-size: 9px;
   }
 
 }
-
 
 @media(min-width:650px) {
 
   main {
-
-    max-width:
-      760px;
-
+    max-width: 760px;
   }
 
-
   .photo-grid {
-
-    grid-template-columns:
-      repeat(4,1fr);
-
+    grid-template-columns: repeat(4,1fr);
   }
 
 }
-
 
 </style>
 
@@ -2342,7 +1163,6 @@ footer {
   id="home"
   class="page active"
 >
-
 
   <div class="card hero-card">
 
@@ -2442,9 +1262,7 @@ footer {
           Last Game
         </div>
 
-        <div
-          id="lastGame"
-        >
+        <div id="lastGame">
           Loading...
         </div>
 
@@ -2453,7 +1271,6 @@ footer {
     </div>
 
   </div>
-
 
 </section>
 
@@ -2473,9 +1290,7 @@ footer {
       🏈 2026 Schedule
     </h2>
 
-    <div
-      id="scheduleList"
-    >
+    <div id="scheduleList">
       Loading...
     </div>
 
@@ -2499,9 +1314,7 @@ footer {
       📸 Football Photos
     </h2>
 
-    <div
-      id="photoList"
-    >
+    <div id="photoList">
       Loading...
     </div>
 
@@ -2559,9 +1372,7 @@ footer {
     </button>
 
 
-    <div
-      id="loginMessage"
-    ></div>
+    <div id="loginMessage"></div>
 
   </div>
 
@@ -2583,7 +1394,7 @@ footer {
       </h2>
 
       <p>
-        Manage games, photos & settings
+        Manage games & photos
       </p>
 
     </div>
@@ -2599,7 +1410,9 @@ footer {
   </div>
 
 
-  <!-- GAME MANAGEMENT -->
+  <!-- =====================================================
+       GAME MANAGEMENT
+  ====================================================== -->
 
   <div class="admin-section">
 
@@ -2705,9 +1518,7 @@ footer {
               Home / Away
             </label>
 
-            <select
-              id="gameHomeAway"
-            >
+            <select id="gameHomeAway">
 
               <option value="Home">
                 🏠 Home
@@ -2745,9 +1556,7 @@ footer {
       </div>
 
 
-      <div
-        id="adminMessage"
-      ></div>
+      <div id="adminMessage"></div>
 
 
       <div class="admin-subsection">
@@ -2757,13 +1566,11 @@ footer {
         </h4>
 
         <div class="admin-description">
-          Click Edit to change a game.
+          Click Edit to change a game or enter the score.
         </div>
 
 
-        <div
-          id="adminGames"
-        >
+        <div id="adminGames">
           Loading...
         </div>
 
@@ -2774,7 +1581,9 @@ footer {
   </div>
 
 
-  <!-- PHOTO MANAGEMENT -->
+  <!-- =====================================================
+       PHOTO MANAGEMENT
+  ====================================================== -->
 
   <div class="admin-section">
 
@@ -2856,73 +1665,9 @@ footer {
         </div>
 
 
-        <div
-          id="adminPhotos"
-        >
+        <div id="adminPhotos">
           Loading...
         </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- SECURITY -->
-
-  <div class="admin-section">
-
-    <div class="admin-section-header">
-
-      <div class="admin-section-icon">
-        🔑
-      </div>
-
-      <div class="admin-section-title">
-
-        <h3>
-          SECURITY
-        </h3>
-
-        <p>
-          Administrator access
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="admin-section-body">
-
-
-      <div class="admin-subsection">
-
-        <h4>
-          🔑 CHANGE ADMIN CODE
-        </h4>
-
-        <div class="admin-description">
-          Change the 4-digit administrator code.
-        </div>
-
-
-        <input
-          id="newAdminCode"
-          type="password"
-          inputmode="numeric"
-          maxlength="4"
-          placeholder="New 4-digit code"
-        >
-
-
-        <button
-          class="primary"
-          onclick="changeAdminCode()"
-        >
-          CHANGE CODE
-        </button>
 
       </div>
 
@@ -2974,10 +1719,8 @@ footer {
 const SUPABASE_URL =
   "https://lwkisughuwqbpwlouejc.supabase.co";
 
-
 const SUPABASE_KEY =
   "sb_publishable_NC2FpWBds4vNOuGMr5_ikw_MOQXXHLI";
-
 
 const db =
   window.supabase.createClient(
@@ -2995,17 +1738,12 @@ let countdownTimer = null;
    NAVIGATION
 ========================================================= */
 
-function showPage(
-  pageId,
-  button
-) {
+function showPage(pageId, button) {
 
   document
     .querySelectorAll(".page")
     .forEach(page => {
-
       page.classList.remove("active");
-
     });
 
 
@@ -3017,30 +1755,22 @@ function showPage(
   document
     .querySelectorAll("nav button")
     .forEach(btn => {
-
       btn.classList.remove("active");
-
     });
 
 
   if (button) {
-
     button.classList.add("active");
-
   }
 
 
   if (pageId === "schedule") {
-
     loadGames();
-
   }
 
 
   if (pageId === "photos") {
-
     loadPhotos();
-
   }
 
 
@@ -3048,9 +1778,7 @@ function showPage(
     pageId === "admin" &&
     sessionStorage.getItem("adminCode")
   ) {
-
     showAdmin();
-
   }
 
 }
@@ -3124,16 +1852,18 @@ function updateHome() {
       .split("T")[0];
 
 
+  /*
+    A game is considered FINAL automatically
+    when BOTH scores exist.
+  */
+
   const upcoming =
     games
       .filter(game =>
 
         game.date >= today &&
 
-        (
-          !game.status ||
-          game.status === "Scheduled"
-        )
+        !hasScore(game)
 
       )
       .sort(
@@ -3227,10 +1957,7 @@ function updateHome() {
 
   games.forEach(game => {
 
-    if (
-      game.our_score !== null &&
-      game.opponent_score !== null
-    ) {
+    if (hasScore(game)) {
 
       if (
         Number(game.our_score) >
@@ -3285,10 +2012,7 @@ function updateHome() {
 
   const completed =
     games
-      .filter(game =>
-        game.our_score !== null &&
-        game.opponent_score !== null
-      )
+      .filter(game => hasScore(game))
       .sort(
         (a,b) =>
           new Date(b.date) -
@@ -3340,12 +2064,6 @@ function updateHome() {
     }
 
 
-    /*
-       IMPORTANT:
-       LAST GAME NOW USES "VS"
-       INSTEAD OF THE HOME/AWAY EMOJI.
-    */
-
     document
       .getElementById("lastGame")
       .innerHTML =
@@ -3355,7 +2073,9 @@ function updateHome() {
         <div class="last-matchup">
 
           NDGP
-          <span class="next-vs">VS</span>
+          <span class="next-vs">
+            VS
+          </span>
           ${escapeHtml(last.opponent)}
 
         </div>
@@ -3388,7 +2108,25 @@ function updateHome() {
 
 
 /* =========================================================
-   HOME/AWAY ICON
+   SCORE CHECK
+========================================================= */
+
+function hasScore(game) {
+
+  return (
+    game.our_score !== null &&
+    game.our_score !== undefined &&
+    game.our_score !== "" &&
+    game.opponent_score !== null &&
+    game.opponent_score !== undefined &&
+    game.opponent_score !== ""
+  );
+
+}
+
+
+/* =========================================================
+   HOME / AWAY ICON
 ========================================================= */
 
 function getHomeAwayIcon(value) {
@@ -3603,14 +2341,13 @@ function updateSchedule() {
 
     games.map(game => {
 
-      let result = "Scheduled";
-
-      let resultClass = "scheduled";
-
-
       const completed =
-        game.our_score !== null &&
-        game.opponent_score !== null;
+        hasScore(game);
+
+
+      let result = "";
+
+      let resultClass = "";
 
 
       if (completed) {
@@ -3672,9 +2409,15 @@ function updateSchedule() {
 
             </div>
 
-            <span class="badge ${resultClass}">
-              ${result}
-            </span>
+            ${
+              completed
+              ?
+              `<span class="badge ${resultClass}">
+                ${result}
+              </span>`
+              :
+              ""
+            }
 
           </div>
 
@@ -3718,6 +2461,7 @@ function updateSchedule() {
             completed
             ?
             `<div class="game-score">
+              FINAL:
               ${game.our_score}
               –
               ${game.opponent_score}
@@ -3950,26 +2694,19 @@ async function addGame() {
       "add_game",
       {
 
-        p_code:
-          code,
+        p_code: code,
 
-        p_date:
-          date,
+        p_date: date,
 
-        p_time:
-          time,
+        p_time: time,
 
-        p_opponent:
-          opponent,
+        p_opponent: opponent,
 
-        p_location:
-          location,
+        p_location: location,
 
-        p_home_away:
-          homeAway,
+        p_home_away: homeAway,
 
-        p_notes:
-          notes
+        p_notes: notes
 
       }
     );
@@ -4057,12 +2794,11 @@ function updateAdminGames() {
 
 
         const score =
-          game.our_score !== null &&
-          game.opponent_score !== null
+          hasScore(game)
           ?
-          `${game.our_score}–${game.opponent_score}`
+          `FINAL ${game.our_score}–${game.opponent_score}`
           :
-          "Scheduled";
+          "No score yet";
 
 
         return `
@@ -4252,44 +2988,6 @@ function updateAdminGames() {
                 </div>
 
 
-                <div>
-
-                  <label>
-                    Status
-                  </label>
-
-                  <select
-                    id="status-${game.id}"
-                  >
-
-                    <option
-                      value="Scheduled"
-                      ${
-                        game.status === "Scheduled"
-                        ? "selected"
-                        : ""
-                      }
-                    >
-                      Scheduled
-                    </option>
-
-
-                    <option
-                      value="Final"
-                      ${
-                        game.status === "Final"
-                        ? "selected"
-                        : ""
-                      }
-                    >
-                      Final
-                    </option>
-
-                  </select>
-
-                </div>
-
-
                 <div class="compact-full">
 
                   <label>
@@ -4420,14 +3118,6 @@ async function saveGame(id) {
       .value;
 
 
-  const status =
-    document
-      .getElementById(
-        `status-${id}`
-      )
-      .value;
-
-
   const notes =
     document
       .getElementById(
@@ -4448,6 +3138,26 @@ async function saveGame(id) {
       : Number(opponentValue);
 
 
+  /*
+    AUTOMATIC STATUS:
+
+    Both scores entered = FINAL
+    Otherwise = not final
+
+    The status is never manually selected.
+  */
+
+  const automaticStatus =
+    (
+      ourScore !== null &&
+      opponentScore !== null
+    )
+    ?
+    "Final"
+    :
+    "Scheduled";
+
+
   const {
     error
   } =
@@ -4455,38 +3165,27 @@ async function saveGame(id) {
       "update_game",
       {
 
-        p_code:
-          code,
+        p_code: code,
 
-        p_id:
-          id,
+        p_id: id,
 
-        p_date:
-          date,
+        p_date: date,
 
-        p_time:
-          time,
+        p_time: time,
 
-        p_opponent:
-          game.opponent,
+        p_opponent: game.opponent,
 
-        p_location:
-          location,
+        p_location: location,
 
-        p_home_away:
-          homeAway,
+        p_home_away: homeAway,
 
-        p_our_score:
-          ourScore,
+        p_our_score: ourScore,
 
-        p_opponent_score:
-          opponentScore,
+        p_opponent_score: opponentScore,
 
-        p_status:
-          status,
+        p_status: automaticStatus,
 
-        p_notes:
-          notes
+        p_notes: notes
 
       }
     );
@@ -4545,11 +3244,9 @@ async function deleteGame(id) {
       "delete_game",
       {
 
-        p_code:
-          code,
+        p_code: code,
 
-        p_id:
-          id
+        p_id: id
 
       }
     );
@@ -4805,8 +3502,7 @@ async function addPhoto() {
       "add_photo",
       {
 
-        p_code:
-          code,
+        p_code: code,
 
         p_image_url:
           compressedImage,
@@ -5014,11 +3710,9 @@ async function deletePhoto(id) {
       "delete_photo",
       {
 
-        p_code:
-          code,
+        p_code: code,
 
-        p_id:
-          id
+        p_id: id
 
       }
     );
@@ -5046,94 +3740,6 @@ async function deletePhoto(id) {
 
 
 /* =========================================================
-   CHANGE ADMIN CODE
-========================================================= */
-
-async function changeAdminCode() {
-
-  const oldCode =
-    sessionStorage.getItem(
-      "adminCode"
-    );
-
-
-  const newCode =
-    document
-      .getElementById(
-        "newAdminCode"
-      )
-      .value
-      .trim();
-
-
-  if (
-    !/^\d{4}$/.test(
-      newCode
-    )
-  ) {
-
-    showAdminMessage(
-      "New code must be exactly 4 digits."
-    );
-
-    return;
-
-  }
-
-
-  const {
-    data,
-    error
-  } =
-    await db.rpc(
-      "change_admin_code",
-      {
-
-        p_old_code:
-          oldCode,
-
-        p_new_code:
-          newCode
-
-      }
-    );
-
-
-  if (
-    error ||
-    !data
-  ) {
-
-    showAdminMessage(
-      "Could not change code."
-    );
-
-    return;
-
-  }
-
-
-  sessionStorage.setItem(
-    "adminCode",
-    newCode
-  );
-
-
-  document
-    .getElementById(
-      "newAdminCode"
-    )
-    .value = "";
-
-
-  showAdminMessage(
-    "🔑 Admin code changed!"
-  );
-
-}
-
-
-/* =========================================================
    HELPERS
 ========================================================= */
 
@@ -5154,19 +3760,10 @@ function formatDate(dateString) {
   return date.toLocaleDateString(
     "en-US",
     {
-
-      weekday:
-        "long",
-
-      month:
-        "long",
-
-      day:
-        "numeric",
-
-      year:
-        "numeric"
-
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+      year: "numeric"
     }
   );
 
@@ -5190,13 +3787,8 @@ function formatShortDate(dateString) {
   return date.toLocaleDateString(
     "en-US",
     {
-
-      month:
-        "short",
-
-      day:
-        "numeric"
-
+      month: "short",
+      day: "numeric"
     }
   );
 
@@ -5266,7 +3858,6 @@ function showAdminMessage(message) {
 
 
   box.innerHTML =
-
     `<div class="message">
       ${escapeHtml(message)}
     </div>`;
@@ -5274,9 +3865,7 @@ function showAdminMessage(message) {
 
   setTimeout(
     () => {
-
       box.innerHTML = "";
-
     },
     4000
   );
