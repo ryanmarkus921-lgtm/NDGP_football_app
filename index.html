@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="manifest" href="manifest.json">
-
 <meta name="theme-color" content="#001f3f">
-
 <link rel="apple-touch-icon" href="LOGO_W__FB.png">
 
 <title>NDGP Football</title>
@@ -18,9 +14,9 @@
 
 <style>
 
-/* =========================================================
+/* =========================
    BASE
-========================================================= */
+========================= */
 
 * {
   box-sizing: border-box;
@@ -28,95 +24,68 @@
 
 :root {
   --navy: #001f3f;
-  --navy-light: #003b6f;
+  --blue: #003b6f;
   --gold: #f4c542;
-  --gold-light: #fff7d6;
   --background: #f4f6f9;
   --white: #ffffff;
   --text: #162636;
   --muted: #718096;
   --border: #dce5ed;
-  --success: #16803c;
-  --danger: #c53030;
-  --purple: #805ad5;
+  --green: #16803c;
+  --red: #c53030;
 }
 
 body {
   margin: 0;
   background: var(--background);
   color: var(--text);
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* =========================================================
+/* =========================
    HEADER
-========================================================= */
+========================= */
 
 header {
-  background:
-    linear-gradient(
-      145deg,
-      #00152c,
-      #003b6f
-    );
+  background: linear-gradient(
+    145deg,
+    #00152c,
+    #003b6f
+  );
 
   color: white;
-
   text-align: center;
-
-  padding:
-    28px
-    18px
-    32px;
+  padding: 28px 18px 32px;
 }
 
 .logo {
   width: 115px;
   height: 115px;
-
   object-fit: contain;
-
   display: block;
-
-  margin:
-    0
-    auto
-    10px;
+  margin: 0 auto 10px;
 }
 
 header h1 {
   margin: 0;
-
   font-size: 30px;
-
   font-weight: 900;
-
   letter-spacing: 1px;
 }
 
 header p {
-  margin:
-    7px
-    0
-    0;
-
+  margin: 7px 0 0;
   color: #dce8f5;
-
   font-size: 14px;
 }
 
-/* =========================================================
+/* =========================
    NAVIGATION
-========================================================= */
+========================= */
 
 nav {
   position: sticky;
-
   top: 0;
-
   z-index: 100;
 
   display: flex;
@@ -124,10 +93,7 @@ nav {
   background: white;
 
   box-shadow:
-    0
-    3px
-    12px
-    rgba(0,0,0,.12);
+    0 3px 12px rgba(0,0,0,.12);
 }
 
 nav button {
@@ -139,9 +105,7 @@ nav button {
 
   color: var(--navy);
 
-  padding:
-    15px
-    4px;
+  padding: 15px 4px;
 
   font-size: 13px;
 
@@ -152,28 +116,20 @@ nav button {
 
 nav button.active {
   background: var(--navy);
-
   color: white;
 
   box-shadow:
-    inset
-    0
-    -4px
-    0
-    var(--gold);
+    inset 0 -4px 0 var(--gold);
 }
 
-/* =========================================================
+/* =========================
    MAIN
-========================================================= */
+========================= */
 
 main {
   width: 100%;
-
   max-width: 760px;
-
   margin: auto;
-
   padding: 18px;
 }
 
@@ -185,9 +141,9 @@ main {
   display: block;
 }
 
-/* =========================================================
-   GENERAL CARDS
-========================================================= */
+/* =========================
+   CARDS
+========================= */
 
 .card {
   background: white;
@@ -199,88 +155,61 @@ main {
   padding: 20px;
 
   box-shadow:
-    0
-    5px
-    20px
-    rgba(0,0,0,.07);
+    0 5px 20px rgba(0,0,0,.07);
 }
 
-/* =========================================================
+/* =========================
    HOME
-========================================================= */
+========================= */
 
 .hero-card {
   overflow: hidden;
-
   padding: 0;
 }
 
 .hero-top {
   background: var(--navy);
-
   color: white;
-
   text-align: center;
-
   padding: 16px;
 }
 
 .hero-top span {
   color: var(--gold);
-
   font-size: 12px;
-
   font-weight: 900;
-
   letter-spacing: 2px;
 }
 
 .hero-body {
   text-align: center;
-
-  padding:
-    24px
-    18px;
+  padding: 24px 18px;
 }
 
 .next-opponent {
   font-size: 34px;
-
   font-weight: 900;
-
   color: var(--navy);
-
-  margin:
-    4px
-    0
-    14px;
+  margin: 4px 0 14px;
 }
 
 .game-info {
   color: #4a5b6b;
-
   line-height: 1.9;
-
   font-size: 15px;
 }
 
 .countdown {
   display: inline-block;
 
-  background: var(--gold-light);
-
+  background: #fff7d6;
   color: #765900;
 
-  border:
-    1px
-    solid
-    #f0d36b;
+  border: 1px solid #f0d36b;
 
   border-radius: 10px;
 
-  padding:
-    10px
-    14px;
+  padding: 10px 14px;
 
   margin-top: 12px;
 
@@ -289,7 +218,6 @@ main {
 
 .record-card {
   text-align: center;
-
   padding: 25px;
 }
 
@@ -312,14 +240,11 @@ main {
 
   font-weight: 900;
 
-  margin:
-    4px
-    0;
+  margin: 4px 0;
 }
 
 .record-sub {
   color: var(--muted);
-
   font-size: 14px;
 }
 
@@ -334,9 +259,7 @@ main {
 }
 
 .last-game h3 {
-  margin:
-    5px
-    0;
+  margin: 5px 0;
 }
 
 .last-score {
@@ -349,16 +272,12 @@ main {
   white-space: nowrap;
 }
 
-/* =========================================================
+/* =========================
    SCHEDULE
-========================================================= */
+========================= */
 
 .page-heading {
-  margin:
-    5px
-    0
-    18px;
-
+  margin: 5px 0 18px;
   color: var(--navy);
 }
 
@@ -371,16 +290,10 @@ main {
 
   padding: 17px;
 
-  border-left:
-    5px
-    solid
-    var(--navy);
+  border-left: 5px solid var(--navy);
 
   box-shadow:
-    0
-    3px
-    12px
-    rgba(0,0,0,.06);
+    0 3px 12px rgba(0,0,0,.06);
 }
 
 .game-header {
@@ -406,9 +319,7 @@ main {
 
   font-size: 14px;
 
-  margin:
-    5px
-    0;
+  margin: 5px 0;
 }
 
 .game-score {
@@ -418,17 +329,13 @@ main {
 
   color: var(--navy);
 
-  margin:
-    10px
-    0;
+  margin: 10px 0;
 }
 
 .badge {
   display: inline-block;
 
-  padding:
-    5px
-    9px;
+  padding: 5px 9px;
 
   border-radius: 7px;
 
@@ -439,37 +346,33 @@ main {
 
 .badge.win {
   background: #e3f6e9;
-
-  color: var(--success);
+  color: var(--green);
 }
 
 .badge.loss {
   background: #fde7e7;
-
-  color: var(--danger);
-}
-
-.badge.tie {
-  background: #eee8ff;
-
-  color: var(--purple);
+  color: var(--red);
 }
 
 .badge.scheduled {
   background: #e7f0fa;
-
-  color: var(--navy-light);
+  color: var(--blue);
 }
 
-/* =========================================================
+.badge.tie {
+  background: #eee8ff;
+  color: #805ad5;
+}
+
+/* =========================
    PHOTOS
-========================================================= */
+========================= */
 
 .photo-grid {
   display: grid;
 
   grid-template-columns:
-    repeat(2,1fr);
+    repeat(2, 1fr);
 
   gap: 9px;
 }
@@ -491,17 +394,14 @@ main {
 .photo-caption {
   font-size: 13px;
 
-  margin:
-    5px
-    2px
-    10px;
+  margin: 5px 2px 10px;
 
   color: #536576;
 }
 
-/* =========================================================
+/* =========================
    FORMS
-========================================================= */
+========================= */
 
 input,
 select,
@@ -509,22 +409,23 @@ textarea {
   width: 100%;
 
   border:
-    1px
-    solid
+    1px solid
     #ccd6e0;
 
-  border-radius: 10px;
+  border-radius: 9px;
 
-  padding: 12px;
+  padding: 10px;
 
-  margin:
-    6px
-    0
-    15px;
+  margin: 5px 0 12px;
 
-  font-size: 16px;
+  font-size: 15px;
 
   background: white;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
 }
 
 input:focus,
@@ -535,85 +436,65 @@ textarea:focus {
   border-color: var(--navy);
 
   box-shadow:
-    0
-    0
-    0
-    2px
+    0 0 0 2px
     rgba(0,31,63,.08);
-}
-
-textarea {
-  min-height: 100px;
-
-  resize: vertical;
 }
 
 label {
   display: block;
 
-  font-size: 13px;
+  font-size: 12px;
 
   font-weight: 800;
-
-  margin-top: 5px;
 
   color: #33485c;
 }
 
-/* =========================================================
+/* =========================
    BUTTONS
-========================================================= */
+========================= */
 
 button.primary,
 button.secondary,
 button.danger {
   border: 0;
 
-  border-radius: 9px;
+  border-radius: 8px;
 
-  padding:
-    11px
-    15px;
+  padding: 10px 14px;
 
   font-weight: 800;
 
   cursor: pointer;
 
-  margin: 4px;
+  margin: 3px;
 }
 
 button.primary {
   background: var(--navy);
-
   color: white;
-}
-
-button.primary:hover {
-  background: var(--navy-light);
 }
 
 button.secondary {
   background: #e3e9ef;
-
   color: var(--navy);
 }
 
 button.danger {
-  background: var(--danger);
-
+  background: var(--red);
   color: white;
 }
 
-/* =========================================================
+/* =========================
    ADMIN LOGIN
-========================================================= */
+========================= */
 
 .admin-login-header {
   background:
     linear-gradient(
       135deg,
       var(--navy),
-      var(--navy-light)
+      var(--blue)
     );
 
   color: white;
@@ -626,10 +507,7 @@ button.danger {
 }
 
 .admin-login-header h2 {
-  margin:
-    0
-    0
-    5px;
+  margin: 0 0 5px;
 }
 
 .admin-login-header p {
@@ -640,25 +518,25 @@ button.danger {
   font-size: 13px;
 }
 
-/* =========================================================
-   ADMIN DASHBOARD HEADER
-========================================================= */
+/* =========================
+   ADMIN HEADER
+========================= */
 
 .admin-dashboard-header {
   background:
     linear-gradient(
       135deg,
       var(--navy),
-      var(--navy-light)
+      var(--blue)
     );
 
   color: white;
 
   border-radius: 18px;
 
-  padding: 20px;
+  padding: 18px 20px;
 
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
   display: flex;
 
@@ -666,16 +544,13 @@ button.danger {
 
   align-items: center;
 
-  gap: 15px;
+  gap: 12px;
 }
 
 .admin-dashboard-header h2 {
-  margin:
-    0
-    0
-    5px;
+  margin: 0 0 4px;
 
-  font-size: 22px;
+  font-size: 21px;
 }
 
 .admin-dashboard-header p {
@@ -692,65 +567,57 @@ button.danger {
   color: white !important;
 
   border:
-    1px
-    solid
+    1px solid
     rgba(255,255,255,.25) !important;
 
   white-space: nowrap;
 }
 
-/* =========================================================
+/* =========================
    ADMIN SECTIONS
-========================================================= */
+========================= */
 
 .admin-section {
   background: white;
 
   border:
-    1px
-    solid
+    1px solid
     var(--border);
 
-  border-radius: 18px;
+  border-radius: 16px;
 
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 
   overflow: hidden;
 
   box-shadow:
-    0
-    4px
-    14px
-    rgba(0,0,0,.05);
+    0 3px 12px rgba(0,0,0,.05);
 }
 
 .admin-section-header {
   background: #f7f9fb;
 
   border-bottom:
-    1px
-    solid
+    1px solid
     var(--border);
 
-  padding:
-    17px
-    18px;
+  padding: 14px 16px;
 
   display: flex;
 
   align-items: center;
 
-  gap: 12px;
+  gap: 11px;
 }
 
 .admin-section-icon {
-  width: 42px;
+  width: 38px;
 
-  height: 42px;
+  height: 38px;
 
   flex-shrink: 0;
 
-  border-radius: 11px;
+  border-radius: 10px;
 
   background: var(--navy);
 
@@ -762,7 +629,7 @@ button.danger {
 
   justify-content: center;
 
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .admin-section-title h3 {
@@ -770,41 +637,37 @@ button.danger {
 
   color: var(--navy);
 
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .admin-section-title p {
-  margin:
-    3px
-    0
-    0;
+  margin: 2px 0 0;
 
   color: var(--muted);
 
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .admin-section-body {
-  padding: 18px;
+  padding: 15px;
 }
 
-/* =========================================================
-   ADMIN FORM
-========================================================= */
+/* =========================
+   ADMIN SUBSECTIONS
+========================= */
 
 .admin-subsection {
   background: #f8fafc;
 
   border:
-    1px
-    solid
+    1px solid
     var(--border);
 
-  border-radius: 14px;
+  border-radius: 12px;
 
-  padding: 17px;
+  padding: 14px;
 
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .admin-subsection:last-child {
@@ -812,22 +675,19 @@ button.danger {
 }
 
 .admin-subsection h4 {
-  margin:
-    0
-    0
-    4px;
+  margin: 0 0 3px;
 
   color: var(--navy);
 
-  font-size: 16px;
+  font-size: 15px;
 }
 
-.admin-subsection-description {
+.admin-description {
   color: var(--muted);
 
-  font-size: 12px;
+  font-size: 11px;
 
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .form-row {
@@ -837,134 +697,187 @@ button.danger {
     1fr
     1fr;
 
-  gap: 12px;
+  gap: 10px;
 }
 
-.full-width {
-  width: 100%;
-}
+/* =========================
+   COMPACT GAME MANAGEMENT
+========================= */
 
-.add-game-button {
-  width: 100% !important;
+/*
+   Each game is now a compact row.
+   Details only appear when Edit is clicked.
+*/
 
-  margin:
-    3px
-    0
-    0 !important;
-
-  padding:
-    13px
-    15px !important;
-
-  font-size: 15px;
-}
-
-/* =========================================================
-   ADMIN GAME CARDS
-========================================================= */
-
-.admin-game {
-  background: #f8fafc;
+.compact-game {
+  background: white;
 
   border:
     1px
     solid
     var(--border);
 
-  border-radius: 15px;
+  border-radius: 11px;
 
-  padding: 16px;
+  margin-bottom: 8px;
 
-  margin-bottom: 14px;
+  overflow: hidden;
 }
 
-.admin-game:last-child {
+.compact-game:last-child {
   margin-bottom: 0;
 }
 
-.admin-game-header {
-  display: flex;
+.compact-game-top {
+  padding:
+    11px
+    12px;
 
-  justify-content: space-between;
+  display: flex;
 
   align-items: center;
 
+  justify-content: space-between;
+
   gap: 10px;
-
-  margin-bottom: 15px;
-
-  padding-bottom: 12px;
-
-  border-bottom:
-    1px
-    solid
-    var(--border);
 }
 
-.admin-game-header h4 {
-  margin: 0;
+.compact-game-info {
+  min-width: 0;
+}
 
+.compact-game-title {
   color: var(--navy);
 
-  font-size: 18px;
-}
-
-.game-number {
-  background: var(--navy);
-
-  color: white;
-
-  border-radius: 7px;
-
-  padding:
-    5px
-    8px;
-
-  font-size: 10px;
+  font-size: 14px;
 
   font-weight: 900;
 
   white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
 }
 
-.admin-game-grid {
+.compact-game-meta {
+  color: var(--muted);
+
+  font-size: 10px;
+
+  margin-top: 3px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.compact-game-score {
+  font-size: 14px;
+
+  font-weight: 900;
+
+  color: var(--navy);
+
+  margin-top: 3px;
+}
+
+.compact-game-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  flex-shrink: 0;
+}
+
+.edit-button {
+  border: 0;
+
+  background: #e7eef5;
+
+  color: var(--navy);
+
+  border-radius: 7px;
+
+  padding:
+    7px
+    9px;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.delete-small {
+  border: 0;
+
+  background: #fde7e7;
+
+  color: var(--red);
+
+  border-radius: 7px;
+
+  padding:
+    7px
+    9px;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.compact-edit {
+  display: none;
+
+  background: #f7f9fb;
+
+  border-top:
+    1px
+    solid
+    var(--border);
+
+  padding: 12px;
+}
+
+.compact-edit.open {
+  display: block;
+}
+
+.compact-edit-grid {
   display: grid;
 
   grid-template-columns:
     1fr
     1fr;
 
-  gap:
-    0
-    12px;
+  gap: 0 10px;
 }
 
-.admin-game-full {
+.compact-full {
   grid-column:
     1 / -1;
 }
 
-.admin-game-actions {
-  display: flex;
+.compact-save {
+  width: 100%;
 
-  flex-wrap: wrap;
-
-  gap: 6px;
-
-  margin-top: 5px;
+  margin:
+    3px
+    0
+    0 !important;
 }
 
-.admin-game-actions button {
-  flex: 1;
-
-  min-width: 130px;
-
-  margin: 0;
-}
-
-/* =========================================================
-   ADMIN PHOTOS
-========================================================= */
+/* =========================
+   PHOTOS ADMIN
+========================= */
 
 .photo-upload {
   background: #f8fafc;
@@ -974,42 +887,33 @@ button.danger {
     dashed
     #b8c7d5;
 
-  border-radius: 14px;
+  border-radius: 12px;
 
-  padding: 17px;
+  padding: 14px;
 
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .photo-upload h4 {
-  margin:
-    0
-    0
-    4px;
+  margin: 0 0 3px;
 
   color: var(--navy);
 
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .photo-upload p {
   color: var(--muted);
 
-  font-size: 12px;
+  font-size: 11px;
 
-  margin:
-    0
-    0
-    15px;
+  margin: 0 0 12px;
 }
 
 .upload-photo-button {
   width: 100% !important;
 
-  margin:
-    3px
-    0
-    0 !important;
+  margin: 3px 0 0 !important;
 }
 
 .admin-photo-grid {
@@ -1018,7 +922,7 @@ button.danger {
   grid-template-columns:
     repeat(3,1fr);
 
-  gap: 10px;
+  gap: 8px;
 }
 
 .admin-photo-card {
@@ -1029,9 +933,9 @@ button.danger {
     solid
     var(--border);
 
-  border-radius: 10px;
+  border-radius: 9px;
 
-  padding: 6px;
+  padding: 4px;
 
   overflow: hidden;
 }
@@ -1045,23 +949,21 @@ button.danger {
 
   display: block;
 
-  border-radius: 7px;
+  border-radius: 6px;
 
   cursor: pointer;
 }
 
 .admin-photo-caption {
-  font-size: 10px;
+  font-size: 9px;
 
   color: var(--muted);
 
-  margin:
-    5px
-    2px;
+  margin: 4px 2px;
 
-  line-height: 1.3;
+  line-height: 1.2;
 
-  min-height: 13px;
+  min-height: 11px;
 }
 
 .admin-photo-delete {
@@ -1069,26 +971,24 @@ button.danger {
 
   border: 0;
 
-  border-radius: 6px;
+  border-radius: 5px;
 
-  background: var(--danger);
+  background: #fde7e7;
 
-  color: white;
+  color: var(--red);
 
-  padding:
-    7px
-    3px;
+  padding: 6px 2px;
 
-  font-size: 10px;
+  font-size: 9px;
 
   font-weight: 800;
 
   cursor: pointer;
 }
 
-/* =========================================================
+/* =========================
    SECURITY
-========================================================= */
+========================= */
 
 .security-card {
   background: #f8fafc;
@@ -1098,11 +998,11 @@ button.danger {
     solid
     var(--border);
 
-  border-radius: 14px;
+  border-radius: 11px;
 
-  padding: 16px;
+  padding: 13px;
 
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .security-card:last-child {
@@ -1110,42 +1010,35 @@ button.danger {
 }
 
 .security-card h4 {
-  margin:
-    0
-    0
-    4px;
+  margin: 0 0 3px;
 
   color: var(--navy);
 
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .security-card p {
-  margin:
-    0
-    12px;
+  margin: 0 0 10px;
 
   color: var(--muted);
 
-  font-size: 12px;
+  font-size: 11px;
 }
 
-/* =========================================================
+/* =========================
    MESSAGES
-========================================================= */
+========================= */
 
 .message {
   background: #edf2f7;
 
-  border-radius: 9px;
+  border-radius: 8px;
 
-  padding: 11px;
+  padding: 9px;
 
-  margin:
-    10px
-    0;
+  margin: 8px 0;
 
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .empty {
@@ -1153,26 +1046,26 @@ button.danger {
 
   color: var(--muted);
 
-  padding:
-    30px
-    10px;
+  padding: 25px 10px;
+
+  font-size: 13px;
 }
 
 .hidden {
   display: none !important;
 }
 
-/* =========================================================
+/* =========================
    FOOTER
-========================================================= */
+========================= */
 
 footer {
   text-align: center;
 
   padding:
-    35px
+    30px
     18px
-    40px;
+    38px;
 
   color: var(--muted);
 
@@ -1182,23 +1075,23 @@ footer {
 }
 
 .footer-built {
-  margin-top: 8px;
+  margin-top: 7px;
 
   color: #8a98a8;
 
   font-size: 11px;
 }
 
-/* =========================================================
+/* =========================
    MOBILE
-========================================================= */
+========================= */
 
 @media (max-width: 520px) {
 
   .admin-dashboard-header {
-    align-items: flex-start;
-
     flex-direction: column;
+
+    align-items: flex-start;
   }
 
   .admin-logout {
@@ -1209,46 +1102,49 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .admin-game-grid {
+  .compact-game-top {
+    padding: 10px;
+  }
+
+  .compact-game-title {
+    font-size: 13px;
+  }
+
+  .compact-game-meta {
+    font-size: 9px;
+  }
+
+  .compact-game-score {
+    font-size: 13px;
+  }
+
+  .compact-game-actions {
+    gap: 3px;
+  }
+
+  .edit-button,
+  .delete-small {
+    padding:
+      6px
+      7px;
+
+    font-size: 10px;
+  }
+
+  .compact-edit-grid {
     grid-template-columns: 1fr;
   }
 
-  .admin-game-full {
+  .compact-full {
     grid-column: auto;
-  }
-
-  .admin-game-actions {
-    flex-direction: column;
-  }
-
-  .admin-game-actions button {
-    width: 100%;
   }
 
   .admin-photo-grid {
     grid-template-columns:
       repeat(3,1fr);
-
-    gap: 7px;
-  }
-
-  .admin-photo-card {
-    padding: 4px;
-  }
-
-  .admin-photo-delete {
-    font-size: 9px;
-
-    padding:
-      6px
-      2px;
   }
 
 }
-
-/* =========================================================
-   LARGER SCREENS
-========================================================= */
 
 @media (min-width: 650px) {
 
@@ -1265,15 +1161,15 @@ footer {
 }
 
 </style>
-
 </head>
+
 
 <body>
 
 
-<!-- =====================================================
+<!-- =========================
      HEADER
-===================================================== -->
+========================= -->
 
 <header>
 
@@ -1294,9 +1190,9 @@ footer {
 </header>
 
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+<!-- =========================
+     NAV
+========================= -->
 
 <nav>
 
@@ -1331,9 +1227,9 @@ footer {
 <main>
 
 
-<!-- =====================================================
+<!-- =========================
      HOME
-===================================================== -->
+========================= -->
 
 <section
   id="home"
@@ -1343,11 +1239,7 @@ footer {
   <div class="card hero-card">
 
     <div class="hero-top">
-
-      <span>
-        NEXT GAME
-      </span>
-
+      <span>NEXT GAME</span>
     </div>
 
     <div class="hero-body">
@@ -1414,9 +1306,9 @@ footer {
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      SCHEDULE
-===================================================== -->
+========================= -->
 
 <section
   id="schedule"
@@ -1438,9 +1330,9 @@ footer {
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      PHOTOS
-===================================================== -->
+========================= -->
 
 <section
   id="photos"
@@ -1462,9 +1354,9 @@ footer {
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      ADMIN
-===================================================== -->
+========================= -->
 
 <section
   id="admin"
@@ -1472,7 +1364,7 @@ footer {
 >
 
 
-<!-- ADMIN LOGIN -->
+<!-- LOGIN -->
 
 <div id="loginArea">
 
@@ -1508,7 +1400,7 @@ footer {
       onclick="login()"
       style="
         width:100%;
-        margin:4px 0;
+        margin:3px 0;
       "
     >
       🔓 Enter Admin
@@ -1529,391 +1421,391 @@ footer {
 >
 
 
-  <!-- DASHBOARD HEADER -->
+<!-- ADMIN HEADER -->
 
-  <div class="admin-dashboard-header">
+<div class="admin-dashboard-header">
 
-    <div>
+  <div>
 
-      <h2>
-        🔐 Admin Dashboard
-      </h2>
+    <h2>
+      🔐 Admin Dashboard
+    </h2>
+
+    <p>
+      Manage games, photos, and settings.
+    </p>
+
+  </div>
+
+
+  <button
+    class="secondary admin-logout"
+    onclick="logout()"
+  >
+    🚪 Log Out
+  </button>
+
+</div>
+
+
+<!-- =========================
+     GAME MANAGEMENT
+========================= -->
+
+<div class="admin-section">
+
+  <div class="admin-section-header">
+
+    <div class="admin-section-icon">
+      🏈
+    </div>
+
+    <div class="admin-section-title">
+
+      <h3>
+        Game Management
+      </h3>
 
       <p>
-        Manage games, photos, and settings.
+        Add and manage your schedule.
       </p>
 
     </div>
 
-
-    <button
-      class="secondary admin-logout"
-      onclick="logout()"
-    >
-      🚪 Log Out
-    </button>
-
   </div>
 
 
-  <!-- ===================================================
-       GAME MANAGEMENT
-  ==================================================== -->
+  <div class="admin-section-body">
 
-  <div class="admin-section">
 
-    <div class="admin-section-header">
+    <!-- ADD GAME -->
 
-      <div class="admin-section-icon">
-        🏈
+    <div class="admin-subsection">
+
+      <h4>
+        ➕ Add New Game
+      </h4>
+
+      <div class="admin-description">
+        Add a new game to the schedule.
       </div>
 
-      <div class="admin-section-title">
 
-        <h3>
-          Game Management
-        </h3>
+      <div class="form-row">
 
-        <p>
-          Add and manage the football schedule.
-        </p>
+        <div>
+
+          <label>
+            Date
+          </label>
+
+          <input
+            id="gameDate"
+            type="date"
+          >
+
+        </div>
+
+
+        <div>
+
+          <label>
+            Time
+          </label>
+
+          <input
+            id="gameTime"
+            type="text"
+            placeholder="7:00 PM"
+          >
+
+        </div>
 
       </div>
+
+
+      <label>
+        Opponent
+      </label>
+
+      <input
+        id="gameOpponent"
+        type="text"
+        placeholder="Opponent name"
+      >
+
+
+      <div class="form-row">
+
+        <div>
+
+          <label>
+            Location
+          </label>
+
+          <input
+            id="gameLocation"
+            type="text"
+            placeholder="Stadium / Field"
+          >
+
+        </div>
+
+
+        <div>
+
+          <label>
+            Home / Away
+          </label>
+
+          <select
+            id="gameHomeAway"
+          >
+
+            <option value="Home">
+              Home
+            </option>
+
+            <option value="Away">
+              Away
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <label>
+        Notes
+      </label>
+
+      <textarea
+        id="gameNotes"
+        placeholder="Optional notes..."
+      ></textarea>
+
+
+      <button
+        class="primary"
+        style="
+          width:100%;
+          margin:3px 0 0;
+        "
+        onclick="addGame()"
+      >
+        ➕ Add Game
+      </button>
 
     </div>
 
 
-    <div class="admin-section-body">
+    <div id="adminMessage"></div>
 
 
-      <!-- ADD GAME -->
+    <!-- MANAGE GAMES -->
 
-      <div class="admin-subsection">
+    <div class="admin-subsection">
 
-        <h4>
-          ➕ Add New Game
-        </h4>
+      <h4>
+        📋 Manage Existing Games
+      </h4>
 
-        <div class="admin-subsection-description">
-          Enter the information for a new game.
-        </div>
-
-
-        <div class="form-row">
-
-          <div>
-
-            <label>
-              Date
-            </label>
-
-            <input
-              id="gameDate"
-              type="date"
-            >
-
-          </div>
-
-
-          <div>
-
-            <label>
-              Time
-            </label>
-
-            <input
-              id="gameTime"
-              type="text"
-              placeholder="7:00 PM"
-            >
-
-          </div>
-
-        </div>
-
-
-        <label>
-          Opponent
-        </label>
-
-        <input
-          id="gameOpponent"
-          type="text"
-          placeholder="Opponent name"
-        >
-
-
-        <div class="form-row">
-
-          <div>
-
-            <label>
-              Location
-            </label>
-
-            <input
-              id="gameLocation"
-              type="text"
-              placeholder="Stadium / Field"
-            >
-
-          </div>
-
-
-          <div>
-
-            <label>
-              Home / Away
-            </label>
-
-            <select
-              id="gameHomeAway"
-            >
-
-              <option value="Home">
-                Home
-              </option>
-
-              <option value="Away">
-                Away
-              </option>
-
-            </select>
-
-          </div>
-
-        </div>
-
-
-        <label>
-          Notes
-        </label>
-
-        <textarea
-          id="gameNotes"
-          placeholder="Optional notes..."
-        ></textarea>
-
-
-        <button
-          class="primary add-game-button"
-          onclick="addGame()"
-        >
-          ➕ Add Game
-        </button>
-
+      <div class="admin-description">
+        Click Edit to change a game.
       </div>
 
 
-      <div id="adminMessage"></div>
-
-
-      <!-- EXISTING GAMES -->
-
-      <div class="admin-subsection">
-
-        <h4>
-          📋 Manage Existing Games
-        </h4>
-
-        <div class="admin-subsection-description">
-          Edit scores, dates, locations, and game information.
-        </div>
-
-
-        <div id="adminGames">
-          Loading...
-        </div>
-
+      <div id="adminGames">
+        Loading...
       </div>
 
     </div>
 
   </div>
 
+</div>
 
-  <!-- ===================================================
-       PHOTO MANAGEMENT
-  ==================================================== -->
 
-  <div class="admin-section">
+<!-- =========================
+     PHOTO MANAGEMENT
+========================= -->
 
-    <div class="admin-section-header">
+<div class="admin-section">
 
-      <div class="admin-section-icon">
-        📸
-      </div>
+  <div class="admin-section-header">
 
-      <div class="admin-section-title">
-
-        <h3>
-          Photo Management
-        </h3>
-
-        <p>
-          Upload and organize football photos.
-        </p>
-
-      </div>
-
+    <div class="admin-section-icon">
+      📸
     </div>
 
+    <div class="admin-section-title">
 
-    <div class="admin-section-body">
+      <h3>
+        Photo Management
+      </h3>
 
-
-      <!-- UPLOAD -->
-
-      <div class="photo-upload">
-
-        <h4>
-          📤 Upload New Photo
-        </h4>
-
-        <p>
-          Add a photo to the public football gallery.
-        </p>
-
-
-        <label>
-          Choose Photo
-        </label>
-
-        <input
-          id="photoFile"
-          type="file"
-          accept="image/*"
-        >
-
-
-        <label>
-          Caption
-        </label>
-
-        <input
-          id="photoCaption"
-          type="text"
-          placeholder="Optional caption"
-        >
-
-
-        <button
-          class="primary upload-photo-button"
-          onclick="addPhoto()"
-        >
-          📸 Upload Photo
-        </button>
-
-      </div>
-
-
-      <!-- PHOTO GRID -->
-
-      <div class="admin-subsection">
-
-        <h4>
-          🖼️ Uploaded Photos
-        </h4>
-
-        <div class="admin-subsection-description">
-          Click a photo to view it larger.
-        </div>
-
-
-        <div id="adminPhotos">
-          Loading...
-        </div>
-
-      </div>
+      <p>
+        Upload and manage football photos.
+      </p>
 
     </div>
 
   </div>
 
 
-  <!-- ===================================================
-       SECURITY
-  ==================================================== -->
+  <div class="admin-section-body">
 
-  <div class="admin-section">
 
-    <div class="admin-section-header">
+    <div class="photo-upload">
 
-      <div class="admin-section-icon">
-        🔑
-      </div>
+      <h4>
+        📤 Upload New Photo
+      </h4>
 
-      <div class="admin-section-title">
+      <p>
+        Add a photo to the public gallery.
+      </p>
 
-        <h3>
-          Security
-        </h3>
 
-        <p>
-          Manage your administrator access.
-        </p>
+      <label>
+        Choose Photo
+      </label>
 
-      </div>
+      <input
+        id="photoFile"
+        type="file"
+        accept="image/*"
+      >
+
+
+      <label>
+        Caption
+      </label>
+
+      <input
+        id="photoCaption"
+        type="text"
+        placeholder="Optional caption"
+      >
+
+
+      <button
+        class="primary upload-photo-button"
+        onclick="addPhoto()"
+      >
+        📸 Upload Photo
+      </button>
 
     </div>
 
 
-    <div class="admin-section-body">
+    <div class="admin-subsection">
 
+      <h4>
+        🖼️ Uploaded Photos
+      </h4>
 
-      <div class="security-card">
-
-        <h4>
-          🔑 Change Admin Code
-        </h4>
-
-        <p>
-          Create a new 4-digit administrator code.
-        </p>
-
-
-        <input
-          id="newAdminCode"
-          type="password"
-          inputmode="numeric"
-          maxlength="4"
-          placeholder="New 4-digit code"
-        >
-
-
-        <button
-          class="primary"
-          onclick="changeAdminCode()"
-        >
-          Change Code
-        </button>
-
+      <div class="admin-description">
+        Small thumbnails keep this section organized.
       </div>
 
 
-      <div class="security-card">
-
-        <h4>
-          🚪 Sign Out
-        </h4>
-
-        <p>
-          Sign out of the administrator dashboard.
-        </p>
-
-
-        <button
-          class="secondary"
-          onclick="logout()"
-        >
-          Log Out
-        </button>
-
+      <div id="adminPhotos">
+        Loading...
       </div>
 
     </div>
 
   </div>
+
+</div>
+
+
+<!-- =========================
+     SECURITY
+========================= -->
+
+<div class="admin-section">
+
+  <div class="admin-section-header">
+
+    <div class="admin-section-icon">
+      🔑
+    </div>
+
+    <div class="admin-section-title">
+
+      <h3>
+        Security
+      </h3>
+
+      <p>
+        Manage administrator access.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="admin-section-body">
+
+
+    <div class="security-card">
+
+      <h4>
+        🔑 Change Admin Code
+      </h4>
+
+      <p>
+        Create a new 4-digit administrator code.
+      </p>
+
+
+      <input
+        id="newAdminCode"
+        type="password"
+        inputmode="numeric"
+        maxlength="4"
+        placeholder="New 4-digit code"
+      >
+
+
+      <button
+        class="primary"
+        onclick="changeAdminCode()"
+      >
+        Change Code
+      </button>
+
+    </div>
+
+
+    <div class="security-card">
+
+      <h4>
+        🚪 Sign Out
+      </h4>
+
+      <p>
+        Sign out of the administrator dashboard.
+      </p>
+
+
+      <button
+        class="secondary"
+        onclick="logout()"
+      >
+        Log Out
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
 
 
 </div>
@@ -1923,9 +1815,9 @@ footer {
 </main>
 
 
-<!-- =====================================================
+<!-- =========================
      FOOTER
-===================================================== -->
+========================= -->
 
 <footer>
 
@@ -1964,7 +1856,6 @@ const db =
     SUPABASE_URL,
     SUPABASE_KEY
   );
-
 
 let games = [];
 
@@ -2064,8 +1955,7 @@ async function loadGames() {
       .order(
         "date",
         {
-          ascending:
-            true
+          ascending: true
         }
       );
 
@@ -2186,35 +2076,16 @@ function updateHome() {
       )
       .innerHTML =
 
-      `📅 ${formatDate(
-        next.date
-      )}
-
+      `📅 ${formatDate(next.date)}
       <br>
-
-      ⏰ ${escapeHtml(
-        next.time ||
-        "Time TBD"
-      )}
-
+      ⏰ ${escapeHtml(next.time || "Time TBD")}
       <br>
-
-      📍 ${escapeHtml(
-        next.location ||
-        "Location TBD"
-      )}
-
+      📍 ${escapeHtml(next.location || "Location TBD")}
       <br>
-
-      ${escapeHtml(
-        next.home_away ||
-        ""
-      )}`;
+      ${escapeHtml(next.home_away || "")}`;
 
 
-    startCountdown(
-      next
-    );
+    startCountdown(next);
 
   }
 
@@ -2229,18 +2100,13 @@ function updateHome() {
   games.forEach(game => {
 
     if (
-
       game.our_score !== null &&
-
       game.opponent_score !== null
-
     ) {
 
       if (
-
         game.our_score >
         game.opponent_score
-
       ) {
 
         wins++;
@@ -2248,10 +2114,8 @@ function updateHome() {
       }
 
       else if (
-
         game.our_score <
         game.opponent_score
-
       ) {
 
         losses++;
@@ -2288,9 +2152,7 @@ function updateHome() {
     )
     .textContent =
 
-    `${wins} Wins • ${
-      losses
-    } Losses${
+    `${wins} Wins • ${losses} Losses${
       ties
         ? " • " + ties + " Ties"
         : ""
@@ -2300,11 +2162,8 @@ function updateHome() {
   const completed =
     games
       .filter(game =>
-
         game.our_score !== null &&
-
         game.opponent_score !== null
-
       )
       .sort(
         (a,b) =>
@@ -2336,42 +2195,29 @@ function updateHome() {
 
 
     if (
-
       last.our_score >
       last.opponent_score
-
     ) {
 
-      result =
-        "WIN";
-
-      resultClass =
-        "win";
+      result = "WIN";
+      resultClass = "win";
 
     }
 
     else if (
-
       last.our_score <
       last.opponent_score
-
     ) {
 
-      result =
-        "LOSS";
-
-      resultClass =
-        "loss";
+      result = "LOSS";
+      resultClass = "loss";
 
     }
 
     else {
 
-      result =
-        "TIE";
-
-      resultClass =
-        "tie";
+      result = "TIE";
+      resultClass = "tie";
 
     }
 
@@ -2387,38 +2233,22 @@ function updateHome() {
         <div>
 
           <h3>
-            vs.
-            ${escapeHtml(
-              last.opponent
-            )}
+            vs. ${escapeHtml(last.opponent)}
           </h3>
 
           <div class="game-date">
-
-            ${formatDate(
-              last.date
-            )}
-
+            ${formatDate(last.date)}
           </div>
 
-          <div
-            class="result ${resultClass}"
-          >
-
+          <div class="result ${resultClass}">
             ${result}
-
           </div>
 
         </div>
 
-        <div
-          class="last-score"
-        >
-
-          ${last.our_score}
-          –
+        <div class="last-score">
+          ${last.our_score} –
           ${last.opponent_score}
-
         </div>
 
       </div>`;
@@ -2432,15 +2262,12 @@ function updateHome() {
    COUNTDOWN
 ========================================================= */
 
-function startCountdown(
-  game
-) {
+function startCountdown(game) {
 
   const box =
-    document
-      .getElementById(
-        "countdown"
-      );
+    document.getElementById(
+      "countdown"
+    );
 
 
   if (countdownTimer) {
@@ -2518,7 +2345,6 @@ function startCountdown(
     box.textContent =
       `🏈 ${days}d ${hours}h ${minutes}m until kickoff`;
 
-
     box.classList.remove(
       "hidden"
     );
@@ -2545,10 +2371,9 @@ function startCountdown(
 function updateSchedule() {
 
   const container =
-    document
-      .getElementById(
-        "scheduleList"
-      );
+    document.getElementById(
+      "scheduleList"
+    );
 
 
   if (!games.length) {
@@ -2563,189 +2388,122 @@ function updateSchedule() {
 
   container.innerHTML =
 
-    games.map(
-      game => {
+    games.map(game => {
 
-        let result =
-          "Scheduled";
+      let result =
+        "Scheduled";
 
-        let resultClass =
-          "scheduled";
+      let resultClass =
+        "scheduled";
 
+
+      if (
+        game.our_score !== null &&
+        game.opponent_score !== null
+      ) {
 
         if (
-
-          game.our_score !== null &&
-
-          game.opponent_score !== null
-
+          game.our_score >
+          game.opponent_score
         ) {
 
-          if (
-
-            game.our_score >
-            game.opponent_score
-
-          ) {
-
-            result =
-              "WIN";
-
-            resultClass =
-              "win";
-
-          }
-
-          else if (
-
-            game.our_score <
-            game.opponent_score
-
-          ) {
-
-            result =
-              "LOSS";
-
-            resultClass =
-              "loss";
-
-          }
-
-          else {
-
-            result =
-              "TIE";
-
-            resultClass =
-              "tie";
-
-          }
+          result = "WIN";
+          resultClass = "win";
 
         }
 
+        else if (
+          game.our_score <
+          game.opponent_score
+        ) {
 
-        const score =
+          result = "LOSS";
+          resultClass = "loss";
 
-          game.our_score !== null &&
-          game.opponent_score !== null
+        }
 
-          ?
+        else {
 
-          `${game.our_score}
-           –
-           ${game.opponent_score}`
+          result = "TIE";
+          resultClass = "tie";
 
-          :
+        }
 
-          "vs.";
+      }
 
 
-        return `
+      const score =
+        game.our_score !== null &&
+        game.opponent_score !== null
 
-          <div class="game">
+        ? `${game.our_score} – ${game.opponent_score}`
 
-            <div
-              class="game-header"
-            >
+        : "vs.";
 
-              <div>
 
-                <h3>
+      return `
 
-                  ${escapeHtml(
-                    game.opponent
-                  )}
+        <div class="game">
 
-                </h3>
+          <div class="game-header">
 
-                <div
-                  class="game-date"
-                >
+            <div>
 
-                  ${formatDate(
-                    game.date
-                  )}
+              <h3>
+                ${escapeHtml(game.opponent)}
+              </h3>
 
-                </div>
-
+              <div class="game-date">
+                ${formatDate(game.date)}
               </div>
 
-
-              <span
-                class="badge
-                ${resultClass}"
-              >
-
-                ${result}
-
-              </span>
-
             </div>
 
-
-            <p>
-
-              ⏰
-              ${escapeHtml(
-                game.time ||
-                "Time TBD"
-              )}
-
-              <br>
-
-              📍
-              ${escapeHtml(
-                game.location ||
-                "Location TBD"
-              )}
-
-              <br>
-
-              ${escapeHtml(
-                game.home_away ||
-                ""
-              )}
-
-            </p>
-
-
-            <div
-              class="game-score"
-            >
-
-              ${score}
-
-            </div>
-
-
-            ${
-              game.notes
-
-              ?
-
-              `<p>
-                ${escapeHtml(
-                  game.notes
-                )}
-              </p>`
-
-              :
-
-              ""
-            }
+            <span class="badge ${resultClass}">
+              ${result}
+            </span>
 
           </div>
 
-        `;
+          <p>
 
-      }
-    ).join("");
+            ⏰ ${escapeHtml(game.time || "Time TBD")}
+
+            <br>
+
+            📍 ${escapeHtml(game.location || "Location TBD")}
+
+            <br>
+
+            ${escapeHtml(game.home_away || "")}
+
+          </p>
+
+          <div class="game-score">
+            ${score}
+          </div>
+
+          ${
+            game.notes
+            ?
+            `<p>
+              ${escapeHtml(game.notes)}
+            </p>`
+            :
+            ""
+          }
+
+        </div>
+
+      `;
+
+    }).join("");
 
 }
 
 
 /* =========================================================
-   ADMIN LOGIN
+   LOGIN
 ========================================================= */
 
 async function login() {
@@ -2760,9 +2518,7 @@ async function login() {
 
 
   if (
-    !/^\d{4}$/.test(
-      code
-    )
+    !/^\d{4}$/.test(code)
   ) {
 
     document
@@ -2787,8 +2543,7 @@ async function login() {
     await db.rpc(
       "check_admin_code",
       {
-        p_code:
-          code
+        p_code: code
       }
     );
 
@@ -2997,26 +2752,19 @@ async function addGame() {
       "add_game",
       {
 
-        p_code:
-          code,
+        p_code: code,
 
-        p_date:
-          date,
+        p_date: date,
 
-        p_time:
-          time,
+        p_time: time,
 
-        p_opponent:
-          opponent,
+        p_opponent: opponent,
 
-        p_location:
-          location,
+        p_location: location,
 
-        p_home_away:
-          homeAway,
+        p_home_away: homeAway,
 
-        p_notes:
-          notes
+        p_notes: notes
 
       }
     );
@@ -3081,16 +2829,15 @@ async function addGame() {
 
 
 /* =========================================================
-   ADMIN GAME LIST
+   COMPACT ADMIN GAME LIST
 ========================================================= */
 
 function updateAdminGames() {
 
   const container =
-    document
-      .getElementById(
-        "adminGames"
-      );
+    document.getElementById(
+      "adminGames"
+    );
 
 
   if (!games.length) {
@@ -3106,257 +2853,337 @@ function updateAdminGames() {
   container.innerHTML =
 
     games.map(
-      (game,index) => `
+      (game,index) => {
 
-        <div
-          class="admin-game"
-        >
+        let status =
+          game.status ||
+          "Scheduled";
 
-          <div
-            class="admin-game-header"
-          >
 
-            <h4>
+        let score =
+          "";
 
-              ${escapeHtml(
-                game.opponent
-              )}
 
-            </h4>
+        if (
+          game.our_score !== null &&
+          game.opponent_score !== null
+        ) {
 
+          score =
+            `${game.our_score}–${game.opponent_score}`;
+
+        }
+
+        else {
+
+          score =
+            "vs.";
+
+        }
+
+
+        return `
+
+          <div class="compact-game">
+
+
+            <!-- SMALL GAME ROW -->
+
+            <div class="compact-game-top">
+
+
+              <div class="compact-game-info">
+
+                <div class="compact-game-title">
+
+                  ${index + 1}.
+                  ${escapeHtml(game.opponent)}
+
+                </div>
+
+
+                <div class="compact-game-meta">
+
+                  ${formatShortDate(game.date)}
+                  •
+                  ${escapeHtml(game.time || "TBD")}
+                  •
+                  ${escapeHtml(game.home_away || "")}
+
+                </div>
+
+
+                <div class="compact-game-score">
+
+                  ${score}
+
+                  <span
+                    style="
+                      font-size:9px;
+                      color:#718096;
+                      font-weight:600;
+                    "
+                  >
+
+                    • ${escapeHtml(status)}
+
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="compact-game-actions">
+
+                <button
+                  class="edit-button"
+                  onclick="toggleGameEdit(${game.id})"
+                >
+                  ✏️ Edit
+                </button>
+
+
+                <button
+                  class="delete-small"
+                  onclick="deleteGame(${game.id})"
+                >
+                  🗑️
+                </button>
+
+              </div>
+
+
+            </div>
+
+
+            <!-- EDIT AREA -->
 
             <div
-              class="game-number"
+              id="edit-area-${game.id}"
+              class="compact-edit"
             >
 
-              GAME ${index + 1}
+
+              <div
+                class="compact-edit-grid"
+              >
+
+
+                <div>
+
+                  <label>
+                    Date
+                  </label>
+
+                  <input
+                    id="edit-date-${game.id}"
+                    type="date"
+                    value="${game.date || ""}"
+                  >
+
+                </div>
+
+
+                <div>
+
+                  <label>
+                    Time
+                  </label>
+
+                  <input
+                    id="edit-time-${game.id}"
+                    type="text"
+                    value="${escapeAttribute(game.time || "")}"
+                  >
+
+                </div>
+
+
+                <div>
+
+                  <label>
+                    Location
+                  </label>
+
+                  <input
+                    id="edit-location-${game.id}"
+                    type="text"
+                    value="${escapeAttribute(game.location || "")}"
+                  >
+
+                </div>
+
+
+                <div>
+
+                  <label>
+                    Home / Away
+                  </label>
+
+                  <select
+                    id="edit-ha-${game.id}"
+                  >
+
+                    <option
+                      value="Home"
+                      ${
+                        game.home_away === "Home"
+                        ? "selected"
+                        : ""
+                      }
+                    >
+                      Home
+                    </option>
+
+
+                    <option
+                      value="Away"
+                      ${
+                        game.home_away === "Away"
+                        ? "selected"
+                        : ""
+                      }
+                    >
+                      Away
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <div>
+
+                  <label>
+                    Our Score
+                  </label>
+
+                  <input
+                    id="our-${game.id}"
+                    type="number"
+                    value="${
+                      game.our_score ??
+                      ""
+                    }"
+                  >
+
+                </div>
+
+
+                <div>
+
+                  <label>
+                    Opponent Score
+                  </label>
+
+                  <input
+                    id="opp-${game.id}"
+                    type="number"
+                    value="${
+                      game.opponent_score ??
+                      ""
+                    }"
+                  >
+
+                </div>
+
+
+                <div>
+
+                  <label>
+                    Status
+                  </label>
+
+                  <select
+                    id="status-${game.id}"
+                  >
+
+                    <option
+                      value="Scheduled"
+                      ${
+                        game.status === "Scheduled"
+                        ? "selected"
+                        : ""
+                      }
+                    >
+                      Scheduled
+                    </option>
+
+
+                    <option
+                      value="Final"
+                      ${
+                        game.status === "Final"
+                        ? "selected"
+                        : ""
+                      }
+                    >
+                      Final
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <div class="compact-full">
+
+                  <label>
+                    Notes
+                  </label>
+
+                  <textarea
+                    id="notes-${game.id}"
+                  >${escapeHtml(game.notes || "")}</textarea>
+
+                </div>
+
+
+              </div>
+
+
+              <button
+                class="primary compact-save"
+                onclick="saveGame(${game.id})"
+              >
+                💾 Save Changes
+              </button>
+
 
             </div>
+
 
           </div>
 
+        `;
 
-          <div
-            class="admin-game-grid"
-          >
-
-            <div>
-
-              <label>
-                Date
-              </label>
-
-              <input
-                id="edit-date-${game.id}"
-                type="date"
-                value="${game.date || ""}"
-              >
-
-            </div>
-
-
-            <div>
-
-              <label>
-                Time
-              </label>
-
-              <input
-                id="edit-time-${game.id}"
-                type="text"
-                value="${escapeAttribute(
-                  game.time || ""
-                )}"
-              >
-
-            </div>
-
-
-            <div>
-
-              <label>
-                Location
-              </label>
-
-              <input
-                id="edit-location-${game.id}"
-                type="text"
-                value="${escapeAttribute(
-                  game.location || ""
-                )}"
-              >
-
-            </div>
-
-
-            <div>
-
-              <label>
-                Home / Away
-              </label>
-
-              <select
-                id="edit-ha-${game.id}"
-              >
-
-                <option
-                  value="Home"
-                  ${
-                    game.home_away ===
-                    "Home"
-                      ? "selected"
-                      : ""
-                  }
-                >
-                  Home
-                </option>
-
-
-                <option
-                  value="Away"
-                  ${
-                    game.home_away ===
-                    "Away"
-                      ? "selected"
-                      : ""
-                  }
-                >
-                  Away
-                </option>
-
-              </select>
-
-            </div>
-
-
-            <div>
-
-              <label>
-                Our Score
-              </label>
-
-              <input
-                id="our-${game.id}"
-                type="number"
-                value="${
-                  game.our_score ??
-                  ""
-                }"
-              >
-
-            </div>
-
-
-            <div>
-
-              <label>
-                Opponent Score
-              </label>
-
-              <input
-                id="opp-${game.id}"
-                type="number"
-                value="${
-                  game.opponent_score ??
-                  ""
-                }"
-              >
-
-            </div>
-
-
-            <div>
-
-              <label>
-                Status
-              </label>
-
-              <select
-                id="status-${game.id}"
-              >
-
-                <option
-                  value="Scheduled"
-                  ${
-                    game.status ===
-                    "Scheduled"
-                      ? "selected"
-                      : ""
-                  }
-                >
-                  Scheduled
-                </option>
-
-
-                <option
-                  value="Final"
-                  ${
-                    game.status ===
-                    "Final"
-                      ? "selected"
-                      : ""
-                  }
-                >
-                  Final
-                </option>
-
-              </select>
-
-            </div>
-
-
-            <div
-              class="admin-game-full"
-            >
-
-              <label>
-                Notes
-              </label>
-
-              <textarea
-                id="notes-${game.id}"
-              >${escapeHtml(
-                game.notes || ""
-              )}</textarea>
-
-            </div>
-
-          </div>
-
-
-          <div
-            class="admin-game-actions"
-          >
-
-            <button
-              class="primary"
-              onclick="saveGame(
-                ${game.id}
-              )"
-            >
-
-              💾 Save Changes
-
-            </button>
-
-
-            <button
-              class="danger"
-              onclick="deleteGame(
-                ${game.id}
-              )"
-            >
-
-              🗑️ Delete Game
-
-            </button>
-
-          </div>
-
-        </div>
-
-      `
+      }
     ).join("");
+
+}
+
+
+/* =========================================================
+   TOGGLE EDIT
+========================================================= */
+
+function toggleGameEdit(id) {
+
+  const area =
+    document.getElementById(
+      `edit-area-${id}`
+    );
+
+
+  if (!area) {
+    return;
+  }
+
+
+  area.classList.toggle(
+    "open"
+  );
 
 }
 
@@ -3365,9 +3192,7 @@ function updateAdminGames() {
    SAVE GAME
 ========================================================= */
 
-async function saveGame(
-  id
-) {
+async function saveGame(id) {
 
   const code =
     sessionStorage.getItem(
@@ -3454,17 +3279,13 @@ async function saveGame(
   const ourScore =
     ourValue === ""
       ? null
-      : Number(
-          ourValue
-        );
+      : Number(ourValue);
 
 
   const opponentScore =
     opponentValue === ""
       ? null
-      : Number(
-          opponentValue
-        );
+      : Number(opponentValue);
 
 
   const {
@@ -3474,38 +3295,27 @@ async function saveGame(
       "update_game",
       {
 
-        p_code:
-          code,
+        p_code: code,
 
-        p_id:
-          id,
+        p_id: id,
 
-        p_date:
-          date,
+        p_date: date,
 
-        p_time:
-          time,
+        p_time: time,
 
-        p_opponent:
-          game.opponent,
+        p_opponent: game.opponent,
 
-        p_location:
-          location,
+        p_location: location,
 
-        p_home_away:
-          homeAway,
+        p_home_away: homeAway,
 
-        p_our_score:
-          ourScore,
+        p_our_score: ourScore,
 
-        p_opponent_score:
-          opponentScore,
+        p_opponent_score: opponentScore,
 
-        p_status:
-          status,
+        p_status: status,
 
-        p_notes:
-          notes
+        p_notes: notes
 
       }
     );
@@ -3538,9 +3348,7 @@ async function saveGame(
    DELETE GAME
 ========================================================= */
 
-async function deleteGame(
-  id
-) {
+async function deleteGame(id) {
 
   if (
     !confirm(
@@ -3566,11 +3374,9 @@ async function deleteGame(
       "delete_game",
       {
 
-        p_code:
-          code,
+        p_code: code,
 
-        p_id:
-          id
+        p_id: id
 
       }
     );
@@ -3613,8 +3419,7 @@ async function loadPhotos() {
       .order(
         "created_at",
         {
-          ascending:
-            false
+          ascending: false
         }
       );
 
@@ -3639,13 +3444,10 @@ async function loadPhotos() {
     data || [];
 
 
-  /* PUBLIC PHOTO GALLERY */
-
   const publicContainer =
-    document
-      .getElementById(
-        "photoList"
-      );
+    document.getElementById(
+      "photoList"
+    );
 
 
   if (!photos.length) {
@@ -3659,9 +3461,7 @@ async function loadPhotos() {
 
     publicContainer.innerHTML =
 
-      `<div
-        class="photo-grid"
-      >
+      `<div class="photo-grid">
 
         ${
           photos.map(
@@ -3672,38 +3472,21 @@ async function loadPhotos() {
               >
 
                 <img
-                  src="${escapeAttribute(
-                    photo.image_url
-                  )}"
-                  alt="${escapeAttribute(
-                    photo.caption ||
-                    "Football photo"
-                  )}"
+                  src="${escapeAttribute(photo.image_url)}"
+                  alt="Football photo"
                   onclick="window.open(
-                    '${escapeAttribute(
-                      photo.image_url
-                    )}',
+                    '${escapeAttribute(photo.image_url)}',
                     '_blank'
                   )"
                 >
 
                 ${
                   photo.caption
-
                   ?
-
-                  `<div
-                    class="photo-caption"
-                  >
-
-                    ${escapeHtml(
-                      photo.caption
-                    )}
-
+                  `<div class="photo-caption">
+                    ${escapeHtml(photo.caption)}
                   </div>`
-
                   :
-
                   ""
                 }
 
@@ -3718,13 +3501,10 @@ async function loadPhotos() {
   }
 
 
-  /* ADMIN PHOTO GRID */
-
   const adminContainer =
-    document
-      .getElementById(
-        "adminPhotos"
-      );
+    document.getElementById(
+      "adminPhotos"
+    );
 
 
   if (
@@ -3746,9 +3526,7 @@ async function loadPhotos() {
 
     adminContainer.innerHTML =
 
-      `<div
-        class="admin-photo-grid"
-      >
+      `<div class="admin-photo-grid">
 
         ${
           photos.map(
@@ -3759,14 +3537,10 @@ async function loadPhotos() {
               >
 
                 <img
-                  src="${escapeAttribute(
-                    photo.image_url
-                  )}"
+                  src="${escapeAttribute(photo.image_url)}"
                   alt="Football photo"
                   onclick="window.open(
-                    '${escapeAttribute(
-                      photo.image_url
-                    )}',
+                    '${escapeAttribute(photo.image_url)}',
                     '_blank'
                   )"
                 >
@@ -3778,10 +3552,10 @@ async function loadPhotos() {
 
                   ${
                     photo.caption
-                      ? escapeHtml(
-                          photo.caption
-                        )
-                      : "No caption"
+                    ?
+                    escapeHtml(photo.caption)
+                    :
+                    "No caption"
                   }
 
                 </div>
@@ -3789,13 +3563,9 @@ async function loadPhotos() {
 
                 <button
                   class="admin-photo-delete"
-                  onclick="deletePhoto(
-                    ${photo.id}
-                  )"
+                  onclick="deletePhoto(${photo.id})"
                 >
-
                   🗑️ Delete
-
                 </button>
 
               </div>
@@ -3888,8 +3658,7 @@ async function addPhoto() {
         "add_photo",
         {
 
-          p_code:
-            code,
+          p_code: code,
 
           p_image_url:
             compressedImage,
@@ -4006,10 +3775,9 @@ function compressImage(
 
 
               const canvas =
-                document
-                  .createElement(
-                    "canvas"
-                  );
+                document.createElement(
+                  "canvas"
+                );
 
 
               canvas.width =
@@ -4072,9 +3840,7 @@ function compressImage(
    DELETE PHOTO
 ========================================================= */
 
-async function deletePhoto(
-  id
-) {
+async function deletePhoto(id) {
 
   if (
     !confirm(
@@ -4100,11 +3866,9 @@ async function deletePhoto(
       "delete_photo",
       {
 
-        p_code:
-          code,
+        p_code: code,
 
-        p_id:
-          id
+        p_id: id
 
       }
     );
@@ -4242,19 +4006,37 @@ function formatDate(
   return date.toLocaleDateString(
     "en-US",
     {
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+      year: "numeric"
+    }
+  );
 
-      weekday:
-        "long",
+}
 
-      month:
-        "long",
 
-      day:
-        "numeric",
+function formatShortDate(
+  dateString
+) {
 
-      year:
-        "numeric"
+  if (!dateString) {
+    return "";
+  }
 
+
+  const date =
+    new Date(
+      dateString +
+      "T12:00:00"
+    );
+
+
+  return date.toLocaleDateString(
+    "en-US",
+    {
+      month: "short",
+      day: "numeric"
     }
   );
 
@@ -4321,10 +4103,9 @@ function showAdminMessage(
 ) {
 
   const box =
-    document
-      .getElementById(
-        "adminMessage"
-      );
+    document.getElementById(
+      "adminMessage"
+    );
 
 
   if (!box) {
@@ -4334,14 +4115,8 @@ function showAdminMessage(
 
   box.innerHTML =
 
-    `<div
-      class="message"
-    >
-
-      ${escapeHtml(
-        message
-      )}
-
+    `<div class="message">
+      ${escapeHtml(message)}
     </div>`;
 
 
@@ -4358,7 +4133,7 @@ function showAdminMessage(
 
 
 /* =========================================================
-   START
+   START APP
 ========================================================= */
 
 loadGames();
