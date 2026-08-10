@@ -366,19 +366,23 @@ footer {
 
       <h3>📸 Add Photo</h3>
 
-      <p class="small-title">
-        For now, paste the direct image URL.
-      </p>
+     <label>Choose Photo</label>
+<input
+  id="photoFile"
+  type="file"
+  accept="image/*"
+>
 
-      <label>Photo URL</label>
-      <input id="photoUrl" type="url" placeholder="https://...">
+<label>Caption</label>
+<input
+  id="photoCaption"
+  type="text"
+  placeholder="Optional caption"
+>
 
-      <label>Caption</label>
-      <input id="photoCaption" type="text" placeholder="Optional caption">
-
-      <button class="primary" onclick="addPhoto()">
-        Add Photo
-      </button>
+<button class="primary" onclick="addPhoto()">
+  📸 Upload Photo
+</button>
 
       <div id="adminPhotos"></div>
 
@@ -1113,56 +1117,82 @@ async function addPhoto() {
   const code =
     sessionStorage.getItem("adminCode");
 
-  const imageUrl =
-    document.getElementById("photoUrl").value.trim();
+  const file =
+    document.getElementById("photoFile").files[0];
 
   const caption =
     document.getElementById("photoCaption").value.trim();
 
+  if (!file) {
+    showAdminMessage("Please choose a photo first.");
+    return;
+  }
 
-  if (!imageUrl) {
+  if (!file.type.startsWith("image/")) {
+    showAdminMessage("Please choose an image file.");
+    return;
+  }
+
+  showAdminMessage("Uploading photo...");
+
+  const fileName =
+    `${Date.now()}-${Math.random().toString(36).substring(2)}.${file.name.split(".").pop()}`;
+
+  const filePath =
+    `football/${fileName}`;
+
+  const { error: uploadError } =
+    await db.storage
+      .from("photos")
+      .upload(filePath, file);
+
+  if (uploadError) {
+
+    console.error(uploadError);
 
     showAdminMessage(
-      "Please enter a photo URL."
+      "Upload failed: " + uploadError.message
     );
 
     return;
   }
 
+  const { data: publicData } =
+    db.storage
+      .from("photos")
+      .getPublicUrl(filePath);
 
-  const { error } = await db.rpc(
-    "add_photo",
-    {
-      p_code: code,
-      p_image_url: imageUrl,
-      p_caption: caption
-    }
-  );
+  const imageUrl =
+    publicData.publicUrl;
 
+  const { error } =
+    await db.rpc(
+      "add_photo",
+      {
+        p_code: code,
+        p_image_url: imageUrl,
+        p_caption: caption
+      }
+    );
 
   if (error) {
 
+    console.error(error);
+
     showAdminMessage(
-      "Could not add photo: " + error.message
+      "Could not save photo: " + error.message
     );
 
     return;
   }
 
-
-  document.getElementById("photoUrl").value = "";
+  document.getElementById("photoFile").value = "";
   document.getElementById("photoCaption").value = "";
 
-  showAdminMessage("Photo added!");
+  showAdminMessage("📸 Photo uploaded!");
 
   loadPhotos();
 }
-
-
-/* =====================================================
-   DELETE PHOTO
-   ===================================================== */
-
 async function deletePhoto(id) {
 
   if (!confirm("Delete this photo?")) {
