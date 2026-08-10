@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#002b5c">
 
 <title>NDGP Football</title>
 
@@ -16,20 +17,21 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #f3f5f8;
+  background: #f1f4f8;
   color: #102a43;
 }
 
 header {
-  background: #002b5c;
+  background: linear-gradient(135deg, #001f45, #003b78);
   color: white;
-  padding: 25px 18px;
+  padding: 28px 18px;
   text-align: center;
 }
 
 header h1 {
   margin: 0;
-  font-size: 28px;
+  font-size: 30px;
+  font-weight: 800;
 }
 
 header p {
@@ -42,18 +44,18 @@ nav {
   background: white;
   position: sticky;
   top: 0;
-  z-index: 20;
-  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  z-index: 50;
+  box-shadow: 0 2px 10px rgba(0,0,0,.12);
 }
 
 nav button {
   flex: 1;
   border: none;
   background: white;
+  color: #002b5c;
   padding: 15px 5px;
   font-size: 14px;
-  font-weight: bold;
-  color: #002b5c;
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -63,7 +65,8 @@ nav button.active {
 }
 
 main {
-  max-width: 750px;
+  width: 100%;
+  max-width: 800px;
   margin: auto;
   padding: 18px;
 }
@@ -78,69 +81,96 @@ main {
 
 .card {
   background: white;
-  border-radius: 16px;
+  border-radius: 18px;
   padding: 20px;
   margin-bottom: 18px;
-  box-shadow: 0 3px 14px rgba(0,0,0,.08);
+  box-shadow: 0 4px 18px rgba(0,0,0,.08);
 }
 
 .hero {
   text-align: center;
 }
 
-.small-title {
-  font-size: 13px;
-  font-weight: bold;
+.section-title {
   color: #718096;
-  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .opponent {
-  font-size: 32px;
-  font-weight: bold;
+  font-size: 34px;
+  font-weight: 800;
+  color: #002b5c;
   margin: 12px 0;
 }
 
 .record {
-  font-size: 42px;
-  font-weight: bold;
+  font-size: 48px;
+  font-weight: 900;
   color: #002b5c;
+  margin: 5px 0;
 }
 
-.game-card {
-  border-left: 5px solid #002b5c;
-  padding: 14px;
-  margin: 12px 0;
+.next-details {
+  line-height: 1.8;
+}
+
+.countdown {
+  margin-top: 15px;
+  padding: 12px;
+  background: #edf4fb;
+  border-radius: 10px;
+  color: #002b5c;
+  font-weight: 800;
+}
+
+.game {
   background: #f8fafc;
-  border-radius: 8px;
+  border-left: 5px solid #002b5c;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 12px 0;
 }
 
-.game-card h3 {
+.game h3 {
   margin: 0 0 8px;
+  font-size: 21px;
+}
+
+.score {
+  font-size: 25px;
+  font-weight: 900;
 }
 
 .win {
   color: #16803c;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 .loss {
   color: #c53030;
-  font-weight: bold;
+  font-weight: 800;
+}
+
+.tie {
+  color: #805ad5;
+  font-weight: 800;
 }
 
 .scheduled {
   color: #002b5c;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 button.primary,
-button.danger,
-button.secondary {
+button.secondary,
+button.danger {
   border: none;
-  border-radius: 8px;
+  border-radius: 9px;
   padding: 11px 15px;
-  font-weight: bold;
+  font-weight: 800;
   cursor: pointer;
   margin: 4px;
 }
@@ -164,27 +194,33 @@ input,
 select,
 textarea {
   width: 100%;
-  padding: 12px;
   border: 1px solid #cbd5e0;
-  border-radius: 8px;
+  border-radius: 9px;
+  padding: 12px;
   margin: 6px 0 14px;
   font-size: 16px;
+  background: white;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
 }
 
 label {
-  font-weight: bold;
   font-size: 14px;
-}
-
-.admin-box {
-  background: #f8fafc;
-  padding: 16px;
-  border-radius: 12px;
-  margin-top: 15px;
+  font-weight: 800;
 }
 
 .hidden {
   display: none !important;
+}
+
+.message {
+  background: #edf2f7;
+  padding: 12px;
+  border-radius: 9px;
+  margin: 10px 0;
 }
 
 .photo-grid {
@@ -197,14 +233,26 @@ label {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
-.message {
-  padding: 12px;
-  border-radius: 8px;
-  margin: 10px 0;
-  background: #edf2f7;
+.photo-caption {
+  margin: 5px 2px 10px;
+  font-size: 14px;
+}
+
+.admin-game {
+  border: 1px solid #d9e2ec;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+  margin: 25px 0;
 }
 
 footer {
@@ -242,22 +290,37 @@ footer {
 <section id="home" class="page active">
 
   <div class="card hero">
-    <div class="small-title">NEXT GAME</div>
-    <div id="nextOpponent" class="opponent">Loading...</div>
+    <div class="section-title">Next Game</div>
 
-    <div id="nextDetails">
-      Loading game information...
+    <div id="nextOpponent" class="opponent">
+      Loading...
     </div>
+
+    <div id="nextDetails" class="next-details">
+      Loading...
+    </div>
+
+    <div id="countdown" class="countdown hidden"></div>
   </div>
 
   <div class="card hero">
-    <div class="small-title">2026 RECORD</div>
-    <div id="record" class="record">0–0</div>
+    <div class="section-title">2026 Record</div>
+
+    <div id="record" class="record">
+      0–0
+    </div>
+
+    <div id="recordDetails">
+      Loading...
+    </div>
   </div>
 
   <div class="card">
-    <div class="small-title">LAST GAME</div>
-    <div id="lastGame">Loading...</div>
+    <div class="section-title">Last Game</div>
+
+    <div id="lastGame">
+      Loading...
+    </div>
   </div>
 
 </section>
@@ -267,8 +330,13 @@ footer {
 <section id="schedule" class="page">
 
   <div class="card">
+
     <h2>📅 2026 Schedule</h2>
-    <div id="scheduleList">Loading schedule...</div>
+
+    <div id="scheduleList">
+      Loading schedule...
+    </div>
+
   </div>
 
 </section>
@@ -278,8 +346,13 @@ footer {
 <section id="photos" class="page">
 
   <div class="card">
+
     <h2>📸 Photos</h2>
-    <div id="photoList">Loading photos...</div>
+
+    <div id="photoList">
+      Loading photos...
+    </div>
+
   </div>
 
 </section>
@@ -290,12 +363,12 @@ footer {
 
   <div class="card">
 
-    <h2>🔐 Admin</h2>
-
     <div id="loginArea">
 
+      <h2>🔐 Admin</h2>
+
       <p>
-        Enter your private 4-digit admin code.
+        Enter your private 4-digit code.
       </p>
 
       <input
@@ -317,7 +390,7 @@ footer {
 
     <div id="adminArea" class="hidden">
 
-      <h2>Admin Dashboard</h2>
+      <h2>🔐 Admin Dashboard</h2>
 
       <button class="secondary" onclick="logout()">
         Log Out
@@ -364,27 +437,45 @@ footer {
 
       <hr>
 
-      <h3>📸 Add Photo</h3>
+      <h3>📸 Upload Photo</h3>
 
-     <label>Choose Photo</label>
-<input
-  id="photoFile"
-  type="file"
-  accept="image/*"
->
+      <label>Choose Photo</label>
 
-<label>Caption</label>
-<input
-  id="photoCaption"
-  type="text"
-  placeholder="Optional caption"
->
+      <input
+        id="photoFile"
+        type="file"
+        accept="image/*"
+      >
 
-<button class="primary" onclick="addPhoto()">
-  📸 Upload Photo
-</button>
+      <label>Caption</label>
+
+      <input
+        id="photoCaption"
+        type="text"
+        placeholder="Optional caption"
+      >
+
+      <button class="primary" onclick="addPhoto()">
+        📸 Upload Photo
+      </button>
 
       <div id="adminPhotos"></div>
+
+      <hr>
+
+      <h3>🔑 Change Admin Code</h3>
+
+      <input
+        id="newAdminCode"
+        type="password"
+        inputmode="numeric"
+        maxlength="4"
+        placeholder="New 4-digit code"
+      >
+
+      <button class="primary" onclick="changeAdminCode()">
+        Change Code
+      </button>
 
     </div>
 
@@ -403,7 +494,7 @@ footer {
 <script>
 
 /* =====================================================
-   SUPABASE CONNECTION
+   SUPABASE
    ===================================================== */
 
 const SUPABASE_URL =
@@ -412,14 +503,18 @@ const SUPABASE_URL =
 const SUPABASE_KEY =
   "sb_publishable_NC2FpWBds4vNOuGMr5_ikw_MOQXXHLI";
 
-const db = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
+const db =
+  window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+
+
+let games = [];
 
 
 /* =====================================================
-   PAGE NAVIGATION
+   NAVIGATION
    ===================================================== */
 
 function showPage(pageId, button) {
@@ -434,7 +529,9 @@ function showPage(pageId, button) {
     btn.classList.remove("active");
   });
 
-  button.classList.add("active");
+  if (button) {
+    button.classList.add("active");
+  }
 
   if (pageId === "schedule") {
     loadGames();
@@ -444,8 +541,30 @@ function showPage(pageId, button) {
     loadPhotos();
   }
 
-  if (pageId === "admin" && sessionStorage.getItem("adminCode")) {
+  if (
+    pageId === "admin" &&
+    sessionStorage.getItem("adminCode")
+  ) {
     showAdmin();
+  }
+}
+
+
+/* =====================================================
+   PRIVATE ADMIN LINK
+   ===================================================== */
+
+function checkPrivateAdmin() {
+
+  if (
+    window.location.hash.toLowerCase() === "#admin"
+  ) {
+
+    const adminButton =
+      document.getElementById("adminTab");
+
+    showPage("admin", adminButton);
+
   }
 }
 
@@ -454,19 +573,21 @@ function showPage(pageId, button) {
    LOAD GAMES
    ===================================================== */
 
-let games = [];
-
 async function loadGames() {
 
-  const { data, error } = await db
-    .from("games")
-    .select("*")
-    .order("date", { ascending: true });
+  const { data, error } =
+    await db
+      .from("games")
+      .select("*")
+      .order("date", { ascending: true });
 
   if (error) {
+
     console.error(error);
+
     document.getElementById("scheduleList").innerHTML =
-      "<p>Could not load games.</p>";
+      "<div class='message'>Could not load games.</div>";
+
     return;
   }
 
@@ -484,50 +605,66 @@ async function loadGames() {
 /* =====================================================
    HOME
    ===================================================== */
-function checkPrivateAdmin() {
-  if (window.location.hash === "#admin") {
-    const adminButton = document.getElementById("adminTab");
-
-    if (adminButton) {
-      showPage("admin", adminButton);
-    }
-  }
-}
 
 function updateHome() {
 
-  const today = new Date().toISOString().split("T")[0];
+  const today =
+    new Date().toISOString().split("T")[0];
 
-  const upcoming = games.filter(g =>
-    g.date >= today &&
-    (!g.status || g.status === "Scheduled")
-  );
+  const upcoming =
+    games
+      .filter(game =>
+        game.date >= today &&
+        (
+          !game.status ||
+          game.status === "Scheduled"
+        )
+      )
+      .sort(
+        (a,b) =>
+          new Date(a.date) -
+          new Date(b.date)
+      );
 
   const next = upcoming[0];
 
+
   if (!next) {
 
-    document.getElementById("nextOpponent").textContent =
+    document.getElementById("nextOpponent")
+      .textContent =
       "No Upcoming Games";
 
-    document.getElementById("nextDetails").textContent =
-      "Schedule a game through Admin.";
+    document.getElementById("nextDetails")
+      .textContent =
+      "Add your schedule through Admin.";
+
+    document.getElementById("countdown")
+      .classList.add("hidden");
 
   } else {
 
-    document.getElementById("nextOpponent").textContent =
+    document.getElementById("nextOpponent")
+      .textContent =
       next.opponent;
 
-    document.getElementById("nextDetails").innerHTML =
+    document.getElementById("nextDetails")
+      .innerHTML =
+
       `📅 ${formatDate(next.date)}<br>
-       ⏰ ${next.time || "Time TBD"}<br>
-       📍 ${next.location || "Location TBD"}<br>
-       🏠 ${next.home_away || ""}`;
+       ⏰ ${escapeHtml(next.time || "Time TBD")}<br>
+       📍 ${escapeHtml(next.location || "Location TBD")}<br>
+       ${escapeHtml(next.home_away || "")}`;
+
+    startCountdown(next);
+
   }
 
 
   let wins = 0;
   let losses = 0;
+  let ties = 0;
+
 
   games.forEach(game => {
 
@@ -536,62 +673,181 @@ function updateHome() {
       game.opponent_score !== null
     ) {
 
-      if (game.our_score > game.opponent_score) {
+      if (
+        game.our_score >
+        game.opponent_score
+      ) {
         wins++;
       }
 
-      if (game.our_score < game.opponent_score) {
+      else if (
+        game.our_score <
+        game.opponent_score
+      ) {
         losses++;
+      }
+
+      else {
+        ties++;
       }
 
     }
 
   });
 
-  document.getElementById("record").textContent =
-    `${wins}–${losses}`;
+
+  document.getElementById("record")
+    .textContent =
+    `${wins}–${losses}${ties ? `–${ties}` : ""}`;
 
 
-  const completed = games
-    .filter(g =>
-      g.our_score !== null &&
-      g.opponent_score !== null
-    )
-    .sort((a,b) =>
-      new Date(b.date) - new Date(a.date)
-    );
+  document.getElementById("recordDetails")
+    .textContent =
+    `${wins} Wins • ${losses} Losses${ties ? ` • ${ties} Ties` : ""}`;
+
+
+  const completed =
+    games
+      .filter(game =>
+        game.our_score !== null &&
+        game.opponent_score !== null
+      )
+      .sort(
+        (a,b) =>
+          new Date(b.date) -
+          new Date(a.date)
+      );
+
 
   const last = completed[0];
 
+
   if (!last) {
 
-    document.getElementById("lastGame").innerHTML =
+    document.getElementById("lastGame")
+      .innerHTML =
       "<h3>No games played yet</h3>";
 
   } else {
 
-    const result =
-      last.our_score > last.opponent_score
-        ? "WIN"
-        : last.our_score < last.opponent_score
-        ? "LOSS"
-        : "TIE";
+    let result;
+    let resultClass;
 
-    const className =
-      result === "WIN"
-        ? "win"
-        : result === "LOSS"
-        ? "loss"
-        : "";
+    if (
+      last.our_score >
+      last.opponent_score
+    ) {
 
-    document.getElementById("lastGame").innerHTML =
-      `<h3>vs. ${last.opponent}</h3>
-       <strong>${last.our_score} – ${last.opponent_score}</strong>
-       <br>
-       <span class="${className}">${result}</span>
-       <br>
-       ${formatDate(last.date)}`;
+      result = "WIN";
+      resultClass = "win";
+
+    } else if (
+      last.our_score <
+      last.opponent_score
+    ) {
+
+      result = "LOSS";
+      resultClass = "loss";
+
+    } else {
+
+      result = "TIE";
+      resultClass = "tie";
+    }
+
+
+    document.getElementById("lastGame")
+      .innerHTML =
+
+      `<h3>vs. ${escapeHtml(last.opponent)}</h3>
+
+       <div class="score">
+         ${last.our_score} – ${last.opponent_score}
+       </div>
+
+       <p class="${resultClass}">
+         ${result}
+       </p>
+
+       <p>
+         ${formatDate(last.date)}
+       </p>`;
   }
+}
+
+
+/* =====================================================
+   COUNTDOWN
+   ===================================================== */
+
+let countdownTimer = null;
+
+
+function startCountdown(game) {
+
+  const box =
+    document.getElementById("countdown");
+
+  if (countdownTimer) {
+    clearInterval(countdownTimer);
+  }
+
+
+  const gameDate =
+    new Date(
+      game.date + "T19:00:00"
+    );
+
+
+  function update() {
+
+    const now = new Date();
+
+    const difference =
+      gameDate - now;
+
+
+    if (difference <= 0) {
+
+      box.textContent =
+        "🏈 Game Day!";
+
+      box.classList.remove("hidden");
+
+      return;
+    }
+
+
+    const days =
+      Math.floor(
+        difference /
+        (1000 * 60 * 60 * 24)
+      );
+
+    const hours =
+      Math.floor(
+        (difference /
+        (1000 * 60 * 60)) % 24
+      );
+
+    const minutes =
+      Math.floor(
+        (difference /
+        (1000 * 60)) % 60
+      );
+
+
+    box.textContent =
+      `🏈 ${days}d ${hours}h ${minutes}m until kickoff`;
+
+    box.classList.remove("hidden");
+  }
+
+
+  update();
+
+  countdownTimer =
+    setInterval(update, 60000);
 }
 
 
@@ -604,73 +860,98 @@ function updateSchedule() {
   const container =
     document.getElementById("scheduleList");
 
+
   if (!games.length) {
 
     container.innerHTML =
-      "<p>No games have been added yet.</p>";
+      "<div class='message'>No games have been added yet.</div>";
 
     return;
   }
 
-  container.innerHTML = games.map(game => {
 
-    let result = "Scheduled";
-    let resultClass = "scheduled";
+  container.innerHTML =
+    games.map(game => {
 
-    if (
-      game.our_score !== null &&
-      game.opponent_score !== null
-    ) {
+      let result = "Scheduled";
+      let resultClass = "scheduled";
 
-      if (game.our_score > game.opponent_score) {
-        result = "WIN";
-        resultClass = "win";
-      }
-      else if (game.our_score < game.opponent_score) {
-        result = "LOSS";
-        resultClass = "loss";
-      }
-      else {
-        result = "TIE";
-      }
 
-    }
+      if (
+        game.our_score !== null &&
+        game.opponent_score !== null
+      ) {
 
-    const score =
-      game.our_score !== null &&
-      game.opponent_score !== null
-        ? `${game.our_score} – ${game.opponent_score}`
-        : "vs.";
+        if (
+          game.our_score >
+          game.opponent_score
+        ) {
 
-    return `
-      <div class="game-card">
+          result = "WIN";
+          resultClass = "win";
 
-        <h3>${escapeHtml(game.opponent)}</h3>
+        } else if (
+          game.our_score <
+          game.opponent_score
+        ) {
 
-        <strong>${formatDate(game.date)}</strong>
+          result = "LOSS";
+          resultClass = "loss";
 
-        <p>
-          ${game.time || "Time TBD"}<br>
-          ${game.home_away || ""}<br>
-          📍 ${escapeHtml(game.location || "Location TBD")}
-        </p>
+        } else {
 
-        <strong>${score}</strong>
-
-        <p class="${resultClass}">
-          ${result}
-        </p>
-
-        ${
-          game.notes
-            ? `<p>${escapeHtml(game.notes)}</p>`
-            : ""
+          result = "TIE";
+          resultClass = "tie";
         }
 
-      </div>
-    `;
+      }
 
-  }).join("");
+
+      const score =
+        game.our_score !== null &&
+        game.opponent_score !== null
+
+        ? `${game.our_score} – ${game.opponent_score}`
+
+        : "vs.";
+
+
+      return `
+
+        <div class="game">
+
+          <h3>
+            ${escapeHtml(game.opponent)}
+          </h3>
+
+          <strong>
+            ${formatDate(game.date)}
+          </strong>
+
+          <p>
+            ⏰ ${escapeHtml(game.time || "Time TBD")}<br>
+            📍 ${escapeHtml(game.location || "Location TBD")}<br>
+            ${escapeHtml(game.home_away || "")}
+          </p>
+
+          <div class="score">
+            ${score}
+          </div>
+
+          <p class="${resultClass}">
+            ${result}
+          </p>
+
+          ${
+            game.notes
+              ? `<p>${escapeHtml(game.notes)}</p>`
+              : ""
+          }
+
+        </div>
+      `;
+
+    }).join("");
 }
 
 
@@ -681,40 +962,50 @@ function updateSchedule() {
 async function login() {
 
   const code =
-    document.getElementById("adminCode").value.trim();
+    document.getElementById("adminCode")
+      .value
+      .trim();
+
 
   if (!/^\d{4}$/.test(code)) {
 
-    document.getElementById("loginMessage").innerHTML =
+    document.getElementById("loginMessage")
+      .innerHTML =
       `<div class="message">
-        Please enter exactly 4 digits.
+        Enter exactly 4 digits.
       </div>`;
 
     return;
   }
 
-  const { data, error } = await db.rpc(
-    "check_admin_code",
-    {
-      p_code: code
-    }
-  );
+
+  const { data, error } =
+    await db.rpc(
+      "check_admin_code",
+      {
+        p_code: code
+      }
+    );
+
 
   if (error) {
 
     console.error(error);
 
-    document.getElementById("loginMessage").innerHTML =
+    document.getElementById("loginMessage")
+      .innerHTML =
       `<div class="message">
-        There was a database error. Please try again.
+        Database error. Please try again.
       </div>`;
 
     return;
   }
 
+
   if (!data) {
 
-    document.getElementById("loginMessage").innerHTML =
+    document.getElementById("loginMessage")
+      .innerHTML =
       `<div class="message">
         Incorrect admin code.
       </div>`;
@@ -722,16 +1013,18 @@ async function login() {
     return;
   }
 
-  sessionStorage.setItem("adminCode", code);
 
-  document.getElementById("adminCode").value = "";
+  sessionStorage.setItem(
+    "adminCode",
+    code
+  );
 
-  document.getElementById("loginMessage").innerHTML = "";
+
+  document.getElementById("adminCode")
+    .value = "";
+
 
   showAdmin();
-
-  loadGames();
-  checkPrivateAdmin();
 }
 
 
@@ -744,20 +1037,28 @@ function showAdmin() {
     .classList.remove("hidden");
 
   updateAdminGames();
-
   loadPhotos();
 }
 
 
 function logout() {
 
-  sessionStorage.removeItem("adminCode");
+  sessionStorage.removeItem(
+    "adminCode"
+  );
 
   document.getElementById("loginArea")
     .classList.remove("hidden");
 
   document.getElementById("adminArea")
     .classList.add("hidden");
+
+  window.location.hash = "";
+
+  showPage(
+    "home",
+    document.querySelector("nav button")
+  );
 }
 
 
@@ -770,6 +1071,7 @@ async function addGame() {
   const code =
     sessionStorage.getItem("adminCode");
 
+
   const date =
     document.getElementById("gameDate").value;
 
@@ -777,60 +1079,74 @@ async function addGame() {
     document.getElementById("gameTime").value;
 
   const opponent =
-    document.getElementById("gameOpponent").value;
+    document.getElementById("gameOpponent").value.trim();
 
   const location =
-    document.getElementById("gameLocation").value;
+    document.getElementById("gameLocation").value.trim();
 
   const homeAway =
     document.getElementById("gameHomeAway").value;
 
   const notes =
-    document.getElementById("gameNotes").value;
+    document.getElementById("gameNotes").value.trim();
 
 
   if (!date || !opponent) {
 
     showAdminMessage(
-      "Please enter a date and opponent."
+      "Date and opponent are required."
     );
 
     return;
   }
 
 
-  const { error } = await db.rpc(
-    "add_game",
-    {
-      p_code: code,
-      p_date: date,
-      p_time: time,
-      p_opponent: opponent,
-      p_location: location,
-      p_home_away: homeAway,
-      p_notes: notes
-    }
-  );
+  const { error } =
+    await db.rpc(
+      "add_game",
+      {
+        p_code: code,
+        p_date: date,
+        p_time: time,
+        p_opponent: opponent,
+        p_location: location,
+        p_home_away: homeAway,
+        p_notes: notes
+      }
+    );
 
 
   if (error) {
 
+    console.error(error);
+
     showAdminMessage(
-      "Could not add game: " + error.message
+      "Could not add game."
     );
 
     return;
   }
 
 
-  showAdminMessage("Game added successfully!");
+  document.getElementById("gameDate")
+    .value = "";
+
+  document.getElementById("gameTime")
+    .value = "";
+
+  document.getElementById("gameOpponent")
+    .value = "";
+
+  document.getElementById("gameLocation")
+    .value = "";
+
+  document.getElementById("gameNotes")
+    .value = "";
 
 
-  document.getElementById("gameDate").value = "";
-  document.getElementById("gameTime").value = "";
-  document.getElementById("gameOpponent").value = "";
-  document.getElementById("gameLocation").value = "";
-  document.getElementById("gameNotes").value = "";
+  showAdminMessage(
+    "✅ Game added!"
+  );
 
 
   loadGames();
@@ -846,7 +1162,6 @@ function updateAdminGames() {
   const container =
     document.getElementById("adminGames");
 
-  if (!container) return;
 
   if (!games.length) {
 
@@ -857,20 +1172,57 @@ function updateAdminGames() {
   }
 
 
-  container.innerHTML = games.map(game => {
+  container.innerHTML =
+    games.map(game => `
 
-    return `
-      <div class="game-card">
+      <div class="admin-game">
 
-        <h3>${escapeHtml(game.opponent)}</h3>
+        <h3>
+          ${escapeHtml(game.opponent)}
+        </h3>
 
-        <p>
-          ${formatDate(game.date)}<br>
-          ${game.time || "Time TBD"}<br>
-          ${escapeHtml(game.location || "")}
-        </p>
+        <label>Date</label>
+
+        <input
+          id="edit-date-${game.id}"
+          type="date"
+          value="${game.date || ""}"
+        >
+
+        <label>Time</label>
+
+        <input
+          id="edit-time-${game.id}"
+          type="text"
+          value="${escapeAttribute(game.time || "")}"
+        >
+
+        <label>Location</label>
+
+        <input
+          id="edit-location-${game.id}"
+          type="text"
+          value="${escapeAttribute(game.location || "")}"
+        >
+
+        <label>Home / Away</label>
+
+        <select id="edit-ha-${game.id}">
+
+          <option value="Home"
+            ${game.home_away === "Home" ? "selected" : ""}>
+            Home
+          </option>
+
+          <option value="Away"
+            ${game.home_away === "Away" ? "selected" : ""}>
+            Away
+          </option>
+
+        </select>
 
         <label>Our Score</label>
+
         <input
           id="our-${game.id}"
           type="number"
@@ -878,6 +1230,7 @@ function updateAdminGames() {
         >
 
         <label>Opponent Score</label>
+
         <input
           id="opp-${game.id}"
           type="number"
@@ -885,7 +1238,9 @@ function updateAdminGames() {
         >
 
         <label>Status</label>
+
         <select id="status-${game.id}">
+
           <option value="Scheduled"
             ${game.status === "Scheduled" ? "selected" : ""}>
             Scheduled
@@ -895,92 +1250,135 @@ function updateAdminGames() {
             ${game.status === "Final" ? "selected" : ""}>
             Final
           </option>
+
         </select>
+
+        <label>Notes</label>
+
+        <textarea id="notes-${game.id}">${escapeHtml(game.notes || "")}</textarea>
 
         <button
           class="primary"
-          onclick="saveScore(${game.id})">
-          Save Score
+          onclick="saveGame(${game.id})">
+          💾 Save Changes
         </button>
 
         <button
           class="danger"
           onclick="deleteGame(${game.id})">
-          Delete
+          🗑️ Delete
         </button>
 
       </div>
-    `;
 
-  }).join("");
+    `).join("");
 }
 
 
 /* =====================================================
-   SAVE SCORE
+   SAVE GAME
    ===================================================== */
 
-async function saveScore(id) {
+async function saveGame(id) {
 
   const code =
     sessionStorage.getItem("adminCode");
 
+
   const game =
     games.find(g => g.id === id);
+
 
   if (!game) return;
 
 
-  const ourScoreValue =
-    document.getElementById(`our-${id}`).value;
+  const date =
+    document.getElementById(
+      `edit-date-${id}`
+    ).value;
 
-  const oppScoreValue =
-    document.getElementById(`opp-${id}`).value;
+  const time =
+    document.getElementById(
+      `edit-time-${id}`
+    ).value;
+
+  const location =
+    document.getElementById(
+      `edit-location-${id}`
+    ).value;
+
+  const homeAway =
+    document.getElementById(
+      `edit-ha-${id}`
+    ).value;
+
+  const ourValue =
+    document.getElementById(
+      `our-${id}`
+    ).value;
+
+  const opponentValue =
+    document.getElementById(
+      `opp-${id}`
+    ).value;
 
   const status =
-    document.getElementById(`status-${id}`).value;
+    document.getElementById(
+      `status-${id}`
+    ).value;
+
+  const notes =
+    document.getElementById(
+      `notes-${id}`
+    ).value;
 
 
   const ourScore =
-    ourScoreValue === ""
+    ourValue === ""
       ? null
-      : Number(ourScoreValue);
+      : Number(ourValue);
 
-  const oppScore =
-    oppScoreValue === ""
+  const opponentScore =
+    opponentValue === ""
       ? null
-      : Number(oppScoreValue);
+      : Number(opponentValue);
 
 
-  const { error } = await db.rpc(
-    "update_game",
-    {
-      p_code: code,
-      p_id: id,
-      p_date: game.date,
-      p_time: game.time || "",
-      p_opponent: game.opponent,
-      p_location: game.location || "",
-      p_home_away: game.home_away || "",
-      p_our_score: ourScore,
-      p_opponent_score: oppScore,
-      p_status: status,
-      p_notes: game.notes || ""
-    }
-  );
+  const { error } =
+    await db.rpc(
+      "update_game",
+      {
+        p_code: code,
+        p_id: id,
+        p_date: date,
+        p_time: time,
+        p_opponent: game.opponent,
+        p_location: location,
+        p_home_away: homeAway,
+        p_our_score: ourScore,
+        p_opponent_score: opponentScore,
+        p_status: status,
+        p_notes: notes
+      }
+    );
 
 
   if (error) {
 
+    console.error(error);
+
     showAdminMessage(
-      "Could not save score: " + error.message
+      "Could not save changes."
     );
 
     return;
   }
 
 
-  showAdminMessage("Score saved!");
+  showAdminMessage(
+    "✅ Game updated!"
+  );
+
 
   loadGames();
 }
@@ -992,7 +1390,11 @@ async function saveScore(id) {
 
 async function deleteGame(id) {
 
-  if (!confirm("Delete this game?")) {
+  if (
+    !confirm(
+      "Are you sure you want to delete this game?"
+    )
+  ) {
     return;
   }
 
@@ -1001,26 +1403,30 @@ async function deleteGame(id) {
     sessionStorage.getItem("adminCode");
 
 
-  const { error } = await db.rpc(
-    "delete_game",
-    {
-      p_code: code,
-      p_id: id
-    }
-  );
+  const { error } =
+    await db.rpc(
+      "delete_game",
+      {
+        p_code: code,
+        p_id: id
+      }
+    );
 
 
   if (error) {
 
     showAdminMessage(
-      "Could not delete game: " + error.message
+      "Could not delete game."
     );
 
     return;
   }
 
 
-  showAdminMessage("Game deleted.");
+  showAdminMessage(
+    "Game deleted."
+  );
+
 
   loadGames();
 }
@@ -1032,26 +1438,36 @@ async function deleteGame(id) {
 
 async function loadPhotos() {
 
-  const { data, error } = await db
-    .from("photos")
-    .select("*")
-    .order("created_at", { ascending: false });
+  const { data, error } =
+    await db
+      .from("photos")
+      .select("*")
+      .order(
+        "created_at",
+        { ascending: false }
+      );
 
 
   if (error) {
 
-    document.getElementById("photoList").innerHTML =
-      "<p>Could not load photos.</p>";
+    console.error(error);
+
+    document.getElementById("photoList")
+      .innerHTML =
+      "<div class='message'>Could not load photos.</div>";
 
     return;
   }
 
 
-  const photos = data || [];
+  const photos =
+    data || [];
 
 
   const publicContainer =
-    document.getElementById("photoList");
+    document.getElementById(
+      "photoList"
+    );
 
 
   if (!photos.length) {
@@ -1062,29 +1478,41 @@ async function loadPhotos() {
   } else {
 
     publicContainer.innerHTML =
+
       `<div class="photo-grid">
+
         ${
           photos.map(photo => `
+
             <div>
+
               <img
                 src="${escapeAttribute(photo.image_url)}"
                 alt="${escapeAttribute(photo.caption || "Football photo")}"
+                onclick="window.open('${escapeAttribute(photo.image_url)}','_blank')"
               >
 
               ${
                 photo.caption
-                  ? `<p>${escapeHtml(photo.caption)}</p>`
+                  ? `<div class="photo-caption">
+                       ${escapeHtml(photo.caption)}
+                     </div>`
                   : ""
               }
+
             </div>
+
           `).join("")
         }
-       </div>`;
+
+      </div>`;
   }
 
 
   const adminContainer =
-    document.getElementById("adminPhotos");
+    document.getElementById(
+      "adminPhotos"
+    );
 
 
   if (
@@ -1094,26 +1522,29 @@ async function loadPhotos() {
 
     adminContainer.innerHTML =
       photos.map(photo => `
-        <div class="game-card">
+
+        <div class="game">
 
           <img
             src="${escapeAttribute(photo.image_url)}"
-            style="width:100%;max-width:250px;border-radius:10px"
+            style="width:100%;max-width:300px;border-radius:12px"
           >
 
-          <p>
-            ${escapeHtml(photo.caption || "")}
-          </p>
+          ${
+            photo.caption
+              ? `<p>${escapeHtml(photo.caption)}</p>`
+              : ""
+          }
 
           <button
             class="danger"
             onclick="deletePhoto(${photo.id})">
-            Delete Photo
+            🗑️ Delete Photo
           </button>
 
         </div>
-      `).join("");
 
+      `).join("");
   }
 }
 
@@ -1127,115 +1558,313 @@ async function addPhoto() {
   const code =
     sessionStorage.getItem("adminCode");
 
+
   const file =
-    document.getElementById("photoFile").files[0];
+    document.getElementById(
+      "photoFile"
+    ).files[0];
+
 
   const caption =
-    document.getElementById("photoCaption").value.trim();
+    document.getElementById(
+      "photoCaption"
+    ).value.trim();
+
 
   if (!file) {
-    showAdminMessage("Please choose a photo first.");
-    return;
-  }
-
-  if (!file.type.startsWith("image/")) {
-    showAdminMessage("Please choose an image file.");
-    return;
-  }
-
-  showAdminMessage("Uploading photo...");
-
-  const fileName =
-    `${Date.now()}-${Math.random().toString(36).substring(2)}.${file.name.split(".").pop()}`;
-
-  const filePath =
-    `football/${fileName}`;
-
-  const { error: uploadError } =
-    await db.storage
-      .from("photos")
-      .upload(filePath, file);
-
-  if (uploadError) {
-
-    console.error(uploadError);
 
     showAdminMessage(
-      "Upload failed: " + uploadError.message
+      "Please choose a photo."
     );
 
     return;
   }
 
-  const { data: publicData } =
-    db.storage
-      .from("photos")
-      .getPublicUrl(filePath);
 
-  const imageUrl =
-    publicData.publicUrl;
+  if (!file.type.startsWith("image/")) {
+
+    showAdminMessage(
+      "Please choose an image."
+    );
+
+    return;
+  }
+
+
+  showAdminMessage(
+    "Preparing photo..."
+  );
+
+
+  /*
+    Resize the image so the database
+    doesn't get huge.
+  */
+
+  const compressedImage =
+    await compressImage(
+      file,
+      1400,
+      0.78
+    );
+
 
   const { error } =
     await db.rpc(
       "add_photo",
       {
         p_code: code,
-        p_image_url: imageUrl,
+        p_image_url: compressedImage,
         p_caption: caption
       }
     );
+
 
   if (error) {
 
     console.error(error);
 
     showAdminMessage(
-      "Could not save photo: " + error.message
+      "Could not upload photo."
     );
 
     return;
   }
 
-  document.getElementById("photoFile").value = "";
-  document.getElementById("photoCaption").value = "";
 
-  showAdminMessage("📸 Photo uploaded!");
+  document.getElementById(
+    "photoFile"
+  ).value = "";
+
+
+  document.getElementById(
+    "photoCaption"
+  ).value = "";
+
+
+  showAdminMessage(
+    "📸 Photo uploaded!"
+  );
+
 
   loadPhotos();
 }
+
+
+/* =====================================================
+   IMAGE COMPRESSION
+   ===================================================== */
+
+function compressImage(
+  file,
+  maxWidth,
+  quality
+) {
+
+  return new Promise(
+    (resolve, reject) => {
+
+      const reader =
+        new FileReader();
+
+
+      reader.onload =
+        function(event) {
+
+          const image =
+            new Image();
+
+
+          image.onload =
+            function() {
+
+              let width =
+                image.width;
+
+              let height =
+                image.height;
+
+
+              if (width > maxWidth) {
+
+                height =
+                  height *
+                  (maxWidth / width);
+
+                width =
+                  maxWidth;
+              }
+
+
+              const canvas =
+                document.createElement(
+                  "canvas"
+                );
+
+
+              canvas.width =
+                width;
+
+              canvas.height =
+                height;
+
+
+              const context =
+                canvas.getContext(
+                  "2d"
+                );
+
+
+              context.drawImage(
+                image,
+                0,
+                0,
+                width,
+                height
+              );
+
+
+              resolve(
+                canvas.toDataURL(
+                  "image/jpeg",
+                  quality
+                )
+              );
+
+            };
+
+
+          image.onerror =
+            reject;
+
+          image.src =
+            event.target.result;
+
+        };
+
+
+      reader.onerror =
+        reject;
+
+      reader.readAsDataURL(file);
+
+    }
+  );
+}
+
+
+/* =====================================================
+   DELETE PHOTO
+   ===================================================== */
+
 async function deletePhoto(id) {
 
-  if (!confirm("Delete this photo?")) {
+  if (
+    !confirm(
+      "Delete this photo?"
+    )
+  ) {
     return;
   }
 
 
   const code =
-    sessionStorage.getItem("adminCode");
+    sessionStorage.getItem(
+      "adminCode"
+    );
 
 
-  const { error } = await db.rpc(
-    "delete_photo",
-    {
-      p_code: code,
-      p_id: id
-    }
-  );
+  const { error } =
+    await db.rpc(
+      "delete_photo",
+      {
+        p_code: code,
+        p_id: id
+      }
+    );
 
 
   if (error) {
 
     showAdminMessage(
-      "Could not delete photo: " + error.message
+      "Could not delete photo."
     );
 
     return;
   }
 
 
-  showAdminMessage("Photo deleted.");
+  showAdminMessage(
+    "Photo deleted."
+  );
+
 
   loadPhotos();
+}
+
+
+/* =====================================================
+   CHANGE ADMIN CODE
+   ===================================================== */
+
+async function changeAdminCode() {
+
+  const oldCode =
+    sessionStorage.getItem(
+      "adminCode"
+    );
+
+
+  const newCode =
+    document.getElementById(
+      "newAdminCode"
+    ).value.trim();
+
+
+  if (!/^\d{4}$/.test(newCode)) {
+
+    showAdminMessage(
+      "New code must be exactly 4 digits."
+    );
+
+    return;
+  }
+
+
+  const { data, error } =
+    await db.rpc(
+      "change_admin_code",
+      {
+        p_old_code: oldCode,
+        p_new_code: newCode
+      }
+    );
+
+
+  if (error || !data) {
+
+    showAdminMessage(
+      "Could not change code."
+    );
+
+    return;
+  }
+
+
+  sessionStorage.setItem(
+    "adminCode",
+    newCode
+  );
+
+
+  document.getElementById(
+    "newAdminCode"
+  ).value = "";
+
+
+  showAdminMessage(
+    "🔑 Admin code changed!"
+  );
 }
 
 
@@ -1248,7 +1877,10 @@ function formatDate(dateString) {
   if (!dateString) return "";
 
   const date =
-    new Date(dateString + "T12:00:00");
+    new Date(
+      dateString + "T12:00:00"
+    );
+
 
   return date.toLocaleDateString(
     "en-US",
@@ -1264,9 +1896,13 @@ function formatDate(dateString) {
 
 function escapeHtml(value) {
 
-  if (value === null || value === undefined) {
+  if (
+    value === null ||
+    value === undefined
+  ) {
     return "";
   }
+
 
   return String(value)
     .replace(/&/g, "&amp;")
@@ -1285,24 +1921,36 @@ function escapeAttribute(value) {
 function showAdminMessage(message) {
 
   const box =
-    document.getElementById("adminMessage");
+    document.getElementById(
+      "adminMessage"
+    );
+
 
   if (!box) return;
 
-  box.innerHTML =
-    `<div class="message">${escapeHtml(message)}</div>`;
 
-  setTimeout(() => {
-    box.innerHTML = "";
-  }, 4000);
+  box.innerHTML =
+    `<div class="message">
+      ${escapeHtml(message)}
+    </div>`;
+
+
+  setTimeout(
+    () => {
+      box.innerHTML = "";
+    },
+    4000
+  );
 }
 
 
 /* =====================================================
-   START APP
+   START
    ===================================================== */
 
 loadGames();
+
+checkPrivateAdmin();
 
 </script>
 
