@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NDGP Football</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      color: #102a43;
+    }
+
+    header {
+      background: #002b5c;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      opacity: 0.9;
+    }
+
+    nav {
+      display: flex;
+      background: white;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav button {
+      flex: 1;
+      padding: 15px 5px;
+      border: none;
+      background: white;
+      font-size: 14px;
+      font-weight: bold;
+      color: #002b5c;
+      cursor: pointer;
+    }
+
+    nav button.active {
+      background: #002b5c;
+      color: white;
+    }
+
+    main {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .next-game {
+      text-align: center;
+    }
+
+    .next-game h2 {
+      margin-top: 5px;
+      font-size: 26px;
+    }
+
+    .opponent {
+      font-size: 34px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    .record {
+      font-size: 42px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .game {
+      border-left: 5px solid #002b5c;
+      padding-left: 15px;
+      margin-bottom: 15px;
+    }
+
+    .game h3 {
+      margin: 0 0 5px;
+    }
+
+    .muted {
+      color: #66788a;
+    }
+
+    .photo-placeholder {
+      background: #e9eef3;
+      border-radius: 12px;
+      padding: 50px 20px;
+      text-align: center;
+      color: #66788a;
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 30px 10px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🏈 NDGP Football</h1>
+  <p>Notre Dame Green Pond Crusaders</p>
+</header>
+
+<nav>
+  <button class="active" onclick="showPage('home', this)">Home</button>
+  <button onclick="showPage('schedule', this)">Schedule</button>
+  <button onclick="showPage('photos', this)">Photos</button>
+</nav>
+
+<main>
+
+  <!-- HOME -->
+  <section id="home" class="page active">
+
+    <div class="card next-game">
+      <p class="muted">NEXT GAME</p>
+
+      <div class="opponent">
+        TBD
+      </div>
+
+      <p>📅 Date TBD</p>
+      <p>⏰ Time TBD</p>
+      <p>📍 Location TBD</p>
+    </div>
+
+    <div class="card">
+      <p class="muted">CURRENT RECORD</p>
+      <div class="record">0–0</div>
+      <p>2026 Season</p>
+    </div>
+
+    <div class="card">
+      <p class="muted">LAST GAME</p>
+      <h2>No games played yet</h2>
+    </div>
+
+  </section>
+
+
+  <!-- SCHEDULE -->
+  <section id="schedule" class="page">
+
+    <div class="card">
+      <h2>📅 2026 Schedule</h2>
+
+      <div class="game">
+        <h3>Schedule Coming Soon</h3>
+        <p class="muted">
+          Games will appear here once they are added through Admin.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PHOTOS -->
+  <section id="photos" class="page">
+
+    <div class="card">
+      <h2>📸 Photos</h2>
+
+      <div class="photo-placeholder">
+        Photos will appear here.
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  Notre Dame Green Pond Football<br>
+  © 2026
+</footer>
+
+
+<script>
+
+function showPage(pageId, button) {
+
+  document.querySelectorAll('.page').forEach(page => {
+    page.classList.remove('active');
+  });
+
+  document.getElementById(pageId).classList.add('active');
+
+  document.querySelectorAll('nav button').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  button.classList.add('active');
+}
+
+</script>
+
+</body>
+</html>
