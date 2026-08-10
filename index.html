@@ -675,46 +675,45 @@ async function login() {
     document.getElementById("loginMessage").innerHTML =
       `<div class="message">
         Please enter exactly 4 digits.
-       </div>`;
+      </div>`;
 
     return;
   }
 
   const { data, error } = await db.rpc(
-    "add_game",
+    "check_admin_code",
     {
-      p_code: code,
-      p_date: "2099-01-01",
-      p_time: "",
-      p_opponent: "__LOGIN_TEST__",
-      p_location: "",
-      p_home_away: "Home",
-      p_notes: ""
+      p_code: code
     }
   );
 
   if (error) {
 
+    console.error(error);
+
     document.getElementById("loginMessage").innerHTML =
       `<div class="message">
-        Incorrect admin code.
-       </div>`;
+        There was a database error. Please try again.
+      </div>`;
 
     return;
   }
 
-  if (data && data.id) {
+  if (!data) {
 
-    await db
-      .from("games")
-      .delete()
-      .eq("id", data.id);
+    document.getElementById("loginMessage").innerHTML =
+      `<div class="message">
+        Incorrect admin code.
+      </div>`;
 
+    return;
   }
 
   sessionStorage.setItem("adminCode", code);
 
   document.getElementById("adminCode").value = "";
+
+  document.getElementById("loginMessage").innerHTML = "";
 
   showAdmin();
 
