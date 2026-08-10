@@ -1,136 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NDGP Football</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<title>NDGP Football</title>
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      color: #102a43;
-    }
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    header {
-      background: #002b5c;
-      color: white;
-      padding: 25px 20px;
-      text-align: center;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f5f8;
+  color: #102a43;
+}
 
-    header p {
-      margin: 8px 0 0;
-      opacity: 0.9;
-    }
+header {
+  background: #002b5c;
+  color: white;
+  padding: 25px 18px;
+  text-align: center;
+}
 
-    nav {
-      display: flex;
-      background: white;
-      border-bottom: 1px solid #ddd;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
 
-    nav button {
-      flex: 1;
-      padding: 15px 5px;
-      border: none;
-      background: white;
-      font-size: 14px;
-      font-weight: bold;
-      color: #002b5c;
-      cursor: pointer;
-    }
+header p {
+  margin: 7px 0 0;
+  opacity: .9;
+}
 
-    nav button.active {
-      background: #002b5c;
-      color: white;
-    }
+nav {
+  display: flex;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
 
-    main {
-      max-width: 700px;
-      margin: auto;
-      padding: 20px;
-    }
+nav button {
+  flex: 1;
+  border: none;
+  background: white;
+  padding: 15px 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #002b5c;
+  cursor: pointer;
+}
 
-    .page {
-      display: none;
-    }
+nav button.active {
+  background: #002b5c;
+  color: white;
+}
 
-    .page.active {
-      display: block;
-    }
+main {
+  max-width: 750px;
+  margin: auto;
+  padding: 18px;
+}
 
-    .card {
-      background: white;
-      border-radius: 15px;
-      padding: 20px;
-      margin-bottom: 18px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    }
+.page {
+  display: none;
+}
 
-    .next-game {
-      text-align: center;
-    }
+.page.active {
+  display: block;
+}
 
-    .next-game h2 {
-      margin-top: 5px;
-      font-size: 26px;
-    }
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 3px 14px rgba(0,0,0,.08);
+}
 
-    .opponent {
-      font-size: 34px;
-      font-weight: bold;
-      margin: 15px 0;
-    }
+.hero {
+  text-align: center;
+}
 
-    .record {
-      font-size: 42px;
-      font-weight: bold;
-      margin: 10px 0;
-    }
+.small-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #718096;
+  letter-spacing: 1px;
+}
 
-    .game {
-      border-left: 5px solid #002b5c;
-      padding-left: 15px;
-      margin-bottom: 15px;
-    }
+.opponent {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 12px 0;
+}
 
-    .game h3 {
-      margin: 0 0 5px;
-    }
+.record {
+  font-size: 42px;
+  font-weight: bold;
+  color: #002b5c;
+}
 
-    .muted {
-      color: #66788a;
-    }
+.game-card {
+  border-left: 5px solid #002b5c;
+  padding: 14px;
+  margin: 12px 0;
+  background: #f8fafc;
+  border-radius: 8px;
+}
 
-    .photo-placeholder {
-      background: #e9eef3;
-      border-radius: 12px;
-      padding: 50px 20px;
-      text-align: center;
-      color: #66788a;
-    }
+.game-card h3 {
+  margin: 0 0 8px;
+}
 
-    footer {
-      text-align: center;
-      color: #777;
-      padding: 30px 10px;
-      font-size: 13px;
-    }
-  </style>
+.win {
+  color: #16803c;
+  font-weight: bold;
+}
+
+.loss {
+  color: #c53030;
+  font-weight: bold;
+}
+
+.scheduled {
+  color: #002b5c;
+  font-weight: bold;
+}
+
+button.primary,
+button.danger,
+button.secondary {
+  border: none;
+  border-radius: 8px;
+  padding: 11px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 4px;
+}
+
+button.primary {
+  background: #002b5c;
+  color: white;
+}
+
+button.secondary {
+  background: #e2e8f0;
+  color: #102a43;
+}
+
+button.danger {
+  background: #c53030;
+  color: white;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  margin: 6px 0 14px;
+  font-size: 16px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.admin-box {
+  background: #f8fafc;
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.photo-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.message {
+  padding: 12px;
+  border-radius: 8px;
+  margin: 10px 0;
+  background: #edf2f7;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 10px;
+  color: #718096;
+  font-size: 13px;
+}
+
+@media (min-width: 650px) {
+  .photo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+</style>
 </head>
 
 <body>
@@ -144,70 +233,160 @@
   <button class="active" onclick="showPage('home', this)">Home</button>
   <button onclick="showPage('schedule', this)">Schedule</button>
   <button onclick="showPage('photos', this)">Photos</button>
+  <button onclick="showPage('admin', this)">Admin</button>
 </nav>
 
 <main>
 
-  <!-- HOME -->
-  <section id="home" class="page active">
+<!-- HOME -->
+<section id="home" class="page active">
 
-    <div class="card next-game">
-      <p class="muted">NEXT GAME</p>
+  <div class="card hero">
+    <div class="small-title">NEXT GAME</div>
+    <div id="nextOpponent" class="opponent">Loading...</div>
 
-      <div class="opponent">
-        TBD
+    <div id="nextDetails">
+      Loading game information...
+    </div>
+  </div>
+
+  <div class="card hero">
+    <div class="small-title">2026 RECORD</div>
+    <div id="record" class="record">0–0</div>
+  </div>
+
+  <div class="card">
+    <div class="small-title">LAST GAME</div>
+    <div id="lastGame">Loading...</div>
+  </div>
+
+</section>
+
+
+<!-- SCHEDULE -->
+<section id="schedule" class="page">
+
+  <div class="card">
+    <h2>📅 2026 Schedule</h2>
+    <div id="scheduleList">Loading schedule...</div>
+  </div>
+
+</section>
+
+
+<!-- PHOTOS -->
+<section id="photos" class="page">
+
+  <div class="card">
+    <h2>📸 Photos</h2>
+    <div id="photoList">Loading photos...</div>
+  </div>
+
+</section>
+
+
+<!-- ADMIN -->
+<section id="admin" class="page">
+
+  <div class="card">
+
+    <h2>🔐 Admin</h2>
+
+    <div id="loginArea">
+
+      <p>
+        Enter your private 4-digit admin code.
+      </p>
+
+      <input
+        id="adminCode"
+        type="password"
+        inputmode="numeric"
+        maxlength="4"
+        placeholder="4-digit code"
+      >
+
+      <button class="primary" onclick="login()">
+        Enter Admin
+      </button>
+
+      <div id="loginMessage"></div>
+
+    </div>
+
+
+    <div id="adminArea" class="hidden">
+
+      <h2>Admin Dashboard</h2>
+
+      <button class="secondary" onclick="logout()">
+        Log Out
+      </button>
+
+      <hr>
+
+      <h3>➕ Add Game</h3>
+
+      <label>Date</label>
+      <input id="gameDate" type="date">
+
+      <label>Time</label>
+      <input id="gameTime" type="text" placeholder="7:00 PM">
+
+      <label>Opponent</label>
+      <input id="gameOpponent" type="text" placeholder="Opponent">
+
+      <label>Location</label>
+      <input id="gameLocation" type="text" placeholder="Stadium">
+
+      <label>Home / Away</label>
+      <select id="gameHomeAway">
+        <option value="Home">Home</option>
+        <option value="Away">Away</option>
+      </select>
+
+      <label>Notes</label>
+      <textarea id="gameNotes" placeholder="Optional notes"></textarea>
+
+      <button class="primary" onclick="addGame()">
+        Add Game
+      </button>
+
+      <div id="adminMessage"></div>
+
+      <hr>
+
+      <h3>🏈 Manage Games</h3>
+
+      <div id="adminGames">
+        Loading...
       </div>
 
-      <p>📅 Date TBD</p>
-      <p>⏰ Time TBD</p>
-      <p>📍 Location TBD</p>
-    </div>
+      <hr>
 
-    <div class="card">
-      <p class="muted">CURRENT RECORD</p>
-      <div class="record">0–0</div>
-      <p>2026 Season</p>
-    </div>
+      <h3>📸 Add Photo</h3>
 
-    <div class="card">
-      <p class="muted">LAST GAME</p>
-      <h2>No games played yet</h2>
-    </div>
+      <p class="small-title">
+        For now, paste the direct image URL.
+      </p>
 
-  </section>
+      <label>Photo URL</label>
+      <input id="photoUrl" type="url" placeholder="https://...">
 
+      <label>Caption</label>
+      <input id="photoCaption" type="text" placeholder="Optional caption">
 
-  <!-- SCHEDULE -->
-  <section id="schedule" class="page">
+      <button class="primary" onclick="addPhoto()">
+        Add Photo
+      </button>
 
-    <div class="card">
-      <h2>📅 2026 Schedule</h2>
-
-      <div class="game">
-        <h3>Schedule Coming Soon</h3>
-        <p class="muted">
-          Games will appear here once they are added through Admin.
-        </p>
-      </div>
+      <div id="adminPhotos"></div>
 
     </div>
 
-  </section>
+  </div>
 
-
-  <!-- PHOTOS -->
-  <section id="photos" class="page">
-
-    <div class="card">
-      <h2>📸 Photos</h2>
-
-      <div class="photo-placeholder">
-        Photos will appear here.
-      </div>
-
-    </div>
-
-  </section>
+</section>
 
 </main>
 
@@ -219,20 +398,872 @@
 
 <script>
 
+/* =====================================================
+   SUPABASE CONNECTION
+   ===================================================== */
+
+const SUPABASE_URL =
+  "https://lwkisughuwqbpwlouejc.supabase.co";
+
+const SUPABASE_KEY =
+  "sb_publishable_NC2FpWBds4vNOuGMr5_ikw_MOQXXHLI";
+
+const db = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+
+/* =====================================================
+   PAGE NAVIGATION
+   ===================================================== */
+
 function showPage(pageId, button) {
 
-  document.querySelectorAll('.page').forEach(page => {
-    page.classList.remove('active');
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.remove("active");
   });
 
-  document.getElementById(pageId).classList.add('active');
+  document.getElementById(pageId).classList.add("active");
 
-  document.querySelectorAll('nav button').forEach(btn => {
-    btn.classList.remove('active');
+  document.querySelectorAll("nav button").forEach(btn => {
+    btn.classList.remove("active");
   });
 
-  button.classList.add('active');
+  button.classList.add("active");
+
+  if (pageId === "schedule") {
+    loadGames();
+  }
+
+  if (pageId === "photos") {
+    loadPhotos();
+  }
+
+  if (pageId === "admin" && sessionStorage.getItem("adminCode")) {
+    showAdmin();
+  }
 }
+
+
+/* =====================================================
+   LOAD GAMES
+   ===================================================== */
+
+let games = [];
+
+async function loadGames() {
+
+  const { data, error } = await db
+    .from("games")
+    .select("*")
+    .order("date", { ascending: true });
+
+  if (error) {
+    console.error(error);
+    document.getElementById("scheduleList").innerHTML =
+      "<p>Could not load games.</p>";
+    return;
+  }
+
+  games = data || [];
+
+  updateHome();
+  updateSchedule();
+
+  if (sessionStorage.getItem("adminCode")) {
+    updateAdminGames();
+  }
+}
+
+
+/* =====================================================
+   HOME
+   ===================================================== */
+
+function updateHome() {
+
+  const today = new Date().toISOString().split("T")[0];
+
+  const upcoming = games.filter(g =>
+    g.date >= today &&
+    (!g.status || g.status === "Scheduled")
+  );
+
+  const next = upcoming[0];
+
+  if (!next) {
+
+    document.getElementById("nextOpponent").textContent =
+      "No Upcoming Games";
+
+    document.getElementById("nextDetails").textContent =
+      "Schedule a game through Admin.";
+
+  } else {
+
+    document.getElementById("nextOpponent").textContent =
+      next.opponent;
+
+    document.getElementById("nextDetails").innerHTML =
+      `📅 ${formatDate(next.date)}<br>
+       ⏰ ${next.time || "Time TBD"}<br>
+       📍 ${next.location || "Location TBD"}<br>
+       🏠 ${next.home_away || ""}`;
+  }
+
+
+  let wins = 0;
+  let losses = 0;
+
+  games.forEach(game => {
+
+    if (
+      game.our_score !== null &&
+      game.opponent_score !== null
+    ) {
+
+      if (game.our_score > game.opponent_score) {
+        wins++;
+      }
+
+      if (game.our_score < game.opponent_score) {
+        losses++;
+      }
+
+    }
+
+  });
+
+  document.getElementById("record").textContent =
+    `${wins}–${losses}`;
+
+
+  const completed = games
+    .filter(g =>
+      g.our_score !== null &&
+      g.opponent_score !== null
+    )
+    .sort((a,b) =>
+      new Date(b.date) - new Date(a.date)
+    );
+
+  const last = completed[0];
+
+  if (!last) {
+
+    document.getElementById("lastGame").innerHTML =
+      "<h3>No games played yet</h3>";
+
+  } else {
+
+    const result =
+      last.our_score > last.opponent_score
+        ? "WIN"
+        : last.our_score < last.opponent_score
+        ? "LOSS"
+        : "TIE";
+
+    const className =
+      result === "WIN"
+        ? "win"
+        : result === "LOSS"
+        ? "loss"
+        : "";
+
+    document.getElementById("lastGame").innerHTML =
+      `<h3>vs. ${last.opponent}</h3>
+       <strong>${last.our_score} – ${last.opponent_score}</strong>
+       <br>
+       <span class="${className}">${result}</span>
+       <br>
+       ${formatDate(last.date)}`;
+  }
+}
+
+
+/* =====================================================
+   SCHEDULE
+   ===================================================== */
+
+function updateSchedule() {
+
+  const container =
+    document.getElementById("scheduleList");
+
+  if (!games.length) {
+
+    container.innerHTML =
+      "<p>No games have been added yet.</p>";
+
+    return;
+  }
+
+  container.innerHTML = games.map(game => {
+
+    let result = "Scheduled";
+    let resultClass = "scheduled";
+
+    if (
+      game.our_score !== null &&
+      game.opponent_score !== null
+    ) {
+
+      if (game.our_score > game.opponent_score) {
+        result = "WIN";
+        resultClass = "win";
+      }
+      else if (game.our_score < game.opponent_score) {
+        result = "LOSS";
+        resultClass = "loss";
+      }
+      else {
+        result = "TIE";
+      }
+
+    }
+
+    const score =
+      game.our_score !== null &&
+      game.opponent_score !== null
+        ? `${game.our_score} – ${game.opponent_score}`
+        : "vs.";
+
+    return `
+      <div class="game-card">
+
+        <h3>${escapeHtml(game.opponent)}</h3>
+
+        <strong>${formatDate(game.date)}</strong>
+
+        <p>
+          ${game.time || "Time TBD"}<br>
+          ${game.home_away || ""}<br>
+          📍 ${escapeHtml(game.location || "Location TBD")}
+        </p>
+
+        <strong>${score}</strong>
+
+        <p class="${resultClass}">
+          ${result}
+        </p>
+
+        ${
+          game.notes
+            ? `<p>${escapeHtml(game.notes)}</p>`
+            : ""
+        }
+
+      </div>
+    `;
+
+  }).join("");
+}
+
+
+/* =====================================================
+   ADMIN LOGIN
+   ===================================================== */
+
+async function login() {
+
+  const code =
+    document.getElementById("adminCode").value.trim();
+
+  if (!/^\d{4}$/.test(code)) {
+
+    document.getElementById("loginMessage").innerHTML =
+      `<div class="message">
+        Please enter exactly 4 digits.
+       </div>`;
+
+    return;
+  }
+
+  const { data, error } = await db.rpc(
+    "add_game",
+    {
+      p_code: code,
+      p_date: "2099-01-01",
+      p_time: "",
+      p_opponent: "__LOGIN_TEST__",
+      p_location: "",
+      p_home_away: "Home",
+      p_notes: ""
+    }
+  );
+
+  if (error) {
+
+    document.getElementById("loginMessage").innerHTML =
+      `<div class="message">
+        Incorrect admin code.
+       </div>`;
+
+    return;
+  }
+
+  if (data && data.id) {
+
+    await db
+      .from("games")
+      .delete()
+      .eq("id", data.id);
+
+  }
+
+  sessionStorage.setItem("adminCode", code);
+
+  document.getElementById("adminCode").value = "";
+
+  showAdmin();
+
+  loadGames();
+}
+
+
+function showAdmin() {
+
+  document.getElementById("loginArea")
+    .classList.add("hidden");
+
+  document.getElementById("adminArea")
+    .classList.remove("hidden");
+
+  updateAdminGames();
+
+  loadPhotos();
+}
+
+
+function logout() {
+
+  sessionStorage.removeItem("adminCode");
+
+  document.getElementById("loginArea")
+    .classList.remove("hidden");
+
+  document.getElementById("adminArea")
+    .classList.add("hidden");
+}
+
+
+/* =====================================================
+   ADD GAME
+   ===================================================== */
+
+async function addGame() {
+
+  const code =
+    sessionStorage.getItem("adminCode");
+
+  const date =
+    document.getElementById("gameDate").value;
+
+  const time =
+    document.getElementById("gameTime").value;
+
+  const opponent =
+    document.getElementById("gameOpponent").value;
+
+  const location =
+    document.getElementById("gameLocation").value;
+
+  const homeAway =
+    document.getElementById("gameHomeAway").value;
+
+  const notes =
+    document.getElementById("gameNotes").value;
+
+
+  if (!date || !opponent) {
+
+    showAdminMessage(
+      "Please enter a date and opponent."
+    );
+
+    return;
+  }
+
+
+  const { error } = await db.rpc(
+    "add_game",
+    {
+      p_code: code,
+      p_date: date,
+      p_time: time,
+      p_opponent: opponent,
+      p_location: location,
+      p_home_away: homeAway,
+      p_notes: notes
+    }
+  );
+
+
+  if (error) {
+
+    showAdminMessage(
+      "Could not add game: " + error.message
+    );
+
+    return;
+  }
+
+
+  showAdminMessage("Game added successfully!");
+
+
+  document.getElementById("gameDate").value = "";
+  document.getElementById("gameTime").value = "";
+  document.getElementById("gameOpponent").value = "";
+  document.getElementById("gameLocation").value = "";
+  document.getElementById("gameNotes").value = "";
+
+
+  loadGames();
+}
+
+
+/* =====================================================
+   ADMIN GAME LIST
+   ===================================================== */
+
+function updateAdminGames() {
+
+  const container =
+    document.getElementById("adminGames");
+
+  if (!container) return;
+
+  if (!games.length) {
+
+    container.innerHTML =
+      "<p>No games yet.</p>";
+
+    return;
+  }
+
+
+  container.innerHTML = games.map(game => {
+
+    return `
+      <div class="game-card">
+
+        <h3>${escapeHtml(game.opponent)}</h3>
+
+        <p>
+          ${formatDate(game.date)}<br>
+          ${game.time || "Time TBD"}<br>
+          ${escapeHtml(game.location || "")}
+        </p>
+
+        <label>Our Score</label>
+        <input
+          id="our-${game.id}"
+          type="number"
+          value="${game.our_score ?? ""}"
+        >
+
+        <label>Opponent Score</label>
+        <input
+          id="opp-${game.id}"
+          type="number"
+          value="${game.opponent_score ?? ""}"
+        >
+
+        <label>Status</label>
+        <select id="status-${game.id}">
+          <option value="Scheduled"
+            ${game.status === "Scheduled" ? "selected" : ""}>
+            Scheduled
+          </option>
+
+          <option value="Final"
+            ${game.status === "Final" ? "selected" : ""}>
+            Final
+          </option>
+        </select>
+
+        <button
+          class="primary"
+          onclick="saveScore(${game.id})">
+          Save Score
+        </button>
+
+        <button
+          class="danger"
+          onclick="deleteGame(${game.id})">
+          Delete
+        </button>
+
+      </div>
+    `;
+
+  }).join("");
+}
+
+
+/* =====================================================
+   SAVE SCORE
+   ===================================================== */
+
+async function saveScore(id) {
+
+  const code =
+    sessionStorage.getItem("adminCode");
+
+  const game =
+    games.find(g => g.id === id);
+
+  if (!game) return;
+
+
+  const ourScoreValue =
+    document.getElementById(`our-${id}`).value;
+
+  const oppScoreValue =
+    document.getElementById(`opp-${id}`).value;
+
+  const status =
+    document.getElementById(`status-${id}`).value;
+
+
+  const ourScore =
+    ourScoreValue === ""
+      ? null
+      : Number(ourScoreValue);
+
+  const oppScore =
+    oppScoreValue === ""
+      ? null
+      : Number(oppScoreValue);
+
+
+  const { error } = await db.rpc(
+    "update_game",
+    {
+      p_code: code,
+      p_id: id,
+      p_date: game.date,
+      p_time: game.time || "",
+      p_opponent: game.opponent,
+      p_location: game.location || "",
+      p_home_away: game.home_away || "",
+      p_our_score: ourScore,
+      p_opponent_score: oppScore,
+      p_status: status,
+      p_notes: game.notes || ""
+    }
+  );
+
+
+  if (error) {
+
+    showAdminMessage(
+      "Could not save score: " + error.message
+    );
+
+    return;
+  }
+
+
+  showAdminMessage("Score saved!");
+
+  loadGames();
+}
+
+
+/* =====================================================
+   DELETE GAME
+   ===================================================== */
+
+async function deleteGame(id) {
+
+  if (!confirm("Delete this game?")) {
+    return;
+  }
+
+
+  const code =
+    sessionStorage.getItem("adminCode");
+
+
+  const { error } = await db.rpc(
+    "delete_game",
+    {
+      p_code: code,
+      p_id: id
+    }
+  );
+
+
+  if (error) {
+
+    showAdminMessage(
+      "Could not delete game: " + error.message
+    );
+
+    return;
+  }
+
+
+  showAdminMessage("Game deleted.");
+
+  loadGames();
+}
+
+
+/* =====================================================
+   PHOTOS
+   ===================================================== */
+
+async function loadPhotos() {
+
+  const { data, error } = await db
+    .from("photos")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+
+  if (error) {
+
+    document.getElementById("photoList").innerHTML =
+      "<p>Could not load photos.</p>";
+
+    return;
+  }
+
+
+  const photos = data || [];
+
+
+  const publicContainer =
+    document.getElementById("photoList");
+
+
+  if (!photos.length) {
+
+    publicContainer.innerHTML =
+      "<p>No photos yet.</p>";
+
+  } else {
+
+    publicContainer.innerHTML =
+      `<div class="photo-grid">
+        ${
+          photos.map(photo => `
+            <div>
+              <img
+                src="${escapeAttribute(photo.image_url)}"
+                alt="${escapeAttribute(photo.caption || "Football photo")}"
+              >
+
+              ${
+                photo.caption
+                  ? `<p>${escapeHtml(photo.caption)}</p>`
+                  : ""
+              }
+            </div>
+          `).join("")
+        }
+       </div>`;
+  }
+
+
+  const adminContainer =
+    document.getElementById("adminPhotos");
+
+
+  if (
+    adminContainer &&
+    sessionStorage.getItem("adminCode")
+  ) {
+
+    adminContainer.innerHTML =
+      photos.map(photo => `
+        <div class="game-card">
+
+          <img
+            src="${escapeAttribute(photo.image_url)}"
+            style="width:100%;max-width:250px;border-radius:10px"
+          >
+
+          <p>
+            ${escapeHtml(photo.caption || "")}
+          </p>
+
+          <button
+            class="danger"
+            onclick="deletePhoto(${photo.id})">
+            Delete Photo
+          </button>
+
+        </div>
+      `).join("");
+
+  }
+}
+
+
+/* =====================================================
+   ADD PHOTO
+   ===================================================== */
+
+async function addPhoto() {
+
+  const code =
+    sessionStorage.getItem("adminCode");
+
+  const imageUrl =
+    document.getElementById("photoUrl").value.trim();
+
+  const caption =
+    document.getElementById("photoCaption").value.trim();
+
+
+  if (!imageUrl) {
+
+    showAdminMessage(
+      "Please enter a photo URL."
+    );
+
+    return;
+  }
+
+
+  const { error } = await db.rpc(
+    "add_photo",
+    {
+      p_code: code,
+      p_image_url: imageUrl,
+      p_caption: caption
+    }
+  );
+
+
+  if (error) {
+
+    showAdminMessage(
+      "Could not add photo: " + error.message
+    );
+
+    return;
+  }
+
+
+  document.getElementById("photoUrl").value = "";
+  document.getElementById("photoCaption").value = "";
+
+  showAdminMessage("Photo added!");
+
+  loadPhotos();
+}
+
+
+/* =====================================================
+   DELETE PHOTO
+   ===================================================== */
+
+async function deletePhoto(id) {
+
+  if (!confirm("Delete this photo?")) {
+    return;
+  }
+
+
+  const code =
+    sessionStorage.getItem("adminCode");
+
+
+  const { error } = await db.rpc(
+    "delete_photo",
+    {
+      p_code: code,
+      p_id: id
+    }
+  );
+
+
+  if (error) {
+
+    showAdminMessage(
+      "Could not delete photo: " + error.message
+    );
+
+    return;
+  }
+
+
+  showAdminMessage("Photo deleted.");
+
+  loadPhotos();
+}
+
+
+/* =====================================================
+   HELPERS
+   ===================================================== */
+
+function formatDate(dateString) {
+
+  if (!dateString) return "";
+
+  const date =
+    new Date(dateString + "T12:00:00");
+
+  return date.toLocaleDateString(
+    "en-US",
+    {
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+      year: "numeric"
+    }
+  );
+}
+
+
+function escapeHtml(value) {
+
+  if (value === null || value === undefined) {
+    return "";
+  }
+
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+
+function escapeAttribute(value) {
+  return escapeHtml(value);
+}
+
+
+function showAdminMessage(message) {
+
+  const box =
+    document.getElementById("adminMessage");
+
+  if (!box) return;
+
+  box.innerHTML =
+    `<div class="message">${escapeHtml(message)}</div>`;
+
+  setTimeout(() => {
+    box.innerHTML = "";
+  }, 4000);
+}
+
+
+/* =====================================================
+   START APP
+   ===================================================== */
+
+loadGames();
 
 </script>
 
