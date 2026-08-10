@@ -5,41 +5,23 @@
 
 <meta charset="UTF-8">
 
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>NDGP Football</title>
 
-<meta
-  name="theme-color"
-  content="#001f3f"
->
+<meta name="theme-color" content="#001f3f">
 
-<link
-  rel="apple-touch-icon"
-  href="LOGO_W__FB.png"
->
+<link rel="apple-touch-icon" href="LOGO_W__FB.png">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<!-- Football-style fonts -->
-<link
-  rel="preconnect"
-  href="https://fonts.googleapis.com"
->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-  rel="preconnect"
-  href="https://fonts.gstatic.com"
-  crossorigin
->
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
->
+href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap"
+rel="stylesheet">
 
 
 <style>
@@ -51,33 +33,21 @@
 :root {
 
   --navy: #001f3f;
-
   --navy-dark: #00152b;
-
   --navy-light: #063b69;
-
   --gold: #f4c542;
-
   --gold-dark: #dcae18;
-
   --white: #ffffff;
-
   --background: #eef2f6;
-
   --card: #ffffff;
-
   --text: #14283d;
-
   --muted: #718096;
-
   --border: #dce4ec;
-
   --green: #198754;
-
   --red: #c53030;
 
   --shadow:
-    0 4px 16px rgba(0, 31, 63, .08);
+    0 4px 16px rgba(0,31,63,.08);
 
 }
 
@@ -90,9 +60,11 @@
   box-sizing: border-box;
 }
 
+
 html {
   scroll-behavior: smooth;
 }
+
 
 body {
 
@@ -223,10 +195,6 @@ header p {
 
   color: #dbe7f2;
 
-  font-family:
-    "Oswald",
-    sans-serif;
-
   font-size: 12px;
 
   text-transform: uppercase;
@@ -350,6 +318,7 @@ main {
 .page {
   display: none;
 }
+
 
 .page.active {
   display: block;
@@ -2551,8 +2520,6 @@ footer {
 >
 
 
-<!-- LOGIN -->
-
 <div id="loginArea">
 
   <div class="admin-login-header">
@@ -2586,9 +2553,7 @@ footer {
     <button
       class="primary"
       onclick="login()"
-      style="
-        width:100%;
-      "
+      style="width:100%;"
     >
       🔓 Enter Admin
     </button>
@@ -2602,8 +2567,6 @@ footer {
 
 </div>
 
-
-<!-- ADMIN AREA -->
 
 <div
   id="adminArea"
@@ -2663,8 +2626,6 @@ footer {
 
     <div class="admin-section-body">
 
-
-      <!-- ADD GAME -->
 
       <div class="admin-subsection">
 
@@ -2776,9 +2737,7 @@ footer {
         <button
           class="primary"
           onclick="addGame()"
-          style="
-            width:100%;
-          "
+          style="width:100%;"
         >
           ➕ ADD GAME
         </button>
@@ -2790,8 +2749,6 @@ footer {
         id="adminMessage"
       ></div>
 
-
-      <!-- EXISTING GAMES -->
 
       <div class="admin-subsection">
 
@@ -3047,9 +3004,7 @@ function showPage(
     .querySelectorAll(".page")
     .forEach(page => {
 
-      page.classList.remove(
-        "active"
-      );
+      page.classList.remove("active");
 
     });
 
@@ -3063,34 +3018,26 @@ function showPage(
     .querySelectorAll("nav button")
     .forEach(btn => {
 
-      btn.classList.remove(
-        "active"
-      );
+      btn.classList.remove("active");
 
     });
 
 
   if (button) {
 
-    button.classList.add(
-      "active"
-    );
+    button.classList.add("active");
 
   }
 
 
-  if (
-    pageId === "schedule"
-  ) {
+  if (pageId === "schedule") {
 
     loadGames();
 
   }
 
 
-  if (
-    pageId === "photos"
-  ) {
+  if (pageId === "photos") {
 
     loadPhotos();
 
@@ -3099,9 +3046,7 @@ function showPage(
 
   if (
     pageId === "admin" &&
-    sessionStorage.getItem(
-      "adminCode"
-    )
+    sessionStorage.getItem("adminCode")
   ) {
 
     showAdmin();
@@ -3137,9 +3082,7 @@ async function loadGames() {
     console.error(error);
 
     document
-      .getElementById(
-        "scheduleList"
-      )
+      .getElementById("scheduleList")
       .innerHTML =
       `<div class="message">
         Could not load games.
@@ -3150,8 +3093,7 @@ async function loadGames() {
   }
 
 
-  games =
-    data || [];
+  games = data || [];
 
 
   updateHome();
@@ -3160,9 +3102,7 @@ async function loadGames() {
 
 
   if (
-    sessionStorage.getItem(
-      "adminCode"
-    )
+    sessionStorage.getItem("adminCode")
   ) {
 
     updateAdminGames();
@@ -3203,16 +3143,13 @@ function updateHome() {
       );
 
 
-  const next =
-    upcoming[0];
+  const next = upcoming[0];
 
 
   if (!next) {
 
     document
-      .getElementById(
-        "nextMatchup"
-      )
+      .getElementById("nextMatchup")
       .innerHTML =
 
       `<span class="next-team">
@@ -3229,17 +3166,13 @@ function updateHome() {
 
 
     document
-      .getElementById(
-        "nextDetails"
-      )
+      .getElementById("nextDetails")
       .textContent =
       "No upcoming games";
 
 
     document
-      .getElementById(
-        "countdown"
-      )
+      .getElementById("countdown")
       .classList
       .add("hidden");
 
@@ -3247,16 +3180,8 @@ function updateHome() {
 
   else {
 
-    const icon =
-      getHomeAwayIcon(
-        next.home_away
-      );
-
-
     document
-      .getElementById(
-        "nextMatchup"
-      )
+      .getElementById("nextMatchup")
       .innerHTML =
 
       `<span class="next-team">
@@ -3273,9 +3198,7 @@ function updateHome() {
 
 
     document
-      .getElementById(
-        "nextDetails"
-      )
+      .getElementById("nextDetails")
       .innerHTML =
 
       `📅 ${formatDate(next.date)}
@@ -3285,7 +3208,7 @@ function updateHome() {
        📍 ${escapeHtml(next.location || "Location TBD")}
        <br>
        <span class="home-away">
-         ${icon}
+         ${getHomeAwayIcon(next.home_away)}
          ${escapeHtml(next.home_away || "")}
        </span>`;
 
@@ -3339,9 +3262,7 @@ function updateHome() {
 
 
   document
-    .getElementById(
-      "record"
-    )
+    .getElementById("record")
     .textContent =
 
     `${wins}–${losses}${
@@ -3352,9 +3273,7 @@ function updateHome() {
 
 
   document
-    .getElementById(
-      "recordDetails"
-    )
+    .getElementById("recordDetails")
     .textContent =
 
     `${wins} W • ${losses} L${
@@ -3377,16 +3296,13 @@ function updateHome() {
       );
 
 
-  const last =
-    completed[0];
+  const last = completed[0];
 
 
   if (!last) {
 
     document
-      .getElementById(
-        "lastGame"
-      )
+      .getElementById("lastGame")
       .innerHTML =
       `<div class="empty">
         No games played yet.
@@ -3396,11 +3312,9 @@ function updateHome() {
 
   else {
 
-    let result =
-      "TIE";
+    let result = "TIE";
 
-    let resultClass =
-      "tie";
+    let resultClass = "tie";
 
 
     if (
@@ -3408,11 +3322,9 @@ function updateHome() {
       Number(last.opponent_score)
     ) {
 
-      result =
-        "WIN";
+      result = "WIN";
 
-      resultClass =
-        "win";
+      resultClass = "win";
 
     }
 
@@ -3421,19 +3333,21 @@ function updateHome() {
       Number(last.opponent_score)
     ) {
 
-      result =
-        "LOSS";
+      result = "LOSS";
 
-      resultClass =
-        "loss";
+      resultClass = "loss";
 
     }
 
 
+    /*
+       IMPORTANT:
+       LAST GAME NOW USES "VS"
+       INSTEAD OF THE HOME/AWAY EMOJI.
+    */
+
     document
-      .getElementById(
-        "lastGame"
-      )
+      .getElementById("lastGame")
       .innerHTML =
 
       `<div>
@@ -3441,7 +3355,7 @@ function updateHome() {
         <div class="last-matchup">
 
           NDGP
-          ${getHomeAwayIcon(last.home_away)}
+          <span class="next-vs">VS</span>
           ${escapeHtml(last.opponent)}
 
         </div>
@@ -3477,9 +3391,7 @@ function updateHome() {
    HOME/AWAY ICON
 ========================================================= */
 
-function getHomeAwayIcon(
-  value
-) {
+function getHomeAwayIcon(value) {
 
   if (
     String(value || "")
@@ -3490,7 +3402,6 @@ function getHomeAwayIcon(
     return "➡️";
 
   }
-
 
   return "🏠";
 
@@ -3504,31 +3415,23 @@ function getHomeAwayIcon(
 function startCountdown(game) {
 
   const box =
-    document.getElementById(
-      "countdown"
-    );
+    document.getElementById("countdown");
 
 
   if (countdownTimer) {
 
-    clearInterval(
-      countdownTimer
-    );
+    clearInterval(countdownTimer);
 
   }
 
 
   const kickoff =
-    parseKickoff(
-      game
-    );
+    parseKickoff(game);
 
 
   if (!kickoff) {
 
-    box.classList.add(
-      "hidden"
-    );
+    box.classList.add("hidden");
 
     return;
 
@@ -3538,20 +3441,15 @@ function startCountdown(game) {
   function update() {
 
     const difference =
-      kickoff -
-      new Date();
+      kickoff - new Date();
 
 
-    if (
-      difference <= 0
-    ) {
+    if (difference <= 0) {
 
       box.textContent =
         "🏈 GAME DAY!";
 
-      box.classList.remove(
-        "hidden"
-      );
+      box.classList.remove("hidden");
 
       return;
 
@@ -3560,32 +3458,26 @@ function startCountdown(game) {
 
     const days =
       Math.floor(
-        difference /
-        86400000
+        difference / 86400000
       );
 
 
     const hours =
       Math.floor(
-        difference /
-        3600000
+        difference / 3600000
       ) % 24;
 
 
     const minutes =
       Math.floor(
-        difference /
-        60000
+        difference / 60000
       ) % 60;
 
 
     box.textContent =
-
       `🏈 ${days}d ${hours}h ${minutes}m until kickoff`;
 
-    box.classList.remove(
-      "hidden"
-    );
+    box.classList.remove("hidden");
 
   }
 
@@ -3606,9 +3498,7 @@ function startCountdown(game) {
    PARSE KICKOFF
 ========================================================= */
 
-function parseKickoff(
-  game
-) {
+function parseKickoff(game) {
 
   if (!game.date) {
     return null;
@@ -3670,8 +3560,7 @@ function parseKickoff(
 
   const date =
     new Date(
-      game.date +
-      "T00:00:00"
+      game.date + "T00:00:00"
     );
 
 
@@ -3695,9 +3584,7 @@ function parseKickoff(
 function updateSchedule() {
 
   const container =
-    document.getElementById(
-      "scheduleList"
-    );
+    document.getElementById("scheduleList");
 
 
   if (!games.length) {
@@ -3716,11 +3603,9 @@ function updateSchedule() {
 
     games.map(game => {
 
-      let result =
-        "Scheduled";
+      let result = "Scheduled";
 
-      let resultClass =
-        "scheduled";
+      let resultClass = "scheduled";
 
 
       const completed =
@@ -3735,11 +3620,9 @@ function updateSchedule() {
           Number(game.opponent_score)
         ) {
 
-          result =
-            "WIN";
+          result = "WIN";
 
-          resultClass =
-            "win";
+          resultClass = "win";
 
         }
 
@@ -3748,21 +3631,17 @@ function updateSchedule() {
           Number(game.opponent_score)
         ) {
 
-          result =
-            "LOSS";
+          result = "LOSS";
 
-          resultClass =
-            "loss";
+          resultClass = "loss";
 
         }
 
         else {
 
-          result =
-            "TIE";
+          result = "TIE";
 
-          resultClass =
-            "tie";
+          resultClass = "tie";
 
         }
 
@@ -3837,32 +3716,24 @@ function updateSchedule() {
 
           ${
             completed
-
             ?
-
             `<div class="game-score">
               ${game.our_score}
               –
               ${game.opponent_score}
             </div>`
-
             :
-
             ""
           }
 
 
           ${
             game.notes
-
             ?
-
             `<div class="game-notes">
               ${escapeHtml(game.notes)}
             </div>`
-
             :
-
             ""
           }
 
@@ -3883,23 +3754,16 @@ async function login() {
 
   const code =
     document
-      .getElementById(
-        "adminCode"
-      )
+      .getElementById("adminCode")
       .value
       .trim();
 
 
-  if (
-    !/^\d{4}$/.test(code)
-  ) {
+  if (!/^\d{4}$/.test(code)) {
 
     document
-      .getElementById(
-        "loginMessage"
-      )
+      .getElementById("loginMessage")
       .innerHTML =
-
       `<div class="message">
         Enter exactly 4 digits.
       </div>`;
@@ -3926,11 +3790,8 @@ async function login() {
     console.error(error);
 
     document
-      .getElementById(
-        "loginMessage"
-      )
+      .getElementById("loginMessage")
       .innerHTML =
-
       `<div class="message">
         Database error.
       </div>`;
@@ -3943,11 +3804,8 @@ async function login() {
   if (!data) {
 
     document
-      .getElementById(
-        "loginMessage"
-      )
+      .getElementById("loginMessage")
       .innerHTML =
-
       `<div class="message">
         Incorrect admin code.
       </div>`;
@@ -3964,9 +3822,7 @@ async function login() {
 
 
   document
-    .getElementById(
-      "adminCode"
-    )
+    .getElementById("adminCode")
     .value = "";
 
 
@@ -3982,17 +3838,13 @@ async function login() {
 function showAdmin() {
 
   document
-    .getElementById(
-      "loginArea"
-    )
+    .getElementById("loginArea")
     .classList
     .add("hidden");
 
 
   document
-    .getElementById(
-      "adminArea"
-    )
+    .getElementById("adminArea")
     .classList
     .remove("hidden");
 
@@ -4016,17 +3868,13 @@ function logout() {
 
 
   document
-    .getElementById(
-      "loginArea"
-    )
+    .getElementById("loginArea")
     .classList
     .remove("hidden");
 
 
   document
-    .getElementById(
-      "adminArea"
-    )
+    .getElementById("adminArea")
     .classList
     .add("hidden");
 
@@ -4047,59 +3895,44 @@ async function addGame() {
 
   const date =
     document
-      .getElementById(
-        "gameDate"
-      )
+      .getElementById("gameDate")
       .value;
 
 
   const time =
     document
-      .getElementById(
-        "gameTime"
-      )
+      .getElementById("gameTime")
       .value;
 
 
   const opponent =
     document
-      .getElementById(
-        "gameOpponent"
-      )
+      .getElementById("gameOpponent")
       .value
       .trim();
 
 
   const location =
     document
-      .getElementById(
-        "gameLocation"
-      )
+      .getElementById("gameLocation")
       .value
       .trim();
 
 
   const homeAway =
     document
-      .getElementById(
-        "gameHomeAway"
-      )
+      .getElementById("gameHomeAway")
       .value;
 
 
   const notes =
     document
-      .getElementById(
-        "gameNotes"
-      )
+      .getElementById("gameNotes")
       .value
       .trim();
 
 
-  if (
-    !date ||
-    !opponent
-  ) {
+  if (!date || !opponent) {
 
     showAdminMessage(
       "Date and opponent are required."
@@ -4156,37 +3989,27 @@ async function addGame() {
 
 
   document
-    .getElementById(
-      "gameDate"
-    )
+    .getElementById("gameDate")
     .value = "";
 
 
   document
-    .getElementById(
-      "gameTime"
-    )
+    .getElementById("gameTime")
     .value = "";
 
 
   document
-    .getElementById(
-      "gameOpponent"
-    )
+    .getElementById("gameOpponent")
     .value = "";
 
 
   document
-    .getElementById(
-      "gameLocation"
-    )
+    .getElementById("gameLocation")
     .value = "";
 
 
   document
-    .getElementById(
-      "gameNotes"
-    )
+    .getElementById("gameNotes")
     .value = "";
 
 
@@ -4207,9 +4030,7 @@ async function addGame() {
 function updateAdminGames() {
 
   const container =
-    document.getElementById(
-      "adminGames"
-    );
+    document.getElementById("adminGames");
 
 
   if (!games.length) {
@@ -4238,20 +4059,15 @@ function updateAdminGames() {
         const score =
           game.our_score !== null &&
           game.opponent_score !== null
-
           ?
-
           `${game.our_score}–${game.opponent_score}`
-
           :
-
           "Scheduled";
 
 
         return `
 
           <div class="compact-game">
-
 
             <div class="compact-game-top">
 
@@ -4412,8 +4228,7 @@ function updateAdminGames() {
                     id="our-${game.id}"
                     type="number"
                     value="${
-                      game.our_score ??
-                      ""
+                      game.our_score ?? ""
                     }"
                   >
 
@@ -4430,8 +4245,7 @@ function updateAdminGames() {
                     id="opp-${game.id}"
                     type="number"
                     value="${
-                      game.opponent_score ??
-                      ""
+                      game.opponent_score ?? ""
                     }"
                   >
 
@@ -4514,9 +4328,7 @@ function updateAdminGames() {
    TOGGLE GAME EDIT
 ========================================================= */
 
-function toggleGameEdit(
-  id
-) {
+function toggleGameEdit(id) {
 
   const area =
     document.getElementById(
@@ -4540,9 +4352,7 @@ function toggleGameEdit(
    SAVE GAME
 ========================================================= */
 
-async function saveGame(
-  id
-) {
+async function saveGame(id) {
 
   const code =
     sessionStorage.getItem(
@@ -4709,9 +4519,7 @@ async function saveGame(
    DELETE GAME
 ========================================================= */
 
-async function deleteGame(
-  id
-) {
+async function deleteGame(id) {
 
   if (
     !confirm(
@@ -4840,15 +4648,11 @@ async function loadPhotos() {
 
                 ${
                   photo.caption
-
                   ?
-
                   `<div class="photo-caption">
                     ${escapeHtml(photo.caption)}
                   </div>`
-
                   :
-
                   ""
                 }
 
@@ -5184,9 +4988,7 @@ function compressImage(
    DELETE PHOTO
 ========================================================= */
 
-async function deletePhoto(
-  id
-) {
+async function deletePhoto(id) {
 
   if (
     !confirm(
@@ -5335,9 +5137,7 @@ async function changeAdminCode() {
    HELPERS
 ========================================================= */
 
-function formatDate(
-  dateString
-) {
+function formatDate(dateString) {
 
   if (!dateString) {
     return "";
@@ -5354,6 +5154,7 @@ function formatDate(
   return date.toLocaleDateString(
     "en-US",
     {
+
       weekday:
         "long",
 
@@ -5365,15 +5166,14 @@ function formatDate(
 
       year:
         "numeric"
+
     }
   );
 
 }
 
 
-function formatShortDate(
-  dateString
-) {
+function formatShortDate(dateString) {
 
   if (!dateString) {
     return "";
@@ -5390,20 +5190,20 @@ function formatShortDate(
   return date.toLocaleDateString(
     "en-US",
     {
+
       month:
         "short",
 
       day:
         "numeric"
+
     }
   );
 
 }
 
 
-function escapeHtml(
-  value
-) {
+function escapeHtml(value) {
 
   if (
     value === null ||
@@ -5445,20 +5245,14 @@ function escapeHtml(
 }
 
 
-function escapeAttribute(
-  value
-) {
+function escapeAttribute(value) {
 
-  return escapeHtml(
-    value
-  );
+  return escapeHtml(value);
 
 }
 
 
-function showAdminMessage(
-  message
-) {
+function showAdminMessage(message) {
 
   const box =
     document.getElementById(
@@ -5491,7 +5285,7 @@ function showAdminMessage(
 
 
 /* =========================================================
-   START
+   START APP
 ========================================================= */
 
 loadGames();
@@ -5499,4 +5293,5 @@ loadGames();
 </script>
 
 </body>
+
 </html>
