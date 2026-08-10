@@ -484,6 +484,15 @@ async function loadGames() {
 /* =====================================================
    HOME
    ===================================================== */
+function checkPrivateAdmin() {
+  if (window.location.hash === "#admin") {
+    const adminButton = document.getElementById("adminTab");
+
+    if (adminButton) {
+      showPage("admin", adminButton);
+    }
+  }
+}
 
 function updateHome() {
 
@@ -722,6 +731,7 @@ async function login() {
   showAdmin();
 
   loadGames();
+  checkPrivateAdmin();
 }
 
 
