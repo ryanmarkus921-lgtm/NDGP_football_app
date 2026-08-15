@@ -1507,7 +1507,7 @@ Admin Code
 id="adminCode"
 type="password"
 inputmode="numeric"
-maxlength="10"
+maxlength="4"
 placeholder="Enter code">
 
 <button
@@ -2515,7 +2515,7 @@ const code=document.getElementById("adminCode")
 if(!/^\d{4}$/.test(code)){
 
 document.getElementById("loginMessage").innerHTML=
-`<div class="message">Enter exactly 4 digits.</div>`;
+`<div class="message">Incorrect admin code.</div>`;
 
 return;
 
