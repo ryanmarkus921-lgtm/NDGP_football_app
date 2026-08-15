@@ -17,7 +17,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-
 <style>
 
 /* =========================================================
@@ -127,6 +126,137 @@ header p{
   letter-spacing:1.3px;
 
   text-transform:uppercase;
+}
+
+
+/* =========================================================
+   CHAMPIONSHIPS / ACHIEVEMENTS BAR
+========================================================= */
+
+.achievements-bar{
+  background:white;
+
+  border-bottom:1px solid var(--border);
+
+  box-shadow:
+    0 2px 10px rgba(0,31,63,.07);
+
+  padding:10px 10px 9px;
+}
+
+.achievements-inner{
+  width:100%;
+
+  max-width:900px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(5,1fr);
+
+  gap:7px;
+}
+
+.achievement-item{
+  position:relative;
+
+  min-width:0;
+
+  padding:8px 8px 7px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f9fbfc,
+      #eef3f7
+    );
+
+  border:1px solid #d4dee6;
+
+  border-top:3px solid var(--gold);
+
+  border-radius:7px;
+
+  text-align:center;
+
+  box-shadow:
+    0 2px 6px rgba(0,31,63,.05);
+}
+
+.achievement-title{
+  color:var(--navy);
+
+  font-family:"Teko";
+
+  font-size:15px;
+
+  line-height:.95;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+
+  letter-spacing:.2px;
+}
+
+.achievement-years{
+  margin-top:4px;
+
+  color:#52677a;
+
+  font-size:8px;
+
+  line-height:1.2;
+
+  font-weight:600;
+}
+
+@media(max-width:750px){
+
+  .achievements-inner{
+    grid-template-columns:
+      repeat(3,1fr);
+  }
+
+}
+
+@media(max-width:500px){
+
+  .achievements-bar{
+    padding:8px 7px;
+  }
+
+  .achievements-inner{
+    grid-template-columns:
+      repeat(2,1fr);
+
+    gap:5px;
+  }
+
+  .achievement-item{
+    padding:7px 5px 6px;
+  }
+
+  .achievement-title{
+    font-size:14px;
+  }
+
+  .achievement-years{
+    font-size:7px;
+  }
+
+  .achievement-item:last-child{
+    grid-column:1/-1;
+
+    max-width:50%;
+
+    width:100%;
+
+    margin:auto;
+  }
+
 }
 
 
@@ -1929,6 +2059,85 @@ button.danger{
 
 
 <!-- =====================================================
+     CHAMPIONSHIPS / ACHIEVEMENTS
+===================================================== -->
+
+<section class="achievements-bar">
+
+  <div class="achievements-inner">
+
+
+    <div class="achievement-item">
+
+      <div class="achievement-title">
+        Colonial League Champions
+      </div>
+
+      <div class="achievement-years">
+        2018 • 2020 • 2022 • 2024 • 2025
+      </div>
+
+    </div>
+
+
+    <div class="achievement-item">
+
+      <div class="achievement-title">
+        PIAA District XI Champions
+      </div>
+
+      <div class="achievement-years">
+        2015 (AA) • 2016 (AAA)
+      </div>
+
+    </div>
+
+
+    <div class="achievement-item">
+
+      <div class="achievement-title">
+        PIAA District XI Runner-Up
+      </div>
+
+      <div class="achievement-years">
+        1984 • 2018 • 2020 • 2025 (AAA)
+      </div>
+
+    </div>
+
+
+    <div class="achievement-item">
+
+      <div class="achievement-title">
+        PIAA State Semifinalist
+      </div>
+
+      <div class="achievement-years">
+        2016 (AAA)
+      </div>
+
+    </div>
+
+
+    <div class="achievement-item">
+
+      <div class="achievement-title">
+        PIAA State Qualifier
+      </div>
+
+      <div class="achievement-years">
+        2015 (AA)
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
      NAV
 ===================================================== -->
 
@@ -2238,8 +2447,6 @@ button.danger{
     </div>
 
 
-    <!-- GAME MANAGEMENT -->
-
     <div class="admin-section">
 
       <div class="admin-section-header">
@@ -2403,8 +2610,6 @@ button.danger{
 
     </div>
 
-
-    <!-- PHOTO MANAGEMENT -->
 
     <div class="admin-section">
 
@@ -2633,7 +2838,6 @@ let countdownTimer = null;
 
 /* =========================================================
    HISTORY DATA
-   ONLY 2024 + 2025 HAVE GAMES/ACHIEVEMENTS
 ========================================================= */
 
 const seasonHistory = [
@@ -2847,8 +3051,6 @@ function openHistorySeason(year){
 
   let html = "";
 
-
-  /* ONLY SHOW GAMES FOR 2024/2025 */
 
   if(
     season.year === 2024 ||
@@ -3768,7 +3970,7 @@ function startCountdown(game){
 
 
 /* =========================================================
-   HOME/AWAY
+   HOME / AWAY
 ========================================================= */
 
 function getHomeAwayIcon(value){
@@ -5238,14 +5440,14 @@ async function addPhoto(){
     const {
       error
     } =
-      await db.rpc(
-        "add_photo",
-        {
-          p_code:code,
-          p_image_url:image,
-          p_caption:caption
-        }
-      );
+    await db.rpc(
+      "add_photo",
+      {
+        p_code:code,
+        p_image_url:image,
+        p_caption:caption
+      }
+    );
 
 
     if(error){
