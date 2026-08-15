@@ -17,757 +17,853 @@
 <style>
 
 :root{
---navy:#001f3f;
---dark:#00152b;
---blue:#063b69;
---gold:#f4c542;
---text:#14283d;
---muted:#718096;
---border:#dce4ec;
---green:#198754;
---red:#dc2626;
+  --navy:#001f3f;
+  --dark:#00152b;
+  --blue:#063b69;
+  --gold:#f4c542;
+  --text:#14283d;
+  --muted:#718096;
+  --border:#dce4ec;
+  --green:#198754;
+  --red:#dc2626;
 }
 
 *{
-box-sizing:border-box;
+  box-sizing:border-box;
 }
 
 body{
-margin:0;
-background:linear-gradient(180deg,#edf2f7,#f8fafc);
-color:var(--text);
-font-family:"Oswald",Arial,sans-serif;
-min-height:100vh;
+  margin:0;
+  background:linear-gradient(180deg,#edf2f7,#f8fafc);
+  color:var(--text);
+  font-family:"Oswald",Arial,sans-serif;
+  min-height:100vh;
 }
 
 header{
-background:linear-gradient(135deg,var(--dark),var(--blue));
-color:white;
-text-align:center;
-padding:20px 15px 22px;
-border-bottom:4px solid var(--gold);
+  background:linear-gradient(135deg,var(--dark),var(--blue));
+  color:white;
+  text-align:center;
+  padding:20px 15px 22px;
+  border-bottom:4px solid var(--gold);
 }
 
 .logo{
-width:90px;
-height:90px;
-object-fit:contain;
-display:block;
-margin:auto auto 7px;
+  width:90px;
+  height:90px;
+  object-fit:contain;
+  display:block;
+  margin:auto auto 7px;
 }
 
 header h1{
-margin:0;
-font-family:"Teko";
-font-size:39px;
-line-height:.9;
-letter-spacing:2px;
+  margin:0;
+  font-family:"Teko";
+  font-size:39px;
+  line-height:.9;
+  letter-spacing:2px;
 }
 
 header p{
-margin:6px 0 0;
-color:#dbe7f2;
-font-size:10px;
-letter-spacing:1.3px;
-text-transform:uppercase;
+  margin:6px 0 0;
+  color:#dbe7f2;
+  font-size:10px;
+  letter-spacing:1.3px;
+  text-transform:uppercase;
 }
 
-
-/* NAVIGATION */
-
 nav{
-position:sticky;
-top:0;
-z-index:100;
-display:flex;
-background:rgba(255,255,255,.97);
-border-bottom:1px solid var(--border);
-box-shadow:0 2px 10px rgba(0,31,63,.07);
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid var(--border);
+  box-shadow:0 2px 10px rgba(0,31,63,.07);
 }
 
 nav button{
-position:relative;
-flex:1;
-border:0;
-background:transparent;
-color:#617284;
-padding:11px 3px;
-font-family:"Oswald";
-font-size:10px;
-font-weight:700;
-text-transform:uppercase;
-cursor:pointer;
+  position:relative;
+  flex:1;
+  border:0;
+  background:transparent;
+  color:#617284;
+  padding:11px 3px;
+  font-family:"Oswald";
+  font-size:10px;
+  font-weight:700;
+  text-transform:uppercase;
+  cursor:pointer;
 }
 
 nav button.active{
-color:var(--navy);
-background:#f7f9fb;
+  color:var(--navy);
+  background:#f7f9fb;
 }
 
 nav button.active:after{
-content:"";
-position:absolute;
-bottom:0;
-left:20%;
-right:20%;
-height:3px;
-background:var(--gold);
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:20%;
+  right:20%;
+  height:3px;
+  background:var(--gold);
 }
 
-
-/* MAIN */
-
 main{
-width:100%;
-max-width:760px;
-margin:auto;
-padding:12px 10px 22px;
+  width:100%;
+  max-width:760px;
+  margin:auto;
+  padding:12px 10px 22px;
 }
 
 .page{
-display:none;
+  display:none;
 }
 
 .page.active{
-display:block;
+  display:block;
 }
 
 .card{
-background:white;
-border:1px solid var(--border);
-border-radius:13px;
-margin-bottom:10px;
-padding:13px;
-box-shadow:0 3px 12px rgba(0,31,63,.07);
+  background:white;
+  border:1px solid var(--border);
+  border-radius:13px;
+  margin-bottom:10px;
+  padding:13px;
+  box-shadow:0 3px 12px rgba(0,31,63,.07);
 }
 
 .page-heading{
-display:flex;
-align-items:center;
-gap:7px;
-margin:0 0 11px;
-font-family:"Teko";
-font-size:28px;
-line-height:1;
-color:var(--navy);
-text-transform:uppercase;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin:0 0 11px;
+  font-family:"Teko";
+  font-size:28px;
+  line-height:1;
+  color:var(--navy);
+  text-transform:uppercase;
 }
 
 .page-heading:after{
-content:"";
-height:2px;
-flex:1;
-background:linear-gradient(90deg,var(--gold),transparent);
+  content:"";
+  height:2px;
+  flex:1;
+  background:linear-gradient(90deg,var(--gold),transparent);
 }
 
 .hidden{
-display:none!important;
+  display:none!important;
 }
 
 
 /* HOME */
 
 .hero-card{
-padding:0;
-overflow:hidden;
+  padding:0;
+  overflow:hidden;
 }
 
 .hero-top{
-background:linear-gradient(90deg,var(--dark),var(--blue));
-color:white;
-padding:9px 13px;
-display:flex;
-align-items:center;
-justify-content:space-between;
+  background:linear-gradient(90deg,var(--dark),var(--blue));
+  color:white;
+  padding:9px 13px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 .hero-top span{
-font-family:"Teko";
-font-size:20px;
-line-height:1;
-letter-spacing:1px;
+  font-family:"Teko";
+  font-size:20px;
+  line-height:1;
+  letter-spacing:1px;
 }
 
 .hero-top small{
-color:var(--gold);
-font-size:9px;
-letter-spacing:1px;
+  color:var(--gold);
+  font-size:9px;
+  letter-spacing:1px;
 }
 
 .hero-body{
-text-align:center;
-padding:16px 12px 17px;
+  text-align:center;
+  padding:16px 12px 17px;
 }
 
 .next-label{
-color:var(--muted);
-font-size:9px;
-text-transform:uppercase;
-letter-spacing:1.4px;
+  color:var(--muted);
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:1.4px;
 }
 
 .next-matchup{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:8px;
-margin:4px 0 7px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin:4px 0 7px;
 }
 
 .next-team{
-font-family:"Teko";
-font-size:29px;
-font-weight:700;
-line-height:1;
-color:var(--navy);
+  font-family:"Teko";
+  font-size:29px;
+  font-weight:700;
+  line-height:1;
+  color:var(--navy);
 }
 
 .next-vs{
-font-family:"Teko";
-font-size:17px;
-font-weight:700;
-color:#d3a817;
+  font-family:"Teko";
+  font-size:17px;
+  font-weight:700;
+  color:#d3a817;
 }
 
 .game-info{
-color:#637487;
-font-size:11px;
-line-height:1.7;
+  color:#637487;
+  font-size:11px;
+  line-height:1.7;
 }
 
 .home-away{
-display:inline-flex;
-align-items:center;
-gap:4px;
-padding:3px 7px;
-margin-top:4px;
-background:#f1f5f8;
-border-radius:5px;
-color:var(--navy);
-font-size:10px;
-font-weight:700;
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding:3px 7px;
+  margin-top:4px;
+  background:#f1f5f8;
+  border-radius:5px;
+  color:var(--navy);
+  font-size:10px;
+  font-weight:700;
 }
 
-
-/* COUNTDOWN */
-
 .countdown{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-gap:6px;
-margin-top:10px;
-padding:7px 12px;
-border-radius:8px;
-background:linear-gradient(135deg,#f5f7f9,#dfe5ea,#f7f9fb);
-border:1px solid #b9c4cd;
-box-shadow:
-0 2px 7px rgba(55,70,82,.16),
-inset 0 1px 0 rgba(255,255,255,.9);
-color:#344451;
-font-family:"Oswald";
-font-size:10px;
-font-weight:700;
-letter-spacing:.3px;
-text-transform:uppercase;
-position:relative;
-overflow:hidden;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  margin-top:10px;
+  padding:7px 12px;
+  border-radius:8px;
+  background:linear-gradient(135deg,#f5f7f9,#dfe5ea,#f7f9fb);
+  border:1px solid #b9c4cd;
+  box-shadow:
+    0 2px 7px rgba(55,70,82,.16),
+    inset 0 1px 0 rgba(255,255,255,.9);
+  color:#344451;
+  font-family:"Oswald";
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.3px;
+  text-transform:uppercase;
+  position:relative;
+  overflow:hidden;
 }
 
 .countdown:before{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:70%;
-height:100%;
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.75),
-transparent
-);
-animation:shine 2.8s infinite;
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:70%;
+  height:100%;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.75),
+    transparent
+  );
+  animation:shine 2.8s infinite;
 }
 
 @keyframes shine{
-0%{left:-100%}
-45%{left:130%}
-100%{left:130%}
+  0%{left:-100%}
+  45%{left:130%}
+  100%{left:130%}
 }
 
-
-/* RECORD */
-
 .record-card{
-display:flex;
-align-items:center;
-justify-content:space-between;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 .record-label,
 .last-label{
-color:var(--muted);
-font-size:9px;
-letter-spacing:1.2px;
-text-transform:uppercase;
+  color:var(--muted);
+  font-size:9px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
 }
 
 .record{
-font-family:"Teko";
-font-size:43px;
-line-height:.9;
-font-weight:700;
-color:var(--navy);
+  font-family:"Teko";
+  font-size:43px;
+  line-height:.9;
+  font-weight:700;
+  color:var(--navy);
 }
 
 .record-sub{
-color:var(--muted);
-font-size:9px;
+  color:var(--muted);
+  font-size:9px;
 }
 
-
-/* LAST GAME */
-
 .last-game{
-display:flex;
-align-items:center;
-justify-content:space-between;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 .last-matchup{
-font-family:"Teko";
-font-size:23px;
-line-height:1;
-color:var(--navy);
-text-transform:uppercase;
+  font-family:"Teko";
+  font-size:23px;
+  line-height:1;
+  color:var(--navy);
+  text-transform:uppercase;
 }
 
 .last-date{
-color:var(--muted);
-font-size:10px;
-margin-top:4px;
+  color:var(--muted);
+  font-size:10px;
+  margin-top:4px;
 }
 
 .last-score{
-font-family:"Teko";
-font-size:30px;
-font-weight:700;
-color:var(--navy);
+  font-family:"Teko";
+  font-size:30px;
+  font-weight:700;
+  color:var(--navy);
 }
 
 
 /* SCHEDULE */
 
 .game{
-background:white;
-border:1px solid var(--border);
-border-left:4px solid var(--navy);
-border-radius:10px;
-margin-bottom:8px;
-padding:9px 11px 6px;
-box-shadow:0 2px 8px rgba(0,31,63,.05);
-cursor:pointer;
-transition:.15s;
+  background:white;
+  border:1px solid var(--border);
+  border-left:4px solid var(--navy);
+  border-radius:10px;
+  margin-bottom:8px;
+  padding:9px 11px 6px;
+  box-shadow:0 2px 8px rgba(0,31,63,.05);
+  cursor:pointer;
+  transition:.15s;
 }
 
 .game:hover{
-transform:translateY(-1px);
-box-shadow:0 4px 12px rgba(0,31,63,.09);
+  transform:translateY(-1px);
+  box-shadow:0 4px 12px rgba(0,31,63,.09);
 }
 
 .game.live-game{
-border-left-color:var(--red);
-background:linear-gradient(90deg,#fffafa,#fff);
+  border-left-color:var(--red);
 }
 
 .game-top{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:8px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
 }
 
 .game-date{
-color:var(--muted);
-font-size:9px;
-margin-bottom:2px;
+  color:var(--muted);
+  font-size:9px;
+  margin-bottom:2px;
 }
 
 .game-opponent{
-font-family:"Teko";
-font-size:24px;
-line-height:.9;
-font-weight:700;
-color:var(--navy);
-text-transform:uppercase;
+  font-family:"Teko";
+  font-size:24px;
+  line-height:.9;
+  font-weight:700;
+  color:var(--navy);
+  text-transform:uppercase;
 }
 
 .game-matchup{
-display:flex;
-align-items:center;
-gap:4px;
-font-size:10px;
-margin-top:5px;
-color:#5f7182;
+  display:flex;
+  align-items:center;
+  gap:4px;
+  font-size:10px;
+  margin-top:5px;
+  color:#5f7182;
 }
 
 .game-team{
-color:var(--navy);
-font-weight:700;
+  color:var(--navy);
+  font-weight:700;
 }
 
 .game-vs{
-color:#d3a817;
-font-weight:700;
+  color:#d3a817;
+  font-weight:700;
 }
 
 .game-details{
-display:flex;
-flex-wrap:wrap;
-gap:4px 10px;
-margin-top:5px;
-color:#637487;
-font-size:9px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px 10px;
+  margin-top:5px;
+  color:#637487;
+  font-size:9px;
 }
 
 .detail{
-display:inline-flex;
-align-items:center;
-gap:3px;
+  display:inline-flex;
+  align-items:center;
+  gap:3px;
 }
 
 .game-score{
-font-family:"Teko";
-font-size:20px;
-line-height:.9;
-font-weight:700;
-color:var(--navy);
-margin:4px 0 0;
+  font-family:"Teko";
+  font-size:20px;
+  line-height:.9;
+  font-weight:700;
+  color:var(--navy);
+  margin:4px 0 0;
 }
 
 .game-details-link{
-margin-top:2px!important;
-padding:0!important;
-height:auto!important;
-line-height:1!important;
-text-align:right;
-color:#9aa8b5;
-font-size:7px;
-letter-spacing:.45px;
-text-transform:uppercase;
+  margin-top:2px!important;
+  padding:0!important;
+  height:auto!important;
+  line-height:1!important;
+  text-align:right;
+  color:#9aa8b5;
+  font-size:7px;
+  letter-spacing:.45px;
+  text-transform:uppercase;
 }
 
-
-/* BADGES */
-
 .badge{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-padding:6px 10px;
-border-radius:6px;
-font-size:9px;
-line-height:1;
-font-weight:700;
-text-transform:uppercase;
-white-space:nowrap;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:6px 10px;
+  border-radius:6px;
+  font-size:9px;
+  line-height:1;
+  font-weight:700;
+  text-transform:uppercase;
+  white-space:nowrap;
 }
 
 .badge.win{
-background:#e3f5e9;
-color:var(--green);
+  background:#e3f5e9;
+  color:var(--green);
 }
 
 .badge.loss{
-background:#fde8e8;
-color:var(--red);
+  background:#fde8e8;
+  color:var(--red);
 }
 
 .badge.tie{
-background:#eee9fb;
-color:#7252a6;
+  background:#eee9fb;
+  color:#7252a6;
 }
 
 .badge.live{
-background:#fee2e2;
-color:var(--red);
-border:1px solid #fecaca;
-padding:6px 10px;
-font-size:10px;
-animation:pulse 1.5s infinite;
+  background:#fee2e2;
+  color:var(--red);
+  border:1px solid #fecaca;
+  padding:6px 10px;
+  font-size:10px;
+  animation:pulse 1.5s infinite;
 }
 
 @keyframes pulse{
-0%{box-shadow:0 0 0 0 rgba(220,38,38,.3)}
-70%{box-shadow:0 0 0 5px rgba(220,38,38,0)}
-100%{box-shadow:0 0 0 0 rgba(220,38,38,0)}
+  0%{box-shadow:0 0 0 0 rgba(220,38,38,.3)}
+  70%{box-shadow:0 0 0 5px rgba(220,38,38,0)}
+  100%{box-shadow:0 0 0 0 rgba(220,38,38,0)}
 }
 
 
 /* HISTORY */
 
-.season-card{
-background:white;
-border:1px solid var(--border);
-border-left:5px solid var(--gold);
-border-radius:11px;
-margin-bottom:11px;
-overflow:hidden;
-box-shadow:0 3px 11px rgba(0,31,63,.07);
+.history-intro{
+  text-align:center;
+  color:var(--muted);
+  font-size:9px;
+  margin:-4px 0 11px;
 }
 
-.season-card.year-2025,
-.season-card.year-2024{
-border-left-color:var(--gold);
+.season-history{
+  border:1px solid var(--border);
+  border-radius:10px;
+  overflow:hidden;
+  margin-bottom:7px;
+  background:white;
+  box-shadow:0 2px 8px rgba(0,31,63,.05);
 }
 
-.season-header{
-background:linear-gradient(135deg,#f8fafc,#eef3f7);
-padding:11px 13px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-border-bottom:1px solid var(--border);
+.season-button{
+  width:100%;
+  border:0;
+  background:white;
+  padding:11px 12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  cursor:pointer;
+  font-family:"Oswald";
+  text-align:left;
 }
 
-.season-year{
-font-family:"Teko";
-font-size:27px;
-line-height:.9;
-font-weight:700;
-color:var(--navy);
+.season-button:hover{
+  background:#f8fafc;
 }
 
-.season-record{
-font-family:"Teko";
-font-size:24px;
-line-height:1;
-font-weight:700;
-color:var(--navy);
-text-align:right;
-white-space:nowrap;
+.season-button-left{
+  display:flex;
+  align-items:center;
+  gap:9px;
 }
 
-.season-body{
-padding:8px 12px;
+.season-icon{
+  width:31px;
+  height:31px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:7px;
+  background:linear-gradient(135deg,#fff4c9,#f4c542);
+  color:var(--navy);
+  font-size:14px;
+  flex-shrink:0;
 }
 
-.season-achievement{
-display:flex;
-align-items:center;
-gap:9px;
-padding:8px 0;
-border-bottom:1px solid #edf1f4;
+.season-name{
+  font-family:"Teko";
+  font-size:23px;
+  line-height:1;
+  color:var(--navy);
+  font-weight:700;
 }
 
-.season-achievement:last-child{
-border-bottom:0;
+.season-record-small{
+  color:var(--muted);
+  font-size:9px;
+  margin-top:2px;
 }
 
-.achievement-icon,
-.record-achievement-icon{
-width:32px;
-height:32px;
-flex-shrink:0;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:7px;
-background:linear-gradient(135deg,#fff4c9,#f4c542);
-font-size:16px;
-box-shadow:0 2px 5px rgba(0,0,0,.08);
+.season-arrow{
+  color:var(--navy);
+  font-size:17px;
+  transition:.2s;
 }
 
-.achievement-content{
-min-width:0;
+.season-history.open .season-arrow{
+  transform:rotate(90deg);
 }
 
-.achievement-title,
-.record-achievement-title{
-font-family:"Teko";
-font-size:19px;
-line-height:1;
-font-weight:700;
-color:var(--navy);
+.season-content{
+  display:none;
+  padding:0 11px 11px;
+  border-top:1px solid var(--border);
+  background:#fbfcfd;
 }
 
-.record-achievement{
-display:flex;
-align-items:center;
-gap:9px;
-padding:8px 0;
-margin:0;
-background:transparent;
-border:0;
-border-radius:0;
+.season-history.open .season-content{
+  display:block;
+}
+
+.history-record{
+  text-align:center;
+  padding:12px 5px 10px;
+}
+
+.history-record-label{
+  color:var(--muted);
+  font-size:8px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.history-record-value{
+  font-family:"Teko";
+  color:var(--navy);
+  font-size:38px;
+  font-weight:700;
+  line-height:.9;
+  margin-top:3px;
+}
+
+.history-section-title{
+  font-family:"Teko";
+  font-size:21px;
+  color:var(--navy);
+  line-height:1;
+  margin:9px 0 6px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.history-section-title:after{
+  content:"";
+  flex:1;
+  height:1px;
+  background:var(--gold);
+}
+
+.history-game{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:7px;
+  padding:7px 8px;
+  margin-bottom:5px;
+}
+
+.history-game:last-child{
+  margin-bottom:0;
+}
+
+.history-game-left{
+  min-width:0;
+}
+
+.history-game-opponent{
+  font-family:"Teko";
+  font-size:18px;
+  line-height:1;
+  font-weight:700;
+  color:var(--navy);
+}
+
+.history-game-meta{
+  color:var(--muted);
+  font-size:7px;
+  margin-top:2px;
+}
+
+.history-game-score{
+  font-family:"Teko";
+  font-size:22px;
+  line-height:1;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.history-game-score.win{
+  color:var(--green);
+}
+
+.history-game-score.loss{
+  color:var(--red);
+}
+
+.achievement{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:7px;
+  padding:8px;
+  margin-bottom:5px;
+}
+
+.achievement:last-child{
+  margin-bottom:0;
+}
+
+.achievement-icon{
+  width:29px;
+  height:29px;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:6px;
+  background:linear-gradient(135deg,#fff4c9,#f4c542);
+  font-size:14px;
+}
+
+.achievement-text{
+  font-family:"Teko";
+  font-size:18px;
+  line-height:1;
+  color:var(--navy);
+  font-weight:700;
 }
 
 
 /* PHOTOS */
 
 .photo-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:7px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:7px;
 }
 
 .photo-item img{
-width:100%;
-aspect-ratio:1;
-object-fit:cover;
-display:block;
-border-radius:7px;
+  width:100%;
+  aspect-ratio:1;
+  object-fit:cover;
+  display:block;
+  border-radius:7px;
 }
 
 .photo-caption{
-color:var(--muted);
-font-size:8px;
-margin:3px;
+  color:var(--muted);
+  font-size:8px;
+  margin:3px;
 }
 
 
 /* MODAL */
 
 .modal-overlay{
-position:fixed;
-inset:0;
-z-index:500;
-display:none;
-align-items:center;
-justify-content:center;
-padding:12px;
-background:rgba(0,15,30,.68);
-backdrop-filter:blur(4px);
+  position:fixed;
+  inset:0;
+  z-index:500;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:12px;
+  background:rgba(0,15,30,.68);
+  backdrop-filter:blur(4px);
 }
 
 .modal-overlay.show{
-display:flex;
+  display:flex;
 }
 
 .modal{
-width:100%;
-max-width:470px;
-max-height:90vh;
-overflow-y:auto;
-background:white;
-border-radius:14px;
-overflow:hidden;
+  width:100%;
+  max-width:470px;
+  max-height:90vh;
+  overflow-y:auto;
+  background:white;
+  border-radius:14px;
+  overflow:hidden;
 }
 
 .modal-header{
-position:relative;
-background:linear-gradient(135deg,var(--dark),var(--blue));
-color:white;
-padding:15px;
-text-align:center;
-border-bottom:4px solid var(--gold);
+  position:relative;
+  background:linear-gradient(135deg,var(--dark),var(--blue));
+  color:white;
+  padding:15px;
+  text-align:center;
+  border-bottom:4px solid var(--gold);
 }
 
 .modal-close{
-position:absolute;
-right:9px;
-top:8px;
-width:29px;
-height:29px;
-border:0;
-border-radius:50%;
-background:rgba(255,255,255,.12);
-color:white;
-font-size:19px;
-cursor:pointer;
+  position:absolute;
+  right:9px;
+  top:8px;
+  width:29px;
+  height:29px;
+  border:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+  color:white;
+  font-size:19px;
+  cursor:pointer;
 }
 
 .modal-kicker{
-color:var(--gold);
-font-size:8px;
-letter-spacing:1.4px;
-margin-bottom:3px;
+  color:var(--gold);
+  font-size:8px;
+  letter-spacing:1.4px;
+  margin-bottom:3px;
 }
 
 .modal-matchup{
-font-family:"Teko";
-font-size:33px;
-line-height:1;
-text-transform:uppercase;
+  font-family:"Teko";
+  font-size:33px;
+  line-height:1;
+  text-transform:uppercase;
 }
 
 .modal-body{
-padding:15px;
+  padding:15px;
 }
 
 .modal-status{
-text-align:center;
-margin-bottom:8px;
+  text-align:center;
+  margin-bottom:8px;
 }
 
 .modal-live{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-background:#eef1f3;
-color:#465461;
-border:1px solid #c7d0d7;
-border-radius:8px;
-padding:7px 14px;
-font-family:"Teko";
-font-size:24px;
-font-weight:700;
-line-height:1;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:#eef1f3;
+  color:#465461;
+  border:1px solid #c7d0d7;
+  border-radius:8px;
+  padding:7px 14px;
+  font-family:"Teko";
+  font-size:24px;
+  font-weight:700;
+  line-height:1;
 }
 
 .modal-score{
-text-align:center;
-font-family:"Teko";
-font-size:50px;
-line-height:.9;
-font-weight:700;
-color:var(--navy);
-margin:3px 0 14px;
+  text-align:center;
+  font-family:"Teko";
+  font-size:50px;
+  line-height:.9;
+  font-weight:700;
+  color:var(--navy);
+  margin:3px 0 14px;
 }
 
 .modal-info-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:7px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7px;
 }
 
 .modal-info{
-background:#f5f8fa;
-border:1px solid var(--border);
-border-radius:7px;
-padding:8px;
+  background:#f5f8fa;
+  border:1px solid var(--border);
+  border-radius:7px;
+  padding:8px;
 }
 
 .modal-info-label{
-color:var(--muted);
-font-size:7px;
-text-transform:uppercase;
-letter-spacing:.7px;
+  color:var(--muted);
+  font-size:7px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
 }
 
 .modal-info-value{
-color:var(--navy);
-font-size:11px;
-font-weight:600;
-margin-top:2px;
+  color:var(--navy);
+  font-size:11px;
+  font-weight:600;
+  margin-top:2px;
 }
 
 .modal-notes{
-margin-top:9px;
-background:#f7f9fb;
-border-radius:7px;
-padding:9px;
-color:#5f7182;
-font-size:10px;
+  margin-top:9px;
+  background:#f7f9fb;
+  border-radius:7px;
+  padding:9px;
+  color:#5f7182;
+  font-size:10px;
 }
 
 .modal-notes-title{
-font-family:"Teko";
-font-size:18px;
-line-height:1;
-color:var(--navy);
-margin-bottom:3px;
+  font-family:"Teko";
+  font-size:18px;
+  line-height:1;
+  color:var(--navy);
+  margin-bottom:3px;
 }
 
 
@@ -775,345 +871,339 @@ margin-bottom:3px;
 
 .admin-login-header,
 .admin-dashboard-header{
-background:linear-gradient(135deg,var(--dark),var(--blue));
-color:white;
-border-radius:11px;
-border-bottom:3px solid var(--gold);
-padding:13px;
-margin-bottom:10px;
+  background:linear-gradient(135deg,var(--dark),var(--blue));
+  color:white;
+  border-radius:11px;
+  border-bottom:3px solid var(--gold);
+  padding:13px;
+  margin-bottom:10px;
 }
 
 .admin-login-header h2,
 .admin-dashboard-header h2{
-margin:0;
-font-family:"Teko";
-font-size:26px;
-line-height:1;
+  margin:0;
+  font-family:"Teko";
+  font-size:26px;
+  line-height:1;
 }
 
 .admin-login-header p,
 .admin-dashboard-header p{
-margin:3px 0 0;
-font-size:9px;
-color:#d9e5ef;
+  margin:3px 0 0;
+  font-size:9px;
+  color:#d9e5ef;
 }
 
 .admin-dashboard-header{
-display:flex;
-align-items:center;
-justify-content:space-between;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 .admin-section{
-background:white;
-border:1px solid var(--border);
-border-radius:10px;
-overflow:hidden;
-margin-bottom:9px;
-box-shadow:0 3px 12px rgba(0,31,63,.07);
+  background:white;
+  border:1px solid var(--border);
+  border-radius:10px;
+  overflow:hidden;
+  margin-bottom:9px;
+  box-shadow:0 3px 12px rgba(0,31,63,.07);
 }
 
 .admin-section-header{
-display:flex;
-align-items:center;
-gap:8px;
-padding:9px 11px;
-background:#f7f9fb;
-border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 11px;
+  background:#f7f9fb;
+  border-bottom:1px solid var(--border);
 }
 
 .admin-section-icon{
-width:29px;
-height:29px;
-border-radius:6px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:var(--navy);
-color:white;
+  width:29px;
+  height:29px;
+  border-radius:6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--navy);
+  color:white;
 }
 
 .admin-section-title h3{
-margin:0;
-font-family:"Teko";
-font-size:20px;
-line-height:1;
-color:var(--navy);
+  margin:0;
+  font-family:"Teko";
+  font-size:20px;
+  line-height:1;
+  color:var(--navy);
 }
 
 .admin-section-title p{
-margin:2px 0 0;
-font-size:8px;
-color:var(--muted);
+  margin:2px 0 0;
+  font-size:8px;
+  color:var(--muted);
 }
 
 .admin-section-body{
-padding:9px;
+  padding:9px;
 }
 
 .admin-subsection{
-background:#f8fafc;
-border:1px solid var(--border);
-border-radius:8px;
-padding:9px;
-margin-bottom:8px;
+  background:#f8fafc;
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:9px;
+  margin-bottom:8px;
 }
 
 .admin-subsection:last-child{
-margin-bottom:0;
+  margin-bottom:0;
 }
 
 .admin-subsection h4{
-margin:0;
-font-family:"Teko";
-font-size:19px;
-line-height:1;
-color:var(--navy);
+  margin:0;
+  font-family:"Teko";
+  font-size:19px;
+  line-height:1;
+  color:var(--navy);
 }
 
 .admin-description{
-color:var(--muted);
-font-size:8px;
-margin:3px 0 7px;
+  color:var(--muted);
+  font-size:8px;
+  margin:3px 0 7px;
 }
 
 label{
-display:block;
-color:#40566b;
-font-size:8px;
-font-weight:700;
-text-transform:uppercase;
-margin-bottom:3px;
+  display:block;
+  color:#40566b;
+  font-size:8px;
+  font-weight:700;
+  text-transform:uppercase;
+  margin-bottom:3px;
 }
 
 input,
 select,
 textarea{
-width:100%;
-border:1px solid #ccd7e1;
-border-radius:6px;
-padding:7px;
-margin:0 0 7px;
-background:white;
-color:var(--text);
-font-family:"Oswald";
-font-size:11px;
+  width:100%;
+  border:1px solid #ccd7e1;
+  border-radius:6px;
+  padding:7px;
+  margin:0 0 7px;
+  background:white;
+  color:var(--text);
+  font-family:"Oswald";
+  font-size:11px;
 }
 
 textarea{
-min-height:55px;
-resize:vertical;
+  min-height:55px;
+  resize:vertical;
 }
 
 .form-row{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:7px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7px;
 }
 
 button.primary,
 button.secondary,
 button.danger{
-border:0;
-border-radius:6px;
-padding:7px 10px;
-font-family:"Oswald";
-font-size:10px;
-font-weight:700;
-cursor:pointer;
+  border:0;
+  border-radius:6px;
+  padding:7px 10px;
+  font-family:"Oswald";
+  font-size:10px;
+  font-weight:700;
+  cursor:pointer;
 }
 
 button.primary{
-background:var(--navy);
-color:white;
+  background:var(--navy);
+  color:white;
 }
 
 button.secondary{
-background:#e8edf2;
-color:var(--navy);
+  background:#e8edf2;
+  color:var(--navy);
 }
 
 button.danger{
-background:#fde7e7;
-color:var(--red);
+  background:#fde7e7;
+  color:var(--red);
 }
 
 .message{
-background:#edf2f7;
-border-radius:6px;
-padding:7px;
-margin:6px 0;
-color:#536779;
-font-size:9px;
+  background:#edf2f7;
+  border-radius:6px;
+  padding:7px;
+  margin:6px 0;
+  color:#536779;
+  font-size:9px;
 }
 
-
-/* ADMIN GAMES */
-
 .compact-game{
-background:white;
-border:1px solid var(--border);
-border-radius:7px;
-margin-bottom:5px;
-overflow:hidden;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:7px;
+  margin-bottom:5px;
+  overflow:hidden;
 }
 
 .compact-game-top{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:7px;
-padding:7px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:7px;
+  padding:7px;
 }
 
 .compact-game-info{
-min-width:0;
+  min-width:0;
 }
 
 .compact-game-title{
-font-family:"Teko";
-font-size:17px;
-line-height:.9;
-color:var(--navy);
-white-space:nowrap;
-overflow:hidden;
-text-overflow:ellipsis;
+  font-family:"Teko";
+  font-size:17px;
+  line-height:.9;
+  color:var(--navy);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
 .compact-game-meta{
-font-size:7px;
-color:var(--muted);
-margin-top:3px;
+  font-size:7px;
+  color:var(--muted);
+  margin-top:3px;
 }
 
 .compact-game-score{
-font-size:8px;
-font-weight:700;
-margin-top:2px;
-color:var(--navy);
+  font-size:8px;
+  font-weight:700;
+  margin-top:2px;
+  color:var(--navy);
 }
 
 .compact-game-actions{
-display:flex;
-gap:3px;
+  display:flex;
+  gap:3px;
 }
 
 .edit-button,
 .delete-small{
-border:0;
-border-radius:5px;
-padding:6px;
-font-family:"Oswald";
-font-size:8px;
-font-weight:700;
-cursor:pointer;
+  border:0;
+  border-radius:5px;
+  padding:6px;
+  font-family:"Oswald";
+  font-size:8px;
+  font-weight:700;
+  cursor:pointer;
 }
 
 .edit-button{
-background:#e8eff6;
-color:var(--navy);
+  background:#e8eff6;
+  color:var(--navy);
 }
 
 .delete-small{
-background:#fde7e7;
-color:var(--red);
+  background:#fde7e7;
+  color:var(--red);
 }
 
 .compact-edit{
-display:none;
-padding:8px;
-background:#f7f9fb;
-border-top:1px solid var(--border);
+  display:none;
+  padding:8px;
+  background:#f7f9fb;
+  border-top:1px solid var(--border);
 }
 
 .compact-edit.open{
-display:block;
+  display:block;
 }
 
 .compact-edit-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:0 7px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0 7px;
 }
 
 .compact-full{
-grid-column:1/-1;
+  grid-column:1/-1;
 }
 
 .compact-save{
-width:100%;
-margin:0!important;
+  width:100%;
+  margin:0!important;
 }
 
-
-/* ADMIN PHOTOS */
-
 .photo-upload{
-background:#f8fafc;
-border:1px dashed #b9c8d6;
-border-radius:8px;
-padding:8px;
-margin-bottom:8px;
+  background:#f8fafc;
+  border:1px dashed #b9c8d6;
+  border-radius:8px;
+  padding:8px;
+  margin-bottom:8px;
 }
 
 .photo-upload h4{
-margin:0;
-font-family:"Teko";
-font-size:18px;
-line-height:1;
-color:var(--navy);
+  margin:0;
+  font-family:"Teko";
+  font-size:18px;
+  line-height:1;
+  color:var(--navy);
 }
 
 .photo-upload p{
-margin:3px 0 7px;
-font-size:8px;
-color:var(--muted);
+  margin:3px 0 7px;
+  font-size:8px;
+  color:var(--muted);
 }
 
 .upload-photo-button{
-width:100%;
+  width:100%;
 }
 
 .admin-photo-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:5px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:5px;
 }
 
 .admin-photo-card{
-border:1px solid var(--border);
-border-radius:6px;
-padding:3px;
-overflow:hidden;
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:3px;
+  overflow:hidden;
 }
 
 .admin-photo-card img{
-width:100%;
-aspect-ratio:1;
-object-fit:cover;
-display:block;
-border-radius:4px;
+  width:100%;
+  aspect-ratio:1;
+  object-fit:cover;
+  display:block;
+  border-radius:4px;
 }
 
 .admin-photo-caption{
-font-size:7px;
-color:var(--muted);
-margin:3px 1px;
-white-space:nowrap;
-overflow:hidden;
-text-overflow:ellipsis;
+  font-size:7px;
+  color:var(--muted);
+  margin:3px 1px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
 .admin-photo-delete{
-width:100%;
-border:0;
-border-radius:4px;
-background:#fde7e7;
-color:var(--red);
-padding:4px;
-font-size:7px;
-font-weight:700;
-cursor:pointer;
+  width:100%;
+  border:0;
+  border-radius:4px;
+  background:#fde7e7;
+  color:var(--red);
+  padding:4px;
+  font-size:7px;
+  font-weight:700;
+  cursor:pointer;
 }
 
 
@@ -1121,52 +1211,52 @@ cursor:pointer;
 
 @media(max-width:520px){
 
-main{
-padding:9px 8px 20px;
-}
+  main{
+    padding:9px 8px 20px;
+  }
 
-.logo{
-width:82px;
-height:82px;
-}
+  .logo{
+    width:82px;
+    height:82px;
+  }
 
-header h1{
-font-size:35px;
-}
+  header h1{
+    font-size:35px;
+  }
 
-.form-row{
-grid-template-columns:1fr;
-}
+  .form-row{
+    grid-template-columns:1fr;
+  }
 
-.compact-edit-grid{
-grid-template-columns:1fr;
-}
+  .compact-edit-grid{
+    grid-template-columns:1fr;
+  }
 
-.compact-full{
-grid-column:auto;
-}
+  .compact-full{
+    grid-column:auto;
+  }
 
-nav button{
-font-size:9px;
-padding-left:1px;
-padding-right:1px;
-}
+  nav button{
+    font-size:9px;
+    padding-left:1px;
+    padding-right:1px;
+  }
 
-.season-year{
-font-size:24px;
-}
+  .season-name{
+    font-size:21px;
+  }
 
-.season-record{
-font-size:19px;
-}
+  .season-record-small{
+    font-size:8px;
+  }
 
 }
 
 @media(min-width:650px){
 
-.photo-grid{
-grid-template-columns:repeat(4,1fr);
-}
+  .photo-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
 
 }
 
@@ -1178,9 +1268,9 @@ grid-template-columns:repeat(4,1fr);
 <header>
 
 <img
-class="logo"
-src="LOGO_W__FB.png"
-alt="Notre Dame Green Pond Crusaders">
+  class="logo"
+  src="LOGO_W__FB.png"
+  alt="Notre Dame Green Pond Crusaders">
 
 <h1>NDGP FOOTBALL</h1>
 
@@ -1224,10 +1314,8 @@ alt="Notre Dame Green Pond Crusaders">
 <div class="card hero-card">
 
 <div class="hero-top">
-
 <span>NEXT GAME</span>
 <small>2026 SEASON</small>
-
 </div>
 
 <div class="hero-body">
@@ -1249,10 +1337,8 @@ Loading...
 </div>
 
 <div id="countdown" class="countdown hidden">
-
 <span>🏈</span>
 <span id="countdownText"></span>
-
 </div>
 
 </div>
@@ -1330,135 +1416,14 @@ Loading...
 <div class="card">
 
 <h2 class="page-heading">
-🏆 Team History
+🏆 Football History
 </h2>
 
-
-<!-- 2025 -->
-
-<div class="season-card year-2025">
-
-<div class="season-header">
-
-<div class="season-year">
-2025 Football Season
+<div class="history-intro">
+Notre Dame Green Pond Football • 2016–2025
 </div>
 
-<div class="season-record">
-Final Record: 12–1
-</div>
-
-</div>
-
-
-<div class="season-body">
-
-<div class="season-achievement">
-
-<div class="achievement-icon">
-🏆
-</div>
-
-<div class="achievement-content">
-
-<div class="achievement-title">
-Colonial League White Division Champions
-</div>
-
-</div>
-
-</div>
-
-
-<div class="season-achievement">
-
-<div class="achievement-icon">
-🥈
-</div>
-
-<div class="achievement-content">
-
-<div class="achievement-title">
-District 11 Class 3A Runner-Up
-</div>
-
-</div>
-
-</div>
-
-
-<div class="season-achievement">
-
-<div class="achievement-icon">
-🔥
-</div>
-
-<div class="achievement-content">
-
-<div class="achievement-title">
-12–0 Start
-</div>
-
-</div>
-
-</div>
-
-
-<div class="record-achievement">
-
-<div class="record-achievement-icon">
-⭐
-</div>
-
-<div class="record-achievement-title">
-Tied School Record — Most Wins
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- 2024 -->
-
-<div class="season-card year-2024">
-
-<div class="season-header">
-
-<div class="season-year">
-2024 Football Season
-</div>
-
-<div class="season-record">
-Final Record: 9–2
-</div>
-
-</div>
-
-
-<div class="season-body">
-
-<div class="season-achievement">
-
-<div class="achievement-icon">
-🏆
-</div>
-
-<div class="achievement-content">
-
-<div class="achievement-title">
-Colonial League White Division Champions
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+<div id="historyList"></div>
 
 </div>
 
@@ -1504,16 +1469,18 @@ Admin Code
 </label>
 
 <input
-id="adminCode"
-type="password"
-inputmode="numeric"
-maxlength="10"
-placeholder="Enter code">
+  id="adminCode"
+  type="password"
+  inputmode="numeric"
+  maxlength="10"
+  minlength="5"
+  placeholder="Enter 5–10 digit code"
+  autocomplete="off">
 
 <button
-class="primary"
-onclick="login()"
-style="width:100%">
+  class="primary"
+  onclick="login()"
+  style="width:100%">
 
 🔓 Enter Admin
 
@@ -1538,8 +1505,8 @@ style="width:100%">
 </div>
 
 <button
-class="secondary"
-onclick="logout()">
+  class="secondary"
+  onclick="logout()">
 
 Log Out
 
@@ -1547,8 +1514,6 @@ Log Out
 
 </div>
 
-
-<!-- GAME MANAGEMENT -->
 
 <div class="admin-section">
 
@@ -1585,8 +1550,8 @@ Add a new game to the schedule.
 <label>Date</label>
 
 <input
-id="gameDate"
-type="date">
+  id="gameDate"
+  type="date">
 
 </div>
 
@@ -1595,9 +1560,9 @@ type="date">
 <label>Time</label>
 
 <input
-id="gameTime"
-type="text"
-placeholder="7:00 PM">
+  id="gameTime"
+  type="text"
+  placeholder="7:00 PM">
 
 </div>
 
@@ -1608,9 +1573,9 @@ Opponent
 </label>
 
 <input
-id="gameOpponent"
-type="text"
-placeholder="Opponent">
+  id="gameOpponent"
+  type="text"
+  placeholder="Opponent">
 
 <div class="form-row">
 
@@ -1619,9 +1584,9 @@ placeholder="Opponent">
 <label>Location</label>
 
 <input
-id="gameLocation"
-type="text"
-placeholder="Stadium">
+  id="gameLocation"
+  type="text"
+  placeholder="Stadium">
 
 </div>
 
@@ -1650,13 +1615,13 @@ Notes
 </label>
 
 <textarea
-id="gameNotes"
-placeholder="Optional notes"></textarea>
+  id="gameNotes"
+  placeholder="Optional notes"></textarea>
 
 <button
-class="primary"
-onclick="addGame()"
-style="width:100%">
+  class="primary"
+  onclick="addGame()"
+  style="width:100%">
 
 ➕ ADD GAME
 
@@ -1664,9 +1629,7 @@ style="width:100%">
 
 </div>
 
-
 <div id="adminMessage"></div>
-
 
 <div class="admin-subsection">
 
@@ -1686,8 +1649,6 @@ Loading...
 
 </div>
 
-
-<!-- PHOTO MANAGEMENT -->
 
 <div class="admin-section">
 
@@ -1722,22 +1683,22 @@ Photo
 </label>
 
 <input
-id="photoFile"
-type="file"
-accept="image/*">
+  id="photoFile"
+  type="file"
+  accept="image/*">
 
 <label>
 Caption
 </label>
 
 <input
-id="photoCaption"
-type="text"
-placeholder="Optional caption">
+  id="photoCaption"
+  type="text"
+  placeholder="Optional caption">
 
 <button
-class="primary upload-photo-button"
-onclick="addPhoto()">
+  class="primary upload-photo-button"
+  onclick="addPhoto()">
 
 📸 UPLOAD PHOTO
 
@@ -1765,22 +1726,22 @@ Loading...
 </section>
 
 
-<!-- GAME DETAILS MODAL -->
+<!-- GAME DETAILS -->
 
 <div
-id="gameModal"
-class="modal-overlay"
-onclick="closeGameModal(event)">
+  id="gameModal"
+  class="modal-overlay"
+  onclick="closeGameModal(event)">
 
 <div
-class="modal"
-onclick="event.stopPropagation()">
+  class="modal"
+  onclick="event.stopPropagation()">
 
 <div class="modal-header">
 
 <button
-class="modal-close"
-onclick="closeGameModal()">
+  class="modal-close"
+  onclick="closeGameModal()">
 ×
 </button>
 
@@ -1789,8 +1750,8 @@ NDGP FOOTBALL
 </div>
 
 <div
-id="modalMatchup"
-class="modal-matchup">
+  id="modalMatchup"
+  class="modal-matchup">
 NDGP VS OPPONENT
 </div>
 
@@ -1800,18 +1761,18 @@ NDGP VS OPPONENT
 <div class="modal-body">
 
 <div
-id="modalStatus"
-class="modal-status">
+  id="modalStatus"
+  class="modal-status">
 </div>
 
 <div
-id="modalScore"
-class="modal-score">
+  id="modalScore"
+  class="modal-score">
 </div>
 
 <div
-id="modalInfo"
-class="modal-info-grid">
+  id="modalInfo"
+  class="modal-info-grid">
 </div>
 
 <div id="modalNotes"></div>
@@ -1836,1432 +1797,2107 @@ const SUPABASE_KEY =
 
 const db =
 window.supabase.createClient(
-SUPABASE_URL,
-SUPABASE_KEY
+  SUPABASE_URL,
+  SUPABASE_KEY
 );
 
 let games=[];
 let countdownTimer=null;
 
 
-/* NAVIGATION */
+/* =========================================================
+   HISTORY DATA
+   ========================================================= */
+
+const seasonHistory = [
+
+  {
+    year:2025,
+    record:"12–1",
+    games:[
+      ["Garden Spot","21–3","W"],
+      ["Salisbury Township","63–0","W"],
+      ["North Schuylkill","21–20","W"],
+      ["Saucon Valley","55–13","W"],
+      ["Catasauqua","58–0","W"],
+      ["Northern Lehigh","40–21","W"],
+      ["Pen Argyl","59–7","W"],
+      ["Palisades","34–22","W"],
+      ["Palmerton","56–0","W"],
+      ["Wilson Area","62–0","W"],
+      ["Salisbury Township","56–6","W"],
+      ["Tamaqua","59–16","W"],
+      ["Northwestern Lehigh","14–35","L"]
+    ],
+    achievements:[
+      ["🏆","Colonial League White Division Champions"],
+      ["🥈","District 11 Class 3A Runner-Up"],
+      ["🔥","12–0 Start"],
+      ["⭐","Tied School Record — Most Wins"]
+    ]
+  },
+
+  {
+    year:2024,
+    record:"9–2",
+    games:[
+      ["Garden Spot","71–64","W"],
+      ["Salisbury Township","56–0","W"],
+      ["North Schuylkill","29–31","L"],
+      ["Saucon Valley","24–7","W"],
+      ["Catasauqua","63–7","W"],
+      ["Northern Lehigh","49–19","W"],
+      ["Pen Argyl","42–15","W"],
+      ["Palisades","56–7","W"],
+      ["Palmerton","52–0","W"],
+      ["Wilson Area","52–11","W"],
+      ["North Schuylkill","23–26","L"]
+    ],
+    achievements:[
+      ["🏆","Colonial League White Division Champions"],
+      ["🥇","8–0 Conference Record"]
+    ]
+  },
+
+  {
+    year:2023,
+    record:"8–4"
+  },
+
+  {
+    year:2022,
+    record:"9–3"
+  },
+
+  {
+    year:2021,
+    record:"7–3"
+  },
+
+  {
+    year:2020,
+    record:"7–1"
+  },
+
+  {
+    year:2019,
+    record:"7–4"
+  },
+
+  {
+    year:2018,
+    record:"10–2"
+  },
+
+  {
+    year:2017,
+    record:"9–3"
+  },
+
+  {
+    year:2016,
+    record:"12–3"
+  }
+
+];
+
+
+/* =========================================================
+   HISTORY RENDER
+   ========================================================= */
+
+function renderHistory(){
+
+  const container =
+    document.getElementById("historyList");
+
+  if(!container) return;
+
+  container.innerHTML =
+    seasonHistory.map((season,index)=>{
+
+      const detailed =
+        season.games ||
+        season.achievements;
+
+      return `
+
+      <div
+        class="season-history"
+        id="season-${season.year}">
+
+        <button
+          class="season-button"
+          onclick="toggleSeason(${season.year})">
+
+          <div class="season-button-left">
+
+            <div class="season-icon">
+              🏈
+            </div>
+
+            <div>
+
+              <div class="season-name">
+                ${season.year} Season
+              </div>
+
+              <div class="season-record-small">
+                Final Record: ${season.record}
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="season-arrow">
+            ›
+          </div>
+
+        </button>
+
+
+        <div class="season-content">
+
+          <div class="history-record">
+
+            <div class="history-record-label">
+              Final Record
+            </div>
+
+            <div class="history-record-value">
+              ${season.record}
+            </div>
+
+          </div>
+
+          ${
+            season.games
+            ? `
+
+            <div class="history-section-title">
+              🏈 Games
+            </div>
+
+            ${season.games.map(game=>`
+
+              <div class="history-game">
+
+                <div class="history-game-left">
+
+                  <div class="history-game-opponent">
+                    ${escapeHtml(game[0])}
+                  </div>
+
+                  <div class="history-game-meta">
+                    ${game[2]==="W" ? "Victory" : "Loss"}
+                  </div>
+
+                </div>
+
+                <div
+                  class="history-game-score ${game[2]==="W"?"win":"loss"}">
+
+                  ${game[1]}
+
+                </div>
+
+              </div>
+
+            `).join("")}
+
+            `
+            :`
+              <div class="message">
+                Season record: ${season.record}
+              </div>
+            `
+          }
+
+
+          ${
+            season.achievements
+            ? `
+
+            <div class="history-section-title">
+              🏆 Achievements
+            </div>
+
+            ${season.achievements.map(a=>`
+
+              <div class="achievement">
+
+                <div class="achievement-icon">
+                  ${a[0]}
+                </div>
+
+                <div class="achievement-text">
+                  ${escapeHtml(a[1])}
+                </div>
+
+              </div>
+
+            `).join("")}
+
+            `
+            :""
+          }
+
+        </div>
+
+      </div>
+
+      `;
+
+    }).join("");
+
+}
+
+
+function toggleSeason(year){
+
+  const card =
+    document.getElementById(`season-${year}`);
+
+  if(!card) return;
+
+  card.classList.toggle("open");
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
 function showPage(id,button){
 
-document.querySelectorAll(".page")
-.forEach(p=>p.classList.remove("active"));
+  document.querySelectorAll(".page")
+    .forEach(p=>p.classList.remove("active"));
 
-document.getElementById(id)
-.classList.add("active");
+  document.getElementById(id)
+    .classList.add("active");
 
-document.querySelectorAll("nav button")
-.forEach(b=>b.classList.remove("active"));
+  document.querySelectorAll("nav button")
+    .forEach(b=>b.classList.remove("active"));
 
-if(button)
-button.classList.add("active");
+  if(button)
+    button.classList.add("active");
 
-if(id==="schedule")
-loadGames();
+  if(id==="schedule")
+    loadGames();
 
-if(id==="photos")
-loadPhotos();
+  if(id==="history")
+    renderHistory();
 
-if(id==="admin" &&
-sessionStorage.getItem("adminCode"))
-showAdmin();
+  if(id==="photos")
+    loadPhotos();
+
+  if(
+    id==="admin" &&
+    sessionStorage.getItem("adminCode")
+  )
+    showAdmin();
 
 }
 
 
-/* LOAD GAMES */
+/* =========================================================
+   LOAD GAMES
+   ========================================================= */
 
 async function loadGames(){
 
-const {data,error}=await db
-.from("games")
-.select("*")
-.order("date",{ascending:true});
+  const {data,error}=await db
+    .from("games")
+    .select("*")
+    .order("date",{ascending:true});
 
-if(error){
+  if(error){
 
-console.error(error);
+    console.error(error);
 
-const list=document.getElementById("scheduleList");
+    const list =
+      document.getElementById("scheduleList");
 
-if(list)
-list.innerHTML=
-`<div class="message">Could not load games.</div>`;
+    if(list)
+      list.innerHTML=
+        `<div class="message">
+          Could not load games.
+        </div>`;
 
-return;
+    return;
+  }
+
+  games=data||[];
+
+  updateHome();
+  updateSchedule();
+
+  if(sessionStorage.getItem("adminCode"))
+    updateAdminGames();
 
 }
 
-games=data||[];
 
-updateHome();
-updateSchedule();
-
-if(sessionStorage.getItem("adminCode"))
-updateAdminGames();
-
-}
-
-
-/* SCORE */
+/* =========================================================
+   SCORE / STATUS
+   ========================================================= */
 
 function hasScore(game){
 
-return game.our_score!==null &&
-game.our_score!==undefined &&
-game.our_score!=="" &&
-game.opponent_score!==null &&
-game.opponent_score!==undefined &&
-game.opponent_score!=="";
+  return game.our_score!==null &&
+    game.our_score!==undefined &&
+    game.our_score!=="" &&
+    game.opponent_score!==null &&
+    game.opponent_score!==undefined &&
+    game.opponent_score!=="";
 
 }
 
-
-/* KICKOFF */
 
 function parseKickoff(game){
 
-if(!game.date)
-return null;
+  if(!game.date)
+    return null;
 
-let hours=19;
-let minutes=0;
+  let hours=19;
+  let minutes=0;
 
-if(game.time){
+  if(game.time){
 
-const m=String(game.time).match(
-/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?/i
-);
+    const m=String(game.time).match(
+      /(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?/i
+    );
 
-if(m){
+    if(m){
 
-hours=Number(m[1]);
-minutes=Number(m[2]||0);
+      hours=Number(m[1]);
+      minutes=Number(m[2]||0);
 
-const period=String(m[3]||"").toUpperCase();
+      const period=
+        String(m[3]||"").toUpperCase();
 
-if(period==="PM"&&hours<12)
-hours+=12;
+      if(period==="PM"&&hours<12)
+        hours+=12;
 
-if(period==="AM"&&hours===12)
-hours=0;
+      if(period==="AM"&&hours===12)
+        hours=0;
+
+    }
+
+  }
+
+  const d =
+    new Date(game.date+"T00:00:00");
+
+  d.setHours(hours,minutes,0,0);
+
+  return d;
 
 }
 
-}
-
-const d=new Date(game.date+"T00:00:00");
-
-d.setHours(hours,minutes,0,0);
-
-return d;
-
-}
-
-
-/* LIVE */
 
 function isGameLive(game){
 
-if(hasScore(game))
-return false;
+  if(hasScore(game))
+    return false;
 
-const kickoff=parseKickoff(game);
+  const kickoff=parseKickoff(game);
 
-if(!kickoff)
-return false;
+  if(!kickoff)
+    return false;
 
-return new Date()>=kickoff;
+  return new Date()>=kickoff;
 
 }
 
-
-/* STATUS */
 
 function getGameStatus(game){
 
-if(hasScore(game)){
+  if(hasScore(game)){
 
-const our=Number(game.our_score);
-const opp=Number(game.opponent_score);
+    const our=Number(game.our_score);
+    const opp=Number(game.opponent_score);
 
-if(our>opp)
-return{text:"FINAL • WIN",className:"win"};
+    if(our>opp)
+      return {
+        text:"FINAL • WIN",
+        className:"win"
+      };
 
-if(our<opp)
-return{text:"FINAL • LOSS",className:"loss"};
+    if(our<opp)
+      return {
+        text:"FINAL • LOSS",
+        className:"loss"
+      };
 
-return{text:"FINAL • TIE",className:"tie"};
+    return {
+      text:"FINAL • TIE",
+      className:"tie"
+    };
+
+  }
+
+  if(isGameLive(game)){
+
+    return {
+      text:"🔴 LIVE",
+      className:"live"
+    };
+
+  }
+
+  return null;
 
 }
 
-if(isGameLive(game))
-return{text:"🔴 LIVE",className:"live"};
 
-return null;
-
-}
-
-
-/* HOME */
+/* =========================================================
+   HOME
+   ========================================================= */
 
 function updateHome(){
 
-const today=new Date()
-.toISOString()
-.split("T")[0];
+  const today =
+    new Date()
+      .toISOString()
+      .split("T")[0];
 
-const upcoming=games
-.filter(g=>g.date>=today&&!hasScore(g))
-.sort((a,b)=>new Date(a.date)-new Date(b.date));
+  const upcoming=games
+    .filter(
+      g=>g.date>=today&&!hasScore(g)
+    )
+    .sort(
+      (a,b)=>
+        new Date(a.date)-new Date(b.date)
+    );
 
-const next=upcoming[0];
+  const next=upcoming[0];
 
-if(!next){
+  if(!next){
 
-document.getElementById("nextMatchup").innerHTML=`
-<span class="next-team">NDGP</span>
-<span class="next-vs">VS</span>
-<span class="next-team">TBD</span>`;
+    document.getElementById("nextMatchup")
+      .innerHTML=`
+        <span class="next-team">NDGP</span>
+        <span class="next-vs">VS</span>
+        <span class="next-team">TBD</span>
+      `;
 
-document.getElementById("nextDetails")
-.textContent="No upcoming games";
+    document.getElementById("nextDetails")
+      .textContent="No upcoming games";
 
-document.getElementById("countdown")
-.classList.add("hidden");
+    document.getElementById("countdown")
+      .classList.add("hidden");
 
-}else{
+  }else{
 
-document.getElementById("nextMatchup").innerHTML=`
-<span class="next-team">NDGP</span>
-<span class="next-vs">VS</span>
-<span class="next-team">${escapeHtml(next.opponent)}</span>`;
+    document.getElementById("nextMatchup")
+      .innerHTML=`
+        <span class="next-team">NDGP</span>
+        <span class="next-vs">VS</span>
+        <span class="next-team">
+          ${escapeHtml(next.opponent)}
+        </span>
+      `;
 
-document.getElementById("nextDetails").innerHTML=`
-📅 ${formatDate(next.date)}
-<br>
-⏰ ${escapeHtml(next.time||"Time TBD")}
-<br>
-📍 ${escapeHtml(next.location||"Location TBD")}
-<br>
-<span class="home-away">
-${getHomeAwayIcon(next.home_away)}
-${escapeHtml(next.home_away||"")}
-</span>`;
+    document.getElementById("nextDetails")
+      .innerHTML=`
+        📅 ${formatDate(next.date)}
+        <br>
+        ⏰ ${escapeHtml(next.time||"Time TBD")}
+        <br>
+        📍 ${escapeHtml(next.location||"Location TBD")}
+        <br>
+        <span class="home-away">
+          ${getHomeAwayIcon(next.home_away)}
+          ${escapeHtml(next.home_away||"")}
+        </span>
+      `;
 
-if(isGameLive(next)){
+    if(isGameLive(next)){
 
-const box=document.getElementById("countdown");
+      const box =
+        document.getElementById("countdown");
 
-box.innerHTML=`
-<span>🏈</span>
-<span>LIVE</span>`;
+      box.innerHTML=`
+        <span>🏈</span>
+        <span>LIVE</span>
+      `;
 
-box.classList.remove("hidden");
+      box.classList.remove("hidden");
 
-}else{
+    }else{
 
-startCountdown(next);
+      startCountdown(next);
+
+    }
+
+  }
+
+
+  let wins=0;
+  let losses=0;
+  let ties=0;
+
+  games.forEach(g=>{
+
+    if(hasScore(g)){
+
+      if(Number(g.our_score)>
+         Number(g.opponent_score))
+        wins++;
+
+      else if(
+        Number(g.our_score)<
+        Number(g.opponent_score)
+      )
+        losses++;
+
+      else
+        ties++;
+
+    }
+
+  });
+
+
+  document.getElementById("record")
+    .textContent=
+      `${wins}–${losses}${ties?"–"+ties:""}`;
+
+  document.getElementById("recordDetails")
+    .textContent=
+      `${wins} W • ${losses} L${ties?" • "+ties+" T":""}`;
+
+
+  const completed=games
+    .filter(g=>hasScore(g))
+    .sort(
+      (a,b)=>
+        new Date(b.date)-new Date(a.date)
+    );
+
+  const last=completed[0];
+
+  if(!last){
+
+    document.getElementById("lastGame")
+      .innerHTML="No games played yet.";
+
+  }else{
+
+    let result="TIE";
+    let cls="tie";
+
+    if(
+      Number(last.our_score)>
+      Number(last.opponent_score)
+    ){
+
+      result="WIN";
+      cls="win";
+
+    }else if(
+      Number(last.our_score)<
+      Number(last.opponent_score)
+    ){
+
+      result="LOSS";
+      cls="loss";
+
+    }
+
+    document.getElementById("lastGame")
+      .innerHTML=`
+
+      <div>
+
+        <div class="last-matchup">
+
+          NDGP
+          <span class="next-vs">VS</span>
+          ${escapeHtml(last.opponent)}
+
+        </div>
+
+        <div class="last-date">
+
+          ${formatDate(last.date)}
+          •
+
+          <span class="badge ${cls}">
+            ${result}
+          </span>
+
+        </div>
+
+      </div>
+
+      <div class="last-score">
+
+        ${last.our_score}
+        –
+        ${last.opponent_score}
+
+      </div>
+
+      `;
+
+  }
 
 }
 
-}
 
-
-/* RECORD */
-
-let wins=0;
-let losses=0;
-let ties=0;
-
-games.forEach(g=>{
-
-if(hasScore(g)){
-
-if(Number(g.our_score)>Number(g.opponent_score))
-wins++;
-
-else if(Number(g.our_score)<Number(g.opponent_score))
-losses++;
-
-else
-ties++;
-
-}
-
-});
-
-document.getElementById("record").textContent=
-`${wins}–${losses}${ties?"–"+ties:""}`;
-
-document.getElementById("recordDetails").textContent=
-`${wins} W • ${losses} L${ties?" • "+ties+" T":""}`;
-
-
-/* LAST GAME */
-
-const completed=games
-.filter(g=>hasScore(g))
-.sort((a,b)=>new Date(b.date)-new Date(a.date));
-
-const last=completed[0];
-
-if(!last){
-
-document.getElementById("lastGame")
-.innerHTML="No games played yet.";
-
-}else{
-
-let result="TIE";
-let cls="tie";
-
-if(Number(last.our_score)>Number(last.opponent_score)){
-
-result="WIN";
-cls="win";
-
-}else if(Number(last.our_score)<Number(last.opponent_score)){
-
-result="LOSS";
-cls="loss";
-
-}
-
-document.getElementById("lastGame").innerHTML=`
-
-<div>
-
-<div class="last-matchup">
-
-NDGP
-<span class="next-vs">VS</span>
-${escapeHtml(last.opponent)}
-
-</div>
-
-<div class="last-date">
-
-${formatDate(last.date)}
-•
-
-<span class="badge ${cls}">
-${result}
-</span>
-
-</div>
-
-</div>
-
-<div class="last-score">
-
-${last.our_score}
-–
-${last.opponent_score}
-
-</div>
-
-`;
-
-}
-
-}
-
-
-/* COUNTDOWN */
+/* =========================================================
+   COUNTDOWN
+   ========================================================= */
 
 function startCountdown(game){
 
-const box=document.getElementById("countdown");
+  const box=
+    document.getElementById("countdown");
 
-if(countdownTimer)
-clearInterval(countdownTimer);
+  if(countdownTimer)
+    clearInterval(countdownTimer);
 
-const kickoff=parseKickoff(game);
+  const kickoff=parseKickoff(game);
 
-if(!kickoff){
+  if(!kickoff){
 
-box.classList.add("hidden");
-return;
+    box.classList.add("hidden");
+    return;
+
+  }
+
+  function update(){
+
+    if(isGameLive(game)){
+
+      updateHome();
+      return;
+
+    }
+
+    const diff=kickoff-new Date();
+
+    if(diff<=0){
+
+      updateHome();
+      return;
+
+    }
+
+    const days=
+      Math.floor(diff/86400000);
+
+    const hours=
+      Math.floor(diff/3600000)%24;
+
+    const mins=
+      Math.floor(diff/60000)%60;
+
+    box.innerHTML=`
+      <span>🏈</span>
+      <span>
+        ${days}d ${hours}h ${mins}m until kickoff
+      </span>
+    `;
+
+    box.classList.remove("hidden");
+
+  }
+
+  update();
+
+  countdownTimer=
+    setInterval(update,30000);
 
 }
 
-function update(){
-
-if(isGameLive(game)){
-
-updateHome();
-return;
-
-}
-
-const diff=kickoff-new Date();
-
-if(diff<=0){
-
-updateHome();
-return;
-
-}
-
-const days=Math.floor(diff/86400000);
-const hours=Math.floor(diff/3600000)%24;
-const mins=Math.floor(diff/60000)%60;
-
-box.innerHTML=`
-<span>🏈</span>
-<span>${days}d ${hours}h ${mins}m until kickoff</span>`;
-
-box.classList.remove("hidden");
-
-}
-
-update();
-
-countdownTimer=setInterval(update,30000);
-
-}
-
-
-/* HOME / AWAY */
 
 function getHomeAwayIcon(value){
 
-if(String(value||"").toLowerCase().includes("away"))
-return"➡️";
+  if(
+    String(value||"")
+      .toLowerCase()
+      .includes("away")
+  )
+    return "➡️";
 
-return"🏠";
+  return "🏠";
 
 }
 
 
-/* SCHEDULE */
+/* =========================================================
+   SCHEDULE
+   ========================================================= */
 
 function updateSchedule(){
 
-const container=document.getElementById("scheduleList");
+  const container=
+    document.getElementById("scheduleList");
 
-if(!games.length){
+  if(!games.length){
 
-container.innerHTML=
-`<div class="message">No games have been added yet.</div>`;
+    container.innerHTML=
+      `<div class="message">
+        No games have been added yet.
+      </div>`;
 
-return;
+    return;
+
+  }
+
+  container.innerHTML=
+    games.map(game=>{
+
+      const status=
+        getGameStatus(game);
+
+      const live=
+        isGameLive(game);
+
+      return `
+
+      <div
+        class="game ${live?"live-game":""}"
+        onclick="openGameDetails(${game.id})">
+
+        <div class="game-top">
+
+          <div>
+
+            <div class="game-date">
+              ${formatDate(game.date)}
+            </div>
+
+            <div class="game-opponent">
+              ${escapeHtml(game.opponent)}
+            </div>
+
+          </div>
+
+          ${
+            status
+            ?
+            `<span class="badge ${status.className}">
+              ${status.text}
+            </span>`
+            :""
+          }
+
+        </div>
+
+
+        <div class="game-matchup">
+
+          <span class="game-team">
+            NDGP
+          </span>
+
+          <span class="game-vs">
+            VS
+          </span>
+
+          <span class="game-team">
+            ${escapeHtml(game.opponent)}
+          </span>
+
+        </div>
+
+
+        <div class="game-details">
+
+          <span class="detail">
+            ⏰ ${escapeHtml(game.time||"Time TBD")}
+          </span>
+
+          <span class="detail">
+            📍 ${escapeHtml(game.location||"Location TBD")}
+          </span>
+
+          <span class="detail">
+            ${getHomeAwayIcon(game.home_away)}
+            ${escapeHtml(game.home_away||"")}
+          </span>
+
+        </div>
+
+
+        ${
+          hasScore(game)
+          ?
+          `<div class="game-score">
+            FINAL: ${game.our_score} – ${game.opponent_score}
+          </div>`
+          :""
+        }
+
+
+        <div class="game-details-link">
+          TAP FOR GAME DETAILS →
+        </div>
+
+      </div>
+
+      `;
+
+    }).join("");
 
 }
 
-container.innerHTML=games.map(game=>{
 
-const status=getGameStatus(game);
-const live=isGameLive(game);
-
-return `
-
-<div
-class="game ${live?"live-game":""}"
-onclick="openGameDetails(${game.id})">
-
-<div class="game-top">
-
-<div>
-
-<div class="game-date">
-${formatDate(game.date)}
-</div>
-
-<div class="game-opponent">
-${escapeHtml(game.opponent)}
-</div>
-
-</div>
-
-${
-status?
-`<span class="badge ${status.className}">
-${status.text}
-</span>`
-:""
-}
-
-</div>
-
-<div class="game-matchup">
-
-<span class="game-team">NDGP</span>
-
-<span class="game-vs">VS</span>
-
-<span class="game-team">
-${escapeHtml(game.opponent)}
-</span>
-
-</div>
-
-<div class="game-details">
-
-<span class="detail">
-⏰ ${escapeHtml(game.time||"Time TBD")}
-</span>
-
-<span class="detail">
-📍 ${escapeHtml(game.location||"Location TBD")}
-</span>
-
-<span class="detail">
-${getHomeAwayIcon(game.home_away)}
-${escapeHtml(game.home_away||"")}
-</span>
-
-</div>
-
-${
-hasScore(game)?
-`<div class="game-score">
-FINAL: ${game.our_score} – ${game.opponent_score}
-</div>`
-:""
-}
-
-<div class="game-details-link">
-TAP FOR GAME DETAILS →
-</div>
-
-</div>
-
-`;
-
-}).join("");
-
-}
-
-
-/* GAME MODAL */
+/* =========================================================
+   GAME MODAL
+   ========================================================= */
 
 function openGameDetails(id){
 
-const game=games.find(
-g=>Number(g.id)===Number(id)
-);
+  const game=games.find(
+    g=>Number(g.id)===Number(id)
+  );
 
-if(!game)
-return;
+  if(!game)
+    return;
 
-document.getElementById("modalMatchup")
-.textContent=`NDGP VS ${game.opponent}`;
+  document.getElementById("modalMatchup")
+    .textContent=
+      `NDGP VS ${game.opponent}`;
 
-const status=document.getElementById("modalStatus");
-const score=document.getElementById("modalScore");
+  const status=
+    document.getElementById("modalStatus");
 
-if(isGameLive(game)){
+  const score=
+    document.getElementById("modalScore");
 
-status.innerHTML=`
-<span class="modal-live">
-🔴 LIVE
-</span>`;
 
-score.textContent="";
+  if(isGameLive(game)){
 
-}else if(hasScore(game)){
+    status.innerHTML=`
+      <span class="modal-live">
+        🔴 LIVE
+      </span>
+    `;
 
-const our=Number(game.our_score);
-const opp=Number(game.opponent_score);
+    score.textContent="";
 
-let text="FINAL • TIE";
-let cls="tie";
+  }else if(hasScore(game)){
 
-if(our>opp){
+    const our=Number(game.our_score);
+    const opp=Number(game.opponent_score);
 
-text="FINAL • WIN";
-cls="win";
+    let text="FINAL • TIE";
+    let cls="tie";
 
-}else if(our<opp){
+    if(our>opp){
 
-text="FINAL • LOSS";
-cls="loss";
+      text="FINAL • WIN";
+      cls="win";
 
-}
+    }else if(our<opp){
 
-status.innerHTML=`
-<span class="badge ${cls}">
-${text}
-</span>`;
+      text="FINAL • LOSS";
+      cls="loss";
 
-score.textContent=
-`${game.our_score} – ${game.opponent_score}`;
+    }
 
-}else{
+    status.innerHTML=`
+      <span class="badge ${cls}">
+        ${text}
+      </span>
+    `;
 
-status.innerHTML="";
-score.textContent="";
+    score.textContent=
+      `${game.our_score} – ${game.opponent_score}`;
 
-}
+  }else{
 
-document.getElementById("modalInfo").innerHTML=`
+    status.innerHTML="";
+    score.textContent="";
 
-<div class="modal-info">
+  }
 
-<div class="modal-info-label">
-Date
-</div>
 
-<div class="modal-info-value">
-📅 ${formatDate(game.date)}
-</div>
+  document.getElementById("modalInfo")
+    .innerHTML=`
 
-</div>
+      <div class="modal-info">
 
-<div class="modal-info">
+        <div class="modal-info-label">
+          Date
+        </div>
 
-<div class="modal-info-label">
-Kickoff
-</div>
+        <div class="modal-info-value">
+          📅 ${formatDate(game.date)}
+        </div>
 
-<div class="modal-info-value">
-⏰ ${escapeHtml(game.time||"Time TBD")}
-</div>
+      </div>
 
-</div>
+      <div class="modal-info">
 
-<div class="modal-info">
+        <div class="modal-info-label">
+          Kickoff
+        </div>
 
-<div class="modal-info-label">
-Location
-</div>
+        <div class="modal-info-value">
+          ⏰ ${escapeHtml(game.time||"Time TBD")}
+        </div>
 
-<div class="modal-info-value">
-📍 ${escapeHtml(game.location||"Location TBD")}
-</div>
+      </div>
 
-</div>
+      <div class="modal-info">
 
-<div class="modal-info">
+        <div class="modal-info-label">
+          Location
+        </div>
 
-<div class="modal-info-label">
-Game Location
-</div>
+        <div class="modal-info-value">
+          📍 ${escapeHtml(game.location||"Location TBD")}
+        </div>
 
-<div class="modal-info-value">
-${getHomeAwayIcon(game.home_away)}
-${escapeHtml(game.home_away||"Home")}
-</div>
+      </div>
 
-</div>
+      <div class="modal-info">
 
-`;
+        <div class="modal-info-label">
+          Game Location
+        </div>
 
-document.getElementById("modalNotes").innerHTML=
-game.notes?
-`
-<div class="modal-notes">
+        <div class="modal-info-value">
+          ${getHomeAwayIcon(game.home_away)}
+          ${escapeHtml(game.home_away||"Home")}
+        </div>
 
-<div class="modal-notes-title">
-📝 GAME NOTES
-</div>
+      </div>
 
-${escapeHtml(game.notes)}
+    `;
 
-</div>
-`
-:"";
 
-document.getElementById("gameModal")
-.classList.add("show");
+  document.getElementById("modalNotes")
+    .innerHTML=
+      game.notes
+      ?
+      `
+        <div class="modal-notes">
 
-document.body.style.overflow="hidden";
+          <div class="modal-notes-title">
+            📝 GAME NOTES
+          </div>
+
+          ${escapeHtml(game.notes)}
+
+        </div>
+      `
+      :"";
+
+
+  document.getElementById("gameModal")
+    .classList.add("show");
+
+  document.body.style.overflow="hidden";
 
 }
 
 
 function closeGameModal(event){
 
-if(event&&event.target&&event.target.id!=="gameModal")
-return;
+  if(
+    event &&
+    event.target &&
+    event.target.id!=="gameModal"
+  )
+    return;
 
-document.getElementById("gameModal")
-.classList.remove("show");
+  document.getElementById("gameModal")
+    .classList.remove("show");
 
-document.body.style.overflow="";
+  document.body.style.overflow="";
 
 }
 
 document.addEventListener("keydown",e=>{
-if(e.key==="Escape")
-closeGameModal();
+
+  if(e.key==="Escape")
+    closeGameModal();
+
 });
 
 
 setInterval(()=>{
 
-if(!games.length)
-return;
+  if(!games.length)
+    return;
 
-updateHome();
-updateSchedule();
+  updateHome();
+  updateSchedule();
 
 },30000);
 
 
-/* ADMIN LOGIN */
+/* =========================================================
+   ADMIN LOGIN
+   ========================================================= */
 
 async function login(){
 
-const code=document.getElementById("adminCode")
-.value.trim();
+  const code=
+    document.getElementById("adminCode")
+      .value.trim();
 
-if(!/^\d{4}$/.test(code)){
+  if(!/^\d{5,10}$/.test(code)){
 
-document.getElementById("loginMessage").innerHTML=
-`<div class="message">Incorrect admin code.</div>`;
+    document.getElementById("loginMessage")
+      .innerHTML=`
 
-return;
+        <div class="message">
+          Admin code must be 5–10 digits.
+        </div>
 
-}
+      `;
 
-const {data,error}=await db.rpc(
-"check_admin_code",
-{p_code:code}
-);
+    return;
 
-if(error){
+  }
 
-console.error(error);
 
-document.getElementById("loginMessage").innerHTML=
-`<div class="message">Database error.</div>`;
+  const {data,error}=await db.rpc(
+    "check_admin_code",
+    {
+      p_code:code
+    }
+  );
 
-return;
 
-}
+  if(error){
 
-if(!data){
+    console.error(error);
 
-document.getElementById("loginMessage").innerHTML=
-`<div class="message">Incorrect admin code.</div>`;
+    document.getElementById("loginMessage")
+      .innerHTML=`
 
-return;
+        <div class="message">
+          Database error. Please try again.
+        </div>
 
-}
+      `;
 
-sessionStorage.setItem("adminCode",code);
+    return;
 
-document.getElementById("adminCode").value="";
+  }
 
-showAdmin();
+
+  if(!data){
+
+    document.getElementById("loginMessage")
+      .innerHTML=`
+
+        <div class="message">
+          Incorrect admin code.
+        </div>
+
+      `;
+
+    return;
+
+  }
+
+
+  sessionStorage.setItem(
+    "adminCode",
+    code
+  );
+
+  document.getElementById("adminCode")
+    .value="";
+
+  showAdmin();
 
 }
 
 
 function showAdmin(){
 
-document.getElementById("loginArea")
-.classList.add("hidden");
+  document.getElementById("loginArea")
+    .classList.add("hidden");
 
-document.getElementById("adminArea")
-.classList.remove("hidden");
+  document.getElementById("adminArea")
+    .classList.remove("hidden");
 
-updateAdminGames();
-loadPhotos();
+  updateAdminGames();
+  loadPhotos();
 
 }
 
 
 function logout(){
 
-sessionStorage.removeItem("adminCode");
+  sessionStorage.removeItem("adminCode");
 
-document.getElementById("loginArea")
-.classList.remove("hidden");
+  document.getElementById("loginArea")
+    .classList.remove("hidden");
 
-document.getElementById("adminArea")
-.classList.add("hidden");
+  document.getElementById("adminArea")
+    .classList.add("hidden");
 
 }
 
 
-/* ADD GAME */
+/* =========================================================
+   ADD GAME
+   ========================================================= */
 
 async function addGame(){
 
-const code=sessionStorage.getItem("adminCode");
+  const code=
+    sessionStorage.getItem("adminCode");
 
-const date=document.getElementById("gameDate").value;
-const time=document.getElementById("gameTime").value;
-const opponent=document.getElementById("gameOpponent").value.trim();
-const location=document.getElementById("gameLocation").value.trim();
-const homeAway=document.getElementById("gameHomeAway").value;
-const notes=document.getElementById("gameNotes").value.trim();
+  const date=
+    document.getElementById("gameDate").value;
 
-if(!date||!opponent){
+  const time=
+    document.getElementById("gameTime").value;
 
-showAdminMessage("Date and opponent are required.");
-return;
+  const opponent=
+    document.getElementById("gameOpponent")
+      .value.trim();
+
+  const location=
+    document.getElementById("gameLocation")
+      .value.trim();
+
+  const homeAway=
+    document.getElementById("gameHomeAway")
+      .value;
+
+  const notes=
+    document.getElementById("gameNotes")
+      .value.trim();
+
+
+  if(!date||!opponent){
+
+    showAdminMessage(
+      "Date and opponent are required."
+    );
+
+    return;
+
+  }
+
+
+  const {error}=await db.rpc(
+    "add_game",
+    {
+      p_code:code,
+      p_date:date,
+      p_time:time,
+      p_opponent:opponent,
+      p_location:location,
+      p_home_away:homeAway,
+      p_notes:notes
+    }
+  );
+
+
+  if(error){
+
+    console.error(error);
+
+    showAdminMessage(
+      "Could not add game."
+    );
+
+    return;
+
+  }
+
+
+  document.getElementById("gameDate")
+    .value="";
+
+  document.getElementById("gameTime")
+    .value="";
+
+  document.getElementById("gameOpponent")
+    .value="";
+
+  document.getElementById("gameLocation")
+    .value="";
+
+  document.getElementById("gameNotes")
+    .value="";
+
+
+  showAdminMessage(
+    "✅ Game added!"
+  );
+
+  loadGames();
 
 }
 
-const {error}=await db.rpc(
-"add_game",
-{
-p_code:code,
-p_date:date,
-p_time:time,
-p_opponent:opponent,
-p_location:location,
-p_home_away:homeAway,
-p_notes:notes
-}
-);
 
-if(error){
-
-console.error(error);
-showAdminMessage("Could not add game.");
-return;
-
-}
-
-document.getElementById("gameDate").value="";
-document.getElementById("gameTime").value="";
-document.getElementById("gameOpponent").value="";
-document.getElementById("gameLocation").value="";
-document.getElementById("gameNotes").value="";
-
-showAdminMessage("✅ Game added!");
-
-loadGames();
-
-}
-
-
-/* ADMIN GAMES */
+/* =========================================================
+   ADMIN GAMES
+   ========================================================= */
 
 function updateAdminGames(){
 
-const container=document.getElementById("adminGames");
+  const container=
+    document.getElementById("adminGames");
 
-if(!games.length){
+  if(!container)
+    return;
 
-container.innerHTML=
-`<div class="message">No games yet.</div>`;
+  if(!games.length){
 
-return;
+    container.innerHTML=
+      `<div class="message">
+        No games yet.
+      </div>`;
 
-}
+    return;
 
-container.innerHTML=games.map((game,index)=>{
-
-let score="No score yet";
-
-if(hasScore(game))
-score=`FINAL ${game.our_score}–${game.opponent_score}`;
-
-else if(isGameLive(game))
-score="🔴 LIVE";
-
-return `
-
-<div class="compact-game">
-
-<div class="compact-game-top">
-
-<div class="compact-game-info">
-
-<div class="compact-game-title">
-${index+1}. ${escapeHtml(game.opponent)}
-</div>
-
-<div class="compact-game-meta">
-${formatShortDate(game.date)}
-•
-${escapeHtml(game.time||"TBD")}
-•
-${getHomeAwayIcon(game.home_away)}
-${escapeHtml(game.home_away||"")}
-</div>
-
-<div class="compact-game-score">
-${score}
-</div>
-
-</div>
-
-<div class="compact-game-actions">
-
-<button
-class="edit-button"
-onclick="toggleGameEdit(${game.id})">
-✏️ Edit
-</button>
-
-<button
-class="delete-small"
-onclick="deleteGame(${game.id})">
-🗑️
-</button>
-
-</div>
-
-</div>
+  }
 
 
-<div
-id="edit-area-${game.id}"
-class="compact-edit">
+  container.innerHTML=
+    games.map((game,index)=>{
 
-<div class="compact-edit-grid">
+      let score="No score yet";
 
-<div>
+      if(hasScore(game))
+        score=
+          `FINAL ${game.our_score}–${game.opponent_score}`;
 
-<label>Date</label>
+      else if(isGameLive(game))
+        score="🔴 LIVE";
 
-<input
-id="edit-date-${game.id}"
-type="date"
-value="${game.date||""}">
 
-</div>
+      return `
 
-<div>
+      <div class="compact-game">
 
-<label>Time</label>
+        <div class="compact-game-top">
 
-<input
-id="edit-time-${game.id}"
-type="text"
-value="${escapeAttribute(game.time||"")}">
+          <div class="compact-game-info">
 
-</div>
+            <div class="compact-game-title">
+              ${index+1}.
+              ${escapeHtml(game.opponent)}
+            </div>
 
-<div>
+            <div class="compact-game-meta">
 
-<label>Location</label>
+              ${formatShortDate(game.date)}
+              •
+              ${escapeHtml(game.time||"TBD")}
+              •
+              ${getHomeAwayIcon(game.home_away)}
+              ${escapeHtml(game.home_away||"")}
 
-<input
-id="edit-location-${game.id}"
-type="text"
-value="${escapeAttribute(game.location||"")}">
+            </div>
 
-</div>
+            <div class="compact-game-score">
+              ${score}
+            </div>
 
-<div>
+          </div>
 
-<label>Home / Away</label>
 
-<select id="edit-ha-${game.id}">
+          <div class="compact-game-actions">
 
-<option
-value="Home"
-${game.home_away==="Home"?"selected":""}>
-🏠 Home
-</option>
+            <button
+              class="edit-button"
+              onclick="toggleGameEdit(${game.id})">
 
-<option
-value="Away"
-${game.home_away==="Away"?"selected":""}>
-➡️ Away
-</option>
+              ✏️ Edit
 
-</select>
+            </button>
 
-</div>
+            <button
+              class="delete-small"
+              onclick="deleteGame(${game.id})">
 
-<div>
+              🗑️
 
-<label>NDGP Score</label>
+            </button>
 
-<input
-id="our-${game.id}"
-type="number"
-value="${game.our_score??""}">
+          </div>
 
-</div>
+        </div>
 
-<div>
 
-<label>Opponent Score</label>
+        <div
+          id="edit-area-${game.id}"
+          class="compact-edit">
 
-<input
-id="opp-${game.id}"
-type="number"
-value="${game.opponent_score??""}">
+          <div class="compact-edit-grid">
 
-</div>
+            <div>
 
-<div class="compact-full">
+              <label>Date</label>
 
-<label>Notes</label>
+              <input
+                id="edit-date-${game.id}"
+                type="date"
+                value="${game.date||""}">
 
-<textarea id="notes-${game.id}">${escapeHtml(game.notes||"")}</textarea>
+            </div>
 
-</div>
 
-</div>
+            <div>
 
-<button
-class="primary compact-save"
-onclick="saveGame(${game.id})">
+              <label>Time</label>
 
-💾 SAVE CHANGES
+              <input
+                id="edit-time-${game.id}"
+                type="text"
+                value="${escapeAttribute(game.time||"")}">
 
-</button>
+            </div>
 
-</div>
 
-</div>
+            <div>
 
-`;
+              <label>Location</label>
 
-}).join("");
+              <input
+                id="edit-location-${game.id}"
+                type="text"
+                value="${escapeAttribute(game.location||"")}">
+
+            </div>
+
+
+            <div>
+
+              <label>Home / Away</label>
+
+              <select
+                id="edit-ha-${game.id}">
+
+                <option
+                  value="Home"
+                  ${game.home_away==="Home"?"selected":""}>
+
+                  🏠 Home
+
+                </option>
+
+                <option
+                  value="Away"
+                  ${game.home_away==="Away"?"selected":""}>
+
+                  ➡️ Away
+
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div>
+
+              <label>NDGP Score</label>
+
+              <input
+                id="our-${game.id}"
+                type="number"
+                value="${game.our_score??""}">
+
+            </div>
+
+
+            <div>
+
+              <label>Opponent Score</label>
+
+              <input
+                id="opp-${game.id}"
+                type="number"
+                value="${game.opponent_score??""}">
+
+            </div>
+
+
+            <div class="compact-full">
+
+              <label>Notes</label>
+
+              <textarea
+                id="notes-${game.id}">${escapeHtml(game.notes||"")}</textarea>
+
+            </div>
+
+          </div>
+
+
+          <button
+            class="primary compact-save"
+            onclick="saveGame(${game.id})">
+
+            💾 SAVE CHANGES
+
+          </button>
+
+        </div>
+
+      </div>
+
+      `;
+
+    }).join("");
 
 }
 
 
 function toggleGameEdit(id){
 
-const area=document.getElementById(`edit-area-${id}`);
+  const area=
+    document.getElementById(
+      `edit-area-${id}`
+    );
 
-if(area)
-area.classList.toggle("open");
+  if(area)
+    area.classList.toggle("open");
 
 }
 
 
-/* SAVE GAME */
+/* =========================================================
+   SAVE GAME
+   ========================================================= */
 
 async function saveGame(id){
 
-const code=sessionStorage.getItem("adminCode");
+  const code=
+    sessionStorage.getItem("adminCode");
 
-const game=games.find(
-g=>Number(g.id)===Number(id)
-);
+  const game=games.find(
+    g=>Number(g.id)===Number(id)
+  );
 
-if(!game)
-return;
+  if(!game)
+    return;
 
-const date=document.getElementById(`edit-date-${id}`).value;
-const time=document.getElementById(`edit-time-${id}`).value;
-const location=document.getElementById(`edit-location-${id}`).value;
-const homeAway=document.getElementById(`edit-ha-${id}`).value;
 
-const ourValue=document.getElementById(`our-${id}`).value;
-const oppValue=document.getElementById(`opp-${id}`).value;
+  const date=
+    document.getElementById(
+      `edit-date-${id}`
+    ).value;
 
-const notes=document.getElementById(`notes-${id}`).value;
+  const time=
+    document.getElementById(
+      `edit-time-${id}`
+    ).value;
 
-const ourScore=
-ourValue===""?null:Number(ourValue);
+  const location=
+    document.getElementById(
+      `edit-location-${id}`
+    ).value;
 
-const opponentScore=
-oppValue===""?null:Number(oppValue);
+  const homeAway=
+    document.getElementById(
+      `edit-ha-${id}`
+    ).value;
 
-const status=
-ourScore!==null&&opponentScore!==null
-?"Final"
-:"Scheduled";
+  const ourValue=
+    document.getElementById(
+      `our-${id}`
+    ).value;
 
-const {error}=await db.rpc(
-"update_game",
-{
-p_code:code,
-p_id:id,
-p_date:date,
-p_time:time,
-p_opponent:game.opponent,
-p_location:location,
-p_home_away:homeAway,
-p_our_score:ourScore,
-p_opponent_score:opponentScore,
-p_status:status,
-p_notes:notes
+  const oppValue=
+    document.getElementById(
+      `opp-${id}`
+    ).value;
+
+  const notes=
+    document.getElementById(
+      `notes-${id}`
+    ).value;
+
+
+  const ourScore=
+    ourValue===""?
+    null:
+    Number(ourValue);
+
+  const opponentScore=
+    oppValue===""?
+    null:
+    Number(oppValue);
+
+
+  const status=
+    ourScore!==null &&
+    opponentScore!==null
+    ?"Final"
+    :"Scheduled";
+
+
+  const {error}=await db.rpc(
+    "update_game",
+    {
+      p_code:code,
+      p_id:id,
+      p_date:date,
+      p_time:time,
+      p_opponent:game.opponent,
+      p_location:location,
+      p_home_away:homeAway,
+      p_our_score:ourScore,
+      p_opponent_score:opponentScore,
+      p_status:status,
+      p_notes:notes
+    }
+  );
+
+
+  if(error){
+
+    console.error(error);
+
+    showAdminMessage(
+      "Could not save changes."
+    );
+
+    return;
+
+  }
+
+
+  showAdminMessage(
+    "✅ Game updated!"
+  );
+
+  loadGames();
+
 }
-);
-
-if(error){
-
-console.error(error);
-showAdminMessage("Could not save changes.");
-return;
-
-}
-
-showAdminMessage("✅ Game updated!");
-
-loadGames();
-
-}
 
 
-/* DELETE GAME */
+/* =========================================================
+   DELETE GAME
+   ========================================================= */
 
 async function deleteGame(id){
 
-if(!confirm("Are you sure you want to delete this game?"))
-return;
+  if(
+    !confirm(
+      "Are you sure you want to delete this game?"
+    )
+  )
+    return;
 
-const code=sessionStorage.getItem("adminCode");
 
-const {error}=await db.rpc(
-"delete_game",
-{
-p_code:code,
-p_id:id
+  const code=
+    sessionStorage.getItem("adminCode");
+
+
+  const {error}=await db.rpc(
+    "delete_game",
+    {
+      p_code:code,
+      p_id:id
+    }
+  );
+
+
+  if(error){
+
+    showAdminMessage(
+      "Could not delete game."
+    );
+
+    return;
+
+  }
+
+
+  showAdminMessage(
+    "Game deleted."
+  );
+
+  loadGames();
+
 }
-);
-
-if(error){
-
-showAdminMessage("Could not delete game.");
-return;
-
-}
-
-showAdminMessage("Game deleted.");
-
-loadGames();
-
-}
 
 
-/* PHOTOS */
+/* =========================================================
+   PHOTOS
+   ========================================================= */
 
 async function loadPhotos(){
 
-const {data,error}=await db
-.from("photos")
-.select("*")
-.order("created_at",{ascending:false});
+  const {data,error}=await db
+    .from("photos")
+    .select("*")
+    .order(
+      "created_at",
+      {ascending:false}
+    );
 
-if(error){
 
-console.error(error);
-return;
+  if(error){
+
+    console.error(error);
+    return;
+
+  }
+
+
+  const photos=data||[];
+
+  const publicContainer=
+    document.getElementById("photoList");
+
+
+  if(!photos.length){
+
+    publicContainer.innerHTML=
+      `<div class="message">
+        No photos yet.
+      </div>`;
+
+  }else{
+
+    publicContainer.innerHTML=`
+
+      <div class="photo-grid">
+
+        ${photos.map(photo=>`
+
+          <div class="photo-item">
+
+            <img
+              src="${escapeAttribute(photo.image_url)}"
+              alt="NDGP Football"
+              onclick="window.open(
+                '${escapeAttribute(photo.image_url)}',
+                '_blank'
+              )">
+
+            ${
+              photo.caption
+              ?
+              `<div class="photo-caption">
+                ${escapeHtml(photo.caption)}
+              </div>`
+              :""
+            }
+
+          </div>
+
+        `).join("")}
+
+      </div>
+
+    `;
+
+  }
+
+
+  const admin=
+    document.getElementById("adminPhotos");
+
+
+  if(
+    admin &&
+    sessionStorage.getItem("adminCode")
+  ){
+
+    if(!photos.length){
+
+      admin.innerHTML=
+        `<div class="message">
+          No photos uploaded yet.
+        </div>`;
+
+      return;
+
+    }
+
+
+    admin.innerHTML=`
+
+      <div class="admin-photo-grid">
+
+        ${photos.map(photo=>`
+
+          <div class="admin-photo-card">
+
+            <img
+              src="${escapeAttribute(photo.image_url)}"
+              alt="Football photo">
+
+            <div class="admin-photo-caption">
+
+              ${
+                photo.caption
+                ?
+                escapeHtml(photo.caption)
+                :
+                "No caption"
+              }
+
+            </div>
+
+            <button
+              class="admin-photo-delete"
+              onclick="deletePhoto(${photo.id})">
+
+              🗑️ Delete
+
+            </button>
+
+          </div>
+
+        `).join("")}
+
+      </div>
+
+    `;
+
+  }
 
 }
 
-const photos=data||[];
 
-const publicContainer=document.getElementById("photoList");
-
-if(!photos.length){
-
-publicContainer.innerHTML=
-`<div class="message">No photos yet.</div>`;
-
-}else{
-
-publicContainer.innerHTML=`
-
-<div class="photo-grid">
-
-${photos.map(photo=>`
-
-<div class="photo-item">
-
-<img
-src="${escapeAttribute(photo.image_url)}"
-alt="NDGP Football"
-onclick="window.open('${escapeAttribute(photo.image_url)}','_blank')">
-
-${
-photo.caption?
-`<div class="photo-caption">
-${escapeHtml(photo.caption)}
-</div>`
-:""
-}
-
-</div>
-
-`).join("")}
-
-</div>
-
-`;
-
-}
-
-const admin=document.getElementById("adminPhotos");
-
-if(admin&&sessionStorage.getItem("adminCode")){
-
-if(!photos.length){
-
-admin.innerHTML=
-`<div class="message">No photos uploaded yet.</div>`;
-
-return;
-
-}
-
-admin.innerHTML=`
-
-<div class="admin-photo-grid">
-
-${photos.map(photo=>`
-
-<div class="admin-photo-card">
-
-<img
-src="${escapeAttribute(photo.image_url)}"
-alt="Football photo">
-
-<div class="admin-photo-caption">
-
-${photo.caption?
-escapeHtml(photo.caption):
-"No caption"}
-
-</div>
-
-<button
-class="admin-photo-delete"
-onclick="deletePhoto(${photo.id})">
-
-🗑️ Delete
-
-</button>
-
-</div>
-
-`).join("")}
-
-</div>
-
-`;
-
-}
-
-}
-
-
-/* ADD PHOTO */
+/* =========================================================
+   ADD PHOTO
+   ========================================================= */
 
 async function addPhoto(){
 
-const code=sessionStorage.getItem("adminCode");
+  const code=
+    sessionStorage.getItem("adminCode");
 
-const file=document.getElementById("photoFile")
-.files[0];
+  const file=
+    document.getElementById("photoFile")
+      .files[0];
 
-const caption=document.getElementById("photoCaption")
-.value.trim();
-
-if(!file){
-
-showAdminMessage("Please choose a photo.");
-return;
-
-}
-
-showAdminMessage("Preparing photo...");
-
-try{
-
-const image=await compressImage(file,1400,.78);
-
-const {error}=await db.rpc(
-"add_photo",
-{
-p_code:code,
-p_image_url:image,
-p_caption:caption
-}
-);
-
-if(error){
-
-console.error(error);
-showAdminMessage("Could not upload photo.");
-return;
-
-}
-
-document.getElementById("photoFile").value="";
-document.getElementById("photoCaption").value="";
-
-showAdminMessage("📸 Photo uploaded!");
-
-loadPhotos();
-
-}catch(error){
-
-console.error(error);
-showAdminMessage("Could not process photo.");
-
-}
-
-}
+  const caption=
+    document.getElementById("photoCaption")
+      .value.trim();
 
 
-/* IMAGE COMPRESSION */
+  if(!file){
 
-function compressImage(file,maxWidth,quality){
+    showAdminMessage(
+      "Please choose a photo."
+    );
 
-return new Promise((resolve,reject)=>{
+    return;
 
-const reader=new FileReader();
+  }
 
-reader.onload=e=>{
 
-const image=new Image();
+  showAdminMessage(
+    "Preparing photo..."
+  );
 
-image.onload=()=>{
 
-let width=image.width;
-let height=image.height;
+  try{
 
-if(width>maxWidth){
+    const image=
+      await compressImage(
+        file,
+        1400,
+        .78
+      );
 
-height*=maxWidth/width;
-width=maxWidth;
 
-}
+    const {error}=await db.rpc(
+      "add_photo",
+      {
+        p_code:code,
+        p_image_url:image,
+        p_caption:caption
+      }
+    );
 
-const canvas=document.createElement("canvas");
 
-canvas.width=width;
-canvas.height=height;
+    if(error){
 
-const ctx=canvas.getContext("2d");
+      console.error(error);
 
-ctx.drawImage(image,0,0,width,height);
+      showAdminMessage(
+        "Could not upload photo."
+      );
 
-resolve(
-canvas.toDataURL("image/jpeg",quality)
-);
+      return;
 
-};
+    }
 
-image.onerror=reject;
-image.src=e.target.result;
 
-};
+    document.getElementById("photoFile")
+      .value="";
 
-reader.onerror=reject;
+    document.getElementById("photoCaption")
+      .value="";
 
-reader.readAsDataURL(file);
 
-});
+    showAdminMessage(
+      "📸 Photo uploaded!"
+    );
+
+    loadPhotos();
+
+
+  }catch(error){
+
+    console.error(error);
+
+    showAdminMessage(
+      "Could not process photo."
+    );
+
+  }
 
 }
 
 
-/* DELETE PHOTO */
+/* =========================================================
+   IMAGE COMPRESSION
+   ========================================================= */
+
+function compressImage(
+  file,
+  maxWidth,
+  quality
+){
+
+  return new Promise(
+    (resolve,reject)=>{
+
+      const reader=
+        new FileReader();
+
+
+      reader.onload=e=>{
+
+        const image=
+          new Image();
+
+
+        image.onload=()=>{
+
+          let width=image.width;
+          let height=image.height;
+
+
+          if(width>maxWidth){
+
+            height*=
+              maxWidth/width;
+
+            width=maxWidth;
+
+          }
+
+
+          const canvas=
+            document.createElement(
+              "canvas"
+            );
+
+          canvas.width=width;
+          canvas.height=height;
+
+
+          const ctx=
+            canvas.getContext("2d");
+
+
+          ctx.drawImage(
+            image,
+            0,
+            0,
+            width,
+            height
+          );
+
+
+          resolve(
+            canvas.toDataURL(
+              "image/jpeg",
+              quality
+            )
+          );
+
+        };
+
+
+        image.onerror=reject;
+
+        image.src=e.target.result;
+
+      };
+
+
+      reader.onerror=reject;
+
+      reader.readAsDataURL(file);
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   DELETE PHOTO
+   ========================================================= */
 
 async function deletePhoto(id){
 
-if(!confirm("Delete this photo?"))
-return;
+  if(
+    !confirm(
+      "Delete this photo?"
+    )
+  )
+    return;
 
-const code=sessionStorage.getItem("adminCode");
 
-const {error}=await db.rpc(
-"delete_photo",
-{
-p_code:code,
-p_id:id
+  const code=
+    sessionStorage.getItem("adminCode");
+
+
+  const {error}=await db.rpc(
+    "delete_photo",
+    {
+      p_code:code,
+      p_id:id
+    }
+  );
+
+
+  if(error){
+
+    showAdminMessage(
+      "Could not delete photo."
+    );
+
+    return;
+
+  }
+
+
+  showAdminMessage(
+    "Photo deleted!"
+  );
+
+  loadPhotos();
+
 }
-);
-
-if(error){
-
-showAdminMessage("Could not delete photo.");
-return;
-
-}
-
-showAdminMessage("Photo deleted!");
-
-loadPhotos();
-
-}
 
 
-/* HELPERS */
+/* =========================================================
+   HELPERS
+   ========================================================= */
 
 function formatDate(value){
 
-if(!value)
-return"";
+  if(!value)
+    return"";
 
-const d=new Date(value+"T12:00:00");
+  const d=
+    new Date(
+      value+"T12:00:00"
+    );
 
-return d.toLocaleDateString(
-"en-US",
-{
-weekday:"long",
-month:"long",
-day:"numeric",
-year:"numeric"
-}
-);
+  return d.toLocaleDateString(
+    "en-US",
+    {
+      weekday:"long",
+      month:"long",
+      day:"numeric",
+      year:"numeric"
+    }
+  );
 
 }
 
 
 function formatShortDate(value){
 
-if(!value)
-return"";
+  if(!value)
+    return"";
 
-const d=new Date(value+"T12:00:00");
+  const d=
+    new Date(
+      value+"T12:00:00"
+    );
 
-return d.toLocaleDateString(
-"en-US",
-{
-month:"short",
-day:"numeric"
-}
-);
+  return d.toLocaleDateString(
+    "en-US",
+    {
+      month:"short",
+      day:"numeric"
+    }
+  );
 
 }
 
 
 function escapeHtml(value){
 
-if(value===null||value===undefined)
-return"";
+  if(
+    value===null ||
+    value===undefined
+  )
+    return"";
 
-return String(value)
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;")
-.replace(/"/g,"&quot;")
-.replace(/'/g,"&#039;");
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
 }
 
 
 function escapeAttribute(value){
-return escapeHtml(value);
+  return escapeHtml(value);
 }
 
 
 function showAdminMessage(message){
 
-const box=document.getElementById("adminMessage");
+  const box=
+    document.getElementById(
+      "adminMessage"
+    );
 
-if(!box)
-return;
+  if(!box)
+    return;
 
-box.innerHTML=`
-<div class="message">
-${escapeHtml(message)}
-</div>`;
 
-setTimeout(()=>{
-box.innerHTML="";
-},4000);
+  box.innerHTML=`
+
+    <div class="message">
+      ${escapeHtml(message)}
+    </div>
+
+  `;
+
+
+  setTimeout(()=>{
+    box.innerHTML="";
+  },4000);
 
 }
 
 
-/* START */
+/* =========================================================
+   START
+   ========================================================= */
 
+renderHistory();
 loadGames();
 
 </script>
