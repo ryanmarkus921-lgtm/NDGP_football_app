@@ -27,9 +27,7 @@
 --border:#dce4ec;
 --green:#198754;
 --red:#dc2626;
---white:#fff;
 --silver:#687684;
---silver-dark:#465461;
 }
 
 *{
@@ -45,7 +43,6 @@ min-height:100vh;
 }
 
 header{
-position:relative;
 background:linear-gradient(135deg,var(--dark),var(--blue));
 color:white;
 text-align:center;
@@ -77,6 +74,11 @@ letter-spacing:1.3px;
 text-transform:uppercase;
 }
 
+
+/* =========================
+   NAVIGATION
+========================= */
+
 nav{
 position:sticky;
 top:0;
@@ -95,7 +97,7 @@ background:transparent;
 color:#617284;
 padding:11px 3px;
 font-family:"Oswald";
-font-size:11px;
+font-size:10px;
 font-weight:700;
 text-transform:uppercase;
 cursor:pointer;
@@ -115,6 +117,11 @@ right:20%;
 height:3px;
 background:var(--gold);
 }
+
+
+/* =========================
+   MAIN
+========================= */
 
 main{
 width:100%;
@@ -246,44 +253,32 @@ font-weight:700;
 }
 
 
-/* =========================
-   NEW COOL COUNTDOWN
-========================= */
+/* COUNTDOWN */
 
 .countdown{
 display:inline-flex;
 align-items:center;
 justify-content:center;
 gap:6px;
-
 margin-top:10px;
 padding:7px 12px;
-
 border-radius:8px;
-
-background:
-linear-gradient(
+background:linear-gradient(
 135deg,
 #f5f7f9 0%,
 #dfe5ea 50%,
 #f7f9fb 100%
 );
-
 border:1px solid #b9c4cd;
-
 box-shadow:
 0 2px 7px rgba(55,70,82,.16),
 inset 0 1px 0 rgba(255,255,255,.9);
-
 color:#344451;
-
 font-family:"Oswald";
 font-size:10px;
 font-weight:700;
 letter-spacing:.3px;
-
 text-transform:uppercase;
-
 position:relative;
 overflow:hidden;
 }
@@ -295,32 +290,19 @@ top:0;
 left:-100%;
 width:70%;
 height:100%;
-
 background:linear-gradient(
 90deg,
 transparent,
 rgba(255,255,255,.75),
 transparent
 );
-
 animation:countdownShine 2.8s infinite;
 }
 
 @keyframes countdownShine{
-0%{
-left:-100%;
-}
-45%{
-left:130%;
-}
-100%{
-left:130%;
-}
-}
-
-.countdown-football{
-font-size:13px;
-filter:grayscale(.15);
+0%{left:-100%}
+45%{left:130%}
+100%{left:130%}
 }
 
 .hidden{
@@ -328,9 +310,7 @@ display:none!important;
 }
 
 
-/* =========================
-   RECORD
-========================= */
+/* RECORD */
 
 .record-card{
 display:flex;
@@ -360,9 +340,7 @@ font-size:9px;
 }
 
 
-/* =========================
-   LAST GAME
-========================= */
+/* LAST GAME */
 
 .last-game{
 display:flex;
@@ -393,7 +371,7 @@ color:var(--navy);
 
 
 /* =========================
-   GAME CARDS
+   SCHEDULE
 ========================= */
 
 .game{
@@ -496,9 +474,7 @@ text-transform:uppercase;
 }
 
 
-/* =========================
-   BADGES
-========================= */
+/* BADGES */
 
 .badge{
 display:inline-flex;
@@ -541,6 +517,254 @@ animation:pulse 1.5s infinite;
 0%{box-shadow:0 0 0 0 rgba(220,38,38,.3)}
 70%{box-shadow:0 0 0 5px rgba(220,38,38,0)}
 100%{box-shadow:0 0 0 0 rgba(220,38,38,0)}
+}
+
+
+/* =========================
+   HISTORY
+========================= */
+
+.history-intro{
+text-align:center;
+padding:5px 10px 15px;
+}
+
+.history-intro-title{
+font-family:"Teko";
+font-size:32px;
+line-height:.9;
+color:var(--navy);
+letter-spacing:.5px;
+}
+
+.history-intro-text{
+color:var(--muted);
+font-size:10px;
+line-height:1.5;
+margin-top:5px;
+}
+
+
+/* SEASON CARD */
+
+.season-card{
+position:relative;
+background:white;
+border:1px solid var(--border);
+border-left:5px solid var(--navy);
+border-radius:11px;
+margin-bottom:11px;
+overflow:hidden;
+box-shadow:0 3px 11px rgba(0,31,63,.07);
+}
+
+.season-card:nth-of-type(2){
+border-left-color:var(--gold);
+}
+
+.season-header{
+background:linear-gradient(
+135deg,
+#f8fafc,
+#eef3f7
+);
+padding:11px 13px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+border-bottom:1px solid var(--border);
+}
+
+.season-year{
+font-family:"Teko";
+font-size:31px;
+line-height:.85;
+font-weight:700;
+color:var(--navy);
+}
+
+.season-label{
+font-size:8px;
+color:var(--muted);
+letter-spacing:1px;
+text-transform:uppercase;
+}
+
+.season-record{
+font-family:"Teko";
+font-size:31px;
+line-height:.85;
+font-weight:700;
+color:var(--navy);
+}
+
+.season-record-label{
+font-size:7px;
+color:var(--muted);
+text-align:right;
+text-transform:uppercase;
+letter-spacing:.6px;
+}
+
+.season-body{
+padding:10px 12px;
+}
+
+.season-achievement{
+display:flex;
+align-items:center;
+gap:9px;
+padding:7px 0;
+border-bottom:1px solid #edf1f4;
+}
+
+.season-achievement:last-child{
+border-bottom:0;
+}
+
+.achievement-icon{
+width:31px;
+height:31px;
+flex-shrink:0;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:7px;
+background:linear-gradient(
+135deg,
+#fff4c9,
+#f4c542
+);
+font-size:16px;
+box-shadow:0 2px 5px rgba(0,0,0,.08);
+}
+
+.achievement-content{
+min-width:0;
+}
+
+.achievement-title{
+font-family:"Teko";
+font-size:19px;
+line-height:.9;
+font-weight:700;
+color:var(--navy);
+}
+
+.achievement-sub{
+font-size:8px;
+color:var(--muted);
+margin-top:2px;
+}
+
+
+/* BIG ACHIEVEMENTS */
+
+.achievement-section{
+margin-top:4px;
+}
+
+.achievement-section-title{
+display:flex;
+align-items:center;
+gap:7px;
+font-family:"Teko";
+font-size:25px;
+line-height:1;
+color:var(--navy);
+margin-bottom:8px;
+}
+
+.achievement-section-title span{
+color:var(--gold);
+}
+
+.achievement-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:7px;
+}
+
+.achievement-box{
+background:linear-gradient(
+135deg,
+#f8fafc,
+#edf2f6
+);
+border:1px solid var(--border);
+border-radius:8px;
+padding:9px;
+min-height:74px;
+}
+
+.achievement-box-icon{
+font-size:18px;
+margin-bottom:3px;
+}
+
+.achievement-box-title{
+font-family:"Teko";
+font-size:18px;
+line-height:.9;
+color:var(--navy);
+font-weight:700;
+}
+
+.achievement-box-text{
+font-size:8px;
+line-height:1.35;
+color:var(--muted);
+margin-top:3px;
+}
+
+
+/* HISTORY TIMELINE */
+
+.history-timeline{
+margin-top:10px;
+}
+
+.timeline-title{
+font-family:"Teko";
+font-size:25px;
+line-height:1;
+color:var(--navy);
+margin-bottom:8px;
+}
+
+.timeline-item{
+position:relative;
+padding:8px 8px 8px 16px;
+border-left:2px solid #d5dee6;
+margin-left:6px;
+}
+
+.timeline-item:before{
+content:"";
+position:absolute;
+left:-5px;
+top:11px;
+width:8px;
+height:8px;
+border-radius:50%;
+background:var(--gold);
+border:2px solid white;
+box-shadow:0 0 0 1px #d5dee6;
+}
+
+.timeline-year{
+font-family:"Teko";
+font-size:18px;
+line-height:.9;
+color:var(--navy);
+font-weight:700;
+}
+
+.timeline-text{
+font-size:9px;
+color:var(--muted);
+margin-top:2px;
+line-height:1.4;
 }
 
 
@@ -893,9 +1117,7 @@ font-size:9px;
 }
 
 
-/* =========================
-   COMPACT ADMIN GAMES
-========================= */
+/* ADMIN GAMES */
 
 .compact-game{
 background:white;
@@ -992,9 +1214,7 @@ margin:0!important;
 }
 
 
-/* =========================
-   ADMIN PHOTOS
-========================= */
+/* ADMIN PHOTOS */
 
 .photo-upload{
 background:#f8fafc;
@@ -1115,10 +1335,18 @@ grid-template-columns:1fr;
 grid-column:auto;
 }
 
+.achievement-grid{
+grid-template-columns:1fr 1fr;
+gap:6px;
 }
 
+nav button{
+font-size:9px;
+padding-left:1px;
+padding-right:1px;
+}
 
-/* DESKTOP PHOTO GRID */
+}
 
 @media(min-width:650px){
 
@@ -1159,6 +1387,10 @@ alt="Notre Dame Green Pond Crusaders">
 🏈 Schedule
 </button>
 
+<button onclick="showPage('history',this)">
+🏆 History
+</button>
+
 <button onclick="showPage('photos',this)">
 📸 Photos
 </button>
@@ -1173,7 +1405,9 @@ alt="Notre Dame Green Pond Crusaders">
 <main>
 
 
-<!-- HOME -->
+<!-- =========================
+     HOME
+========================= -->
 
 <section id="home" class="page active">
 
@@ -1212,7 +1446,7 @@ Loading...
 
 
 <div id="countdown" class="countdown hidden">
-<span class="countdown-football">🏈</span>
+<span>🏈</span>
 <span id="countdownText"></span>
 </div>
 
@@ -1266,7 +1500,9 @@ Loading...
 </section>
 
 
-<!-- SCHEDULE -->
+<!-- =========================
+     SCHEDULE
+========================= -->
 
 <section id="schedule" class="page">
 
@@ -1285,7 +1521,366 @@ Loading...
 </section>
 
 
-<!-- PHOTOS -->
+<!-- =========================
+     HISTORY
+========================= -->
+
+<section id="history" class="page">
+
+<div class="card">
+
+<h2 class="page-heading">
+🏆 Team History
+</h2>
+
+
+<div class="history-intro">
+
+<div class="history-intro-title">
+CRUSADER FOOTBALL HISTORY
+</div>
+
+<div class="history-intro-text">
+A look back at recent Notre Dame Green Pond football seasons and accomplishments.
+</div>
+
+</div>
+
+
+<!-- 2025 -->
+
+<div class="season-card">
+
+<div class="season-header">
+
+<div>
+
+<div class="season-label">
+Football Season
+</div>
+
+<div class="season-year">
+2025
+</div>
+
+</div>
+
+
+<div>
+
+<div class="season-record">
+12–1
+</div>
+
+<div class="season-record-label">
+Final Record
+</div>
+
+</div>
+
+</div>
+
+
+<div class="season-body">
+
+
+<div class="season-achievement">
+
+<div class="achievement-icon">
+🏆
+</div>
+
+<div class="achievement-content">
+
+<div class="achievement-title">
+Colonial-Schuylkill League White Division Champions
+</div>
+
+<div class="achievement-sub">
+Won the White Division championship during a 12–1 season.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="season-achievement">
+
+<div class="achievement-icon">
+🥈
+</div>
+
+<div class="achievement-content">
+
+<div class="achievement-title">
+District 11 Class 3A Runner-Up
+</div>
+
+<div class="achievement-sub">
+Advanced to the District 11 championship game.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="season-achievement">
+
+<div class="achievement-icon">
+🔥
+</div>
+
+<div class="achievement-content">
+
+<div class="achievement-title">
+12 Straight Wins to Start the Season
+</div>
+
+<div class="achievement-sub">
+The Crusaders opened the season 12–0 before their only loss in the District final.
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- 2024 -->
+
+<div class="season-card">
+
+<div class="season-header">
+
+<div>
+
+<div class="season-label">
+Football Season
+</div>
+
+<div class="season-year">
+2024
+</div>
+
+</div>
+
+
+<div>
+
+<div class="season-record">
+9–2
+</div>
+
+<div class="season-record-label">
+Final Record
+</div>
+
+</div>
+
+</div>
+
+
+<div class="season-body">
+
+
+<div class="season-achievement">
+
+<div class="achievement-icon">
+🏆
+</div>
+
+<div class="achievement-content">
+
+<div class="achievement-title">
+Colonial League Champions
+</div>
+
+<div class="achievement-sub">
+Notre Dame captured the 2024 Colonial League championship.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="season-achievement">
+
+<div class="achievement-icon">
+⭐
+</div>
+
+<div class="achievement-content">
+
+<div class="achievement-title">
+9–2 Overall Record
+</div>
+
+<div class="achievement-sub">
+Finished the season with nine victories and two losses.
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- MAJOR PROGRAM ACHIEVEMENTS -->
+
+<div class="achievement-section">
+
+<div class="achievement-section-title">
+<span>🏆</span>
+PROGRAM ACHIEVEMENTS
+</div>
+
+
+<div class="achievement-grid">
+
+
+<div class="achievement-box">
+
+<div class="achievement-box-icon">
+🏆
+</div>
+
+<div class="achievement-box-title">
+2024
+</div>
+
+<div class="achievement-box-text">
+Colonial League Champions
+</div>
+
+</div>
+
+
+<div class="achievement-box">
+
+<div class="achievement-box-icon">
+🏆
+</div>
+
+<div class="achievement-box-title">
+2025
+</div>
+
+<div class="achievement-box-text">
+Colonial-Schuylkill League White Division Champions
+</div>
+
+</div>
+
+
+<div class="achievement-box">
+
+<div class="achievement-box-icon">
+🥈
+</div>
+
+<div class="achievement-box-title">
+2025
+</div>
+
+<div class="achievement-box-text">
+District 11 Class 3A Runner-Up
+</div>
+
+</div>
+
+
+<div class="achievement-box">
+
+<div class="achievement-box-icon">
+🏆
+</div>
+
+<div class="achievement-box-title">
+Program
+</div>
+
+<div class="achievement-box-text">
+Multiple Colonial League championships throughout program history.
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- PROGRAM HISTORY -->
+
+<div class="history-timeline">
+
+<div class="timeline-title">
+📜 CHAMPIONSHIP HISTORY
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-year">
+2024
+</div>
+
+<div class="timeline-text">
+Colonial League Champions • 9–2 season
+</div>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-year">
+2025
+</div>
+
+<div class="timeline-text">
+Colonial-Schuylkill League White Division Champions • 12–1 season • District 11 Class 3A Runner-Up
+</div>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-year">
+2026
+</div>
+
+<div class="timeline-text">
+Current season — follow the schedule and results on the Home and Schedule tabs.
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PHOTOS
+========================= -->
 
 <section id="photos" class="page">
 
@@ -1304,7 +1899,9 @@ Loading...
 </section>
 
 
-<!-- ADMIN -->
+<!-- =========================
+     ADMIN
+========================= -->
 
 <section id="admin" class="page">
 
@@ -1374,8 +1971,6 @@ Log Out
 
 </div>
 
-
-<!-- GAME MANAGEMENT -->
 
 <div class="admin-section">
 
@@ -1537,8 +2132,6 @@ Loading...
 </div>
 
 
-<!-- PHOTO MANAGEMENT -->
-
 <div class="admin-section">
 
 <div class="admin-section-header">
@@ -1629,7 +2222,9 @@ Loading...
 </section>
 
 
-<!-- GAME DETAILS MODAL -->
+<!-- =========================
+     GAME MODAL
+========================= -->
 
 <div
 id="gameModal"
@@ -1725,12 +2320,15 @@ This website was built by a student at Notre Dame Green Pond High School.
 <script>
 
 
+/* =========================
+   SUPABASE
+========================= */
+
 const SUPABASE_URL=
 "https://lwkisughuwqbpwlouejc.supabase.co";
 
 const SUPABASE_KEY=
 "sb_publishable_NC2FpWBds4vNOuGMr5_ikw_MOQXXHLI";
-
 
 const db=
 window.supabase.createClient(
@@ -1743,35 +2341,51 @@ let games=[];
 let countdownTimer=null;
 
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 
 function showPage(id,button){
 
 document.querySelectorAll(".page")
-.forEach(p=>p.classList.remove("active"));
+.forEach(p=>
+p.classList.remove("active")
+);
 
 document.getElementById(id)
 .classList.add("active");
 
+
 document.querySelectorAll("nav button")
-.forEach(b=>b.classList.remove("active"));
+.forEach(b=>
+b.classList.remove("active")
+);
+
 
 if(button)
 button.classList.add("active");
 
+
 if(id==="schedule")
 loadGames();
+
 
 if(id==="photos")
 loadPhotos();
 
-if(id==="admin"&&sessionStorage.getItem("adminCode"))
+
+if(
+id==="admin" &&
+sessionStorage.getItem("adminCode")
+)
 showAdmin();
 
 }
 
 
-/* LOAD GAMES */
+/* =========================
+   LOAD GAMES
+========================= */
 
 async function loadGames(){
 
@@ -1786,9 +2400,11 @@ if(error){
 console.error(error);
 
 document.getElementById("scheduleList").innerHTML=
-`<div class="message">
+`
+<div class="message">
 Could not load games.
-</div>`;
+</div>
+`;
 
 return;
 
@@ -1800,13 +2416,16 @@ games=data||[];
 updateHome();
 updateSchedule();
 
+
 if(sessionStorage.getItem("adminCode"))
 updateAdminGames();
 
 }
 
 
-/* SCORE */
+/* =========================
+   SCORE
+========================= */
 
 function hasScore(game){
 
@@ -1820,12 +2439,15 @@ game.opponent_score!=="";
 }
 
 
-/* KICKOFF */
+/* =========================
+   KICKOFF
+========================= */
 
 function parseKickoff(game){
 
 if(!game.date)
 return null;
+
 
 let hours=19;
 let minutes=0;
@@ -1833,7 +2455,8 @@ let minutes=0;
 
 if(game.time){
 
-const m=String(game.time).match(
+const m=
+String(game.time).match(
 /(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?/i
 );
 
@@ -1843,13 +2466,22 @@ if(m){
 hours=Number(m[1]);
 minutes=Number(m[2]||0);
 
+
 const period=
 String(m[3]||"").toUpperCase();
 
-if(period==="PM"&&hours<12)
+
+if(
+period==="PM" &&
+hours<12
+)
 hours+=12;
 
-if(period==="AM"&&hours===12)
+
+if(
+period==="AM" &&
+hours===12
+)
 hours=0;
 
 }
@@ -1858,40 +2490,61 @@ hours=0;
 
 
 const d=
-new Date(game.date+"T00:00:00");
+new Date(
+game.date+"T00:00:00"
+);
 
-d.setHours(hours,minutes,0,0);
+
+d.setHours(
+hours,
+minutes,
+0,
+0
+);
+
 
 return d;
 
 }
 
 
-/* LIVE */
+/* =========================
+   LIVE
+========================= */
 
 function isGameLive(game){
 
 if(hasScore(game))
 return false;
 
-const kickoff=parseKickoff(game);
+
+const kickoff=
+parseKickoff(game);
+
 
 if(!kickoff)
 return false;
+
 
 return new Date()>=kickoff;
 
 }
 
 
-/* STATUS */
+/* =========================
+   STATUS
+========================= */
 
 function getGameStatus(game){
 
 if(hasScore(game)){
 
-const our=Number(game.our_score);
-const opp=Number(game.opponent_score);
+const our=
+Number(game.our_score);
+
+const opp=
+Number(game.opponent_score);
+
 
 if(our>opp)
 return{
@@ -1899,11 +2552,13 @@ text:"FINAL • WIN",
 className:"win"
 };
 
+
 if(our<opp)
 return{
 text:"FINAL • LOSS",
 className:"loss"
 };
+
 
 return{
 text:"FINAL • TIE",
@@ -1928,16 +2583,23 @@ return null;
 }
 
 
-/* HOME */
+/* =========================
+   HOME
+========================= */
 
 function updateHome(){
 
 const today=
-new Date().toISOString().split("T")[0];
+new Date()
+.toISOString()
+.split("T")[0];
 
 
-const upcoming=games
-.filter(g=>g.date>=today&&!hasScore(g))
+const upcoming=
+games
+.filter(
+g=>g.date>=today&&!hasScore(g)
+)
 .sort(
 (a,b)=>
 new Date(a.date)-new Date(b.date)
@@ -1949,23 +2611,32 @@ const next=upcoming[0];
 
 if(!next){
 
-document.getElementById("nextMatchup").innerHTML=
+document.getElementById(
+"nextMatchup"
+).innerHTML=
 `
 <span class="next-team">NDGP</span>
 <span class="next-vs">VS</span>
 <span class="next-team">TBD</span>
 `;
 
-document.getElementById("nextDetails").textContent=
+
+document.getElementById(
+"nextDetails"
+).textContent=
 "No upcoming games";
 
-document.getElementById("countdown")
-.classList.add("hidden");
+
+document.getElementById(
+"countdown"
+).classList.add("hidden");
 
 }else{
 
 
-document.getElementById("nextMatchup").innerHTML=
+document.getElementById(
+"nextMatchup"
+).innerHTML=
 `
 <span class="next-team">NDGP</span>
 <span class="next-vs">VS</span>
@@ -1975,7 +2646,9 @@ ${escapeHtml(next.opponent)}
 `;
 
 
-document.getElementById("nextDetails").innerHTML=
+document.getElementById(
+"nextDetails"
+).innerHTML=
 `
 📅 ${formatDate(next.date)}
 <br>
@@ -1983,7 +2656,6 @@ document.getElementById("nextDetails").innerHTML=
 <br>
 📍 ${escapeHtml(next.location||"Location TBD")}
 <br>
-
 <span class="home-away">
 ${getHomeAwayIcon(next.home_away)}
 ${escapeHtml(next.home_away||"")}
@@ -1996,11 +2668,13 @@ if(isGameLive(next)){
 const box=
 document.getElementById("countdown");
 
+
 box.innerHTML=
 `
-<span class="countdown-football">🏈</span>
+<span>🏈</span>
 <span>LIVE</span>
 `;
+
 
 box.classList.remove("hidden");
 
@@ -2024,7 +2698,10 @@ games.forEach(g=>{
 
 if(hasScore(g)){
 
-if(Number(g.our_score)>Number(g.opponent_score))
+if(
+Number(g.our_score)>
+Number(g.opponent_score)
+)
 wins++;
 
 else if(
@@ -2041,17 +2718,22 @@ ties++;
 });
 
 
-document.getElementById("record").textContent=
+document.getElementById(
+"record"
+).textContent=
 `${wins}–${losses}${ties?"–"+ties:""}`;
 
 
-document.getElementById("recordDetails").textContent=
+document.getElementById(
+"recordDetails"
+).textContent=
 `${wins} W • ${losses} L${ties?" • "+ties+" T":""}`;
 
 
 /* LAST GAME */
 
-const completed=games
+const completed=
+games
 .filter(g=>hasScore(g))
 .sort(
 (a,b)=>
@@ -2064,7 +2746,9 @@ const last=completed[0];
 
 if(!last){
 
-document.getElementById("lastGame").innerHTML=
+document.getElementById(
+"lastGame"
+).innerHTML=
 `
 <div class="empty">
 No games played yet.
@@ -2078,8 +2762,10 @@ let result="TIE";
 let cls="tie";
 
 
-if(Number(last.our_score)>
-Number(last.opponent_score)){
+if(
+Number(last.our_score)>
+Number(last.opponent_score)
+){
 
 result="WIN";
 cls="win";
@@ -2095,14 +2781,22 @@ cls="loss";
 }
 
 
-document.getElementById("lastGame").innerHTML=
+document.getElementById(
+"lastGame"
+).innerHTML=
 `
 <div>
 
 <div class="last-matchup">
+
 NDGP
-<span class="next-vs">VS</span>
+
+<span class="next-vs">
+VS
+</span>
+
 ${escapeHtml(last.opponent)}
+
 </div>
 
 <div class="last-date">
@@ -2119,9 +2813,13 @@ ${result}
 
 </div>
 
+
 <div class="last-score">
-${last.our_score} –
+
+${last.our_score}
+–
 ${last.opponent_score}
+
 </div>
 `;
 
@@ -2130,12 +2828,17 @@ ${last.opponent_score}
 }
 
 
-/* COUNTDOWN */
+/* =========================
+   COUNTDOWN
+========================= */
 
 function startCountdown(game){
 
 const box=
-document.getElementById("countdown");
+document.getElementById(
+"countdown"
+);
+
 
 if(countdownTimer)
 clearInterval(countdownTimer);
@@ -2148,6 +2851,7 @@ parseKickoff(game);
 if(!kickoff){
 
 box.classList.add("hidden");
+
 return;
 
 }
@@ -2158,6 +2862,7 @@ function update(){
 if(isGameLive(game)){
 
 updateHome();
+
 return;
 
 }
@@ -2170,6 +2875,7 @@ kickoff-new Date();
 if(diff<=0){
 
 updateHome();
+
 return;
 
 }
@@ -2187,11 +2893,12 @@ Math.floor(diff/60000)%60;
 
 box.innerHTML=
 `
-<span class="countdown-football">🏈</span>
+<span>🏈</span>
 <span>
 ${days}d ${hours}h ${mins}m until kickoff
 </span>
 `;
+
 
 box.classList.remove("hidden");
 
@@ -2200,13 +2907,19 @@ box.classList.remove("hidden");
 
 update();
 
+
 countdownTimer=
-setInterval(update,30000);
+setInterval(
+update,
+30000
+);
 
 }
 
 
-/* HOME / AWAY ICON */
+/* =========================
+   HOME / AWAY
+========================= */
 
 function getHomeAwayIcon(value){
 
@@ -2217,17 +2930,22 @@ String(value||"")
 )
 return "➡️";
 
+
 return "🏠";
 
 }
 
 
-/* SCHEDULE */
+/* =========================
+   SCHEDULE
+========================= */
 
 function updateSchedule(){
 
 const container=
-document.getElementById("scheduleList");
+document.getElementById(
+"scheduleList"
+);
 
 
 if(!games.length){
@@ -2328,7 +3046,10 @@ ${
 hasScore(game)?
 `
 <div class="game-score">
-FINAL: ${game.our_score} – ${game.opponent_score}
+FINAL:
+${game.our_score}
+–
+${game.opponent_score}
 </div>
 `
 :""
@@ -2349,7 +3070,9 @@ TAP FOR GAME DETAILS →
 }
 
 
-/* GAME DETAILS */
+/* =========================
+   GAME DETAILS
+========================= */
 
 function openGameDetails(id){
 
@@ -2363,15 +3086,22 @@ if(!game)
 return;
 
 
-document.getElementById("modalMatchup").textContent=
+document.getElementById(
+"modalMatchup"
+).textContent=
 `NDGP VS ${game.opponent}`;
 
 
 const status=
-document.getElementById("modalStatus");
+document.getElementById(
+"modalStatus"
+);
+
 
 const score=
-document.getElementById("modalScore");
+document.getElementById(
+"modalScore"
+);
 
 
 if(isGameLive(game)){
@@ -2393,6 +3123,7 @@ Number(game.our_score);
 
 const opp=
 Number(game.opponent_score);
+
 
 let text="FINAL • TIE";
 let cls="tie";
@@ -2418,6 +3149,7 @@ ${text}
 </span>
 `;
 
+
 score.textContent=
 `${game.our_score} – ${game.opponent_score}`;
 
@@ -2429,7 +3161,9 @@ score.textContent="";
 }
 
 
-document.getElementById("modalInfo").innerHTML=
+document.getElementById(
+"modalInfo"
+).innerHTML=
 `
 
 <div class="modal-info">
@@ -2478,8 +3212,13 @@ Game Location
 </div>
 
 <div class="modal-info-value">
+
 ${getHomeAwayIcon(game.home_away)}
-${escapeHtml(game.home_away||"Home")}
+
+${escapeHtml(
+game.home_away||"Home"
+)}
+
 </div>
 
 </div>
@@ -2487,7 +3226,9 @@ ${escapeHtml(game.home_away||"Home")}
 `;
 
 
-document.getElementById("modalNotes").innerHTML=
+document.getElementById(
+"modalNotes"
+).innerHTML=
 game.notes?
 `
 <div class="modal-notes">
@@ -2503,11 +3244,13 @@ ${escapeHtml(game.notes)}
 :"";
 
 
-document
-.getElementById("gameModal")
-.classList.add("show");
+document.getElementById(
+"gameModal"
+).classList.add("show");
 
-document.body.style.overflow="hidden";
+
+document.body.style.overflow=
+"hidden";
 
 }
 
@@ -2522,9 +3265,10 @@ event.target.id!=="gameModal"
 return;
 
 
-document
-.getElementById("gameModal")
-.classList.remove("show");
+document.getElementById(
+"gameModal"
+).classList.remove("show");
+
 
 document.body.style.overflow="";
 
@@ -2561,14 +3305,18 @@ updateSchedule();
 async function login(){
 
 const code=
-document.getElementById("adminCode")
+document.getElementById(
+"adminCode"
+)
 .value
 .trim();
 
 
 if(!/^\d{4}$/.test(code)){
 
-document.getElementById("loginMessage").innerHTML=
+document.getElementById(
+"loginMessage"
+).innerHTML=
 `
 <div class="message">
 Enter exactly 4 digits.
@@ -2593,7 +3341,9 @@ if(error){
 
 console.error(error);
 
-document.getElementById("loginMessage").innerHTML=
+document.getElementById(
+"loginMessage"
+).innerHTML=
 `
 <div class="message">
 Database error.
@@ -2607,7 +3357,9 @@ return;
 
 if(!data){
 
-document.getElementById("loginMessage").innerHTML=
+document.getElementById(
+"loginMessage"
+).innerHTML=
 `
 <div class="message">
 Incorrect admin code.
@@ -2625,7 +3377,10 @@ code
 );
 
 
-document.getElementById("adminCode").value="";
+document.getElementById(
+"adminCode"
+).value="";
+
 
 showAdmin();
 
@@ -2634,13 +3389,15 @@ showAdmin();
 
 function showAdmin(){
 
-document
-.getElementById("loginArea")
-.classList.add("hidden");
+document.getElementById(
+"loginArea"
+).classList.add("hidden");
 
-document
-.getElementById("adminArea")
-.classList.remove("hidden");
+
+document.getElementById(
+"adminArea"
+).classList.remove("hidden");
+
 
 updateAdminGames();
 loadPhotos();
@@ -2650,15 +3407,19 @@ loadPhotos();
 
 function logout(){
 
-sessionStorage.removeItem("adminCode");
+sessionStorage.removeItem(
+"adminCode"
+);
 
-document
-.getElementById("loginArea")
-.classList.remove("hidden");
 
-document
-.getElementById("adminArea")
-.classList.add("hidden");
+document.getElementById(
+"loginArea"
+).classList.remove("hidden");
+
+
+document.getElementById(
+"adminArea"
+).classList.add("hidden");
 
 }
 
@@ -2670,26 +3431,48 @@ document
 async function addGame(){
 
 const code=
-sessionStorage.getItem("adminCode");
+sessionStorage.getItem(
+"adminCode"
+);
 
 
 const date=
-document.getElementById("gameDate").value;
+document.getElementById(
+"gameDate"
+).value;
+
 
 const time=
-document.getElementById("gameTime").value;
+document.getElementById(
+"gameTime"
+).value;
+
 
 const opponent=
-document.getElementById("gameOpponent").value.trim();
+document.getElementById(
+"gameOpponent"
+).value
+.trim();
+
 
 const location=
-document.getElementById("gameLocation").value.trim();
+document.getElementById(
+"gameLocation"
+).value
+.trim();
+
 
 const homeAway=
-document.getElementById("gameHomeAway").value;
+document.getElementById(
+"gameHomeAway"
+).value;
+
 
 const notes=
-document.getElementById("gameNotes").value.trim();
+document.getElementById(
+"gameNotes"
+).value
+.trim();
 
 
 if(!date||!opponent){
@@ -2731,11 +3514,25 @@ return;
 }
 
 
-document.getElementById("gameDate").value="";
-document.getElementById("gameTime").value="";
-document.getElementById("gameOpponent").value="";
-document.getElementById("gameLocation").value="";
-document.getElementById("gameNotes").value="";
+document.getElementById(
+"gameDate"
+).value="";
+
+document.getElementById(
+"gameTime"
+).value="";
+
+document.getElementById(
+"gameOpponent"
+).value="";
+
+document.getElementById(
+"gameLocation"
+).value="";
+
+document.getElementById(
+"gameNotes"
+).value="";
 
 
 showAdminMessage(
@@ -2749,13 +3546,15 @@ loadGames();
 
 
 /* =========================
-   ADMIN GAME LIST
+   ADMIN GAMES
 ========================= */
 
 function updateAdminGames(){
 
 const container=
-document.getElementById("adminGames");
+document.getElementById(
+"adminGames"
+);
 
 
 if(!games.length){
@@ -2779,12 +3578,10 @@ let score="No score yet";
 
 
 if(hasScore(game))
-
 score=
 `FINAL ${game.our_score}–${game.opponent_score}`;
 
 else if(isGameLive(game))
-
 score="🔴 LIVE";
 
 
@@ -2822,9 +3619,7 @@ ${escapeHtml(game.home_away||"")}
 
 
 <div class="compact-game-score">
-
 ${score}
-
 </div>
 
 </div>
@@ -2908,17 +3703,13 @@ id="edit-ha-${game.id}">
 <option
 value="Home"
 ${game.home_away==="Home"?"selected":""}>
-
 🏠 Home
-
 </option>
 
 <option
 value="Away"
 ${game.home_away==="Away"?"selected":""}>
-
 ➡️ Away
-
 </option>
 
 </select>
@@ -3005,12 +3796,17 @@ area.classList.toggle("open");
 }
 
 
-/* SAVE GAME */
+/* =========================
+   SAVE GAME
+========================= */
 
 async function saveGame(id){
 
 const code=
-sessionStorage.getItem("adminCode");
+sessionStorage.getItem(
+"adminCode"
+);
+
 
 const game=
 games.find(
@@ -3027,15 +3823,18 @@ document.getElementById(
 `edit-date-${id}`
 ).value;
 
+
 const time=
 document.getElementById(
 `edit-time-${id}`
 ).value;
 
+
 const location=
 document.getElementById(
 `edit-location-${id}`
 ).value;
+
 
 const homeAway=
 document.getElementById(
@@ -3047,6 +3846,7 @@ const ourValue=
 document.getElementById(
 `our-${id}`
 ).value;
+
 
 const oppValue=
 document.getElementById(
@@ -3064,6 +3864,7 @@ const ourScore=
 ourValue===""?
 null:
 Number(ourValue);
+
 
 const opponentScore=
 oppValue===""?
@@ -3120,7 +3921,9 @@ loadGames();
 }
 
 
-/* DELETE GAME */
+/* =========================
+   DELETE GAME
+========================= */
 
 async function deleteGame(id){
 
@@ -3133,7 +3936,9 @@ return;
 
 
 const code=
-sessionStorage.getItem("adminCode");
+sessionStorage.getItem(
+"adminCode"
+);
 
 
 const {error}=
@@ -3195,8 +4000,11 @@ return;
 
 const photos=data||[];
 
+
 const publicContainer=
-document.getElementById("photoList");
+document.getElementById(
+"photoList"
+);
 
 
 if(!photos.length){
@@ -3221,7 +4029,10 @@ ${photos.map(photo=>`
 <img
 src="${escapeAttribute(photo.image_url)}"
 alt="NDGP Football"
-onclick="window.open('${escapeAttribute(photo.image_url)}','_blank')">
+onclick="window.open(
+'${escapeAttribute(photo.image_url)}',
+'_blank'
+)">
 
 ${
 photo.caption?
@@ -3244,12 +4055,16 @@ ${escapeHtml(photo.caption)}
 
 
 const admin=
-document.getElementById("adminPhotos");
+document.getElementById(
+"adminPhotos"
+);
 
 
 if(
 admin &&
-sessionStorage.getItem("adminCode")
+sessionStorage.getItem(
+"adminCode"
+)
 ){
 
 if(!photos.length){
@@ -3310,12 +4125,16 @@ onclick="deletePhoto(${photo.id})">
 }
 
 
-/* ADD PHOTO */
+/* =========================
+   ADD PHOTO
+========================= */
 
 async function addPhoto(){
 
 const code=
-sessionStorage.getItem("adminCode");
+sessionStorage.getItem(
+"adminCode"
+);
 
 
 const file=
@@ -3327,7 +4146,8 @@ document.getElementById(
 const caption=
 document.getElementById(
 "photoCaption"
-).value.trim();
+).value
+.trim();
 
 
 if(!file){
@@ -3384,6 +4204,7 @@ document.getElementById(
 "photoFile"
 ).value="";
 
+
 document.getElementById(
 "photoCaption"
 ).value="";
@@ -3410,7 +4231,9 @@ showAdminMessage(
 }
 
 
-/* IMAGE COMPRESSION */
+/* =========================
+   IMAGE COMPRESSION
+========================= */
 
 function compressImage(
 file,
@@ -3502,7 +4325,9 @@ reader.readAsDataURL(file);
 }
 
 
-/* DELETE PHOTO */
+/* =========================
+   DELETE PHOTO
+========================= */
 
 async function deletePhoto(id){
 
@@ -3645,16 +4470,19 @@ ${escapeHtml(message)}
 `;
 
 
-setTimeout(()=>{
-
+setTimeout(
+()=>{
 box.innerHTML="";
-
-},4000);
+},
+4000
+);
 
 }
 
 
-/* START */
+/* =========================
+   START
+========================= */
 
 loadGames();
 
