@@ -12,7 +12,6 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -512,21 +511,12 @@ animation:pulse 1.5s infinite;
 }
 
 
-/* =========================
+/* =====================================================
    HISTORY
-========================= */
+===================================================== */
 
 .history-intro{
-text-align:center;
-padding:2px 10px 12px;
-}
-
-.history-intro-title{
-font-family:"Teko";
-font-size:28px;
-line-height:.9;
-color:var(--navy);
-letter-spacing:.5px;
+display:none;
 }
 
 
@@ -535,16 +525,23 @@ letter-spacing:.5px;
 .season-card{
 background:white;
 border:1px solid var(--border);
-border-left:5px solid var(--navy);
+border-left:5px solid var(--gold);
 border-radius:11px;
 margin-bottom:11px;
 overflow:hidden;
 box-shadow:0 3px 11px rgba(0,31,63,.07);
 }
 
-.season-card.year-2025{
+
+/* BOTH SEASONS ARE GOLD */
+
+.season-card.year-2025,
+.season-card.year-2024{
 border-left-color:var(--gold);
 }
+
+
+/* HEADER */
 
 .season-header{
 background:linear-gradient(
@@ -580,21 +577,33 @@ color:var(--navy);
 text-align:right;
 }
 
+
+/*
+   IMPORTANT:
+   No tiny text underneath the record.
+*/
+
 .season-record-label{
-font-size:8px;
-color:var(--muted);
+font-family:"Teko";
+font-size:10px;
+line-height:1;
+font-weight:500;
+color:#718096;
 text-align:right;
 margin-top:3px;
-text-transform:uppercase;
-letter-spacing:.5px;
+text-transform:none;
+letter-spacing:0;
 }
+
+
+/* ACHIEVEMENT BODY */
 
 .season-body{
 padding:8px 12px;
 }
 
 
-/* ACHIEVEMENTS */
+/* EVERY ACHIEVEMENT MATCHES */
 
 .season-achievement{
 display:flex;
@@ -638,30 +647,43 @@ color:var(--navy);
 }
 
 
-/* SCHOOL RECORD */
+/*
+   SCHOOL RECORD
+   No separate box.
+   It now matches every other achievement.
+*/
 
 .record-achievement{
-background:linear-gradient(
-135deg,
-#fffdf4,
-#f8f2d8
-);
-border:1px solid #ead68a;
-border-radius:8px;
-padding:9px;
-margin-top:8px;
 display:flex;
 align-items:center;
 gap:9px;
+padding:8px 0;
+margin:0;
+background:transparent;
+border:0;
+border-radius:0;
 }
 
 .record-achievement-icon{
-font-size:22px;
+width:32px;
+height:32px;
+flex-shrink:0;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:7px;
+background:linear-gradient(
+135deg,
+#fff4c9,
+#f4c542
+);
+font-size:16px;
+box-shadow:0 2px 5px rgba(0,0,0,.08);
 }
 
 .record-achievement-title{
 font-family:"Teko";
-font-size:20px;
+font-size:19px;
 line-height:1;
 font-weight:700;
 color:var(--navy);
@@ -1242,6 +1264,10 @@ font-size:24px;
 font-size:27px;
 }
 
+.season-record-label{
+font-size:9px;
+}
+
 }
 
 @media(min-width:650px){
@@ -1421,16 +1447,8 @@ Loading...
 🏆 Team History
 </h2>
 
-<div class="history-intro">
 
-<div class="history-intro-title">
-CRUSADER FOOTBALL HISTORY
-</div>
-
-</div>
-
-
-<!-- 2025 SEASON -->
+<!-- 2025 -->
 
 <div class="season-card year-2025">
 
@@ -1535,9 +1553,9 @@ Tied School Record — Most Wins
 </div>
 
 
-<!-- 2024 SEASON -->
+<!-- 2024 -->
 
-<div class="season-card">
+<div class="season-card year-2024">
 
 <div class="season-header">
 
@@ -1998,7 +2016,6 @@ This website was built by a student at Notre Dame Green Pond High School.
 
 
 <script>
-
 
 /* SUPABASE */
 
