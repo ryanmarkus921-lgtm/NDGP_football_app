@@ -4,14 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NDGP Football</title>
+
 <meta name="theme-color" content="#001f3f">
 <link rel="apple-touch-icon" href="LOGO_W__FB.png">
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
 --navy:#001f3f;
 --dark:#00152b;
@@ -24,17 +28,20 @@
 --green:#198754;
 --red:#dc2626;
 --white:#fff;
---shadow:0 3px 12px rgba(0,31,63,.07)
+--silver:#687684;
+--silver-dark:#465461;
 }
 
-*{box-sizing:border-box}
+*{
+box-sizing:border-box;
+}
 
 body{
 margin:0;
-background:linear-gradient(180deg,#edf2f7,#f7f9fb);
+background:linear-gradient(180deg,#edf2f7,#f8fafc);
 color:var(--text);
 font-family:"Oswald",Arial,sans-serif;
-min-height:100vh
+min-height:100vh;
 }
 
 header{
@@ -44,7 +51,6 @@ color:white;
 text-align:center;
 padding:22px 15px 23px;
 border-bottom:4px solid var(--gold);
-overflow:hidden
 }
 
 .logo{
@@ -52,7 +58,7 @@ width:95px;
 height:95px;
 object-fit:contain;
 display:block;
-margin:auto auto 7px
+margin:auto auto 7px;
 }
 
 header h1{
@@ -60,7 +66,7 @@ margin:0;
 font-family:"Teko",sans-serif;
 font-size:40px;
 line-height:.9;
-letter-spacing:2px
+letter-spacing:2px;
 }
 
 header p{
@@ -68,7 +74,7 @@ margin:6px 0 0;
 color:#dbe7f2;
 font-size:11px;
 letter-spacing:1.3px;
-text-transform:uppercase
+text-transform:uppercase;
 }
 
 nav{
@@ -78,7 +84,7 @@ z-index:100;
 display:flex;
 background:rgba(255,255,255,.97);
 border-bottom:1px solid var(--border);
-box-shadow:0 2px 10px rgba(0,31,63,.07)
+box-shadow:0 2px 10px rgba(0,31,63,.07);
 }
 
 nav button{
@@ -92,12 +98,12 @@ font-family:"Oswald";
 font-size:11px;
 font-weight:700;
 text-transform:uppercase;
-cursor:pointer
+cursor:pointer;
 }
 
 nav button.active{
 color:var(--navy);
-background:#f7f9fb
+background:#f7f9fb;
 }
 
 nav button.active:after{
@@ -107,18 +113,23 @@ bottom:0;
 left:20%;
 right:20%;
 height:3px;
-background:var(--gold)
+background:var(--gold);
 }
 
 main{
 width:100%;
 max-width:760px;
 margin:auto;
-padding:12px 10px 22px
+padding:12px 10px 22px;
 }
 
-.page{display:none}
-.page.active{display:block}
+.page{
+display:none;
+}
+
+.page.active{
+display:block;
+}
 
 .card{
 background:white;
@@ -126,7 +137,7 @@ border:1px solid var(--border);
 border-radius:13px;
 margin-bottom:10px;
 padding:13px;
-box-shadow:var(--shadow)
+box-shadow:0 3px 12px rgba(0,31,63,.07);
 }
 
 .page-heading{
@@ -138,19 +149,25 @@ font-family:"Teko";
 font-size:28px;
 line-height:1;
 color:var(--navy);
-text-transform:uppercase
+text-transform:uppercase;
 }
 
 .page-heading:after{
 content:"";
 height:2px;
 flex:1;
-background:linear-gradient(90deg,var(--gold),transparent)
+background:linear-gradient(90deg,var(--gold),transparent);
 }
 
-/* HOME */
 
-.hero-card{padding:0;overflow:hidden}
+/* =========================
+   HOME
+========================= */
+
+.hero-card{
+padding:0;
+overflow:hidden;
+}
 
 .hero-top{
 background:linear-gradient(90deg,var(--dark),var(--blue));
@@ -158,32 +175,32 @@ color:white;
 padding:9px 13px;
 display:flex;
 align-items:center;
-justify-content:space-between
+justify-content:space-between;
 }
 
 .hero-top span{
 font-family:"Teko";
 font-size:20px;
 line-height:1;
-letter-spacing:1px
+letter-spacing:1px;
 }
 
 .hero-top small{
 color:var(--gold);
 font-size:9px;
-letter-spacing:1px
+letter-spacing:1px;
 }
 
 .hero-body{
 text-align:center;
-padding:16px 12px 17px
+padding:16px 12px 17px;
 }
 
 .next-label{
 color:var(--muted);
 font-size:9px;
 text-transform:uppercase;
-letter-spacing:1.4px
+letter-spacing:1.4px;
 }
 
 .next-matchup{
@@ -191,7 +208,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 gap:8px;
-margin:4px 0 7px
+margin:4px 0 7px;
 }
 
 .next-team{
@@ -199,20 +216,20 @@ font-family:"Teko";
 font-size:29px;
 font-weight:700;
 line-height:1;
-color:var(--navy)
+color:var(--navy);
 }
 
 .next-vs{
 font-family:"Teko";
 font-size:17px;
 font-weight:700;
-color:#d3a817
+color:#d3a817;
 }
 
 .game-info{
 color:#637487;
 font-size:11px;
-line-height:1.7
+line-height:1.7;
 }
 
 .home-away{
@@ -225,31 +242,100 @@ background:#f1f5f8;
 border-radius:5px;
 color:var(--navy);
 font-size:10px;
-font-weight:700
+font-weight:700;
 }
+
+
+/* =========================
+   NEW COOL COUNTDOWN
+========================= */
 
 .countdown{
 display:inline-flex;
 align-items:center;
 justify-content:center;
-background:#fee2e2;
-color:var(--red);
-border:1px solid #fecaca;
-border-radius:7px;
-padding:5px 9px;
-margin-top:8px;
+gap:6px;
+
+margin-top:10px;
+padding:7px 12px;
+
+border-radius:8px;
+
+background:
+linear-gradient(
+135deg,
+#f5f7f9 0%,
+#dfe5ea 50%,
+#f7f9fb 100%
+);
+
+border:1px solid #b9c4cd;
+
+box-shadow:
+0 2px 7px rgba(55,70,82,.16),
+inset 0 1px 0 rgba(255,255,255,.9);
+
+color:#344451;
+
+font-family:"Oswald";
 font-size:10px;
-font-weight:700
+font-weight:700;
+letter-spacing:.3px;
+
+text-transform:uppercase;
+
+position:relative;
+overflow:hidden;
 }
 
-.hidden{display:none!important}
+.countdown:before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:70%;
+height:100%;
 
-/* RECORD */
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.75),
+transparent
+);
+
+animation:countdownShine 2.8s infinite;
+}
+
+@keyframes countdownShine{
+0%{
+left:-100%;
+}
+45%{
+left:130%;
+}
+100%{
+left:130%;
+}
+}
+
+.countdown-football{
+font-size:13px;
+filter:grayscale(.15);
+}
+
+.hidden{
+display:none!important;
+}
+
+
+/* =========================
+   RECORD
+========================= */
 
 .record-card{
 display:flex;
 align-items:center;
-justify-content:space-between
+justify-content:space-between;
 }
 
 .record-label,
@@ -257,7 +343,7 @@ justify-content:space-between
 color:var(--muted);
 font-size:9px;
 letter-spacing:1.2px;
-text-transform:uppercase
+text-transform:uppercase;
 }
 
 .record{
@@ -265,20 +351,23 @@ font-family:"Teko";
 font-size:43px;
 line-height:.9;
 font-weight:700;
-color:var(--navy)
+color:var(--navy);
 }
 
 .record-sub{
 color:var(--muted);
-font-size:9px
+font-size:9px;
 }
 
-/* LAST GAME */
+
+/* =========================
+   LAST GAME
+========================= */
 
 .last-game{
 display:flex;
 align-items:center;
-justify-content:space-between
+justify-content:space-between;
 }
 
 .last-matchup{
@@ -286,23 +375,26 @@ font-family:"Teko";
 font-size:23px;
 line-height:1;
 color:var(--navy);
-text-transform:uppercase
+text-transform:uppercase;
 }
 
 .last-date{
 color:var(--muted);
 font-size:10px;
-margin-top:4px
+margin-top:4px;
 }
 
 .last-score{
 font-family:"Teko";
 font-size:30px;
 font-weight:700;
-color:var(--navy)
+color:var(--navy);
 }
 
-/* GAME CARDS */
+
+/* =========================
+   GAME CARDS
+========================= */
 
 .game{
 background:white;
@@ -310,34 +402,33 @@ border:1px solid var(--border);
 border-left:4px solid var(--navy);
 border-radius:10px;
 margin-bottom:8px;
-
-/* COMPACT CARD */
 padding:9px 11px 6px;
-
 box-shadow:0 2px 8px rgba(0,31,63,.05);
-cursor:pointer
+cursor:pointer;
+transition:.15s;
 }
 
 .game:hover{
-box-shadow:0 4px 12px rgba(0,31,63,.09)
+transform:translateY(-1px);
+box-shadow:0 4px 12px rgba(0,31,63,.09);
 }
 
 .game.live-game{
 border-left-color:var(--red);
-background:linear-gradient(90deg,#fffafa,#fff)
+background:linear-gradient(90deg,#fffafa,#fff);
 }
 
 .game-top{
 display:flex;
 align-items:center;
 justify-content:space-between;
-gap:8px
+gap:8px;
 }
 
 .game-date{
 color:var(--muted);
 font-size:9px;
-margin-bottom:2px
+margin-bottom:2px;
 }
 
 .game-opponent{
@@ -346,7 +437,7 @@ font-size:24px;
 line-height:.9;
 font-weight:700;
 color:var(--navy);
-text-transform:uppercase
+text-transform:uppercase;
 }
 
 .game-matchup{
@@ -355,17 +446,17 @@ align-items:center;
 gap:4px;
 font-size:10px;
 margin-top:5px;
-color:#5f7182
+color:#5f7182;
 }
 
 .game-team{
 color:var(--navy);
-font-weight:700
+font-weight:700;
 }
 
 .game-vs{
 color:#d3a817;
-font-weight:700
+font-weight:700;
 }
 
 .game-details{
@@ -374,16 +465,14 @@ flex-wrap:wrap;
 gap:4px 10px;
 margin-top:5px;
 color:#637487;
-font-size:9px
+font-size:9px;
 }
 
 .detail{
 display:inline-flex;
 align-items:center;
-gap:3px
+gap:3px;
 }
-
-/* SCORE */
 
 .game-score{
 font-family:"Teko";
@@ -391,14 +480,8 @@ font-size:20px;
 line-height:.9;
 font-weight:700;
 color:var(--navy);
-
-/* NO EXTRA GAP */
-margin:4px 0 0
+margin:4px 0 0;
 }
-
-/* DETAILS LINK
-   This is intentionally pulled directly underneath
-   the score so there is no large empty area. */
 
 .game > .game-details-link{
 margin-top:2px!important;
@@ -409,10 +492,13 @@ text-align:right;
 color:#9aa8b5;
 font-size:7px;
 letter-spacing:.45px;
-text-transform:uppercase
+text-transform:uppercase;
 }
 
-/* BADGES */
+
+/* =========================
+   BADGES
+========================= */
 
 .badge{
 display:inline-flex;
@@ -424,22 +510,22 @@ font-size:9px;
 line-height:1;
 font-weight:700;
 text-transform:uppercase;
-white-space:nowrap
+white-space:nowrap;
 }
 
 .badge.win{
 background:#e3f5e9;
-color:var(--green)
+color:var(--green);
 }
 
 .badge.loss{
 background:#fde8e8;
-color:var(--red)
+color:var(--red);
 }
 
 .badge.tie{
 background:#eee9fb;
-color:#7252a6
+color:#7252a6;
 }
 
 .badge.live{
@@ -448,7 +534,7 @@ color:var(--red);
 border:1px solid #fecaca;
 padding:6px 10px;
 font-size:10px;
-animation:pulse 1.5s infinite
+animation:pulse 1.5s infinite;
 }
 
 @keyframes pulse{
@@ -457,12 +543,15 @@ animation:pulse 1.5s infinite
 100%{box-shadow:0 0 0 0 rgba(220,38,38,0)}
 }
 
-/* PHOTOS */
+
+/* =========================
+   PHOTOS
+========================= */
 
 .photo-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:7px
+gap:7px;
 }
 
 .photo-item img{
@@ -470,16 +559,19 @@ width:100%;
 aspect-ratio:1;
 object-fit:cover;
 display:block;
-border-radius:7px
+border-radius:7px;
 }
 
 .photo-caption{
 color:var(--muted);
 font-size:8px;
-margin:3px
+margin:3px;
 }
 
-/* MODAL */
+
+/* =========================
+   MODAL
+========================= */
 
 .modal-overlay{
 position:fixed;
@@ -490,10 +582,12 @@ align-items:center;
 justify-content:center;
 padding:12px;
 background:rgba(0,15,30,.68);
-backdrop-filter:blur(4px)
+backdrop-filter:blur(4px);
 }
 
-.modal-overlay.show{display:flex}
+.modal-overlay.show{
+display:flex;
+}
 
 .modal{
 width:100%;
@@ -502,7 +596,7 @@ max-height:90vh;
 overflow-y:auto;
 background:white;
 border-radius:14px;
-overflow:hidden
+overflow:hidden;
 }
 
 .modal-header{
@@ -511,7 +605,7 @@ background:linear-gradient(135deg,var(--dark),var(--blue));
 color:white;
 padding:15px;
 text-align:center;
-border-bottom:4px solid var(--gold)
+border-bottom:4px solid var(--gold);
 }
 
 .modal-close{
@@ -524,43 +618,45 @@ border:0;
 border-radius:50%;
 background:rgba(255,255,255,.12);
 color:white;
-font-size:19px
+font-size:19px;
 }
 
 .modal-kicker{
 color:var(--gold);
 font-size:8px;
 letter-spacing:1.4px;
-margin-bottom:3px
+margin-bottom:3px;
 }
 
 .modal-matchup{
 font-family:"Teko";
 font-size:33px;
 line-height:1;
-text-transform:uppercase
+text-transform:uppercase;
 }
 
-.modal-body{padding:15px}
+.modal-body{
+padding:15px;
+}
 
 .modal-status{
 text-align:center;
-margin-bottom:8px
+margin-bottom:8px;
 }
 
 .modal-live{
 display:inline-flex;
 align-items:center;
 justify-content:center;
-background:#fee2e2;
-color:var(--red);
-border:1px solid #fecaca;
+background:#eef1f3;
+color:#465461;
+border:1px solid #c7d0d7;
 border-radius:8px;
 padding:7px 14px;
 font-family:"Teko";
 font-size:24px;
 font-weight:700;
-line-height:1
+line-height:1;
 }
 
 .modal-score{
@@ -570,34 +666,34 @@ font-size:50px;
 line-height:.9;
 font-weight:700;
 color:var(--navy);
-margin:3px 0 14px
+margin:3px 0 14px;
 }
 
 .modal-info-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:7px
+gap:7px;
 }
 
 .modal-info{
 background:#f5f8fa;
 border:1px solid var(--border);
 border-radius:7px;
-padding:8px
+padding:8px;
 }
 
 .modal-info-label{
 color:var(--muted);
 font-size:7px;
 text-transform:uppercase;
-letter-spacing:.7px
+letter-spacing:.7px;
 }
 
 .modal-info-value{
 color:var(--navy);
 font-size:11px;
 font-weight:600;
-margin-top:2px
+margin-top:2px;
 }
 
 .modal-notes{
@@ -606,7 +702,7 @@ background:#f7f9fb;
 border-radius:7px;
 padding:9px;
 color:#5f7182;
-font-size:10px
+font-size:10px;
 }
 
 .modal-notes-title{
@@ -614,10 +710,13 @@ font-family:"Teko";
 font-size:18px;
 line-height:1;
 color:var(--navy);
-margin-bottom:3px
+margin-bottom:3px;
 }
 
-/* ADMIN */
+
+/* =========================
+   ADMIN
+========================= */
 
 .admin-login-header,
 .admin-dashboard-header{
@@ -626,7 +725,7 @@ color:white;
 border-radius:11px;
 border-bottom:3px solid var(--gold);
 padding:13px;
-margin-bottom:10px
+margin-bottom:10px;
 }
 
 .admin-login-header h2,
@@ -634,20 +733,20 @@ margin-bottom:10px
 margin:0;
 font-family:"Teko";
 font-size:26px;
-line-height:1
+line-height:1;
 }
 
 .admin-login-header p,
 .admin-dashboard-header p{
 margin:3px 0 0;
 font-size:9px;
-color:#d9e5ef
+color:#d9e5ef;
 }
 
 .admin-dashboard-header{
 display:flex;
 align-items:center;
-justify-content:space-between
+justify-content:space-between;
 }
 
 .admin-section{
@@ -656,7 +755,7 @@ border:1px solid var(--border);
 border-radius:10px;
 overflow:hidden;
 margin-bottom:9px;
-box-shadow:var(--shadow)
+box-shadow:0 3px 12px rgba(0,31,63,.07);
 }
 
 .admin-section-header{
@@ -665,7 +764,7 @@ align-items:center;
 gap:8px;
 padding:9px 11px;
 background:#f7f9fb;
-border-bottom:1px solid var(--border)
+border-bottom:1px solid var(--border);
 }
 
 .admin-section-icon{
@@ -676,7 +775,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 background:var(--navy);
-color:white
+color:white;
 }
 
 .admin-section-title h3{
@@ -684,39 +783,43 @@ margin:0;
 font-family:"Teko";
 font-size:20px;
 line-height:1;
-color:var(--navy)
+color:var(--navy);
 }
 
 .admin-section-title p{
 margin:2px 0 0;
 font-size:8px;
-color:var(--muted)
+color:var(--muted);
 }
 
-.admin-section-body{padding:9px}
+.admin-section-body{
+padding:9px;
+}
 
 .admin-subsection{
 background:#f8fafc;
 border:1px solid var(--border);
 border-radius:8px;
 padding:9px;
-margin-bottom:8px
+margin-bottom:8px;
 }
 
-.admin-subsection:last-child{margin-bottom:0}
+.admin-subsection:last-child{
+margin-bottom:0;
+}
 
 .admin-subsection h4{
 margin:0;
 font-family:"Teko";
 font-size:19px;
 line-height:1;
-color:var(--navy)
+color:var(--navy);
 }
 
 .admin-description{
 color:var(--muted);
 font-size:8px;
-margin:3px 0 7px
+margin:3px 0 7px;
 }
 
 label{
@@ -725,10 +828,12 @@ color:#40566b;
 font-size:8px;
 font-weight:700;
 text-transform:uppercase;
-margin-bottom:3px
+margin-bottom:3px;
 }
 
-input,select,textarea{
+input,
+select,
+textarea{
 width:100%;
 border:1px solid #ccd7e1;
 border-radius:6px;
@@ -737,18 +842,18 @@ margin:0 0 7px;
 background:white;
 color:var(--text);
 font-family:"Oswald";
-font-size:11px
+font-size:11px;
 }
 
 textarea{
 min-height:55px;
-resize:vertical
+resize:vertical;
 }
 
 .form-row{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:7px
+gap:7px;
 }
 
 button.primary,
@@ -760,22 +865,22 @@ padding:7px 10px;
 font-family:"Oswald";
 font-size:10px;
 font-weight:700;
-cursor:pointer
+cursor:pointer;
 }
 
 button.primary{
 background:var(--navy);
-color:white
+color:white;
 }
 
 button.secondary{
 background:#e8edf2;
-color:var(--navy)
+color:var(--navy);
 }
 
 button.danger{
 background:#fde7e7;
-color:var(--red)
+color:var(--red);
 }
 
 .message{
@@ -784,24 +889,20 @@ border-radius:6px;
 padding:7px;
 margin:6px 0;
 color:#536779;
-font-size:9px
+font-size:9px;
 }
 
-.empty{
-text-align:center;
-color:var(--muted);
-padding:18px 5px;
-font-size:10px
-}
 
-/* ADMIN GAME LIST */
+/* =========================
+   COMPACT ADMIN GAMES
+========================= */
 
 .compact-game{
 background:white;
 border:1px solid var(--border);
 border-radius:7px;
 margin-bottom:5px;
-overflow:hidden
+overflow:hidden;
 }
 
 .compact-game-top{
@@ -809,10 +910,12 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 gap:7px;
-padding:7px
+padding:7px;
 }
 
-.compact-game-info{min-width:0}
+.compact-game-info{
+min-width:0;
+}
 
 .compact-game-title{
 font-family:"Teko";
@@ -821,25 +924,25 @@ line-height:.9;
 color:var(--navy);
 white-space:nowrap;
 overflow:hidden;
-text-overflow:ellipsis
+text-overflow:ellipsis;
 }
 
 .compact-game-meta{
 font-size:7px;
 color:var(--muted);
-margin-top:3px
+margin-top:3px;
 }
 
 .compact-game-score{
 font-size:8px;
 font-weight:700;
 margin-top:2px;
-color:var(--navy)
+color:var(--navy);
 }
 
 .compact-game-actions{
 display:flex;
-gap:3px
+gap:3px;
 }
 
 .edit-button,
@@ -849,49 +952,56 @@ border-radius:5px;
 padding:6px;
 font-family:"Oswald";
 font-size:8px;
-font-weight:700
+font-weight:700;
 }
 
 .edit-button{
 background:#e8eff6;
-color:var(--navy)
+color:var(--navy);
 }
 
 .delete-small{
 background:#fde7e7;
-color:var(--red)
+color:var(--red);
 }
 
 .compact-edit{
 display:none;
 padding:8px;
 background:#f7f9fb;
-border-top:1px solid var(--border)
+border-top:1px solid var(--border);
 }
 
-.compact-edit.open{display:block}
+.compact-edit.open{
+display:block;
+}
 
 .compact-edit-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:0 7px
+gap:0 7px;
 }
 
-.compact-full{grid-column:1/-1}
+.compact-full{
+grid-column:1/-1;
+}
 
 .compact-save{
 width:100%;
-margin:0!important
+margin:0!important;
 }
 
-/* ADMIN PHOTOS */
+
+/* =========================
+   ADMIN PHOTOS
+========================= */
 
 .photo-upload{
 background:#f8fafc;
 border:1px dashed #b9c8d6;
 border-radius:8px;
 padding:8px;
-margin-bottom:8px
+margin-bottom:8px;
 }
 
 .photo-upload h4{
@@ -899,28 +1009,30 @@ margin:0;
 font-family:"Teko";
 font-size:18px;
 line-height:1;
-color:var(--navy)
+color:var(--navy);
 }
 
 .photo-upload p{
 margin:3px 0 7px;
 font-size:8px;
-color:var(--muted)
+color:var(--muted);
 }
 
-.upload-photo-button{width:100%}
+.upload-photo-button{
+width:100%;
+}
 
 .admin-photo-grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:5px
+gap:5px;
 }
 
 .admin-photo-card{
 border:1px solid var(--border);
 border-radius:6px;
 padding:3px;
-overflow:hidden
+overflow:hidden;
 }
 
 .admin-photo-card img{
@@ -928,7 +1040,7 @@ width:100%;
 aspect-ratio:1;
 object-fit:cover;
 display:block;
-border-radius:4px
+border-radius:4px;
 }
 
 .admin-photo-caption{
@@ -937,7 +1049,7 @@ color:var(--muted);
 margin:3px 1px;
 white-space:nowrap;
 overflow:hidden;
-text-overflow:ellipsis
+text-overflow:ellipsis;
 }
 
 .admin-photo-delete{
@@ -948,150 +1060,285 @@ background:#fde7e7;
 color:var(--red);
 padding:4px;
 font-size:7px;
-font-weight:700
+font-weight:700;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
 text-align:center;
 padding:22px 10px 28px;
 color:#8291a0;
 font-size:8px;
-line-height:1.7
+line-height:1.7;
 }
 
 .footer-title{
 font-family:"Teko";
 font-size:16px;
 line-height:1;
-color:var(--navy)
+color:var(--navy);
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:520px){
-main{padding:9px 8px 20px}
-.logo{width:82px;height:82px}
-header h1{font-size:35px}
-.form-row{grid-template-columns:1fr}
-.compact-edit-grid{grid-template-columns:1fr}
-.compact-full{grid-column:auto}
+
+main{
+padding:9px 8px 20px;
 }
 
+.logo{
+width:82px;
+height:82px;
+}
+
+header h1{
+font-size:35px;
+}
+
+.form-row{
+grid-template-columns:1fr;
+}
+
+.compact-edit-grid{
+grid-template-columns:1fr;
+}
+
+.compact-full{
+grid-column:auto;
+}
+
+}
+
+
+/* DESKTOP PHOTO GRID */
+
 @media(min-width:650px){
-.photo-grid{grid-template-columns:repeat(4,1fr)}
+
+.photo-grid{
+grid-template-columns:repeat(4,1fr);
+}
+
 }
 
 </style>
 </head>
 
+
 <body>
 
+
 <header>
-<img class="logo" src="LOGO_W__FB.png" alt="Notre Dame Green Pond Crusaders">
+
+<img
+class="logo"
+src="LOGO_W__FB.png"
+alt="Notre Dame Green Pond Crusaders">
+
 <h1>NDGP FOOTBALL</h1>
+
 <p>Notre Dame Green Pond Crusaders</p>
+
 </header>
 
+
 <nav>
-<button class="active" onclick="showPage('home',this)">🏠 Home</button>
-<button onclick="showPage('schedule',this)">🏈 Schedule</button>
-<button onclick="showPage('photos',this)">📸 Photos</button>
-<button onclick="showPage('admin',this)">🔐 Admin</button>
+
+<button class="active" onclick="showPage('home',this)">
+🏠 Home
+</button>
+
+<button onclick="showPage('schedule',this)">
+🏈 Schedule
+</button>
+
+<button onclick="showPage('photos',this)">
+📸 Photos
+</button>
+
+<button onclick="showPage('admin',this)">
+🔐 Admin
+</button>
+
 </nav>
 
+
 <main>
+
+
+<!-- HOME -->
 
 <section id="home" class="page active">
 
 <div class="card hero-card">
 
 <div class="hero-top">
+
 <span>NEXT GAME</span>
+
 <small>2026 SEASON</small>
+
 </div>
+
 
 <div class="hero-body">
 
-<div class="next-label">Notre Dame Green Pond</div>
+<div class="next-label">
+Notre Dame Green Pond
+</div>
+
 
 <div id="nextMatchup" class="next-matchup">
+
 <span class="next-team">NDGP</span>
+
 <span class="next-vs">VS</span>
+
 <span class="next-team">TBD</span>
-</div>
-
-<div id="nextDetails" class="game-info">Loading...</div>
-
-<div id="countdown" class="countdown hidden"></div>
 
 </div>
+
+
+<div id="nextDetails" class="game-info">
+Loading...
 </div>
+
+
+<div id="countdown" class="countdown hidden">
+<span class="countdown-football">🏈</span>
+<span id="countdownText"></span>
+</div>
+
+
+</div>
+
+</div>
+
 
 <div class="card record-card">
+
 <div>
-<div class="record-label">2026 Record</div>
-<div id="record" class="record">0–0</div>
-</div>
-<div id="recordDetails" class="record-sub">Loading...</div>
+
+<div class="record-label">
+2026 Record
 </div>
 
+<div id="record" class="record">
+0–0
+</div>
+
+</div>
+
+<div id="recordDetails" class="record-sub">
+Loading...
+</div>
+
+</div>
+
+
 <div class="card">
+
 <div class="last-game">
+
 <div>
-<div class="last-label">Last Game</div>
-<div id="lastGame">Loading...</div>
+
+<div class="last-label">
+Last Game
 </div>
+
+<div id="lastGame">
+Loading...
 </div>
+
+</div>
+
+</div>
+
 </div>
 
 </section>
 
+
+<!-- SCHEDULE -->
 
 <section id="schedule" class="page">
 
 <div class="card">
 
-<h2 class="page-heading">🏈 2026 Schedule</h2>
+<h2 class="page-heading">
+🏈 2026 Schedule
+</h2>
 
-<div id="scheduleList">Loading...</div>
+<div id="scheduleList">
+Loading...
+</div>
 
 </div>
 
 </section>
 
+
+<!-- PHOTOS -->
 
 <section id="photos" class="page">
 
 <div class="card">
 
-<h2 class="page-heading">📸 Football Photos</h2>
+<h2 class="page-heading">
+📸 Football Photos
+</h2>
 
-<div id="photoList">Loading...</div>
+<div id="photoList">
+Loading...
+</div>
 
 </div>
 
 </section>
 
+
+<!-- ADMIN -->
 
 <section id="admin" class="page">
 
 <div id="loginArea">
 
 <div class="admin-login-header">
+
 <h2>🔐 ADMIN ACCESS</h2>
+
 <p>NDGP Football Management</p>
+
 </div>
+
 
 <div class="card">
 
-<label>4-Digit Admin Code</label>
+<label>
+4-Digit Admin Code
+</label>
 
-<input id="adminCode" type="password" inputmode="numeric" maxlength="4" placeholder="Enter code">
+<input
+id="adminCode"
+type="password"
+inputmode="numeric"
+maxlength="4"
+placeholder="Enter code">
 
-<button class="primary" onclick="login()" style="width:100%">
+<button
+class="primary"
+onclick="login()"
+style="width:100%">
+
 🔓 Enter Admin
+
 </button>
 
 <div id="loginMessage"></div>
@@ -1106,135 +1353,275 @@ header h1{font-size:35px}
 <div class="admin-dashboard-header">
 
 <div>
-<h2>ADMIN DASHBOARD</h2>
-<p>Manage games & photos</p>
+
+<h2>
+ADMIN DASHBOARD
+</h2>
+
+<p>
+Manage games & photos
+</p>
+
 </div>
 
-<button class="secondary" onclick="logout()">Log Out</button>
+<button
+class="secondary"
+onclick="logout()">
+
+Log Out
+
+</button>
 
 </div>
 
+
+<!-- GAME MANAGEMENT -->
 
 <div class="admin-section">
 
 <div class="admin-section-header">
-<div class="admin-section-icon">🏈</div>
+
+<div class="admin-section-icon">
+🏈
+</div>
+
 <div class="admin-section-title">
-<h3>GAME MANAGEMENT</h3>
-<p>Add and edit the schedule</p>
+
+<h3>
+GAME MANAGEMENT
+</h3>
+
+<p>
+Add and edit the schedule
+</p>
+
 </div>
+
 </div>
+
 
 <div class="admin-section-body">
 
+
 <div class="admin-subsection">
 
-<h4>➕ ADD GAME</h4>
+<h4>
+➕ ADD GAME
+</h4>
 
 <div class="admin-description">
 Add a new game to the schedule.
 </div>
 
+
 <div class="form-row">
 
 <div>
+
 <label>Date</label>
-<input id="gameDate" type="date">
+
+<input
+id="gameDate"
+type="date">
+
 </div>
+
 
 <div>
+
 <label>Time</label>
-<input id="gameTime" type="text" placeholder="7:00 PM">
-</div>
+
+<input
+id="gameTime"
+type="text"
+placeholder="7:00 PM">
 
 </div>
 
-<label>Opponent</label>
-<input id="gameOpponent" type="text" placeholder="Opponent">
+</div>
+
+
+<label>
+Opponent
+</label>
+
+<input
+id="gameOpponent"
+type="text"
+placeholder="Opponent">
+
 
 <div class="form-row">
 
 <div>
-<label>Location</label>
-<input id="gameLocation" type="text" placeholder="Stadium">
+
+<label>
+Location
+</label>
+
+<input
+id="gameLocation"
+type="text"
+placeholder="Stadium">
+
 </div>
+
 
 <div>
-<label>Home / Away</label>
+
+<label>
+Home / Away
+</label>
+
 <select id="gameHomeAway">
-<option value="Home">🏠 Home</option>
-<option value="Away">➡️ Away</option>
+
+<option value="Home">
+🏠 Home
+</option>
+
+<option value="Away">
+➡️ Away
+</option>
+
 </select>
-</div>
 
 </div>
 
-<label>Notes</label>
-<textarea id="gameNotes" placeholder="Optional notes"></textarea>
+</div>
 
-<button class="primary" onclick="addGame()" style="width:100%">
+
+<label>
+Notes
+</label>
+
+<textarea
+id="gameNotes"
+placeholder="Optional notes">
+</textarea>
+
+
+<button
+class="primary"
+onclick="addGame()"
+style="width:100%">
+
 ➕ ADD GAME
+
 </button>
 
 </div>
 
+
 <div id="adminMessage"></div>
+
 
 <div class="admin-subsection">
 
-<h4>📋 MANAGE GAMES</h4>
+<h4>
+📋 MANAGE GAMES
+</h4>
 
 <div class="admin-description">
 Edit games, scores, locations and notes.
 </div>
 
-<div id="adminGames">Loading...</div>
+<div id="adminGames">
+Loading...
+</div>
+
+</div>
+
 
 </div>
 
 </div>
-</div>
 
+
+<!-- PHOTO MANAGEMENT -->
 
 <div class="admin-section">
 
 <div class="admin-section-header">
-<div class="admin-section-icon">📸</div>
+
+<div class="admin-section-icon">
+📸
+</div>
+
 <div class="admin-section-title">
-<h3>PHOTO MANAGEMENT</h3>
-<p>Upload and manage photos</p>
+
+<h3>
+PHOTO MANAGEMENT
+</h3>
+
+<p>
+Upload and manage photos
+</p>
+
 </div>
+
 </div>
+
 
 <div class="admin-section-body">
 
+
 <div class="photo-upload">
 
-<h4>📤 UPLOAD PHOTO</h4>
+<h4>
+📤 UPLOAD PHOTO
+</h4>
 
-<p>Add a photo to the football gallery.</p>
+<p>
+Add a photo to the football gallery.
+</p>
 
-<label>Photo</label>
-<input id="photoFile" type="file" accept="image/*">
 
-<label>Caption</label>
-<input id="photoCaption" type="text" placeholder="Optional caption">
+<label>
+Photo
+</label>
 
-<button class="primary upload-photo-button" onclick="addPhoto()">
+<input
+id="photoFile"
+type="file"
+accept="image/*">
+
+
+<label>
+Caption
+</label>
+
+<input
+id="photoCaption"
+type="text"
+placeholder="Optional caption">
+
+
+<button
+class="primary upload-photo-button"
+onclick="addPhoto()">
+
 📸 UPLOAD PHOTO
+
 </button>
 
 </div>
 
+
 <div class="admin-subsection">
 
-<h4>🖼️ UPLOADED PHOTOS</h4>
+<h4>
+🖼️ UPLOADED PHOTOS
+</h4>
 
-<div id="adminPhotos">Loading...</div>
-
+<div id="adminPhotos">
+Loading...
 </div>
 
 </div>
+
+
+</div>
+
 </div>
 
 </div>
@@ -1242,65 +1629,115 @@ Edit games, scores, locations and notes.
 </section>
 
 
-<div id="gameModal" class="modal-overlay" onclick="closeGameModal(event)">
+<!-- GAME DETAILS MODAL -->
 
-<div class="modal" onclick="event.stopPropagation()">
+<div
+id="gameModal"
+class="modal-overlay"
+onclick="closeGameModal(event)">
+
+<div
+class="modal"
+onclick="event.stopPropagation()">
+
 
 <div class="modal-header">
 
-<button class="modal-close" onclick="closeGameModal()">×</button>
+<button
+class="modal-close"
+onclick="closeGameModal()">
 
-<div class="modal-kicker">NDGP FOOTBALL</div>
+×
+</button>
 
-<div id="modalMatchup" class="modal-matchup">
+
+<div class="modal-kicker">
+NDGP FOOTBALL
+</div>
+
+
+<div
+id="modalMatchup"
+class="modal-matchup">
+
 NDGP VS OPPONENT
+
 </div>
 
 </div>
+
 
 <div class="modal-body">
 
-<div id="modalStatus" class="modal-status"></div>
 
-<div id="modalScore" class="modal-score"></div>
+<div
+id="modalStatus"
+class="modal-status">
+</div>
 
-<div id="modalInfo" class="modal-info-grid"></div>
+
+<div
+id="modalScore"
+class="modal-score">
+</div>
+
+
+<div
+id="modalInfo"
+class="modal-info-grid">
+</div>
+
 
 <div id="modalNotes"></div>
 
+
 </div>
 
 </div>
+
 </div>
+
 
 </main>
 
 
 <footer>
 
-<div class="footer-title">NDGP FOOTBALL</div>
+<div class="footer-title">
+NDGP FOOTBALL
+</div>
 
-<div>Notre Dame Green Pond Crusaders</div>
+<div>
+Notre Dame Green Pond Crusaders
+</div>
 
 <div>
 This website was built by a student at Notre Dame Green Pond High School.
 </div>
 
-<div>© 2026</div>
+<div>
+© 2026
+</div>
 
 </footer>
 
 
 <script>
 
-const SUPABASE_URL="https://lwkisughuwqbpwlouejc.supabase.co";
 
-const SUPABASE_KEY="sb_publishable_NC2FpWBds4vNOuGMr5_ikw_MOQXXHLI";
+const SUPABASE_URL=
+"https://lwkisughuwqbpwlouejc.supabase.co";
 
-const db=window.supabase.createClient(
+const SUPABASE_KEY=
+"sb_publishable_NC2FpWBds4vNOuGMr5_ikw_MOQXXHLI";
+
+
+const db=
+window.supabase.createClient(
 SUPABASE_URL,
 SUPABASE_KEY
 );
+
 
 let games=[];
 let countdownTimer=null;
@@ -1319,10 +1756,14 @@ document.getElementById(id)
 document.querySelectorAll("nav button")
 .forEach(b=>b.classList.remove("active"));
 
-if(button)button.classList.add("active");
+if(button)
+button.classList.add("active");
 
-if(id==="schedule")loadGames();
-if(id==="photos")loadPhotos();
+if(id==="schedule")
+loadGames();
+
+if(id==="photos")
+loadPhotos();
 
 if(id==="admin"&&sessionStorage.getItem("adminCode"))
 showAdmin();
@@ -1339,15 +1780,20 @@ const {data,error}=await db
 .select("*")
 .order("date",{ascending:true});
 
+
 if(error){
 
 console.error(error);
 
 document.getElementById("scheduleList").innerHTML=
-`<div class="message">Could not load games.</div>`;
+`<div class="message">
+Could not load games.
+</div>`;
 
 return;
+
 }
+
 
 games=data||[];
 
@@ -1364,11 +1810,11 @@ updateAdminGames();
 
 function hasScore(game){
 
-return game.our_score!==null&&
-game.our_score!==undefined&&
-game.our_score!==""&&
-game.opponent_score!==null&&
-game.opponent_score!==undefined&&
+return game.our_score!==null &&
+game.our_score!==undefined &&
+game.our_score!=="" &&
+game.opponent_score!==null &&
+game.opponent_score!==undefined &&
 game.opponent_score!=="";
 
 }
@@ -1378,10 +1824,12 @@ game.opponent_score!=="";
 
 function parseKickoff(game){
 
-if(!game.date)return null;
+if(!game.date)
+return null;
 
 let hours=19;
 let minutes=0;
+
 
 if(game.time){
 
@@ -1389,21 +1837,28 @@ const m=String(game.time).match(
 /(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?/i
 );
 
+
 if(m){
 
 hours=Number(m[1]);
 minutes=Number(m[2]||0);
 
-const period=String(m[3]||"").toUpperCase();
+const period=
+String(m[3]||"").toUpperCase();
 
-if(period==="PM"&&hours<12)hours+=12;
-if(period==="AM"&&hours===12)hours=0;
+if(period==="PM"&&hours<12)
+hours+=12;
+
+if(period==="AM"&&hours===12)
+hours=0;
 
 }
 
 }
 
-const d=new Date(game.date+"T00:00:00");
+
+const d=
+new Date(game.date+"T00:00:00");
 
 d.setHours(hours,minutes,0,0);
 
@@ -1416,11 +1871,13 @@ return d;
 
 function isGameLive(game){
 
-if(hasScore(game))return false;
+if(hasScore(game))
+return false;
 
 const kickoff=parseKickoff(game);
 
-if(!kickoff)return false;
+if(!kickoff)
+return false;
 
 return new Date()>=kickoff;
 
@@ -1436,18 +1893,35 @@ if(hasScore(game)){
 const our=Number(game.our_score);
 const opp=Number(game.opponent_score);
 
-if(our>opp)return{text:"FINAL • WIN",className:"win"};
-if(our<opp)return{text:"FINAL • LOSS",className:"loss"};
+if(our>opp)
+return{
+text:"FINAL • WIN",
+className:"win"
+};
 
-return{text:"FINAL • TIE",className:"tie"};
+if(our<opp)
+return{
+text:"FINAL • LOSS",
+className:"loss"
+};
+
+return{
+text:"FINAL • TIE",
+className:"tie"
+};
 
 }
+
 
 if(isGameLive(game)){
 
-return{text:"🔴 LIVE",className:"live"};
+return{
+text:"🔴 LIVE",
+className:"live"
+};
 
 }
+
 
 return null;
 
@@ -1458,47 +1932,76 @@ return null;
 
 function updateHome(){
 
-const today=new Date().toISOString().split("T")[0];
+const today=
+new Date().toISOString().split("T")[0];
+
 
 const upcoming=games
 .filter(g=>g.date>=today&&!hasScore(g))
-.sort((a,b)=>new Date(a.date)-new Date(b.date));
+.sort(
+(a,b)=>
+new Date(a.date)-new Date(b.date)
+);
+
 
 const next=upcoming[0];
+
 
 if(!next){
 
 document.getElementById("nextMatchup").innerHTML=
-`<span class="next-team">NDGP</span>
+`
+<span class="next-team">NDGP</span>
 <span class="next-vs">VS</span>
-<span class="next-team">TBD</span>`;
+<span class="next-team">TBD</span>
+`;
 
 document.getElementById("nextDetails").textContent=
 "No upcoming games";
 
-document.getElementById("countdown").classList.add("hidden");
+document.getElementById("countdown")
+.classList.add("hidden");
 
 }else{
 
+
 document.getElementById("nextMatchup").innerHTML=
-`<span class="next-team">NDGP</span>
+`
+<span class="next-team">NDGP</span>
 <span class="next-vs">VS</span>
-<span class="next-team">${escapeHtml(next.opponent)}</span>`;
+<span class="next-team">
+${escapeHtml(next.opponent)}
+</span>
+`;
+
 
 document.getElementById("nextDetails").innerHTML=
-`📅 ${formatDate(next.date)}
-<br>⏰ ${escapeHtml(next.time||"Time TBD")}
-<br>📍 ${escapeHtml(next.location||"Location TBD")}
-<br><span class="home-away">
+`
+📅 ${formatDate(next.date)}
+<br>
+⏰ ${escapeHtml(next.time||"Time TBD")}
+<br>
+📍 ${escapeHtml(next.location||"Location TBD")}
+<br>
+
+<span class="home-away">
 ${getHomeAwayIcon(next.home_away)}
 ${escapeHtml(next.home_away||"")}
-</span>`;
+</span>
+`;
+
 
 if(isGameLive(next)){
 
-const box=document.getElementById("countdown");
+const box=
+document.getElementById("countdown");
 
-box.textContent="🔴 LIVE";
+box.innerHTML=
+`
+<span class="countdown-football">🏈</span>
+<span>LIVE</span>
+`;
+
 box.classList.remove("hidden");
 
 }else{
@@ -1510,67 +2013,117 @@ startCountdown(next);
 }
 
 
+/* RECORD */
+
 let wins=0;
 let losses=0;
 let ties=0;
+
 
 games.forEach(g=>{
 
 if(hasScore(g)){
 
-if(Number(g.our_score)>Number(g.opponent_score))wins++;
-else if(Number(g.our_score)<Number(g.opponent_score))losses++;
-else ties++;
+if(Number(g.our_score)>Number(g.opponent_score))
+wins++;
+
+else if(
+Number(g.our_score)<
+Number(g.opponent_score)
+)
+losses++;
+
+else
+ties++;
 
 }
 
 });
 
+
 document.getElementById("record").textContent=
 `${wins}–${losses}${ties?"–"+ties:""}`;
+
 
 document.getElementById("recordDetails").textContent=
 `${wins} W • ${losses} L${ties?" • "+ties+" T":""}`;
 
 
+/* LAST GAME */
+
 const completed=games
 .filter(g=>hasScore(g))
-.sort((a,b)=>new Date(b.date)-new Date(a.date));
+.sort(
+(a,b)=>
+new Date(b.date)-new Date(a.date)
+);
+
 
 const last=completed[0];
+
 
 if(!last){
 
 document.getElementById("lastGame").innerHTML=
-`<div class="empty">No games played yet.</div>`;
+`
+<div class="empty">
+No games played yet.
+</div>
+`;
 
 }else{
+
 
 let result="TIE";
 let cls="tie";
 
-if(Number(last.our_score)>Number(last.opponent_score)){
+
+if(Number(last.our_score)>
+Number(last.opponent_score)){
+
 result="WIN";
 cls="win";
-}else if(Number(last.our_score)<Number(last.opponent_score)){
+
+}else if(
+Number(last.our_score)<
+Number(last.opponent_score)
+){
+
 result="LOSS";
 cls="loss";
+
 }
 
+
 document.getElementById("lastGame").innerHTML=
-`<div>
+`
+<div>
+
 <div class="last-matchup">
-NDGP <span class="next-vs">VS</span> ${escapeHtml(last.opponent)}
+NDGP
+<span class="next-vs">VS</span>
+${escapeHtml(last.opponent)}
 </div>
+
 <div class="last-date">
+
 ${formatDate(last.date)}
+
 •
-<span class="badge ${cls}">${result}</span>
+
+<span class="badge ${cls}">
+${result}
+</span>
+
 </div>
+
 </div>
+
 <div class="last-score">
-${last.our_score} – ${last.opponent_score}
-</div>`;
+${last.our_score} –
+${last.opponent_score}
+</div>
+`;
 
 }
 
@@ -1581,11 +2134,16 @@ ${last.our_score} – ${last.opponent_score}
 
 function startCountdown(game){
 
-const box=document.getElementById("countdown");
+const box=
+document.getElementById("countdown");
 
-if(countdownTimer)clearInterval(countdownTimer);
+if(countdownTimer)
+clearInterval(countdownTimer);
 
-const kickoff=parseKickoff(game);
+
+const kickoff=
+parseKickoff(game);
+
 
 if(!kickoff){
 
@@ -1593,6 +2151,7 @@ box.classList.add("hidden");
 return;
 
 }
+
 
 function update(){
 
@@ -1603,7 +2162,10 @@ return;
 
 }
 
-const diff=kickoff-new Date();
+
+const diff=
+kickoff-new Date();
+
 
 if(diff<=0){
 
@@ -1612,29 +2174,47 @@ return;
 
 }
 
-const days=Math.floor(diff/86400000);
-const hours=Math.floor(diff/3600000)%24;
-const mins=Math.floor(diff/60000)%60;
 
-box.textContent=
-`🏈 ${days}d ${hours}h ${mins}m until kickoff`;
+const days=
+Math.floor(diff/86400000);
+
+const hours=
+Math.floor(diff/3600000)%24;
+
+const mins=
+Math.floor(diff/60000)%60;
+
+
+box.innerHTML=
+`
+<span class="countdown-football">🏈</span>
+<span>
+${days}d ${hours}h ${mins}m until kickoff
+</span>
+`;
 
 box.classList.remove("hidden");
 
 }
 
+
 update();
 
-countdownTimer=setInterval(update,30000);
+countdownTimer=
+setInterval(update,30000);
 
 }
 
 
-/* HOME / AWAY */
+/* HOME / AWAY ICON */
 
 function getHomeAwayIcon(value){
 
-if(String(value||"").toLowerCase().includes("away"))
+if(
+String(value||"")
+.toLowerCase()
+.includes("away")
+)
 return "➡️";
 
 return "🏠";
@@ -1646,26 +2226,40 @@ return "🏠";
 
 function updateSchedule(){
 
-const container=document.getElementById("scheduleList");
+const container=
+document.getElementById("scheduleList");
+
 
 if(!games.length){
 
 container.innerHTML=
-`<div class="empty">No games have been added yet.</div>`;
+`
+<div class="empty">
+No games have been added yet.
+</div>
+`;
 
 return;
 
 }
 
-container.innerHTML=games.map(game=>{
 
-const status=getGameStatus(game);
-const live=isGameLive(game);
+container.innerHTML=
+games.map(game=>{
+
+const status=
+getGameStatus(game);
+
+const live=
+isGameLive(game);
+
 
 return `
 
-<div class="game ${live?"live-game":""}"
+<div
+class="game ${live?"live-game":""}"
 onclick="openGameDetails(${game.id})">
+
 
 <div class="game-top">
 
@@ -1681,19 +2275,29 @@ ${escapeHtml(game.opponent)}
 
 </div>
 
-${status?
-`<span class="badge ${status.className}">
+
+${
+status?
+`
+<span class="badge ${status.className}">
 ${status.text}
-</span>`:""}
+</span>
+`
+:""
+}
 
 </div>
 
 
 <div class="game-matchup">
 
-<span class="game-team">NDGP</span>
+<span class="game-team">
+NDGP
+</span>
 
-<span class="game-vs">VS</span>
+<span class="game-vs">
+VS
+</span>
 
 <span class="game-team">
 ${escapeHtml(game.opponent)}
@@ -1720,15 +2324,21 @@ ${escapeHtml(game.home_away||"")}
 </div>
 
 
-${hasScore(game)?
-`<div class="game-score">
+${
+hasScore(game)?
+`
+<div class="game-score">
 FINAL: ${game.our_score} – ${game.opponent_score}
-</div>`:""}
+</div>
+`
+:""
+}
 
 
 <div class="game-details-link">
 TAP FOR GAME DETAILS →
 </div>
+
 
 </div>
 
@@ -1739,45 +2349,74 @@ TAP FOR GAME DETAILS →
 }
 
 
-/* GAME MODAL */
+/* GAME DETAILS */
 
 function openGameDetails(id){
 
-const game=games.find(g=>Number(g.id)===Number(id));
+const game=
+games.find(
+g=>Number(g.id)===Number(id)
+);
 
-if(!game)return;
+
+if(!game)
+return;
+
 
 document.getElementById("modalMatchup").textContent=
 `NDGP VS ${game.opponent}`;
 
-const status=document.getElementById("modalStatus");
-const score=document.getElementById("modalScore");
+
+const status=
+document.getElementById("modalStatus");
+
+const score=
+document.getElementById("modalScore");
+
 
 if(isGameLive(game)){
 
 status.innerHTML=
-`<span class="modal-live">🔴 LIVE</span>`;
+`
+<span class="modal-live">
+🔴 LIVE
+</span>
+`;
 
 score.textContent="";
 
+
 }else if(hasScore(game)){
 
-const our=Number(game.our_score);
-const opp=Number(game.opponent_score);
+const our=
+Number(game.our_score);
+
+const opp=
+Number(game.opponent_score);
 
 let text="FINAL • TIE";
 let cls="tie";
 
+
 if(our>opp){
+
 text="FINAL • WIN";
 cls="win";
+
 }else if(our<opp){
+
 text="FINAL • LOSS";
 cls="loss";
+
 }
 
+
 status.innerHTML=
-`<span class="badge ${cls}">${text}</span>`;
+`
+<span class="badge ${cls}">
+${text}
+</span>
+`;
 
 score.textContent=
 `${game.our_score} – ${game.opponent_score}`;
@@ -1791,40 +2430,83 @@ score.textContent="";
 
 
 document.getElementById("modalInfo").innerHTML=
-
-`<div class="modal-info">
-<div class="modal-info-label">Date</div>
-<div class="modal-info-value">📅 ${formatDate(game.date)}</div>
-</div>
+`
 
 <div class="modal-info">
-<div class="modal-info-label">Kickoff</div>
-<div class="modal-info-value">⏰ ${escapeHtml(game.time||"Time TBD")}</div>
+
+<div class="modal-info-label">
+Date
 </div>
 
-<div class="modal-info">
-<div class="modal-info-label">Location</div>
-<div class="modal-info-value">📍 ${escapeHtml(game.location||"Location TBD")}</div>
+<div class="modal-info-value">
+📅 ${formatDate(game.date)}
 </div>
 
+</div>
+
+
 <div class="modal-info">
-<div class="modal-info-label">Game Location</div>
+
+<div class="modal-info-label">
+Kickoff
+</div>
+
+<div class="modal-info-value">
+⏰ ${escapeHtml(game.time||"Time TBD")}
+</div>
+
+</div>
+
+
+<div class="modal-info">
+
+<div class="modal-info-label">
+Location
+</div>
+
+<div class="modal-info-value">
+📍 ${escapeHtml(game.location||"Location TBD")}
+</div>
+
+</div>
+
+
+<div class="modal-info">
+
+<div class="modal-info-label">
+Game Location
+</div>
+
 <div class="modal-info-value">
 ${getHomeAwayIcon(game.home_away)}
 ${escapeHtml(game.home_away||"Home")}
 </div>
-</div>`;
+
+</div>
+
+`;
 
 
 document.getElementById("modalNotes").innerHTML=
 game.notes?
-`<div class="modal-notes">
-<div class="modal-notes-title">📝 GAME NOTES</div>
+`
+<div class="modal-notes">
+
+<div class="modal-notes-title">
+📝 GAME NOTES
+</div>
+
 ${escapeHtml(game.notes)}
-</div>`:"";
+
+</div>
+`
+:"";
 
 
-document.getElementById("gameModal").classList.add("show");
+document
+.getElementById("gameModal")
+.classList.add("show");
+
 document.body.style.overflow="hidden";
 
 }
@@ -1832,15 +2514,30 @@ document.body.style.overflow="hidden";
 
 function closeGameModal(event){
 
-if(event&&event.target&&event.target.id!=="gameModal")return;
+if(
+event &&
+event.target &&
+event.target.id!=="gameModal"
+)
+return;
 
-document.getElementById("gameModal").classList.remove("show");
+
+document
+.getElementById("gameModal")
+.classList.remove("show");
+
 document.body.style.overflow="";
 
 }
 
-document.addEventListener("keydown",e=>{
-if(e.key==="Escape")closeGameModal();
+
+document.addEventListener(
+"keydown",
+e=>{
+
+if(e.key==="Escape")
+closeGameModal();
+
 });
 
 
@@ -1848,7 +2545,8 @@ if(e.key==="Escape")closeGameModal();
 
 setInterval(()=>{
 
-if(!games.length)return;
+if(!games.length)
+return;
 
 updateHome();
 updateSchedule();
@@ -1856,47 +2554,76 @@ updateSchedule();
 },30000);
 
 
-/* ADMIN LOGIN */
+/* =========================
+   ADMIN LOGIN
+========================= */
 
 async function login(){
 
-const code=document.getElementById("adminCode").value.trim();
+const code=
+document.getElementById("adminCode")
+.value
+.trim();
+
 
 if(!/^\d{4}$/.test(code)){
 
 document.getElementById("loginMessage").innerHTML=
-`<div class="message">Enter exactly 4 digits.</div>`;
+`
+<div class="message">
+Enter exactly 4 digits.
+</div>
+`;
 
 return;
 
 }
 
-const {data,error}=await db.rpc(
+
+const {data,error}=
+await db.rpc(
 "check_admin_code",
-{p_code:code}
+{
+p_code:code
+}
 );
+
 
 if(error){
 
 console.error(error);
 
 document.getElementById("loginMessage").innerHTML=
-`<div class="message">Database error.</div>`;
+`
+<div class="message">
+Database error.
+</div>
+`;
 
 return;
 
 }
+
 
 if(!data){
 
 document.getElementById("loginMessage").innerHTML=
-`<div class="message">Incorrect admin code.</div>`;
+`
+<div class="message">
+Incorrect admin code.
+</div>
+`;
 
 return;
 
 }
 
-sessionStorage.setItem("adminCode",code);
+
+sessionStorage.setItem(
+"adminCode",
+code
+);
+
 
 document.getElementById("adminCode").value="";
 
@@ -1907,8 +2634,13 @@ showAdmin();
 
 function showAdmin(){
 
-document.getElementById("loginArea").classList.add("hidden");
-document.getElementById("adminArea").classList.remove("hidden");
+document
+.getElementById("loginArea")
+.classList.add("hidden");
+
+document
+.getElementById("adminArea")
+.classList.remove("hidden");
 
 updateAdminGames();
 loadPhotos();
@@ -1920,33 +2652,59 @@ function logout(){
 
 sessionStorage.removeItem("adminCode");
 
-document.getElementById("loginArea").classList.remove("hidden");
-document.getElementById("adminArea").classList.add("hidden");
+document
+.getElementById("loginArea")
+.classList.remove("hidden");
+
+document
+.getElementById("adminArea")
+.classList.add("hidden");
 
 }
 
 
-/* ADD GAME */
+/* =========================
+   ADD GAME
+========================= */
 
 async function addGame(){
 
-const code=sessionStorage.getItem("adminCode");
+const code=
+sessionStorage.getItem("adminCode");
 
-const date=document.getElementById("gameDate").value;
-const time=document.getElementById("gameTime").value;
-const opponent=document.getElementById("gameOpponent").value.trim();
-const location=document.getElementById("gameLocation").value.trim();
-const homeAway=document.getElementById("gameHomeAway").value;
-const notes=document.getElementById("gameNotes").value.trim();
+
+const date=
+document.getElementById("gameDate").value;
+
+const time=
+document.getElementById("gameTime").value;
+
+const opponent=
+document.getElementById("gameOpponent").value.trim();
+
+const location=
+document.getElementById("gameLocation").value.trim();
+
+const homeAway=
+document.getElementById("gameHomeAway").value;
+
+const notes=
+document.getElementById("gameNotes").value.trim();
+
 
 if(!date||!opponent){
 
-showAdminMessage("Date and opponent are required.");
+showAdminMessage(
+"Date and opponent are required."
+);
+
 return;
 
 }
 
-const {error}=await db.rpc(
+
+const {error}=
+await db.rpc(
 "add_game",
 {
 p_code:code,
@@ -1956,15 +2714,22 @@ p_opponent:opponent,
 p_location:location,
 p_home_away:homeAway,
 p_notes:notes
-});
+}
+);
+
 
 if(error){
 
 console.error(error);
-showAdminMessage("Could not add game.");
+
+showAdminMessage(
+"Could not add game."
+);
+
 return;
 
 }
+
 
 document.getElementById("gameDate").value="";
 document.getElementById("gameTime").value="";
@@ -1972,36 +2737,56 @@ document.getElementById("gameOpponent").value="";
 document.getElementById("gameLocation").value="";
 document.getElementById("gameNotes").value="";
 
-showAdminMessage("✅ Game added!");
+
+showAdminMessage(
+"✅ Game added!"
+);
+
 
 loadGames();
 
 }
 
 
-/* ADMIN GAME LIST */
+/* =========================
+   ADMIN GAME LIST
+========================= */
 
 function updateAdminGames(){
 
-const container=document.getElementById("adminGames");
+const container=
+document.getElementById("adminGames");
+
 
 if(!games.length){
 
 container.innerHTML=
-`<div class="empty">No games yet.</div>`;
+`
+<div class="empty">
+No games yet.
+</div>
+`;
 
 return;
 
 }
 
-container.innerHTML=games.map((game,index)=>{
+
+container.innerHTML=
+games.map((game,index)=>{
 
 let score="No score yet";
 
+
 if(hasScore(game))
-score=`FINAL ${game.our_score}–${game.opponent_score}`;
+
+score=
+`FINAL ${game.our_score}–${game.opponent_score}`;
+
 else if(isGameLive(game))
+
 score="🔴 LIVE";
+
 
 return `
 
@@ -2012,34 +2797,56 @@ return `
 <div class="compact-game-info">
 
 <div class="compact-game-title">
-${index+1}. ${escapeHtml(game.opponent)}
+
+${index+1}.
+${escapeHtml(game.opponent)}
+
 </div>
+
 
 <div class="compact-game-meta">
+
 ${formatShortDate(game.date)}
+
 •
+
 ${escapeHtml(game.time||"TBD")}
+
 •
+
 ${getHomeAwayIcon(game.home_away)}
+
 ${escapeHtml(game.home_away||"")}
+
 </div>
+
 
 <div class="compact-game-score">
+
 ${score}
+
 </div>
 
 </div>
+
 
 <div class="compact-game-actions">
 
-<button class="edit-button"
+<button
+class="edit-button"
 onclick="toggleGameEdit(${game.id})">
+
 ✏️ Edit
+
 </button>
 
-<button class="delete-small"
+
+<button
+class="delete-small"
 onclick="deleteGame(${game.id})">
+
 🗑️
+
 </button>
 
 </div>
@@ -2047,56 +2854,134 @@ onclick="deleteGame(${game.id})">
 </div>
 
 
-<div id="edit-area-${game.id}" class="compact-edit">
+<div
+id="edit-area-${game.id}"
+class="compact-edit">
+
 
 <div class="compact-edit-grid">
 
+
 <div>
+
 <label>Date</label>
-<input id="edit-date-${game.id}" type="date" value="${game.date||""}">
+
+<input
+id="edit-date-${game.id}"
+type="date"
+value="${game.date||""}">
+
 </div>
 
+
 <div>
+
 <label>Time</label>
-<input id="edit-time-${game.id}" type="text" value="${escapeAttribute(game.time||"")}">
+
+<input
+id="edit-time-${game.id}"
+type="text"
+value="${escapeAttribute(game.time||"")}">
+
 </div>
 
+
 <div>
+
 <label>Location</label>
-<input id="edit-location-${game.id}" type="text" value="${escapeAttribute(game.location||"")}">
+
+<input
+id="edit-location-${game.id}"
+type="text"
+value="${escapeAttribute(game.location||"")}">
+
 </div>
 
+
 <div>
+
 <label>Home / Away</label>
-<select id="edit-ha-${game.id}">
-<option value="Home" ${game.home_away==="Home"?"selected":""}>🏠 Home</option>
-<option value="Away" ${game.home_away==="Away"?"selected":""}>➡️ Away</option>
+
+<select
+id="edit-ha-${game.id}">
+
+<option
+value="Home"
+${game.home_away==="Home"?"selected":""}>
+
+🏠 Home
+
+</option>
+
+<option
+value="Away"
+${game.home_away==="Away"?"selected":""}>
+
+➡️ Away
+
+</option>
+
 </select>
+
 </div>
 
-<div>
-<label>NDGP Score</label>
-<input id="our-${game.id}" type="number" value="${game.our_score??""}">
-</div>
 
 <div>
-<label>Opponent Score</label>
-<input id="opp-${game.id}" type="number" value="${game.opponent_score??""}">
+
+<label>
+NDGP Score
+</label>
+
+<input
+id="our-${game.id}"
+type="number"
+value="${game.our_score??""}">
+
 </div>
+
+
+<div>
+
+<label>
+Opponent Score
+</label>
+
+<input
+id="opp-${game.id}"
+type="number"
+value="${game.opponent_score??""}">
+
+</div>
+
 
 <div class="compact-full">
-<label>Notes</label>
-<textarea id="notes-${game.id}">${escapeHtml(game.notes||"")}</textarea>
-</div>
+
+<label>
+Notes
+</label>
+
+<textarea
+id="notes-${game.id}">
+${escapeHtml(game.notes||"")}
+</textarea>
 
 </div>
 
-<button class="primary compact-save"
+
+</div>
+
+
+<button
+class="primary compact-save"
 onclick="saveGame(${game.id})">
+
 💾 SAVE CHANGES
+
 </button>
 
+
 </div>
+
 
 </div>
 
@@ -2109,9 +2994,13 @@ onclick="saveGame(${game.id})">
 
 function toggleGameEdit(id){
 
-const area=document.getElementById(`edit-area-${id}`);
+const area=
+document.getElementById(
+`edit-area-${id}`
+);
 
-if(area)area.classList.toggle("open");
+if(area)
+area.classList.toggle("open");
 
 }
 
@@ -2120,31 +3009,77 @@ if(area)area.classList.toggle("open");
 
 async function saveGame(id){
 
-const code=sessionStorage.getItem("adminCode");
+const code=
+sessionStorage.getItem("adminCode");
 
-const game=games.find(g=>Number(g.id)===Number(id));
+const game=
+games.find(
+g=>Number(g.id)===Number(id)
+);
 
-if(!game)return;
 
-const date=document.getElementById(`edit-date-${id}`).value;
-const time=document.getElementById(`edit-time-${id}`).value;
-const location=document.getElementById(`edit-location-${id}`).value;
-const homeAway=document.getElementById(`edit-ha-${id}`).value;
+if(!game)
+return;
 
-const ourValue=document.getElementById(`our-${id}`).value;
-const oppValue=document.getElementById(`opp-${id}`).value;
 
-const notes=document.getElementById(`notes-${id}`).value;
+const date=
+document.getElementById(
+`edit-date-${id}`
+).value;
 
-const ourScore=ourValue===""?null:Number(ourValue);
-const opponentScore=oppValue===""?null:Number(oppValue);
+const time=
+document.getElementById(
+`edit-time-${id}`
+).value;
+
+const location=
+document.getElementById(
+`edit-location-${id}`
+).value;
+
+const homeAway=
+document.getElementById(
+`edit-ha-${id}`
+).value;
+
+
+const ourValue=
+document.getElementById(
+`our-${id}`
+).value;
+
+const oppValue=
+document.getElementById(
+`opp-${id}`
+).value;
+
+
+const notes=
+document.getElementById(
+`notes-${id}`
+).value;
+
+
+const ourScore=
+ourValue===""?
+null:
+Number(ourValue);
+
+const opponentScore=
+oppValue===""?
+null:
+Number(oppValue);
+
 
 const status=
-ourScore!==null&&opponentScore!==null
+ourScore!==null &&
+opponentScore!==null
 ?"Final"
 :"Scheduled";
 
-const {error}=await db.rpc(
+
+const {error}=
+await db.rpc(
 "update_game",
 {
 p_code:code,
@@ -2158,17 +3093,27 @@ p_our_score:ourScore,
 p_opponent_score:opponentScore,
 p_status:status,
 p_notes:notes
-});
+}
+);
+
 
 if(error){
 
 console.error(error);
-showAdminMessage("Could not save changes.");
+
+showAdminMessage(
+"Could not save changes."
+);
+
 return;
 
 }
 
-showAdminMessage("✅ Game updated!");
+
+showAdminMessage(
+"✅ Game updated!"
+);
+
 
 loadGames();
 
@@ -2179,40 +3124,66 @@ loadGames();
 
 async function deleteGame(id){
 
-if(!confirm("Are you sure you want to delete this game?"))
+if(
+!confirm(
+"Are you sure you want to delete this game?"
+)
+)
 return;
 
-const code=sessionStorage.getItem("adminCode");
 
-const {error}=await db.rpc(
+const code=
+sessionStorage.getItem("adminCode");
+
+
+const {error}=
+await db.rpc(
 "delete_game",
 {
 p_code:code,
 p_id:id
-});
+}
+);
+
 
 if(error){
 
-showAdminMessage("Could not delete game.");
+showAdminMessage(
+"Could not delete game."
+);
+
 return;
 
 }
 
-showAdminMessage("Game deleted.");
+
+showAdminMessage(
+"Game deleted."
+);
+
 
 loadGames();
 
 }
 
 
-/* PHOTOS */
+/* =========================
+   PHOTOS
+========================= */
 
 async function loadPhotos(){
 
-const {data,error}=await db
+const {data,error}=
+await db
 .from("photos")
 .select("*")
-.order("created_at",{ascending:false});
+.order(
+"created_at",
+{
+ascending:false
+}
+);
+
 
 if(error){
 
@@ -2221,19 +3192,28 @@ return;
 
 }
 
+
 const photos=data||[];
 
-const publicContainer=document.getElementById("photoList");
+const publicContainer=
+document.getElementById("photoList");
+
 
 if(!photos.length){
 
 publicContainer.innerHTML=
-`<div class="empty">No photos yet.</div>`;
+`
+<div class="empty">
+No photos yet.
+</div>
+`;
 
 }else{
 
 publicContainer.innerHTML=
-`<div class="photo-grid">
+`
+<div class="photo-grid">
+
 ${photos.map(photo=>`
 
 <div class="photo-item">
@@ -2243,55 +3223,87 @@ src="${escapeAttribute(photo.image_url)}"
 alt="NDGP Football"
 onclick="window.open('${escapeAttribute(photo.image_url)}','_blank')">
 
-${photo.caption?
-`<div class="photo-caption">
+${
+photo.caption?
+`
+<div class="photo-caption">
 ${escapeHtml(photo.caption)}
-</div>`:""}
+</div>
+`
+:""
+}
 
 </div>
 
 `).join("")}
-</div>`;
+
+</div>
+`;
 
 }
 
 
-const admin=document.getElementById("adminPhotos");
+const admin=
+document.getElementById("adminPhotos");
 
-if(admin&&sessionStorage.getItem("adminCode")){
+
+if(
+admin &&
+sessionStorage.getItem("adminCode")
+){
 
 if(!photos.length){
 
 admin.innerHTML=
-`<div class="empty">No photos uploaded yet.</div>`;
+`
+<div class="empty">
+No photos uploaded yet.
+</div>
+`;
 
 return;
 
 }
 
+
 admin.innerHTML=
-`<div class="admin-photo-grid">
+`
+<div class="admin-photo-grid">
 
 ${photos.map(photo=>`
 
 <div class="admin-photo-card">
 
-<img src="${escapeAttribute(photo.image_url)}" alt="Football photo">
+<img
+src="${escapeAttribute(photo.image_url)}"
+alt="Football photo">
+
 
 <div class="admin-photo-caption">
-${photo.caption?escapeHtml(photo.caption):"No caption"}
+
+${
+photo.caption?
+escapeHtml(photo.caption):
+"No caption"
+}
+
 </div>
 
-<button class="admin-photo-delete"
+
+<button
+class="admin-photo-delete"
 onclick="deletePhoto(${photo.id})">
+
 🗑️ Delete
+
 </button>
 
 </div>
 
 `).join("")}
 
-</div>`;
+</div>
+`;
 
 }
 
@@ -2302,52 +3314,96 @@ onclick="deletePhoto(${photo.id})">
 
 async function addPhoto(){
 
-const code=sessionStorage.getItem("adminCode");
+const code=
+sessionStorage.getItem("adminCode");
 
-const file=document.getElementById("photoFile").files[0];
 
-const caption=document.getElementById("photoCaption").value.trim();
+const file=
+document.getElementById(
+"photoFile"
+).files[0];
+
+
+const caption=
+document.getElementById(
+"photoCaption"
+).value.trim();
+
 
 if(!file){
 
-showAdminMessage("Please choose a photo.");
+showAdminMessage(
+"Please choose a photo."
+);
+
 return;
 
 }
 
-showAdminMessage("Preparing photo...");
+
+showAdminMessage(
+"Preparing photo..."
+);
+
 
 try{
 
-const image=await compressImage(file,1400,.78);
+const image=
+await compressImage(
+file,
+1400,
+.78
+);
 
-const {error}=await db.rpc(
+
+const {error}=
+await db.rpc(
 "add_photo",
 {
 p_code:code,
 p_image_url:image,
 p_caption:caption
-});
+}
+);
+
 
 if(error){
 
 console.error(error);
-showAdminMessage("Could not upload photo.");
+
+showAdminMessage(
+"Could not upload photo."
+);
+
 return;
 
 }
 
-document.getElementById("photoFile").value="";
-document.getElementById("photoCaption").value="";
 
-showAdminMessage("📸 Photo uploaded!");
+document.getElementById(
+"photoFile"
+).value="";
+
+document.getElementById(
+"photoCaption"
+).value="";
+
+
+showAdminMessage(
+"📸 Photo uploaded!"
+);
+
 
 loadPhotos();
+
 
 }catch(error){
 
 console.error(error);
-showAdminMessage("Could not process photo.");
+
+showAdminMessage(
+"Could not process photo."
+);
 
 }
 
@@ -2356,49 +3412,89 @@ showAdminMessage("Could not process photo.");
 
 /* IMAGE COMPRESSION */
 
-function compressImage(file,maxWidth,quality){
+function compressImage(
+file,
+maxWidth,
+quality
+){
 
-return new Promise((resolve,reject)=>{
+return new Promise(
+(resolve,reject)=>{
 
-const reader=new FileReader();
+const reader=
+new FileReader();
+
 
 reader.onload=e=>{
 
-const image=new Image();
+const image=
+new Image();
+
 
 image.onload=()=>{
 
-let width=image.width;
-let height=image.height;
+let width=
+image.width;
+
+let height=
+image.height;
+
 
 if(width>maxWidth){
 
-height*=maxWidth/width;
+height*=
+maxWidth/width;
+
 width=maxWidth;
 
 }
 
-const canvas=document.createElement("canvas");
+
+const canvas=
+document.createElement(
+"canvas"
+);
+
 
 canvas.width=width;
 canvas.height=height;
 
-const ctx=canvas.getContext("2d");
 
-ctx.drawImage(image,0,0,width,height);
+const ctx=
+canvas.getContext(
+"2d"
+);
+
+
+ctx.drawImage(
+image,
+0,
+0,
+width,
+height
+);
+
 
 resolve(
-canvas.toDataURL("image/jpeg",quality)
+canvas.toDataURL(
+"image/jpeg",
+quality
+)
 );
 
 };
 
+
 image.onerror=reject;
-image.src=e.target.result;
+
+image.src=
+e.target.result;
 
 };
 
+
 reader.onerror=reject;
+
 reader.readAsDataURL(file);
 
 });
@@ -2413,36 +3509,59 @@ async function deletePhoto(id){
 if(!confirm("Delete this photo?"))
 return;
 
-const code=sessionStorage.getItem("adminCode");
 
-const {error}=await db.rpc(
+const code=
+sessionStorage.getItem(
+"adminCode"
+);
+
+
+const {error}=
+await db.rpc(
 "delete_photo",
 {
 p_code:code,
 p_id:id
-});
+}
+);
+
 
 if(error){
 
-showAdminMessage("Could not delete photo.");
+showAdminMessage(
+"Could not delete photo."
+);
+
 return;
 
 }
 
-showAdminMessage("Photo deleted!");
+
+showAdminMessage(
+"Photo deleted!"
+);
+
 
 loadPhotos();
 
 }
 
 
-/* HELPERS */
+/* =========================
+   HELPERS
+========================= */
 
 function formatDate(value){
 
-if(!value)return"";
+if(!value)
+return"";
 
-const d=new Date(value+"T12:00:00");
+
+const d=
+new Date(
+value+"T12:00:00"
+);
+
 
 return d.toLocaleDateString(
 "en-US",
@@ -2451,30 +3570,43 @@ weekday:"long",
 month:"long",
 day:"numeric",
 year:"numeric"
-});
+}
+);
 
 }
 
 
 function formatShortDate(value){
 
-if(!value)return"";
+if(!value)
+return"";
 
-const d=new Date(value+"T12:00:00");
+
+const d=
+new Date(
+value+"T12:00:00"
+);
+
 
 return d.toLocaleDateString(
 "en-US",
 {
 month:"short",
 day:"numeric"
-});
+}
+);
 
 }
 
 
 function escapeHtml(value){
 
-if(value===null||value===undefined)return"";
+if(
+value===null ||
+value===undefined
+)
+return"";
+
 
 return String(value)
 .replace(/&/g,"&amp;")
@@ -2495,15 +3627,28 @@ return escapeHtml(value);
 
 function showAdminMessage(message){
 
-const box=document.getElementById("adminMessage");
+const box=
+document.getElementById(
+"adminMessage"
+);
 
-if(!box)return;
+
+if(!box)
+return;
+
 
 box.innerHTML=
-`<div class="message">${escapeHtml(message)}</div>`;
+`
+<div class="message">
+${escapeHtml(message)}
+</div>
+`;
+
 
 setTimeout(()=>{
+
 box.innerHTML="";
+
 },4000);
 
 }
