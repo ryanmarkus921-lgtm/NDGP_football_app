@@ -36,7 +36,6 @@ rel="stylesheet">
   --border:#dce4ec;
   --green:#198754;
   --red:#c53030;
-
   --shadow:0 4px 16px rgba(0,31,63,.08);
 }
 
@@ -453,33 +452,26 @@ main {
   gap:3px;
 }
 
+/* SMALLER SCORE */
+
 .game-score {
   color:var(--navy);
   font-family:"Teko",sans-serif;
-  font-size:28px;
+  font-size:22px;
   font-weight:700;
   line-height:1;
   margin-top:6px;
 }
 
-.game-notes {
-  color:#647688;
-  font-size:10px;
-  line-height:1.5;
-  margin:7px 0 0;
-  padding-top:6px;
-  border-top:1px solid #edf1f4;
-}
-
-/* SMALLER FINAL BADGES */
+/* FINAL / LIVE BADGES */
 
 .badge {
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:3px 6px;
+  padding:4px 8px;
   border-radius:5px;
-  font-size:8px;
+  font-size:9px;
   line-height:1;
   font-weight:700;
   text-transform:uppercase;
@@ -625,8 +617,6 @@ main {
 .modal-body {
   padding:16px;
 }
-
-/* ONE MEDIUM LIVE INDICATOR */
 
 .modal-live {
   display:inline-flex;
@@ -846,8 +836,6 @@ main {
   margin:3px 0 8px;
 }
 
-/* FORM */
-
 label {
   display:block;
   color:#40566b;
@@ -889,8 +877,6 @@ textarea:focus {
   grid-template-columns:1fr 1fr;
   gap:8px;
 }
-
-/* BUTTONS */
 
 button.primary,
 button.secondary,
@@ -1833,8 +1819,6 @@ footer {
 
 <script>
 
-/* SUPABASE */
-
 const SUPABASE_URL =
   "https://lwkisughuwqbpwlouejc.supabase.co";
 
@@ -1846,7 +1830,6 @@ const db =
     SUPABASE_URL,
     SUPABASE_KEY
   );
-
 
 let games = [];
 
@@ -1863,11 +1846,9 @@ function showPage(pageId,button) {
       page.classList.remove("active");
     });
 
-
   document
     .getElementById(pageId)
     .classList.add("active");
-
 
   document
     .querySelectorAll("nav button")
@@ -1875,21 +1856,17 @@ function showPage(pageId,button) {
       btn.classList.remove("active");
     });
 
-
   if(button) {
     button.classList.add("active");
   }
-
 
   if(pageId === "schedule") {
     loadGames();
   }
 
-
   if(pageId === "photos") {
     loadPhotos();
   }
-
 
   if(
     pageId === "admin" &&
@@ -1919,7 +1896,6 @@ async function loadGames() {
       }
     );
 
-
   if(error) {
 
     console.error(error);
@@ -1934,14 +1910,11 @@ async function loadGames() {
     return;
   }
 
-
   games = data || [];
-
 
   updateHome();
 
   updateSchedule();
-
 
   if(
     sessionStorage.getItem("adminCode")
@@ -1960,7 +1933,6 @@ function hasScore(game) {
     game.our_score !== null &&
     game.our_score !== undefined &&
     game.our_score !== "" &&
-
     game.opponent_score !== null &&
     game.opponent_score !== undefined &&
     game.opponent_score !== ""
@@ -1977,11 +1949,8 @@ function parseKickoff(game) {
     return null;
   }
 
-
   let hours = 19;
-
   let minutes = 0;
-
 
   if(game.time) {
 
@@ -1991,7 +1960,6 @@ function parseKickoff(game) {
           /(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?/i
         );
 
-
     if(match) {
 
       hours =
@@ -2000,12 +1968,10 @@ function parseKickoff(game) {
       minutes =
         Number(match[2] || 0);
 
-
       const period =
         String(
           match[3] || ""
         ).toUpperCase();
-
 
       if(
         period === "PM" &&
@@ -2013,7 +1979,6 @@ function parseKickoff(game) {
       ) {
         hours += 12;
       }
-
 
       if(
         period === "AM" &&
@@ -2026,12 +1991,10 @@ function parseKickoff(game) {
 
   }
 
-
   const kickoff =
     new Date(
       game.date + "T00:00:00"
     );
-
 
   kickoff.setHours(
     hours,
@@ -2039,7 +2002,6 @@ function parseKickoff(game) {
     0,
     0
   );
-
 
   return kickoff;
 
@@ -2054,15 +2016,12 @@ function isGameLive(game) {
     return false;
   }
 
-
   const kickoff =
     parseKickoff(game);
-
 
   if(!kickoff) {
     return false;
   }
-
 
   return new Date() >= kickoff;
 
@@ -2081,7 +2040,6 @@ function getGameStatus(game) {
     const opp =
       Number(game.opponent_score);
 
-
     if(our > opp) {
 
       return {
@@ -2090,7 +2048,6 @@ function getGameStatus(game) {
       };
 
     }
-
 
     if(our < opp) {
 
@@ -2101,14 +2058,12 @@ function getGameStatus(game) {
 
     }
 
-
     return {
       text:"FINAL • TIE",
       className:"tie"
     };
 
   }
-
 
   if(isGameLive(game)) {
 
@@ -2118,7 +2073,6 @@ function getGameStatus(game) {
     };
 
   }
-
 
   return null;
 
@@ -2134,7 +2088,6 @@ function updateHome() {
       .toISOString()
       .split("T")[0];
 
-
   const upcoming =
     games
       .filter(game =>
@@ -2147,10 +2100,8 @@ function updateHome() {
           new Date(b.date)
       );
 
-
   const next =
     upcoming[0];
-
 
   if(!next) {
 
@@ -2170,12 +2121,10 @@ function updateHome() {
         TBD
       </span>`;
 
-
     document
       .getElementById("nextDetails")
       .textContent =
       "No upcoming games";
-
 
     document
       .getElementById("countdown")
@@ -2188,7 +2137,6 @@ function updateHome() {
 
     const live =
       isGameLive(next);
-
 
     document
       .getElementById("nextMatchup")
@@ -2205,15 +2153,6 @@ function updateHome() {
       <span class="next-team">
         ${escapeHtml(next.opponent)}
       </span>`;
-
-
-    /*
-      IMPORTANT:
-      LIVE is NOT shown here anymore.
-
-      The Home screen has ONE LIVE indicator:
-      the countdown/status box underneath.
-    */
 
     document
       .getElementById("nextDetails")
@@ -2235,7 +2174,6 @@ function updateHome() {
         ${getHomeAwayIcon(next.home_away)}
         ${escapeHtml(next.home_away || "")}
       </span>`;
-
 
     if(!live) {
 
@@ -2261,11 +2199,8 @@ function updateHome() {
 
 
   let wins = 0;
-
   let losses = 0;
-
   let ties = 0;
-
 
   games.forEach(game => {
 
@@ -2293,7 +2228,6 @@ function updateHome() {
 
   });
 
-
   document
     .getElementById("record")
     .textContent =
@@ -2304,7 +2238,6 @@ function updateHome() {
       : ""
     }`;
 
-
   document
     .getElementById("recordDetails")
     .textContent =
@@ -2314,7 +2247,6 @@ function updateHome() {
       ? " • " + ties + " T"
       : ""
     }`;
-
 
   const completed =
     games
@@ -2327,10 +2259,8 @@ function updateHome() {
           new Date(a.date)
       );
 
-
   const last =
     completed[0];
-
 
   if(!last) {
 
@@ -2346,9 +2276,7 @@ function updateHome() {
   else {
 
     let result = "TIE";
-
     let resultClass = "tie";
-
 
     if(
       Number(last.our_score) >
@@ -2356,7 +2284,6 @@ function updateHome() {
     ) {
 
       result = "WIN";
-
       resultClass = "win";
 
     }
@@ -2367,11 +2294,9 @@ function updateHome() {
     ) {
 
       result = "LOSS";
-
       resultClass = "loss";
 
     }
-
 
     document
       .getElementById("lastGame")
@@ -2391,7 +2316,6 @@ function updateHome() {
 
         </div>
 
-
         <div class="last-date">
 
           ${formatDate(last.date)}
@@ -2405,7 +2329,6 @@ function updateHome() {
         </div>
 
       </div>
-
 
       <div class="last-score">
 
@@ -2427,7 +2350,6 @@ function startCountdown(game) {
   const box =
     document.getElementById("countdown");
 
-
   if(countdownTimer) {
 
     clearInterval(
@@ -2436,10 +2358,8 @@ function startCountdown(game) {
 
   }
 
-
   const kickoff =
     parseKickoff(game);
-
 
   if(!kickoff) {
 
@@ -2448,7 +2368,6 @@ function startCountdown(game) {
     return;
 
   }
-
 
   function update() {
 
@@ -2460,10 +2379,8 @@ function startCountdown(game) {
 
     }
 
-
     const difference =
       kickoff - new Date();
-
 
     if(difference <= 0) {
 
@@ -2473,28 +2390,23 @@ function startCountdown(game) {
 
     }
 
-
     const days =
       Math.floor(
         difference / 86400000
       );
-
 
     const hours =
       Math.floor(
         difference / 3600000
       ) % 24;
 
-
     const minutes =
       Math.floor(
         difference / 60000
       ) % 60;
 
-
     box.textContent =
       `🏈 ${days}d ${hours}h ${minutes}m until kickoff`;
-
 
     box.classList.remove(
       "hidden"
@@ -2502,9 +2414,7 @@ function startCountdown(game) {
 
   }
 
-
   update();
-
 
   countdownTimer =
     setInterval(
@@ -2541,7 +2451,6 @@ function updateSchedule() {
       "scheduleList"
     );
 
-
   if(!games.length) {
 
     container.innerHTML =
@@ -2553,7 +2462,6 @@ function updateSchedule() {
 
   }
 
-
   container.innerHTML =
 
     games
@@ -2562,16 +2470,13 @@ function updateSchedule() {
         const status =
           getGameStatus(game);
 
-
         const live =
           isGameLive(game);
-
 
         const homeAwayIcon =
           getHomeAwayIcon(
             game.home_away
           );
-
 
         return `
 
@@ -2598,7 +2503,6 @@ function updateSchedule() {
 
               </div>
 
-
               ${
                 status
                 ?
@@ -2610,7 +2514,6 @@ function updateSchedule() {
               }
 
             </div>
-
 
             <div class="game-matchup">
 
@@ -2628,7 +2531,6 @@ function updateSchedule() {
 
             </div>
 
-
             <div class="game-details">
 
               <span class="detail">
@@ -2638,7 +2540,6 @@ function updateSchedule() {
                 )}
               </span>
 
-
               <span class="detail">
                 📍
                 ${escapeHtml(
@@ -2646,7 +2547,6 @@ function updateSchedule() {
                   "Location TBD"
                 )}
               </span>
-
 
               <span class="detail">
                 ${homeAwayIcon}
@@ -2656,7 +2556,6 @@ function updateSchedule() {
               </span>
 
             </div>
-
 
             ${
               hasScore(game)
@@ -2672,12 +2571,9 @@ function updateSchedule() {
 
               :
 
-              /* NO SECOND LIVE TEXT HERE */
-
               ""
 
             }
-
 
             ${
               game.notes
@@ -2693,7 +2589,6 @@ function updateSchedule() {
               ""
 
             }
-
 
             <div
               style="
@@ -2729,29 +2624,24 @@ function openGameDetails(id) {
         Number(id)
     );
 
-
   if(!game) {
     return;
   }
-
 
   document
     .getElementById("modalMatchup")
     .textContent =
     `NDGP VS ${game.opponent}`;
 
-
   const statusBox =
     document.getElementById(
       "modalStatus"
     );
 
-
   const scoreBox =
     document.getElementById(
       "modalScore"
     );
-
 
   if(isGameLive(game)) {
 
@@ -2773,13 +2663,11 @@ function openGameDetails(id) {
     const opp =
       Number(game.opponent_score);
 
-
     let result =
       "FINAL • TIE";
 
     let resultClass =
       "tie";
-
 
     if(our > opp) {
 
@@ -2801,13 +2689,11 @@ function openGameDetails(id) {
 
     }
 
-
     statusBox.innerHTML =
 
       `<span class="badge ${resultClass}">
         ${result}
       </span>`;
-
 
     scoreBox.textContent =
       `${game.our_score} – ${game.opponent_score}`;
@@ -2817,11 +2703,9 @@ function openGameDetails(id) {
   else {
 
     statusBox.innerHTML = "";
-
     scoreBox.textContent = "";
 
   }
-
 
   document
     .getElementById("modalInfo")
@@ -2841,7 +2725,6 @@ function openGameDetails(id) {
 
       </div>
 
-
       <div class="modal-info">
 
         <div class="modal-info-label">
@@ -2857,7 +2740,6 @@ function openGameDetails(id) {
 
       </div>
 
-
       <div class="modal-info">
 
         <div class="modal-info-label">
@@ -2872,7 +2754,6 @@ function openGameDetails(id) {
         </div>
 
       </div>
-
 
       <div class="modal-info">
 
@@ -2894,12 +2775,10 @@ function openGameDetails(id) {
 
     `;
 
-
   const notesBox =
     document.getElementById(
       "modalNotes"
     );
-
 
   if(game.notes) {
 
@@ -2923,12 +2802,10 @@ function openGameDetails(id) {
 
   }
 
-
   document
     .getElementById("gameModal")
     .classList
     .add("show");
-
 
   document.body.style.overflow =
     "hidden";
@@ -2949,12 +2826,10 @@ function closeGameModal(event) {
     return;
   }
 
-
   document
     .getElementById("gameModal")
     .classList
     .remove("show");
-
 
   document.body.style.overflow = "";
 
@@ -2982,7 +2857,6 @@ setInterval(
       return;
     }
 
-
     updateHome();
 
     updateSchedule();
@@ -3002,7 +2876,6 @@ async function login() {
       .value
       .trim();
 
-
   if(!/^\d{4}$/.test(code)) {
 
     document
@@ -3017,7 +2890,6 @@ async function login() {
 
   }
 
-
   const {
     data,
     error
@@ -3028,7 +2900,6 @@ async function login() {
       p_code:code
     }
   );
-
 
   if(error) {
 
@@ -3046,7 +2917,6 @@ async function login() {
 
   }
 
-
   if(!data) {
 
     document
@@ -3061,17 +2931,14 @@ async function login() {
 
   }
 
-
   sessionStorage.setItem(
     "adminCode",
     code
   );
 
-
   document
     .getElementById("adminCode")
     .value = "";
-
 
   showAdmin();
 
@@ -3087,12 +2954,10 @@ function showAdmin() {
     .classList
     .add("hidden");
 
-
   document
     .getElementById("adminArea")
     .classList
     .remove("hidden");
-
 
   updateAdminGames();
 
@@ -3107,12 +2972,10 @@ function logout() {
     "adminCode"
   );
 
-
   document
     .getElementById("loginArea")
     .classList
     .remove("hidden");
-
 
   document
     .getElementById("adminArea")
@@ -3131,18 +2994,15 @@ async function addGame() {
       "adminCode"
     );
 
-
   const date =
     document
       .getElementById("gameDate")
       .value;
 
-
   const time =
     document
       .getElementById("gameTime")
       .value;
-
 
   const opponent =
     document
@@ -3150,26 +3010,22 @@ async function addGame() {
       .value
       .trim();
 
-
   const location =
     document
       .getElementById("gameLocation")
       .value
       .trim();
 
-
   const homeAway =
     document
       .getElementById("gameHomeAway")
       .value;
-
 
   const notes =
     document
       .getElementById("gameNotes")
       .value
       .trim();
-
 
   if(!date || !opponent) {
 
@@ -3180,7 +3036,6 @@ async function addGame() {
     return;
 
   }
-
 
   const {
     error
@@ -3198,7 +3053,6 @@ async function addGame() {
     }
   );
 
-
   if(error) {
 
     console.error(error);
@@ -3211,18 +3065,15 @@ async function addGame() {
 
   }
 
-
   document.getElementById("gameDate").value = "";
   document.getElementById("gameTime").value = "";
   document.getElementById("gameOpponent").value = "";
   document.getElementById("gameLocation").value = "";
   document.getElementById("gameNotes").value = "";
 
-
   showAdminMessage(
     "✅ Game added!"
   );
-
 
   loadGames();
 
@@ -3238,7 +3089,6 @@ function updateAdminGames() {
       "adminGames"
     );
 
-
   if(!games.length) {
 
     container.innerHTML =
@@ -3249,7 +3099,6 @@ function updateAdminGames() {
     return;
 
   }
-
 
   container.innerHTML =
 
@@ -3262,10 +3111,8 @@ function updateAdminGames() {
               game.home_away
             );
 
-
           let score =
             "No score yet";
-
 
           if(hasScore(game)) {
 
@@ -3280,7 +3127,6 @@ function updateAdminGames() {
               "🔴 LIVE";
 
           }
-
 
           return `
 
@@ -3297,7 +3143,6 @@ function updateAdminGames() {
 
                   </div>
 
-
                   <div class="compact-game-meta">
 
                     ${formatShortDate(game.date)}
@@ -3309,13 +3154,11 @@ function updateAdminGames() {
 
                   </div>
 
-
                   <div class="compact-game-score">
                     ${score}
                   </div>
 
                 </div>
-
 
                 <div class="compact-game-actions">
 
@@ -3325,7 +3168,6 @@ function updateAdminGames() {
                   >
                     ✏️ Edit
                   </button>
-
 
                   <button
                     class="delete-small"
@@ -3337,7 +3179,6 @@ function updateAdminGames() {
                 </div>
 
               </div>
-
 
               <div
                 id="edit-area-${game.id}"
@@ -3358,7 +3199,6 @@ function updateAdminGames() {
 
                   </div>
 
-
                   <div>
 
                     <label>Time</label>
@@ -3371,7 +3211,6 @@ function updateAdminGames() {
 
                   </div>
 
-
                   <div>
 
                     <label>Location</label>
@@ -3383,7 +3222,6 @@ function updateAdminGames() {
                     >
 
                   </div>
-
 
                   <div>
 
@@ -3409,7 +3247,6 @@ function updateAdminGames() {
 
                   </div>
 
-
                   <div>
 
                     <label>NDGP Score</label>
@@ -3421,7 +3258,6 @@ function updateAdminGames() {
                     >
 
                   </div>
-
 
                   <div>
 
@@ -3435,7 +3271,6 @@ function updateAdminGames() {
 
                   </div>
 
-
                   <div class="compact-full">
 
                     <label>Notes</label>
@@ -3447,7 +3282,6 @@ function updateAdminGames() {
                   </div>
 
                 </div>
-
 
                 <button
                   class="primary compact-save"
@@ -3476,11 +3310,9 @@ function toggleGameEdit(id) {
       `edit-area-${id}`
     );
 
-
   if(!area) {
     return;
   }
-
 
   area.classList.toggle("open");
 
@@ -3496,7 +3328,6 @@ async function saveGame(id) {
       "adminCode"
     );
 
-
   const game =
     games.find(
       g =>
@@ -3504,65 +3335,54 @@ async function saveGame(id) {
         Number(id)
     );
 
-
   if(!game) {
     return;
   }
-
 
   const date =
     document.getElementById(
       `edit-date-${id}`
     ).value;
 
-
   const time =
     document.getElementById(
       `edit-time-${id}`
     ).value;
-
 
   const location =
     document.getElementById(
       `edit-location-${id}`
     ).value;
 
-
   const homeAway =
     document.getElementById(
       `edit-ha-${id}`
     ).value;
-
 
   const ourValue =
     document.getElementById(
       `our-${id}`
     ).value;
 
-
   const opponentValue =
     document.getElementById(
       `opp-${id}`
     ).value;
-
 
   const notes =
     document.getElementById(
       `notes-${id}`
     ).value;
 
-
   const ourScore =
     ourValue === ""
       ? null
       : Number(ourValue);
 
-
   const opponentScore =
     opponentValue === ""
       ? null
       : Number(opponentValue);
-
 
   const automaticStatus =
     (
@@ -3573,7 +3393,6 @@ async function saveGame(id) {
     "Final"
     :
     "Scheduled";
-
 
   const {
     error
@@ -3595,7 +3414,6 @@ async function saveGame(id) {
     }
   );
 
-
   if(error) {
 
     console.error(error);
@@ -3608,11 +3426,9 @@ async function saveGame(id) {
 
   }
 
-
   showAdminMessage(
     "✅ Game updated!"
   );
-
 
   loadGames();
 
@@ -3631,12 +3447,10 @@ async function deleteGame(id) {
     return;
   }
 
-
   const code =
     sessionStorage.getItem(
       "adminCode"
     );
-
 
   const {
     error
@@ -3649,7 +3463,6 @@ async function deleteGame(id) {
     }
   );
 
-
   if(error) {
 
     showAdminMessage(
@@ -3660,11 +3473,9 @@ async function deleteGame(id) {
 
   }
 
-
   showAdminMessage(
     "Game deleted."
   );
-
 
   loadGames();
 
@@ -3689,7 +3500,6 @@ async function loadPhotos() {
       }
     );
 
-
   if(error) {
 
     console.error(error);
@@ -3698,16 +3508,13 @@ async function loadPhotos() {
 
   }
 
-
   const photos =
     data || [];
-
 
   const publicContainer =
     document.getElementById(
       "photoList"
     );
-
 
   if(!photos.length) {
 
@@ -3761,12 +3568,10 @@ async function loadPhotos() {
 
   }
 
-
   const adminContainer =
     document.getElementById(
       "adminPhotos"
     );
-
 
   if(
     adminContainer &&
@@ -3784,7 +3589,6 @@ async function loadPhotos() {
 
     }
 
-
     adminContainer.innerHTML =
 
       `<div class="admin-photo-grid">
@@ -3801,7 +3605,6 @@ async function loadPhotos() {
                     alt="Football photo"
                   >
 
-
                   <div class="admin-photo-caption">
 
                     ${
@@ -3813,7 +3616,6 @@ async function loadPhotos() {
                     }
 
                   </div>
-
 
                   <button
                     class="admin-photo-delete"
@@ -3845,19 +3647,16 @@ async function addPhoto() {
       "adminCode"
     );
 
-
   const file =
     document.getElementById(
       "photoFile"
     ).files[0];
-
 
   const caption =
     document.getElementById(
       "photoCaption"
     ).value
     .trim();
-
 
   if(!file) {
 
@@ -3869,11 +3668,9 @@ async function addPhoto() {
 
   }
 
-
   showAdminMessage(
     "Preparing photo..."
   );
-
 
   try {
 
@@ -3883,7 +3680,6 @@ async function addPhoto() {
         1400,
         .78
       );
-
 
     const {
       error
@@ -3897,7 +3693,6 @@ async function addPhoto() {
       }
     );
 
-
     if(error) {
 
       console.error(error);
@@ -3910,21 +3705,17 @@ async function addPhoto() {
 
     }
 
-
     document.getElementById(
       "photoFile"
     ).value = "";
-
 
     document.getElementById(
       "photoCaption"
     ).value = "";
 
-
     showAdminMessage(
       "📸 Photo uploaded!"
     );
-
 
     loadPhotos();
 
@@ -3960,13 +3751,11 @@ function compressImage(
       const reader =
         new FileReader();
 
-
       reader.onload =
       function(event) {
 
         const image =
           new Image();
-
 
         image.onload =
         function() {
@@ -3976,7 +3765,6 @@ function compressImage(
 
           let height =
             image.height;
-
 
           if(width > maxWidth) {
 
@@ -3992,12 +3780,10 @@ function compressImage(
 
           }
 
-
           const canvas =
             document.createElement(
               "canvas"
             );
-
 
           canvas.width =
             width;
@@ -4005,12 +3791,10 @@ function compressImage(
           canvas.height =
             height;
 
-
           const context =
             canvas.getContext(
               "2d"
             );
-
 
           context.drawImage(
             image,
@@ -4019,7 +3803,6 @@ function compressImage(
             width,
             height
           );
-
 
           resolve(
             canvas.toDataURL(
@@ -4030,20 +3813,16 @@ function compressImage(
 
         };
 
-
         image.onerror =
           reject;
-
 
         image.src =
           event.target.result;
 
       };
 
-
       reader.onerror =
         reject;
-
 
       reader.readAsDataURL(
         file
@@ -4067,12 +3846,10 @@ async function deletePhoto(id) {
     return;
   }
 
-
   const code =
     sessionStorage.getItem(
       "adminCode"
     );
-
 
   const {
     error
@@ -4085,7 +3862,6 @@ async function deletePhoto(id) {
     }
   );
 
-
   if(error) {
 
     showAdminMessage(
@@ -4096,11 +3872,9 @@ async function deletePhoto(id) {
 
   }
 
-
   showAdminMessage(
     "Photo deleted."
   );
-
 
   loadPhotos();
 
@@ -4115,13 +3889,11 @@ function formatDate(dateString) {
     return "";
   }
 
-
   const date =
     new Date(
       dateString +
       "T12:00:00"
     );
-
 
   return date.toLocaleDateString(
     "en-US",
@@ -4142,13 +3914,11 @@ function formatShortDate(dateString) {
     return "";
   }
 
-
   const date =
     new Date(
       dateString +
       "T12:00:00"
     );
-
 
   return date.toLocaleDateString(
     "en-US",
@@ -4169,7 +3939,6 @@ function escapeHtml(value) {
   ) {
     return "";
   }
-
 
   return String(value)
     .replace(/&/g,"&amp;")
@@ -4195,17 +3964,14 @@ function showAdminMessage(message) {
       "adminMessage"
     );
 
-
   if(!box) {
     return;
   }
-
 
   box.innerHTML =
     `<div class="message">
       ${escapeHtml(message)}
     </div>`;
-
 
   setTimeout(
     () => {
