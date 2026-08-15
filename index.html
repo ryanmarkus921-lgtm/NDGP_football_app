@@ -73,7 +73,7 @@ text-transform:uppercase;
 }
 
 
-/* NAV */
+/* NAVIGATION */
 
 nav{
 position:sticky;
@@ -261,7 +261,9 @@ padding:7px 12px;
 border-radius:8px;
 background:linear-gradient(135deg,#f5f7f9,#dfe5ea,#f7f9fb);
 border:1px solid #b9c4cd;
-box-shadow:0 2px 7px rgba(55,70,82,.16),inset 0 1px 0 rgba(255,255,255,.9);
+box-shadow:
+0 2px 7px rgba(55,70,82,.16),
+inset 0 1px 0 rgba(255,255,255,.9);
 color:#344451;
 font-family:"Oswald";
 font-size:10px;
@@ -279,7 +281,12 @@ top:0;
 left:-100%;
 width:70%;
 height:100%;
-background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent);
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.75),
+transparent
+);
 animation:shine 2.8s infinite;
 }
 
@@ -498,9 +505,7 @@ animation:pulse 1.5s infinite;
 }
 
 
-/* =================================================
-   HISTORY
-================================================= */
+/* HISTORY */
 
 .season-card{
 background:white;
@@ -512,16 +517,10 @@ overflow:hidden;
 box-shadow:0 3px 11px rgba(0,31,63,.07);
 }
 
-
-/* BOTH SEASONS GOLD */
-
 .season-card.year-2025,
 .season-card.year-2024{
 border-left-color:var(--gold);
 }
-
-
-/* SEASON HEADER */
 
 .season-header{
 background:linear-gradient(135deg,#f8fafc,#eef3f7);
@@ -540,13 +539,6 @@ font-weight:700;
 color:var(--navy);
 }
 
-
-/*
-IMPORTANT:
-The record is ONE bold line.
-There is no smaller text underneath.
-*/
-
 .season-record{
 font-family:"Teko";
 font-size:24px;
@@ -556,9 +548,6 @@ color:var(--navy);
 text-align:right;
 white-space:nowrap;
 }
-
-
-/* ACHIEVEMENTS */
 
 .season-body{
 padding:8px 12px;
@@ -603,9 +592,6 @@ font-weight:700;
 color:var(--navy);
 }
 
-
-/* SCHOOL RECORD MATCHES EVERYTHING ELSE */
-
 .record-achievement{
 display:flex;
 align-items:center;
@@ -641,7 +627,7 @@ margin:3px;
 }
 
 
-/* MODAL */
+/* GAME MODAL */
 
 .modal-overlay{
 position:fixed;
@@ -1135,16 +1121,15 @@ cursor:pointer;
 
 footer{
 text-align:center;
-padding:22px 10px 28px;
-color:#8291a0;
-font-size:8px;
-line-height:1.7;
+padding:20px 10px 28px;
 }
 
 .footer-title{
 font-family:"Teko";
-font-size:16px;
+font-size:19px;
 line-height:1;
+font-weight:700;
+letter-spacing:1px;
 color:var(--navy);
 }
 
@@ -1373,7 +1358,7 @@ Loading...
 <div class="season-header">
 
 <div class="season-year">
-2025 Season
+2025 Football Season
 </div>
 
 <div class="season-record">
@@ -1460,7 +1445,7 @@ Tied School Record — Most Wins
 <div class="season-header">
 
 <div class="season-year">
-2024 Season
+2024 Football Season
 </div>
 
 <div class="season-record">
@@ -1580,6 +1565,8 @@ Log Out
 </div>
 
 
+<!-- GAME MANAGEMENT -->
+
 <div class="admin-section">
 
 <div class="admin-section-header">
@@ -1633,7 +1620,9 @@ placeholder="7:00 PM">
 
 </div>
 
-<label>Opponent</label>
+<label>
+Opponent
+</label>
 
 <input
 id="gameOpponent"
@@ -1673,7 +1662,9 @@ placeholder="Stadium">
 
 </div>
 
-<label>Notes</label>
+<label>
+Notes
+</label>
 
 <textarea
 id="gameNotes"
@@ -1713,6 +1704,8 @@ Loading...
 </div>
 
 
+<!-- PHOTO MANAGEMENT -->
+
 <div class="admin-section">
 
 <div class="admin-section-header">
@@ -1741,14 +1734,18 @@ Loading...
 Add a photo to the football gallery.
 </p>
 
-<label>Photo</label>
+<label>
+Photo
+</label>
 
 <input
 id="photoFile"
 type="file"
 accept="image/*">
 
-<label>Caption</label>
+<label>
+Caption
+</label>
 
 <input
 id="photoCaption"
@@ -1785,7 +1782,7 @@ Loading...
 </section>
 
 
-<!-- GAME MODAL -->
+<!-- GAME DETAILS MODAL -->
 
 <div
 id="gameModal"
@@ -1816,6 +1813,7 @@ NDGP VS OPPONENT
 
 </div>
 
+
 <div class="modal-body">
 
 <div
@@ -1845,22 +1843,12 @@ class="modal-info-grid">
 </main>
 
 
+<!-- SIMPLE FOOTER -->
+
 <footer>
 
 <div class="footer-title">
 NDGP FOOTBALL
-</div>
-
-<div>
-Notre Dame Green Pond Crusaders
-</div>
-
-<div>
-This website was built by a student at Notre Dame Green Pond High School.
-</div>
-
-<div>
-© 2026
 </div>
 
 </footer>
