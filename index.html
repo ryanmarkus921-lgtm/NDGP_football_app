@@ -7,6 +7,7 @@
 <title>NDGP Football</title>
 
 <meta name="theme-color" content="#001f3f">
+
 <link rel="apple-touch-icon" href="LOGO_W__FB.png">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -20,7 +21,7 @@
 <style>
 
 /* =========================================================
-   COLORS
+   NDGP COLORS
 ========================================================= */
 
 :root{
@@ -46,14 +47,18 @@
 
 body{
   margin:0;
-  background:linear-gradient(
-    180deg,
-    #edf2f7,
-    #f8fafc
-  );
-  color:var(--text);
-  font-family:"Oswald",Arial,sans-serif;
   min-height:100vh;
+
+  background:
+    linear-gradient(
+      180deg,
+      #edf2f7,
+      #f8fafc
+    );
+
+  color:var(--text);
+
+  font-family:"Oswald",Arial,sans-serif;
 }
 
 button,
@@ -61,6 +66,10 @@ input,
 select,
 textarea{
   font-family:"Oswald",Arial,sans-serif;
+}
+
+button{
+  cursor:pointer;
 }
 
 
@@ -77,22 +86,23 @@ header{
     );
 
   color:white;
+
   text-align:center;
 
-  padding:20px 15px 22px;
+  padding:18px 12px 20px;
 
   border-bottom:4px solid var(--gold);
 }
 
 .logo{
-  width:90px;
-  height:90px;
+  width:86px;
+  height:86px;
 
   object-fit:contain;
 
   display:block;
 
-  margin:0 auto 7px;
+  margin:0 auto 5px;
 }
 
 header h1{
@@ -100,7 +110,7 @@ header h1{
 
   font-family:"Teko";
 
-  font-size:39px;
+  font-size:38px;
 
   line-height:.9;
 
@@ -108,11 +118,11 @@ header h1{
 }
 
 header p{
-  margin:6px 0 0;
+  margin:5px 0 0;
 
   color:#dbe7f2;
 
-  font-size:10px;
+  font-size:9px;
 
   letter-spacing:1.3px;
 
@@ -121,28 +131,24 @@ header p{
 
 
 /* =========================================================
-   NAV
+   NAVIGATION
 ========================================================= */
 
 nav{
   position:sticky;
+
   top:0;
+
   z-index:100;
 
   display:flex;
 
-  background:rgba(
-    255,
-    255,
-    255,
-    .97
-  );
+  background:rgba(255,255,255,.97);
 
   border-bottom:1px solid var(--border);
 
   box-shadow:
-    0 2px 10px
-    rgba(0,31,63,.07);
+    0 2px 10px rgba(0,31,63,.07);
 }
 
 nav button{
@@ -158,13 +164,11 @@ nav button{
 
   padding:11px 3px;
 
-  font-size:10px;
+  font-size:9px;
 
   font-weight:700;
 
   text-transform:uppercase;
-
-  cursor:pointer;
 }
 
 nav button.active{
@@ -178,11 +182,9 @@ nav button.active:after{
 
   position:absolute;
 
-  bottom:0;
-
   left:20%;
-
   right:20%;
+  bottom:0;
 
   height:3px;
 
@@ -201,7 +203,7 @@ main{
 
   margin:auto;
 
-  padding:12px 10px 22px;
+  padding:10px 9px 20px;
 }
 
 .page{
@@ -219,13 +221,12 @@ main{
 
   border-radius:13px;
 
-  margin-bottom:10px;
+  margin-bottom:9px;
 
-  padding:13px;
+  padding:12px;
 
   box-shadow:
-    0 3px 12px
-    rgba(0,31,63,.07);
+    0 3px 12px rgba(0,31,63,.06);
 }
 
 .page-heading{
@@ -235,7 +236,7 @@ main{
 
   gap:7px;
 
-  margin:0 0 11px;
+  margin:0 0 10px;
 
   font-family:"Teko";
 
@@ -279,22 +280,22 @@ main{
 }
 
 .hero-top{
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  padding:9px 12px;
+
+  color:white;
+
   background:
     linear-gradient(
       90deg,
       var(--dark),
       var(--blue)
     );
-
-  color:white;
-
-  padding:9px 13px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
 }
 
 .hero-top span{
@@ -310,7 +311,7 @@ main{
 .hero-top small{
   color:var(--gold);
 
-  font-size:9px;
+  font-size:8px;
 
   letter-spacing:1px;
 }
@@ -318,17 +319,17 @@ main{
 .hero-body{
   text-align:center;
 
-  padding:16px 12px 17px;
+  padding:15px 10px 16px;
 }
 
 .next-label{
   color:var(--muted);
 
-  font-size:9px;
+  font-size:8px;
+
+  letter-spacing:1.3px;
 
   text-transform:uppercase;
-
-  letter-spacing:1.4px;
 }
 
 .next-matchup{
@@ -338,7 +339,7 @@ main{
 
   justify-content:center;
 
-  gap:8px;
+  gap:7px;
 
   margin:4px 0 7px;
 }
@@ -356,21 +357,21 @@ main{
 }
 
 .next-vs{
+  color:#d3a817;
+
   font-family:"Teko";
 
   font-size:17px;
 
   font-weight:700;
-
-  color:#d3a817;
 }
 
 .game-info{
   color:#637487;
 
-  font-size:11px;
+  font-size:10px;
 
-  line-height:1.7;
+  line-height:1.65;
 }
 
 .home-away{
@@ -380,9 +381,9 @@ main{
 
   gap:4px;
 
-  padding:3px 7px;
+  margin-top:3px;
 
-  margin-top:4px;
+  padding:3px 7px;
 
   background:#f1f5f8;
 
@@ -390,7 +391,7 @@ main{
 
   color:var(--navy);
 
-  font-size:10px;
+  font-size:9px;
 
   font-weight:700;
 }
@@ -404,7 +405,7 @@ main{
 
   gap:6px;
 
-  margin-top:10px;
+  margin-top:9px;
 
   padding:7px 12px;
 
@@ -421,15 +422,11 @@ main{
   border:1px solid #b9c4cd;
 
   box-shadow:
-    0 2px 7px
-    rgba(55,70,82,.16),
-
-    inset 0 1px 0
-    rgba(255,255,255,.9);
+    0 2px 7px rgba(55,70,82,.16);
 
   color:#344451;
 
-  font-size:10px;
+  font-size:9px;
 
   font-weight:700;
 
@@ -448,29 +445,29 @@ main{
 .last-label{
   color:var(--muted);
 
-  font-size:9px;
+  font-size:8px;
 
-  letter-spacing:1.2px;
+  letter-spacing:1.1px;
 
   text-transform:uppercase;
 }
 
 .record{
+  color:var(--navy);
+
   font-family:"Teko";
 
-  font-size:43px;
-
-  line-height:.9;
+  font-size:42px;
 
   font-weight:700;
 
-  color:var(--navy);
+  line-height:.9;
 }
 
 .record-sub{
   color:var(--muted);
 
-  font-size:9px;
+  font-size:8px;
 }
 
 .last-game{
@@ -482,13 +479,13 @@ main{
 }
 
 .last-matchup{
+  color:var(--navy);
+
   font-family:"Teko";
 
-  font-size:23px;
+  font-size:22px;
 
   line-height:1;
-
-  color:var(--navy);
 
   text-transform:uppercase;
 }
@@ -496,19 +493,19 @@ main{
 .last-date{
   color:var(--muted);
 
-  font-size:10px;
+  font-size:9px;
 
   margin-top:4px;
 }
 
 .last-score{
+  color:var(--navy);
+
   font-family:"Teko";
 
-  font-size:30px;
+  font-size:29px;
 
   font-weight:700;
-
-  color:var(--navy);
 }
 
 
@@ -525,25 +522,18 @@ main{
 
   border-radius:10px;
 
-  margin-bottom:8px;
+  margin-bottom:7px;
 
-  padding:9px 11px 6px;
+  padding:8px 10px 5px;
 
   box-shadow:
-    0 2px 8px
-    rgba(0,31,63,.05);
-
-  cursor:pointer;
+    0 2px 8px rgba(0,31,63,.05);
 
   transition:.15s;
 }
 
 .game:hover{
   transform:translateY(-1px);
-
-  box-shadow:
-    0 4px 12px
-    rgba(0,31,63,.09);
 }
 
 .game.live-game{
@@ -557,27 +547,27 @@ main{
 
   justify-content:space-between;
 
-  gap:8px;
+  gap:7px;
 }
 
 .game-date{
   color:var(--muted);
 
-  font-size:9px;
+  font-size:8px;
 
   margin-bottom:2px;
 }
 
 .game-opponent{
+  color:var(--navy);
+
   font-family:"Teko";
 
-  font-size:24px;
+  font-size:23px;
 
   line-height:.9;
 
   font-weight:700;
-
-  color:var(--navy);
 
   text-transform:uppercase;
 }
@@ -589,11 +579,11 @@ main{
 
   gap:4px;
 
-  font-size:10px;
-
-  margin-top:5px;
+  margin-top:4px;
 
   color:#5f7182;
+
+  font-size:9px;
 }
 
 .game-team{
@@ -613,27 +603,27 @@ main{
 
   flex-wrap:wrap;
 
-  gap:4px 10px;
+  gap:4px 9px;
 
-  margin-top:5px;
+  margin-top:4px;
 
   color:#637487;
 
-  font-size:9px;
+  font-size:8px;
 }
 
 .game-score{
+  color:var(--navy);
+
   font-family:"Teko";
 
-  font-size:20px;
+  font-size:19px;
 
   line-height:.9;
 
   font-weight:700;
 
-  color:var(--navy);
-
-  margin:4px 0 0;
+  margin-top:4px;
 }
 
 .game-details-link{
@@ -645,7 +635,7 @@ main{
 
   font-size:7px;
 
-  letter-spacing:.45px;
+  letter-spacing:.4px;
 
   text-transform:uppercase;
 }
@@ -662,11 +652,11 @@ main{
 
   justify-content:center;
 
-  padding:6px 10px;
+  padding:6px 9px;
 
   border-radius:6px;
 
-  font-size:9px;
+  font-size:8px;
 
   line-height:1;
 
@@ -702,14 +692,14 @@ main{
 
   border:1px solid #fecaca;
 
-  padding:6px 10px;
+  padding:6px 9px;
 
-  font-size:10px;
+  font-size:9px;
 }
 
 
 /* =========================================================
-   HISTORY BUTTONS
+   HISTORY
 ========================================================= */
 
 .history-intro{
@@ -717,37 +707,32 @@ main{
 
   color:var(--muted);
 
-  font-size:9px;
+  font-size:8px;
 
-  margin:-4px 0 11px;
+  margin:-3px 0 10px;
 }
 
 .season-history{
+  overflow:hidden;
+
+  background:white;
+
   border:1px solid var(--border);
 
   border-left:4px solid var(--navy);
 
   border-radius:9px;
 
-  overflow:hidden;
-
-  margin-bottom:8px;
-
-  background:white;
+  margin-bottom:7px;
 
   box-shadow:
-    0 2px 8px
-    rgba(0,31,63,.05);
+    0 2px 8px rgba(0,31,63,.05);
 }
 
 .season-button{
   width:100%;
 
-  border:0;
-
-  background:white;
-
-  padding:13px 14px;
+  min-height:66px;
 
   display:flex;
 
@@ -755,11 +740,13 @@ main{
 
   justify-content:space-between;
 
-  cursor:pointer;
+  padding:11px 13px;
+
+  border:0;
+
+  background:white;
 
   text-align:left;
-
-  min-height:70px;
 
   transition:.15s;
 }
@@ -767,21 +754,17 @@ main{
 .season-button:hover{
   background:#f8fafc;
 
-  padding-left:18px;
-}
-
-.season-button-left{
-  min-width:0;
+  padding-left:17px;
 }
 
 .season-name{
+  color:var(--navy);
+
   font-family:"Teko";
 
-  font-size:30px;
+  font-size:29px;
 
-  line-height:.95;
-
-  color:var(--navy);
+  line-height:.9;
 
   font-weight:700;
 }
@@ -789,7 +772,7 @@ main{
 .season-record-small{
   color:#536779;
 
-  font-size:11px;
+  font-size:10px;
 
   font-weight:700;
 
@@ -800,8 +783,6 @@ main{
   color:var(--navy);
 
   font-size:27px;
-
-  font-weight:400;
 
   margin-left:10px;
 }
@@ -826,13 +807,7 @@ main{
 
   padding:12px;
 
-  background:
-    rgba(
-      0,
-      15,
-      30,
-      .78
-    );
+  background:rgba(0,15,30,.78);
 
   backdrop-filter:blur(7px);
 }
@@ -855,8 +830,7 @@ main{
   border-radius:16px;
 
   box-shadow:
-    0 20px 60px
-    rgba(0,0,0,.35);
+    0 20px 60px rgba(0,0,0,.35);
 
   animation:
     historyIn .22s ease;
@@ -879,16 +853,16 @@ main{
 .history-modal-header{
   position:relative;
 
+  padding:17px 18px 16px;
+
+  color:white;
+
   background:
     linear-gradient(
       135deg,
       var(--dark),
       var(--blue)
     );
-
-  color:white;
-
-  padding:17px 18px 16px;
 
   border-bottom:4px solid var(--gold);
 }
@@ -901,14 +875,12 @@ main{
   letter-spacing:1.7px;
 
   text-transform:uppercase;
-
-  margin-bottom:2px;
 }
 
 .history-modal-title{
   font-family:"Teko";
 
-  font-size:38px;
+  font-size:37px;
 
   line-height:.9;
 
@@ -916,13 +888,13 @@ main{
 }
 
 .history-modal-record{
-  margin-top:4px;
+  color:#d9e6ef;
 
   font-family:"Teko";
 
   font-size:17px;
 
-  color:#d9e6ef;
+  margin-top:4px;
 }
 
 .history-close{
@@ -940,19 +912,11 @@ main{
 
   border-radius:50%;
 
-  background:
-    rgba(255,255,255,.13);
+  background:rgba(255,255,255,.13);
 
   color:white;
 
   font-size:22px;
-
-  cursor:pointer;
-}
-
-.history-close:hover{
-  background:
-    rgba(255,255,255,.22);
 }
 
 .history-modal-body{
@@ -963,55 +927,12 @@ main{
   padding:12px;
 }
 
-.history-stat-row{
-  display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap:7px;
-
-  margin-bottom:10px;
-}
-
-.history-stat{
-  background:white;
-
-  border:1px solid var(--border);
-
-  border-radius:8px;
-
-  padding:9px;
-
-  text-align:center;
-}
-
-.history-stat-label{
-  color:var(--muted);
-
-  font-size:7px;
-
-  letter-spacing:.8px;
-
-  text-transform:uppercase;
-}
-
-.history-stat-value{
-  color:var(--navy);
-
-  font-family:"Teko";
-
-  font-size:26px;
-
-  font-weight:700;
-
-  line-height:.9;
-
-  margin-top:3px;
-}
-
 .history-modal-section{
   margin-top:10px;
+}
+
+.history-modal-section:first-child{
+  margin-top:0;
 }
 
 .history-modal-section-title{
@@ -1023,9 +944,9 @@ main{
 
   margin:0 0 6px;
 
-  font-family:"Teko";
-
   color:var(--navy);
+
+  font-family:"Teko";
 
   font-size:23px;
 
@@ -1062,7 +983,7 @@ main{
 
   border-radius:7px;
 
-  padding:7px 9px;
+  padding:8px 9px;
 
   margin-bottom:5px;
 }
@@ -1072,6 +993,8 @@ main{
 }
 
 .history-game-opponent{
+  color:var(--navy);
+
   font-family:"Teko";
 
   font-size:18px;
@@ -1079,8 +1002,6 @@ main{
   line-height:1;
 
   font-weight:700;
-
-  color:var(--navy);
 }
 
 .history-game-meta{
@@ -1155,25 +1076,25 @@ main{
 }
 
 .history-achievement-text{
+  color:var(--navy);
+
   font-family:"Teko";
 
   font-size:18px;
 
   line-height:1;
 
-  color:var(--navy);
-
   font-weight:700;
 }
 
 .history-empty{
+  padding:12px;
+
   background:white;
 
   border:1px dashed #cbd6df;
 
   border-radius:8px;
-
-  padding:12px;
 
   color:var(--muted);
 
@@ -1201,9 +1122,9 @@ main{
 
   aspect-ratio:1;
 
-  object-fit:cover;
-
   display:block;
+
+  object-fit:cover;
 
   border-radius:7px;
 }
@@ -1236,8 +1157,7 @@ main{
 
   padding:12px;
 
-  background:
-    rgba(0,15,30,.68);
+  background:rgba(0,15,30,.68);
 
   backdrop-filter:blur(4px);
 }
@@ -1265,18 +1185,18 @@ main{
 .modal-header{
   position:relative;
 
+  padding:15px;
+
+  color:white;
+
+  text-align:center;
+
   background:
     linear-gradient(
       135deg,
       var(--dark),
       var(--blue)
     );
-
-  color:white;
-
-  padding:15px;
-
-  text-align:center;
 
   border-bottom:4px solid var(--gold);
 }
@@ -1296,14 +1216,11 @@ main{
 
   border-radius:50%;
 
-  background:
-    rgba(255,255,255,.12);
+  background:rgba(255,255,255,.12);
 
   color:white;
 
   font-size:19px;
-
-  cursor:pointer;
 }
 
 .modal-kicker{
@@ -1357,13 +1274,11 @@ main{
 
   font-size:24px;
 
-  font-weight:700;
-
   line-height:1;
 }
 
 .modal-score{
-  text-align:center;
+  color:var(--navy);
 
   font-family:"Teko";
 
@@ -1373,7 +1288,7 @@ main{
 
   font-weight:700;
 
-  color:var(--navy);
+  text-align:center;
 
   margin:3px 0 14px;
 }
@@ -1388,13 +1303,13 @@ main{
 }
 
 .modal-info{
+  padding:8px;
+
   background:#f5f8fa;
 
   border:1px solid var(--border);
 
   border-radius:7px;
-
-  padding:8px;
 }
 
 .modal-info-label{
@@ -1420,11 +1335,11 @@ main{
 .modal-notes{
   margin-top:9px;
 
+  padding:9px;
+
   background:#f7f9fb;
 
   border-radius:7px;
-
-  padding:9px;
 
   color:#5f7182;
 
@@ -1432,15 +1347,13 @@ main{
 }
 
 .modal-notes-title{
+  color:var(--navy);
+
   font-family:"Teko";
 
   font-size:18px;
 
   line-height:1;
-
-  color:var(--navy);
-
-  margin-bottom:3px;
 }
 
 
@@ -1450,6 +1363,12 @@ main{
 
 .admin-login-header,
 .admin-dashboard-header{
+  padding:13px;
+
+  margin-bottom:9px;
+
+  color:white;
+
   background:
     linear-gradient(
       135deg,
@@ -1457,15 +1376,9 @@ main{
       var(--blue)
     );
 
-  color:white;
-
   border-radius:11px;
 
   border-bottom:3px solid var(--gold);
-
-  padding:13px;
-
-  margin-bottom:10px;
 }
 
 .admin-login-header h2,
@@ -1483,9 +1396,9 @@ main{
 .admin-dashboard-header p{
   margin:3px 0 0;
 
-  font-size:9px;
-
   color:#d9e5ef;
+
+  font-size:8px;
 }
 
 .admin-dashboard-header{
@@ -1497,19 +1410,18 @@ main{
 }
 
 .admin-section{
+  overflow:hidden;
+
   background:white;
 
   border:1px solid var(--border);
 
   border-radius:10px;
 
-  overflow:hidden;
-
   margin-bottom:9px;
 
   box-shadow:
-    0 3px 12px
-    rgba(0,31,63,.07);
+    0 3px 12px rgba(0,31,63,.07);
 }
 
 .admin-section-header{
@@ -1531,13 +1443,13 @@ main{
 
   height:29px;
 
-  border-radius:6px;
-
   display:flex;
 
   align-items:center;
 
   justify-content:center;
+
+  border-radius:6px;
 
   background:var(--navy);
 
@@ -1547,21 +1459,21 @@ main{
 .admin-section-title h3{
   margin:0;
 
+  color:var(--navy);
+
   font-family:"Teko";
 
   font-size:20px;
 
   line-height:1;
-
-  color:var(--navy);
 }
 
 .admin-section-title p{
   margin:2px 0 0;
 
-  font-size:8px;
-
   color:var(--muted);
+
+  font-size:8px;
 }
 
 .admin-section-body{
@@ -1569,15 +1481,15 @@ main{
 }
 
 .admin-subsection{
+  padding:9px;
+
+  margin-bottom:8px;
+
   background:#f8fafc;
 
   border:1px solid var(--border);
 
   border-radius:8px;
-
-  padding:9px;
-
-  margin-bottom:8px;
 }
 
 .admin-subsection:last-child{
@@ -1587,13 +1499,13 @@ main{
 .admin-subsection h4{
   margin:0;
 
+  color:var(--navy);
+
   font-family:"Teko";
 
   font-size:19px;
 
   line-height:1;
-
-  color:var(--navy);
 }
 
 .admin-description{
@@ -1623,10 +1535,6 @@ select,
 textarea{
   width:100%;
 
-  border:1px solid #ccd7e1;
-
-  border-radius:6px;
-
   padding:7px;
 
   margin:0 0 7px;
@@ -1634,6 +1542,10 @@ textarea{
   background:white;
 
   color:var(--text);
+
+  border:1px solid #ccd7e1;
+
+  border-radius:6px;
 
   font-size:11px;
 }
@@ -1656,45 +1568,43 @@ textarea{
 button.primary,
 button.secondary,
 button.danger{
+  padding:7px 10px;
+
   border:0;
 
   border-radius:6px;
 
-  padding:7px 10px;
-
   font-size:10px;
 
   font-weight:700;
-
-  cursor:pointer;
 }
 
 button.primary{
-  background:var(--navy);
-
   color:white;
+
+  background:var(--navy);
 }
 
 button.secondary{
-  background:#e8edf2;
-
   color:var(--navy);
+
+  background:#e8edf2;
 }
 
 button.danger{
-  background:#fde7e7;
-
   color:var(--red);
+
+  background:#fde7e7;
 }
 
 .message{
-  background:#edf2f7;
-
-  border-radius:6px;
-
   padding:7px;
 
   margin:6px 0;
+
+  background:#edf2f7;
+
+  border-radius:6px;
 
   color:#536779;
 
@@ -1702,6 +1612,8 @@ button.danger{
 }
 
 .compact-game{
+  overflow:hidden;
+
   background:white;
 
   border:1px solid var(--border);
@@ -1709,8 +1621,6 @@ button.danger{
   border-radius:7px;
 
   margin-bottom:5px;
-
-  overflow:hidden;
 }
 
 .compact-game-top{
@@ -1730,13 +1640,13 @@ button.danger{
 }
 
 .compact-game-title{
+  color:var(--navy);
+
   font-family:"Teko";
 
   font-size:17px;
 
   line-height:.9;
-
-  color:var(--navy);
 
   white-space:nowrap;
 
@@ -1746,21 +1656,21 @@ button.danger{
 }
 
 .compact-game-meta{
-  font-size:7px;
-
   color:var(--muted);
+
+  font-size:7px;
 
   margin-top:3px;
 }
 
 .compact-game-score{
+  color:var(--navy);
+
   font-size:8px;
 
   font-weight:700;
 
   margin-top:2px;
-
-  color:var(--navy);
 }
 
 .compact-game-actions{
@@ -1771,29 +1681,27 @@ button.danger{
 
 .edit-button,
 .delete-small{
+  padding:6px;
+
   border:0;
 
   border-radius:5px;
 
-  padding:6px;
-
   font-size:8px;
 
   font-weight:700;
-
-  cursor:pointer;
 }
 
 .edit-button{
-  background:#e8eff6;
-
   color:var(--navy);
+
+  background:#e8eff6;
 }
 
 .delete-small{
-  background:#fde7e7;
-
   color:var(--red);
+
+  background:#fde7e7;
 }
 
 .compact-edit{
@@ -1830,35 +1738,35 @@ button.danger{
 }
 
 .photo-upload{
+  padding:8px;
+
+  margin-bottom:8px;
+
   background:#f8fafc;
 
   border:1px dashed #b9c8d6;
 
   border-radius:8px;
-
-  padding:8px;
-
-  margin-bottom:8px;
 }
 
 .photo-upload h4{
   margin:0;
+
+  color:var(--navy);
 
   font-family:"Teko";
 
   font-size:18px;
 
   line-height:1;
-
-  color:var(--navy);
 }
 
 .photo-upload p{
   margin:3px 0 7px;
 
-  font-size:8px;
-
   color:var(--muted);
+
+  font-size:8px;
 }
 
 .upload-photo-button{
@@ -1875,13 +1783,13 @@ button.danger{
 }
 
 .admin-photo-card{
-  border:1px solid var(--border);
-
-  border-radius:6px;
+  overflow:hidden;
 
   padding:3px;
 
-  overflow:hidden;
+  border:1px solid var(--border);
+
+  border-radius:6px;
 }
 
 .admin-photo-card img{
@@ -1889,17 +1797,17 @@ button.danger{
 
   aspect-ratio:1;
 
-  object-fit:cover;
-
   display:block;
+
+  object-fit:cover;
 
   border-radius:4px;
 }
 
 .admin-photo-caption{
-  font-size:7px;
-
   color:var(--muted);
+
+  font-size:7px;
 
   margin:3px 1px;
 
@@ -1913,6 +1821,8 @@ button.danger{
 .admin-photo-delete{
   width:100%;
 
+  padding:4px;
+
   border:0;
 
   border-radius:4px;
@@ -1921,13 +1831,9 @@ button.danger{
 
   color:var(--red);
 
-  padding:4px;
-
   font-size:7px;
 
   font-weight:700;
-
-  cursor:pointer;
 }
 
 
@@ -1938,24 +1844,20 @@ button.danger{
 @media(max-width:520px){
 
   main{
-    padding:9px 8px 20px;
+    padding:8px 7px 18px;
   }
 
   .logo{
-    width:82px;
-    height:82px;
+    width:80px;
+    height:80px;
   }
 
   header h1{
-    font-size:35px;
+    font-size:34px;
   }
 
   nav button{
-    font-size:9px;
-
-    padding-left:1px;
-
-    padding-right:1px;
+    font-size:8px;
   }
 
   .form-row{
@@ -1970,37 +1872,23 @@ button.danger{
     grid-column:auto;
   }
 
-  .season-name{
-    font-size:28px;
-  }
-
-  .season-record-small{
-    font-size:10px;
-  }
-
   .history-modal{
     padding:0;
   }
 
   .history-window{
-    max-height:100vh;
-
     height:100vh;
+
+    max-height:100vh;
 
     border-radius:0;
   }
 
   .history-modal-body{
-    max-height:
-      calc(100vh - 105px);
+    max-height:calc(100vh - 105px);
   }
 
 }
-
-
-/* =========================================================
-   DESKTOP PHOTOS
-========================================================= */
 
 @media(min-width:650px){
 
@@ -2018,51 +1906,59 @@ button.danger{
 <body>
 
 
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <header>
 
-<img
-  class="logo"
-  src="LOGO_W__FB.png"
-  alt="Notre Dame Green Pond Crusaders">
+  <img
+    class="logo"
+    src="LOGO_W__FB.png"
+    alt="Notre Dame Green Pond Crusaders">
 
-<h1>
-NDGP FOOTBALL
-</h1>
+  <h1>
+    NDGP FOOTBALL
+  </h1>
 
-<p>
-Notre Dame Green Pond Crusaders
-</p>
+  <p>
+    Notre Dame Green Pond Crusaders
+  </p>
 
 </header>
 
 
+<!-- =====================================================
+     NAV
+===================================================== -->
+
 <nav>
 
-<button
-  class="active"
-  onclick="showPage('home',this)">
-🏠 Home
-</button>
+  <button
+    class="active"
+    onclick="showPage('home',this)">
+    🏠 Home
+  </button>
 
-<button
-  onclick="showPage('schedule',this)">
-🏈 Schedule
-</button>
+  <button
+    onclick="showPage('schedule',this)">
+    🏈 Schedule
+  </button>
 
-<button
-  onclick="showPage('history',this)">
-🏆 History
-</button>
+  <button
+    onclick="showPage('history',this)">
+    🏆 History
+  </button>
 
-<button
-  onclick="showPage('photos',this)">
-📸 Photos
-</button>
+  <button
+    onclick="showPage('photos',this)">
+    📸 Photos
+  </button>
 
-<button
-  onclick="showPage('admin',this)">
-🔐 Admin
-</button>
+  <button
+    onclick="showPage('admin',this)">
+    🔐 Admin
+  </button>
 
 </nav>
 
@@ -2078,122 +1974,109 @@ Notre Dame Green Pond Crusaders
   id="home"
   class="page active">
 
+  <div class="card hero-card">
 
-<div class="card hero-card">
+    <div class="hero-top">
 
-<div class="hero-top">
+      <span>
+        NEXT GAME
+      </span>
 
-<span>
-NEXT GAME
-</span>
+      <small>
+        2026 SEASON
+      </small>
 
-<small>
-2026 SEASON
-</small>
+    </div>
 
-</div>
+    <div class="hero-body">
 
+      <div class="next-label">
+        Notre Dame Green Pond
+      </div>
 
-<div class="hero-body">
+      <div
+        id="nextMatchup"
+        class="next-matchup">
 
-<div class="next-label">
-Notre Dame Green Pond
-</div>
+        <span class="next-team">
+          NDGP
+        </span>
 
+        <span class="next-vs">
+          VS
+        </span>
 
-<div
-  id="nextMatchup"
-  class="next-matchup">
+        <span class="next-team">
+          TBD
+        </span>
 
-<span class="next-team">
-NDGP
-</span>
+      </div>
 
-<span class="next-vs">
-VS
-</span>
+      <div
+        id="nextDetails"
+        class="game-info">
+        Loading...
+      </div>
 
-<span class="next-team">
-TBD
-</span>
+      <div
+        id="countdown"
+        class="countdown hidden">
 
-</div>
+        <span>🏈</span>
 
+        <span id="countdownText"></span>
 
-<div
-  id="nextDetails"
-  class="game-info">
+      </div>
 
-Loading...
+    </div>
 
-</div>
-
-
-<div
-  id="countdown"
-  class="countdown hidden">
-
-<span>🏈</span>
-
-<span id="countdownText"></span>
-
-</div>
-
-</div>
-
-</div>
+  </div>
 
 
-<div class="card record-card">
+  <div class="card record-card">
 
-<div>
+    <div>
 
-<div class="record-label">
-2026 Record
-</div>
+      <div class="record-label">
+        2026 Record
+      </div>
 
-<div
-  id="record"
-  class="record">
+      <div
+        id="record"
+        class="record">
+        0–0
+      </div>
 
-0–0
+    </div>
 
-</div>
+    <div
+      id="recordDetails"
+      class="record-sub">
+      Loading...
+    </div>
 
-</div>
-
-
-<div
-  id="recordDetails"
-  class="record-sub">
-
-Loading...
-
-</div>
-
-</div>
+  </div>
 
 
-<div class="card">
+  <div class="card">
 
-<div class="last-game">
+    <div class="last-game">
 
-<div>
+      <div>
 
-<div class="last-label">
-Last Game
-</div>
+        <div class="last-label">
+          Last Game
+        </div>
 
-<div id="lastGame">
-Loading...
-</div>
+        <div id="lastGame">
+          Loading...
+        </div>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-</div>
-
+  </div>
 
 </section>
 
@@ -2206,17 +2089,17 @@ Loading...
   id="schedule"
   class="page">
 
-<div class="card">
+  <div class="card">
 
-<h2 class="page-heading">
-🏈 2026 Schedule
-</h2>
+    <h2 class="page-heading">
+      🏈 2026 Schedule
+    </h2>
 
-<div id="scheduleList">
-Loading...
-</div>
+    <div id="scheduleList">
+      Loading...
+    </div>
 
-</div>
+  </div>
 
 </section>
 
@@ -2229,23 +2112,19 @@ Loading...
   id="history"
   class="page">
 
-<div class="card">
+  <div class="card">
 
-<h2 class="page-heading">
-🏆 Football History
-</h2>
+    <h2 class="page-heading">
+      🏆 Football History
+    </h2>
 
-<div class="history-intro">
+    <div class="history-intro">
+      2016–2025 • Notre Dame Green Pond Football
+    </div>
 
-2016–2025 • Notre Dame Green Pond Football
+    <div id="historyList"></div>
 
-</div>
-
-
-<div id="historyList">
-</div>
-
-</div>
+  </div>
 
 </section>
 
@@ -2258,17 +2137,17 @@ Loading...
   id="photos"
   class="page">
 
-<div class="card">
+  <div class="card">
 
-<h2 class="page-heading">
-📸 Football Photos
-</h2>
+    <h2 class="page-heading">
+      📸 Football Photos
+    </h2>
 
-<div id="photoList">
-Loading...
-</div>
+    <div id="photoList">
+      Loading...
+    </div>
 
-</div>
+  </div>
 
 </section>
 
@@ -2282,340 +2161,340 @@ Loading...
   class="page">
 
 
-<div id="loginArea">
+  <div id="loginArea">
 
-<div class="admin-login-header">
+    <div class="admin-login-header">
 
-<h2>
-🔐 ADMIN ACCESS
-</h2>
+      <h2>
+        🔐 ADMIN ACCESS
+      </h2>
 
-<p>
-NDGP Football Management
-</p>
+      <p>
+        NDGP Football Management
+      </p>
 
-</div>
+    </div>
 
 
-<div class="card">
+    <div class="card">
 
-<label>
-Admin Code
-</label>
+      <label>
+        4-Digit Admin Code
+      </label>
 
-<input
-  id="adminCode"
-  type="password"
-  inputmode="numeric"
-  maxlength="10"
-  minlength="5"
-  placeholder="Enter 5–10 digit code"
-  autocomplete="off">
+      <input
+        id="adminCode"
+        type="password"
+        inputmode="numeric"
+        maxlength="4"
+        minlength="4"
+        pattern="[0-9]{4}"
+        placeholder="Enter 4-digit code"
+        autocomplete="off">
 
+      <button
+        class="primary"
+        onclick="login()"
+        style="width:100%">
 
-<button
-  class="primary"
-  onclick="login()"
-  style="width:100%">
+        🔓 Enter Admin
 
-🔓 Enter Admin
+      </button>
 
-</button>
+      <div id="loginMessage"></div>
 
+    </div>
 
-<div id="loginMessage">
-</div>
+  </div>
 
-</div>
 
-</div>
+  <div
+    id="adminArea"
+    class="hidden">
 
 
-<div
-  id="adminArea"
-  class="hidden">
+    <div class="admin-dashboard-header">
 
+      <div>
 
-<div class="admin-dashboard-header">
+        <h2>
+          ADMIN DASHBOARD
+        </h2>
 
-<div>
+        <p>
+          Manage games & photos
+        </p>
 
-<h2>
-ADMIN DASHBOARD
-</h2>
+      </div>
 
-<p>
-Manage games & photos
-</p>
+      <button
+        class="secondary"
+        onclick="logout()">
 
-</div>
+        Log Out
 
+      </button>
 
-<button
-  class="secondary"
-  onclick="logout()">
+    </div>
 
-Log Out
 
-</button>
+    <!-- GAME MANAGEMENT -->
 
-</div>
+    <div class="admin-section">
 
+      <div class="admin-section-header">
 
-<div class="admin-section">
+        <div class="admin-section-icon">
+          🏈
+        </div>
 
-<div class="admin-section-header">
+        <div class="admin-section-title">
 
-<div class="admin-section-icon">
-🏈
-</div>
+          <h3>
+            GAME MANAGEMENT
+          </h3>
 
-<div class="admin-section-title">
+          <p>
+            Add and edit the schedule
+          </p>
 
-<h3>
-GAME MANAGEMENT
-</h3>
+        </div>
 
-<p>
-Add and edit the schedule
-</p>
+      </div>
 
-</div>
 
-</div>
+      <div class="admin-section-body">
 
 
-<div class="admin-section-body">
+        <div class="admin-subsection">
 
+          <h4>
+            ➕ ADD GAME
+          </h4>
 
-<div class="admin-subsection">
+          <div class="admin-description">
+            Add a new game to the schedule.
+          </div>
 
-<h4>
-➕ ADD GAME
-</h4>
 
-<div class="admin-description">
-Add a new game to the schedule.
-</div>
+          <div class="form-row">
 
+            <div>
 
-<div class="form-row">
+              <label>
+                Date
+              </label>
 
-<div>
+              <input
+                id="gameDate"
+                type="date">
 
-<label>
-Date
-</label>
+            </div>
 
-<input
-  id="gameDate"
-  type="date">
 
-</div>
+            <div>
 
+              <label>
+                Time
+              </label>
 
-<div>
+              <input
+                id="gameTime"
+                type="text"
+                placeholder="7:00 PM">
 
-<label>
-Time
-</label>
+            </div>
 
-<input
-  id="gameTime"
-  type="text"
-  placeholder="7:00 PM">
+          </div>
 
-</div>
 
-</div>
+          <label>
+            Opponent
+          </label>
 
+          <input
+            id="gameOpponent"
+            type="text"
+            placeholder="Opponent">
 
-<label>
-Opponent
-</label>
 
-<input
-  id="gameOpponent"
-  type="text"
-  placeholder="Opponent">
+          <div class="form-row">
 
+            <div>
 
-<div class="form-row">
+              <label>
+                Location
+              </label>
 
-<div>
+              <input
+                id="gameLocation"
+                type="text"
+                placeholder="Stadium">
 
-<label>
-Location
-</label>
+            </div>
 
-<input
-  id="gameLocation"
-  type="text"
-  placeholder="Stadium">
 
-</div>
+            <div>
 
+              <label>
+                Home / Away
+              </label>
 
-<div>
+              <select
+                id="gameHomeAway">
 
-<label>
-Home / Away
-</label>
+                <option value="Home">
+                  🏠 Home
+                </option>
 
-<select id="gameHomeAway">
+                <option value="Away">
+                  ➡️ Away
+                </option>
 
-<option value="Home">
-🏠 Home
-</option>
+              </select>
 
-<option value="Away">
-➡️ Away
-</option>
+            </div>
 
-</select>
+          </div>
 
-</div>
 
-</div>
+          <label>
+            Notes
+          </label>
 
+          <textarea
+            id="gameNotes"
+            placeholder="Optional notes"></textarea>
 
-<label>
-Notes
-</label>
 
-<textarea
-  id="gameNotes"
-  placeholder="Optional notes">
-</textarea>
+          <button
+            class="primary"
+            onclick="addGame()"
+            style="width:100%">
 
+            ➕ ADD GAME
 
-<button
-  class="primary"
-  onclick="addGame()"
-  style="width:100%">
+          </button>
 
-➕ ADD GAME
+        </div>
 
-</button>
 
-</div>
+        <div id="adminMessage"></div>
 
 
-<div id="adminMessage">
-</div>
+        <div class="admin-subsection">
 
+          <h4>
+            📋 MANAGE GAMES
+          </h4>
 
-<div class="admin-subsection">
+          <div class="admin-description">
+            Edit games, scores, locations and notes.
+          </div>
 
-<h4>
-📋 MANAGE GAMES
-</h4>
+          <div id="adminGames">
+            Loading...
+          </div>
 
-<div class="admin-description">
-Edit games, scores, locations and notes.
-</div>
+        </div>
 
-<div id="adminGames">
-Loading...
-</div>
 
-</div>
+      </div>
 
+    </div>
 
-</div>
 
-</div>
+    <!-- PHOTO MANAGEMENT -->
 
+    <div class="admin-section">
 
-<div class="admin-section">
+      <div class="admin-section-header">
 
-<div class="admin-section-header">
+        <div class="admin-section-icon">
+          📸
+        </div>
 
-<div class="admin-section-icon">
-📸
-</div>
+        <div class="admin-section-title">
 
-<div class="admin-section-title">
+          <h3>
+            PHOTO MANAGEMENT
+          </h3>
 
-<h3>
-PHOTO MANAGEMENT
-</h3>
+          <p>
+            Upload and manage photos
+          </p>
 
-<p>
-Upload and manage photos
-</p>
+        </div>
 
-</div>
+      </div>
 
-</div>
 
+      <div class="admin-section-body">
 
-<div class="admin-section-body">
 
+        <div class="photo-upload">
 
-<div class="photo-upload">
+          <h4>
+            📤 UPLOAD PHOTO
+          </h4>
 
-<h4>
-📤 UPLOAD PHOTO
-</h4>
+          <p>
+            Add a photo to the football gallery.
+          </p>
 
-<p>
-Add a photo to the football gallery.
-</p>
 
+          <label>
+            Photo
+          </label>
 
-<label>
-Photo
-</label>
+          <input
+            id="photoFile"
+            type="file"
+            accept="image/*">
 
-<input
-  id="photoFile"
-  type="file"
-  accept="image/*">
 
+          <label>
+            Caption
+          </label>
 
-<label>
-Caption
-</label>
+          <input
+            id="photoCaption"
+            type="text"
+            placeholder="Optional caption">
 
-<input
-  id="photoCaption"
-  type="text"
-  placeholder="Optional caption">
 
+          <button
+            class="primary upload-photo-button"
+            onclick="addPhoto()">
 
-<button
-  class="primary upload-photo-button"
-  onclick="addPhoto()">
+            📸 UPLOAD PHOTO
 
-📸 UPLOAD PHOTO
+          </button>
 
-</button>
+        </div>
 
-</div>
 
+        <div class="admin-subsection">
 
-<div class="admin-subsection">
+          <h4>
+            🖼️ UPLOADED PHOTOS
+          </h4>
 
-<h4>
-🖼️ UPLOADED PHOTOS
-</h4>
+          <div id="adminPhotos">
+            Loading...
+          </div>
 
-<div id="adminPhotos">
-Loading...
-</div>
+        </div>
 
-</div>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
 
-</div>
+  </div>
 
 </section>
-
 
 </main>
 
@@ -2629,61 +2508,48 @@ Loading...
   class="history-modal"
   onclick="closeHistoryModal(event)">
 
+  <div
+    class="history-window"
+    onclick="event.stopPropagation()">
 
-<div
-  class="history-window"
-  onclick="event.stopPropagation()">
+    <div class="history-modal-header">
 
+      <button
+        class="history-close"
+        onclick="closeHistoryModal()">
+        ×
+      </button>
 
-<div class="history-modal-header">
+      <div class="history-modal-kicker">
+        NDGP FOOTBALL HISTORY
+      </div>
 
-<button
-  class="history-close"
-  onclick="closeHistoryModal()">
+      <div
+        id="historyModalTitle"
+        class="history-modal-title">
+        2025 Football Season
+      </div>
 
-×
+      <div
+        id="historyModalRecord"
+        class="history-modal-record">
+        Final Record: 12–1
+      </div>
 
-</button>
+    </div>
 
+    <div
+      id="historyModalBody"
+      class="history-modal-body">
+    </div>
 
-<div class="history-modal-kicker">
-NDGP FOOTBALL HISTORY
-</div>
-
-
-<div
-  id="historyModalTitle"
-  class="history-modal-title">
-
-2025 Season
-
-</div>
-
-
-<div
-  id="historyModalRecord"
-  class="history-modal-record">
-
-Final Record: 12–1
-
-</div>
-
-</div>
-
-
-<div
-  id="historyModalBody"
-  class="history-modal-body">
-
-</div>
-
-</div>
+  </div>
 
 </div>
 
 
 <!-- =====================================================
-     GAME DETAILS MODAL
+     GAME DETAILS POPUP
 ===================================================== -->
 
 <div
@@ -2691,335 +2557,215 @@ Final Record: 12–1
   class="modal-overlay"
   onclick="closeGameModal(event)">
 
+  <div
+    class="modal"
+    onclick="event.stopPropagation()">
 
-<div
-  class="modal"
-  onclick="event.stopPropagation()">
+    <div class="modal-header">
 
+      <button
+        class="modal-close"
+        onclick="closeGameModal()">
+        ×
+      </button>
 
-<div class="modal-header">
+      <div class="modal-kicker">
+        NDGP FOOTBALL
+      </div>
 
-<button
-  class="modal-close"
-  onclick="closeGameModal()">
+      <div
+        id="modalMatchup"
+        class="modal-matchup">
+        NDGP VS OPPONENT
+      </div>
 
-×
+    </div>
 
-</button>
+    <div class="modal-body">
 
+      <div
+        id="modalStatus"
+        class="modal-status">
+      </div>
 
-<div class="modal-kicker">
-NDGP FOOTBALL
-</div>
+      <div
+        id="modalScore"
+        class="modal-score">
+      </div>
 
+      <div
+        id="modalInfo"
+        class="modal-info-grid">
+      </div>
 
-<div
-  id="modalMatchup"
-  class="modal-matchup">
+      <div id="modalNotes"></div>
 
-NDGP VS OPPONENT
+    </div>
 
-</div>
-
-</div>
-
-
-<div class="modal-body">
-
-
-<div
-  id="modalStatus"
-  class="modal-status">
-</div>
-
-
-<div
-  id="modalScore"
-  class="modal-score">
-</div>
-
-
-<div
-  id="modalInfo"
-  class="modal-info-grid">
-</div>
-
-
-<div id="modalNotes">
-</div>
-
-
-</div>
-
-</div>
+  </div>
 
 </div>
 
 
 <script>
 
-
 /* =========================================================
    SUPABASE
 ========================================================= */
 
 const SUPABASE_URL =
-"https://lwkisughuwqbpwlouejc.supabase.co";
+  "https://lwkisughuwqbpwlouejc.supabase.co";
 
 const SUPABASE_KEY =
-"sb_publishable_NC2FpWBds4vNOuGMr5_ikw_MOQXXHLI";
+  "sb_publishable_NC2FpWBds4vNOuGMr5_ikw_MOQXXHLI";
 
 const db =
-window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
+  window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
 
 
-let games=[];
+let games = [];
 
-let countdownTimer=null;
+let countdownTimer = null;
 
 
 /* =========================================================
-   HISTORICAL DATA
+   HISTORY DATA
+   ONLY 2024 + 2025 HAVE GAMES/ACHIEVEMENTS
 ========================================================= */
 
-const seasonHistory=[
-
-
-/* 2025 */
-
-{
-  year:2025,
-
-  record:"12–1",
-
-  conference:"8–0",
-
-  games:[
-    ["Garden Spot","21–3","W"],
-    ["Salisbury Township","63–0","W"],
-    ["North Schuylkill","21–20","W"],
-    ["Pen Argyl","59–7","W"],
-    ["Catasauqua","58–0","W"],
-    ["Palisades","34–22","W"],
-    ["Palmerton","56–0","W"],
-    ["Wilson Area","62–0","W"],
-    ["Salisbury Township","56–6","W"],
-    ["Tamaqua","59–16","W"],
-    ["Northwestern Lehigh","14–25","L"]
-  ],
-
-  achievements:[
-    ["🏆","Colonial-Schuylkill League White Division Champions"],
-    ["🥈","District 11 Class 3A Runner-Up"],
-    ["⭐","Tied School Record — Most Wins"]
-  ]
-
-},
-
-
-/* 2024 */
-
-{
-  year:2024,
-
-  record:"9–2",
-
-  conference:"8–0",
-
-  games:[],
-
-  achievements:[
-    ["🏆","Colonial-Schuylkill League White Division Champions"]
-  ]
-
-},
-
-
-/* 2023 */
-
-{
-  year:2023,
-
-  record:"8–4",
-
-  conference:"5–2",
-
-  games:[
-    ["Saucon Valley","48–20","W"],
-    ["Southern Lehigh","28–68","L"],
-    ["Tamaqua","60–13","W"],
-    ["Salisbury Township","51–7","W"],
-    ["Palmerton","26–41","L"],
-    ["North Schuylkill","21–28","L"],
-    ["Northern Lehigh","42–7","W"],
-    ["Jim Thorpe","63–14","W"],
-    ["Pine Grove","56–7","W"],
-    ["Wilson Area","49–0","W"],
-    ["Saucon Valley","56–20","W"],
-    ["Northwestern Lehigh","21–43","L"]
-  ],
-
-  achievements:[]
-
-},
-
-
-/* 2022 */
-
-{
-  year:2022,
-
-  record:"9–3",
-
-  conference:"6–1",
-
-  games:[
-    ["Saucon Valley","41–34","W"],
-    ["Southern Lehigh","28–29","L"],
-    ["Tamaqua","41–26","W"],
-    ["Salisbury Township","48–6","W"],
-    ["Palmerton","55–18","W"],
-    ["North Schuylkill","36–24","W"],
-    ["Northern Lehigh","33–40","L"],
-    ["Jim Thorpe","57–40","W"],
-    ["Pine Grove","48–14","W"],
-    ["Wilson Area","51–8","W"],
-    ["Saucon Valley","49–14","W"],
-    ["Northwestern Lehigh","34–35","L"]
-  ],
-
-  achievements:[
-    ["🏆","Colonial-Schuylkill League Red Division Tri-Champions"]
-  ]
-
-},
-
-
-/* 2021 */
-
-{
-  year:2021,
-
-  record:"7–3",
-
-  conference:"7–3",
-
-  games:[],
-
-  achievements:[
-    ["🏈","District 11 Class 3A Tournament Appearance"]
-  ]
-
-},
-
-
-/* 2020 */
-
-{
-  year:2020,
-
-  record:"7–1",
-
-  conference:"5–0",
-
-  games:[],
-
-  achievements:[
-    ["🥈","District 11 Class 3A Runner-Up"]
-  ]
-
-},
-
-
-/* 2019 */
-
-{
-  year:2019,
-
-  record:"7–4",
-
-  conference:"7–3",
-
-  games:[],
-
-  achievements:[]
-},
-
-
-/* 2018 */
-
-{
-  year:2018,
-
-  record:"10–2",
-
-  conference:"9–1",
-
-  games:[],
-
-  achievements:[
-    ["🏆","Colonial League Champions"],
-    ["🥈","District 11 Class 3A Runner-Up"]
-  ]
-
-},
-
-
-/* 2017 */
-
-{
-  year:2017,
-
-  record:"9–3",
-
-  conference:"8–2",
-
-  games:[
-    ["Palisades","17–22","L"],
-    ["Bangor","34–6","W"],
-    ["Southern Lehigh","27–28","L"],
-    ["Northern Lehigh","35–14","W"],
-    ["Salisbury Township","54–10","W"],
-    ["Palmerton","28–14","W"],
-    ["Catasauqua","60–28","W"],
-    ["Pen Argyl","55–0","W"],
-    ["Saucon Valley","52–41","W"],
-    ["Wilson Area","63–14","W"],
-    ["North Schuylkill","28–6","W"],
-    ["Palisades","8–42","L"]
-  ],
-
-  achievements:[]
-},
-
-
-/* 2016 */
-
-{
-  year:2016,
-
-  record:"12–3",
-
-  conference:"8–2",
-
-  games:[],
-
-  achievements:[]
-}
+const seasonHistory = [
+
+  {
+    year:2025,
+
+    record:"12–1",
+
+    games:[
+      ["Garden Spot","21–3","W"],
+      ["Salisbury Township","63–0","W"],
+      ["North Schuylkill","21–20","W"],
+      ["Saucon Valley","55–13","W"],
+      ["Catasauqua","58–0","W"],
+      ["Northern Lehigh","40–21","W"],
+      ["Pen Argyl","59–7","W"],
+      ["Palisades","34–22","W"],
+      ["Palmerton","56–0","W"],
+      ["Wilson Area","56–0","W"],
+      ["Salisbury Township","56–6","W"],
+      ["Tamaqua","59–16","W"],
+      ["Northwestern Lehigh","14–35","L"]
+    ],
+
+    achievements:[
+      "Colonial-Schuylkill League White Division Champions",
+      "District 11 Class 3A Runner-Up",
+      "Tied School Record — Most Wins",
+      "12–0 Start"
+    ]
+  },
+
+
+  {
+    year:2024,
+
+    record:"9–2",
+
+    games:[
+      ["Garden Spot","71–64","W"],
+      ["Salisbury Township","56–0","W"],
+      ["North Schuylkill","29–31","L"],
+      ["Saucon Valley","24–7","W"],
+      ["Catasauqua","63–7","W"],
+      ["Northern Lehigh","49–19","W"],
+      ["Pen Argyl","42–15","W"],
+      ["Palisades","56–7","W"],
+      ["Palmerton","52–0","W"],
+      ["Wilson Area","52–11","W"],
+      ["North Schuylkill","23–26","L"]
+    ],
+
+    achievements:[
+      "Colonial-Schuylkill League White Division Champions"
+    ]
+  },
+
+
+  {
+    year:2023,
+    record:"8–4",
+    games:[],
+    achievements:[]
+  },
+
+
+  {
+    year:2022,
+    record:"9–3",
+    games:[],
+    achievements:[]
+  },
+
+
+  {
+    year:2021,
+    record:"7–3",
+    games:[],
+    achievements:[]
+  },
+
+
+  {
+    year:2020,
+    record:"7–1",
+    games:[],
+    achievements:[]
+  },
+
+
+  {
+    year:2019,
+    record:"7–4",
+    games:[],
+    achievements:[]
+  },
+
+
+  {
+    year:2018,
+    record:"10–2",
+    games:[],
+    achievements:[]
+  },
+
+
+  {
+    year:2017,
+    record:"9–3",
+    games:[],
+    achievements:[]
+  },
+
+
+  {
+    year:2016,
+    record:"12–3",
+    games:[],
+    achievements:[]
+  }
 
 ];
 
 
 /* =========================================================
-   HISTORY RENDER
+   HISTORY BUTTONS
 ========================================================= */
 
 function renderHistory(){
 
-  const container=
+  const container =
     document.getElementById(
       "historyList"
     );
@@ -3027,56 +2773,54 @@ function renderHistory(){
   if(!container)
     return;
 
-
-  container.innerHTML=
+  container.innerHTML =
     seasonHistory.map(
-      season=>`
+      season => `
 
-      <div class="season-history">
+        <div class="season-history">
 
-        <button
-          class="season-button"
-          onclick="openHistorySeason(${season.year})">
+          <button
+            class="season-button"
+            onclick="
+              openHistorySeason(
+                ${season.year}
+              )
+            ">
 
+            <div>
 
-          <div class="season-button-left">
+              <div class="season-name">
+                ${season.year} Season
+              </div>
 
-            <div class="season-name">
-              ${season.year} Season
+              <div class="season-record-small">
+                Final Record: ${season.record}
+              </div>
+
             </div>
 
-
-            <div class="season-record-small">
-              Final Record: ${season.record}
+            <div class="season-arrow">
+              ›
             </div>
 
-          </div>
+          </button>
 
-
-          <div class="season-arrow">
-            ›
-          </div>
-
-
-        </button>
-
-      </div>
+        </div>
 
       `
     ).join("");
-
 }
 
 
 /* =========================================================
-   OPEN HISTORY POPUP
+   HISTORY POPUP
 ========================================================= */
 
 function openHistorySeason(year){
 
-  const season=
+  const season =
     seasonHistory.find(
-      s=>s.year===year
+      s => s.year === year
     );
 
   if(!season)
@@ -3085,255 +2829,194 @@ function openHistorySeason(year){
 
   document.getElementById(
     "historyModalTitle"
-  ).textContent=
-    `${season.year} Season`;
+  ).textContent =
+    `${season.year} Football Season`;
 
 
   document.getElementById(
     "historyModalRecord"
-  ).textContent=
+  ).textContent =
     `Final Record: ${season.record}`;
 
 
-  const body=
+  const body =
     document.getElementById(
       "historyModalBody"
     );
 
 
-  const wins=
-    season.record
-      .split("–")[0];
-
-  const losses=
-    season.record
-      .split("–")[1];
+  let html = "";
 
 
-  body.innerHTML=`
+  /* ONLY SHOW GAMES FOR 2024/2025 */
 
+  if(
+    season.year === 2024 ||
+    season.year === 2025
+  ){
 
-    <div class="history-stat-row">
+    html += `
 
+      <div class="history-modal-section">
 
-      <div class="history-stat">
-
-        <div class="history-stat-label">
-          Final Record
+        <div class="history-modal-section-title">
+          Games
         </div>
 
-        <div class="history-stat-value">
-          ${season.record}
-        </div>
+        ${
+          season.games.map(
+            game => `
 
-      </div>
+              <div class="history-game">
 
+                <div class="history-game-left">
 
-      <div class="history-stat">
+                  <div class="history-game-opponent">
 
-        <div class="history-stat-label">
-          Wins
-        </div>
+                    NDGP VS
+                    ${escapeHtml(
+                      game[0]
+                    )}
 
-        <div class="history-stat-value">
-          ${wins}
-        </div>
+                  </div>
 
-      </div>
+                  <div class="history-game-meta">
 
+                    ${
+                      game[2] === "W"
+                      ? "VICTORY"
+                      : "LOSS"
+                    }
 
-      <div class="history-stat">
+                  </div>
 
-        <div class="history-stat-label">
-          Losses
-        </div>
+                </div>
 
-        <div class="history-stat-value">
-          ${losses}
-        </div>
+                <div
+                  class="
+                    history-game-score
+                    ${
+                      game[2] === "W"
+                      ? "win"
+                      : "loss"
+                    }
+                  ">
 
-      </div>
+                  ${escapeHtml(
+                    game[1]
+                  )}
 
-
-    </div>
-
-
-    ${
-      season.conference
-      ?
-      `
-
-      <div class="history-stat-row">
-
-        <div class="history-stat">
-
-          <div class="history-stat-label">
-            Conference Record
-          </div>
-
-          <div class="history-stat-value">
-            ${season.conference}
-          </div>
-
-        </div>
-
-        <div></div>
-        <div></div>
-
-      </div>
-
-      `
-      :""
-    }
-
-
-    <div class="history-modal-section">
-
-      <div class="history-modal-section-title">
-        Games
-      </div>
-
-
-      ${
-        season.games &&
-        season.games.length
-
-        ?
-
-        season.games.map(
-          game=>`
-
-          <div class="history-game">
-
-
-            <div class="history-game-left">
-
-              <div class="history-game-opponent">
-                ${escapeHtml(game[0])}
-              </div>
-
-
-              <div class="history-game-meta">
-
-                ${
-                  game[2]==="W"
-                  ?
-                  "Victory"
-                  :
-                  "Loss"
-                }
+                </div>
 
               </div>
 
-            </div>
+            `
+          ).join("")
+        }
 
-
-            <div
-              class="
-                history-game-score
-                ${game[2]==="W"
-                  ?"win"
-                  :"loss"}
-              ">
-
-              ${game[1]}
-
-            </div>
-
-
-          </div>
-
-          `
-        ).join("")
-
-
-        :
-
-        `
-
-        <div class="history-empty">
-
-          Historical game scores for this season
-          are being verified before publication.
-
-        </div>
-
-        `
-
-      }
-
-
-    </div>
-
-
-    <div class="history-modal-section">
-
-      <div class="history-modal-section-title">
-        Achievements
       </div>
 
 
-      ${
-        season.achievements &&
-        season.achievements.length
+      <div class="history-modal-section">
 
-        ?
+        <div class="history-modal-section-title">
+          Achievements
+        </div>
 
-        season.achievements.map(
-          achievement=>`
+        ${
+          season.achievements.length
+          ?
 
-          <div class="history-achievement">
+          season.achievements.map(
+            achievement => `
 
-            <div class="history-achievement-icon">
-              ${achievement[0]}
+              <div class="history-achievement">
+
+                <div class="history-achievement-icon">
+                  🏆
+                </div>
+
+                <div class="history-achievement-text">
+
+                  ${escapeHtml(
+                    achievement
+                  )}
+
+                </div>
+
+              </div>
+
+            `
+          ).join("")
+
+          :
+
+          `
+            <div class="history-empty">
+              No achievements added.
             </div>
+          `
+        }
 
-            <div class="history-achievement-text">
-              ${escapeHtml(
-                achievement[1]
-              )}
-            </div>
+      </div>
+
+    `;
+
+  }
+
+  else{
+
+    html = `
+
+      <div class="history-modal-section">
+
+        <div class="history-modal-section-title">
+          Season Record
+        </div>
+
+        <div class="history-achievement">
+
+          <div class="history-achievement-icon">
+            🏈
+          </div>
+
+          <div class="history-achievement-text">
+
+            Final Record:
+            ${escapeHtml(
+              season.record
+            )}
 
           </div>
 
-          `
-        ).join("")
-
-
-        :
-
-        `
-
-        <div class="history-empty">
-
-          No verified achievement information
-          has been added for this season yet.
-
         </div>
 
-        `
+      </div>
 
-      }
+    `;
 
-    </div>
-
-
-  `;
+  }
 
 
-  document.getElementById(
-    "historyModal"
-  ).classList.add("show");
+  body.innerHTML = html;
 
 
-  document.body.style.overflow=
+  document
+    .getElementById(
+      "historyModal"
+    )
+    .classList.add(
+      "show"
+    );
+
+
+  document.body.style.overflow =
     "hidden";
-
 }
 
 
 /* =========================================================
-   CLOSE HISTORY POPUP
+   CLOSE HISTORY
 ========================================================= */
 
 function closeHistoryModal(event){
@@ -3341,22 +3024,31 @@ function closeHistoryModal(event){
   if(
     event &&
     event.target &&
-    event.target.id!=="historyModal"
-  )
+    event.target.id !==
+      "historyModal"
+  ){
+
     return;
 
-
-  document.getElementById(
-    "historyModal"
-  ).classList.remove("show");
+  }
 
 
-  document.body.style.overflow="";
+  document
+    .getElementById(
+      "historyModal"
+    )
+    .classList.remove(
+      "show"
+    );
+
+
+  document.body.style.overflow =
+    "";
 }
 
 
 /* =========================================================
-   NAVIGATION
+   PAGE NAVIGATION
 ========================================================= */
 
 function showPage(id,button){
@@ -3364,7 +3056,7 @@ function showPage(id,button){
   document
     .querySelectorAll(".page")
     .forEach(
-      page=>
+      page =>
         page.classList.remove(
           "active"
         )
@@ -3379,7 +3071,7 @@ function showPage(id,button){
   document
     .querySelectorAll("nav button")
     .forEach(
-      b=>
+      b =>
         b.classList.remove(
           "active"
         )
@@ -3390,20 +3082,20 @@ function showPage(id,button){
     button.classList.add("active");
 
 
-  if(id==="schedule")
+  if(id === "schedule")
     loadGames();
 
 
-  if(id==="history")
+  if(id === "history")
     renderHistory();
 
 
-  if(id==="photos")
+  if(id === "photos")
     loadPhotos();
 
 
   if(
-    id==="admin" &&
+    id === "admin" &&
     sessionStorage.getItem(
       "adminCode"
     )
@@ -3412,12 +3104,11 @@ function showPage(id,button){
     showAdmin();
 
   }
-
 }
 
 
 /* =========================================================
-   LOAD GAMES
+   GAME LOADING
 ========================================================= */
 
 async function loadGames(){
@@ -3425,7 +3116,7 @@ async function loadGames(){
   const {
     data,
     error
-  }=
+  } =
     await db
       .from("games")
       .select("*")
@@ -3441,69 +3132,48 @@ async function loadGames(){
 
     console.error(error);
 
-    const list=
-      document.getElementById(
-        "scheduleList"
-      );
+    document.getElementById(
+      "scheduleList"
+    ).innerHTML = `
 
-    if(list){
+      <div class="message">
+        Could not load games.
+      </div>
 
-      list.innerHTML=
-        `
-        <div class="message">
-          Could not load games.
-        </div>
-        `;
-
-    }
+    `;
 
     return;
   }
 
 
-  games=data||[];
+  games = data || [];
 
 
   updateHome();
 
   updateSchedule();
 
-
-  if(
-    sessionStorage.getItem(
-      "adminCode"
-    )
-  ){
-
-    updateAdminGames();
-
-  }
-
+  updateAdminGames();
 }
 
 
 /* =========================================================
-   SCORE FUNCTIONS
+   SCORE CHECKING
 ========================================================= */
 
 function hasScore(game){
 
   return (
 
-    game.our_score!==null &&
+    game.our_score !== null &&
+    game.our_score !== undefined &&
+    game.our_score !== "" &&
 
-    game.our_score!==undefined &&
-
-    game.our_score!=="" &&
-
-    game.opponent_score!==null &&
-
-    game.opponent_score!==undefined &&
-
-    game.opponent_score!==""
+    game.opponent_score !== null &&
+    game.opponent_score !== undefined &&
+    game.opponent_score !== ""
 
   );
-
 }
 
 
@@ -3513,55 +3183,67 @@ function parseKickoff(game){
     return null;
 
 
-  let hours=19;
+  let hours = 19;
 
-  let minutes=0;
+  let minutes = 0;
 
 
   if(game.time){
 
-    const m=
-      String(game.time).match(
+    const match =
+      String(
+        game.time
+      ).match(
         /(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?/i
       );
 
 
-    if(m){
+    if(match){
 
-      hours=
-        Number(m[1]);
+      hours =
+        Number(
+          match[1]
+        );
 
-      minutes=
-        Number(m[2]||0);
+      minutes =
+        Number(
+          match[2] || 0
+        );
 
 
-      const period=
+      const period =
         String(
-          m[3]||""
+          match[3] || ""
         ).toUpperCase();
 
 
       if(
-        period==="PM" &&
-        hours<12
-      )
-        hours+=12;
+        period === "PM" &&
+        hours < 12
+      ){
+
+        hours += 12;
+
+      }
 
 
       if(
-        period==="AM" &&
-        hours===12
-      )
-        hours=0;
+        period === "AM" &&
+        hours === 12
+      ){
+
+        hours = 0;
+
+      }
 
     }
 
   }
 
 
-  const d=
+  const d =
     new Date(
-      game.date+
+      game.date +
       "T00:00:00"
     );
 
@@ -3575,7 +3257,6 @@ function parseKickoff(game){
 
 
   return d;
-
 }
 
 
@@ -3585,7 +3266,7 @@ function isGameLive(game){
     return false;
 
 
-  const kickoff=
+  const kickoff =
     parseKickoff(game);
 
 
@@ -3593,25 +3274,30 @@ function isGameLive(game){
     return false;
 
 
-  return new Date()>=kickoff;
-
+  return new Date() >= kickoff;
 }
 
+
+/* =========================================================
+   GAME STATUS
+========================================================= */
 
 function getGameStatus(game){
 
   if(hasScore(game)){
 
-    const our=
-      Number(game.our_score);
+    const our =
+      Number(
+        game.our_score
+      );
 
-    const opp=
+    const opponent =
       Number(
         game.opponent_score
       );
 
 
-    if(our>opp){
+    if(our > opponent){
 
       return {
         text:"FINAL • WIN",
@@ -3621,7 +3307,7 @@ function getGameStatus(game){
     }
 
 
-    if(our<opp){
+    if(our < opponent){
 
       return {
         text:"FINAL • LOSS",
@@ -3650,7 +3336,6 @@ function getGameStatus(game){
 
 
   return null;
-
 }
 
 
@@ -3660,29 +3345,27 @@ function getGameStatus(game){
 
 function updateHome(){
 
-  const today=
+  const today =
     new Date()
       .toISOString()
       .split("T")[0];
 
 
-  const upcoming=
+  const upcoming =
     games
-
       .filter(
-        g=>
-          g.date>=today &&
+        g =>
+          g.date >= today &&
           !hasScore(g)
       )
-
       .sort(
-        (a,b)=>
-          new Date(a.date)-
+        (a,b) =>
+          new Date(a.date) -
           new Date(b.date)
       );
 
 
-  const next=
+  const next =
     upcoming[0];
 
 
@@ -3690,7 +3373,7 @@ function updateHome(){
 
     document.getElementById(
       "nextMatchup"
-    ).innerHTML=`
+    ).innerHTML = `
 
       <span class="next-team">
         NDGP
@@ -3706,12 +3389,10 @@ function updateHome(){
 
     `;
 
-
     document.getElementById(
       "nextDetails"
-    ).textContent=
+    ).textContent =
       "No upcoming games";
-
 
     document.getElementById(
       "countdown"
@@ -3719,11 +3400,13 @@ function updateHome(){
       "hidden"
     );
 
-  }else{
+  }
+
+  else{
 
     document.getElementById(
       "nextMatchup"
-    ).innerHTML=`
+    ).innerHTML = `
 
       <span class="next-team">
         NDGP
@@ -3744,21 +3427,23 @@ function updateHome(){
 
     document.getElementById(
       "nextDetails"
-    ).innerHTML=`
+    ).innerHTML = `
 
-      📅 ${formatDate(next.date)}
+      📅 ${formatDate(
+        next.date
+      )}
 
       <br>
 
       ⏰ ${escapeHtml(
-        next.time||
+        next.time ||
         "Time TBD"
       )}
 
       <br>
 
       📍 ${escapeHtml(
-        next.location||
+        next.location ||
         "Location TBD"
       )}
 
@@ -3771,7 +3456,8 @@ function updateHome(){
         )}
 
         ${escapeHtml(
-          next.home_away||""
+          next.home_away ||
+          ""
         )}
 
       </span>
@@ -3781,21 +3467,24 @@ function updateHome(){
 
     if(isGameLive(next)){
 
-      const box=
-        document.getElementById(
+      document
+        .getElementById(
           "countdown"
+        )
+        .innerHTML =
+        "<span>🔴 LIVE</span>";
+
+      document
+        .getElementById(
+          "countdown"
+        )
+        .classList.remove(
+          "hidden"
         );
 
+    }
 
-      box.innerHTML=
-        "<span>LIVE</span>";
-
-
-      box.classList.remove(
-        "hidden"
-      );
-
-    }else{
+    else{
 
       startCountdown(next);
 
@@ -3804,32 +3493,41 @@ function updateHome(){
   }
 
 
-  let wins=0;
+  let wins = 0;
 
-  let losses=0;
+  let losses = 0;
 
-  let ties=0;
+  let ties = 0;
 
 
   games.forEach(
-    g=>{
+    g => {
 
       if(hasScore(g)){
 
         if(
-          Number(g.our_score)>
+          Number(g.our_score) >
           Number(g.opponent_score)
-        )
+        ){
+
           wins++;
 
+        }
+
         else if(
-          Number(g.our_score)<
+          Number(g.our_score) <
           Number(g.opponent_score)
-        )
+        ){
+
           losses++;
 
-        else
+        }
+
+        else{
+
           ties++;
+
+        }
 
       }
 
@@ -3839,43 +3537,29 @@ function updateHome(){
 
   document.getElementById(
     "record"
-  ).textContent=
-    `${wins}–${losses}${
-      ties
-      ?
-      "–"+ties
-      :
-      ""
-    }`;
+  ).textContent =
+    `${wins}–${losses}`;
 
 
   document.getElementById(
     "recordDetails"
-  ).textContent=
-    `${wins} W • ${losses} L${
-      ties
-      ?
-      " • "+ties+" T"
-      :
-      ""
-    }`;
+  ).textContent =
+    `${wins} W • ${losses} L`;
 
 
-  const completed=
+  const completed =
     games
-
       .filter(
-        g=>hasScore(g)
+        g => hasScore(g)
       )
-
       .sort(
-        (a,b)=>
-          new Date(b.date)-
+        (a,b) =>
+          new Date(b.date) -
           new Date(a.date)
       );
 
 
-  const last=
+  const last =
     completed[0];
 
 
@@ -3883,93 +3567,88 @@ function updateHome(){
 
     document.getElementById(
       "lastGame"
-    ).innerHTML=
+    ).textContent =
       "No games played yet.";
 
-  }else{
-
-    let result="TIE";
-
-    let cls="tie";
-
-
-    if(
-      Number(last.our_score)>
-      Number(
-        last.opponent_score
-      )
-    ){
-
-      result="WIN";
-
-      cls="win";
-
-    }else if(
-      Number(last.our_score)<
-      Number(
-        last.opponent_score
-      )
-    ){
-
-      result="LOSS";
-
-      cls="loss";
-
-    }
-
-
-    document.getElementById(
-      "lastGame"
-    ).innerHTML=`
-
-      <div>
-
-        <div class="last-matchup">
-
-          NDGP
-
-          <span class="next-vs">
-            VS
-          </span>
-
-          ${escapeHtml(
-            last.opponent
-          )}
-
-        </div>
-
-
-        <div class="last-date">
-
-          ${formatDate(
-            last.date
-          )}
-
-          •
-
-          <span class="badge ${cls}">
-            ${result}
-          </span>
-
-        </div>
-
-      </div>
-
-
-      <div class="last-score">
-
-        ${last.our_score}
-
-        –
-
-        ${last.opponent_score}
-
-      </div>
-
-    `;
+    return;
 
   }
 
+
+  let result = "TIE";
+
+  let cls = "tie";
+
+
+  if(
+    Number(last.our_score) >
+    Number(last.opponent_score)
+  ){
+
+    result = "WIN";
+
+    cls = "win";
+
+  }
+
+  else if(
+    Number(last.our_score) <
+    Number(last.opponent_score)
+  ){
+
+    result = "LOSS";
+
+    cls = "loss";
+
+  }
+
+
+  document.getElementById(
+    "lastGame"
+  ).innerHTML = `
+
+    <div>
+
+      <div class="last-matchup">
+
+        NDGP
+
+        <span class="next-vs">
+          VS
+        </span>
+
+        ${escapeHtml(
+          last.opponent
+        )}
+
+      </div>
+
+      <div class="last-date">
+
+        ${formatDate(
+          last.date
+        )}
+
+        •
+
+        <span class="badge ${cls}">
+          ${result}
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="last-score">
+
+      ${last.our_score}
+      –
+      ${last.opponent_score}
+
+    </div>
+
+  `;
 }
 
 
@@ -3979,7 +3658,7 @@ function updateHome(){
 
 function startCountdown(game){
 
-  const box=
+  const box =
     document.getElementById(
       "countdown"
     );
@@ -3991,7 +3670,7 @@ function startCountdown(game){
     );
 
 
-  const kickoff=
+  const kickoff =
     parseKickoff(game);
 
 
@@ -4010,19 +3689,24 @@ function startCountdown(game){
 
     if(isGameLive(game)){
 
-      updateHome();
+      box.innerHTML =
+        "<span>🔴 LIVE</span>";
+
+      box.classList.remove(
+        "hidden"
+      );
 
       return;
 
     }
 
 
-    const diff=
-      kickoff-
+    const diff =
+      kickoff -
       new Date();
 
 
-    if(diff<=0){
+    if(diff <= 0){
 
       updateHome();
 
@@ -4031,25 +3715,25 @@ function startCountdown(game){
     }
 
 
-    const days=
+    const days =
       Math.floor(
-        diff/86400000
+        diff / 86400000
       );
 
 
-    const hours=
+    const hours =
       Math.floor(
-        diff/3600000
-      )%24;
+        diff / 3600000
+      ) % 24;
 
 
-    const mins=
+    const mins =
       Math.floor(
-        diff/60000
-      )%60;
+        diff / 60000
+      ) % 60;
 
 
-    box.innerHTML=`
+    box.innerHTML = `
 
       <span>
         🏈
@@ -4075,12 +3759,11 @@ function startCountdown(game){
   update();
 
 
-  countdownTimer=
+  countdownTimer =
     setInterval(
       update,
       30000
     );
-
 }
 
 
@@ -4091,7 +3774,7 @@ function startCountdown(game){
 function getHomeAwayIcon(value){
 
   if(
-    String(value||"")
+    String(value || "")
       .toLowerCase()
       .includes("away")
   ){
@@ -4100,9 +3783,7 @@ function getHomeAwayIcon(value){
 
   }
 
-
   return "🏠";
-
 }
 
 
@@ -4112,7 +3793,7 @@ function getHomeAwayIcon(value){
 
 function updateSchedule(){
 
-  const container=
+  const container =
     document.getElementById(
       "scheduleList"
     );
@@ -4120,171 +3801,177 @@ function updateSchedule(){
 
   if(!games.length){
 
-    container.innerHTML=
-      `
+    container.innerHTML = `
+
       <div class="message">
         No games have been added yet.
       </div>
-      `;
+
+    `;
 
     return;
 
   }
 
 
-  container.innerHTML=
+  container.innerHTML =
     games.map(
-      game=>{
+      game => {
 
-        const status=
-          getGameStatus(
-            game
-          );
+        const status =
+          getGameStatus(game);
 
-
-        const live=
-          isGameLive(
-            game
-          );
+        const live =
+          isGameLive(game);
 
 
         return `
 
-        <div
-          class="
-            game
-            ${live
-              ?"live-game"
-              :""}
-          "
-          onclick="
-            openGameDetails(
-              ${game.id}
-            )
-          ">
+          <div
+            class="
+              game
+              ${live ? "live-game" : ""}
+            "
+            onclick="
+              openGameDetails(
+                ${game.id}
+              )
+            ">
 
 
-          <div class="game-top">
+            <div class="game-top">
 
-            <div>
+              <div>
 
-              <div class="game-date">
-                ${formatDate(
-                  game.date
-                )}
+                <div class="game-date">
+                  ${formatDate(
+                    game.date
+                  )}
+                </div>
+
+                <div class="game-opponent">
+                  ${escapeHtml(
+                    game.opponent
+                  )}
+                </div>
+
               </div>
 
 
-              <div class="game-opponent">
+              ${
+                status
+                ?
+
+                `
+
+                <span
+                  class="
+                    badge
+                    ${status.className}
+                  ">
+
+                  ${status.text}
+
+                </span>
+
+                `
+
+                :
+
+                ""
+              }
+
+            </div>
+
+
+            <div class="game-matchup">
+
+              <span class="game-team">
+                NDGP
+              </span>
+
+              <span class="game-vs">
+                VS
+              </span>
+
+              <span class="game-team">
                 ${escapeHtml(
                   game.opponent
                 )}
-              </div>
+              </span>
+
+            </div>
+
+
+            <div class="game-details">
+
+              <span>
+                ⏰ ${escapeHtml(
+                  game.time ||
+                  "Time TBD"
+                )}
+              </span>
+
+              <span>
+                📍 ${escapeHtml(
+                  game.location ||
+                  "Location TBD"
+                )}
+              </span>
+
+              <span>
+
+                ${getHomeAwayIcon(
+                  game.home_away
+                )}
+
+                ${escapeHtml(
+                  game.home_away ||
+                  ""
+                )}
+
+              </span>
 
             </div>
 
 
             ${
-              status
+              hasScore(game)
+
               ?
-              `
-              <span
-                class="
-                  badge
-                  ${status.className}
-                ">
 
-                ${status.text}
-
-              </span>
               `
+
+              <div class="game-score">
+
+                FINAL:
+                ${game.our_score}
+                –
+                ${game.opponent_score}
+
+              </div>
+
+              `
+
               :
+
               ""
             }
 
-          </div>
 
+            <div class="game-details-link">
 
-          <div class="game-matchup">
-
-            <span class="game-team">
-              NDGP
-            </span>
-
-            <span class="game-vs">
-              VS
-            </span>
-
-            <span class="game-team">
-              ${escapeHtml(
-                game.opponent
-              )}
-            </span>
-
-          </div>
-
-
-          <div class="game-details">
-
-            <span>
-              ⏰ ${escapeHtml(
-                game.time||
-                "Time TBD"
-              )}
-            </span>
-
-            <span>
-              📍 ${escapeHtml(
-                game.location||
-                "Location TBD"
-              )}
-            </span>
-
-            <span>
-              ${getHomeAwayIcon(
-                game.home_away
-              )}
-              ${escapeHtml(
-                game.home_away||
-                ""
-              )}
-            </span>
-
-          </div>
-
-
-          ${
-            hasScore(game)
-            ?
-            `
-            <div class="game-score">
-
-              FINAL:
-              ${game.our_score}
-              –
-              ${game.opponent_score}
+              TAP FOR GAME DETAILS →
 
             </div>
-            `
-            :
-            ""
-          }
 
-
-          <div class="game-details-link">
-
-            TAP FOR GAME DETAILS →
 
           </div>
-
-
-        </div>
 
         `;
 
       }
     ).join("");
-
 }
 
 
@@ -4294,10 +3981,10 @@ function updateSchedule(){
 
 function openGameDetails(id){
 
-  const game=
+  const game =
     games.find(
-      g=>
-        Number(g.id)===
+      g =>
+        Number(g.id) ===
         Number(id)
     );
 
@@ -4308,17 +3995,17 @@ function openGameDetails(id){
 
   document.getElementById(
     "modalMatchup"
-  ).textContent=
+  ).textContent =
     `NDGP VS ${game.opponent}`;
 
 
-  const status=
+  const status =
     document.getElementById(
       "modalStatus"
     );
 
 
-  const score=
+  const score =
     document.getElementById(
       "modalScore"
     );
@@ -4326,7 +4013,7 @@ function openGameDetails(id){
 
   if(isGameLive(game)){
 
-    status.innerHTML=`
+    status.innerHTML = `
 
       <span class="modal-live">
         🔴 LIVE
@@ -4334,52 +4021,52 @@ function openGameDetails(id){
 
     `;
 
-    score.textContent="";
+    score.textContent = "";
 
   }
 
-
   else if(hasScore(game)){
 
-    const our=
-      Number(game.our_score);
+    const our =
+      Number(
+        game.our_score
+      );
 
-    const opp=
+    const opp =
       Number(
         game.opponent_score
       );
 
 
-    let text=
+    let text =
       "FINAL • TIE";
 
-    let cls=
+    let cls =
       "tie";
 
 
-    if(our>opp){
+    if(our > opp){
 
-      text=
+      text =
         "FINAL • WIN";
 
-      cls=
+      cls =
         "win";
 
     }
 
+    else if(our < opp){
 
-    else if(our<opp){
-
-      text=
+      text =
         "FINAL • LOSS";
 
-      cls=
+      cls =
         "loss";
 
     }
 
 
-    status.innerHTML=`
+    status.innerHTML = `
 
       <span class="badge ${cls}">
         ${text}
@@ -4388,26 +4075,25 @@ function openGameDetails(id){
     `;
 
 
-    score.textContent=
+    score.textContent =
       `${game.our_score}
        –
        ${game.opponent_score}`;
 
   }
 
-
   else{
 
-    status.innerHTML="";
+    status.innerHTML = "";
 
-    score.textContent="";
+    score.textContent = "";
 
   }
 
 
   document.getElementById(
     "modalInfo"
-  ).innerHTML=`
+  ).innerHTML = `
 
     <div class="modal-info">
 
@@ -4432,7 +4118,7 @@ function openGameDetails(id){
 
       <div class="modal-info-value">
         ⏰ ${escapeHtml(
-          game.time||
+          game.time ||
           "Time TBD"
         )}
       </div>
@@ -4448,7 +4134,7 @@ function openGameDetails(id){
 
       <div class="modal-info-value">
         📍 ${escapeHtml(
-          game.location||
+          game.location ||
           "Location TBD"
         )}
       </div>
@@ -4469,7 +4155,7 @@ function openGameDetails(id){
         )}
 
         ${escapeHtml(
-          game.home_away||
+          game.home_away ||
           "Home"
         )}
 
@@ -4482,10 +4168,12 @@ function openGameDetails(id){
 
   document.getElementById(
     "modalNotes"
-  ).innerHTML=
+  ).innerHTML =
     game.notes
     ?
+
     `
+
       <div class="modal-notes">
 
         <div class="modal-notes-title">
@@ -4497,8 +4185,11 @@ function openGameDetails(id){
         )}
 
       </div>
+
     `
+
     :
+
     "";
 
 
@@ -4509,9 +4200,8 @@ function openGameDetails(id){
   );
 
 
-  document.body.style.overflow=
+  document.body.style.overflow =
     "hidden";
-
 }
 
 
@@ -4520,9 +4210,13 @@ function closeGameModal(event){
   if(
     event &&
     event.target &&
-    event.target.id!=="gameModal"
-  )
+    event.target.id !==
+      "gameModal"
+  ){
+
     return;
+
+  }
 
 
   document.getElementById(
@@ -4532,34 +4226,34 @@ function closeGameModal(event){
   );
 
 
-  document.body.style.overflow=
+  document.body.style.overflow =
     "";
-
 }
 
 
 /* =========================================================
    ADMIN LOGIN
+   EXACTLY 4 DIGITS
 ========================================================= */
 
 async function login(){
 
-  const code=
+  const code =
     document.getElementById(
       "adminCode"
     ).value.trim();
 
 
-  if(!/^\d{5,10}$/.test(code)){
+  if(!/^\d{4}$/.test(code)){
 
     document.getElementById(
       "loginMessage"
-    ).innerHTML=`
+    ).innerHTML = `
 
       <div class="message">
 
         Admin code must be
-        5–10 digits.
+        exactly 4 digits.
 
       </div>
 
@@ -4573,7 +4267,7 @@ async function login(){
   const {
     data,
     error
-  }=
+  } =
     await db.rpc(
       "check_admin_code",
       {
@@ -4588,7 +4282,7 @@ async function login(){
 
     document.getElementById(
       "loginMessage"
-    ).innerHTML=`
+    ).innerHTML = `
 
       <div class="message">
         Database error.
@@ -4605,7 +4299,7 @@ async function login(){
 
     document.getElementById(
       "loginMessage"
-    ).innerHTML=`
+    ).innerHTML = `
 
       <div class="message">
         Incorrect admin code.
@@ -4626,11 +4320,10 @@ async function login(){
 
   document.getElementById(
     "adminCode"
-  ).value="";
+  ).value = "";
 
 
   showAdmin();
-
 }
 
 
@@ -4653,7 +4346,6 @@ function showAdmin(){
   updateAdminGames();
 
   loadPhotos();
-
 }
 
 
@@ -4676,7 +4368,6 @@ function logout(){
   ).classList.add(
     "hidden"
   );
-
 }
 
 
@@ -4686,49 +4377,49 @@ function logout(){
 
 async function addGame(){
 
-  const code=
+  const code =
     sessionStorage.getItem(
       "adminCode"
     );
 
 
-  const date=
+  const date =
     document.getElementById(
       "gameDate"
     ).value;
 
 
-  const time=
+  const time =
     document.getElementById(
       "gameTime"
     ).value;
 
 
-  const opponent=
+  const opponent =
     document.getElementById(
       "gameOpponent"
     ).value.trim();
 
 
-  const location=
+  const location =
     document.getElementById(
       "gameLocation"
     ).value.trim();
 
 
-  const homeAway=
+  const homeAway =
     document.getElementById(
       "gameHomeAway"
     ).value;
 
 
-  const notes=
+  const notes =
     document.getElementById(
       "gameNotes"
     ).value.trim();
 
 
-  if(!date||!opponent){
+  if(!date || !opponent){
 
     showAdminMessage(
       "Date and opponent are required."
@@ -4741,7 +4432,7 @@ async function addGame(){
 
   const {
     error
-  }=
+  } =
     await db.rpc(
       "add_game",
       {
@@ -4771,27 +4462,23 @@ async function addGame(){
 
   document.getElementById(
     "gameDate"
-  ).value="";
-
+  ).value = "";
 
   document.getElementById(
     "gameTime"
-  ).value="";
-
+  ).value = "";
 
   document.getElementById(
     "gameOpponent"
-  ).value="";
-
+  ).value = "";
 
   document.getElementById(
     "gameLocation"
-  ).value="";
-
+  ).value = "";
 
   document.getElementById(
     "gameNotes"
-  ).value="";
+  ).value = "";
 
 
   showAdminMessage(
@@ -4800,17 +4487,16 @@ async function addGame(){
 
 
   loadGames();
-
 }
 
 
 /* =========================================================
-   ADMIN GAMES
+   ADMIN GAME LIST
 ========================================================= */
 
 function updateAdminGames(){
 
-  const container=
+  const container =
     document.getElementById(
       "adminGames"
     );
@@ -4822,29 +4508,30 @@ function updateAdminGames(){
 
   if(!games.length){
 
-    container.innerHTML=
-      `
+    container.innerHTML = `
+
       <div class="message">
         No games yet.
       </div>
-      `;
+
+    `;
 
     return;
 
   }
 
 
-  container.innerHTML=
+  container.innerHTML =
     games.map(
-      (game,index)=>{
+      (game,index) => {
 
-        let score=
+        let score =
           "No score yet";
 
 
         if(hasScore(game)){
 
-          score=
+          score =
             `FINAL
              ${game.our_score}
              –
@@ -4852,284 +4539,270 @@ function updateAdminGames(){
 
         }
 
-
         else if(
           isGameLive(game)
         ){
 
-          score="LIVE";
+          score =
+            "LIVE";
 
         }
 
 
         return `
 
-        <div class="compact-game">
+          <div class="compact-game">
 
+            <div class="compact-game-top">
 
-          <div class="compact-game-top">
+              <div class="compact-game-info">
 
+                <div class="compact-game-title">
 
-            <div class="compact-game-info">
+                  ${index + 1}.
+                  ${escapeHtml(
+                    game.opponent
+                  )}
 
+                </div>
 
-              <div class="compact-game-title">
+                <div class="compact-game-meta">
 
-                ${index+1}.
-                ${escapeHtml(
-                  game.opponent
-                )}
+                  ${formatShortDate(
+                    game.date
+                  )}
+
+                  •
+
+                  ${escapeHtml(
+                    game.time ||
+                    "TBD"
+                  )}
+
+                  •
+
+                  ${getHomeAwayIcon(
+                    game.home_away
+                  )}
+
+                  ${escapeHtml(
+                    game.home_away ||
+                    ""
+                  )}
+
+                </div>
+
+                <div class="compact-game-score">
+                  ${score}
+                </div>
 
               </div>
 
 
-              <div class="compact-game-meta">
+              <div class="compact-game-actions">
 
-                ${formatShortDate(
-                  game.date
-                )}
+                <button
+                  class="edit-button"
+                  onclick="
+                    toggleGameEdit(
+                      ${game.id}
+                    )
+                  ">
 
-                •
+                  Edit
 
-                ${escapeHtml(
-                  game.time||
-                  "TBD"
-                )}
+                </button>
 
-                •
+                <button
+                  class="delete-small"
+                  onclick="
+                    deleteGame(
+                      ${game.id}
+                    )
+                  ">
 
-                ${getHomeAwayIcon(
-                  game.home_away
-                )}
+                  Delete
 
-                ${escapeHtml(
-                  game.home_away||
-                  ""
-                )}
+                </button>
 
               </div>
-
-
-              <div class="compact-game-score">
-                ${score}
-              </div>
-
 
             </div>
 
 
-            <div class="compact-game-actions">
+            <div
+              id="edit-area-${game.id}"
+              class="compact-edit">
+
+
+              <div class="compact-edit-grid">
+
+                <div>
+
+                  <label>
+                    Date
+                  </label>
+
+                  <input
+                    id="edit-date-${game.id}"
+                    type="date"
+                    value="${game.date || ""}">
+
+                </div>
+
+
+                <div>
+
+                  <label>
+                    Time
+                  </label>
+
+                  <input
+                    id="edit-time-${game.id}"
+                    type="text"
+                    value="${escapeAttribute(
+                      game.time || ""
+                    )}">
+
+                </div>
+
+
+                <div>
+
+                  <label>
+                    Location
+                  </label>
+
+                  <input
+                    id="edit-location-${game.id}"
+                    type="text"
+                    value="${escapeAttribute(
+                      game.location || ""
+                    )}">
+
+                </div>
+
+
+                <div>
+
+                  <label>
+                    Home / Away
+                  </label>
+
+                  <select
+                    id="edit-ha-${game.id}">
+
+                    <option
+                      value="Home"
+                      ${
+                        game.home_away ===
+                        "Home"
+                        ?
+                        "selected"
+                        :
+                        ""
+                      }>
+
+                      Home
+
+                    </option>
+
+                    <option
+                      value="Away"
+                      ${
+                        game.home_away ===
+                        "Away"
+                        ?
+                        "selected"
+                        :
+                        ""
+                      }>
+
+                      Away
+
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <div>
+
+                  <label>
+                    NDGP Score
+                  </label>
+
+                  <input
+                    id="our-${game.id}"
+                    type="number"
+                    value="${
+                      game.our_score ??
+                      ""
+                    }">
+
+                </div>
+
+
+                <div>
+
+                  <label>
+                    Opponent Score
+                  </label>
+
+                  <input
+                    id="opp-${game.id}"
+                    type="number"
+                    value="${
+                      game.opponent_score ??
+                      ""
+                    }">
+
+                </div>
+
+
+                <div class="compact-full">
+
+                  <label>
+                    Notes
+                  </label>
+
+                  <textarea
+                    id="notes-${game.id}">${escapeHtml(
+                      game.notes || ""
+                    )}</textarea>
+
+                </div>
+
+              </div>
 
 
               <button
-                class="edit-button"
+                class="primary compact-save"
                 onclick="
-                  toggleGameEdit(
+                  saveGame(
                     ${game.id}
                   )
                 ">
 
-                Edit
+                SAVE CHANGES
 
               </button>
 
-
-              <button
-                class="delete-small"
-                onclick="
-                  deleteGame(
-                    ${game.id}
-                  )
-                ">
-
-                Delete
-
-              </button>
-
-
             </div>
 
-
           </div>
-
-
-          <div
-            id="edit-area-${game.id}"
-            class="compact-edit">
-
-
-            <div class="compact-edit-grid">
-
-
-              <div>
-
-                <label>
-                  Date
-                </label>
-
-                <input
-                  id="edit-date-${game.id}"
-                  type="date"
-                  value="${game.date||""}">
-
-              </div>
-
-
-              <div>
-
-                <label>
-                  Time
-                </label>
-
-                <input
-                  id="edit-time-${game.id}"
-                  type="text"
-                  value="${escapeAttribute(
-                    game.time||""
-                  )}">
-
-              </div>
-
-
-              <div>
-
-                <label>
-                  Location
-                </label>
-
-                <input
-                  id="edit-location-${game.id}"
-                  type="text"
-                  value="${escapeAttribute(
-                    game.location||""
-                  )}">
-
-              </div>
-
-
-              <div>
-
-                <label>
-                  Home / Away
-                </label>
-
-                <select
-                  id="edit-ha-${game.id}">
-
-                  <option
-                    value="Home"
-                    ${
-                      game.home_away==="Home"
-                      ?
-                      "selected"
-                      :
-                      ""
-                    }>
-
-                    Home
-
-                  </option>
-
-
-                  <option
-                    value="Away"
-                    ${
-                      game.home_away==="Away"
-                      ?
-                      "selected"
-                      :
-                      ""
-                    }>
-
-                    Away
-
-                  </option>
-
-                </select>
-
-              </div>
-
-
-              <div>
-
-                <label>
-                  NDGP Score
-                </label>
-
-                <input
-                  id="our-${game.id}"
-                  type="number"
-                  value="${
-                    game.our_score??
-                    ""
-                  }">
-
-              </div>
-
-
-              <div>
-
-                <label>
-                  Opponent Score
-                </label>
-
-                <input
-                  id="opp-${game.id}"
-                  type="number"
-                  value="${
-                    game.opponent_score??
-                    ""
-                  }">
-
-              </div>
-
-
-              <div class="compact-full">
-
-                <label>
-                  Notes
-                </label>
-
-                <textarea
-                  id="notes-${game.id}">${escapeHtml(
-                    game.notes||""
-                  )}</textarea>
-
-              </div>
-
-
-            </div>
-
-
-            <button
-              class="primary compact-save"
-              onclick="
-                saveGame(
-                  ${game.id}
-                )
-              ">
-
-              SAVE CHANGES
-
-            </button>
-
-
-          </div>
-
-
-        </div>
 
         `;
 
       }
     ).join("");
-
 }
 
 
 function toggleGameEdit(id){
 
-  const area=
+  const area =
     document.getElementById(
       `edit-area-${id}`
     );
@@ -5139,7 +4812,6 @@ function toggleGameEdit(id){
     area.classList.toggle(
       "open"
     );
-
 }
 
 
@@ -5149,16 +4821,16 @@ function toggleGameEdit(id){
 
 async function saveGame(id){
 
-  const code=
+  const code =
     sessionStorage.getItem(
       "adminCode"
     );
 
 
-  const game=
+  const game =
     games.find(
-      g=>
-        Number(g.id)===
+      g =>
+        Number(g.id) ===
         Number(id)
     );
 
@@ -5167,67 +4839,67 @@ async function saveGame(id){
     return;
 
 
-  const date=
+  const date =
     document.getElementById(
       `edit-date-${id}`
     ).value;
 
 
-  const time=
+  const time =
     document.getElementById(
       `edit-time-${id}`
     ).value;
 
 
-  const location=
+  const location =
     document.getElementById(
       `edit-location-${id}`
     ).value;
 
 
-  const homeAway=
+  const homeAway =
     document.getElementById(
       `edit-ha-${id}`
     ).value;
 
 
-  const ourValue=
+  const ourValue =
     document.getElementById(
       `our-${id}`
     ).value;
 
 
-  const oppValue=
+  const oppValue =
     document.getElementById(
       `opp-${id}`
     ).value;
 
 
-  const notes=
+  const notes =
     document.getElementById(
       `notes-${id}`
     ).value;
 
 
-  const ourScore=
-    ourValue===""
+  const ourScore =
+    ourValue === ""
     ?
     null
     :
     Number(ourValue);
 
 
-  const opponentScore=
-    oppValue===""
+  const opponentScore =
+    oppValue === ""
     ?
     null
     :
     Number(oppValue);
 
 
-  const status=
-    ourScore!==null &&
-    opponentScore!==null
+  const status =
+    ourScore !== null &&
+    opponentScore !== null
     ?
     "Final"
     :
@@ -5236,7 +4908,7 @@ async function saveGame(id){
 
   const {
     error
-  }=
+  } =
     await db.rpc(
       "update_game",
       {
@@ -5274,7 +4946,6 @@ async function saveGame(id){
 
 
   loadGames();
-
 }
 
 
@@ -5292,7 +4963,7 @@ async function deleteGame(id){
     return;
 
 
-  const code=
+  const code =
     sessionStorage.getItem(
       "adminCode"
     );
@@ -5300,7 +4971,7 @@ async function deleteGame(id){
 
   const {
     error
-  }=
+  } =
     await db.rpc(
       "delete_game",
       {
@@ -5327,7 +4998,6 @@ async function deleteGame(id){
 
 
   loadGames();
-
 }
 
 
@@ -5340,7 +5010,7 @@ async function loadPhotos(){
   const {
     data,
     error
-  }=
+  } =
     await db
       .from("photos")
       .select("*")
@@ -5361,11 +5031,11 @@ async function loadPhotos(){
   }
 
 
-  const photos=
-    data||[];
+  const photos =
+    data || [];
 
 
-  const publicContainer=
+  const publicContainer =
     document.getElementById(
       "photoList"
     );
@@ -5373,46 +5043,56 @@ async function loadPhotos(){
 
   if(!photos.length){
 
-    publicContainer.innerHTML=
-      `
+    publicContainer.innerHTML = `
+
       <div class="message">
         No photos yet.
       </div>
-      `;
 
-  }else{
+    `;
 
-    publicContainer.innerHTML=`
+  }
+
+  else{
+
+    publicContainer.innerHTML = `
 
       <div class="photo-grid">
 
         ${
           photos.map(
-            photo=>`
+            photo => `
 
-            <div class="photo-item">
+              <div class="photo-item">
 
-              <img
-                src="${escapeAttribute(
-                  photo.image_url
-                )}"
-                alt="NDGP Football">
+                <img
+                  src="${escapeAttribute(
+                    photo.image_url
+                  )}"
+                  alt="NDGP Football">
 
-              ${
-                photo.caption
-                ?
-                `
-                <div class="photo-caption">
-                  ${escapeHtml(
-                    photo.caption
-                  )}
-                </div>
-                `
-                :
-                ""
-              }
+                ${
+                  photo.caption
+                  ?
 
-            </div>
+                  `
+
+                  <div class="photo-caption">
+
+                    ${escapeHtml(
+                      photo.caption
+                    )}
+
+                  </div>
+
+                  `
+
+                  :
+
+                  ""
+                }
+
+              </div>
 
             `
           ).join("")
@@ -5425,7 +5105,7 @@ async function loadPhotos(){
   }
 
 
-  const admin=
+  const admin =
     document.getElementById(
       "adminPhotos"
     );
@@ -5440,63 +5120,62 @@ async function loadPhotos(){
 
     if(!photos.length){
 
-      admin.innerHTML=
-        `
+      admin.innerHTML = `
+
         <div class="message">
           No photos uploaded yet.
         </div>
-        `;
+
+      `;
 
       return;
 
     }
 
 
-    admin.innerHTML=`
+    admin.innerHTML = `
 
       <div class="admin-photo-grid">
 
         ${
           photos.map(
-            photo=>`
+            photo => `
 
-            <div class="admin-photo-card">
+              <div class="admin-photo-card">
 
-              <img
-                src="${escapeAttribute(
-                  photo.image_url
-                )}"
-                alt="Football photo">
+                <img
+                  src="${escapeAttribute(
+                    photo.image_url
+                  )}"
+                  alt="Football photo">
 
+                <div class="admin-photo-caption">
 
-              <div class="admin-photo-caption">
-
-                ${
-                  photo.caption
-                  ?
-                  escapeHtml(
+                  ${
                     photo.caption
-                  )
-                  :
-                  "No caption"
-                }
+                    ?
+                    escapeHtml(
+                      photo.caption
+                    )
+                    :
+                    "No caption"
+                  }
+
+                </div>
+
+                <button
+                  class="admin-photo-delete"
+                  onclick="
+                    deletePhoto(
+                      ${photo.id}
+                    )
+                  ">
+
+                  Delete
+
+                </button>
 
               </div>
-
-
-              <button
-                class="admin-photo-delete"
-                onclick="
-                  deletePhoto(
-                    ${photo.id}
-                  )
-                ">
-
-                Delete
-
-              </button>
-
-            </div>
 
             `
           ).join("")
@@ -5517,19 +5196,19 @@ async function loadPhotos(){
 
 async function addPhoto(){
 
-  const code=
+  const code =
     sessionStorage.getItem(
       "adminCode"
     );
 
 
-  const file=
+  const file =
     document.getElementById(
       "photoFile"
     ).files[0];
 
 
-  const caption=
+  const caption =
     document.getElementById(
       "photoCaption"
     ).value.trim();
@@ -5546,14 +5225,9 @@ async function addPhoto(){
   }
 
 
-  showAdminMessage(
-    "Preparing photo..."
-  );
-
-
   try{
 
-    const image=
+    const image =
       await compressImage(
         file,
         1400,
@@ -5563,7 +5237,7 @@ async function addPhoto(){
 
     const {
       error
-    }=
+    } =
       await db.rpc(
         "add_photo",
         {
@@ -5589,12 +5263,12 @@ async function addPhoto(){
 
     document.getElementById(
       "photoFile"
-    ).value="";
+    ).value = "";
 
 
     document.getElementById(
       "photoCaption"
-    ).value="";
+    ).value = "";
 
 
     showAdminMessage(
@@ -5605,7 +5279,6 @@ async function addPhoto(){
     loadPhotos();
 
   }
-
 
   catch(error){
 
@@ -5631,53 +5304,53 @@ function compressImage(
 ){
 
   return new Promise(
-    (resolve,reject)=>{
+    (resolve,reject) => {
 
-      const reader=
+      const reader =
         new FileReader();
 
 
-      reader.onload=e=>{
+      reader.onload = e => {
 
-        const image=
+        const image =
           new Image();
 
 
-        image.onload=()=>{
+        image.onload = () => {
 
-          let width=
+          let width =
             image.width;
 
-          let height=
+          let height =
             image.height;
 
 
-          if(width>maxWidth){
+          if(width > maxWidth){
 
-            height*=
-              maxWidth/
+            height *=
+              maxWidth /
               width;
 
-            width=
+            width =
               maxWidth;
 
           }
 
 
-          const canvas=
+          const canvas =
             document.createElement(
               "canvas"
             );
 
 
-          canvas.width=
+          canvas.width =
             width;
 
-          canvas.height=
+          canvas.height =
             height;
 
 
-          const ctx=
+          const ctx =
             canvas.getContext(
               "2d"
             );
@@ -5702,17 +5375,17 @@ function compressImage(
         };
 
 
-        image.onerror=
+        image.onerror =
           reject;
 
 
-        image.src=
+        image.src =
           e.target.result;
 
       };
 
 
-      reader.onerror=
+      reader.onerror =
         reject;
 
 
@@ -5722,7 +5395,6 @@ function compressImage(
 
     }
   );
-
 }
 
 
@@ -5740,7 +5412,7 @@ async function deletePhoto(id){
     return;
 
 
-  const code=
+  const code =
     sessionStorage.getItem(
       "adminCode"
     );
@@ -5748,7 +5420,7 @@ async function deletePhoto(id){
 
   const {
     error
-  }=
+  } =
     await db.rpc(
       "delete_photo",
       {
@@ -5775,7 +5447,6 @@ async function deletePhoto(id){
 
 
   loadPhotos();
-
 }
 
 
@@ -5786,12 +5457,12 @@ async function deletePhoto(id){
 function formatDate(value){
 
   if(!value)
-    return"";
+    return "";
 
 
-  const d=
+  const d =
     new Date(
-      value+
+      value +
       "T12:00:00"
     );
 
@@ -5805,19 +5476,18 @@ function formatDate(value){
       year:"numeric"
     }
   );
-
 }
 
 
 function formatShortDate(value){
 
   if(!value)
-    return"";
+    return "";
 
 
-  const d=
+  const d =
     new Date(
-      value+
+      value +
       "T12:00:00"
     );
 
@@ -5829,17 +5499,19 @@ function formatShortDate(value){
       day:"numeric"
     }
   );
-
 }
 
 
 function escapeHtml(value){
 
   if(
-    value===null||
-    value===undefined
-  )
-    return"";
+    value === null ||
+    value === undefined
+  ){
+
+    return "";
+
+  }
 
 
   return String(value)
@@ -5868,22 +5540,20 @@ function escapeHtml(value){
       /'/g,
       "&#039;"
     );
-
 }
 
 
 function escapeAttribute(value){
 
-  return escapeHtml(value);
-
+  return escapeHtml(
+    value
+  );
 }
 
 
-function showAdminMessage(
-  message
-){
+function showAdminMessage(message){
 
-  const box=
+  const box =
     document.getElementById(
       "adminMessage"
     );
@@ -5893,7 +5563,7 @@ function showAdminMessage(
     return;
 
 
-  box.innerHTML=`
+  box.innerHTML = `
 
     <div class="message">
       ${escapeHtml(message)}
@@ -5903,24 +5573,26 @@ function showAdminMessage(
 
 
   setTimeout(
-    ()=>{
-      box.innerHTML="";
+    () => {
+      box.innerHTML = "";
     },
     4000
   );
-
 }
 
 
 /* =========================================================
-   KEYBOARD
+   ESCAPE KEY
 ========================================================= */
 
 document.addEventListener(
   "keydown",
-  event=>{
+  event => {
 
-    if(event.key==="Escape"){
+    if(
+      event.key ===
+      "Escape"
+    ){
 
       closeHistoryModal();
 
@@ -5937,11 +5609,10 @@ document.addEventListener(
 ========================================================= */
 
 setInterval(
-  ()=>{
+  () => {
 
     if(!games.length)
       return;
-
 
     updateHome();
 
