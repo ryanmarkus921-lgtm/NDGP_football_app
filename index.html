@@ -21,7 +21,6 @@
 --dark:#00152b;
 --blue:#063b69;
 --gold:#f4c542;
---bg:#eef2f6;
 --text:#14283d;
 --muted:#718096;
 --border:#dce4ec;
@@ -59,7 +58,7 @@ margin:auto auto 7px;
 
 header h1{
 margin:0;
-font-family:"Teko",sans-serif;
+font-family:"Teko";
 font-size:39px;
 line-height:.9;
 letter-spacing:2px;
@@ -74,7 +73,7 @@ text-transform:uppercase;
 }
 
 
-/* NAVIGATION */
+/* NAV */
 
 nav{
 position:sticky;
@@ -159,6 +158,10 @@ content:"";
 height:2px;
 flex:1;
 background:linear-gradient(90deg,var(--gold),transparent);
+}
+
+.hidden{
+display:none!important;
 }
 
 
@@ -256,16 +259,9 @@ gap:6px;
 margin-top:10px;
 padding:7px 12px;
 border-radius:8px;
-background:linear-gradient(
-135deg,
-#f5f7f9,
-#dfe5ea,
-#f7f9fb
-);
+background:linear-gradient(135deg,#f5f7f9,#dfe5ea,#f7f9fb);
 border:1px solid #b9c4cd;
-box-shadow:
-0 2px 7px rgba(55,70,82,.16),
-inset 0 1px 0 rgba(255,255,255,.9);
+box-shadow:0 2px 7px rgba(55,70,82,.16),inset 0 1px 0 rgba(255,255,255,.9);
 color:#344451;
 font-family:"Oswald";
 font-size:10px;
@@ -283,12 +279,7 @@ top:0;
 left:-100%;
 width:70%;
 height:100%;
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.75),
-transparent
-);
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent);
 animation:shine 2.8s infinite;
 }
 
@@ -296,10 +287,6 @@ animation:shine 2.8s infinite;
 0%{left:-100%}
 45%{left:130%}
 100%{left:130%}
-}
-
-.hidden{
-display:none!important;
 }
 
 
@@ -511,16 +498,9 @@ animation:pulse 1.5s infinite;
 }
 
 
-/* =====================================================
+/* =================================================
    HISTORY
-===================================================== */
-
-.history-intro{
-display:none;
-}
-
-
-/* SEASON CARD */
+================================================= */
 
 .season-card{
 background:white;
@@ -533,7 +513,7 @@ box-shadow:0 3px 11px rgba(0,31,63,.07);
 }
 
 
-/* BOTH SEASONS ARE GOLD */
+/* BOTH SEASONS GOLD */
 
 .season-card.year-2025,
 .season-card.year-2024{
@@ -541,23 +521,15 @@ border-left-color:var(--gold);
 }
 
 
-/* HEADER */
+/* SEASON HEADER */
 
 .season-header{
-background:linear-gradient(
-135deg,
-#f8fafc,
-#eef3f7
-);
+background:linear-gradient(135deg,#f8fafc,#eef3f7);
 padding:11px 13px;
 display:flex;
 align-items:center;
 justify-content:space-between;
 border-bottom:1px solid var(--border);
-}
-
-.season-label{
-display:none;
 }
 
 .season-year{
@@ -568,42 +540,29 @@ font-weight:700;
 color:var(--navy);
 }
 
+
+/*
+IMPORTANT:
+The record is ONE bold line.
+There is no smaller text underneath.
+*/
+
 .season-record{
 font-family:"Teko";
-font-size:30px;
-line-height:.85;
+font-size:24px;
+line-height:1;
 font-weight:700;
 color:var(--navy);
 text-align:right;
+white-space:nowrap;
 }
 
 
-/*
-   IMPORTANT:
-   No tiny text underneath the record.
-*/
-
-.season-record-label{
-font-family:"Teko";
-font-size:10px;
-line-height:1;
-font-weight:500;
-color:#718096;
-text-align:right;
-margin-top:3px;
-text-transform:none;
-letter-spacing:0;
-}
-
-
-/* ACHIEVEMENT BODY */
+/* ACHIEVEMENTS */
 
 .season-body{
 padding:8px 12px;
 }
-
-
-/* EVERY ACHIEVEMENT MATCHES */
 
 .season-achievement{
 display:flex;
@@ -617,7 +576,8 @@ border-bottom:1px solid #edf1f4;
 border-bottom:0;
 }
 
-.achievement-icon{
+.achievement-icon,
+.record-achievement-icon{
 width:32px;
 height:32px;
 flex-shrink:0;
@@ -625,11 +585,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 border-radius:7px;
-background:linear-gradient(
-135deg,
-#fff4c9,
-#f4c542
-);
+background:linear-gradient(135deg,#fff4c9,#f4c542);
 font-size:16px;
 box-shadow:0 2px 5px rgba(0,0,0,.08);
 }
@@ -638,7 +594,8 @@ box-shadow:0 2px 5px rgba(0,0,0,.08);
 min-width:0;
 }
 
-.achievement-title{
+.achievement-title,
+.record-achievement-title{
 font-family:"Teko";
 font-size:19px;
 line-height:1;
@@ -647,11 +604,7 @@ color:var(--navy);
 }
 
 
-/*
-   SCHOOL RECORD
-   No separate box.
-   It now matches every other achievement.
-*/
+/* SCHOOL RECORD MATCHES EVERYTHING ELSE */
 
 .record-achievement{
 display:flex;
@@ -662,31 +615,6 @@ margin:0;
 background:transparent;
 border:0;
 border-radius:0;
-}
-
-.record-achievement-icon{
-width:32px;
-height:32px;
-flex-shrink:0;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:7px;
-background:linear-gradient(
-135deg,
-#fff4c9,
-#f4c542
-);
-font-size:16px;
-box-shadow:0 2px 5px rgba(0,0,0,.08);
-}
-
-.record-achievement-title{
-font-family:"Teko";
-font-size:19px;
-line-height:1;
-font-weight:700;
-color:var(--navy);
 }
 
 
@@ -1261,11 +1189,7 @@ font-size:24px;
 }
 
 .season-record{
-font-size:27px;
-}
-
-.season-record-label{
-font-size:9px;
+font-size:19px;
 }
 
 }
@@ -1281,9 +1205,7 @@ grid-template-columns:repeat(4,1fr);
 </style>
 </head>
 
-
 <body>
-
 
 <header>
 
@@ -1336,7 +1258,6 @@ alt="Notre Dame Green Pond Crusaders">
 <div class="hero-top">
 
 <span>NEXT GAME</span>
-
 <small>2026 SEASON</small>
 
 </div>
@@ -1350,9 +1271,7 @@ Notre Dame Green Pond
 <div id="nextMatchup" class="next-matchup">
 
 <span class="next-team">NDGP</span>
-
 <span class="next-vs">VS</span>
-
 <span class="next-team">TBD</span>
 
 </div>
@@ -1364,7 +1283,6 @@ Loading...
 <div id="countdown" class="countdown hidden">
 
 <span>🏈</span>
-
 <span id="countdownText"></span>
 
 </div>
@@ -1454,31 +1372,18 @@ Loading...
 
 <div class="season-header">
 
-<div>
-
 <div class="season-year">
 2025 Football Season
 </div>
 
-</div>
-
-<div>
-
 <div class="season-record">
-12–1
-</div>
-
-<div class="season-record-label">
 Final Record: 12–1
-</div>
-
 </div>
 
 </div>
 
 
 <div class="season-body">
-
 
 <div class="season-achievement">
 
@@ -1537,16 +1442,11 @@ District 11 Class 3A Runner-Up
 ⭐
 </div>
 
-<div>
-
 <div class="record-achievement-title">
 Tied School Record — Most Wins
 </div>
 
 </div>
-
-</div>
-
 
 </div>
 
@@ -1559,31 +1459,18 @@ Tied School Record — Most Wins
 
 <div class="season-header">
 
-<div>
-
 <div class="season-year">
 2024 Football Season
 </div>
 
-</div>
-
-<div>
-
 <div class="season-record">
-9–2
-</div>
-
-<div class="season-record-label">
 Final Record: 9–2
-</div>
-
 </div>
 
 </div>
 
 
 <div class="season-body">
-
 
 <div class="season-achievement">
 
@@ -1601,11 +1488,9 @@ Colonial League White Division Champions
 
 </div>
 
-
 </div>
 
 </div>
-
 
 </div>
 
@@ -1640,11 +1525,9 @@ Loading...
 <div class="admin-login-header">
 
 <h2>🔐 ADMIN ACCESS</h2>
-
 <p>NDGP Football Management</p>
 
 </div>
-
 
 <div class="card">
 
@@ -1682,7 +1565,6 @@ style="width:100%">
 <div>
 
 <h2>ADMIN DASHBOARD</h2>
-
 <p>Manage games & photos</p>
 
 </div>
@@ -1698,8 +1580,6 @@ Log Out
 </div>
 
 
-<!-- GAME MANAGEMENT -->
-
 <div class="admin-section">
 
 <div class="admin-section-header">
@@ -1711,7 +1591,6 @@ Log Out
 <div class="admin-section-title">
 
 <h3>GAME MANAGEMENT</h3>
-
 <p>Add and edit the schedule</p>
 
 </div>
@@ -1721,7 +1600,6 @@ Log Out
 
 <div class="admin-section-body">
 
-
 <div class="admin-subsection">
 
 <h4>➕ ADD GAME</h4>
@@ -1729,7 +1607,6 @@ Log Out
 <div class="admin-description">
 Add a new game to the schedule.
 </div>
-
 
 <div class="form-row">
 
@@ -1742,7 +1619,6 @@ id="gameDate"
 type="date">
 
 </div>
-
 
 <div>
 
@@ -1757,16 +1633,12 @@ placeholder="7:00 PM">
 
 </div>
 
-
-<label>
-Opponent
-</label>
+<label>Opponent</label>
 
 <input
 id="gameOpponent"
 type="text"
 placeholder="Opponent">
-
 
 <div class="form-row">
 
@@ -1780,7 +1652,6 @@ type="text"
 placeholder="Stadium">
 
 </div>
-
 
 <div>
 
@@ -1802,15 +1673,11 @@ placeholder="Stadium">
 
 </div>
 
-
-<label>
-Notes
-</label>
+<label>Notes</label>
 
 <textarea
 id="gameNotes"
 placeholder="Optional notes"></textarea>
-
 
 <button
 class="primary"
@@ -1846,8 +1713,6 @@ Loading...
 </div>
 
 
-<!-- PHOTO MANAGEMENT -->
-
 <div class="admin-section">
 
 <div class="admin-section-header">
@@ -1859,7 +1724,6 @@ Loading...
 <div class="admin-section-title">
 
 <h3>PHOTO MANAGEMENT</h3>
-
 <p>Upload and manage photos</p>
 
 </div>
@@ -1869,7 +1733,6 @@ Loading...
 
 <div class="admin-section-body">
 
-
 <div class="photo-upload">
 
 <h4>📤 UPLOAD PHOTO</h4>
@@ -1878,26 +1741,19 @@ Loading...
 Add a photo to the football gallery.
 </p>
 
-
-<label>
-Photo
-</label>
+<label>Photo</label>
 
 <input
 id="photoFile"
 type="file"
 accept="image/*">
 
-
-<label>
-Caption
-</label>
+<label>Caption</label>
 
 <input
 id="photoCaption"
 type="text"
 placeholder="Optional caption">
-
 
 <button
 class="primary upload-photo-button"
@@ -1929,7 +1785,7 @@ Loading...
 </section>
 
 
-<!-- GAME DETAILS MODAL -->
+<!-- GAME MODAL -->
 
 <div
 id="gameModal"
@@ -1940,13 +1796,11 @@ onclick="closeGameModal(event)">
 class="modal"
 onclick="event.stopPropagation()">
 
-
 <div class="modal-header">
 
 <button
 class="modal-close"
 onclick="closeGameModal()">
-
 ×
 </button>
 
@@ -1957,13 +1811,10 @@ NDGP FOOTBALL
 <div
 id="modalMatchup"
 class="modal-matchup">
-
 NDGP VS OPPONENT
-
 </div>
 
 </div>
-
 
 <div class="modal-body">
 
@@ -2017,8 +1868,6 @@ This website was built by a student at Notre Dame Green Pond High School.
 
 <script>
 
-/* SUPABASE */
-
 const SUPABASE_URL =
 "https://lwkisughuwqbpwlouejc.supabase.co";
 
@@ -2031,7 +1880,6 @@ SUPABASE_URL,
 SUPABASE_KEY
 );
 
-
 let games=[];
 let countdownTimer=null;
 
@@ -2041,23 +1889,16 @@ let countdownTimer=null;
 function showPage(id,button){
 
 document.querySelectorAll(".page")
-.forEach(p=>{
-p.classList.remove("active");
-});
+.forEach(p=>p.classList.remove("active"));
 
 document.getElementById(id)
 .classList.add("active");
 
-
 document.querySelectorAll("nav button")
-.forEach(b=>{
-b.classList.remove("active");
-});
-
+.forEach(b=>b.classList.remove("active"));
 
 if(button)
 button.classList.add("active");
-
 
 if(id==="schedule")
 loadGames();
@@ -2065,10 +1906,8 @@ loadGames();
 if(id==="photos")
 loadPhotos();
 
-if(
-id==="admin" &&
-sessionStorage.getItem("adminCode")
-)
+if(id==="admin" &&
+sessionStorage.getItem("adminCode"))
 showAdmin();
 
 }
@@ -2083,29 +1922,24 @@ const {data,error}=await db
 .select("*")
 .order("date",{ascending:true});
 
-
 if(error){
 
 console.error(error);
 
-document.getElementById(
-"scheduleList"
-).innerHTML=
-`
-<div class="message">
-Could not load games.
-</div>
-`;
+const list=document.getElementById("scheduleList");
+
+if(list)
+list.innerHTML=
+`<div class="message">Could not load games.</div>`;
 
 return;
-}
 
+}
 
 games=data||[];
 
 updateHome();
 updateSchedule();
-
 
 if(sessionStorage.getItem("adminCode"))
 updateAdminGames();
@@ -2137,22 +1971,18 @@ return null;
 let hours=19;
 let minutes=0;
 
-
 if(game.time){
 
-const m=
-String(game.time).match(
+const m=String(game.time).match(
 /(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?/i
 );
-
 
 if(m){
 
 hours=Number(m[1]);
 minutes=Number(m[2]||0);
 
-const period=
-String(m[3]||"").toUpperCase();
+const period=String(m[3]||"").toUpperCase();
 
 if(period==="PM"&&hours<12)
 hours+=12;
@@ -2164,18 +1994,9 @@ hours=0;
 
 }
 
+const d=new Date(game.date+"T00:00:00");
 
-const d=
-new Date(
-game.date+"T00:00:00"
-);
-
-d.setHours(
-hours,
-minutes,
-0,
-0
-);
+d.setHours(hours,minutes,0,0);
 
 return d;
 
@@ -2208,35 +2029,18 @@ if(hasScore(game)){
 const our=Number(game.our_score);
 const opp=Number(game.opponent_score);
 
-
 if(our>opp)
-return{
-text:"FINAL • WIN",
-className:"win"
-};
+return{text:"FINAL • WIN",className:"win"};
 
 if(our<opp)
-return{
-text:"FINAL • LOSS",
-className:"loss"
-};
+return{text:"FINAL • LOSS",className:"loss"};
 
-return{
-text:"FINAL • TIE",
-className:"tie"
-};
+return{text:"FINAL • TIE",className:"tie"};
 
 }
 
-
-if(isGameLive(game)){
-
-return{
-text:"🔴 LIVE",
-className:"live"
-};
-
-}
+if(isGameLive(game))
+return{text:"🔴 LIVE",className:"live"};
 
 return null;
 
@@ -2247,64 +2051,37 @@ return null;
 
 function updateHome(){
 
-const today=
-new Date()
+const today=new Date()
 .toISOString()
 .split("T")[0];
 
-
-const upcoming=
-games
-.filter(
-g=>g.date>=today&&!hasScore(g)
-)
-.sort(
-(a,b)=>
-new Date(a.date)-new Date(b.date)
-);
-
+const upcoming=games
+.filter(g=>g.date>=today&&!hasScore(g))
+.sort((a,b)=>new Date(a.date)-new Date(b.date));
 
 const next=upcoming[0];
 
-
 if(!next){
 
-document.getElementById(
-"nextMatchup"
-).innerHTML=
-`
+document.getElementById("nextMatchup").innerHTML=`
 <span class="next-team">NDGP</span>
 <span class="next-vs">VS</span>
-<span class="next-team">TBD</span>
-`;
+<span class="next-team">TBD</span>`;
 
-document.getElementById(
-"nextDetails"
-).textContent=
-"No upcoming games";
+document.getElementById("nextDetails")
+.textContent="No upcoming games";
 
-document.getElementById(
-"countdown"
-).classList.add("hidden");
+document.getElementById("countdown")
+.classList.add("hidden");
 
 }else{
 
-document.getElementById(
-"nextMatchup"
-).innerHTML=
-`
+document.getElementById("nextMatchup").innerHTML=`
 <span class="next-team">NDGP</span>
 <span class="next-vs">VS</span>
-<span class="next-team">
-${escapeHtml(next.opponent)}
-</span>
-`;
+<span class="next-team">${escapeHtml(next.opponent)}</span>`;
 
-
-document.getElementById(
-"nextDetails"
-).innerHTML=
-`
+document.getElementById("nextDetails").innerHTML=`
 📅 ${formatDate(next.date)}
 <br>
 ⏰ ${escapeHtml(next.time||"Time TBD")}
@@ -2314,20 +2091,15 @@ document.getElementById(
 <span class="home-away">
 ${getHomeAwayIcon(next.home_away)}
 ${escapeHtml(next.home_away||"")}
-</span>
-`;
-
+</span>`;
 
 if(isGameLive(next)){
 
-const box=
-document.getElementById("countdown");
+const box=document.getElementById("countdown");
 
-box.innerHTML=
-`
+box.innerHTML=`
 <span>🏈</span>
-<span>LIVE</span>
-`;
+<span>LIVE</span>`;
 
 box.classList.remove("hidden");
 
@@ -2346,7 +2118,6 @@ let wins=0;
 let losses=0;
 let ties=0;
 
-
 games.forEach(g=>{
 
 if(hasScore(g)){
@@ -2364,45 +2135,30 @@ ties++;
 
 });
 
-
-document.getElementById(
-"record"
-).textContent=
+document.getElementById("record").textContent=
 `${wins}–${losses}${ties?"–"+ties:""}`;
 
-
-document.getElementById(
-"recordDetails"
-).textContent=
+document.getElementById("recordDetails").textContent=
 `${wins} W • ${losses} L${ties?" • "+ties+" T":""}`;
 
 
 /* LAST GAME */
 
-const completed=
-games
+const completed=games
 .filter(g=>hasScore(g))
-.sort(
-(a,b)=>
-new Date(b.date)-new Date(a.date)
-);
-
+.sort((a,b)=>new Date(b.date)-new Date(a.date));
 
 const last=completed[0];
 
-
 if(!last){
 
-document.getElementById(
-"lastGame"
-).innerHTML=
-"No games played yet.";
+document.getElementById("lastGame")
+.innerHTML="No games played yet.";
 
 }else{
 
 let result="TIE";
 let cls="tie";
-
 
 if(Number(last.our_score)>Number(last.opponent_score)){
 
@@ -2416,21 +2172,14 @@ cls="loss";
 
 }
 
+document.getElementById("lastGame").innerHTML=`
 
-document.getElementById(
-"lastGame"
-).innerHTML=
-`
 <div>
 
 <div class="last-matchup">
 
 NDGP
-
-<span class="next-vs">
-VS
-</span>
-
+<span class="next-vs">VS</span>
 ${escapeHtml(last.opponent)}
 
 </div>
@@ -2438,7 +2187,6 @@ ${escapeHtml(last.opponent)}
 <div class="last-date">
 
 ${formatDate(last.date)}
-
 •
 
 <span class="badge ${cls}">
@@ -2456,6 +2204,7 @@ ${last.our_score}
 ${last.opponent_score}
 
 </div>
+
 `;
 
 }
@@ -2467,16 +2216,12 @@ ${last.opponent_score}
 
 function startCountdown(game){
 
-const box=
-document.getElementById("countdown");
-
+const box=document.getElementById("countdown");
 
 if(countdownTimer)
 clearInterval(countdownTimer);
 
-
 const kickoff=parseKickoff(game);
-
 
 if(!kickoff){
 
@@ -2484,7 +2229,6 @@ box.classList.add("hidden");
 return;
 
 }
-
 
 function update(){
 
@@ -2495,10 +2239,7 @@ return;
 
 }
 
-
-const diff=
-kickoff-new Date();
-
+const diff=kickoff-new Date();
 
 if(diff<=0){
 
@@ -2507,34 +2248,21 @@ return;
 
 }
 
+const days=Math.floor(diff/86400000);
+const hours=Math.floor(diff/3600000)%24;
+const mins=Math.floor(diff/60000)%60;
 
-const days=
-Math.floor(diff/86400000);
-
-const hours=
-Math.floor(diff/3600000)%24;
-
-const mins=
-Math.floor(diff/60000)%60;
-
-
-box.innerHTML=
-`
+box.innerHTML=`
 <span>🏈</span>
-<span>
-${days}d ${hours}h ${mins}m until kickoff
-</span>
-`;
+<span>${days}d ${hours}h ${mins}m until kickoff</span>`;
 
 box.classList.remove("hidden");
 
 }
 
-
 update();
 
-countdownTimer=
-setInterval(update,30000);
+countdownTimer=setInterval(update,30000);
 
 }
 
@@ -2543,14 +2271,10 @@ setInterval(update,30000);
 
 function getHomeAwayIcon(value){
 
-if(
-String(value||"")
-.toLowerCase()
-.includes("away")
-)
-return "➡️";
+if(String(value||"").toLowerCase().includes("away"))
+return"➡️";
 
-return "🏠";
+return"🏠";
 
 }
 
@@ -2559,37 +2283,27 @@ return "🏠";
 
 function updateSchedule(){
 
-const container=
-document.getElementById("scheduleList");
-
+const container=document.getElementById("scheduleList");
 
 if(!games.length){
 
 container.innerHTML=
-`
-<div class="message">
-No games have been added yet.
-</div>
-`;
+`<div class="message">No games have been added yet.</div>`;
 
 return;
 
 }
 
-
-container.innerHTML=
-games.map(game=>{
+container.innerHTML=games.map(game=>{
 
 const status=getGameStatus(game);
 const live=isGameLive(game);
-
 
 return `
 
 <div
 class="game ${live?"live-game":""}"
 onclick="openGameDetails(${game.id})">
-
 
 <div class="game-top">
 
@@ -2605,36 +2319,27 @@ ${escapeHtml(game.opponent)}
 
 </div>
 
-
 ${
 status?
-`
-<span class="badge ${status.className}">
+`<span class="badge ${status.className}">
 ${status.text}
-</span>
-`
+</span>`
 :""
 }
 
 </div>
 
-
 <div class="game-matchup">
 
-<span class="game-team">
-NDGP
-</span>
+<span class="game-team">NDGP</span>
 
-<span class="game-vs">
-VS
-</span>
+<span class="game-vs">VS</span>
 
 <span class="game-team">
 ${escapeHtml(game.opponent)}
 </span>
 
 </div>
-
 
 <div class="game-details">
 
@@ -2653,25 +2358,17 @@ ${escapeHtml(game.home_away||"")}
 
 </div>
 
-
 ${
 hasScore(game)?
-`
-<div class="game-score">
-FINAL:
-${game.our_score}
-–
-${game.opponent_score}
-</div>
-`
+`<div class="game-score">
+FINAL: ${game.our_score} – ${game.opponent_score}
+</div>`
 :""
 }
-
 
 <div class="game-details-link">
 TAP FOR GAME DETAILS →
 </div>
-
 
 </div>
 
@@ -2686,40 +2383,27 @@ TAP FOR GAME DETAILS →
 
 function openGameDetails(id){
 
-const game=
-games.find(
+const game=games.find(
 g=>Number(g.id)===Number(id)
 );
-
 
 if(!game)
 return;
 
+document.getElementById("modalMatchup")
+.textContent=`NDGP VS ${game.opponent}`;
 
-document.getElementById(
-"modalMatchup"
-).textContent=
-`NDGP VS ${game.opponent}`;
-
-
-const status=
-document.getElementById("modalStatus");
-
-const score=
-document.getElementById("modalScore");
-
+const status=document.getElementById("modalStatus");
+const score=document.getElementById("modalScore");
 
 if(isGameLive(game)){
 
-status.innerHTML=
-`
+status.innerHTML=`
 <span class="modal-live">
 🔴 LIVE
-</span>
-`;
+</span>`;
 
 score.textContent="";
-
 
 }else if(hasScore(game)){
 
@@ -2728,7 +2412,6 @@ const opp=Number(game.opponent_score);
 
 let text="FINAL • TIE";
 let cls="tie";
-
 
 if(our>opp){
 
@@ -2742,13 +2425,10 @@ cls="loss";
 
 }
 
-
-status.innerHTML=
-`
+status.innerHTML=`
 <span class="badge ${cls}">
 ${text}
-</span>
-`;
+</span>`;
 
 score.textContent=
 `${game.our_score} – ${game.opponent_score}`;
@@ -2760,11 +2440,7 @@ score.textContent="";
 
 }
 
-
-document.getElementById(
-"modalInfo"
-).innerHTML=
-`
+document.getElementById("modalInfo").innerHTML=`
 
 <div class="modal-info">
 
@@ -2778,7 +2454,6 @@ Date
 
 </div>
 
-
 <div class="modal-info">
 
 <div class="modal-info-label">
@@ -2790,7 +2465,6 @@ Kickoff
 </div>
 
 </div>
-
 
 <div class="modal-info">
 
@@ -2804,7 +2478,6 @@ Location
 
 </div>
 
-
 <div class="modal-info">
 
 <div class="modal-info-label">
@@ -2812,21 +2485,15 @@ Game Location
 </div>
 
 <div class="modal-info-value">
-
 ${getHomeAwayIcon(game.home_away)}
-
 ${escapeHtml(game.home_away||"Home")}
-
 </div>
 
 </div>
 
 `;
 
-
-document.getElementById(
-"modalNotes"
-).innerHTML=
+document.getElementById("modalNotes").innerHTML=
 game.notes?
 `
 <div class="modal-notes">
@@ -2841,10 +2508,8 @@ ${escapeHtml(game.notes)}
 `
 :"";
 
-
-document.getElementById(
-"gameModal"
-).classList.add("show");
+document.getElementById("gameModal")
+.classList.add("show");
 
 document.body.style.overflow="hidden";
 
@@ -2853,25 +2518,17 @@ document.body.style.overflow="hidden";
 
 function closeGameModal(event){
 
-if(
-event &&
-event.target &&
-event.target.id!=="gameModal"
-)
+if(event&&event.target&&event.target.id!=="gameModal")
 return;
 
-document.getElementById(
-"gameModal"
-).classList.remove("show");
+document.getElementById("gameModal")
+.classList.remove("show");
 
 document.body.style.overflow="";
 
 }
 
-
-document.addEventListener(
-"keydown",
-e=>{
+document.addEventListener("keydown",e=>{
 if(e.key==="Escape")
 closeGameModal();
 });
@@ -2892,81 +2549,46 @@ updateSchedule();
 
 async function login(){
 
-const code=
-document.getElementById(
-"adminCode"
-).value.trim();
-
+const code=document.getElementById("adminCode")
+.value.trim();
 
 if(!/^\d{4}$/.test(code)){
 
-document.getElementById(
-"loginMessage"
-).innerHTML=
-`
-<div class="message">
-Enter exactly 4 digits.
-</div>
-`;
+document.getElementById("loginMessage").innerHTML=
+`<div class="message">Enter exactly 4 digits.</div>`;
 
 return;
 
 }
 
-
-const {data,error}=
-await db.rpc(
+const {data,error}=await db.rpc(
 "check_admin_code",
-{
-p_code:code
-}
+{p_code:code}
 );
-
 
 if(error){
 
 console.error(error);
 
-document.getElementById(
-"loginMessage"
-).innerHTML=
-`
-<div class="message">
-Database error.
-</div>
-`;
+document.getElementById("loginMessage").innerHTML=
+`<div class="message">Database error.</div>`;
 
 return;
 
 }
-
 
 if(!data){
 
-document.getElementById(
-"loginMessage"
-).innerHTML=
-`
-<div class="message">
-Incorrect admin code.
-</div>
-`;
+document.getElementById("loginMessage").innerHTML=
+`<div class="message">Incorrect admin code.</div>`;
 
 return;
 
 }
 
+sessionStorage.setItem("adminCode",code);
 
-sessionStorage.setItem(
-"adminCode",
-code
-);
-
-
-document.getElementById(
-"adminCode"
-).value="";
-
+document.getElementById("adminCode").value="";
 
 showAdmin();
 
@@ -2975,13 +2597,11 @@ showAdmin();
 
 function showAdmin(){
 
-document.getElementById(
-"loginArea"
-).classList.add("hidden");
+document.getElementById("loginArea")
+.classList.add("hidden");
 
-document.getElementById(
-"adminArea"
-).classList.remove("hidden");
+document.getElementById("adminArea")
+.classList.remove("hidden");
 
 updateAdminGames();
 loadPhotos();
@@ -2991,17 +2611,13 @@ loadPhotos();
 
 function logout(){
 
-sessionStorage.removeItem(
-"adminCode"
-);
+sessionStorage.removeItem("adminCode");
 
-document.getElementById(
-"loginArea"
-).classList.remove("hidden");
+document.getElementById("loginArea")
+.classList.remove("hidden");
 
-document.getElementById(
-"adminArea"
-).classList.add("hidden");
+document.getElementById("adminArea")
+.classList.add("hidden");
 
 }
 
@@ -3010,45 +2626,23 @@ document.getElementById(
 
 async function addGame(){
 
-const code=
-sessionStorage.getItem("adminCode");
+const code=sessionStorage.getItem("adminCode");
 
-
-const date=
-document.getElementById("gameDate").value;
-
-const time=
-document.getElementById("gameTime").value;
-
-const opponent=
-document.getElementById("gameOpponent")
-.value.trim();
-
-const location=
-document.getElementById("gameLocation")
-.value.trim();
-
-const homeAway=
-document.getElementById("gameHomeAway").value;
-
-const notes=
-document.getElementById("gameNotes")
-.value.trim();
-
+const date=document.getElementById("gameDate").value;
+const time=document.getElementById("gameTime").value;
+const opponent=document.getElementById("gameOpponent").value.trim();
+const location=document.getElementById("gameLocation").value.trim();
+const homeAway=document.getElementById("gameHomeAway").value;
+const notes=document.getElementById("gameNotes").value.trim();
 
 if(!date||!opponent){
 
-showAdminMessage(
-"Date and opponent are required."
-);
-
+showAdminMessage("Date and opponent are required.");
 return;
 
 }
 
-
-const {error}=
-await db.rpc(
+const {error}=await db.rpc(
 "add_game",
 {
 p_code:code,
@@ -3061,26 +2655,19 @@ p_notes:notes
 }
 );
 
-
 if(error){
 
 console.error(error);
-
-showAdminMessage(
-"Could not add game."
-);
-
+showAdminMessage("Could not add game.");
 return;
 
 }
-
 
 document.getElementById("gameDate").value="";
 document.getElementById("gameTime").value="";
 document.getElementById("gameOpponent").value="";
 document.getElementById("gameLocation").value="";
 document.getElementById("gameNotes").value="";
-
 
 showAdminMessage("✅ Game added!");
 
@@ -3093,37 +2680,26 @@ loadGames();
 
 function updateAdminGames(){
 
-const container=
-document.getElementById("adminGames");
-
+const container=document.getElementById("adminGames");
 
 if(!games.length){
 
 container.innerHTML=
-`
-<div class="message">
-No games yet.
-</div>
-`;
+`<div class="message">No games yet.</div>`;
 
 return;
 
 }
 
-
-container.innerHTML=
-games.map((game,index)=>{
+container.innerHTML=games.map((game,index)=>{
 
 let score="No score yet";
 
-
 if(hasScore(game))
-score=
-`FINAL ${game.our_score}–${game.opponent_score}`;
+score=`FINAL ${game.our_score}–${game.opponent_score}`;
 
 else if(isGameLive(game))
 score="🔴 LIVE";
-
 
 return `
 
@@ -3134,26 +2710,16 @@ return `
 <div class="compact-game-info">
 
 <div class="compact-game-title">
-
-${index+1}.
-${escapeHtml(game.opponent)}
-
+${index+1}. ${escapeHtml(game.opponent)}
 </div>
 
 <div class="compact-game-meta">
-
 ${formatShortDate(game.date)}
-
 •
-
 ${escapeHtml(game.time||"TBD")}
-
 •
-
 ${getHomeAwayIcon(game.home_away)}
-
 ${escapeHtml(game.home_away||"")}
-
 </div>
 
 <div class="compact-game-score">
@@ -3162,23 +2728,18 @@ ${score}
 
 </div>
 
-
 <div class="compact-game-actions">
 
 <button
 class="edit-button"
 onclick="toggleGameEdit(${game.id})">
-
 ✏️ Edit
-
 </button>
 
 <button
 class="delete-small"
 onclick="deleteGame(${game.id})">
-
 🗑️
-
 </button>
 
 </div>
@@ -3190,9 +2751,7 @@ onclick="deleteGame(${game.id})">
 id="edit-area-${game.id}"
 class="compact-edit">
 
-
 <div class="compact-edit-grid">
-
 
 <div>
 
@@ -3205,7 +2764,6 @@ value="${game.date||""}">
 
 </div>
 
-
 <div>
 
 <label>Time</label>
@@ -3216,7 +2774,6 @@ type="text"
 value="${escapeAttribute(game.time||"")}">
 
 </div>
-
 
 <div>
 
@@ -3229,13 +2786,11 @@ value="${escapeAttribute(game.location||"")}">
 
 </div>
 
-
 <div>
 
 <label>Home / Away</label>
 
-<select
-id="edit-ha-${game.id}">
+<select id="edit-ha-${game.id}">
 
 <option
 value="Home"
@@ -3253,7 +2808,6 @@ ${game.home_away==="Away"?"selected":""}>
 
 </div>
 
-
 <div>
 
 <label>NDGP Score</label>
@@ -3264,7 +2818,6 @@ type="number"
 value="${game.our_score??""}">
 
 </div>
-
 
 <div>
 
@@ -3277,21 +2830,15 @@ value="${game.opponent_score??""}">
 
 </div>
 
-
 <div class="compact-full">
 
 <label>Notes</label>
 
-<textarea
-id="notes-${game.id}">
-${escapeHtml(game.notes||"")}
-</textarea>
+<textarea id="notes-${game.id}">${escapeHtml(game.notes||"")}</textarea>
 
 </div>
 
-
 </div>
-
 
 <button
 class="primary compact-save"
@@ -3300,7 +2847,6 @@ onclick="saveGame(${game.id})">
 💾 SAVE CHANGES
 
 </button>
-
 
 </div>
 
@@ -3315,10 +2861,7 @@ onclick="saveGame(${game.id})">
 
 function toggleGameEdit(id){
 
-const area=
-document.getElementById(
-`edit-area-${id}`
-);
+const area=document.getElementById(`edit-area-${id}`);
 
 if(area)
 area.classList.toggle("open");
@@ -3330,74 +2873,37 @@ area.classList.toggle("open");
 
 async function saveGame(id){
 
-const code=
-sessionStorage.getItem("adminCode");
+const code=sessionStorage.getItem("adminCode");
 
-
-const game=
-games.find(
+const game=games.find(
 g=>Number(g.id)===Number(id)
 );
-
 
 if(!game)
 return;
 
+const date=document.getElementById(`edit-date-${id}`).value;
+const time=document.getElementById(`edit-time-${id}`).value;
+const location=document.getElementById(`edit-location-${id}`).value;
+const homeAway=document.getElementById(`edit-ha-${id}`).value;
 
-const date=
-document.getElementById(
-`edit-date-${id}`
-).value;
+const ourValue=document.getElementById(`our-${id}`).value;
+const oppValue=document.getElementById(`opp-${id}`).value;
 
-const time=
-document.getElementById(
-`edit-time-${id}`
-).value;
-
-const location=
-document.getElementById(
-`edit-location-${id}`
-).value;
-
-const homeAway=
-document.getElementById(
-`edit-ha-${id}`
-).value;
-
-const ourValue=
-document.getElementById(
-`our-${id}`
-).value;
-
-const oppValue=
-document.getElementById(
-`opp-${id}`
-).value;
-
-const notes=
-document.getElementById(
-`notes-${id}`
-).value;
-
+const notes=document.getElementById(`notes-${id}`).value;
 
 const ourScore=
-ourValue===""?
-null:Number(ourValue);
+ourValue===""?null:Number(ourValue);
 
 const opponentScore=
-oppValue===""?
-null:Number(oppValue);
-
+oppValue===""?null:Number(oppValue);
 
 const status=
-ourScore!==null &&
-opponentScore!==null
+ourScore!==null&&opponentScore!==null
 ?"Final"
 :"Scheduled";
 
-
-const {error}=
-await db.rpc(
+const {error}=await db.rpc(
 "update_game",
 {
 p_code:code,
@@ -3414,23 +2920,15 @@ p_notes:notes
 }
 );
 
-
 if(error){
 
 console.error(error);
-
-showAdminMessage(
-"Could not save changes."
-);
-
+showAdminMessage("Could not save changes.");
 return;
 
 }
 
-
-showAdminMessage(
-"✅ Game updated!"
-);
+showAdminMessage("✅ Game updated!");
 
 loadGames();
 
@@ -3441,20 +2939,12 @@ loadGames();
 
 async function deleteGame(id){
 
-if(
-!confirm(
-"Are you sure you want to delete this game?"
-)
-)
+if(!confirm("Are you sure you want to delete this game?"))
 return;
 
+const code=sessionStorage.getItem("adminCode");
 
-const code=
-sessionStorage.getItem("adminCode");
-
-
-const {error}=
-await db.rpc(
+const {error}=await db.rpc(
 "delete_game",
 {
 p_code:code,
@@ -3462,21 +2952,14 @@ p_id:id
 }
 );
 
-
 if(error){
 
-showAdminMessage(
-"Could not delete game."
-);
-
+showAdminMessage("Could not delete game.");
 return;
 
 }
 
-
-showAdminMessage(
-"Game deleted."
-);
+showAdminMessage("Game deleted.");
 
 loadGames();
 
@@ -3487,17 +2970,10 @@ loadGames();
 
 async function loadPhotos(){
 
-const {data,error}=
-await db
+const {data,error}=await db
 .from("photos")
 .select("*")
-.order(
-"created_at",
-{
-ascending:false
-}
-);
-
+.order("created_at",{ascending:false});
 
 if(error){
 
@@ -3506,27 +2982,19 @@ return;
 
 }
 
-
 const photos=data||[];
 
-
-const publicContainer=
-document.getElementById("photoList");
-
+const publicContainer=document.getElementById("photoList");
 
 if(!photos.length){
 
 publicContainer.innerHTML=
-`
-<div class="message">
-No photos yet.
-</div>
-`;
+`<div class="message">No photos yet.</div>`;
 
 }else{
 
-publicContainer.innerHTML=
-`
+publicContainer.innerHTML=`
+
 <div class="photo-grid">
 
 ${photos.map(photo=>`
@@ -3536,18 +3004,13 @@ ${photos.map(photo=>`
 <img
 src="${escapeAttribute(photo.image_url)}"
 alt="NDGP Football"
-onclick="window.open(
-'${escapeAttribute(photo.image_url)}',
-'_blank'
-)">
+onclick="window.open('${escapeAttribute(photo.image_url)}','_blank')">
 
 ${
 photo.caption?
-`
-<div class="photo-caption">
+`<div class="photo-caption">
 ${escapeHtml(photo.caption)}
-</div>
-`
+</div>`
 :""
 }
 
@@ -3556,36 +3019,26 @@ ${escapeHtml(photo.caption)}
 `).join("")}
 
 </div>
+
 `;
 
 }
 
+const admin=document.getElementById("adminPhotos");
 
-const admin=
-document.getElementById("adminPhotos");
-
-
-if(
-admin &&
-sessionStorage.getItem("adminCode")
-){
+if(admin&&sessionStorage.getItem("adminCode")){
 
 if(!photos.length){
 
 admin.innerHTML=
-`
-<div class="message">
-No photos uploaded yet.
-</div>
-`;
+`<div class="message">No photos uploaded yet.</div>`;
 
 return;
 
 }
 
+admin.innerHTML=`
 
-admin.innerHTML=
-`
 <div class="admin-photo-grid">
 
 ${photos.map(photo=>`
@@ -3598,11 +3051,9 @@ alt="Football photo">
 
 <div class="admin-photo-caption">
 
-${
-photo.caption?
+${photo.caption?
 escapeHtml(photo.caption):
-"No caption"
-}
+"No caption"}
 
 </div>
 
@@ -3619,6 +3070,7 @@ onclick="deletePhoto(${photo.id})">
 `).join("")}
 
 </div>
+
 `;
 
 }
@@ -3630,50 +3082,28 @@ onclick="deletePhoto(${photo.id})">
 
 async function addPhoto(){
 
-const code=
-sessionStorage.getItem("adminCode");
+const code=sessionStorage.getItem("adminCode");
 
+const file=document.getElementById("photoFile")
+.files[0];
 
-const file=
-document.getElementById(
-"photoFile"
-).files[0];
-
-
-const caption=
-document.getElementById(
-"photoCaption"
-).value.trim();
-
+const caption=document.getElementById("photoCaption")
+.value.trim();
 
 if(!file){
 
-showAdminMessage(
-"Please choose a photo."
-);
-
+showAdminMessage("Please choose a photo.");
 return;
 
 }
 
-
-showAdminMessage(
-"Preparing photo..."
-);
-
+showAdminMessage("Preparing photo...");
 
 try{
 
-const image=
-await compressImage(
-file,
-1400,
-.78
-);
+const image=await compressImage(file,1400,.78);
 
-
-const {error}=
-await db.rpc(
+const {error}=await db.rpc(
 "add_photo",
 {
 p_code:code,
@@ -3682,43 +3112,25 @@ p_caption:caption
 }
 );
 
-
 if(error){
 
 console.error(error);
-
-showAdminMessage(
-"Could not upload photo."
-);
-
+showAdminMessage("Could not upload photo.");
 return;
 
 }
 
+document.getElementById("photoFile").value="";
+document.getElementById("photoCaption").value="";
 
-document.getElementById(
-"photoFile"
-).value="";
-
-document.getElementById(
-"photoCaption"
-).value="";
-
-
-showAdminMessage(
-"📸 Photo uploaded!"
-);
+showAdminMessage("📸 Photo uploaded!");
 
 loadPhotos();
-
 
 }catch(error){
 
 console.error(error);
-
-showAdminMessage(
-"Could not process photo."
-);
+showAdminMessage("Could not process photo.");
 
 }
 
@@ -3727,77 +3139,47 @@ showAdminMessage(
 
 /* IMAGE COMPRESSION */
 
-function compressImage(
-file,
-maxWidth,
-quality
-){
+function compressImage(file,maxWidth,quality){
 
-return new Promise(
-(resolve,reject)=>{
+return new Promise((resolve,reject)=>{
 
-const reader=
-new FileReader();
-
+const reader=new FileReader();
 
 reader.onload=e=>{
 
-const image=
-new Image();
-
+const image=new Image();
 
 image.onload=()=>{
 
 let width=image.width;
 let height=image.height;
 
-
 if(width>maxWidth){
 
-height*=
-maxWidth/width;
-
+height*=maxWidth/width;
 width=maxWidth;
 
 }
 
-
-const canvas=
-document.createElement("canvas");
+const canvas=document.createElement("canvas");
 
 canvas.width=width;
 canvas.height=height;
 
+const ctx=canvas.getContext("2d");
 
-const ctx=
-canvas.getContext("2d");
-
-
-ctx.drawImage(
-image,
-0,
-0,
-width,
-height
-);
-
+ctx.drawImage(image,0,0,width,height);
 
 resolve(
-canvas.toDataURL(
-"image/jpeg",
-quality
-)
+canvas.toDataURL("image/jpeg",quality)
 );
 
 };
 
-
 image.onerror=reject;
-
 image.src=e.target.result;
 
 };
-
 
 reader.onerror=reject;
 
@@ -3815,13 +3197,9 @@ async function deletePhoto(id){
 if(!confirm("Delete this photo?"))
 return;
 
+const code=sessionStorage.getItem("adminCode");
 
-const code=
-sessionStorage.getItem("adminCode");
-
-
-const {error}=
-await db.rpc(
+const {error}=await db.rpc(
 "delete_photo",
 {
 p_code:code,
@@ -3829,21 +3207,14 @@ p_id:id
 }
 );
 
-
 if(error){
 
-showAdminMessage(
-"Could not delete photo."
-);
-
+showAdminMessage("Could not delete photo.");
 return;
 
 }
 
-
-showAdminMessage(
-"Photo deleted!"
-);
+showAdminMessage("Photo deleted!");
 
 loadPhotos();
 
@@ -3857,12 +3228,7 @@ function formatDate(value){
 if(!value)
 return"";
 
-
-const d=
-new Date(
-value+"T12:00:00"
-);
-
+const d=new Date(value+"T12:00:00");
 
 return d.toLocaleDateString(
 "en-US",
@@ -3882,12 +3248,7 @@ function formatShortDate(value){
 if(!value)
 return"";
 
-
-const d=
-new Date(
-value+"T12:00:00"
-);
-
+const d=new Date(value+"T12:00:00");
 
 return d.toLocaleDateString(
 "en-US",
@@ -3902,12 +3263,8 @@ day:"numeric"
 
 function escapeHtml(value){
 
-if(
-value===null||
-value===undefined
-)
+if(value===null||value===undefined)
 return"";
-
 
 return String(value)
 .replace(/&/g,"&amp;")
@@ -3920,38 +3277,25 @@ return String(value)
 
 
 function escapeAttribute(value){
-
 return escapeHtml(value);
-
 }
 
 
 function showAdminMessage(message){
 
-const box=
-document.getElementById(
-"adminMessage"
-);
-
+const box=document.getElementById("adminMessage");
 
 if(!box)
 return;
 
-
-box.innerHTML=
-`
+box.innerHTML=`
 <div class="message">
 ${escapeHtml(message)}
-</div>
-`;
+</div>`;
 
-
-setTimeout(
-()=>{
+setTimeout(()=>{
 box.innerHTML="";
-},
-4000
-);
+},4000);
 
 }
 
