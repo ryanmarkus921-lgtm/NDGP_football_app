@@ -381,7 +381,10 @@ main {
   border-left:4px solid var(--navy);
   border-radius:11px;
   margin-bottom:9px;
-  padding:11px 12px;
+
+  /* CLEANER / MORE COMPACT */
+  padding:10px 12px 8px;
+
   box-shadow:0 2px 9px rgba(0,31,63,.055);
   cursor:pointer;
   transition:transform .15s ease,box-shadow .15s ease;
@@ -424,7 +427,7 @@ main {
   gap:5px;
   color:#5f7182;
   font-size:11px;
-  margin-top:6px;
+  margin-top:5px;
 }
 
 .game-team {
@@ -441,7 +444,7 @@ main {
   display:flex;
   flex-wrap:wrap;
   gap:5px 11px;
-  margin-top:7px;
+  margin-top:6px;
   color:#637487;
   font-size:10px;
 }
@@ -452,26 +455,34 @@ main {
   gap:3px;
 }
 
-/* SMALLER SCORE */
+/* FINAL SCORE */
 
 .game-score {
   color:var(--navy);
   font-family:"Teko",sans-serif;
-  font-size:22px;
+
+  /* SMALLER + TIGHTER */
+  font-size:21px;
   font-weight:700;
-  line-height:1;
-  margin-top:6px;
+  line-height:.9;
+
+  margin-top:5px;
+  margin-bottom:2px;
 }
 
-/* FINAL / LIVE BADGES */
+/* BADGES */
 
 .badge {
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:4px 8px;
-  border-radius:5px;
-  font-size:9px;
+
+  /* SLIGHTLY BIGGER */
+  padding:5px 9px;
+
+  border-radius:6px;
+
+  font-size:10px;
   line-height:1;
   font-weight:700;
   text-transform:uppercase;
@@ -498,6 +509,11 @@ main {
   background:#fee2e2;
   color:#dc2626;
   border:1px solid #fecaca;
+
+  /* BIGGER LIVE BADGE */
+  padding:6px 10px;
+  font-size:10px;
+
   animation:livePulse 1.5s infinite;
 }
 
@@ -524,6 +540,13 @@ main {
   background:linear-gradient(90deg,#fffafa,#ffffff);
 }
 
+/* BOTTOM GAME DETAILS */
+
+.game > div:last-child {
+  margin-top:4px !important;
+  line-height:1;
+}
+
 /* PHOTOS */
 
 .photo-grid {
@@ -547,7 +570,7 @@ main {
   margin:4px 2px;
 }
 
-/* GAME DETAILS MODAL */
+/* MODAL */
 
 .modal-overlay {
   position:fixed;
@@ -1196,9 +1219,7 @@ footer {
 </style>
 </head>
 
-
 <body>
-
 
 <header>
 
@@ -1208,13 +1229,9 @@ footer {
     alt="Notre Dame Green Pond Crusaders"
   >
 
-  <h1>
-    NDGP FOOTBALL
-  </h1>
+  <h1>NDGP FOOTBALL</h1>
 
-  <p>
-    Notre Dame Green Pond Crusaders
-  </p>
+  <p>Notre Dame Green Pond Crusaders</p>
 
 </header>
 
@@ -1258,23 +1275,17 @@ footer {
 
     <div class="hero-top">
 
-      <span>
-        NEXT GAME
-      </span>
+      <span>NEXT GAME</span>
 
-      <small>
-        2026 SEASON
-      </small>
+      <small>2026 SEASON</small>
 
     </div>
-
 
     <div class="hero-body">
 
       <div class="next-label">
         Notre Dame Green Pond
       </div>
-
 
       <div
         id="nextMatchup"
@@ -1295,14 +1306,12 @@ footer {
 
       </div>
 
-
       <div
         id="nextDetails"
         class="game-info"
       >
         Loading...
       </div>
-
 
       <div
         id="countdown"
@@ -1330,7 +1339,6 @@ footer {
       </div>
 
     </div>
-
 
     <div
       id="recordDetails"
@@ -1401,27 +1409,19 @@ footer {
 
 <section id="admin" class="page">
 
-
 <div id="loginArea">
 
   <div class="admin-login-header">
 
-    <h2>
-      🔐 ADMIN ACCESS
-    </h2>
+    <h2>🔐 ADMIN ACCESS</h2>
 
-    <p>
-      NDGP Football Management
-    </p>
+    <p>NDGP Football Management</p>
 
   </div>
 
-
   <div class="card">
 
-    <label>
-      4-Digit Admin Code
-    </label>
+    <label>4-Digit Admin Code</label>
 
     <input
       id="adminCode"
@@ -1431,7 +1431,6 @@ footer {
       placeholder="Enter code"
     >
 
-
     <button
       class="primary"
       onclick="login()"
@@ -1439,7 +1438,6 @@ footer {
     >
       🔓 Enter Admin
     </button>
-
 
     <div id="loginMessage"></div>
 
@@ -1450,21 +1448,15 @@ footer {
 
 <div id="adminArea" class="hidden">
 
-
   <div class="admin-dashboard-header">
 
     <div>
 
-      <h2>
-        ADMIN DASHBOARD
-      </h2>
+      <h2>ADMIN DASHBOARD</h2>
 
-      <p>
-        Manage games & photos
-      </p>
+      <p>Manage games & photos</p>
 
     </div>
-
 
     <button
       class="secondary"
@@ -1486,13 +1478,9 @@ footer {
 
       <div class="admin-section-title">
 
-        <h3>
-          GAME MANAGEMENT
-        </h3>
+        <h3>GAME MANAGEMENT</h3>
 
-        <p>
-          Add and edit the schedule
-        </p>
+        <p>Add and edit the schedule</p>
 
       </div>
 
@@ -1501,17 +1489,13 @@ footer {
 
     <div class="admin-section-body">
 
-
       <div class="admin-subsection">
 
-        <h4>
-          ➕ ADD GAME
-        </h4>
+        <h4>➕ ADD GAME</h4>
 
         <div class="admin-description">
           Add a new game to the schedule.
         </div>
-
 
         <div class="form-row">
 
@@ -1525,7 +1509,6 @@ footer {
             >
 
           </div>
-
 
           <div>
 
@@ -1541,10 +1524,7 @@ footer {
 
         </div>
 
-
-        <label>
-          Opponent
-        </label>
+        <label>Opponent</label>
 
         <input
           id="gameOpponent"
@@ -1552,14 +1532,11 @@ footer {
           placeholder="Opponent"
         >
 
-
         <div class="form-row">
 
           <div>
 
-            <label>
-              Location
-            </label>
+            <label>Location</label>
 
             <input
               id="gameLocation"
@@ -1569,12 +1546,9 @@ footer {
 
           </div>
 
-
           <div>
 
-            <label>
-              Home / Away
-            </label>
+            <label>Home / Away</label>
 
             <select id="gameHomeAway">
 
@@ -1592,16 +1566,12 @@ footer {
 
         </div>
 
-
-        <label>
-          Notes
-        </label>
+        <label>Notes</label>
 
         <textarea
           id="gameNotes"
           placeholder="Optional notes"
         ></textarea>
-
 
         <button
           class="primary"
@@ -1619,14 +1589,11 @@ footer {
 
       <div class="admin-subsection">
 
-        <h4>
-          📋 MANAGE GAMES
-        </h4>
+        <h4>📋 MANAGE GAMES</h4>
 
         <div class="admin-description">
           Edit games, scores, locations and notes.
         </div>
-
 
         <div id="adminGames">
           Loading...
@@ -1649,13 +1616,9 @@ footer {
 
       <div class="admin-section-title">
 
-        <h3>
-          PHOTO MANAGEMENT
-        </h3>
+        <h3>PHOTO MANAGEMENT</h3>
 
-        <p>
-          Upload and manage photos
-        </p>
+        <p>Upload and manage photos</p>
 
       </div>
 
@@ -1664,21 +1627,13 @@ footer {
 
     <div class="admin-section-body">
 
-
       <div class="photo-upload">
 
-        <h4>
-          📤 UPLOAD PHOTO
-        </h4>
+        <h4>📤 UPLOAD PHOTO</h4>
 
-        <p>
-          Add a photo to the football gallery.
-        </p>
+        <p>Add a photo to the football gallery.</p>
 
-
-        <label>
-          Photo
-        </label>
+        <label>Photo</label>
 
         <input
           id="photoFile"
@@ -1686,17 +1641,13 @@ footer {
           accept="image/*"
         >
 
-
-        <label>
-          Caption
-        </label>
+        <label>Caption</label>
 
         <input
           id="photoCaption"
           type="text"
           placeholder="Optional caption"
         >
-
 
         <button
           class="primary upload-photo-button"
@@ -1710,9 +1661,7 @@ footer {
 
       <div class="admin-subsection">
 
-        <h4>
-          🖼️ UPLOADED PHOTOS
-        </h4>
+        <h4>🖼️ UPLOADED PHOTOS</h4>
 
         <div id="adminPhotos">
           Loading...
@@ -1723,7 +1672,6 @@ footer {
     </div>
 
   </div>
-
 
 </div>
 
@@ -1750,11 +1698,9 @@ footer {
         ×
       </button>
 
-
       <div class="modal-kicker">
         NDGP FOOTBALL
       </div>
-
 
       <div
         id="modalMatchup"
@@ -1773,18 +1719,15 @@ footer {
         class="modal-status"
       ></div>
 
-
       <div
         id="modalScore"
         class="modal-score"
       ></div>
 
-
       <div
         id="modalInfo"
         class="modal-info-grid"
       ></div>
-
 
       <div id="modalNotes"></div>
 
@@ -1925,7 +1868,7 @@ async function loadGames() {
 }
 
 
-/* SCORE CHECK */
+/* SCORE */
 
 function hasScore(game) {
 
@@ -2592,15 +2535,16 @@ function updateSchedule() {
 
             <div
               style="
-                margin-top:7px;
+                margin-top:4px;
                 color:#9aa8b5;
                 font-size:8px;
+                line-height:1;
                 text-align:right;
                 text-transform:uppercase;
                 letter-spacing:.5px;
               "
             >
-              Tap for game details →
+              TAP FOR GAME DETAILS →
             </div>
 
           </div>
