@@ -19,7 +19,6 @@
 
 /* =========================================================
    NDGP FOOTBALL
-   PREMIUM CLEAN SPORTS APP
 ========================================================= */
 
 :root{
@@ -28,29 +27,22 @@
   --navy3:#001a31;
 
   --gold:#f4c542;
-  --gold2:#dfad12;
+  --gold2:#d9a900;
   --gold-soft:#fff8dc;
 
-  --white:#ffffff;
   --bg:#f2f5f7;
+  --white:#fff;
 
   --text:#092743;
   --muted:#5d7182;
-  --muted-light:#718393;
 
   --border:#d4dfe7;
 
   --green:#198754;
-  --green-bg:#e7f6ed;
-
   --red:#d93636;
-  --red-bg:#fdeaea;
 
-  --shadow:
-    0 4px 16px rgba(0,31,58,.07);
-
-  --shadow-heavy:
-    0 18px 50px rgba(0,20,40,.24);
+  --shadow:0 4px 16px rgba(0,31,58,.07);
+  --shadow-heavy:0 18px 50px rgba(0,20,40,.24);
 
   --radius:13px;
 }
@@ -149,31 +141,11 @@ textarea{
 .splash-logo{
   width:125px;
   height:125px;
-
   object-fit:contain;
 
-  filter:
-    drop-shadow(
-      0 10px 22px
-      rgba(0,0,0,.35)
-    );
-
-  animation:
-    splashLogo .8s ease both;
-}
-
-@keyframes splashLogo{
-
-  from{
-    opacity:0;
-    transform:scale(.75);
-  }
-
-  to{
-    opacity:1;
-    transform:scale(1);
-  }
-
+  filter:drop-shadow(
+    0 10px 22px rgba(0,0,0,.35)
+  );
 }
 
 .splash-title{
@@ -196,7 +168,6 @@ textarea{
   font-weight:600;
 
   letter-spacing:1.6px;
-
   text-transform:uppercase;
 }
 
@@ -227,17 +198,10 @@ textarea{
   border-bottom:3px solid var(--gold);
 
   box-shadow:
-    0 4px 18px
-    rgba(0,30,60,.15);
-
-  overflow:hidden;
+    0 4px 18px rgba(0,30,60,.15);
 }
 
-/* NO DECORATIVE CIRCLE */
-
 .header-logo{
-  position:relative;
-
   width:72px;
   height:72px;
 
@@ -247,11 +211,9 @@ textarea{
 
   margin:0 auto 4px;
 
-  filter:
-    drop-shadow(
-      0 5px 10px
-      rgba(0,0,0,.28)
-    );
+  filter:drop-shadow(
+    0 5px 10px rgba(0,0,0,.28)
+  );
 }
 
 .site-header h1{
@@ -274,7 +236,6 @@ textarea{
   font-weight:600;
 
   letter-spacing:1.6px;
-
   text-transform:uppercase;
 }
 
@@ -306,8 +267,7 @@ textarea{
 
   font-size:23px;
 
-  transition:
-    transform .2s ease;
+  transition:transform .2s ease;
 }
 
 .admin-gear:hover{
@@ -318,7 +278,7 @@ textarea{
 
 
 /* =========================================================
-   PROGRAM ACHIEVEMENTS
+   ACHIEVEMENTS
 ========================================================= */
 
 .achievements{
@@ -327,7 +287,7 @@ textarea{
   background:
     linear-gradient(
       180deg,
-      #ffffff,
+      #fff,
       #f8fafb
     );
 
@@ -349,10 +309,6 @@ textarea{
 }
 
 .achievement{
-  position:relative;
-
-  overflow:hidden;
-
   padding:11px;
 
   background:white;
@@ -363,14 +319,10 @@ textarea{
   border-radius:9px;
 
   box-shadow:
-    0 2px 8px
-    rgba(0,30,60,.04);
+    0 2px 8px rgba(0,30,60,.04);
 }
 
 .achievement-title{
-  position:relative;
-  z-index:1;
-
   color:var(--navy);
 
   font-family:"Teko";
@@ -382,9 +334,6 @@ textarea{
 }
 
 .achievement-years{
-  position:relative;
-  z-index:1;
-
   margin-top:5px;
 
   color:var(--muted);
@@ -398,7 +347,6 @@ textarea{
 
 /* =========================================================
    NAVIGATION
-   NO EMOJIS
 ========================================================= */
 
 .main-nav{
@@ -413,14 +361,12 @@ textarea{
 
   padding:7px;
 
-  background:
-    rgba(248,250,251,.97);
+  background:rgba(248,250,251,.97);
 
   border-bottom:1px solid var(--border);
 
   box-shadow:
-    0 4px 14px
-    rgba(0,30,60,.06);
+    0 4px 14px rgba(0,30,60,.06);
 
   backdrop-filter:blur(14px);
 }
@@ -447,8 +393,7 @@ textarea{
 
   text-transform:uppercase;
 
-  transition:
-    all .18s ease;
+  transition:all .18s ease;
 }
 
 .main-nav button:hover{
@@ -472,8 +417,7 @@ textarea{
   border-color:#eadb9c;
 
   box-shadow:
-    0 2px 8px
-    rgba(130,100,20,.08);
+    0 2px 8px rgba(130,100,20,.08);
 }
 
 .main-nav button.active::after{
@@ -521,7 +465,6 @@ main{
 }
 
 @keyframes pageIn{
-
   from{
     opacity:0;
     transform:translateY(7px);
@@ -531,16 +474,10 @@ main{
     opacity:1;
     transform:translateY(0);
   }
-
 }
 
-
-/* =========================================================
-   GENERAL CARDS
-========================================================= */
-
 .card{
-  background:var(--white);
+  background:white;
 
   border:1px solid var(--border);
 
@@ -601,8 +538,7 @@ main{
   border-radius:14px;
 
   box-shadow:
-    0 7px 25px
-    rgba(0,30,60,.09);
+    0 7px 25px rgba(0,30,60,.09);
 }
 
 .next-header{
@@ -641,18 +577,9 @@ main{
 }
 
 .next-body{
-  position:relative;
-
   padding:19px 12px 18px;
 
   text-align:center;
-}
-
-/* CIRCLE REMOVED */
-
-.next-body > *{
-  position:relative;
-  z-index:1;
 }
 
 .next-label{
@@ -710,24 +637,6 @@ main{
   font-weight:600;
 
   line-height:2;
-
-  text-align:center;
-}
-
-.home-away{
-  display:inline;
-
-  padding:0;
-  margin:0;
-
-  color:var(--muted);
-
-  background:none;
-
-  border:0;
-
-  font-size:12px;
-  font-weight:600;
 }
 
 .countdown{
@@ -757,18 +666,15 @@ main{
   font-weight:700;
 
   box-shadow:
-    0 3px 8px
-    rgba(0,30,60,.08);
+    0 3px 8px rgba(0,30,60,.08);
 }
 
 
 /* =========================================================
-   RECORD ONLY
+   RECORD
 ========================================================= */
 
 .record-card{
-  display:block;
-
   padding:0;
 
   overflow:hidden;
@@ -806,12 +712,10 @@ main{
 
 
 /* =========================================================
-   GAME CARDS
+   GAMES
 ========================================================= */
 
 .game-card{
-  position:relative;
-
   overflow:hidden;
 
   padding:12px 13px 8px;
@@ -827,8 +731,7 @@ main{
   border-radius:11px;
 
   box-shadow:
-    0 2px 8px
-    rgba(0,30,60,.05);
+    0 2px 8px rgba(0,30,60,.05);
 
   transition:
     transform .15s ease,
@@ -839,8 +742,7 @@ main{
   transform:translateY(-2px);
 
   box-shadow:
-    0 8px 20px
-    rgba(0,30,60,.09);
+    0 8px 20px rgba(0,30,60,.09);
 }
 
 .game-card.live{
@@ -891,12 +793,12 @@ main{
 
 .status.win{
   color:var(--green);
-  background:var(--green-bg);
+  background:#e7f6ed;
 }
 
 .status.loss{
   color:var(--red);
-  background:var(--red-bg);
+  background:#fdeaea;
 }
 
 .status.live{
@@ -998,8 +900,7 @@ main{
   border-radius:10px;
 
   box-shadow:
-    0 2px 8px
-    rgba(0,30,60,.05);
+    0 2px 8px rgba(0,30,60,.05);
 
   transition:
     border-color .15s ease,
@@ -1053,8 +954,6 @@ main{
 .season-arrow{
   color:var(--gold2);
 
-  font-family:Arial,sans-serif;
-
   font-size:31px;
 
   transition:
@@ -1072,9 +971,7 @@ main{
 
 .roster-tools{
   display:flex;
-
   gap:7px;
-
   margin-bottom:8px;
 }
 
@@ -1108,8 +1005,7 @@ main{
   border-color:#9eb1c1;
 
   box-shadow:
-    0 0 0 3px
-    rgba(0,38,74,.05);
+    0 0 0 3px rgba(0,38,74,.05);
 }
 
 .roster-count{
@@ -1147,8 +1043,7 @@ main{
   border-radius:9px;
 
   box-shadow:
-    0 2px 7px
-    rgba(0,30,60,.04);
+    0 2px 7px rgba(0,30,60,.04);
 }
 
 .roster-number{
@@ -1198,7 +1093,7 @@ main{
 
 
 /* =========================================================
-   MODALS
+   MODAL SYSTEM
 ========================================================= */
 
 .overlay{
@@ -1239,8 +1134,7 @@ main{
 
   background:#f4f7f9;
 
-  border:1px solid
-    rgba(255,255,255,.35);
+  border:1px solid rgba(255,255,255,.35);
 
   border-radius:15px;
 
@@ -1251,7 +1145,6 @@ main{
 }
 
 @keyframes modalIn{
-
   from{
     opacity:0;
     transform:scale(.96) translateY(8px);
@@ -1261,7 +1154,6 @@ main{
     opacity:1;
     transform:scale(1) translateY(0);
   }
-
 }
 
 .modal-header{
@@ -1288,7 +1180,6 @@ main{
   font-weight:700;
 
   letter-spacing:1.6px;
-
   text-transform:uppercase;
 }
 
@@ -1564,277 +1455,50 @@ main{
 
 
 /* =========================================================
-   ADMIN
+   FORM MODALS
 ========================================================= */
 
-.admin-page{
-  display:none;
+.form-modal{
+  width:min(
+    550px,
+    calc(100vw - 24px)
+  );
 
-  width:100%;
-  max-width:760px;
+  max-height:
+    calc(100dvh - 24px);
 
-  margin:auto;
-
-  padding:10px 9px 30px;
-}
-
-.admin-page.active{
-  display:block;
-}
-
-.admin-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  gap:10px;
-
-  padding:14px;
-
-  margin-bottom:9px;
-
-  color:white;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--navy3),
-      var(--navy2)
-    );
-
-  border-bottom:3px solid var(--gold);
-
-  border-radius:13px;
-
-  box-shadow:var(--shadow);
-}
-
-.admin-header-title{
-  font-family:"Teko";
-
-  font-size:32px;
-
-  line-height:.85;
-}
-
-.admin-header-sub{
-  margin-top:5px;
-
-  color:#d7e4ec;
-
-  font-size:10px;
-  font-weight:600;
-
-  letter-spacing:1px;
-
-  text-transform:uppercase;
-}
-
-.admin-back{
-  padding:8px 10px;
-
-  color:white;
-
-  background:
-    rgba(255,255,255,.09);
-
-  border:1px solid
-    rgba(255,255,255,.22);
-
-  border-radius:6px;
-
-  font-size:9px;
-  font-weight:700;
-}
-
-.admin-section{
   overflow:hidden;
 
-  margin-bottom:8px;
+  background:#f4f7f9;
 
-  background:white;
+  border-radius:15px;
 
-  border:1px solid var(--border);
+  box-shadow:var(--shadow-heavy);
 
-  border-radius:12px;
-
-  box-shadow:var(--shadow);
+  animation:
+    modalIn .22s ease both;
 }
 
-.admin-section-toggle{
-  width:100%;
+.form-modal-body{
+  overflow-y:auto;
 
+  max-height:
+    calc(100dvh - 105px);
+
+  padding:15px;
+}
+
+.form-modal-footer{
   display:flex;
-  align-items:center;
 
-  gap:10px;
+  gap:7px;
 
-  padding:12px;
-
-  border:0;
-
-  background:white;
-
-  text-align:left;
+  margin-top:10px;
 }
 
-.admin-icon{
-  width:39px;
-  height:39px;
-
-  flex-shrink:0;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  background:
-    linear-gradient(
-      145deg,
-      var(--navy2),
-      var(--navy)
-    );
-
-  color:white;
-
-  border-radius:8px;
-
-  font-size:18px;
-}
-
-.admin-section-text{
+.form-modal-footer button{
   flex:1;
 }
-
-.admin-section-text strong{
-  display:block;
-
-  color:var(--navy);
-
-  font-family:"Teko";
-
-  font-size:27px;
-
-  line-height:.85;
-}
-
-.admin-section-text span{
-  display:block;
-
-  margin-top:4px;
-
-  color:var(--muted);
-
-  font-size:10px;
-  font-weight:600;
-}
-
-.admin-arrow{
-  color:#718392;
-
-  font-size:12px;
-}
-
-.admin-section-body{
-  display:none;
-
-  padding:0 12px 12px;
-
-  border-top:1px solid var(--border);
-}
-
-.admin-section.open .admin-section-body{
-  display:block;
-}
-
-.admin-subsection{
-  padding:11px;
-
-  margin-top:9px;
-
-  background:#f7f9fa;
-
-  border:1px solid var(--border);
-
-  border-radius:9px;
-}
-
-.admin-subsection h3{
-  margin:0;
-
-  color:var(--navy);
-
-  font-family:"Teko";
-
-  font-size:25px;
-
-  line-height:1;
-}
-
-.admin-description{
-  margin:4px 0 9px;
-
-  color:var(--muted);
-
-  font-size:10px;
-  font-weight:600;
-}
-
-
-/* =========================================================
-   ADMIN STATS
-========================================================= */
-
-.admin-stats{
-  display:grid;
-
-  grid-template-columns:
-    repeat(4,minmax(0,1fr));
-
-  gap:6px;
-
-  margin-bottom:9px;
-}
-
-.admin-stat{
-  padding:11px 6px;
-
-  background:white;
-
-  border:1px solid var(--border);
-
-  border-radius:9px;
-
-  box-shadow:var(--shadow);
-
-  text-align:center;
-}
-
-.admin-stat-number{
-  color:var(--navy);
-
-  font-family:"Teko";
-
-  font-size:31px;
-
-  line-height:.85;
-}
-
-.admin-stat-label{
-  margin-top:4px;
-
-  color:var(--muted);
-
-  font-size:9px;
-  font-weight:600;
-
-  text-transform:uppercase;
-}
-
-
-/* =========================================================
-   FORMS
-========================================================= */
 
 .form-grid{
   display:grid;
@@ -1846,13 +1510,13 @@ main{
 }
 
 .field{
-  margin-bottom:7px;
+  margin-bottom:8px;
 }
 
 .field label{
   display:block;
 
-  margin-bottom:3px;
+  margin-bottom:4px;
 
   color:var(--muted);
 
@@ -1867,7 +1531,7 @@ main{
 .field textarea{
   width:100%;
 
-  padding:8px;
+  padding:9px;
 
   color:var(--text);
 
@@ -1881,7 +1545,7 @@ main{
 }
 
 .field textarea{
-  min-height:65px;
+  min-height:70px;
 
   resize:vertical;
 }
@@ -1892,8 +1556,7 @@ main{
   border-color:#9db0bf;
 
   box-shadow:
-    0 0 0 3px
-    rgba(0,38,74,.05);
+    0 0 0 3px rgba(0,38,74,.05);
 }
 
 .primary-button{
@@ -1918,8 +1581,7 @@ main{
   font-weight:700;
 
   box-shadow:
-    0 3px 8px
-    rgba(0,30,60,.12);
+    0 3px 8px rgba(0,30,60,.12);
 }
 
 .secondary-button{
@@ -1950,23 +1612,6 @@ main{
 
   font-size:9px;
   font-weight:700;
-}
-
-.message{
-  padding:9px;
-
-  margin-top:7px;
-
-  color:var(--muted);
-
-  background:#eef3f6;
-
-  border:1px solid var(--border);
-
-  border-radius:7px;
-
-  font-size:10px;
-  font-weight:600;
 }
 
 
@@ -2077,6 +1722,273 @@ main{
 
 
 /* =========================================================
+   ADMIN
+========================================================= */
+
+.admin-page{
+  display:none;
+
+  width:100%;
+  max-width:760px;
+
+  margin:auto;
+
+  padding:10px 9px 30px;
+}
+
+.admin-page.active{
+  display:block;
+}
+
+.admin-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:10px;
+
+  padding:14px;
+
+  margin-bottom:9px;
+
+  color:white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--navy3),
+      var(--navy2)
+    );
+
+  border-bottom:3px solid var(--gold);
+
+  border-radius:13px;
+
+  box-shadow:var(--shadow);
+}
+
+.admin-header-title{
+  font-family:"Teko";
+
+  font-size:32px;
+
+  line-height:.85;
+}
+
+.admin-header-sub{
+  margin-top:5px;
+
+  color:#d7e4ec;
+
+  font-size:10px;
+  font-weight:600;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+}
+
+.admin-back{
+  padding:8px 10px;
+
+  color:white;
+
+  background:
+    rgba(255,255,255,.09);
+
+  border:1px solid rgba(255,255,255,.22);
+
+  border-radius:6px;
+
+  font-size:9px;
+  font-weight:700;
+}
+
+.admin-section{
+  overflow:hidden;
+
+  margin-bottom:8px;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:12px;
+
+  box-shadow:var(--shadow);
+}
+
+.admin-section-toggle{
+  width:100%;
+
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+
+  padding:12px;
+
+  border:0;
+
+  background:white;
+
+  text-align:left;
+}
+
+.admin-icon{
+  width:39px;
+  height:39px;
+
+  flex-shrink:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--navy2),
+      var(--navy)
+    );
+
+  color:white;
+
+  border-radius:8px;
+
+  font-size:18px;
+}
+
+.admin-section-text{
+  flex:1;
+}
+
+.admin-section-text strong{
+  display:block;
+
+  color:var(--navy);
+
+  font-family:"Teko";
+
+  font-size:27px;
+
+  line-height:.85;
+}
+
+.admin-section-text span{
+  display:block;
+
+  margin-top:4px;
+
+  color:var(--muted);
+
+  font-size:10px;
+  font-weight:600;
+}
+
+.admin-arrow{
+  color:#718392;
+  font-size:12px;
+}
+
+.admin-section-body{
+  display:none;
+
+  padding:0 12px 12px;
+
+  border-top:1px solid var(--border);
+}
+
+.admin-section.open .admin-section-body{
+  display:block;
+}
+
+.admin-subsection{
+  padding:11px;
+
+  margin-top:9px;
+
+  background:#f7f9fa;
+
+  border:1px solid var(--border);
+
+  border-radius:9px;
+}
+
+.admin-subsection h3{
+  margin:0;
+
+  color:var(--navy);
+
+  font-family:"Teko";
+
+  font-size:25px;
+
+  line-height:1;
+}
+
+.admin-description{
+  margin:4px 0 9px;
+
+  color:var(--muted);
+
+  font-size:10px;
+  font-weight:600;
+}
+
+
+/* =========================================================
+   ADMIN STATS
+========================================================= */
+
+.admin-stats{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
+  gap:6px;
+
+  margin-bottom:9px;
+}
+
+.admin-stat{
+  padding:11px 6px;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:9px;
+
+  box-shadow:var(--shadow);
+
+  text-align:center;
+}
+
+.admin-stat-number{
+  color:var(--navy);
+
+  font-family:"Teko";
+
+  font-size:31px;
+
+  line-height:.85;
+}
+
+.admin-stat-label{
+  margin-top:4px;
+
+  color:var(--muted);
+
+  font-size:9px;
+  font-weight:600;
+
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
    ADMIN LISTS
 ========================================================= */
 
@@ -2128,7 +2040,6 @@ main{
 .admin-roster{
   display:flex;
   flex-direction:column;
-
   gap:5px;
 }
 
@@ -2136,9 +2047,7 @@ main{
   display:grid;
 
   grid-template-columns:
-    43px
-    1fr
-    auto;
+    43px 1fr auto;
 
   align-items:center;
 
@@ -2184,7 +2093,7 @@ main{
 
 
 /* =========================================================
-   ADMIN LOGIN
+   LOGIN
 ========================================================= */
 
 .admin-login{
@@ -2198,11 +2107,7 @@ main{
   align-items:center;
   justify-content:center;
 
-  padding:
-    max(12px,env(safe-area-inset-top))
-    max(12px,env(safe-area-inset-right))
-    max(12px,env(safe-area-inset-bottom))
-    max(12px,env(safe-area-inset-left));
+  padding:12px;
 
   background:
     rgba(0,17,33,.76);
@@ -2210,8 +2115,6 @@ main{
   backdrop-filter:blur(9px);
 
   overscroll-behavior:none;
-
-  touch-action:none;
 }
 
 .admin-login.show{
@@ -2233,9 +2136,6 @@ main{
   overflow:hidden;
 
   flex-shrink:0;
-
-  animation:
-    modalIn .2s ease both;
 }
 
 .login-header{
@@ -2312,7 +2212,6 @@ main{
   justify-content:center;
 
   border:0;
-
   border-radius:50%;
 
   background:
@@ -2393,6 +2292,50 @@ main{
 
 
 /* =========================================================
+   SIMPLE CONFIRM MODAL
+========================================================= */
+
+.confirm-icon{
+  width:48px;
+  height:48px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin:0 auto 8px;
+
+  background:#fff4d2;
+
+  border-radius:50%;
+
+  font-size:23px;
+}
+
+.confirm-text{
+  color:var(--muted);
+
+  font-size:12px;
+  font-weight:600;
+
+  text-align:center;
+
+  line-height:1.5;
+}
+
+.confirm-buttons{
+  display:flex;
+  gap:7px;
+
+  margin-top:13px;
+}
+
+.confirm-buttons button{
+  flex:1;
+}
+
+
+/* =========================================================
    MOBILE
 ========================================================= */
 
@@ -2422,8 +2365,6 @@ main{
   .achievement-years{
     font-size:9px;
   }
-
-  /* BIGGER MOBILE NAV */
 
   .main-nav{
     gap:4px;
@@ -2472,24 +2413,16 @@ main{
       repeat(2,minmax(0,1fr));
   }
 
-  /*
-    IMPORTANT:
-    Game details stay a POPUP on mobile.
-    They do NOT become a full-screen page.
-  */
-
   .overlay{
     padding:14px;
   }
 
-  .overlay .modal{
-    width:
-      min(
-        94vw,
-        560px
-      );
-
-    height:auto;
+  .modal,
+  .form-modal{
+    width:min(
+      94vw,
+      560px
+    );
 
     max-height:
       calc(100dvh - 28px);
@@ -2498,13 +2431,31 @@ main{
   }
 
   .modal-body,
-  .history-modal-body{
+  .history-modal-body,
+  .form-modal-body{
     max-height:
       calc(100dvh - 125px);
   }
 
   .modal-title{
     font-size:34px;
+  }
+
+  .admin-game{
+    grid-template-columns:1fr;
+  }
+
+  .admin-actions{
+    justify-content:flex-end;
+  }
+
+  .admin-player{
+    grid-template-columns:
+      43px 1fr;
+  }
+
+  .admin-player .admin-actions{
+    grid-column:1 / -1;
   }
 
 }
@@ -2522,7 +2473,6 @@ main{
 
   .main-nav button{
     min-height:48px;
-
     font-size:11px;
   }
 
@@ -2550,7 +2500,6 @@ main{
 
 </style>
 </head>
-
 
 <body>
 
@@ -2599,12 +2548,10 @@ main{
 
   </button>
 
-
   <img
     src="LOGO_W__FB.png"
     class="header-logo"
     alt="Notre Dame Green Pond Crusaders">
-
 
   <h1>
     NDGP FOOTBALL
@@ -2639,7 +2586,6 @@ main{
 
     </div>
 
-
     <div class="achievement">
 
       <div class="achievement-title">
@@ -2658,7 +2604,7 @@ main{
 
 
 <!-- =======================================================
-     NAVIGATION
+     NAV
 ======================================================= -->
 
 <nav
@@ -2696,8 +2642,6 @@ main{
 <main id="publicMain">
 
 
-<!-- ================= HOME ================= -->
-
 <section
   id="home"
   class="page active">
@@ -2716,13 +2660,11 @@ main{
 
     </div>
 
-
     <div class="next-body">
 
       <div class="next-label">
         Notre Dame Green Pond
       </div>
-
 
       <div
         id="nextMatchup"
@@ -2742,15 +2684,11 @@ main{
 
       </div>
 
-
       <div
         id="nextInfo"
         class="next-info">
-
         Loading...
-
       </div>
-
 
       <div
         id="countdown"
@@ -2761,8 +2699,6 @@ main{
 
   </div>
 
-
-  <!-- RECORD ONLY -->
 
   <div class="record-card card">
 
@@ -2775,9 +2711,7 @@ main{
       <div
         id="recordNumber"
         class="record-number">
-
         0–0
-
       </div>
 
     </div>
@@ -2786,8 +2720,6 @@ main{
 
 </section>
 
-
-<!-- ================= SCHEDULE ================= -->
 
 <section
   id="schedule"
@@ -2807,8 +2739,6 @@ main{
 
 </section>
 
-
-<!-- ================= HISTORY ================= -->
 
 <section
   id="history"
@@ -2831,8 +2761,6 @@ main{
 </section>
 
 
-<!-- ================= ROSTER ================= -->
-
 <section
   id="roster"
   class="page">
@@ -2843,7 +2771,6 @@ main{
       👥 2026 Roster
     </h2>
 
-
     <div class="roster-tools">
 
       <input
@@ -2851,7 +2778,6 @@ main{
         class="roster-search"
         type="search"
         placeholder="🔎 Search player...">
-
 
       <select
         id="rosterFilter"
@@ -2876,19 +2802,15 @@ main{
 
     </div>
 
-
     <div
       id="rosterCount"
       class="roster-count">
     </div>
 
-
     <div
       id="rosterList"
       class="roster-grid">
-
       Loading...
-
     </div>
 
   </div>
@@ -2899,13 +2821,12 @@ main{
 
 
 <!-- =======================================================
-     ADMIN PAGE
+     ADMIN
 ======================================================= -->
 
 <section
   id="adminPage"
   class="admin-page">
-
 
   <div class="admin-header">
 
@@ -2921,7 +2842,6 @@ main{
 
     </div>
 
-
     <button
       class="admin-back"
       onclick="closeAdmin()">
@@ -2936,7 +2856,6 @@ main{
   <div class="admin-stats">
 
     <div class="admin-stat">
-
       <div
         id="adminGamesCount"
         class="admin-stat-number">
@@ -2946,12 +2865,9 @@ main{
       <div class="admin-stat-label">
         🏈 Games
       </div>
-
     </div>
 
-
     <div class="admin-stat">
-
       <div
         id="adminPlayersCount"
         class="admin-stat-number">
@@ -2961,12 +2877,9 @@ main{
       <div class="admin-stat-label">
         👥 Players
       </div>
-
     </div>
 
-
     <div class="admin-stat">
-
       <div
         id="adminWinsCount"
         class="admin-stat-number">
@@ -2976,12 +2889,9 @@ main{
       <div class="admin-stat-label">
         🏆 Wins
       </div>
-
     </div>
 
-
     <div class="admin-stat">
-
       <div
         id="adminLossesCount"
         class="admin-stat-number">
@@ -2991,7 +2901,6 @@ main{
       <div class="admin-stat-label">
         ❌ Losses
       </div>
-
     </div>
 
   </div>
@@ -3047,9 +2956,7 @@ main{
 
           <div class="field">
 
-            <label>
-              Date
-            </label>
+            <label>Date</label>
 
             <input
               id="gameDate"
@@ -3057,12 +2964,9 @@ main{
 
           </div>
 
-
           <div class="field">
 
-            <label>
-              Time
-            </label>
+            <label>Time</label>
 
             <input
               id="gameTime"
@@ -3076,9 +2980,7 @@ main{
 
         <div class="field">
 
-          <label>
-            Opponent
-          </label>
+          <label>Opponent</label>
 
           <input
             id="gameOpponent"
@@ -3092,9 +2994,7 @@ main{
 
           <div class="field">
 
-            <label>
-              Location
-            </label>
+            <label>Location</label>
 
             <input
               id="gameLocation"
@@ -3103,12 +3003,9 @@ main{
 
           </div>
 
-
           <div class="field">
 
-            <label>
-              Home / Away
-            </label>
+            <label>Home / Away</label>
 
             <select id="gameHomeAway">
 
@@ -3129,9 +3026,7 @@ main{
 
         <div class="field">
 
-          <label>
-            Notes
-          </label>
+          <label>Notes</label>
 
           <textarea
             id="gameNotes"
@@ -3151,9 +3046,6 @@ main{
       </div>
 
 
-      <div id="adminGameMessage"></div>
-
-
       <div class="admin-subsection">
 
         <h3>
@@ -3161,7 +3053,7 @@ main{
         </h3>
 
         <div class="admin-description">
-          Edit scores, times, locations or remove games.
+          Edit or remove games.
         </div>
 
         <div id="adminGameList">
@@ -3225,9 +3117,7 @@ main{
 
           <div class="field">
 
-            <label>
-              Jersey Number
-            </label>
+            <label>Jersey Number</label>
 
             <input
               id="playerNumber"
@@ -3238,12 +3128,9 @@ main{
 
           </div>
 
-
           <div class="field">
 
-            <label>
-              Player Name
-            </label>
+            <label>Player Name</label>
 
             <input
               id="playerName"
@@ -3257,9 +3144,7 @@ main{
 
         <div class="field">
 
-          <label>
-            Position
-          </label>
+          <label>Position</label>
 
 
           <div
@@ -3375,61 +3260,61 @@ main{
 
 
 <!-- =======================================================
-     ADMIN LOGIN
+     ADMIN LOGIN MODAL
 ======================================================= -->
 
 <div
   id="adminLogin"
-  class="admin-login"
+  class="overlay"
   onclick="closeAdminLogin(event)">
 
   <div
-    class="login-window"
+    class="form-modal"
     onclick="event.stopPropagation()">
 
-    <div class="login-header">
+    <div class="modal-header">
 
       <button
-        class="login-close"
+        class="modal-close"
         onclick="closeAdminLogin()">
-
         ×
-
       </button>
 
-
-      <div class="login-gear">
-        ⚙️
+      <div class="modal-kicker">
+        ⚙️ NDGP FOOTBALL
       </div>
 
-
-      <h2>
+      <div class="modal-title">
         ADMIN ACCESS
-      </h2>
-
-      <p>
-        NDGP Football Management
-      </p>
+      </div>
 
     </div>
 
 
-    <div class="login-body">
+    <div class="form-modal-body">
 
-      <input
-        id="adminCode"
-        class="login-code"
-        type="password"
-        inputmode="numeric"
-        maxlength="4"
-        minlength="4"
-        pattern="[0-9]{4}"
-        autocomplete="off"
-        placeholder="••••">
+      <div
+        class="field">
+
+        <label>
+          4-Digit Admin Code
+        </label>
+
+        <input
+          id="adminCode"
+          type="password"
+          inputmode="numeric"
+          maxlength="4"
+          minlength="4"
+          pattern="[0-9]{4}"
+          autocomplete="off"
+          placeholder="Enter 4-digit code">
+
+      </div>
 
 
       <button
-        class="login-submit"
+        class="primary-button"
         onclick="loginAdmin()">
 
         🔐 ENTER ADMIN
@@ -3450,7 +3335,7 @@ main{
 
 
 <!-- =======================================================
-     GAME DETAILS POPUP
+     GAME DETAILS MODAL
 ======================================================= -->
 
 <div
@@ -3467,9 +3352,7 @@ main{
       <button
         class="modal-close"
         onclick="closeGameModal()">
-
         ×
-
       </button>
 
       <div class="modal-kicker">
@@ -3491,18 +3374,15 @@ main{
         class="modal-status">
       </div>
 
-
       <div
         id="modalScore"
         class="modal-score">
       </div>
 
-
       <div
         id="modalInfo"
         class="info-grid">
       </div>
-
 
       <div
         id="modalNotes">
@@ -3516,7 +3396,7 @@ main{
 
 
 <!-- =======================================================
-     HISTORY POPUP
+     HISTORY MODAL
 ======================================================= -->
 
 <div
@@ -3533,9 +3413,7 @@ main{
       <button
         class="modal-close"
         onclick="closeHistoryModal()">
-
         ×
-
       </button>
 
       <div class="modal-kicker">
@@ -3558,6 +3436,455 @@ main{
     <div
       id="historyModalBody"
       class="history-modal-body">
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =======================================================
+     EDIT GAME MODAL
+======================================================= -->
+
+<div
+  id="editGameModal"
+  class="overlay"
+  onclick="closeEditGame(event)">
+
+  <div
+    class="form-modal"
+    onclick="event.stopPropagation()">
+
+    <div class="modal-header">
+
+      <button
+        class="modal-close"
+        onclick="closeEditGame()">
+        ×
+      </button>
+
+      <div class="modal-kicker">
+        🏈 ADMIN • GAMES
+      </div>
+
+      <div class="modal-title">
+        EDIT GAME
+      </div>
+
+    </div>
+
+
+    <div class="form-modal-body">
+
+      <input
+        id="editGameId"
+        type="hidden">
+
+
+      <div class="form-grid">
+
+        <div class="field">
+
+          <label>
+            Date
+          </label>
+
+          <input
+            id="editGameDate"
+            type="date">
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Time
+          </label>
+
+          <input
+            id="editGameTime"
+            type="text"
+            placeholder="7:00 PM">
+
+        </div>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Opponent
+        </label>
+
+        <input
+          id="editGameOpponent"
+          type="text">
+
+      </div>
+
+
+      <div class="form-grid">
+
+        <div class="field">
+
+          <label>
+            Location
+          </label>
+
+          <input
+            id="editGameLocation"
+            type="text">
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Home / Away
+          </label>
+
+          <select id="editGameHomeAway">
+
+            <option value="Home">
+              🏠 Home
+            </option>
+
+            <option value="Away">
+              ✈️ Away
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <div class="form-grid">
+
+        <div class="field">
+
+          <label>
+            NDGP Score
+          </label>
+
+          <input
+            id="editGameOurScore"
+            type="number"
+            min="0"
+            placeholder="Leave blank if not final">
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Opponent Score
+          </label>
+
+          <input
+            id="editGameOpponentScore"
+            type="number"
+            min="0"
+            placeholder="Leave blank if not final">
+
+        </div>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Notes
+        </label>
+
+        <textarea
+          id="editGameNotes"
+          placeholder="Optional notes"></textarea>
+
+      </div>
+
+
+      <div class="form-modal-footer">
+
+        <button
+          class="secondary-button"
+          onclick="closeEditGame()">
+
+          CANCEL
+
+        </button>
+
+        <button
+          class="primary-button"
+          onclick="saveGameEdit()">
+
+          SAVE CHANGES
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =======================================================
+     EDIT PLAYER MODAL
+======================================================= -->
+
+<div
+  id="editPlayerModal"
+  class="overlay"
+  onclick="closeEditPlayer(event)">
+
+  <div
+    class="form-modal"
+    onclick="event.stopPropagation()">
+
+    <div class="modal-header">
+
+      <button
+        class="modal-close"
+        onclick="closeEditPlayer()">
+        ×
+      </button>
+
+      <div class="modal-kicker">
+        👥 ADMIN • ROSTER
+      </div>
+
+      <div class="modal-title">
+        EDIT PLAYER
+      </div>
+
+    </div>
+
+
+    <div class="form-modal-body">
+
+      <input
+        id="editPlayerId"
+        type="hidden">
+
+
+      <div class="form-grid">
+
+        <div class="field">
+
+          <label>
+            Jersey Number
+          </label>
+
+          <input
+            id="editPlayerNumber"
+            type="number"
+            min="0"
+            max="99">
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Player Name
+          </label>
+
+          <input
+            id="editPlayerName"
+            type="text">
+
+        </div>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Position(s)
+        </label>
+
+
+        <div
+          id="editPositionPicker"
+          class="position-picker">
+
+          <button
+            type="button"
+            class="position-trigger"
+            onclick="toggleEditPositions()">
+
+            <span id="editPositionText">
+              Select position(s)...
+            </span>
+
+            <span>
+              ▼
+            </span>
+
+          </button>
+
+
+          <div class="position-menu">
+
+            <div
+              id="editPositionOptions"
+              class="position-options">
+            </div>
+
+
+            <div
+              class="field"
+              style="margin-top:8px">
+
+              <label>
+                Custom Position
+              </label>
+
+              <input
+                id="editCustomPosition"
+                type="text"
+                placeholder="Example: Utility">
+
+            </div>
+
+
+            <div
+              style="
+                display:flex;
+                justify-content:flex-end;
+                gap:5px;
+              ">
+
+              <button
+                type="button"
+                class="secondary-button"
+                onclick="clearEditPositions()">
+
+                Clear
+
+              </button>
+
+              <button
+                type="button"
+                class="secondary-button"
+                onclick="closeEditPositions()">
+
+                Done
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="form-modal-footer">
+
+        <button
+          class="secondary-button"
+          onclick="closeEditPlayer()">
+
+          CANCEL
+
+        </button>
+
+        <button
+          class="primary-button"
+          onclick="savePlayerEdit()">
+
+          SAVE CHANGES
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =======================================================
+     CONFIRM MODAL
+======================================================= -->
+
+<div
+  id="confirmModal"
+  class="overlay"
+  onclick="closeConfirm(event)">
+
+  <div
+    class="form-modal"
+    onclick="event.stopPropagation()">
+
+    <div class="modal-header">
+
+      <button
+        class="modal-close"
+        onclick="closeConfirm()">
+        ×
+      </button>
+
+      <div class="modal-kicker">
+        ⚠️ ADMIN
+      </div>
+
+      <div class="modal-title">
+        ARE YOU SURE?
+      </div>
+
+    </div>
+
+
+    <div class="form-modal-body">
+
+      <div class="confirm-icon">
+        ⚠️
+      </div>
+
+      <div
+        id="confirmText"
+        class="confirm-text">
+      </div>
+
+
+      <div class="confirm-buttons">
+
+        <button
+          class="secondary-button"
+          onclick="closeConfirm()">
+
+          CANCEL
+
+        </button>
+
+        <button
+          id="confirmYes"
+          class="danger-button">
+
+          DELETE
+
+        </button>
+
+      </div>
+
     </div>
 
   </div>
@@ -3656,17 +3983,14 @@ function showPage(id,button){
 
 
 /* =========================================================
-   ADMIN LOGIN
+   LOGIN
 ========================================================= */
 
 function openAdminLogin(){
 
-  const modal=
-    document.getElementById(
-      "adminLogin"
-    );
-
-  modal.classList.add("show");
+  document
+    .getElementById("adminLogin")
+    .classList.add("show");
 
   document.body.classList.add(
     "modal-open"
@@ -3681,7 +4005,7 @@ function openAdminLogin(){
           preventScroll:true
         });
     },
-    200
+    150
   );
 
 }
@@ -3812,9 +4136,9 @@ async function loginAdmin(){
 
   }
 
-  catch(err){
+  catch(error){
 
-    console.error(err);
+    console.error(error);
 
     error.textContent=
       "Unable to verify code.";
@@ -3825,7 +4149,7 @@ async function loginAdmin(){
 
 
 /* =========================================================
-   ADMIN PAGE
+   ADMIN
 ========================================================= */
 
 function openAdmin(){
@@ -3865,12 +4189,6 @@ function openAdmin(){
 
   loadAdminData();
 
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
 }
 
 
@@ -3901,15 +4219,11 @@ function closeAdmin(){
     .classList.remove("hidden");
 
 
-  const home=
-    document.querySelector(
-      ".main-nav button"
-    );
-
-
   showPage(
     "home",
-    home
+    document.querySelector(
+      ".main-nav button"
+    )
   );
 
 }
@@ -3927,9 +4241,9 @@ function toggleAdmin(id){
 async function loadAdminData(){
 
   buildPositionOptions();
+  buildEditPositionOptions();
 
   await loadGames();
-
   await loadRoster();
 
 }
@@ -3968,11 +4282,8 @@ async function loadGames(){
   games=data||[];
 
   renderHome();
-
   renderSchedule();
-
   renderAdminGames();
-
   updateAdminStats();
 
 }
@@ -4011,11 +4322,8 @@ function kickoffDate(game){
 
   if(match){
 
-    hours=
-      Number(match[1]);
-
-    minutes=
-      Number(match[2]||0);
+    hours=Number(match[1]);
+    minutes=Number(match[2]||0);
 
 
     const period=
@@ -4023,17 +4331,10 @@ function kickoffDate(game){
         .toUpperCase();
 
 
-    if(
-      period==="PM" &&
-      hours<12
-    )
+    if(period==="PM" && hours<12)
       hours+=12;
 
-
-    if(
-      period==="AM" &&
-      hours===12
-    )
+    if(period==="AM" && hours===12)
       hours=0;
 
   }
@@ -4185,53 +4486,54 @@ function renderHome(){
       .getElementById("countdown")
       .classList.add("hidden");
 
-    return;
-
   }
 
+  else{
 
-  document.getElementById(
-    "nextMatchup"
-  ).innerHTML=`
+    document.getElementById(
+      "nextMatchup"
+    ).innerHTML=`
 
-    <span class="matchup-team">
-      NDGP
-    </span>
+      <span class="matchup-team">
+        NDGP
+      </span>
 
-    <span class="matchup-vs">
-      VS
-    </span>
+      <span class="matchup-vs">
+        VS
+      </span>
 
-    <span class="matchup-team">
-      ${escapeHTML(next.opponent)}
-    </span>
+      <span class="matchup-team">
+        ${escapeHTML(next.opponent)}
+      </span>
 
-  `;
-
-
-  document.getElementById(
-    "nextInfo"
-  ).innerHTML=`
-
-    📅 ${formatDate(next.date)}
-    <br>
-
-    ⏰ ${escapeHTML(next.time||"Time TBD")}
-    <br>
-
-    📍 ${escapeHTML(next.location||"Location TBD")}
-    <br>
-
-    ${
-      next.home_away==="Home"
-      ?"🏠 Home"
-      :"✈️ Away"
-    }
-
-  `;
+    `;
 
 
-  updateCountdown(next);
+    document.getElementById(
+      "nextInfo"
+    ).innerHTML=`
+
+      📅 ${formatDate(next.date)}
+      <br>
+
+      ⏰ ${escapeHTML(next.time||"Time TBD")}
+      <br>
+
+      📍 ${escapeHTML(next.location||"Location TBD")}
+      <br>
+
+      ${
+        next.home_away==="Home"
+        ?"🏠 Home"
+        :"✈️ Away"
+      }
+
+    `;
+
+
+    updateCountdown(next);
+
+  }
 
 
   let wins=0;
@@ -4269,10 +4571,6 @@ function renderHome(){
 }
 
 
-/* =========================================================
-   COUNTDOWN / LIVE
-========================================================= */
-
 function updateCountdown(game){
 
   const box=
@@ -4295,8 +4593,6 @@ function updateCountdown(game){
 
   box.classList.add("hidden");
 
-  box.textContent="";
-
 }
 
 
@@ -4315,9 +4611,11 @@ function renderSchedule(){
   if(!games.length){
 
     container.innerHTML=
-      `<div class="message">
-        🏈 No games have been added yet.
-      </div>`;
+      `
+        <div class="admin-description">
+          🏈 No games have been added yet.
+        </div>
+      `;
 
     return;
 
@@ -4456,7 +4754,7 @@ function renderSchedule(){
 
 
 /* =========================================================
-   GAME DETAILS POPUP
+   GAME DETAILS
 ========================================================= */
 
 function openGameDetails(id){
@@ -4482,19 +4780,9 @@ function openGameDetails(id){
     gameStatus(game);
 
 
-  const statusBox=
-    document.getElementById(
-      "modalStatus"
-    );
-
-
-  const scoreBox=
-    document.getElementById(
-      "modalScore"
-    );
-
-
-  statusBox.innerHTML=
+  document.getElementById(
+    "modalStatus"
+  ).innerHTML=
     status
     ?
     `
@@ -4518,7 +4806,9 @@ function openGameDetails(id){
     "";
 
 
-  scoreBox.textContent=
+  document.getElementById(
+    "modalScore"
+  ).textContent=
     hasScore(game)
     ?
     `${game.our_score} – ${game.opponent_score}`
@@ -4606,7 +4896,6 @@ function openGameDetails(id){
     .getElementById("gameModal")
     .classList.add("show");
 
-
   document.body.classList.add(
     "modal-open"
   );
@@ -4628,7 +4917,6 @@ function closeGameModal(event){
     .getElementById("gameModal")
     .classList.remove("show");
 
-
   document.body.classList.remove(
     "modal-open"
   );
@@ -4637,7 +4925,7 @@ function closeGameModal(event){
 
 
 /* =========================================================
-   HISTORY DATA
+   HISTORY
 ========================================================= */
 
 const historyData=[
@@ -4668,23 +4956,22 @@ const historyData=[
 
   },
 
-
   {
     year:2024,
     record:"9–2",
 
     games:[
-      ["Garden Spot","—","W"],
-      ["Salisbury","—","W"],
-      ["North Schuylkill","—","W"],
-      ["Saucon Valley","—","W"],
-      ["Catasauqua","—","W"],
-      ["Northern Lehigh","—","W"],
-      ["Pen Argyl","—","W"],
-      ["Palisades","—","W"],
-      ["Palmerton","—","W"],
-      ["Wilson","—","W"],
-      ["North Schuylkill","—","L"]
+      ["Game 1","—","W"],
+      ["Game 2","—","W"],
+      ["Game 3","—","W"],
+      ["Game 4","—","W"],
+      ["Game 5","—","W"],
+      ["Game 6","—","W"],
+      ["Game 7","—","W"],
+      ["Game 8","—","W"],
+      ["Game 9","—","W"],
+      ["Playoff Game","—","L"],
+      ["Playoff Game","—","L"]
     ],
 
     achievements:[
@@ -4692,7 +4979,6 @@ const historyData=[
     ]
 
   },
-
 
   {
     year:2023,
@@ -4736,10 +5022,6 @@ const historyData=[
 
 ];
 
-
-/* =========================================================
-   HISTORY
-========================================================= */
 
 function renderHistory(){
 
@@ -4908,11 +5190,8 @@ function openHistory(year){
 
     html=`
 
-      <div class="message">
-
-        📊 Final Record:
-        ${season.record}
-
+      <div class="admin-description">
+        📊 Final Record: ${season.record}
       </div>
 
     `;
@@ -4928,7 +5207,6 @@ function openHistory(year){
   document
     .getElementById("historyModal")
     .classList.add("show");
-
 
   document.body.classList.add(
     "modal-open"
@@ -4950,7 +5228,6 @@ function closeHistoryModal(event){
   document
     .getElementById("historyModal")
     .classList.remove("show");
-
 
   document.body.classList.remove(
     "modal-open"
@@ -4992,9 +5269,7 @@ async function loadRoster(){
   roster=data||[];
 
   renderRoster();
-
   renderAdminRoster();
-
   updateAdminStats();
 
 }
@@ -5066,9 +5341,11 @@ function renderRoster(){
   if(!filtered.length){
 
     list.innerHTML=
-      `<div class="message">
-        No players found.
-      </div>`;
+      `
+        <div class="admin-description">
+          No players found.
+        </div>
+      `;
 
     return;
 
@@ -5124,7 +5401,7 @@ document
 
 
 /* =========================================================
-   POSITION PICKER
+   POSITIONS
 ========================================================= */
 
 const positions=[
@@ -5154,37 +5431,54 @@ const positions=[
 ];
 
 
+function makePositionHTML(id){
+
+  return positions
+    .map(
+      position=>`
+
+        <label class="position-option">
+
+          <input
+            type="checkbox"
+            value="${position}"
+            data-position-group="${id}">
+
+          ${position}
+
+        </label>
+
+      `
+    )
+    .join("");
+
+}
+
+
 function buildPositionOptions(){
 
-  const container=
+  const el=
     document.getElementById(
       "positionOptions"
     );
 
+  if(el)
+    el.innerHTML=
+      makePositionHTML("add");
 
-  if(!container)
-    return;
+}
 
 
-  container.innerHTML=
-    positions
-      .map(
-        position=>`
+function buildEditPositionOptions(){
 
-          <label class="position-option">
+  const el=
+    document.getElementById(
+      "editPositionOptions"
+    );
 
-            <input
-              type="checkbox"
-              value="${position}"
-              onchange="updatePositionText()">
-
-            ${position}
-
-          </label>
-
-        `
-      )
-      .join("");
+  if(el)
+    el.innerHTML=
+      makePositionHTML("edit");
 
 }
 
@@ -5196,6 +5490,8 @@ function togglePositions(){
       "positionPicker"
     )
     .classList.toggle("open");
+
+  updatePositionText();
 
 }
 
@@ -5217,7 +5513,7 @@ function clearPositions(){
 
   document
     .querySelectorAll(
-      "#positionOptions input"
+      '[data-position-group="add"]'
     )
     .forEach(
       input=>
@@ -5240,7 +5536,7 @@ function updatePositionText(){
   const selected=
     Array.from(
       document.querySelectorAll(
-        "#positionOptions input:checked"
+        '[data-position-group="add"]:checked'
       )
     )
     .map(
@@ -5249,12 +5545,9 @@ function updatePositionText(){
 
 
   const custom=
-    document
-      .getElementById(
-        "customPosition"
-      )
-      .value
-      .trim();
+    document.getElementById(
+      "customPosition"
+    ).value.trim();
 
 
   if(custom)
@@ -5305,7 +5598,7 @@ function getPositions(){
   const selected=
     Array.from(
       document.querySelectorAll(
-        "#positionOptions input:checked"
+        '[data-position-group="add"]:checked'
       )
     )
     .map(
@@ -5314,12 +5607,153 @@ function getPositions(){
 
 
   const custom=
-    document
-      .getElementById(
-        "customPosition"
+    document.getElementById(
+      "customPosition"
+    ).value.trim();
+
+
+  if(custom)
+    selected.push(custom);
+
+
+  return[
+    ...new Set(selected)
+  ].join(", ");
+
+}
+
+
+/* =========================================================
+   EDIT POSITIONS
+========================================================= */
+
+function toggleEditPositions(){
+
+  document
+    .getElementById(
+      "editPositionPicker"
+    )
+    .classList.toggle("open");
+
+  updateEditPositionText();
+
+}
+
+
+function closeEditPositions(){
+
+  document
+    .getElementById(
+      "editPositionPicker"
+    )
+    .classList.remove("open");
+
+  updateEditPositionText();
+
+}
+
+
+function clearEditPositions(){
+
+  document
+    .querySelectorAll(
+      '[data-position-group="edit"]'
+    )
+    .forEach(
+      input=>
+        input.checked=false
+    );
+
+
+  document.getElementById(
+    "editCustomPosition"
+  ).value="";
+
+
+  updateEditPositionText();
+
+}
+
+
+function updateEditPositionText(){
+
+  const selected=
+    Array.from(
+      document.querySelectorAll(
+        '[data-position-group="edit"]:checked'
       )
-      .value
-      .trim();
+    )
+    .map(
+      input=>input.value
+    );
+
+
+  const custom=
+    document.getElementById(
+      "editCustomPosition"
+    ).value.trim();
+
+
+  if(custom)
+    selected.push(custom);
+
+
+  const text=
+    document.getElementById(
+      "editPositionText"
+    );
+
+
+  if(!selected.length){
+
+    text.textContent=
+      "Select position(s)...";
+
+    text.className="";
+
+  }
+
+  else{
+
+    text.textContent=
+      [...new Set(selected)]
+        .join(", ");
+
+    text.className=
+      "position-selected";
+
+  }
+
+}
+
+
+document
+  .getElementById(
+    "editCustomPosition"
+  )
+  .addEventListener(
+    "input",
+    updateEditPositionText
+  );
+
+
+function getEditPositions(){
+
+  const selected=
+    Array.from(
+      document.querySelectorAll(
+        '[data-position-group="edit"]:checked'
+      )
+    )
+    .map(
+      input=>input.value
+    );
+
+
+  const custom=
+    document.getElementById(
+      "editCustomPosition"
+    ).value.trim();
 
 
   if(custom)
@@ -5352,9 +5786,11 @@ function renderAdminRoster(){
   if(!roster.length){
 
     list.innerHTML=
-      `<div class="message">
-        👥 No players have been added.
-      </div>`;
+      `
+        <div class="admin-description">
+          👥 No players have been added.
+        </div>
+      `;
 
     return;
 
@@ -5375,7 +5811,6 @@ function renderAdminRoster(){
                   ${escapeHTML(player.number)}
                 </div>
 
-
                 <div>
 
                   <div class="admin-player-name">
@@ -5388,24 +5823,22 @@ function renderAdminRoster(){
 
                 </div>
 
-
                 <div class="admin-actions">
 
                   <button
                     class="secondary-button"
                     onclick="
-                      editPlayer(${Number(player.id)})
+                      openEditPlayer(${Number(player.id)})
                     ">
 
                     EDIT
 
                   </button>
 
-
                   <button
                     class="danger-button"
                     onclick="
-                      deletePlayer(${Number(player.id)})
+                      confirmDeletePlayer(${Number(player.id)})
                     ">
 
                     DELETE
@@ -5429,17 +5862,15 @@ function renderAdminRoster(){
 async function addPlayer(){
 
   const number=
-    document
-      .getElementById("playerNumber")
-      .value
-      .trim();
+    document.getElementById(
+      "playerNumber"
+    ).value.trim();
 
 
   const name=
-    document
-      .getElementById("playerName")
-      .value
-      .trim();
+    document.getElementById(
+      "playerName"
+    ).value.trim();
 
 
   const position=
@@ -5448,7 +5879,7 @@ async function addPlayer(){
 
   if(!number||!name||!position){
 
-    alert(
+    showMessage(
       "Please enter a number, name and position."
     );
 
@@ -5473,7 +5904,7 @@ async function addPlayer(){
 
     console.error(error);
 
-    alert(
+    showMessage(
       "Unable to add player."
     );
 
@@ -5486,11 +5917,9 @@ async function addPlayer(){
     "playerNumber"
   ).value="";
 
-
   document.getElementById(
     "playerName"
   ).value="";
-
 
   clearPositions();
 
@@ -5501,47 +5930,7 @@ async function addPlayer(){
 }
 
 
-async function deletePlayer(id){
-
-  if(
-    !confirm(
-      "Remove this player from the roster?"
-    )
-  )
-    return;
-
-
-  const {
-    error
-  }=
-  await db
-    .from("roster")
-    .delete()
-    .eq(
-      "id",
-      id
-    );
-
-
-  if(error){
-
-    alert(
-      "Unable to remove player."
-    );
-
-    console.error(error);
-
-    return;
-
-  }
-
-
-  await loadRoster();
-
-}
-
-
-async function editPlayer(id){
+function openEditPlayer(id){
 
   const player=
     roster.find(
@@ -5554,37 +5943,176 @@ async function editPlayer(id){
     return;
 
 
-  const name=
-    prompt(
-      "👤 Player name:",
-      player.name
+  document.getElementById(
+    "editPlayerId"
+  ).value=player.id;
+
+
+  document.getElementById(
+    "editPlayerNumber"
+  ).value=player.number;
+
+
+  document.getElementById(
+    "editPlayerName"
+  ).value=player.name;
+
+
+  document
+    .querySelectorAll(
+      '[data-position-group="edit"]'
+    )
+    .forEach(
+      input=>
+        input.checked=false
     );
 
 
-  if(name===null)
+  document.getElementById(
+    "editCustomPosition"
+  ).value="";
+
+
+  const rawPositions=
+    String(
+      player.position||""
+    )
+    .split(",")
+    .map(
+      p=>p.trim()
+    )
+    .filter(Boolean);
+
+
+  const standard=
+    [];
+
+
+  const custom=
+    [];
+
+
+  rawPositions.forEach(
+    position=>{
+
+      if(
+        positions.includes(
+          position.toUpperCase()
+        )
+      ){
+
+        standard.push(
+          position.toUpperCase()
+        );
+
+      }
+
+      else{
+
+        custom.push(position);
+
+      }
+
+    }
+  );
+
+
+  document
+    .querySelectorAll(
+      '[data-position-group="edit"]'
+    )
+    .forEach(
+      input=>{
+
+        if(
+          standard.includes(
+            input.value
+          )
+        )
+          input.checked=true;
+
+      }
+    );
+
+
+  document.getElementById(
+    "editCustomPosition"
+  ).value=
+    custom.join(", ");
+
+
+  updateEditPositionText();
+
+
+  document
+    .getElementById(
+      "editPlayerModal"
+    )
+    .classList.add("show");
+
+  document.body.classList.add(
+    "modal-open"
+  );
+
+}
+
+
+function closeEditPlayer(event){
+
+  if(
+    event &&
+    event.target &&
+    event.target.id!=="editPlayerModal"
+  )
     return;
+
+
+  document
+    .getElementById(
+      "editPlayerModal"
+    )
+    .classList.remove("show");
+
+  document.body.classList.remove(
+    "modal-open"
+  );
+
+}
+
+
+async function savePlayerEdit(){
+
+  const id=
+    document.getElementById(
+      "editPlayerId"
+    ).value;
 
 
   const number=
-    prompt(
-      "🔢 Jersey number:",
-      player.number
-    );
+    document.getElementById(
+      "editPlayerNumber"
+    ).value.trim();
 
 
-  if(number===null)
-    return;
+  const name=
+    document.getElementById(
+      "editPlayerName"
+    ).value.trim();
 
 
   const position=
-    prompt(
-      "🏈 Position(s):",
-      player.position
+    getEditPositions();
+
+
+  if(!number||!name||!position){
+
+    alert(
+      "Please enter a number, name and position."
     );
 
-
-  if(position===null)
     return;
+
+  }
 
 
   const {
@@ -5593,9 +6121,9 @@ async function editPlayer(id){
   await db
     .from("roster")
     .update({
-      name:name.trim(),
-      number:number.trim(),
-      position:position.trim()
+      number,
+      name,
+      position
     })
     .eq(
       "id",
@@ -5615,6 +6143,8 @@ async function editPlayer(id){
 
   }
 
+
+  closeEditPlayer();
 
   await loadRoster();
 
@@ -5640,9 +6170,11 @@ function renderAdminGames(){
   if(!games.length){
 
     list.innerHTML=
-      `<div class="message">
-        🏈 No games have been added.
-      </div>`;
+      `
+        <div class="admin-description">
+          🏈 No games have been added.
+        </div>
+      `;
 
     return;
 
@@ -5672,8 +6204,7 @@ function renderAdminGames(){
                   hasScore(game)
                   ?
                   `
-                    •
-                    🏈 FINAL
+                    • 🏈 FINAL
                     ${game.our_score}–
                     ${game.opponent_score}
                   `
@@ -5691,7 +6222,7 @@ function renderAdminGames(){
               <button
                 class="secondary-button"
                 onclick="
-                  editGame(${Number(game.id)})
+                  openEditGame(${Number(game.id)})
                 ">
 
                 EDIT
@@ -5702,7 +6233,7 @@ function renderAdminGames(){
               <button
                 class="danger-button"
                 onclick="
-                  deleteGame(${Number(game.id)})
+                  confirmDeleteGame(${Number(game.id)})
                 ">
 
                 DELETE
@@ -5723,43 +6254,39 @@ function renderAdminGames(){
 async function addGame(){
 
   const date=
-    document
-      .getElementById("gameDate")
-      .value;
+    document.getElementById(
+      "gameDate"
+    ).value;
 
   const time=
-    document
-      .getElementById("gameTime")
-      .value
-      .trim();
+    document.getElementById(
+      "gameTime"
+    ).value.trim();
 
   const opponent=
-    document
-      .getElementById("gameOpponent")
-      .value
-      .trim();
+    document.getElementById(
+      "gameOpponent"
+    ).value.trim();
 
   const location=
-    document
-      .getElementById("gameLocation")
-      .value
-      .trim();
+    document.getElementById(
+      "gameLocation"
+    ).value.trim();
 
   const homeAway=
-    document
-      .getElementById("gameHomeAway")
-      .value;
+    document.getElementById(
+      "gameHomeAway"
+    ).value;
 
   const notes=
-    document
-      .getElementById("gameNotes")
-      .value
-      .trim();
+    document.getElementById(
+      "gameNotes"
+    ).value.trim();
 
 
   if(!date||!opponent){
 
-    alert(
+    showMessage(
       "Please enter the date and opponent."
     );
 
@@ -5787,24 +6314,13 @@ async function addGame(){
 
     console.error(error);
 
-    document.getElementById(
-      "adminGameMessage"
-    ).innerHTML=
-      `<div class="message">
-        ❌ Unable to add game.
-      </div>`;
+    showMessage(
+      "Unable to add game."
+    );
 
     return;
 
   }
-
-
-  document.getElementById(
-    "adminGameMessage"
-  ).innerHTML=
-    `<div class="message">
-      ✅ Game added successfully.
-    </div>`;
 
 
   document.getElementById(
@@ -5833,15 +6349,359 @@ async function addGame(){
 }
 
 
-async function deleteGame(id){
+function openEditGame(id){
+
+  const game=
+    games.find(
+      g=>
+        Number(g.id)===Number(id)
+    );
+
+
+  if(!game)
+    return;
+
+
+  document.getElementById(
+    "editGameId"
+  ).value=game.id;
+
+
+  document.getElementById(
+    "editGameDate"
+  ).value=game.date||"";
+
+
+  document.getElementById(
+    "editGameTime"
+  ).value=game.time||"";
+
+
+  document.getElementById(
+    "editGameOpponent"
+  ).value=game.opponent||"";
+
+
+  document.getElementById(
+    "editGameLocation"
+  ).value=game.location||"";
+
+
+  document.getElementById(
+    "editGameHomeAway"
+  ).value=
+    game.home_away==="Away"
+    ?"Away"
+    :"Home";
+
+
+  document.getElementById(
+    "editGameOurScore"
+  ).value=
+    hasScore(game)
+    ?
+    game.our_score
+    :
+    "";
+
+
+  document.getElementById(
+    "editGameOpponentScore"
+  ).value=
+    hasScore(game)
+    ?
+    game.opponent_score
+    :
+    "";
+
+
+  document.getElementById(
+    "editGameNotes"
+  ).value=
+    game.notes||"";
+
+
+  document
+    .getElementById(
+      "editGameModal"
+    )
+    .classList.add("show");
+
+  document.body.classList.add(
+    "modal-open"
+  );
+
+}
+
+
+function closeEditGame(event){
 
   if(
-    !confirm(
-      "Delete this game?"
-    )
+    event &&
+    event.target &&
+    event.target.id!=="editGameModal"
   )
     return;
 
+
+  document
+    .getElementById(
+      "editGameModal"
+    )
+    .classList.remove("show");
+
+  document.body.classList.remove(
+    "modal-open"
+  );
+
+}
+
+
+async function saveGameEdit(){
+
+  const id=
+    document.getElementById(
+      "editGameId"
+    ).value;
+
+
+  const date=
+    document.getElementById(
+      "editGameDate"
+    ).value;
+
+
+  const time=
+    document.getElementById(
+      "editGameTime"
+    ).value.trim();
+
+
+  const opponent=
+    document.getElementById(
+      "editGameOpponent"
+    ).value.trim();
+
+
+  const location=
+    document.getElementById(
+      "editGameLocation"
+    ).value.trim();
+
+
+  const homeAway=
+    document.getElementById(
+      "editGameHomeAway"
+    ).value;
+
+
+  const ourRaw=
+    document.getElementById(
+      "editGameOurScore"
+    ).value.trim();
+
+
+  const oppRaw=
+    document.getElementById(
+      "editGameOpponentScore"
+    ).value.trim();
+
+
+  const notes=
+    document.getElementById(
+      "editGameNotes"
+    ).value.trim();
+
+
+  if(!date||!opponent){
+
+    alert(
+      "Please enter the date and opponent."
+    );
+
+    return;
+
+  }
+
+
+  if(
+    (ourRaw && !oppRaw) ||
+    (!ourRaw && oppRaw)
+  ){
+
+    alert(
+      "Enter both scores, or leave both blank."
+    );
+
+    return;
+
+  }
+
+
+  const ourScore=
+    ourRaw
+    ?
+    Number(ourRaw)
+    :
+    null;
+
+
+  const opponentScore=
+    oppRaw
+    ?
+    Number(oppRaw)
+    :
+    null;
+
+
+  const {
+    error
+  }=
+  await db
+    .from("games")
+    .update({
+
+      date,
+
+      time,
+
+      opponent,
+
+      location,
+
+      home_away:homeAway,
+
+      our_score:ourScore,
+
+      opponent_score:opponentScore,
+
+      notes
+
+    })
+    .eq(
+      "id",
+      id
+    );
+
+
+  if(error){
+
+    console.error(error);
+
+    alert(
+      "Unable to update game."
+    );
+
+    return;
+
+  }
+
+
+  closeEditGame();
+
+  await loadGames();
+
+}
+
+
+/* =========================================================
+   CUSTOM DELETE CONFIRMATION
+========================================================= */
+
+let confirmAction=null;
+
+
+function openConfirm(message,action){
+
+  document.getElementById(
+    "confirmText"
+  ).textContent=message;
+
+
+  confirmAction=action;
+
+
+  document
+    .getElementById(
+      "confirmModal"
+    )
+    .classList.add("show");
+
+  document.body.classList.add(
+    "modal-open"
+  );
+
+}
+
+
+function closeConfirm(event){
+
+  if(
+    event &&
+    event.target &&
+    event.target.id!=="confirmModal"
+  )
+    return;
+
+
+  document
+    .getElementById(
+      "confirmModal"
+    )
+    .classList.remove("show");
+
+  document.body.classList.remove(
+    "modal-open"
+  );
+
+
+  confirmAction=null;
+
+}
+
+
+document
+  .getElementById(
+    "confirmYes"
+  )
+  .addEventListener(
+    "click",
+    async()=>{
+
+      const action=
+        confirmAction;
+
+      closeConfirm();
+
+      if(action)
+        await action();
+
+    }
+  );
+
+
+function confirmDeleteGame(id){
+
+  const game=
+    games.find(
+      g=>
+        Number(g.id)===Number(id)
+    );
+
+
+  if(!game)
+    return;
+
+
+  openConfirm(
+    `Delete the game against ${game.opponent}? This cannot be undone.`,
+    ()=>deleteGame(id)
+  );
+
+}
+
+
+async function deleteGame(id){
 
   const {
     error
@@ -5871,101 +6731,35 @@ async function deleteGame(id){
 }
 
 
-async function editGame(id){
+function confirmDeletePlayer(id){
 
-  const game=
-    games.find(
-      g=>
-        Number(g.id)===Number(id)
+  const player=
+    roster.find(
+      p=>
+        Number(p.id)===Number(id)
     );
 
 
-  if(!game)
+  if(!player)
     return;
 
 
-  const score=
-    prompt(
-      "🏈 Enter final score as NDGP score - opponent score.\n\nLeave blank if not final.",
-      hasScore(game)
-      ?
-      `${game.our_score}-${game.opponent_score}`
-      :
-      ""
-    );
+  openConfirm(
+    `Remove ${player.name} from the roster? This cannot be undone.`,
+    ()=>deletePlayer(id)
+  );
+
+}
 
 
-  if(score===null)
-    return;
-
-
-  let ourScore=null;
-  let opponentScore=null;
-
-
-  if(score.trim()){
-
-    const match=
-      score
-        .trim()
-        .match(
-          /^(\d+)\s*[-:]\s*(\d+)$/
-        );
-
-
-    if(!match){
-
-      alert(
-        "Use the format 21-14."
-      );
-
-      return;
-
-    }
-
-
-    ourScore=
-      Number(match[1]);
-
-    opponentScore=
-      Number(match[2]);
-
-  }
-
-
-  const time=
-    prompt(
-      "⏰ Kickoff time:",
-      game.time||""
-    );
-
-
-  if(time===null)
-    return;
-
-
-  const location=
-    prompt(
-      "📍 Location:",
-      game.location||""
-    );
-
-
-  if(location===null)
-    return;
-
+async function deletePlayer(id){
 
   const {
     error
   }=
   await db
-    .from("games")
-    .update({
-      time:time.trim(),
-      location:location.trim(),
-      our_score:ourScore,
-      opponent_score:opponentScore
-    })
+    .from("roster")
+    .delete()
     .eq(
       "id",
       id
@@ -5974,10 +6768,8 @@ async function editGame(id){
 
   if(error){
 
-    console.error(error);
-
     alert(
-      "Unable to update game."
+      "Unable to remove player."
     );
 
     return;
@@ -5985,7 +6777,7 @@ async function editGame(id){
   }
 
 
-  await loadGames();
+  await loadRoster();
 
 }
 
@@ -6017,7 +6809,7 @@ function updateAdminStats(){
       if(our>opp)
         wins++;
 
-      if(our<opp)
+      else if(our<opp)
         losses++;
 
     }
@@ -6046,6 +6838,76 @@ function updateAdminStats(){
     "adminLossesCount"
   ).textContent=
     losses;
+
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+function showMessage(message){
+
+  const existing=
+    document.querySelector(
+      ".admin-message-popup"
+    );
+
+
+  if(existing)
+    existing.remove();
+
+
+  const box=
+    document.createElement("div");
+
+
+  box.className=
+    "admin-message-popup";
+
+
+  box.textContent=
+    message;
+
+
+  box.style.cssText=`
+
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    transform:translateX(-50%);
+    z-index:10000;
+
+    padding:11px 15px;
+
+    background:#00264a;
+    color:white;
+
+    border:1px solid #41637d;
+    border-bottom:3px solid #f4c542;
+
+    border-radius:8px;
+
+    box-shadow:
+      0 10px 30px
+      rgba(0,0,0,.25);
+
+    font-family:Oswald,sans-serif;
+    font-size:12px;
+    font-weight:600;
+
+  `;
+
+
+  document.body.appendChild(box);
+
+
+  setTimeout(
+    ()=>{
+      box.remove();
+    },
+    2800
+  );
 
 }
 
@@ -6096,68 +6958,43 @@ function escapeHTML(value){
 
 
 /* =========================================================
-   MOBILE ADMIN LOGIN FIX
+   ESC KEY
 ========================================================= */
 
-if(window.visualViewport){
+document.addEventListener(
+  "keydown",
+  event=>{
 
-  window.visualViewport.addEventListener(
-    "resize",
-    ()=>{
-
-      const login=
-        document.getElementById(
-          "adminLogin"
-        );
+    if(event.key!=="Escape")
+      return;
 
 
-      if(
-        login &&
-        login.classList.contains("show")
-      ){
-
-        login.style.height=
-          `${window.visualViewport.height}px`;
-
-      }
-
-    }
-  );
+    document
+      .querySelectorAll(
+        ".overlay.show"
+      )
+      .forEach(
+        modal=>
+          modal.classList.remove("show")
+      );
 
 
-  window.visualViewport.addEventListener(
-    "scroll",
-    ()=>{
+    document.body.classList.remove(
+      "modal-open"
+    );
 
-      const login=
-        document.getElementById(
-          "adminLogin"
-        );
-
-
-      if(
-        login &&
-        login.classList.contains("show")
-      ){
-
-        login.style.top=
-          `${window.visualViewport.offsetTop}px`;
-
-      }
-
-    }
-  );
-
-}
+  }
+);
 
 
 /* =========================================================
    INITIALIZE
 ========================================================= */
 
-renderHistory();
-
 buildPositionOptions();
+buildEditPositionOptions();
+
+renderHistory();
 
 loadGames();
 
