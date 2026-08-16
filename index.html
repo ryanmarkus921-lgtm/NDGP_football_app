@@ -11,10 +11,7 @@
 
 <title>NDGP Football</title>
 
-<meta
-  name="theme-color"
-  content="#001f3f"
->
+<meta name="theme-color" content="#001f3f">
 
 <meta
   name="apple-mobile-web-app-capable"
@@ -58,37 +55,21 @@
 ========================================================= */
 
 :root{
-
   --navy:#001f3f;
   --dark:#00152b;
   --blue:#063b69;
-  --blue2:#0b4c82;
-
   --gold:#f4c542;
   --gold2:#ffd95a;
-
-  --white:#ffffff;
-
+  --white:#fff;
   --text:#14283d;
   --muted:#637689;
-
   --border:#d5dfe8;
   --light:#f5f8fa;
-
   --green:#198754;
   --red:#dc2626;
-
-  --shadow:
-    0 4px 16px rgba(0,31,63,.07);
-
-  --shadow-heavy:
-    0 20px 60px rgba(0,20,40,.28);
+  --shadow:0 4px 16px rgba(0,31,63,.07);
+  --shadow-heavy:0 20px 60px rgba(0,20,40,.28);
 }
-
-
-/* =========================================================
-   RESET
-========================================================= */
 
 *{
   box-sizing:border-box;
@@ -100,28 +81,20 @@ html{
 }
 
 body{
-
   margin:0;
-
   min-height:100vh;
-
-  background:
-    linear-gradient(
-      180deg,
-      #edf2f7 0%,
-      #f8fafc 100%
-    );
-
+  background:linear-gradient(180deg,#edf2f7 0%,#f8fafc 100%);
   color:var(--text);
-
-  font-family:
-    "Oswald",
-    Arial,
-    sans-serif;
-
+  font-family:"Oswald",Arial,sans-serif;
   overflow-x:hidden;
-
   -webkit-tap-highlight-color:transparent;
+}
+
+body.admin-login-open{
+  overflow:hidden!important;
+  position:fixed;
+  width:100%;
+  height:100%;
 }
 
 button,
@@ -145,247 +118,82 @@ img{
 
 
 /* =========================================================
-   SPLASH SCREEN
+   SPLASH
 ========================================================= */
 
 #splashScreen{
-
   position:fixed;
-
   inset:0;
-
   z-index:99999;
-
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   text-align:center;
-
   color:white;
-
-  background:
-    radial-gradient(
-      circle at center,
-      #0b4c82 0%,
-      #063b69 32%,
-      #001f3f 68%,
-      #00152b 100%
-    );
-
-  transition:
-    opacity .6s ease,
-    visibility .6s ease;
+  background:radial-gradient(circle at center,#0b4c82 0%,#063b69 32%,#001f3f 68%,#00152b 100%);
+  transition:opacity .6s ease,visibility .6s ease;
 }
 
 #splashScreen.hide{
-
   opacity:0;
-
   visibility:hidden;
-
   pointer-events:none;
 }
 
 .splash-content{
-
   width:100%;
-
   padding:30px;
-
-  animation:
-    splashIn
-    .8s
-    cubic-bezier(.2,.8,.2,1)
-    both;
+  animation:splashIn .8s cubic-bezier(.2,.8,.2,1) both;
 }
 
 @keyframes splashIn{
-
   from{
     opacity:0;
-    transform:
-      translateY(20px)
-      scale(.94);
+    transform:translateY(20px) scale(.94);
   }
-
   to{
     opacity:1;
-    transform:
-      translateY(0)
-      scale(1);
+    transform:translateY(0) scale(1);
   }
 }
 
 .splash-logo{
-
   width:145px;
   height:145px;
-
   object-fit:contain;
-
   margin:0 auto 15px;
-
-  filter:
-    drop-shadow(
-      0 8px 20px
-      rgba(0,0,0,.3)
-    );
-
-  animation:
-    logoFloat
-    2.8s
-    ease-in-out
-    infinite;
+  filter:drop-shadow(0 8px 20px rgba(0,0,0,.3));
+  animation:logoFloat 2.8s ease-in-out infinite;
 }
 
 @keyframes logoFloat{
-
-  0%,100%{
-    transform:translateY(0);
-  }
-
-  50%{
-    transform:translateY(-7px);
-  }
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-7px)}
 }
 
 .splash-title{
-
   font-family:"Teko";
-
   font-size:60px;
-
   line-height:.8;
-
   font-weight:700;
-
   letter-spacing:3px;
-
   margin:0;
-
-  text-shadow:
-    0 4px 12px
-    rgba(0,0,0,.25);
 }
 
 .splash-subtitle{
-
   margin-top:12px;
-
   color:#dce8f1;
-
   font-size:11px;
-
   letter-spacing:2px;
-
   text-transform:uppercase;
 }
 
 .splash-line{
-
   width:70px;
-
   height:4px;
-
   margin:18px auto 0;
-
   border-radius:10px;
-
   background:var(--gold);
-
-  animation:
-    splashLine
-    1s
-    ease
-    .3s
-    both;
-}
-
-@keyframes splashLine{
-
-  from{
-    width:0;
-    opacity:0;
-  }
-
-  to{
-    width:70px;
-    opacity:1;
-  }
-}
-
-
-/* =========================================================
-   PULL REFRESH
-========================================================= */
-
-#pullRefresh{
-
-  position:fixed;
-
-  top:-60px;
-
-  left:50%;
-
-  z-index:9000;
-
-  transform:
-    translateX(-50%);
-
-  width:42px;
-  height:42px;
-
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  border-radius:50%;
-
-  color:var(--navy);
-
-  background:white;
-
-  box-shadow:
-    0 5px 18px
-    rgba(0,31,63,.2);
-
-  font-size:18px;
-
-  transition:
-    top .2s ease,
-    transform .2s ease;
-}
-
-#pullRefresh.show{
-
-  top:
-    calc(
-      env(safe-area-inset-top)
-      + 10px
-    );
-
-}
-
-#pullRefresh.spin{
-
-  animation:
-    refreshSpin
-    .7s
-    linear
-    infinite;
-}
-
-@keyframes refreshSpin{
-
-  to{
-    transform:
-      translateX(-50%)
-      rotate(360deg);
-  }
 }
 
 
@@ -394,319 +202,112 @@ img{
 ========================================================= */
 
 header{
-
   position:relative;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--dark),
-      var(--blue)
-    );
-
+  background:linear-gradient(135deg,var(--dark),var(--blue));
   color:white;
-
   text-align:center;
-
-  padding:
-    calc(18px + env(safe-area-inset-top))
-    55px
-    20px;
-
-  border-bottom:
-    4px solid var(--gold);
-
+  padding:calc(18px + env(safe-area-inset-top)) 55px 20px;
+  border-bottom:4px solid var(--gold);
   overflow:hidden;
 }
 
-header:before{
-
-  content:"";
-
-  position:absolute;
-
-  inset:0;
-
-  pointer-events:none;
-
-  background:
-    linear-gradient(
-      115deg,
-      transparent 0%,
-      rgba(255,255,255,.04) 45%,
-      transparent 70%
-    );
-
-  transform:
-    translateX(-100%);
-
-  animation:
-    headerShine
-    6s
-    ease-in-out
-    infinite;
-}
-
-@keyframes headerShine{
-
-  0%,55%{
-    transform:translateX(-100%);
-  }
-
-  75%,100%{
-    transform:translateX(100%);
-  }
-}
-
 .logo{
-
   position:relative;
-
   width:82px;
   height:82px;
-
   object-fit:contain;
-
   display:block;
-
   margin:0 auto 5px;
-
-  filter:
-    drop-shadow(
-      0 4px 8px
-      rgba(0,0,0,.2)
-    );
-
-  animation:
-    headerLogo
-    4s
-    ease-in-out
-    infinite;
-}
-
-@keyframes headerLogo{
-
-  0%,100%{
-    transform:translateY(0);
-  }
-
-  50%{
-    transform:translateY(-3px);
-  }
+  filter:drop-shadow(0 4px 8px rgba(0,0,0,.2));
 }
 
 header h1{
-
   position:relative;
-
   margin:0;
-
   font-family:"Teko";
-
   font-size:40px;
-
   line-height:.9;
-
   letter-spacing:2px;
 }
 
 header p{
-
   position:relative;
-
   margin:6px 0 0;
-
   color:#dbe7f2;
-
   font-size:10px;
-
   letter-spacing:1.3px;
-
   text-transform:uppercase;
 }
 
 
 /* =========================================================
-   ADMIN GEAR
+   GEAR
 ========================================================= */
 
 .admin-gear{
-
   position:absolute;
-
-  top:
-    calc(
-      15px + env(safe-area-inset-top)
-    );
-
+  top:calc(15px + env(safe-area-inset-top));
   right:16px;
-
   width:auto;
   height:auto;
-
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
   padding:0;
-
   border:0;
-  outline:0;
-
   background:transparent;
-
   color:white;
-
-  font-family:Arial,sans-serif;
-
   font-size:24px;
-
   line-height:1;
-
   z-index:10;
-
-  transition:
-    transform .18s ease;
+  transition:transform .18s ease;
 }
 
 .admin-gear:hover{
-
   background:transparent;
-
-  border:0;
-
-  transform:
-    rotate(20deg)
-    scale(1.1);
-}
-
-.admin-gear:active{
-
-  transform:
-    scale(.9);
-}
-
-.gear-icon{
-
-  display:block;
-
-  line-height:1;
+  transform:rotate(20deg) scale(1.1);
 }
 
 
 /* =========================================================
-   ACHIEVEMENTS BAR
+   ACHIEVEMENTS
 ========================================================= */
 
 .achievements-bar{
-
   background:white;
-
-  border-bottom:
-    1px solid var(--border);
-
-  box-shadow:
-    0 2px 10px
-    rgba(0,31,63,.07);
-
+  border-bottom:1px solid var(--border);
+  box-shadow:0 2px 10px rgba(0,31,63,.07);
   padding:10px;
-
-  animation:
-    fadeDown
-    .55s
-    ease
-    both;
-}
-
-@keyframes fadeDown{
-
-  from{
-    opacity:0;
-    transform:translateY(-8px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
 }
 
 .achievements-inner{
-
   width:100%;
-
   max-width:650px;
-
   margin:auto;
-
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns:1fr 1fr;
   gap:8px;
 }
 
 .achievement-item{
-
   padding:10px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #f9fbfc,
-      #eef3f7
-    );
-
-  border:
-    1px solid #d4dee6;
-
-  border-top:
-    3px solid var(--gold);
-
+  background:linear-gradient(145deg,#f9fbfc,#eef3f7);
+  border:1px solid #d4dee6;
+  border-top:3px solid var(--gold);
   border-radius:8px;
-
   text-align:center;
-
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease;
-}
-
-.achievement-item:hover{
-
-  transform:
-    translateY(-2px);
-
-  box-shadow:
-    0 5px 14px
-    rgba(0,31,63,.09);
 }
 
 .achievement-title{
-
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:18px;
-
   line-height:1;
-
   font-weight:700;
-
   text-transform:uppercase;
 }
 
 .achievement-years{
-
   margin-top:5px;
-
   color:#52677a;
-
   font-size:10px;
-
   font-weight:600;
 }
 
@@ -716,112 +317,42 @@ header p{
 ========================================================= */
 
 nav{
-
   position:sticky;
-
   top:0;
-
   z-index:100;
-
   display:flex;
-
-  background:
-    rgba(255,255,255,.97);
-
-  border-bottom:
-    1px solid var(--border);
-
-  box-shadow:
-    0 2px 10px
-    rgba(0,31,63,.07);
-
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid var(--border);
+  box-shadow:0 2px 10px rgba(0,31,63,.07);
   backdrop-filter:blur(12px);
-
-  animation:
-    fadeDown
-    .5s
-    .15s
-    ease
-    both;
 }
 
 nav button{
-
   position:relative;
-
   flex:1;
-
   border:0;
-
   background:transparent;
-
   color:#617284;
-
   padding:12px 3px;
-
   font-size:10px;
-
   font-weight:700;
-
   text-transform:uppercase;
-
-  transition:
-    color .18s ease,
-    background .18s ease;
-}
-
-nav button:active{
-
-  transform:scale(.96);
 }
 
 nav button.active{
-
   color:var(--navy);
-
   background:#f7f9fb;
 }
 
 nav button.active:after{
-
   content:"";
-
   position:absolute;
-
   left:20%;
-
   right:20%;
-
   bottom:0;
-
   height:3px;
-
-  border-radius:
-    3px 3px 0 0;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--gold),
-      var(--gold2)
-    );
-
-  animation:
-    navLine
-    .25s
-    ease
-    both;
-}
-
-@keyframes navLine{
-
-  from{
-    transform:scaleX(.3);
-  }
-
-  to{
-    transform:scaleX(1);
-  }
+  border-radius:3px 3px 0 0;
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
 }
 
 
@@ -830,31 +361,15 @@ nav button.active:after{
 ========================================================= */
 
 main{
-
   width:100%;
-
   max-width:760px;
-
   margin:auto;
-
-  padding:
-    10px
-    9px
-    35px;
-
-  transition:
-    opacity .25s ease;
+  padding:10px 9px 35px;
 }
 
 .page{
-
   display:none;
-
-  animation:
-    pageIn
-    .3s
-    cubic-bezier(.2,.8,.2,1)
-    both;
+  animation:pageIn .3s ease both;
 }
 
 .page.active{
@@ -862,108 +377,42 @@ main{
 }
 
 @keyframes pageIn{
-
   from{
     opacity:0;
-    transform:
-      translateY(10px);
+    transform:translateY(10px);
   }
-
   to{
     opacity:1;
-    transform:
-      translateY(0);
+    transform:translateY(0);
   }
 }
 
 .card{
-
   background:white;
-
-  border:
-    1px solid var(--border);
-
+  border:1px solid var(--border);
   border-radius:13px;
-
   margin-bottom:9px;
-
   padding:12px;
-
   box-shadow:var(--shadow);
-
-  animation:
-    cardIn
-    .4s
-    ease
-    both;
-
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease;
-}
-
-.card:hover{
-
-  box-shadow:
-    0 7px 20px
-    rgba(0,31,63,.09);
-}
-
-@keyframes cardIn{
-
-  from{
-    opacity:0;
-    transform:
-      translateY(8px)
-      scale(.99);
-  }
-
-  to{
-    opacity:1;
-    transform:
-      translateY(0)
-      scale(1);
-  }
 }
 
 .page-heading{
-
   display:flex;
-
   align-items:center;
-
   gap:7px;
-
-  margin:
-    0
-    0
-    10px;
-
+  margin:0 0 10px;
   font-family:"Teko";
-
   font-size:30px;
-
   line-height:1;
-
   color:var(--navy);
-
   text-transform:uppercase;
 }
 
 .page-heading:after{
-
   content:"";
-
   height:2px;
-
   flex:1;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--gold),
-      transparent
-    );
+  background:linear-gradient(90deg,var(--gold),transparent);
 }
 
 
@@ -972,475 +421,221 @@ main{
 ========================================================= */
 
 .hero-card{
-
   padding:0;
-
   overflow:hidden;
 }
 
 .hero-top{
-
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   padding:11px 13px;
-
   color:white;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--dark),
-      var(--blue)
-    );
+  background:linear-gradient(90deg,var(--dark),var(--blue));
 }
 
 .hero-top span{
-
   font-family:"Teko";
-
   font-size:22px;
-
   line-height:1;
 }
 
 .hero-top small{
-
   color:var(--gold);
-
   font-size:9px;
-
   letter-spacing:1px;
 }
 
 .hero-body{
-
   position:relative;
-
   text-align:center;
-
   padding:18px 10px 19px;
-
-  overflow:hidden;
-}
-
-.hero-body:before{
-
-  content:"";
-
-  position:absolute;
-
-  width:180px;
-  height:180px;
-
-  left:50%;
-  top:50%;
-
-  transform:
-    translate(-50%,-50%);
-
-  border-radius:50%;
-
-  border:
-    1px solid
-    rgba(0,31,63,.035);
-
-  pointer-events:none;
 }
 
 .next-label{
-
   position:relative;
-
   color:var(--muted);
-
   font-size:9px;
-
   letter-spacing:1.3px;
-
   text-transform:uppercase;
 }
 
 .next-matchup{
-
   position:relative;
-
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   gap:8px;
-
   margin:7px 0 9px;
 }
 
 .next-team{
-
   font-family:"Teko";
-
   font-size:33px;
-
   font-weight:700;
-
   line-height:1;
-
   color:var(--navy);
 }
 
 .next-vs{
-
   color:#d3a817;
-
   font-family:"Teko";
-
   font-size:18px;
-
   font-weight:700;
 }
 
 .game-info{
-
   position:relative;
-
   color:#637487;
-
   font-size:11px;
-
   line-height:1.7;
 }
 
 .home-away{
-
   display:inline-flex;
-
   align-items:center;
-
   gap:4px;
-
   margin-top:3px;
-
   padding:4px 8px;
-
   background:#f1f5f8;
-
   border-radius:5px;
-
   color:var(--navy);
-
   font-size:10px;
-
   font-weight:700;
 }
 
 .countdown{
-
   position:relative;
-
   display:inline-flex;
-
   align-items:center;
-
   justify-content:center;
-
   gap:7px;
-
   margin-top:11px;
-
   padding:8px 13px;
-
   border-radius:8px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f1f4f6,
-      #d9e0e5,
-      #f5f7f9
-    );
-
-  border:
-    1px solid #b7c3cc;
-
+  background:linear-gradient(135deg,#f1f4f6,#d9e0e5,#f5f7f9);
+  border:1px solid #b7c3cc;
   color:#344451;
-
   font-size:10px;
-
   font-weight:700;
-
   text-transform:uppercase;
-
-  animation:
-    countdownIn
-    .35s
-    ease
-    both;
-}
-
-@keyframes countdownIn{
-
-  from{
-    opacity:0;
-    transform:scale(.94);
-  }
-
-  to{
-    opacity:1;
-    transform:scale(1);
-  }
 }
 
 .record-card{
-
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
 }
 
 .record-label,
 .last-label{
-
   color:var(--muted);
-
   font-size:9px;
-
   letter-spacing:1.1px;
-
   text-transform:uppercase;
 }
 
 .record{
-
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:44px;
-
   font-weight:700;
-
   line-height:.9;
 }
 
 .record-sub{
-
   color:var(--muted);
-
   font-size:9px;
 }
 
 
 /* =========================================================
-   SCHEDULE
+   GAMES
 ========================================================= */
 
 .game{
-
   position:relative;
-
   overflow:hidden;
-
   background:white;
-
-  border:
-    1px solid var(--border);
-
-  border-left:
-    4px solid var(--navy);
-
+  border:1px solid var(--border);
+  border-left:4px solid var(--navy);
   border-radius:10px;
-
   margin-bottom:7px;
-
-  padding:
-    9px
-    11px
-    5px;
-
-  box-shadow:
-    0 2px 8px
-    rgba(0,31,63,.05);
-
-  transition:
-    transform .18s ease,
-    box-shadow .18s ease;
-}
-
-.game:after{
-
-  content:"";
-
-  position:absolute;
-
-  top:0;
-  left:0;
-
-  width:0;
-  height:100%;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(244,197,66,.08),
-      transparent
-    );
-
-  transition:
-    width .3s ease;
-
-  pointer-events:none;
+  padding:9px 11px 5px;
+  box-shadow:0 2px 8px rgba(0,31,63,.05);
+  transition:transform .18s ease,box-shadow .18s ease;
 }
 
 .game:hover{
-
-  transform:
-    translateY(-2px);
-
-  box-shadow:
-    0 7px 17px
-    rgba(0,31,63,.1);
-}
-
-.game:hover:after{
-  width:100%;
-}
-
-.game:active{
-
-  transform:
-    scale(.985);
+  transform:translateY(-2px);
+  box-shadow:0 7px 17px rgba(0,31,63,.1);
 }
 
 .game.live-game{
-
   border-left-color:var(--red);
-
-  animation:
-    liveCard
-    2.2s
-    ease-in-out
-    infinite;
-}
-
-@keyframes liveCard{
-
-  0%,100%{
-    box-shadow:
-      0 2px 8px
-      rgba(0,31,63,.05);
-  }
-
-  50%{
-    box-shadow:
-      0 5px 18px
-      rgba(220,38,38,.14);
-  }
 }
 
 .game-top{
-
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   gap:7px;
 }
 
 .game-date{
-
   color:var(--muted);
-
   font-size:9px;
 }
 
 .game-opponent{
-
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:25px;
-
   line-height:.9;
-
   font-weight:700;
-
   text-transform:uppercase;
 }
 
 .game-matchup{
-
   display:flex;
-
   gap:4px;
-
   margin-top:4px;
-
   color:#5f7182;
-
   font-size:10px;
 }
 
 .game-team{
-
   color:var(--navy);
-
   font-weight:700;
 }
 
 .game-vs{
-
   color:#d3a817;
-
   font-weight:700;
 }
 
 .game-details{
-
   display:flex;
-
   flex-wrap:wrap;
-
   gap:4px 10px;
-
   margin-top:5px;
-
   color:#637487;
-
   font-size:9px;
 }
 
 .game-score{
-
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:20px;
-
   font-weight:700;
-
   margin-top:4px;
 }
 
 .game-details-link{
-
   margin-top:1px;
-
   text-align:right;
-
   color:#8998a6;
-
   font-size:8px;
-
   text-transform:uppercase;
 }
 
@@ -1450,71 +645,36 @@ main{
 ========================================================= */
 
 .badge{
-
   display:inline-flex;
-
   align-items:center;
-
   justify-content:center;
-
   padding:7px 10px;
-
   border-radius:6px;
-
   font-size:9px;
-
   line-height:1;
-
   font-weight:700;
-
   text-transform:uppercase;
-
   white-space:nowrap;
 }
 
 .badge.win{
-
   background:#e3f5e9;
-
   color:var(--green);
 }
 
 .badge.loss{
-
   background:#fde8e8;
-
   color:var(--red);
 }
 
 .badge.tie{
-
   background:#eee9fb;
-
   color:#7252a6;
 }
 
 .badge.live{
-
   background:#fee2e2;
-
   color:var(--red);
-
-  animation:
-    liveBadge
-    1.4s
-    ease-in-out
-    infinite;
-}
-
-@keyframes liveBadge{
-
-  0%,100%{
-    opacity:1;
-  }
-
-  50%{
-    opacity:.55;
-  }
 }
 
 
@@ -1523,196 +683,95 @@ main{
 ========================================================= */
 
 .roster-tools{
-
   display:flex;
-
   gap:6px;
-
   margin-bottom:9px;
 }
 
-.roster-search{
-
-  flex:1;
-
+.roster-search,
+.roster-filter{
   margin:0;
-
   padding:10px;
-
-  border:
-    1px solid var(--border);
-
+  border:1px solid var(--border);
   border-radius:8px;
-
   background:#f8fafc;
-
   font-size:11px;
-
   outline:none;
-
-  transition:
-    border-color .2s ease,
-    box-shadow .2s ease;
 }
 
-.roster-search:focus{
-
-  border-color:var(--blue);
-
-  box-shadow:
-    0 0 0 3px
-    rgba(6,59,105,.08);
+.roster-search{
+  flex:1;
 }
 
 .roster-filter{
-
   width:140px;
-
-  margin:0;
-
-  padding:10px 7px;
-
-  border:
-    1px solid var(--border);
-
-  border-radius:8px;
-
-  background:#f8fafc;
-
-  font-size:10px;
 }
 
 .roster-count{
-
   color:var(--muted);
-
   font-size:9px;
-
-  margin:
-    0
-    0
-    8px
-    2px;
+  margin:0 0 8px 2px;
 }
 
 .roster-grid{
-
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns:1fr 1fr;
   gap:6px;
 }
 
 .roster-card{
-
   display:flex;
-
   align-items:center;
-
   gap:8px;
-
   min-width:0;
-
   padding:9px;
-
   background:white;
-
-  border:
-    1px solid var(--border);
-
-  border-left:
-    4px solid var(--navy);
-
+  border:1px solid var(--border);
+  border-left:4px solid var(--navy);
   border-radius:8px;
-
-  transition:
-    transform .18s ease,
-    box-shadow .18s ease;
-}
-
-.roster-card:hover{
-
-  transform:
-    translateY(-2px);
-
-  box-shadow:
-    0 5px 13px
-    rgba(0,31,63,.08);
 }
 
 .roster-number{
-
   width:40px;
-
   flex-shrink:0;
-
   text-align:center;
-
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:28px;
-
   font-weight:700;
-
   line-height:1;
 }
 
 .roster-info{
-
   min-width:0;
 }
 
 .roster-name{
-
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:21px;
-
   line-height:.95;
-
   font-weight:700;
-
   white-space:nowrap;
-
   overflow:hidden;
-
   text-overflow:ellipsis;
 }
 
 .roster-position{
-
   margin-top:3px;
-
   color:#627589;
-
   font-size:9px;
-
   font-weight:600;
-
   text-transform:uppercase;
 }
 
 .roster-empty{
-
   padding:20px;
-
   text-align:center;
-
   color:var(--muted);
-
   background:#f8fafc;
-
-  border:
-    1px dashed #c8d3dc;
-
+  border:1px dashed #c8d3dc;
   border-radius:8px;
-
   font-size:10px;
 }
 
@@ -1722,514 +781,197 @@ main{
 ========================================================= */
 
 .history-intro{
-
   text-align:center;
-
   color:var(--muted);
-
   font-size:9px;
-
-  margin:
-    -3px
-    0
-    10px;
+  margin:-3px 0 10px;
 }
 
 .season-history{
-
   overflow:hidden;
-
   background:white;
-
-  border:
-    1px solid var(--border);
-
-  border-left:
-    4px solid var(--navy);
-
+  border:1px solid var(--border);
+  border-left:4px solid var(--navy);
   border-radius:9px;
-
   margin-bottom:7px;
-
-  transition:
-    transform .18s ease,
-    box-shadow .18s ease;
-}
-
-.season-history:hover{
-
-  transform:
-    translateX(2px);
-
-  box-shadow:
-    0 5px 15px
-    rgba(0,31,63,.08);
 }
 
 .season-button{
-
   width:100%;
-
   min-height:70px;
-
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   padding:12px 14px;
-
   border:0;
-
   background:white;
-
   text-align:left;
 }
 
-.season-button:active{
-
-  background:#f7f9fb;
-}
-
 .season-name{
-
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:31px;
-
   line-height:.9;
-
   font-weight:700;
 }
 
 .season-record-small{
-
   color:#536779;
-
   font-size:10px;
-
   font-weight:700;
-
   margin-top:5px;
 }
 
 .season-arrow{
-
   color:var(--navy);
-
   font-size:28px;
-
-  transition:
-    transform .2s ease;
-}
-
-.season-history:hover
-.season-arrow{
-
-  transform:
-    translateX(3px);
 }
 
 
 /* =========================================================
-   MODAL BASE
+   MODALS
 ========================================================= */
 
 .history-modal,
 .modal-overlay,
-.admin-login-overlay,
 .photo-viewer{
-
   position:fixed;
-
   inset:0;
-
   z-index:1000;
-
   display:none;
-
   align-items:center;
-
   justify-content:center;
-
   padding:12px;
-
-  background:
-    rgba(0,15,30,.78);
-
-  backdrop-filter:
-    blur(8px);
-
-  animation:
-    overlayIn
-    .2s
-    ease
-    both;
+  background:rgba(0,15,30,.78);
+  backdrop-filter:blur(8px);
 }
 
 .history-modal.show,
 .modal-overlay.show,
-.admin-login-overlay.show,
 .photo-viewer.show{
-
   display:flex;
 }
 
-@keyframes overlayIn{
-
-  from{
-    opacity:0;
-  }
-
-  to{
-    opacity:1;
-  }
-}
-
-
-/* =========================================================
-   HISTORY MODAL
-========================================================= */
-
-.history-window{
-
+.history-window,
+.modal{
   width:100%;
-
   max-width:620px;
-
-  max-height:92vh;
-
+  max-height:92dvh;
   overflow:hidden;
-
   background:#f5f8fa;
-
   border-radius:16px;
-
   box-shadow:var(--shadow-heavy);
-
-  animation:
-    modalUp
-    .3s
-    cubic-bezier(.2,.8,.2,1)
-    both;
 }
 
-@keyframes modalUp{
-
-  from{
-    opacity:0;
-    transform:
-      translateY(35px)
-      scale(.97);
-  }
-
-  to{
-    opacity:1;
-    transform:
-      translateY(0)
-      scale(1);
-  }
-}
-
-.history-modal-header{
-
+.history-modal-header,
+.modal-header{
   position:relative;
-
   padding:18px;
-
   color:white;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--dark),
-      var(--blue)
-    );
-
-  border-bottom:
-    4px solid var(--gold);
+  background:linear-gradient(135deg,var(--dark),var(--blue));
+  border-bottom:4px solid var(--gold);
 }
 
-.history-modal-kicker{
-
+.history-modal-kicker,
+.modal-kicker{
   color:var(--gold);
-
   font-size:9px;
-
   letter-spacing:1.7px;
-
   text-transform:uppercase;
 }
 
 .history-modal-title{
-
   font-family:"Teko";
-
   font-size:39px;
-
   line-height:.9;
-
   font-weight:700;
 }
 
 .history-modal-record{
-
   color:#d9e6ef;
-
   font-family:"Teko";
-
   font-size:18px;
-
   margin-top:5px;
 }
 
 .history-close,
 .modal-close{
-
   position:absolute;
-
-  right:10px;
-
   top:10px;
-
-  width:34px;
-  height:34px;
-
+  right:10px;
+  width:36px;
+  height:36px;
+  z-index:20;
   border:0;
-
   border-radius:50%;
-
-  background:
-    rgba(255,255,255,.13);
-
+  background:rgba(255,255,255,.16);
   color:white;
-
   font-size:23px;
-
-  transition:
-    transform .15s ease,
-    background .15s ease;
-}
-
-.history-close:hover,
-.modal-close:hover{
-
-  transform:
-    rotate(90deg);
-
-  background:
-    rgba(255,255,255,.22);
+  line-height:36px;
+  text-align:center;
+  padding:0;
 }
 
 .history-modal-body{
-
-  max-height:
-    calc(92vh - 110px);
-
+  max-height:calc(92dvh - 110px);
   overflow-y:auto;
-
   padding:12px;
 }
 
-.history-modal-section{
-
-  margin-top:11px;
-}
-
-.history-modal-section:first-child{
-
-  margin-top:0;
-}
-
-.history-modal-section-title{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:7px;
-
-  margin:
-    0
-    0
-    7px;
-
-  color:var(--navy);
-
-  font-family:"Teko";
-
-  font-size:25px;
-
-  line-height:1;
-}
-
-.history-modal-section-title:after{
-
-  content:"";
-
-  flex:1;
-
-  height:2px;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--gold),
-      transparent
-    );
-}
-
-
-/* =========================================================
-   GAME MODAL
-========================================================= */
-
-.modal{
-
-  width:100%;
-
-  max-width:620px;
-
-  max-height:92vh;
-
-  overflow:hidden;
-
-  background:#f5f8fa;
-
-  border-radius:16px;
-
-  box-shadow:var(--shadow-heavy);
-
-  animation:
-    modalUp
-    .3s
-    cubic-bezier(.2,.8,.2,1)
-    both;
-}
-
-.modal-header{
-
-  position:relative;
-
-  padding:18px;
-
-  color:white;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--dark),
-      var(--blue)
-    );
-
-  border-bottom:
-    4px solid var(--gold);
-}
-
-.modal-kicker{
-
-  color:var(--gold);
-
-  font-size:9px;
-
-  letter-spacing:1.7px;
-
-  text-transform:uppercase;
-}
-
 .modal-matchup{
-
   font-family:"Teko";
-
   font-size:35px;
-
   line-height:1;
-
   text-transform:uppercase;
 }
 
 .modal-body{
-
   padding:16px;
 }
 
 .modal-score{
-
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:52px;
-
   line-height:.9;
-
   font-weight:700;
-
   text-align:center;
-
-  margin:
-    4px
-    0
-    15px;
+  margin:4px 0 15px;
 }
 
 .modal-info-grid{
-
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns:1fr 1fr;
   gap:7px;
 }
 
 .modal-info{
-
   padding:9px;
-
   background:#f5f8fa;
-
-  border:
-    1px solid var(--border);
-
+  border:1px solid var(--border);
   border-radius:7px;
 }
 
 .modal-info-label{
-
   color:var(--muted);
-
   font-size:8px;
-
   text-transform:uppercase;
 }
 
 .modal-info-value{
-
   color:var(--navy);
-
   font-size:12px;
-
   font-weight:600;
-
   margin-top:3px;
 }
 
 .modal-notes{
-
   margin-top:10px;
-
   padding:10px;
-
   background:#f7f9fb;
-
   border-radius:7px;
-
   color:#5f7182;
-
   font-size:11px;
 }
 
@@ -2239,117 +981,48 @@ main{
 ========================================================= */
 
 .photo-viewer{
-
   z-index:5000;
-
   padding:0;
 }
 
 .photo-viewer-window{
-
   width:100%;
-
-  height:100%;
-
+  height:100dvh;
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   position:relative;
-
-  touch-action:pan-y;
 }
 
 .photo-viewer-image{
-
-  max-width:
-    calc(100% - 30px);
-
-  max-height:
-    calc(100% - 100px);
-
+  max-width:calc(100% - 30px);
+  max-height:calc(100% - 100px);
   object-fit:contain;
-
   border-radius:8px;
-
-  box-shadow:
-    0 15px 50px
-    rgba(0,0,0,.4);
-
-  user-select:none;
-
-  animation:
-    photoZoom
-    .25s
-    ease
-    both;
-}
-
-@keyframes photoZoom{
-
-  from{
-    opacity:0;
-    transform:scale(.94);
-  }
-
-  to{
-    opacity:1;
-    transform:scale(1);
-  }
 }
 
 .photo-viewer-close{
-
   position:absolute;
-
-  top:
-    calc(
-      15px +
-      env(safe-area-inset-top)
-    );
-
+  top:calc(15px + env(safe-area-inset-top));
   right:15px;
-
   width:40px;
   height:40px;
-
   border:0;
-
   border-radius:50%;
-
-  background:
-    rgba(0,0,0,.45);
-
+  background:rgba(0,0,0,.45);
   color:white;
-
   font-size:26px;
-
   z-index:5;
 }
 
 .photo-viewer-caption{
-
   position:absolute;
-
   left:20px;
   right:20px;
-
-  bottom:
-    calc(
-      20px +
-      env(safe-area-inset-bottom)
-    );
-
+  bottom:calc(20px + env(safe-area-inset-bottom));
   text-align:center;
-
   color:white;
-
   font-size:11px;
-
-  text-shadow:
-    0 2px 5px rgba(0,0,0,.8);
 }
 
 
@@ -2358,53 +1031,28 @@ main{
 ========================================================= */
 
 .photo-grid{
-
   display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
+  grid-template-columns:repeat(3,1fr);
   gap:7px;
 }
 
 .photo-item{
-
-  position:relative;
-
   overflow:hidden;
-
   border-radius:7px;
-
   cursor:pointer;
-
   background:#e9eef2;
 }
 
 .photo-item img{
-
   width:100%;
-
   aspect-ratio:1;
-
   object-fit:cover;
-
   display:block;
-
-  transition:
-    transform .35s ease;
-}
-
-.photo-item:hover img{
-
-  transform:scale(1.05);
 }
 
 .photo-caption{
-
   color:var(--muted);
-
   font-size:9px;
-
   margin:3px;
 }
 
@@ -2414,25 +1062,11 @@ main{
 ========================================================= */
 
 .admin-page{
-
   display:none;
-
   width:100%;
-
   max-width:760px;
-
   margin:0 auto;
-
-  padding:
-    10px
-    9px
-    30px;
-
-  animation:
-    pageIn
-    .3s
-    ease
-    both;
+  padding:10px 9px 30px;
 }
 
 .admin-page.active{
@@ -2440,293 +1074,205 @@ main{
 }
 
 .admin-topbar{
-
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   gap:10px;
-
   padding:14px 15px;
-
   margin-bottom:10px;
-
   color:white;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--dark),
-      var(--blue)
-    );
-
+  background:linear-gradient(135deg,var(--dark),var(--blue));
   border-radius:11px;
-
-  border-bottom:
-    3px solid var(--gold);
-
+  border-bottom:3px solid var(--gold);
   box-shadow:var(--shadow);
 }
 
 .admin-topbar-title{
-
   font-family:"Teko";
-
   font-size:30px;
-
   line-height:.9;
 }
 
 .admin-topbar-subtitle{
-
   color:#d7e4ed;
-
   font-size:9px;
-
   margin-top:4px;
-
   text-transform:uppercase;
-
   letter-spacing:1px;
 }
 
 .admin-back-button{
-
   padding:8px 11px;
-
-  border:
-    1px solid rgba(255,255,255,.22);
-
+  border:1px solid rgba(255,255,255,.22);
   border-radius:6px;
-
-  background:
-    rgba(255,255,255,.1);
-
+  background:rgba(255,255,255,.1);
   color:white;
-
   font-size:9px;
-
   font-weight:700;
-
-  transition:
-    background .15s ease;
-}
-
-.admin-back-button:hover{
-
-  background:
-    rgba(255,255,255,.18);
 }
 
 .admin-section{
-
   overflow:hidden;
-
   background:white;
-
-  border:
-    1px solid var(--border);
-
+  border:1px solid var(--border);
   border-radius:10px;
-
   margin-bottom:8px;
-
   box-shadow:var(--shadow);
 }
 
 .admin-section-header{
-
   width:100%;
-
   display:flex;
-
   align-items:center;
-
   gap:11px;
-
   padding:13px;
-
   border:0;
-
   background:white;
-
   text-align:left;
 }
 
-.admin-section-header:hover{
-
-  background:#f8fafc;
-}
-
 .admin-section-icon{
-
   width:38px;
   height:38px;
-
   flex-shrink:0;
-
   display:flex;
-
   align-items:center;
   justify-content:center;
-
   border-radius:8px;
-
   background:var(--navy);
-
   color:white;
-
   font-size:18px;
 }
 
 .admin-section-title{
-
   flex:1;
 }
 
 .admin-section-title h3{
-
   margin:0;
-
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:26px;
-
   line-height:1;
 }
 
 .admin-section-title p{
-
   margin:3px 0 0;
-
   color:var(--muted);
-
   font-size:9px;
-
-  line-height:1.2;
 }
 
 .admin-section-arrow{
-
   color:#8293a2;
-
   font-size:14px;
-
-  transition:
-    transform .2s ease;
-}
-
-.admin-section.open
-.admin-section-arrow{
-
-  transform:rotate(180deg);
 }
 
 .admin-section-body{
-
   display:none;
-
-  padding:
-    0
-    13px
-    13px;
-
-  border-top:
-    1px solid var(--border);
+  padding:0 13px 13px;
+  border-top:1px solid var(--border);
 }
 
-.admin-section.open
-.admin-section-body{
-
+.admin-section.open .admin-section-body{
   display:block;
-
-  animation:
-    adminOpen
-    .25s
-    ease
-    both;
-}
-
-@keyframes adminOpen{
-
-  from{
-    opacity:0;
-    transform:translateY(-5px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
 }
 
 .admin-subsection{
-
   padding:13px;
-
   margin-top:10px;
-
   background:#f7f9fb;
-
-  border:
-    1px solid var(--border);
-
+  border:1px solid var(--border);
   border-radius:8px;
 }
 
 .admin-subsection h4{
-
   margin:0;
-
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:24px;
-
   line-height:1;
 }
 
 .admin-description{
-
   color:var(--muted);
-
   font-size:9px;
-
-  margin:
-    4px
-    0
-    10px;
+  margin:4px 0 10px;
 }
 
 
 /* =========================================================
-   ADMIN LOGIN
+   ADMIN LOGIN — MOBILE FIX
 ========================================================= */
+
+.admin-login-overlay{
+
+  position:fixed;
+
+  inset:0;
+
+  width:100vw;
+
+  height:100dvh;
+
+  min-height:100dvh;
+
+  z-index:9999;
+
+  display:none;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:
+    max(12px, env(safe-area-inset-top))
+    max(12px, env(safe-area-inset-right))
+    max(12px, env(safe-area-inset-bottom))
+    max(12px, env(safe-area-inset-left));
+
+  background:rgba(0,15,30,.78);
+
+  backdrop-filter:blur(8px);
+
+  overscroll-behavior:none;
+
+  touch-action:none;
+
+}
+
+.admin-login-overlay.show{
+  display:flex;
+}
 
 .admin-login-window{
 
-  width:100%;
+  position:relative;
 
-  max-width:390px;
+  width:min(
+    390px,
+    calc(100vw - 24px)
+  );
 
-  overflow:hidden;
+  max-height:
+    calc(
+      100dvh -
+      env(safe-area-inset-top) -
+      env(safe-area-inset-bottom) -
+      24px
+    );
+
+  overflow:visible;
 
   background:#f5f8fa;
 
   border-radius:16px;
 
-  box-shadow:var(--shadow-heavy);
+  box-shadow:
+    0 20px 60px
+    rgba(0,20,40,.4);
 
-  animation:
-    modalUp
-    .3s
-    ease
-    both;
+  flex-shrink:0;
+
 }
 
 .admin-login-top{
@@ -2746,31 +1292,36 @@ main{
       var(--blue)
     );
 
-  border-bottom:
-    4px solid var(--gold);
+  border-bottom:4px solid var(--gold);
+
+  border-radius:
+    16px
+    16px
+    0
+    0;
+
 }
 
 .admin-login-gear{
 
   width:54px;
+
   height:54px;
 
   display:flex;
 
   align-items:center;
+
   justify-content:center;
 
-  margin:
-    0
-    auto
-    10px;
+  margin:0 auto 10px;
 
   border-radius:50%;
 
-  background:
-    rgba(255,255,255,.1);
+  background:rgba(255,255,255,.1);
 
   font-size:27px;
+
 }
 
 .admin-login-top h2{
@@ -2782,6 +1333,7 @@ main{
   font-size:33px;
 
   line-height:1;
+
 }
 
 .admin-login-top p{
@@ -2795,61 +1347,117 @@ main{
   text-transform:uppercase;
 
   letter-spacing:1px;
+
 }
+
+
+/*
+  IMPORTANT:
+  The close button is now anchored to the
+  login header instead of the viewport.
+*/
 
 .admin-login-close{
 
   position:absolute;
 
-  right:10px;
-
   top:10px;
 
-  width:32px;
-  height:32px;
+  right:10px;
+
+  width:38px;
+
+  height:38px;
+
+  min-width:38px;
+
+  min-height:38px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  z-index:100;
 
   border:0;
 
   border-radius:50%;
 
-  background:
-    rgba(255,255,255,.12);
+  background:rgba(255,255,255,.16);
 
   color:white;
 
-  font-size:20px;
+  font-family:Arial,sans-serif;
+
+  font-size:25px;
+
+  line-height:1;
+
+  padding:0;
+
+  margin:0;
+
+  -webkit-appearance:none;
+
+  appearance:none;
+
+}
+
+.admin-login-close:active{
+  transform:scale(.9);
 }
 
 .admin-login-body{
 
   padding:17px;
+
+  overflow:visible;
+
 }
 
 .admin-code-input{
 
   width:100%;
 
-  padding:14px;
+  height:52px;
 
-  margin:
-    0
-    0
-    10px;
+  padding:12px 14px;
+
+  margin:0 0 10px;
 
   text-align:center;
 
   letter-spacing:7px;
 
-  font-size:22px;
+  font-family:Arial,sans-serif;
+
+  /*
+    16px prevents Safari/mobile browsers
+    from automatically zooming the page.
+  */
+
+  font-size:16px;
 
   font-weight:700;
 
-  border:
-    1px solid #ccd7e1;
+  border:1px solid #ccd7e1;
 
   border-radius:8px;
 
   outline:none;
+
+  background:white;
+
+  color:var(--navy);
+
+  -webkit-appearance:none;
+
+  appearance:none;
+
+  transform:none!important;
+
 }
 
 .admin-code-input:focus{
@@ -2859,11 +1467,16 @@ main{
   box-shadow:
     0 0 0 3px
     rgba(6,59,105,.08);
+
+  transform:none!important;
+
 }
 
 .admin-login-button{
 
   width:100%;
+
+  height:46px;
 
   padding:12px;
 
@@ -2879,19 +1492,6 @@ main{
 
   font-weight:700;
 
-  transition:
-    transform .15s ease,
-    background .15s ease;
-}
-
-.admin-login-button:hover{
-
-  background:var(--blue);
-}
-
-.admin-login-button:active{
-
-  transform:scale(.98);
 }
 
 .login-error{
@@ -2905,175 +1505,80 @@ main{
   text-align:center;
 
   font-size:10px;
+
 }
 
 
 /* =========================================================
-   ADMIN FORMS
+   FORMS
 ========================================================= */
 
 label{
-
   display:block;
-
   color:#40566b;
-
   font-size:9px;
-
   font-weight:700;
-
   text-transform:uppercase;
-
   margin-bottom:4px;
 }
 
 input,
 select,
 textarea{
-
   width:100%;
-
   padding:9px;
-
-  margin:
-    0
-    0
-    8px;
-
+  margin:0 0 8px;
   background:white;
-
   color:var(--text);
-
-  border:
-    1px solid #ccd7e1;
-
+  border:1px solid #ccd7e1;
   border-radius:6px;
-
   font-size:12px;
-
   outline:none;
-
-  transition:
-    border-color .2s ease,
-    box-shadow .2s ease;
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-
-  border-color:var(--blue);
-
-  box-shadow:
-    0 0 0 3px
-    rgba(6,59,105,.07);
 }
 
 textarea{
-
   min-height:65px;
-
   resize:vertical;
 }
 
 .form-row{
-
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns:1fr 1fr;
   gap:8px;
 }
 
 button.primary,
 button.secondary,
 button.danger{
-
   padding:9px 12px;
-
   border:0;
-
   border-radius:6px;
-
   font-size:10px;
-
   font-weight:700;
-
-  transition:
-    transform .15s ease,
-    opacity .15s ease;
 }
 
 button.primary{
-
   color:white;
-
   background:var(--navy);
 }
 
 button.secondary{
-
   color:var(--navy);
-
   background:#e8edf2;
 }
 
 button.danger{
-
   color:var(--red);
-
   background:#fde7e7;
 }
 
-button.primary:hover,
-button.secondary:hover,
-button.danger:hover{
-
-  transform:
-    translateY(-1px);
-}
-
-button.primary:active,
-button.secondary:active,
-button.danger:active{
-
-  transform:
-    scale(.98);
-}
-
 .message{
-
   padding:9px;
-
   margin:7px 0;
-
   background:#edf2f7;
-
   border-radius:6px;
-
   color:#536779;
-
   font-size:10px;
-
-  animation:
-    messageIn
-    .25s
-    ease
-    both;
-}
-
-@keyframes messageIn{
-
-  from{
-    opacity:0;
-    transform:translateY(-4px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
 }
 
 
@@ -3082,76 +1587,40 @@ button.danger:active{
 ========================================================= */
 
 .admin-game-row{
-
   display:grid;
-
-  grid-template-columns:
-    1fr
-    auto;
-
+  grid-template-columns:1fr auto;
   align-items:center;
-
   gap:10px;
-
   padding:10px;
-
   margin-bottom:6px;
-
   background:white;
-
-  border:
-    1px solid var(--border);
-
+  border:1px solid var(--border);
   border-radius:7px;
-
-  transition:
-    box-shadow .15s ease;
-}
-
-.admin-game-row:hover{
-
-  box-shadow:
-    0 4px 12px
-    rgba(0,31,63,.07);
 }
 
 .admin-game-title{
-
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:22px;
-
   line-height:1;
 }
 
 .admin-game-meta{
-
   margin-top:3px;
-
   color:var(--muted);
-
   font-size:9px;
 }
 
 .admin-game-actions{
-
   display:flex;
-
   gap:4px;
 }
 
 .admin-game-actions button{
-
   padding:7px 9px;
-
   border:0;
-
   border-radius:5px;
-
   font-size:9px;
-
   font-weight:700;
 }
 
@@ -3161,203 +1630,77 @@ button.danger:active{
 ========================================================= */
 
 .admin-roster-list{
-
   display:flex;
-
   flex-direction:column;
-
   gap:6px;
 }
 
 .admin-roster-row{
-
   display:grid;
-
-  grid-template-columns:
-    48px
-    1fr
-    auto;
-
+  grid-template-columns:48px 1fr auto;
   align-items:center;
-
   gap:8px;
-
   padding:8px;
-
   background:white;
-
-  border:
-    1px solid var(--border);
-
+  border:1px solid var(--border);
   border-radius:7px;
 }
 
 .admin-roster-number{
-
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:25px;
-
   font-weight:700;
-
   text-align:center;
 }
 
 .admin-roster-name{
-
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:21px;
-
   line-height:1;
-
   font-weight:700;
 }
 
 .admin-roster-position{
-
   color:var(--muted);
-
   font-size:9px;
-
   margin-top:2px;
 }
 
 .admin-roster-actions{
-
   display:flex;
-
   gap:3px;
 }
 
 .admin-roster-actions button{
-
   padding:7px 8px;
-
   border:0;
-
   border-radius:5px;
-
   font-size:9px;
-
   font-weight:700;
 }
 
 .edit-roster{
-
   background:#e8eff6;
-
   color:var(--navy);
 }
 
 .delete-roster{
-
   background:#fde7e7;
-
   color:var(--red);
 }
 
 .roster-edit-area{
-
   display:none;
-
   grid-column:1/-1;
-
   padding:9px;
-
   background:#f5f8fa;
-
-  border-top:
-    1px solid var(--border);
+  border-top:1px solid var(--border);
 }
 
 .roster-edit-area.open{
-
   display:block;
-
-  animation:
-    adminOpen
-    .2s
-    ease
-    both;
-}
-
-
-/* =========================================================
-   ADMIN PHOTOS
-========================================================= */
-
-.admin-photo-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(5,1fr);
-
-  gap:6px;
-}
-
-.admin-photo-card{
-
-  overflow:hidden;
-
-  padding:3px;
-
-  border:
-    1px solid var(--border);
-
-  border-radius:6px;
-
-  background:white;
-}
-
-.admin-photo-card img{
-
-  width:100%;
-
-  aspect-ratio:1;
-
-  object-fit:cover;
-
-  border-radius:4px;
-}
-
-.admin-photo-caption{
-
-  color:var(--muted);
-
-  font-size:8px;
-
-  margin:3px 1px;
-
-  white-space:nowrap;
-
-  overflow:hidden;
-
-  text-overflow:ellipsis;
-}
-
-.admin-photo-delete{
-
-  width:100%;
-
-  padding:5px;
-
-  border:0;
-
-  border-radius:4px;
-
-  background:#fde7e7;
-
-  color:var(--red);
-
-  font-size:8px;
-
-  font-weight:700;
 }
 
 
@@ -3366,271 +1709,274 @@ button.danger:active{
 ========================================================= */
 
 .position-picker{
-
   position:relative;
-
   width:100%;
-
   margin-bottom:8px;
 }
 
 .position-trigger{
-
   width:100%;
-
   min-height:39px;
-
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   gap:8px;
-
   padding:9px 10px;
-
   background:white;
-
-  border:
-    1px solid #ccd7e1;
-
+  border:1px solid #ccd7e1;
   border-radius:6px;
-
   color:#536779;
-
   text-align:left;
-
   font-size:11px;
 }
 
 .position-placeholder{
-
   color:#8a9aa8;
 }
 
 .position-selected-text{
-
   color:var(--navy);
-
   font-weight:700;
 }
 
 .position-menu{
-
   position:absolute;
-
   left:0;
   right:0;
-
-  top:
-    calc(100% + 4px);
-
+  top:calc(100% + 4px);
   z-index:300;
-
   display:none;
-
   padding:8px;
-
   background:white;
-
-  border:
-    1px solid #cbd7e1;
-
+  border:1px solid #cbd7e1;
   border-radius:8px;
-
-  box-shadow:
-    0 12px 30px
-    rgba(0,31,63,.16);
+  box-shadow:0 12px 30px rgba(0,31,63,.16);
 }
 
-.position-picker.open
-.position-menu{
-
+.position-picker.open .position-menu{
   display:block;
-
-  animation:
-    menuIn
-    .18s
-    ease
-    both;
-}
-
-@keyframes menuIn{
-
-  from{
-    opacity:0;
-    transform:translateY(-4px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
 }
 
 .position-options{
-
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns:1fr 1fr;
   gap:4px;
-
   max-height:220px;
-
   overflow-y:auto;
 }
 
 .position-option{
-
   display:flex;
-
   align-items:center;
-
   gap:6px;
-
   padding:7px;
-
-  border:
-    1px solid #e1e7ec;
-
+  border:1px solid #e1e7ec;
   border-radius:5px;
-
   background:#f8fafc;
-
   color:#3e5366;
-
   font-size:10px;
-
   font-weight:600;
-
   cursor:pointer;
 }
 
 .position-option input{
-
   width:14px;
   height:14px;
-
   margin:0;
-
   padding:0;
-
   accent-color:var(--navy);
-}
-
-.position-custom{
-
-  margin-top:8px;
-
-  padding-top:8px;
-
-  border-top:
-    1px solid var(--border);
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   ADMIN PHOTOS
+========================================================= */
+
+.admin-photo-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:6px;
+}
+
+.admin-photo-card{
+  overflow:hidden;
+  padding:3px;
+  border:1px solid var(--border);
+  border-radius:6px;
+  background:white;
+}
+
+.admin-photo-card img{
+  width:100%;
+  aspect-ratio:1;
+  object-fit:cover;
+  border-radius:4px;
+}
+
+.admin-photo-caption{
+  color:var(--muted);
+  font-size:8px;
+  margin:3px 1px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.admin-photo-delete{
+  width:100%;
+  padding:5px;
+  border:0;
+  border-radius:4px;
+  background:#fde7e7;
+  color:var(--red);
+  font-size:8px;
+  font-weight:700;
+}
+
+
+/* =========================================================
+   MOBILE
 ========================================================= */
 
 @media(max-width:600px){
 
   header{
-
     padding-left:45px;
     padding-right:45px;
   }
 
   .achievements-inner{
-
     gap:5px;
   }
 
   .achievement-title{
-
     font-size:15px;
   }
 
   .achievement-years{
-
     font-size:8px;
   }
 
   .roster-tools{
-
     flex-direction:column;
   }
 
   .roster-filter{
-
     width:100%;
   }
 
   .roster-grid{
-
     grid-template-columns:1fr;
   }
 
   .form-row{
-
     grid-template-columns:1fr;
   }
 
-  .admin-roster-row{
-
-    grid-template-columns:
-      43px
-      1fr
-      auto;
-  }
-
   .admin-photo-grid{
-
-    grid-template-columns:
-      repeat(4,1fr);
+    grid-template-columns:repeat(4,1fr);
   }
+
+  /*
+    Keep public modals full-screen on mobile,
+    but DO NOT do this to the admin login.
+  */
 
   .history-modal,
-  .modal-overlay,
-  .admin-login-overlay{
-
+  .modal-overlay{
     padding:0;
   }
 
   .history-window,
-  .modal,
-  .admin-login-window{
-
-    height:100vh;
-
-    max-height:100vh;
-
+  .modal{
+    width:100%;
+    height:100dvh;
+    max-height:100dvh;
     border-radius:0;
   }
 
   .history-modal-body{
-
-    max-height:
-      calc(100vh - 110px);
+    max-height:calc(100dvh - 110px);
   }
 
   .photo-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
 
-    grid-template-columns:
-      repeat(3,1fr);
+  /*
+    ADMIN LOGIN MOBILE FIX
+  */
+
+  .admin-login-overlay{
+    align-items:center;
+    justify-content:center;
+    padding:12px;
+  }
+
+  .admin-login-window{
+    width:calc(100vw - 24px);
+    max-width:390px;
+
+    /*
+      Never allow the keyboard to push the
+      login box completely off screen.
+    */
+
+    max-height:calc(100dvh - 24px);
+
+    transform:none!important;
+    margin:0!important;
+  }
+
+  .admin-login-top{
+    padding-top:24px;
+    padding-bottom:20px;
+  }
+
+  .admin-login-close{
+    top:8px;
+    right:8px;
+    width:40px;
+    height:40px;
+  }
+
+  .admin-login-body{
+    padding:15px;
+  }
+
+  .admin-code-input{
+    font-size:16px!important;
   }
 
 }
 
-@media(min-width:650px){
 
-  .photo-grid{
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
 
-    grid-template-columns:
-      repeat(4,1fr);
+@media(max-width:380px){
+
+  .admin-login-window{
+    width:calc(100vw - 18px);
+  }
+
+  .admin-login-top{
+    padding:21px 14px 18px;
+  }
+
+  .admin-login-gear{
+    width:45px;
+    height:45px;
+    font-size:23px;
+  }
+
+  .admin-login-top h2{
+    font-size:29px;
+  }
+
+  .admin-login-body{
+    padding:12px;
   }
 
 }
@@ -3645,21 +1991,14 @@ button.danger:active{
   *,
   *:before,
   *:after{
-
-    animation-duration:.01ms!important;
-
-    animation-iteration-count:1!important;
-
-    scroll-behavior:auto!important;
-
-    transition-duration:.01ms!important;
+    animation:none!important;
+    transition:none!important;
   }
 
 }
 
 </style>
 </head>
-
 
 <body>
 
@@ -3693,15 +2032,6 @@ button.danger:active{
 
 
 <!-- =========================================================
-     PULL REFRESH
-========================================================= -->
-
-<div id="pullRefresh">
-  ↻
-</div>
-
-
-<!-- =========================================================
      HEADER
 ========================================================= -->
 
@@ -3713,9 +2043,7 @@ button.danger:active{
     onclick="openAdminLogin()"
     aria-label="Admin">
 
-    <span class="gear-icon">
-      ⚙️
-    </span>
+    ⚙️
 
   </button>
 
@@ -3779,7 +2107,7 @@ button.danger:active{
 
 
 <!-- =========================================================
-     NAVIGATION
+     NAV
 ========================================================= -->
 
 <nav id="publicNav">
@@ -3787,56 +2115,38 @@ button.danger:active{
   <button
     class="active"
     onclick="showPage('home',this)">
-
     🏠 Home
-
   </button>
-
 
   <button
     onclick="showPage('schedule',this)">
-
     🏈 Schedule
-
   </button>
-
 
   <button
     onclick="showPage('history',this)">
-
     🏆 History
-
   </button>
-
 
   <button
     onclick="showPage('roster',this)">
-
     👥 Roster
-
   </button>
-
 
   <button
     onclick="showPage('photos',this)">
-
     📸 Photos
-
   </button>
 
 </nav>
 
 
 <!-- =========================================================
-     PUBLIC MAIN
+     MAIN
 ========================================================= -->
 
 <main id="publicMain">
 
-
-<!-- =========================================================
-     HOME
-========================================================= -->
 
 <section
   id="home"
@@ -3886,9 +2196,7 @@ button.danger:active{
       <div
         id="nextDetails"
         class="game-info">
-
         Loading...
-
       </div>
 
 
@@ -3896,7 +2204,7 @@ button.danger:active{
         id="countdown"
         class="countdown hidden">
 
-        <span>🏈</span>
+        🏈
 
         <span id="countdownText"></span>
 
@@ -3918,9 +2226,7 @@ button.danger:active{
       <div
         id="record"
         class="record">
-
         0–0
-
       </div>
 
     </div>
@@ -3929,19 +2235,13 @@ button.danger:active{
     <div
       id="recordDetails"
       class="record-sub">
-
       Loading...
-
     </div>
 
   </div>
 
 </section>
 
-
-<!-- =========================================================
-     SCHEDULE
-========================================================= -->
 
 <section
   id="schedule"
@@ -3953,7 +2253,6 @@ button.danger:active{
       🏈 2026 Schedule
     </h2>
 
-
     <div id="scheduleList">
       Loading...
     </div>
@@ -3962,10 +2261,6 @@ button.danger:active{
 
 </section>
 
-
-<!-- =========================================================
-     HISTORY
-========================================================= -->
 
 <section
   id="history"
@@ -3977,11 +2272,9 @@ button.danger:active{
       🏆 Football History
     </h2>
 
-
     <div class="history-intro">
       2016–2025 • Notre Dame Green Pond Football
     </div>
-
 
     <div id="historyList"></div>
 
@@ -3989,10 +2282,6 @@ button.danger:active{
 
 </section>
 
-
-<!-- =========================================================
-     ROSTER
-========================================================= -->
 
 <section
   id="roster"
@@ -4022,45 +2311,16 @@ button.danger:active{
           All Positions
         </option>
 
-        <option value="QB">
-          Quarterbacks
-        </option>
-
-        <option value="RB">
-          Running Backs
-        </option>
-
-        <option value="WR">
-          Wide Receivers
-        </option>
-
-        <option value="TE">
-          Tight Ends
-        </option>
-
-        <option value="OL">
-          Offensive Line
-        </option>
-
-        <option value="DL">
-          Defensive Line
-        </option>
-
-        <option value="LB">
-          Linebackers
-        </option>
-
-        <option value="DB">
-          Defensive Backs
-        </option>
-
-        <option value="K">
-          Kickers
-        </option>
-
-        <option value="P">
-          Punters
-        </option>
+        <option value="QB">Quarterbacks</option>
+        <option value="RB">Running Backs</option>
+        <option value="WR">Wide Receivers</option>
+        <option value="TE">Tight Ends</option>
+        <option value="OL">Offensive Line</option>
+        <option value="DL">Defensive Line</option>
+        <option value="LB">Linebackers</option>
+        <option value="DB">Defensive Backs</option>
+        <option value="K">Kickers</option>
+        <option value="P">Punters</option>
 
       </select>
 
@@ -4076,19 +2336,13 @@ button.danger:active{
     <div
       id="rosterList"
       class="roster-grid">
-
       Loading...
-
     </div>
 
   </div>
 
 </section>
 
-
-<!-- =========================================================
-     PHOTOS
-========================================================= -->
 
 <section
   id="photos"
@@ -4099,7 +2353,6 @@ button.danger:active{
     <h2 class="page-heading">
       📸 Football Photos
     </h2>
-
 
     <div id="photoList">
       Loading...
@@ -4114,7 +2367,7 @@ button.danger:active{
 
 
 <!-- =========================================================
-     ADMIN PAGE
+     ADMIN
 ========================================================= -->
 
 <section
@@ -4306,7 +2559,6 @@ button.danger:active{
           Edit scores, times, locations and other game information.
         </div>
 
-
         <div id="adminGames">
           Loading...
         </div>
@@ -4408,7 +2660,6 @@ button.danger:active{
         <div
           id="addPositionPicker"
           class="position-picker">
-
 
           <button
             type="button"
@@ -4651,9 +2902,13 @@ button.danger:active{
 
     <div class="admin-login-top">
 
+      <!-- THIS X WILL NOW STAY INSIDE THE MODAL -->
+
       <button
+        type="button"
         class="admin-login-close"
-        onclick="closeAdminLogin()">
+        onclick="closeAdminLogin()"
+        aria-label="Close">
 
         ×
 
@@ -4692,6 +2947,7 @@ button.danger:active{
 
 
       <button
+        type="button"
         class="admin-login-button"
         onclick="login()">
 
@@ -4721,11 +2977,9 @@ button.danger:active{
   class="history-modal"
   onclick="closeHistoryModal(event)">
 
-
   <div
     class="history-window"
     onclick="event.stopPropagation()">
-
 
     <div class="history-modal-header">
 
@@ -4737,17 +2991,14 @@ button.danger:active{
 
       </button>
 
-
       <div class="history-modal-kicker">
         NDGP FOOTBALL HISTORY
       </div>
-
 
       <div
         id="historyModalTitle"
         class="history-modal-title">
       </div>
-
 
       <div
         id="historyModalRecord"
@@ -4755,7 +3006,6 @@ button.danger:active{
       </div>
 
     </div>
-
 
     <div
       id="historyModalBody"
@@ -4768,7 +3018,7 @@ button.danger:active{
 
 
 <!-- =========================================================
-     GAME DETAILS MODAL
+     GAME MODAL
 ========================================================= -->
 
 <div
@@ -4776,11 +3026,9 @@ button.danger:active{
   class="modal-overlay"
   onclick="closeGameModal(event)">
 
-
   <div
     class="modal"
     onclick="event.stopPropagation()">
-
 
     <div class="modal-header">
 
@@ -4792,11 +3040,9 @@ button.danger:active{
 
       </button>
 
-
       <div class="modal-kicker">
         NDGP FOOTBALL
       </div>
-
 
       <div
         id="modalMatchup"
@@ -4805,7 +3051,6 @@ button.danger:active{
 
     </div>
 
-
     <div class="modal-body">
 
       <div
@@ -4813,18 +3058,15 @@ button.danger:active{
         style="text-align:center">
       </div>
 
-
       <div
         id="modalScore"
         class="modal-score">
       </div>
 
-
       <div
         id="modalInfo"
         class="modal-info-grid">
       </div>
-
 
       <div id="modalNotes"></div>
 
@@ -4844,11 +3086,9 @@ button.danger:active{
   class="photo-viewer"
   onclick="closePhotoViewer(event)">
 
-
   <div
     class="photo-viewer-window"
     onclick="event.stopPropagation()">
-
 
     <button
       class="photo-viewer-close"
@@ -4858,13 +3098,11 @@ button.danger:active{
 
     </button>
 
-
     <img
       id="photoViewerImage"
       class="photo-viewer-image"
       src=""
       alt="NDGP Football">
-
 
     <div
       id="photoViewerCaption"
@@ -4897,105 +3135,7 @@ window.supabase.createClient(
 
 let games=[];
 let roster=[];
-
-let countdownTimer=null;
-
 let currentPhotos=[];
-let currentPhotoIndex=0;
-
-let pullStartY=0;
-let pullDistance=0;
-let refreshing=false;
-
-
-/* =========================================================
-   STARTING ROSTER
-========================================================= */
-
-const startingRoster=[
-
-  [0,"Jackson Wallace","WR, FS"],
-  [1,"Aaron Gordon","RB, DB"],
-  [2,"Madden Roselli","WR, CB"],
-  [3,"Nyechay Lawless","WR, DB"],
-  [4,"Chase Ryan","TE, MLB"],
-  [5,"Jonathan Striba","RB, WR"],
-  [6,"Nick Youngkin","WR, DB"],
-  [7,"Tommy Murphy","QB, FS"],
-  [8,"Jeffrey Cemelli","WR, DB"],
-  [10,"Luca Luise","WR, DB"],
-  [12,"Clemente Cintron","WR, P"],
-  [13,"Drew Boyd","WR, DB"],
-  [15,"CJ Diaz","WR, CB"],
-  [17,"John Hull","TE, LB"],
-  [20,"Patrick Bedics","WR, FS"],
-  [21,"Matteo Calantoni","WR, CB"],
-  [23,"Caden Ditze","WR, DB"],
-  [24,"Joseph Nehme","TE, LB"],
-  [25,"Jason Frederick","RB, LB"],
-  [26,"Jax Rhinehart","WR, CB"],
-  [27,"Anthony Stefano","MLB, RB"],
-  [28,"Tahir Smith","TE, DL"],
-  [29,"Evan Landis","RB, OLB"],
-  [32,"Jackson Hughes","WR, OLB"],
-  [37,"Tyler Coad","RB, OLB"],
-  [40,"Christian Rivera","WR, CB"],
-  [41,"Xavier Hyndman","DB, SS"],
-  [44,"Dominic Tocci","RB, MLB"],
-  [46,"Patrick Parkes","WR, FS"],
-  [50,"Zach Huber","MLB, G"],
-  [51,"Marco Azzolina","OL, DL"],
-  [53,"Noah Snyder","OL, DL"],
-  [54,"Joshua Scherer","OL, DL"],
-  [55,"Santino Milioto","TE, DL"],
-  [56,"Dominic Morici","OL, DL"],
-  [58,"Nate Horton","T, DE"],
-  [62,"Liam Guimes","OL, DL"],
-  [68,"Joey Raneri","T, DT"],
-  [69,"Ryan Qureshi","T, DE"],
-  [71,"Benjamin Hardin","G, NG"],
-  [73,"Sean Holzmacher","T, DT"],
-  [75,"Philip Labella","OL, DL"],
-  [76,"Ryan Primich","OL, DL"],
-  [78,"Xavier Ramirez","T, DT"],
-  [82,"Vince Quainoo","K"],
-  [88,"Drew Salaki","K"]
-
-];
-
-
-const positionOptions=[
-
-  "QB",
-  "RB",
-  "FB",
-  "WR",
-  "TE",
-
-  "OL",
-  "T",
-  "G",
-  "C",
-
-  "DL",
-  "DE",
-  "DT",
-  "NG",
-
-  "LB",
-  "MLB",
-  "OLB",
-
-  "DB",
-  "CB",
-  "FS",
-  "SS",
-
-  "K",
-  "P",
-  "LS"
-
-];
 
 
 /* =========================================================
@@ -5008,9 +3148,13 @@ window.addEventListener(
 
     setTimeout(
       ()=>{
+
         document
-          .getElementById("splashScreen")
+          .getElementById(
+            "splashScreen"
+          )
           .classList.add("hide");
+
       },
       1200
     );
@@ -5020,16 +3164,19 @@ window.addEventListener(
 
 
 /* =========================================================
-   NAVIGATION
+   PAGE NAVIGATION
 ========================================================= */
 
 function showPage(id,button){
 
   document
     .querySelectorAll(".page")
-    .forEach(page=>{
-      page.classList.remove("active");
-    });
+    .forEach(
+      page=>
+        page.classList.remove(
+          "active"
+        )
+    );
 
 
   const page=
@@ -5041,10 +3188,15 @@ function showPage(id,button){
 
 
   document
-    .querySelectorAll("#publicNav button")
-    .forEach(btn=>{
-      btn.classList.remove("active");
-    });
+    .querySelectorAll(
+      "#publicNav button"
+    )
+    .forEach(
+      btn=>
+        btn.classList.remove(
+          "active"
+        )
+    );
 
 
   if(button)
@@ -5060,14 +3212,11 @@ function showPage(id,button){
   if(id==="schedule")
     loadGames();
 
-
   if(id==="history")
     renderHistory();
 
-
   if(id==="roster")
     loadRoster();
-
 
   if(id==="photos")
     loadPhotos();
@@ -5081,21 +3230,68 @@ function showPage(id,button){
 
 function openAdminLogin(){
 
-  document
-    .getElementById("adminLoginOverlay")
-    .classList.add("show");
+  const overlay=
+    document.getElementById(
+      "adminLoginOverlay"
+    );
 
 
-  document.body.style.overflow="hidden";
+  overlay.classList.add(
+    "show"
+  );
 
+
+  /*
+    Lock the body WITHOUT allowing
+    the page underneath to move.
+  */
+
+  document.body.classList.add(
+    "admin-login-open"
+  );
+
+
+  /*
+    Save the current scroll position.
+  */
+
+  document.body.dataset.loginScroll=
+    window.scrollY;
+
+
+  /*
+    Force the window back to the top of
+    the viewport before focusing the input.
+  */
+
+  window.scrollTo(
+    0,
+    0
+  );
+
+
+  /*
+    Don't focus immediately.
+    On mobile this prevents the browser
+    from jumping the modal when the
+    keyboard opens.
+  */
 
   setTimeout(
     ()=>{
-      document
-        .getElementById("adminCode")
-        .focus();
+
+      const input=
+        document.getElementById(
+          "adminCode"
+        );
+
+      if(input)
+        input.focus({
+          preventScroll:true
+        });
+
     },
-    100
+    250
   );
 
 }
@@ -5112,11 +3308,34 @@ function closeAdminLogin(event){
 
 
   document
-    .getElementById("adminLoginOverlay")
-    .classList.remove("show");
+    .getElementById(
+      "adminLoginOverlay"
+    )
+    .classList.remove(
+      "show"
+    );
 
 
-  document.body.style.overflow="";
+  document.body.classList.remove(
+    "admin-login-open"
+  );
+
+
+  /*
+    Restore the page exactly where
+    the user was before opening admin.
+  */
+
+  const oldScroll=
+    Number(
+      document.body.dataset.loginScroll||0
+    );
+
+
+  window.scrollTo(
+    0,
+    oldScroll
+  );
 
 
   document.getElementById(
@@ -5132,7 +3351,9 @@ function closeAdminLogin(event){
 
 
 document
-  .getElementById("adminCode")
+  .getElementById(
+    "adminCode"
+  )
   .addEventListener(
     "keydown",
     event=>{
@@ -5148,7 +3369,9 @@ async function login(){
 
   const code=
     document
-      .getElementById("adminCode")
+      .getElementById(
+        "adminCode"
+      )
       .value
       .trim();
 
@@ -5217,6 +3440,18 @@ async function login(){
   );
 
 
+  /*
+    Close the keyboard/login before
+    entering admin.
+  */
+
+  document
+    .getElementById(
+      "adminCode"
+    )
+    .blur();
+
+
   closeAdminLogin();
 
   openAdmin();
@@ -5225,41 +3460,56 @@ async function login(){
 
 
 /* =========================================================
-   OPEN ADMIN
+   ADMIN
 ========================================================= */
 
 function openAdmin(){
 
   document
-    .getElementById("publicNav")
+    .getElementById(
+      "publicNav"
+    )
     .classList.add("hidden");
 
 
   document
-    .getElementById("publicAchievements")
+    .getElementById(
+      "publicAchievements"
+    )
     .classList.add("hidden");
 
 
   document
-    .getElementById("publicMain")
+    .getElementById(
+      "publicMain"
+    )
     .classList.add("hidden");
 
 
   document
-    .getElementById("adminGear")
+    .getElementById(
+      "adminGear"
+    )
     .classList.add("hidden");
 
 
   document
-    .getElementById("adminPage")
+    .getElementById(
+      "adminPage"
+    )
     .classList.add("active");
 
 
   document
-    .querySelectorAll(".admin-section")
-    .forEach(section=>{
-      section.classList.remove("open");
-    });
+    .querySelectorAll(
+      ".admin-section"
+    )
+    .forEach(
+      section=>
+        section.classList.remove(
+          "open"
+        )
+    );
 
 
   window.scrollTo({
@@ -5273,34 +3523,42 @@ function openAdmin(){
 }
 
 
-/* =========================================================
-   CLOSE ADMIN
-========================================================= */
-
 function closeAdmin(){
 
   document
-    .getElementById("adminPage")
-    .classList.remove("active");
+    .getElementById(
+      "adminPage"
+    )
+    .classList.remove(
+      "active"
+    );
 
 
   document
-    .getElementById("publicNav")
+    .getElementById(
+      "publicNav"
+    )
     .classList.remove("hidden");
 
 
   document
-    .getElementById("publicAchievements")
+    .getElementById(
+      "publicAchievements"
+    )
     .classList.remove("hidden");
 
 
   document
-    .getElementById("publicMain")
+    .getElementById(
+      "publicMain"
+    )
     .classList.remove("hidden");
 
 
   document
-    .getElementById("adminGear")
+    .getElementById(
+      "adminGear"
+    )
     .classList.remove("hidden");
 
 
@@ -5319,28 +3577,19 @@ function closeAdmin(){
 }
 
 
-/* =========================================================
-   ADMIN SECTIONS
-========================================================= */
-
 function toggleAdminSection(id){
 
   const section=
     document.getElementById(id);
 
 
-  if(!section)
-    return;
-
-
-  section.classList.toggle("open");
+  if(section)
+    section.classList.toggle(
+      "open"
+    );
 
 }
 
-
-/* =========================================================
-   ADMIN LOAD
-========================================================= */
 
 async function loadAdminData(){
 
@@ -5354,10 +3603,15 @@ async function loadAdminData(){
 
 
   document
-    .querySelectorAll(".admin-section")
-    .forEach(section=>{
-      section.classList.remove("open");
-    });
+    .querySelectorAll(
+      ".admin-section"
+    )
+    .forEach(
+      section=>
+        section.classList.remove(
+          "open"
+        )
+    );
 
 }
 
@@ -5365,6 +3619,16 @@ async function loadAdminData(){
 /* =========================================================
    POSITION PICKER
 ========================================================= */
+
+const positionOptions=[
+  "QB","RB","FB","WR","TE",
+  "OL","T","G","C",
+  "DL","DE","DT","NG",
+  "LB","MLB","OLB",
+  "DB","CB","FS","SS",
+  "K","P","LS"
+];
+
 
 function buildPositionPicker(
   type,
@@ -5414,9 +3678,7 @@ function buildPositionPicker(
                 updatePositionText('${type}')
               ">
 
-            <span>
-              ${position}
-            </span>
+            ${position}
 
           </label>
 
@@ -5438,23 +3700,10 @@ function togglePositionPicker(type){
     );
 
 
-  if(!picker)
-    return;
-
-
-  document
-    .querySelectorAll(
-      ".position-picker.open"
-    )
-    .forEach(other=>{
-
-      if(other!==picker)
-        other.classList.remove("open");
-
-    });
-
-
-  picker.classList.toggle("open");
+  if(picker)
+    picker.classList.toggle(
+      "open"
+    );
 
 }
 
@@ -5468,7 +3717,9 @@ function closePositionPicker(type){
 
 
   if(picker)
-    picker.classList.remove("open");
+    picker.classList.remove(
+      "open"
+    );
 
 
   updatePositionText(type);
@@ -5492,9 +3743,10 @@ function clearPositionPicker(type){
     .querySelectorAll(
       'input[type="checkbox"]'
     )
-    .forEach(box=>{
-      box.checked=false;
-    });
+    .forEach(
+      box=>
+        box.checked=false
+    );
 
 
   const custom=
@@ -5536,7 +3788,9 @@ function updatePositionText(type){
         'input[type="checkbox"]:checked'
       )
     )
-    .map(box=>box.value);
+    .map(
+      box=>box.value
+    );
 
 
   const custom=
@@ -5590,7 +3844,9 @@ function getSelectedPositions(type){
         'input[type="checkbox"]:checked'
       )
     )
-    .map(box=>box.value);
+    .map(
+      box=>box.value
+    );
 
 
   const custom=
@@ -5599,29 +3855,15 @@ function getSelectedPositions(type){
     )?.value.trim();
 
 
-  if(custom){
-
-    custom
-      .split(",")
-      .map(x=>x.trim())
-      .filter(Boolean)
-      .forEach(position=>{
-
-        if(
-          !selected.some(
-            existing=>
-              existing.toLowerCase()===
-              position.toLowerCase()
-          )
-        )
-          selected.push(position);
-
-      });
-
-  }
+  if(custom)
+    selected.push(custom);
 
 
-  return selected.join(", ");
+  return[
+    ...new Set(
+      selected
+    )
+  ].join(", ");
 
 }
 
@@ -5634,30 +3876,6 @@ document.addEventListener(
       event.target.id==="addCustomPosition"
     )
       updatePositionText("add");
-
-  }
-);
-
-
-document.addEventListener(
-  "click",
-  event=>{
-
-    if(
-      !event.target.closest(
-        ".position-picker"
-      )
-    ){
-
-      document
-        .querySelectorAll(
-          ".position-picker.open"
-        )
-        .forEach(picker=>{
-          picker.classList.remove("open");
-        });
-
-    }
 
   }
 );
@@ -5688,33 +3906,6 @@ async function loadGames(){
 
     console.error(error);
 
-
-    const cached=
-      localStorage.getItem(
-        "ndgp_games"
-      );
-
-
-    if(cached){
-
-      try{
-
-        games=
-          JSON.parse(cached);
-
-        updateHome();
-        updateSchedule();
-
-      }
-
-      catch(e){
-
-        console.error(e);
-
-      }
-
-    }
-
     return;
 
   }
@@ -5723,29 +3914,11 @@ async function loadGames(){
   games=data||[];
 
 
-  try{
-
-    localStorage.setItem(
-      "ndgp_games",
-      JSON.stringify(games)
-    );
-
-  }
-
-  catch(e){}
-
-
   updateHome();
 
   updateSchedule();
 
-
-  if(
-    sessionStorage.getItem(
-      "adminCode"
-    )
-  )
-    updateAdminGames();
+  updateAdminGames();
 
 }
 
@@ -5753,15 +3926,12 @@ async function loadGames(){
 function hasScore(game){
 
   return(
-
     game.our_score!==null &&
     game.our_score!==undefined &&
     game.our_score!=="" &&
-
     game.opponent_score!==null &&
     game.opponent_score!==undefined &&
     game.opponent_score!==""
-
   );
 
 }
@@ -5774,14 +3944,15 @@ function parseKickoff(game){
 
 
   let hours=19;
-
   let minutes=0;
 
 
   if(game.time){
 
     const match=
-      String(game.time).match(
+      String(
+        game.time
+      ).match(
         /(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?/i
       );
 
@@ -5792,7 +3963,6 @@ function parseKickoff(game){
         Number(
           match[1]
         );
-
 
       minutes=
         Number(
@@ -5855,11 +4025,8 @@ function isGameLive(game){
     parseKickoff(game);
 
 
-  if(!kickoff)
-    return false;
-
-
   return(
+    kickoff &&
     new Date()>=kickoff
   );
 
@@ -5882,24 +4049,18 @@ function getGameStatus(game){
       );
 
 
-    if(a>b){
-
+    if(a>b)
       return{
         text:"FINAL • WIN",
         className:"win"
       };
 
-    }
 
-
-    if(a<b){
-
+    if(a<b)
       return{
         text:"FINAL • LOSS",
         className:"loss"
       };
-
-    }
 
 
     return{
@@ -5924,10 +4085,6 @@ function getGameStatus(game){
 
 }
 
-
-/* =========================================================
-   HOME
-========================================================= */
 
 function updateHome(){
 
@@ -5955,45 +4112,8 @@ function updateHome(){
     upcoming[0];
 
 
-  if(!next){
-
-    document.getElementById(
-      "nextMatchup"
-    ).innerHTML=`
-
-      <span class="next-team">
-        NDGP
-      </span>
-
-      <span class="next-vs">
-        VS
-      </span>
-
-      <span class="next-team">
-        TBD
-      </span>
-
-    `;
-
-
-    document.getElementById(
-      "nextDetails"
-    ).textContent=
-      "No upcoming games";
-
-
-    document
-      .getElementById(
-        "countdown"
-      )
-      .classList.add(
-        "hidden"
-      );
-
-
+  if(!next)
     return;
-
-  }
 
 
   document.getElementById(
@@ -6021,7 +4141,9 @@ function updateHome(){
     "nextDetails"
   ).innerHTML=`
 
-    📅 ${formatDate(next.date)}
+    📅 ${formatDate(
+      next.date
+    )}
 
     <br>
 
@@ -6040,7 +4162,6 @@ function updateHome(){
     <br>
 
     <span class="home-away">
-
       ${getHomeAwayIcon(
         next.home_away
       )}
@@ -6049,47 +4170,119 @@ function updateHome(){
         next.home_away||
         ""
       )}
-
     </span>
 
   `;
 
 
-  startCountdown(next);
+  const kickoff=
+    parseKickoff(next);
+
+
+  if(kickoff){
+
+    const updateCountdown=()=>{
+
+      if(isGameLive(next)){
+
+        document
+          .getElementById(
+            "countdown"
+          )
+          .classList.remove(
+            "hidden"
+          );
+
+
+        document.getElementById(
+          "countdown"
+        ).innerHTML=
+          "🔴 LIVE";
+
+
+        return;
+
+      }
+
+
+      const diff=
+        kickoff-
+        new Date();
+
+
+      if(diff<=0)
+        return;
+
+
+      const hours=
+        Math.floor(
+          diff/3600000
+        );
+
+
+      const minutes=
+        Math.floor(
+          diff/60000
+        )%60;
+
+
+      document
+        .getElementById(
+          "countdown"
+        )
+        .classList.remove(
+          "hidden"
+        );
+
+
+      document.getElementById(
+        "countdown"
+      ).innerHTML=
+        `🏈 ${hours}h ${minutes}m until kickoff`;
+
+    };
+
+
+    updateCountdown();
+
+  }
 
 
   let wins=0;
   let losses=0;
 
 
-  games.forEach(game=>{
-
-    if(hasScore(game)){
+  games.forEach(
+    game=>{
 
       if(
-        Number(
-          game.our_score
-        )>
-        Number(
-          game.opponent_score
-        )
-      )
-        wins++;
+        hasScore(game)
+      ){
 
-
-      else if(
-        Number(
-          game.our_score
-        )<
-        Number(
-          game.opponent_score
+        if(
+          Number(
+            game.our_score
+          )>
+          Number(
+            game.opponent_score
+          )
         )
-      )
-        losses++;
+          wins++;
+
+        else if(
+          Number(
+            game.our_score
+          )<
+          Number(
+            game.opponent_score
+          )
+        )
+          losses++;
+
+      }
 
     }
-
-  });
+  );
 
 
   document.getElementById(
@@ -6105,118 +4298,6 @@ function updateHome(){
 
 }
 
-
-function startCountdown(game){
-
-  const box=
-    document.getElementById(
-      "countdown"
-    );
-
-
-  if(countdownTimer)
-    clearInterval(
-      countdownTimer
-    );
-
-
-  const kickoff=
-    parseKickoff(game);
-
-
-  if(!kickoff)
-    return;
-
-
-  function update(){
-
-    if(isGameLive(game)){
-
-      box.innerHTML=
-        "<span>🔴 LIVE</span>";
-
-      box.classList.remove(
-        "hidden"
-      );
-
-      return;
-
-    }
-
-
-    const diff=
-      kickoff-
-      new Date();
-
-
-    if(diff<=0){
-
-      loadGames();
-
-      return;
-
-    }
-
-
-    const days=
-      Math.floor(
-        diff/
-        86400000
-      );
-
-
-    const hours=
-      Math.floor(
-        diff/
-        3600000
-      )%24;
-
-
-    const minutes=
-      Math.floor(
-        diff/
-        60000
-      )%60;
-
-
-    box.innerHTML=`
-
-      <span>
-        🏈
-      </span>
-
-      <span>
-        ${days}d
-        ${hours}h
-        ${minutes}m
-        until kickoff
-      </span>
-
-    `;
-
-
-    box.classList.remove(
-      "hidden"
-    );
-
-  }
-
-
-  update();
-
-
-  countdownTimer=
-    setInterval(
-      update,
-      30000
-    );
-
-}
-
-
-/* =========================================================
-   SCHEDULE
-========================================================= */
 
 function updateSchedule(){
 
@@ -6264,7 +4345,6 @@ function updateSchedule(){
               onclick="
                 openGameDetails(${game.id})
               ">
-
 
               <div class="game-top">
 
@@ -6345,12 +4425,10 @@ function updateSchedule(){
                   ${getHomeAwayIcon(
                     game.home_away
                   )}
-
                   ${escapeHtml(
                     game.home_away||
                     ""
                   )}
-
                 </span>
 
               </div>
@@ -6361,12 +4439,10 @@ function updateSchedule(){
                 ?
                 `
                   <div class="game-score">
-
                     FINAL:
                     ${game.our_score}
                     –
                     ${game.opponent_score}
-
                   </div>
                 `
                 :
@@ -6385,598 +4461,6 @@ function updateSchedule(){
         }
       )
       .join("");
-
-}
-
-
-/* =========================================================
-   ADMIN GAMES
-========================================================= */
-
-function updateAdminGames(){
-
-  const container=
-    document.getElementById(
-      "adminGames"
-    );
-
-
-  if(!container)
-    return;
-
-
-  if(!games.length){
-
-    container.innerHTML=
-      `<div class="message">
-        No games yet.
-      </div>`;
-
-    return;
-
-  }
-
-
-  container.innerHTML=
-    games
-      .map(
-        (game,index)=>`
-
-          <div class="admin-game-row">
-
-            <div>
-
-              <div class="admin-game-title">
-
-                ${index+1}.
-                ${escapeHtml(
-                  game.opponent
-                )}
-
-              </div>
-
-
-              <div class="admin-game-meta">
-
-                ${formatShortDate(
-                  game.date
-                )}
-
-                •
-                ${escapeHtml(
-                  game.time||
-                  "TBD"
-                )}
-
-                •
-                ${
-                  hasScore(game)
-                  ?
-                  `
-                    FINAL
-                    ${game.our_score}
-                    –
-                    ${game.opponent_score}
-                  `
-                  :
-                  isGameLive(game)
-                  ?
-                  "LIVE"
-                  :
-                  "NOT STARTED"
-                }
-
-              </div>
-
-            </div>
-
-
-            <div class="admin-game-actions">
-
-              <button
-                class="secondary"
-                onclick="
-                  toggleGameEdit(${game.id})
-                ">
-
-                Edit
-
-              </button>
-
-            </div>
-
-          </div>
-
-
-          <div
-            id="game-edit-${game.id}"
-            class="hidden"
-            style="
-              margin:0 0 7px;
-              padding:10px;
-              background:#f5f8fa;
-              border:1px solid var(--border);
-              border-radius:7px;
-            ">
-
-
-            <div class="form-row">
-
-              <div>
-
-                <label>
-                  Date
-                </label>
-
-                <input
-                  id="edit-date-${game.id}"
-                  type="date"
-                  value="${escapeAttribute(
-                    game.date||""
-                  )}">
-
-              </div>
-
-
-              <div>
-
-                <label>
-                  Time
-                </label>
-
-                <input
-                  id="edit-time-${game.id}"
-                  value="${escapeAttribute(
-                    game.time||""
-                  )}">
-
-              </div>
-
-            </div>
-
-
-            <div class="form-row">
-
-              <div>
-
-                <label>
-                  NDGP Score
-                </label>
-
-                <input
-                  id="edit-our-${game.id}"
-                  type="number"
-                  value="${
-                    game.our_score??
-                    ""
-                  }">
-
-              </div>
-
-
-              <div>
-
-                <label>
-                  Opponent Score
-                </label>
-
-                <input
-                  id="edit-opp-${game.id}"
-                  type="number"
-                  value="${
-                    game.opponent_score??
-                    ""
-                  }">
-
-              </div>
-
-            </div>
-
-
-            <label>
-              Location
-            </label>
-
-            <input
-              id="edit-location-${game.id}"
-              value="${escapeAttribute(
-                game.location||
-                ""
-              )}">
-
-
-            <label>
-              Home / Away
-            </label>
-
-            <select
-              id="edit-ha-${game.id}">
-
-              <option
-                value="Home"
-                ${
-                  game.home_away==="Home"
-                  ?
-                  "selected"
-                  :
-                  ""
-                }>
-
-                Home
-
-              </option>
-
-              <option
-                value="Away"
-                ${
-                  game.home_away==="Away"
-                  ?
-                  "selected"
-                  :
-                  ""
-                }>
-
-                Away
-
-              </option>
-
-            </select>
-
-
-            <label>
-              Notes
-            </label>
-
-            <textarea
-              id="edit-notes-${game.id}">${escapeHtml(
-                game.notes||
-                ""
-              )}</textarea>
-
-
-            <button
-              class="primary"
-              style="width:100%"
-              onclick="
-                saveGame(${game.id})
-              ">
-
-              SAVE CHANGES
-
-            </button>
-
-
-            <button
-              class="danger"
-              style="
-                width:100%;
-                margin-top:5px
-              "
-              onclick="
-                deleteGame(${game.id})
-              ">
-
-              DELETE GAME
-
-            </button>
-
-          </div>
-
-        `
-      )
-      .join("");
-
-}
-
-
-function toggleGameEdit(id){
-
-  const el=
-    document.getElementById(
-      `game-edit-${id}`
-    );
-
-
-  if(el)
-    el.classList.toggle(
-      "hidden"
-    );
-
-}
-
-
-async function addGame(){
-
-  const code=
-    sessionStorage.getItem(
-      "adminCode"
-    );
-
-
-  const date=
-    document.getElementById(
-      "gameDate"
-    ).value;
-
-
-  const time=
-    document.getElementById(
-      "gameTime"
-    ).value;
-
-
-  const opponent=
-    document.getElementById(
-      "gameOpponent"
-    ).value.trim();
-
-
-  const location=
-    document.getElementById(
-      "gameLocation"
-    ).value.trim();
-
-
-  const homeAway=
-    document.getElementById(
-      "gameHomeAway"
-    ).value;
-
-
-  const notes=
-    document.getElementById(
-      "gameNotes"
-    ).value.trim();
-
-
-  if(
-    !date||
-    !opponent
-  ){
-
-    showAdminMessage(
-      "Date and opponent are required."
-    );
-
-    return;
-
-  }
-
-
-  const {error}=
-    await db.rpc(
-      "add_game",
-      {
-        p_code:code,
-        p_date:date,
-        p_time:time,
-        p_opponent:opponent,
-        p_location:location,
-        p_home_away:homeAway,
-        p_notes:notes
-      }
-    );
-
-
-  if(error){
-
-    console.error(error);
-
-    showAdminMessage(
-      "Could not add game."
-    );
-
-    return;
-
-  }
-
-
-  document.getElementById(
-    "gameDate"
-  ).value="";
-
-
-  document.getElementById(
-    "gameTime"
-  ).value="";
-
-
-  document.getElementById(
-    "gameOpponent"
-  ).value="";
-
-
-  document.getElementById(
-    "gameLocation"
-  ).value="";
-
-
-  document.getElementById(
-    "gameNotes"
-  ).value="";
-
-
-  showAdminMessage(
-    "Game added!"
-  );
-
-
-  loadGames();
-
-}
-
-
-async function saveGame(id){
-
-  const code=
-    sessionStorage.getItem(
-      "adminCode"
-    );
-
-
-  const game=
-    games.find(
-      g=>
-        Number(g.id)===
-        Number(id)
-    );
-
-
-  if(!game)
-    return;
-
-
-  const our=
-    document.getElementById(
-      `edit-our-${id}`
-    ).value;
-
-
-  const opp=
-    document.getElementById(
-      `edit-opp-${id}`
-    ).value;
-
-
-  const ourScore=
-    our===""
-    ?
-    null
-    :
-    Number(our);
-
-
-  const oppScore=
-    opp===""
-    ?
-    null
-    :
-    Number(opp);
-
-
-  const {error}=
-    await db.rpc(
-      "update_game",
-      {
-
-        p_code:code,
-
-        p_id:id,
-
-        p_date:
-          document.getElementById(
-            `edit-date-${id}`
-          ).value,
-
-        p_time:
-          document.getElementById(
-            `edit-time-${id}`
-          ).value,
-
-        p_opponent:
-          game.opponent,
-
-        p_location:
-          document.getElementById(
-            `edit-location-${id}`
-          ).value,
-
-        p_home_away:
-          document.getElementById(
-            `edit-ha-${id}`
-          ).value,
-
-        p_our_score:
-          ourScore,
-
-        p_opponent_score:
-          oppScore,
-
-        p_status:
-          ourScore!==null &&
-          oppScore!==null
-          ?
-          "Final"
-          :
-          "Scheduled",
-
-        p_notes:
-          document.getElementById(
-            `edit-notes-${id}`
-          ).value
-
-      }
-    );
-
-
-  if(error){
-
-    console.error(error);
-
-    showAdminMessage(
-      "Could not save game."
-    );
-
-    return;
-
-  }
-
-
-  showAdminMessage(
-    "Game updated!"
-  );
-
-
-  loadGames();
-
-}
-
-
-async function deleteGame(id){
-
-  if(
-    !confirm(
-      "Delete this game?"
-    )
-  )
-    return;
-
-
-  const code=
-    sessionStorage.getItem(
-      "adminCode"
-    );
-
-
-  const {error}=
-    await db.rpc(
-      "delete_game",
-      {
-        p_code:code,
-        p_id:id
-      }
-    );
-
-
-  if(error){
-
-    console.error(error);
-
-    showAdminMessage(
-      "Could not delete game."
-    );
-
-    return;
-
-  }
-
-
-  showAdminMessage(
-    "Game deleted."
-  );
-
-
-  loadGames();
 
 }
 
@@ -7002,60 +4486,20 @@ async function loadRoster(){
     );
 
 
-  if(
-    error||
-    !data||
-    data.length===0
-  ){
+  if(error){
 
-    roster=
-      startingRoster.map(
-        player=>({
+    console.error(error);
 
-          id:null,
-
-          number:
-            player[0],
-
-          name:
-            player[1],
-
-          position:
-            player[2]
-
-        })
-      );
-
-  }
-
-  else{
-
-    roster=data;
+    return;
 
   }
 
 
-  try{
-
-    localStorage.setItem(
-      "ndgp_roster",
-      JSON.stringify(roster)
-    );
-
-  }
-
-  catch(e){}
-
+  roster=data||[];
 
   renderRoster();
 
-
-  if(
-    sessionStorage.getItem(
-      "adminCode"
-    )
-  )
-    renderAdminRoster();
+  renderAdminRoster();
 
 }
 
@@ -7094,34 +4538,29 @@ function renderRoster(){
     roster.filter(
       player=>{
 
-        const searchMatch=
+        const matchesSearch=
           !search||
-
           player.name
             .toLowerCase()
             .includes(search)||
-
           String(
             player.number
-          )
-          .includes(search)||
-
+          ).includes(search)||
           player.position
             .toLowerCase()
             .includes(search);
 
 
-        const positionMatch=
+        const matchesPosition=
           filter==="all"||
-
           player.position
             .toUpperCase()
             .includes(filter);
 
 
         return(
-          searchMatch&&
-          positionMatch
+          matchesSearch&&
+          matchesPosition
         );
 
       }
@@ -7204,681 +4643,214 @@ document
   );
 
 
-function renderAdminRoster(){
+/* =========================================================
+   HISTORY
+========================================================= */
+
+const seasonHistory=[
+
+  {
+    year:2025,
+    record:"12–1",
+    games:[
+      ["Garden Spot","21–3","W"],
+      ["Salisbury Township","63–0","W"],
+      ["North Schuylkill","21–20","W"],
+      ["Saucon Valley","55–13","W"],
+      ["Catasauqua","58–0","W"],
+      ["Pen Argyl","59–7","W"],
+      ["Palisades","34–22","W"],
+      ["Palmerton","55–0","W"],
+      ["Wilson Area","62–0","W"],
+      ["Salisbury Township","56–6","W"],
+      ["Tamaqua","59–16","W"],
+      ["Northwestern Lehigh","14–25","L"]
+    ],
+    achievements:[
+      "Colonial League White Division Champions",
+      "PIAA District XI Class 3A Runner-Up",
+      "Tied School Record — Most Wins"
+    ]
+  },
+
+  {
+    year:2024,
+    record:"9–2",
+    games:[
+      ["Garden Spot","71–64","W"],
+      ["Salisbury Township","56–0","W"],
+      ["North Schuylkill","29–31","L"],
+      ["Saucon Valley","24–7","W"],
+      ["Catasauqua","63–7","W"],
+      ["Northern Lehigh","49–19","W"],
+      ["Pen Argyl","42–15","W"],
+      ["Palisades","56–7","W"],
+      ["Palmerton","52–0","W"],
+      ["Wilson Area","52–11","W"],
+      ["North Schuylkill","23–26","L"]
+    ],
+    achievements:[
+      "Colonial League White Division Champions"
+    ]
+  },
+
+  {year:2023,record:"8–4"},
+  {year:2022,record:"9–3"},
+  {year:2021,record:"7–3"},
+  {year:2020,record:"7–1"},
+  {year:2019,record:"7–4"},
+  {year:2018,record:"10–2"},
+  {year:2017,record:"9–3"},
+  {year:2016,record:"12–3"}
+
+];
+
+
+function renderHistory(){
 
   const list=
     document.getElementById(
-      "adminRosterList"
+      "historyList"
     );
-
-
-  if(!list)
-    return;
 
 
   list.innerHTML=
-    roster
-      .filter(
-        player=>player.id!==null
-      )
+    seasonHistory
       .map(
-        player=>{
+        season=>`
 
-          const type=
-            `edit-${player.id}`;
+          <div class="season-history">
 
-
-          return`
-
-            <div
-              class="admin-roster-row">
-
-
-              <div
-                class="admin-roster-number">
-
-                ${escapeHtml(
-                  player.number
-                )}
-
-              </div>
-
+            <button
+              class="season-button"
+              onclick="
+                openHistorySeason(
+                  ${season.year}
+                )
+              ">
 
               <div>
 
-                <div
-                  class="admin-roster-name">
-
-                  ${escapeHtml(
-                    player.name
-                  )}
-
+                <div class="season-name">
+                  ${season.year} Season
                 </div>
 
-
-                <div
-                  class="admin-roster-position">
-
-                  ${escapeHtml(
-                    player.position
-                  )}
-
+                <div class="season-record-small">
+                  Final Record:
+                  ${season.record}
                 </div>
 
               </div>
 
-
-              <div
-                class="admin-roster-actions">
-
-                <button
-                  class="edit-roster"
-                  onclick="
-                    toggleRosterEdit(
-                      ${player.id}
-                    )
-                  ">
-
-                  Edit
-
-                </button>
-
-
-                <button
-                  class="delete-roster"
-                  onclick="
-                    deletePlayer(
-                      ${player.id}
-                    )
-                  ">
-
-                  Delete
-
-                </button>
-
+              <div class="season-arrow">
+                ›
               </div>
 
-
-              <div
-                id="
-                  roster-edit-${player.id}
-                "
-                class="
-                  roster-edit-area
-                ">
-
-
-                <div class="form-row">
-
-                  <div>
-
-                    <label>
-                      Number
-                    </label>
-
-                    <input
-                      id="
-                        edit-player-number-${player.id}
-                      "
-                      type="number"
-                      value="${escapeAttribute(
-                        player.number
-                      )}">
-
-                  </div>
-
-
-                  <div>
-
-                    <label>
-                      Name
-                    </label>
-
-                    <input
-                      id="
-                        edit-player-name-${player.id}
-                      "
-                      value="${escapeAttribute(
-                        player.name
-                      )}">
-
-                  </div>
-
-                </div>
-
-
-                <label>
-                  Position
-                </label>
-
-
-                <div
-                  id="${type}PositionPicker"
-                  class="position-picker">
-
-
-                  <button
-                    type="button"
-                    class="position-trigger"
-                    onclick="
-                      togglePositionPicker(
-                        '${type}'
-                      )
-                    ">
-
-                    <span
-                      id="${type}PositionText"
-                      class="position-placeholder">
-
-                      Select position(s)...
-
-                    </span>
-
-                    <span>
-                      ▼
-                    </span>
-
-                  </button>
-
-
-                  <div
-                    class="position-menu">
-
-                    <div
-                      id="${type}PositionOptions"
-                      class="position-options">
-                    </div>
-
-
-                    <div
-                      class="position-custom">
-
-                      <label>
-                        Custom Position
-                      </label>
-
-                      <input
-                        id="${type}CustomPosition"
-                        type="text"
-                        placeholder="
-                          Type another position...
-                        ">
-
-                    </div>
-
-
-                    <div
-                      style="
-                        display:flex;
-                        justify-content:flex-end;
-                        gap:5px;
-                        margin-top:7px;
-                      ">
-
-                      <button
-                        type="button"
-                        class="secondary"
-                        onclick="
-                          clearPositionPicker(
-                            '${type}'
-                          )
-                        ">
-
-                        Clear
-
-                      </button>
-
-
-                      <button
-                        type="button"
-                        class="primary"
-                        onclick="
-                          closePositionPicker(
-                            '${type}'
-                          )
-                        ">
-
-                        Done
-
-                      </button>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-
-                <button
-                  class="primary"
-                  style="width:100%"
-                  onclick="
-                    savePlayer(
-                      ${player.id}
-                    )
-                  ">
-
-                  SAVE PLAYER
-
-                </button>
-
-            </div>
+            </button>
 
           </div>
 
-        `;
-
-        }
+        `
       )
       .join("");
 
-
-  roster
-    .filter(
-      player=>player.id!==null
-    )
-    .forEach(
-      player=>{
-
-        buildPositionPicker(
-          `edit-${player.id}`,
-          player.position
-        );
-
-      }
-    );
-
 }
 
 
-function toggleRosterEdit(id){
+function openHistorySeason(year){
 
-  const area=
-    document.getElementById(
-      `roster-edit-${id}`
+  const season=
+    seasonHistory.find(
+      s=>s.year===year
     );
 
 
-  if(area)
-    area.classList.toggle(
-      "open"
-    );
-
-}
-
-
-async function addPlayer(){
-
-  const code=
-    sessionStorage.getItem(
-      "adminCode"
-    );
-
-
-  const number=
-    document.getElementById(
-      "playerNumber"
-    ).value;
-
-
-  const name=
-    document.getElementById(
-      "playerName"
-    ).value.trim();
-
-
-  const position=
-    getSelectedPositions(
-      "add"
-    );
-
-
-  if(
-    number===""||
-    !name||
-    !position
-  ){
-
-    showAdminMessage(
-      "Enter the number, name and at least one position."
-    );
-
+  if(!season)
     return;
-
-  }
-
-
-  const {error}=
-    await db.rpc(
-      "add_roster_player",
-      {
-
-        p_code:code,
-
-        p_number:
-          Number(number),
-
-        p_name:
-          name,
-
-        p_position:
-          position
-
-      }
-    );
-
-
-  if(error){
-
-    console.error(error);
-
-    showAdminMessage(
-      "Could not add player."
-    );
-
-    return;
-
-  }
 
 
   document.getElementById(
-    "playerNumber"
-  ).value="";
+    "historyModalTitle"
+  ).textContent=
+    `${season.year} Football Season`;
 
 
   document.getElementById(
-    "playerName"
-  ).value="";
+    "historyModalRecord"
+  ).textContent=
+    `Final Record: ${season.record}`;
 
 
-  clearPositionPicker(
-    "add"
-  );
-
-
-  showAdminMessage(
-    "Player added!"
-  );
-
-
-  loadRoster();
-
-}
-
-
-async function savePlayer(id){
-
-  const code=
-    sessionStorage.getItem(
-      "adminCode"
-    );
-
-
-  const number=
-    document.getElementById(
-      `edit-player-number-${id}`
-    ).value;
-
-
-  const name=
-    document.getElementById(
-      `edit-player-name-${id}`
-    ).value.trim();
-
-
-  const position=
-    getSelectedPositions(
-      `edit-${id}`
-    );
+  let html="";
 
 
   if(
-    number===""||
-    !name||
-    !position
+    season.games &&
+    season.games.length
   ){
 
-    showAdminMessage(
-      "Enter the number, name and at least one position."
-    );
+    html+=`
 
-    return;
+      <div
+        style="margin-bottom:15px">
 
-  }
+        <div
+          class="page-heading"
+          style="font-size:25px">
 
+          Games
 
-  const {error}=
-    await db.rpc(
-      "update_roster_player",
-      {
+        </div>
 
-        p_code:code,
-
-        p_id:id,
-
-        p_number:
-          Number(number),
-
-        p_name:
-          name,
-
-        p_position:
-          position
-
-      }
-    );
-
-
-  if(error){
-
-    console.error(error);
-
-    showAdminMessage(
-      "Could not update player."
-    );
-
-    return;
-
-  }
-
-
-  showAdminMessage(
-    "Player updated!"
-  );
-
-
-  loadRoster();
-
-}
-
-
-async function deletePlayer(id){
-
-  if(
-    !confirm(
-      "Delete this player from the roster?"
-    )
-  )
-    return;
-
-
-  const code=
-    sessionStorage.getItem(
-      "adminCode"
-    );
-
-
-  const {error}=
-    await db.rpc(
-      "delete_roster_player",
-      {
-        p_code:code,
-        p_id:id
-      }
-    );
-
-
-  if(error){
-
-    console.error(error);
-
-    showAdminMessage(
-      "Could not delete player."
-    );
-
-    return;
-
-  }
-
-
-  showAdminMessage(
-    "Player deleted."
-  );
-
-
-  loadRoster();
-
-}
-
-
-/* =========================================================
-   PHOTOS
-========================================================= */
-
-async function loadPhotos(){
-
-  const {
-    data,
-    error
-  }=
-  await db
-    .from("photos")
-    .select("*")
-    .order(
-      "created_at",
-      {
-        ascending:false
-      }
-    );
-
-
-  if(error){
-
-    console.error(error);
-
-
-    const cached=
-      localStorage.getItem(
-        "ndgp_photos"
-      );
-
-
-    if(cached){
-
-      try{
-
-        currentPhotos=
-          JSON.parse(cached);
-
-        renderPhotos(
-          currentPhotos
-        );
-
-      }
-
-      catch(e){}
-
-    }
-
-    return;
-
-  }
-
-
-  currentPhotos=
-    data||[];
-
-
-  try{
-
-    localStorage.setItem(
-      "ndgp_photos",
-      JSON.stringify(
-        currentPhotos
-      )
-    );
-
-  }
-
-  catch(e){}
-
-
-  renderPhotos(
-    currentPhotos
-  );
-
-}
-
-
-function renderPhotos(photos){
-
-  const publicList=
-    document.getElementById(
-      "photoList"
-    );
-
-
-  if(!publicList)
-    return;
-
-
-  if(!photos.length){
-
-    publicList.innerHTML=
-      `<div class="message">
-        No photos yet.
-      </div>`;
-
-  }
-
-  else{
-
-    publicList.innerHTML=`
-
-      <div class="photo-grid">
 
         ${
-          photos
+          season.games
             .map(
-              (photo,index)=>`
+              game=>`
 
                 <div
-                  class="photo-item"
-                  onclick="
-                    openPhotoViewer(
-                      ${index}
-                    )
+                  style="
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    background:white;
+                    border:1px solid var(--border);
+                    border-radius:7px;
+                    padding:9px;
+                    margin-bottom:5px;
                   ">
 
-                  <img
-                    src="${escapeAttribute(
-                      photo.image_url
-                    )}"
-                    alt="NDGP Football">
+                  <strong
+                    style="
+                      color:var(--navy);
+                      font-family:Teko;
+                      font-size:19px;
+                    ">
 
-                  ${
-                    photo.caption
-                    ?
-                    `
-                      <div class="photo-caption">
-                        ${escapeHtml(
-                          photo.caption
-                        )}
-                      </div>
-                    `
-                    :
-                    ""
-                  }
+                    NDGP VS
+                    ${escapeHtml(
+                      game[0]
+                    )}
+
+                  </strong>
+
+
+                  <strong
+                    style="
+                      color:${
+                        game[2]==="W"
+                        ?
+                        "var(--green)"
+                        :
+                        "var(--red)"
+                      };
+                      font-family:Teko;
+                      font-size:21px;
+                    ">
+
+                    ${game[1]}
+
+                  </strong>
 
                 </div>
 
@@ -7894,472 +4866,110 @@ function renderPhotos(photos){
   }
 
 
-  const admin=
-    document.getElementById(
-      "adminPhotos"
-    );
+  if(
+    season.achievements &&
+    season.achievements.length
+  ){
 
+    html+=`
 
-  if(admin){
-
-    if(!photos.length){
-
-      admin.innerHTML=
-        `<div class="message">
-          No photos uploaded yet.
-        </div>`;
-
-    }
-
-    else{
-
-      admin.innerHTML=`
+      <div>
 
         <div
-          class="admin-photo-grid">
+          class="page-heading"
+          style="font-size:25px">
 
-          ${
-            photos
-              .map(
-                photo=>`
-
-                  <div
-                    class="admin-photo-card">
-
-                    <img
-                      src="${escapeAttribute(
-                        photo.image_url
-                      )}"
-                      alt="Football photo">
-
-
-                    <div
-                      class="admin-photo-caption">
-
-                      ${
-                        photo.caption
-                        ?
-                        escapeHtml(
-                          photo.caption
-                        )
-                        :
-                        "No caption"
-                      }
-
-                    </div>
-
-
-                    <button
-                      class="admin-photo-delete"
-                      onclick="
-                        deletePhoto(
-                          ${photo.id}
-                        )
-                      ">
-
-                      Delete
-
-                    </button>
-
-                  </div>
-
-                `
-              )
-              .join("")
-          }
+          Achievements
 
         </div>
 
-      `;
 
-    }
+        ${
+          season.achievements
+            .map(
+              achievement=>`
+
+                <div
+                  class="roster-card"
+                  style="margin-bottom:5px">
+
+                  <div>
+                    🏆
+                  </div>
+
+                  <div
+                    class="roster-info">
+
+                    <div
+                      class="roster-name">
+
+                      ${escapeHtml(
+                        achievement
+                      )}
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              `
+            )
+            .join("")
+        }
+
+      </div>
+
+    `;
 
   }
 
-}
+
+  if(!html){
+
+    html=
+      `<div class="roster-empty">
+        Final Record: ${season.record}
+      </div>`;
+
+  }
 
 
-/* =========================================================
-   PHOTO VIEWER
-========================================================= */
-
-function openPhotoViewer(index){
-
-  if(
-    !currentPhotos.length
-  )
-    return;
-
-
-  currentPhotoIndex=
-    index;
-
-
-  updatePhotoViewer();
+  document.getElementById(
+    "historyModalBody"
+  ).innerHTML=html;
 
 
   document
     .getElementById(
-      "photoViewer"
+      "historyModal"
     )
-    .classList.add(
-      "show"
-    );
+    .classList.add("show");
 
 
-  document.body.style.overflow=
-    "hidden";
+  document.body.style.overflow="hidden";
 
 }
 
 
-function updatePhotoViewer(){
-
-  const photo=
-    currentPhotos[
-      currentPhotoIndex
-    ];
-
-
-  if(!photo)
-    return;
-
-
-  const image=
-    document.getElementById(
-      "photoViewerImage"
-    );
-
-
-  image.style.animation="none";
-
-  void image.offsetWidth;
-
-  image.style.animation=
-    "photoZoom .25s ease both";
-
-
-  image.src=
-    photo.image_url;
-
-
-  document.getElementById(
-    "photoViewerCaption"
-  ).textContent=
-    photo.caption||
-    "";
-
-}
-
-
-function closePhotoViewer(event){
+function closeHistoryModal(event){
 
   if(
     event &&
     event.target &&
-    event.target.id!=="photoViewer"
+    event.target.id!=="historyModal"
   )
     return;
 
 
   document
     .getElementById(
-      "photoViewer"
+      "historyModal"
     )
-    .classList.remove(
-      "show"
-    );
+    .classList.remove("show");
 
 
   document.body.style.overflow="";
-}
-
-
-function nextPhoto(){
-
-  if(
-    !currentPhotos.length
-  )
-    return;
-
-
-  currentPhotoIndex=
-    (
-      currentPhotoIndex+
-      1
-    )%
-    currentPhotos.length;
-
-
-  updatePhotoViewer();
-
-}
-
-
-function previousPhoto(){
-
-  if(
-    !currentPhotos.length
-  )
-    return;
-
-
-  currentPhotoIndex=
-    (
-      currentPhotoIndex-
-      1+
-      currentPhotos.length
-    )%
-    currentPhotos.length;
-
-
-  updatePhotoViewer();
-
-}
-
-
-/* =========================================================
-   PHOTO SWIPE
-========================================================= */
-
-let photoTouchStartX=0;
-
-document
-  .getElementById(
-    "photoViewer"
-  )
-  .addEventListener(
-    "touchstart",
-    event=>{
-
-      photoTouchStartX=
-        event.changedTouches[0].screenX;
-
-    },
-    {
-      passive:true
-    }
-  );
-
-
-document
-  .getElementById(
-    "photoViewer"
-  )
-  .addEventListener(
-    "touchend",
-    event=>{
-
-      const endX=
-        event.changedTouches[0].screenX;
-
-
-      const distance=
-        endX-
-        photoTouchStartX;
-
-
-      if(
-        Math.abs(distance)<
-        50
-      )
-        return;
-
-
-      if(distance<0)
-        nextPhoto();
-
-      else
-        previousPhoto();
-
-    },
-    {
-      passive:true
-    }
-  );
-
-
-/* =========================================================
-   ADD PHOTO
-========================================================= */
-
-async function addPhoto(){
-
-  const code=
-    sessionStorage.getItem(
-      "adminCode"
-    );
-
-
-  const file=
-    document.getElementById(
-      "photoFile"
-    ).files[0];
-
-
-  const caption=
-    document.getElementById(
-      "photoCaption"
-    ).value.trim();
-
-
-  if(!file){
-
-    showAdminMessage(
-      "Please choose a photo."
-    );
-
-    return;
-
-  }
-
-
-  const reader=
-    new FileReader();
-
-
-  reader.onload=
-    async function(){
-
-      const {error}=
-        await db.rpc(
-          "add_photo",
-          {
-
-            p_code:code,
-
-            p_image_url:
-              reader.result,
-
-            p_caption:
-              caption
-
-          }
-        );
-
-
-      if(error){
-
-        console.error(error);
-
-        showAdminMessage(
-          "Could not upload photo."
-        );
-
-        return;
-
-      }
-
-
-      document.getElementById(
-        "photoFile"
-      ).value="";
-
-
-      document.getElementById(
-        "photoCaption"
-      ).value="";
-
-
-      showAdminMessage(
-        "Photo uploaded!"
-      );
-
-
-      loadPhotos();
-
-    };
-
-
-  reader.readAsDataURL(
-    file
-  );
-
-}
-
-
-async function deletePhoto(id){
-
-  if(
-    !confirm(
-      "Delete this photo?"
-    )
-  )
-    return;
-
-
-  const code=
-    sessionStorage.getItem(
-      "adminCode"
-    );
-
-
-  const {error}=
-    await db.rpc(
-      "delete_photo",
-      {
-
-        p_code:code,
-
-        p_id:id
-
-      }
-    );
-
-
-  if(error){
-
-    console.error(error);
-
-    showAdminMessage(
-      "Could not delete photo."
-    );
-
-    return;
-
-  }
-
-
-  showAdminMessage(
-    "Photo deleted!"
-  );
-
-
-  loadPhotos();
-
-}
-
-
-/* =========================================================
-   ADMIN MESSAGE
-========================================================= */
-
-function showAdminMessage(message){
-
-  const box=
-    document.getElementById(
-      "adminMessage"
-    );
-
-
-  if(!box)
-    return;
-
-
-  box.innerHTML=
-    `<div class="message">
-      ${escapeHtml(
-        message
-      )}
-    </div>`;
-
-
-  setTimeout(
-    ()=>{
-      box.innerHTML="";
-    },
-    4000
-  );
 
 }
 
@@ -8414,63 +5024,41 @@ function openGameDetails(id){
   else if(hasScore(game)){
 
     const a=
-      Number(
-        game.our_score
-      );
-
+      Number(game.our_score);
 
     const b=
-      Number(
-        game.opponent_score
-      );
+      Number(game.opponent_score);
 
 
-    let result=
-      "FINAL • TIE";
-
-
+    let result="FINAL • TIE";
     let cls="tie";
 
 
     if(a>b){
-
-      result=
-        "FINAL • WIN";
-
+      result="FINAL • WIN";
       cls="win";
-
     }
 
     else if(a<b){
-
-      result=
-        "FINAL • LOSS";
-
+      result="FINAL • LOSS";
       cls="loss";
-
     }
 
 
     status.innerHTML=
-      `<span
-        class="badge ${cls}">
-
+      `<span class="badge ${cls}">
         ${result}
-
       </span>`;
 
 
     score.textContent=
-      `${game.our_score}
-       –
-       ${game.opponent_score}`;
+      `${game.our_score} – ${game.opponent_score}`;
 
   }
 
   else{
 
     status.innerHTML="";
-
     score.textContent="";
 
   }
@@ -8530,20 +5118,17 @@ function openGameDetails(id){
     <div class="modal-info">
 
       <div class="modal-info-label">
-        Game Location
+        Home / Away
       </div>
 
       <div class="modal-info-value">
-
         ${getHomeAwayIcon(
           game.home_away
         )}
-
         ${escapeHtml(
           game.home_away||
           ""
         )}
-
       </div>
 
     </div>
@@ -8569,13 +5154,10 @@ function openGameDetails(id){
     .getElementById(
       "gameModal"
     )
-    .classList.add(
-      "show"
-    );
+    .classList.add("show");
 
 
-  document.body.style.overflow=
-    "hidden";
+  document.body.style.overflow="hidden";
 
 }
 
@@ -8594,644 +5176,12 @@ function closeGameModal(event){
     .getElementById(
       "gameModal"
     )
-    .classList.remove(
-      "show"
-    );
+    .classList.remove("show");
 
 
   document.body.style.overflow="";
-}
-
-
-/* =========================================================
-   HISTORY
-========================================================= */
-
-const seasonHistory=[
-
-  {
-    year:2025,
-
-    record:"12–1",
-
-    games:[
-
-      ["Garden Spot","21–3","W"],
-      ["Salisbury Township","63–0","W"],
-      ["North Schuylkill","21–20","W"],
-      ["Saucon Valley","55–13","W"],
-      ["Catasauqua","58–0","W"],
-      ["Pen Argyl","59–7","W"],
-      ["Palisades","34–22","W"],
-      ["Palmerton","55–0","W"],
-      ["Wilson Area","62–0","W"],
-      ["Salisbury Township","56–6","W"],
-      ["Tamaqua","59–16","W"],
-      ["Northwestern Lehigh","14–25","L"]
-
-    ],
-
-    achievements:[
-
-      "Colonial League White Division Champions",
-
-      "PIAA District XI Class 3A Runner-Up",
-
-      "Tied School Record — Most Wins"
-
-    ]
-
-  },
-
-
-  {
-    year:2024,
-
-    record:"9–2",
-
-    games:[
-
-      ["Garden Spot","71–64","W"],
-      ["Salisbury Township","56–0","W"],
-      ["North Schuylkill","29–31","L"],
-      ["Saucon Valley","24–7","W"],
-      ["Catasauqua","63–7","W"],
-      ["Northern Lehigh","49–19","W"],
-      ["Pen Argyl","42–15","W"],
-      ["Palisades","56–7","W"],
-      ["Palmerton","52–0","W"],
-      ["Wilson Area","52–11","W"],
-      ["North Schuylkill","23–26","L"]
-
-    ],
-
-    achievements:[
-
-      "Colonial League White Division Champions"
-
-    ]
-
-  },
-
-
-  {
-    year:2023,
-    record:"8–4"
-  },
-
-  {
-    year:2022,
-    record:"9–3"
-  },
-
-  {
-    year:2021,
-    record:"7–3"
-  },
-
-  {
-    year:2020,
-    record:"7–1"
-  },
-
-  {
-    year:2019,
-    record:"7–4"
-  },
-
-  {
-    year:2018,
-    record:"10–2"
-  },
-
-  {
-    year:2017,
-    record:"9–3"
-  },
-
-  {
-    year:2016,
-    record:"12–3"
-  }
-
-];
-
-
-function renderHistory(){
-
-  const list=
-    document.getElementById(
-      "historyList"
-    );
-
-
-  if(!list)
-    return;
-
-
-  list.innerHTML=
-    seasonHistory
-      .map(
-        season=>`
-
-          <div
-            class="season-history">
-
-            <button
-              class="season-button"
-              onclick="
-                openHistorySeason(
-                  ${season.year}
-                )
-              ">
-
-              <div>
-
-                <div class="season-name">
-                  ${season.year} Season
-                </div>
-
-                <div class="season-record-small">
-                  Final Record:
-                  ${season.record}
-                </div>
-
-              </div>
-
-
-              <div class="season-arrow">
-                ›
-              </div>
-
-            </button>
-
-          </div>
-
-        `
-      )
-      .join("");
 
 }
-
-
-function openHistorySeason(year){
-
-  const season=
-    seasonHistory.find(
-      s=>
-        s.year===year
-    );
-
-
-  if(!season)
-    return;
-
-
-  document.getElementById(
-    "historyModalTitle"
-  ).textContent=
-    `${season.year} Football Season`;
-
-
-  document.getElementById(
-    "historyModalRecord"
-  ).textContent=
-    `Final Record:
-     ${season.record}`;
-
-
-  let html="";
-
-
-  if(
-    season.games &&
-    season.games.length
-  ){
-
-    html+=`
-
-      <div
-        class="history-modal-section">
-
-        <div
-          class="history-modal-section-title">
-
-          Games
-
-        </div>
-
-
-        ${
-          season.games
-            .map(
-              game=>`
-
-                <div
-                  style="
-                    display:flex;
-                    justify-content:space-between;
-                    align-items:center;
-                    background:white;
-                    border:1px solid var(--border);
-                    border-radius:7px;
-                    padding:9px;
-                    margin-bottom:5px;
-                  ">
-
-                  <div>
-
-                    <strong
-                      style="
-                        color:var(--navy);
-                        font-family:Teko;
-                        font-size:19px;
-                      ">
-
-                      NDGP VS
-                      ${escapeHtml(
-                        game[0]
-                      )}
-
-                    </strong>
-
-                  </div>
-
-
-                  <strong
-                    style="
-                      color:${
-                        game[2]==="W"
-                        ?
-                        "var(--green)"
-                        :
-                        "var(--red)"
-                      };
-                      font-family:Teko;
-                      font-size:21px;
-                    ">
-
-                    ${game[1]}
-
-                  </strong>
-
-                </div>
-
-              `
-            )
-            .join("")
-        }
-
-      </div>
-
-    `;
-
-  }
-
-
-  if(
-    season.achievements &&
-    season.achievements.length
-  ){
-
-    html+=`
-
-      <div
-        class="history-modal-section">
-
-        <div
-          class="history-modal-section-title">
-
-          Achievements
-
-        </div>
-
-
-        ${
-          season.achievements
-            .map(
-              achievement=>`
-
-                <div
-                  class="roster-card"
-                  style="margin-bottom:5px">
-
-                  <div
-                    style="
-                      font-size:18px
-                    ">
-
-                    🏆
-
-                  </div>
-
-
-                  <div
-                    class="roster-info">
-
-                    <div
-                      class="roster-name">
-
-                      ${escapeHtml(
-                        achievement
-                      )}
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-              `
-            )
-            .join("")
-        }
-
-      </div>
-
-    `;
-
-  }
-
-
-  if(!html){
-
-    html=`
-
-      <div class="roster-empty">
-
-        Final Record:
-        ${escapeHtml(
-          season.record
-        )}
-
-      </div>
-
-    `;
-
-  }
-
-
-  document.getElementById(
-    "historyModalBody"
-  ).innerHTML=
-    html;
-
-
-  document
-    .getElementById(
-      "historyModal"
-    )
-    .classList.add(
-      "show"
-    );
-
-
-  document.body.style.overflow=
-    "hidden";
-
-}
-
-
-function closeHistoryModal(event){
-
-  if(
-    event &&
-    event.target &&
-    event.target.id!=="historyModal"
-  )
-    return;
-
-
-  document
-    .getElementById(
-      "historyModal"
-    )
-    .classList.remove(
-      "show"
-    );
-
-
-  document.body.style.overflow="";
-}
-
-
-/* =========================================================
-   PULL TO REFRESH
-========================================================= */
-
-const pull=
-  document.getElementById(
-    "pullRefresh"
-  );
-
-
-document.addEventListener(
-  "touchstart",
-  event=>{
-
-    if(
-      window.scrollY===0 &&
-      !refreshing
-    ){
-
-      pullStartY=
-        event.touches[0].clientY;
-
-    }
-
-  },
-  {
-    passive:true
-  }
-);
-
-
-document.addEventListener(
-  "touchmove",
-  event=>{
-
-    if(
-      window.scrollY!==0 ||
-      !pullStartY ||
-      refreshing
-    )
-      return;
-
-
-    const currentY=
-      event.touches[0].clientY;
-
-
-    pullDistance=
-      currentY-
-      pullStartY;
-
-
-    if(pullDistance>15){
-
-      pull.classList.add(
-        "show"
-      );
-
-    }
-
-  },
-  {
-    passive:true
-  }
-);
-
-
-document.addEventListener(
-  "touchend",
-  async ()=>{
-
-    if(
-      !pullStartY||
-      refreshing
-    ){
-
-      pullStartY=0;
-
-      return;
-
-    }
-
-
-    if(
-      pullDistance>65
-    ){
-
-      refreshing=true;
-
-      pull.classList.add(
-        "spin"
-      );
-
-
-      await refreshEverything();
-
-
-      pull.classList.remove(
-        "spin"
-      );
-
-
-      setTimeout(
-        ()=>{
-          pull.classList.remove(
-            "show"
-          );
-        },
-        200
-      );
-
-
-      refreshing=false;
-
-    }
-
-    else{
-
-      pull.classList.remove(
-        "show"
-      );
-
-    }
-
-
-    pullStartY=0;
-
-    pullDistance=0;
-
-  }
-);
-
-
-async function refreshEverything(){
-
-  await Promise.allSettled([
-
-    loadGames(),
-
-    loadRoster(),
-
-    loadPhotos()
-
-  ]);
-
-}
-
-
-/* =========================================================
-   KEYBOARD / ESCAPE
-========================================================= */
-
-document.addEventListener(
-  "keydown",
-  event=>{
-
-    if(
-      event.key==="Escape"
-    ){
-
-      closeHistoryModal();
-
-      closeGameModal();
-
-      closePhotoViewer();
-
-      closeAdminLogin();
-
-
-      document
-        .querySelectorAll(
-          ".position-picker.open"
-        )
-        .forEach(
-          picker=>{
-            picker.classList.remove(
-              "open"
-            );
-          }
-        );
-
-    }
-
-
-    if(
-      event.key==="ArrowRight" &&
-      document
-        .getElementById(
-          "photoViewer"
-        )
-        .classList.contains(
-          "show"
-        )
-    ){
-
-      nextPhoto();
-
-    }
-
-
-    if(
-      event.key==="ArrowLeft" &&
-      document
-        .getElementById(
-          "photoViewer"
-        )
-        .classList.contains(
-          "show"
-        )
-    ){
-
-      previousPhoto();
-
-    }
-
-  }
-);
 
 
 /* =========================================================
@@ -9269,42 +5219,10 @@ function formatDate(value){
   return date.toLocaleDateString(
     "en-US",
     {
-
       weekday:"long",
-
       month:"long",
-
       day:"numeric",
-
       year:"numeric"
-
-    }
-  );
-
-}
-
-
-function formatShortDate(value){
-
-  if(!value)
-    return "";
-
-
-  const date=
-    new Date(
-      value+
-      "T12:00:00"
-    );
-
-
-  return date.toLocaleDateString(
-    "en-US",
-    {
-
-      month:"short",
-
-      day:"numeric"
-
     }
   );
 
@@ -9321,89 +5239,22 @@ function escapeHtml(value){
 
 
   return String(value)
-
-    .replace(
-      /&/g,
-      "&amp;"
-    )
-
-    .replace(
-      /</g,
-      "&lt;"
-    )
-
-    .replace(
-      />/g,
-      "&gt;"
-    )
-
-    .replace(
-      /"/g,
-      "&quot;"
-    )
-
-    .replace(
-      /'/g,
-      "&#039;"
-    );
-
-}
-
-
-function escapeAttribute(value){
-
-  return escapeHtml(
-    value
-  );
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
 }
 
 
 /* =========================================================
-   PERIODIC LIVE REFRESH
-========================================================= */
-
-setInterval(
-  ()=>{
-
-    if(games.length){
-
-      updateHome();
-
-      updateSchedule();
-
-      if(
-        document
-          .getElementById(
-            "adminPage"
-          )
-          .classList
-          .contains(
-            "active"
-          )
-      ){
-
-        updateAdminGames();
-
-      }
-
-    }
-
-  },
-  30000
-);
-
-
-/* =========================================================
-   INITIALIZATION
+   INITIALIZE
 ========================================================= */
 
 renderHistory();
 
-buildPositionPicker(
-  "add"
-);
-
+buildPositionPicker("add");
 
 loadGames();
 
@@ -9413,102 +5264,82 @@ loadPhotos();
 
 
 /* =========================================================
-   SIMPLE PWA MANIFEST
+   EXTRA MOBILE SAFETY
 ========================================================= */
 
-try{
+/*
+  Mobile browsers sometimes change the visual viewport
+  when the keyboard opens. This keeps the login overlay
+  locked to the visible viewport instead of letting the
+  entire page move.
+*/
 
-  const manifest={
+if(window.visualViewport){
 
-    name:
-      "NDGP Football",
+  window.visualViewport.addEventListener(
+    "resize",
+    ()=>{
 
-    short_name:
-      "NDGP Football",
-
-    start_url:
-      "/",
-
-    display:
-      "standalone",
-
-    background_color:
-      "#001f3f",
-
-    theme_color:
-      "#001f3f",
-
-    icons:[
-      {
-        src:
-          "LOGO_W__FB.png",
-
-        sizes:
-          "192x192",
-
-        type:
-          "image/png"
-      },
-      {
-        src:
-          "LOGO_W__FB.png",
-
-        sizes:
-          "512x512",
-
-        type:
-          "image/png"
-      }
-    ]
-
-  };
+      const overlay=
+        document.getElementById(
+          "adminLoginOverlay"
+        );
 
 
-  const blob=
-    new Blob(
-      [
-        JSON.stringify(
-          manifest
+      if(
+        overlay &&
+        overlay.classList.contains(
+          "show"
         )
-      ],
-      {
-        type:
-          "application/manifest+json"
+      ){
+
+        overlay.style.height=
+          window.visualViewport.height+
+          "px";
+
       }
-    );
+
+    }
+  );
 
 
-  const manifestURL=
-    URL.createObjectURL(
-      blob
-    );
+  window.visualViewport.addEventListener(
+    "scroll",
+    ()=>{
+
+      const overlay=
+        document.getElementById(
+          "adminLoginOverlay"
+        );
 
 
-  const link=
-    document.createElement(
-      "link"
-    );
+      if(
+        overlay &&
+        overlay.classList.contains(
+          "show"
+        )
+      ){
 
+        overlay.style.top=
+          window.visualViewport.offsetTop+
+          "px";
 
-  link.rel="manifest";
+      }
 
-  link.href=
-    manifestURL;
-
-
-  document.head.appendChild(
-    link
+    }
   );
 
 }
 
-catch(e){
 
-  console.log(
-    "PWA manifest unavailable."
-  );
+/*
+  Clean up the viewport override whenever
+  the login closes.
+*/
 
-}
+const originalCloseAdminLogin=
+  closeAdminLogin;
+
 
 </script>
 
