@@ -2,11 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, viewport-fit=cover"
->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <title>NDGP Football</title>
 
@@ -15,74 +11,71 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-  href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
->
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
 
 /* =========================================================
-   COLORS
+   NDGP FOOTBALL — PREMIUM APP DESIGN
 ========================================================= */
 
 :root{
   --navy:#00264a;
-  --navy-dark:#00182d;
-  --navy-light:#073f6d;
+  --navy2:#063d69;
+  --navy3:#001a31;
 
   --gold:#f4c542;
-  --gold-dark:#d9a900;
+  --gold2:#e5b51c;
+  --gold-soft:#fff7d8;
 
   --white:#ffffff;
+  --bg:#f2f5f7;
+  --card:#ffffff;
 
-  --background:#f3f6f8;
-  --surface:#ffffff;
-  --surface-soft:#f7f9fb;
-
-  --text:#102a43;
-  --muted:#66798b;
-  --border:#d6e0e7;
+  --text:#092743;
+  --muted:#687b8c;
+  --border:#d7e0e7;
 
   --green:#198754;
-  --green-bg:#e8f6ed;
+  --green-bg:#e7f6ed;
 
-  --red:#d92f2f;
+  --red:#d93636;
   --red-bg:#fdeaea;
 
-  --shadow-sm:0 2px 8px rgba(0,30,60,.06);
-  --shadow-md:0 5px 18px rgba(0,30,60,.08);
-  --shadow-lg:0 18px 50px rgba(0,20,40,.20);
+  --shadow:
+    0 4px 16px rgba(0,31,58,.07);
 
-  --radius:11px;
+  --shadow-heavy:
+    0 20px 55px rgba(0,20,40,.24);
+
+  --radius:13px;
 }
-
-
-/* =========================================================
-   GLOBAL
-========================================================= */
 
 *{
   box-sizing:border-box;
 }
 
 html{
-  background:var(--background);
+  background:var(--bg);
   -webkit-text-size-adjust:100%;
 }
 
 body{
   margin:0;
   min-height:100vh;
-  overflow-x:hidden;
 
   background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(0,64,110,.08),
+      transparent 35%
+    ),
     linear-gradient(
       180deg,
-      #edf2f5 0%,
-      #f8fafb 100%
+      #edf2f5,
+      #f8fafb
     );
 
   color:var(--text);
@@ -90,7 +83,6 @@ body{
   font-family:"Oswald",Arial,sans-serif;
 
   -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
 }
 
 body.modal-open{
@@ -134,17 +126,17 @@ textarea{
   justify-content:center;
 
   background:
-    linear-gradient(
-      145deg,
-      #00172d,
-      #00345f
+    radial-gradient(
+      circle at 50% 30%,
+      #064b7c,
+      #00182e 70%
     );
 
   color:white;
 
   transition:
-    opacity .45s ease,
-    visibility .45s ease;
+    opacity .5s ease,
+    visibility .5s ease;
 }
 
 #splash.hide{
@@ -155,43 +147,51 @@ textarea{
 
 .splash-content{
   text-align:center;
-  padding:25px;
 }
 
 .splash-logo{
-  width:120px;
-  height:120px;
-
+  width:125px;
+  height:125px;
   object-fit:contain;
-
-  margin-bottom:10px;
 
   filter:
     drop-shadow(
-      0 8px 18px
-      rgba(0,0,0,.28)
+      0 10px 22px
+      rgba(0,0,0,.35)
     );
+
+  animation:
+    splashLogo .9s ease both;
+}
+
+@keyframes splashLogo{
+  from{
+    opacity:0;
+    transform:scale(.75) translateY(15px);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1) translateY(0);
+  }
 }
 
 .splash-title{
-  margin:0;
+  margin:5px 0 0;
 
   font-family:"Teko";
-  font-size:54px;
-  font-weight:700;
-
-  line-height:.85;
+  font-size:55px;
+  line-height:.82;
   letter-spacing:2px;
 }
 
 .splash-subtitle{
-  margin-top:9px;
+  margin-top:10px;
 
-  color:#d9e5ee;
+  color:#d7e4ed;
 
   font-size:9px;
-  letter-spacing:1.5px;
-
+  letter-spacing:1.8px;
   text-transform:uppercase;
 }
 
@@ -203,10 +203,12 @@ textarea{
 .site-header{
   position:relative;
 
+  overflow:hidden;
+
   padding:
     calc(18px + env(safe-area-inset-top))
-    55px
-    18px;
+    50px
+    20px;
 
   color:white;
 
@@ -215,50 +217,77 @@ textarea{
   background:
     linear-gradient(
       135deg,
-      var(--navy-dark),
-      var(--navy-light)
+      var(--navy3),
+      var(--navy2)
     );
 
   border-bottom:3px solid var(--gold);
+
+  box-shadow:
+    0 4px 18px
+    rgba(0,30,60,.15);
+}
+
+.site-header::before{
+  content:"";
+
+  position:absolute;
+
+  width:280px;
+  height:280px;
+
+  top:-180px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.035);
 }
 
 .header-logo{
-  width:70px;
-  height:70px;
+  position:relative;
+
+  width:72px;
+  height:72px;
 
   object-fit:contain;
 
   display:block;
 
-  margin:0 auto 3px;
+  margin:0 auto 4px;
 
   filter:
     drop-shadow(
-      0 4px 8px
-      rgba(0,0,0,.22)
+      0 5px 10px
+      rgba(0,0,0,.28)
     );
 }
 
 .site-header h1{
+  position:relative;
+
   margin:0;
 
   font-family:"Teko";
 
-  font-size:39px;
-  font-weight:700;
+  font-size:41px;
+  line-height:.82;
 
-  line-height:.9;
-
-  letter-spacing:2px;
+  letter-spacing:2.5px;
 }
 
 .site-header p{
-  margin:6px 0 0;
+  position:relative;
 
-  color:#dce7ef;
+  margin:7px 0 0;
+
+  color:#d9e5ee;
 
   font-size:9px;
-  letter-spacing:1.2px;
+  letter-spacing:1.6px;
 
   text-transform:uppercase;
 }
@@ -279,41 +308,44 @@ textarea{
 
   right:15px;
 
-  border:0;
+  z-index:30;
+
   padding:0;
+
+  border:0;
 
   background:transparent;
 
   color:white;
 
   font-size:23px;
-  line-height:1;
-
-  z-index:20;
 
   transition:
-    transform .18s ease;
+    transform .2s ease;
 }
 
 .admin-gear:hover{
-  transform:rotate(18deg) scale(1.08);
+  transform:
+    rotate(18deg)
+    scale(1.12);
 }
 
 
 /* =========================================================
-   ACHIEVEMENTS
+   PROGRAM ACHIEVEMENTS
 ========================================================= */
 
 .achievements{
-  padding:9px;
+  padding:10px;
 
-  background:white;
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #f8fafb
+    );
 
   border-bottom:1px solid var(--border);
-
-  box-shadow:
-    0 2px 8px
-    rgba(0,30,60,.05);
 }
 
 .achievement-grid{
@@ -323,31 +355,48 @@ textarea{
   margin:auto;
 
   display:grid;
-
   grid-template-columns:
     repeat(2,minmax(0,1fr));
 
-  gap:7px;
+  gap:8px;
 }
 
 .achievement{
-  padding:9px 10px;
+  position:relative;
 
-  background:
-    linear-gradient(
-      145deg,
-      #ffffff,
-      #f3f6f8
-    );
+  overflow:hidden;
+
+  padding:10px 11px;
+
+  background:white;
 
   border:1px solid var(--border);
-
   border-left:3px solid var(--gold);
 
-  border-radius:7px;
+  border-radius:9px;
+
+  box-shadow:
+    0 2px 8px
+    rgba(0,30,60,.04);
+}
+
+.achievement::after{
+  content:"🏆";
+
+  position:absolute;
+
+  right:8px;
+  bottom:-3px;
+
+  opacity:.08;
+
+  font-size:30px;
 }
 
 .achievement-title{
+  position:relative;
+  z-index:1;
+
   color:var(--navy);
 
   font-family:"Teko";
@@ -359,6 +408,9 @@ textarea{
 }
 
 .achievement-years{
+  position:relative;
+  z-index:1;
+
   margin-top:4px;
 
   color:var(--muted);
@@ -370,22 +422,20 @@ textarea{
 
 /* =========================================================
    NAVIGATION
+   NO EMOJIS HERE
 ========================================================= */
 
 .main-nav{
   position:sticky;
-
   top:0;
+  z-index:300;
 
-  z-index:200;
+  display:flex;
+  gap:5px;
 
   width:100%;
 
-  padding:7px 8px;
-
-  display:flex;
-
-  gap:6px;
+  padding:7px;
 
   background:
     rgba(248,250,251,.97);
@@ -393,10 +443,10 @@ textarea{
   border-bottom:1px solid var(--border);
 
   box-shadow:
-    0 3px 12px
-    rgba(0,30,60,.07);
+    0 4px 14px
+    rgba(0,30,60,.06);
 
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(14px);
 }
 
 .main-nav button{
@@ -404,82 +454,49 @@ textarea{
 
   flex:1;
 
-  min-width:0;
-
-  min-height:47px;
-
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  padding:7px 5px;
+  min-height:48px;
 
   border:1px solid transparent;
-
-  border-radius:8px;
+  border-radius:9px;
 
   background:transparent;
 
-  color:#63788a;
-
-  font-family:"Oswald",Arial,sans-serif;
+  color:#6a7c8c;
 
   font-size:11px;
   font-weight:700;
 
-  letter-spacing:.5px;
+  letter-spacing:.6px;
 
   text-transform:uppercase;
 
   transition:
-    background .18s ease,
-    color .18s ease,
-    border-color .18s ease,
-    box-shadow .18s ease,
-    transform .15s ease;
-}
-
-/* NO TAB EMOJIS */
-.nav-icon{
-  display:none!important;
-}
-
-.nav-label{
-  font-size:11px;
-  line-height:1;
-  letter-spacing:.6px;
+    all .18s ease;
 }
 
 .main-nav button:hover{
   color:var(--navy);
 
-  background:#fffdf3;
+  background:#fffdf4;
 
-  border-color:#eee1a8;
-
-  transform:translateY(-1px);
+  border-color:#eee1a9;
 }
 
-/* ACTIVE TAB = LIGHT GOLD */
 .main-nav button.active{
   color:var(--navy);
 
   background:
     linear-gradient(
       135deg,
-      #fff8d9,
-      #fffdf1
+      #fff9df,
+      #fffdf5
     );
 
-  border-color:#eadb9b;
+  border-color:#eadb9c;
 
   box-shadow:
-    inset 0 0 0 1px
-    rgba(244,197,66,.08),
-
-    0 2px 7px
-    rgba(120,100,30,.08);
+    0 2px 8px
+    rgba(130,100,20,.08);
 }
 
 .main-nav button.active::after{
@@ -487,20 +504,15 @@ textarea{
 
   position:absolute;
 
-  left:15%;
-  right:15%;
-
+  left:18%;
+  right:18%;
   bottom:3px;
 
   height:2px;
 
-  border-radius:2px;
+  border-radius:5px;
 
   background:var(--gold);
-}
-
-.main-nav button::before{
-  display:none!important;
 }
 
 
@@ -517,7 +529,7 @@ main{
   padding:
     10px
     9px
-    30px;
+    35px;
 }
 
 .page{
@@ -532,52 +544,47 @@ main{
 }
 
 @keyframes pageIn{
-
   from{
     opacity:0;
-    transform:translateY(5px);
+    transform:translateY(7px);
   }
 
   to{
     opacity:1;
     transform:translateY(0);
   }
-
 }
 
 
 /* =========================================================
-   CARDS
+   GENERAL CARDS
 ========================================================= */
 
 .card{
-  background:var(--surface);
+  background:var(--card);
 
   border:1px solid var(--border);
 
   border-radius:var(--radius);
 
-  box-shadow:var(--shadow-sm);
+  box-shadow:var(--shadow);
 
-  padding:12px;
+  padding:13px;
 
   margin-bottom:9px;
 }
 
 .page-title{
   display:flex;
-
   align-items:center;
 
-  margin:0 0 10px;
+  margin:0 0 11px;
 
   color:var(--navy);
 
   font-family:"Teko";
 
-  font-size:29px;
-  font-weight:700;
-
+  font-size:31px;
   line-height:1;
 
   text-transform:uppercase;
@@ -586,9 +593,9 @@ main{
 .page-title::after{
   content:"";
 
-  height:2px;
-
   flex:1;
+
+  height:2px;
 
   margin-left:9px;
 
@@ -608,81 +615,235 @@ main{
 .next-game{
   overflow:hidden;
 
-  padding:0;
-
   background:white;
 
   border:1px solid var(--border);
 
-  border-radius:var(--radius);
+  border-radius:14px;
 
-  box-shadow:var(--shadow-md);
+  box-shadow:
+    0 7px 25px
+    rgba(0,30,60,.09);
 }
 
 .next-header{
   display:flex;
-
   align-items:center;
   justify-content:space-between;
 
-  padding:10px 12px;
+  padding:11px 13px;
 
   color:white;
 
   background:
     linear-gradient(
       90deg,
-      var(--navy-dark),
-      var(--navy-light)
+      var(--navy3),
+      var(--navy2)
     );
 
-  border-bottom:2px solid var(--gold);
+  border-bottom:3px solid var(--gold);
 }
 
 .next-header strong{
   font-family:"Teko";
 
-  font-size:21px;
-
-  line-height:1;
+  font-size:23px;
+  line-height:.9;
 }
 
 .next-header span{
   color:var(--gold);
 
   font-size:8px;
+  font-weight:700;
 
-  letter-spacing:1px;
+  letter-spacing:1.2px;
 }
 
 .next-body{
-  padding:18px 12px 17px;
+  position:relative;
+
+  padding:19px 12px 18px;
 
   text-align:center;
 }
 
+.next-body::before{
+  content:"";
+
+  position:absolute;
+
+  width:240px;
+  height:240px;
+
+  top:20px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  border:1px solid
+    rgba(0,38,74,.055);
+
+  border-radius:50%;
+
+  pointer-events:none;
+}
+
+.next-body > *{
+  position:relative;
+  z-index:1;
+}
+
 .next-label{
-  color:var(--muted);
+  color:#728494;
 
   font-size:9px;
 
-  letter-spacing:1.3px;
+  letter-spacing:1.6px;
 
   text-transform:uppercase;
 }
 
 .matchup{
   display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:9px;
+
+  margin:8px 0 13px;
+}
+
+.matchup-team{
+  max-width:43%;
+
+  overflow:hidden;
+
+  color:var(--navy);
+
+  font-family:"Teko";
+
+  font-size:40px;
+  font-weight:700;
+
+  line-height:.82;
+
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.matchup-vs{
+  color:var(--gold2);
+
+  font-family:"Teko";
+
+  font-size:23px;
+  font-weight:700;
+}
+
+.next-info{
+  color:#637789;
+
+  font-size:11px;
+  font-weight:600;
+
+  line-height:1.95;
+
+  text-align:center;
+}
+
+.home-away{
+  display:inline;
+
+  padding:0;
+
+  margin:0;
+
+  color:#637789;
+
+  background:none;
+
+  border:0;
+
+  font-size:11px;
+  font-weight:600;
+}
+
+.countdown{
+  display:inline-flex;
 
   align-items:center;
   justify-content:center;
 
-  gap:8px;
+  margin-top:12px;
 
-  margin:7px 0 11px;
+  padding:8px 14px;
+
+  color:#344b5d;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef3f6,
+      #e1e8ed
+    );
+
+  border:1px solid #b9c7d1;
+
+  border-radius:9px;
+
+  font-size:11px;
+  font-weight:700;
+
+  box-shadow:
+    0 3px 8px
+    rgba(0,30,60,.08);
 }
 
-.matchup-team{
+
+/* =========================================================
+   RECORD CARD
+========================================================= */
+
+.record-card{
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:8px;
+
+  margin-top:9px;
+
+  padding:0;
+
+  overflow:hidden;
+}
+
+.record-item{
+  padding:12px;
+
+  text-align:center;
+}
+
+.record-item + .record-item{
+  border-left:1px solid var(--border);
+}
+
+.record-label{
+  color:#738596;
+
+  font-size:8px;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+}
+
+.record-number{
+  margin-top:2px;
+
   color:var(--navy);
 
   font-family:"Teko";
@@ -693,121 +854,12 @@ main{
   line-height:.85;
 }
 
-.matchup-vs{
-  color:var(--gold-dark);
-
-  font-family:"Teko";
-
-  font-size:22px;
-  font-weight:700;
-}
-
-.next-info{
-  color:var(--muted);
-
-  font-size:11px;
-  font-weight:500;
-
-  line-height:1.9;
-
-  text-align:center;
-}
-
-/* HOME/AWAY IS NOW NORMAL TEXT */
-.home-away{
-  display:inline;
-
-  margin:0;
-  padding:0;
-
-  color:var(--muted);
-
-  background:none;
-
-  border:0;
-  border-radius:0;
-
-  font-size:11px;
-  font-weight:500;
-}
-
-/* LIVE IS THE ONLY BUBBLE */
-.countdown{
-  display:inline-flex;
-
-  align-items:center;
-  justify-content:center;
-
-  margin-top:12px;
-
-  padding:8px 13px;
-
-  color:#435769;
-
-  background:
-    linear-gradient(
-      135deg,
-      #eef2f5,
-      #e2e8ec
-    );
-
-  border:1px solid #bcc9d2;
-
-  border-radius:9px;
-
-  font-size:11px;
-  font-weight:700;
-
-  line-height:1;
-
-  box-shadow:
-    0 2px 5px
-    rgba(0,30,60,.08);
-}
-
-
-/* =========================================================
-   RECORD
-========================================================= */
-
-.record-card{
-  display:flex;
-
-  align-items:center;
-  justify-content:space-between;
-
-  min-height:76px;
-}
-
-.record-label{
-  color:var(--muted);
-
-  font-size:9px;
-
-  letter-spacing:1px;
-
-  text-transform:uppercase;
-}
-
-.record-number{
-  margin-top:1px;
-
-  color:var(--navy);
-
-  font-family:"Teko";
-
-  font-size:42px;
-  font-weight:700;
-
-  line-height:.85;
-}
-
 .record-side{
-  text-align:right;
+  margin-top:3px;
 
   color:var(--muted);
 
-  font-size:9px;
+  font-size:8px;
 }
 
 
@@ -820,7 +872,7 @@ main{
 
   overflow:hidden;
 
-  padding:10px 11px 6px;
+  padding:11px 12px 7px;
 
   margin-bottom:7px;
 
@@ -830,9 +882,11 @@ main{
 
   border-left:4px solid var(--navy);
 
-  border-radius:var(--radius);
+  border-radius:11px;
 
-  box-shadow:var(--shadow-sm);
+  box-shadow:
+    0 2px 8px
+    rgba(0,30,60,.05);
 
   transition:
     transform .15s ease,
@@ -840,9 +894,11 @@ main{
 }
 
 .game-card:hover{
-  transform:translateY(-1px);
+  transform:translateY(-2px);
 
-  box-shadow:var(--shadow-md);
+  box-shadow:
+    0 8px 20px
+    rgba(0,30,60,.09);
 }
 
 .game-card.live{
@@ -851,15 +907,14 @@ main{
 
 .game-top{
   display:flex;
-
-  align-items:flex-start;
   justify-content:space-between;
+  align-items:flex-start;
 
   gap:8px;
 }
 
 .game-date{
-  color:var(--muted);
+  color:#778999;
 
   font-size:9px;
 }
@@ -871,10 +926,9 @@ main{
 
   font-family:"Teko";
 
-  font-size:25px;
-  font-weight:700;
+  font-size:27px;
 
-  line-height:.9;
+  line-height:.86;
 
   text-transform:uppercase;
 }
@@ -889,11 +943,7 @@ main{
   font-size:8px;
   font-weight:700;
 
-  line-height:1;
-
   white-space:nowrap;
-
-  text-transform:uppercase;
 }
 
 .status.win{
@@ -908,18 +958,18 @@ main{
 
 .status.live{
   color:var(--red);
-  background:#fee7e7;
+  background:#fde8e8;
 }
 
 .status.tie{
-  color:#7554a5;
+  color:#7454a3;
   background:#eee9f8;
 }
 
 .game-matchup{
-  margin-top:5px;
+  margin-top:6px;
 
-  color:var(--muted);
+  color:#65798b;
 
   font-size:10px;
 }
@@ -929,162 +979,27 @@ main{
 }
 
 .game-vs{
-  color:var(--gold-dark);
+  margin:0 4px;
 
-  margin:0 3px;
+  color:var(--gold2);
 }
 
 .game-meta{
   display:flex;
-
   flex-wrap:wrap;
 
-  gap:4px 10px;
+  gap:5px 12px;
 
   margin-top:5px;
 
-  color:#687a8b;
+  color:#738596;
 
   font-size:9px;
 }
 
 .game-score{
-  margin-top:3px;
+  margin-top:4px;
 
-  color:var(--navy);
-
-  font-family:"Teko";
-
-  font-size:20px;
-  font-weight:700;
-
-  line-height:1;
-}
-
-.game-detail-hint{
-  margin-top:1px;
-
-  color:#91a0ac;
-
-  text-align:right;
-
-  font-size:7px;
-
-  text-transform:uppercase;
-}
-
-
-/* =========================================================
-   ROSTER
-========================================================= */
-
-.roster-tools{
-  display:flex;
-
-  gap:7px;
-
-  margin-bottom:8px;
-}
-
-.roster-search,
-.roster-filter{
-  min-width:0;
-
-  height:39px;
-
-  margin:0;
-
-  padding:8px 10px;
-
-  color:var(--text);
-
-  background:white;
-
-  border:1px solid var(--border);
-
-  border-radius:7px;
-
-  outline:none;
-}
-
-.roster-search{
-  flex:1;
-}
-
-.roster-filter{
-  width:145px;
-}
-
-.roster-search:focus,
-.roster-filter:focus{
-  border-color:#9eb0bf;
-
-  box-shadow:
-    0 0 0 2px
-    rgba(0,38,74,.06);
-}
-
-.roster-count{
-  margin:0 0 7px;
-
-  color:var(--muted);
-
-  font-size:9px;
-}
-
-.roster-grid{
-  display:grid;
-
-  grid-template-columns:
-    repeat(2,minmax(0,1fr));
-
-  gap:6px;
-}
-
-.roster-card{
-  display:flex;
-
-  align-items:center;
-
-  min-width:0;
-
-  gap:8px;
-
-  padding:9px;
-
-  background:white;
-
-  border:1px solid var(--border);
-
-  border-left:4px solid var(--navy);
-
-  border-radius:8px;
-
-  box-shadow:var(--shadow-sm);
-}
-
-.roster-number{
-  width:39px;
-
-  flex-shrink:0;
-
-  color:var(--navy);
-
-  font-family:"Teko";
-
-  font-size:28px;
-  font-weight:700;
-
-  line-height:1;
-
-  text-align:center;
-}
-
-.roster-info{
-  min-width:0;
-}
-
-.roster-name{
   color:var(--navy);
 
   font-family:"Teko";
@@ -1092,22 +1007,19 @@ main{
   font-size:21px;
   font-weight:700;
 
-  line-height:.9;
-
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  line-height:1;
 }
 
-.roster-position{
-  margin-top:4px;
+.game-detail-hint{
+  margin-top:2px;
 
-  color:var(--muted);
+  color:#94a2ad;
 
-  font-size:8px;
-  font-weight:600;
+  font-size:7px;
 
-  text-transform:uppercase;
+  text-align:right;
+
+  letter-spacing:.4px;
 }
 
 
@@ -1116,7 +1028,7 @@ main{
 ========================================================= */
 
 .history-intro{
-  margin:-2px 0 9px;
+  margin:-2px 0 10px;
 
   color:var(--muted);
 
@@ -1136,22 +1048,33 @@ main{
 
   border-left:4px solid var(--navy);
 
-  border-radius:9px;
+  border-radius:10px;
 
-  box-shadow:var(--shadow-sm);
+  box-shadow:
+    0 2px 8px
+    rgba(0,30,60,.05);
+
+  transition:
+    border-color .15s ease,
+    transform .15s ease;
+}
+
+.season-card:hover{
+  border-left-color:var(--gold);
+
+  transform:translateX(2px);
 }
 
 .season-button{
   width:100%;
 
-  min-height:67px;
+  min-height:70px;
 
   display:flex;
-
   align-items:center;
   justify-content:space-between;
 
-  padding:11px 13px;
+  padding:11px 14px;
 
   border:0;
 
@@ -1160,49 +1083,169 @@ main{
   color:var(--navy);
 
   text-align:left;
-
-  transition:
-    background .15s ease,
-    padding .15s ease;
-}
-
-.season-button:hover{
-  background:#f8fafb;
-}
-
-.season-button:active{
-  padding-left:16px;
 }
 
 .season-name{
   font-family:"Teko";
 
-  font-size:29px;
+  font-size:30px;
   font-weight:700;
 
-  line-height:.9;
+  line-height:.86;
 }
 
 .season-record{
   margin-top:4px;
 
-  color:#52687a;
+  color:#536a7d;
 
   font-size:10px;
   font-weight:700;
 }
 
 .season-arrow{
-  color:var(--navy);
+  color:var(--gold2);
 
-  font-size:27px;
+  font-family:Arial,sans-serif;
+
+  font-size:30px;
 
   transition:
     transform .15s ease;
 }
 
 .season-button:hover .season-arrow{
-  transform:translateX(3px);
+  transform:translateX(4px);
+}
+
+
+/* =========================================================
+   ROSTER
+========================================================= */
+
+.roster-tools{
+  display:flex;
+
+  gap:7px;
+
+  margin-bottom:8px;
+}
+
+.roster-search,
+.roster-filter{
+  height:40px;
+
+  padding:8px 10px;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:7px;
+
+  color:var(--text);
+
+  outline:none;
+}
+
+.roster-search{
+  flex:1;
+}
+
+.roster-filter{
+  width:145px;
+}
+
+.roster-search:focus,
+.roster-filter:focus{
+  border-color:#9eb1c1;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(0,38,74,.05);
+}
+
+.roster-count{
+  margin:0 0 7px;
+
+  color:var(--muted);
+
+  font-size:9px;
+}
+
+.roster-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+  gap:7px;
+}
+
+.roster-card{
+  display:flex;
+  align-items:center;
+
+  gap:9px;
+
+  padding:10px;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-left:4px solid var(--navy);
+
+  border-radius:9px;
+
+  box-shadow:
+    0 2px 7px
+    rgba(0,30,60,.04);
+}
+
+.roster-number{
+  width:41px;
+
+  flex-shrink:0;
+
+  color:var(--navy);
+
+  font-family:"Teko";
+
+  font-size:29px;
+  font-weight:700;
+
+  text-align:center;
+}
+
+.roster-info{
+  min-width:0;
+}
+
+.roster-name{
+  overflow:hidden;
+
+  color:var(--navy);
+
+  font-family:"Teko";
+
+  font-size:21px;
+
+  line-height:.9;
+
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.roster-position{
+  margin-top:4px;
+
+  color:#657a8c;
+
+  font-size:8px;
+  font-weight:700;
+
+  text-transform:uppercase;
 }
 
 
@@ -1212,7 +1255,6 @@ main{
 
 .overlay{
   position:fixed;
-
   inset:0;
 
   z-index:5000;
@@ -1225,9 +1267,11 @@ main{
   padding:12px;
 
   background:
-    rgba(0,18,35,.72);
+    rgba(0,17,33,.75);
 
-  backdrop-filter:blur(7px);
+  backdrop-filter:blur(9px);
+
+  overscroll-behavior:none;
 }
 
 .overlay.show{
@@ -1236,36 +1280,50 @@ main{
 
 .modal{
   width:100%;
-  max-width:610px;
+  max-width:620px;
 
   max-height:
-    calc(
-      100dvh - 24px
-    );
+    calc(100dvh - 24px);
 
   overflow:hidden;
 
-  background:#f5f8fa;
+  background:#f4f7f9;
 
-  border:1px solid rgba(255,255,255,.4);
+  border:1px solid
+    rgba(255,255,255,.35);
 
-  border-radius:14px;
+  border-radius:15px;
 
-  box-shadow:var(--shadow-lg);
+  box-shadow:var(--shadow-heavy);
+
+  animation:
+    modalIn .22s ease both;
+}
+
+@keyframes modalIn{
+  from{
+    opacity:0;
+    transform:scale(.96) translateY(8px);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1) translateY(0);
+  }
 }
 
 .modal-header{
   position:relative;
 
-  padding:17px 18px 16px;
+  padding:18px 19px 17px;
 
   color:white;
 
   background:
     linear-gradient(
       135deg,
-      var(--navy-dark),
-      var(--navy-light)
+      var(--navy3),
+      var(--navy2)
     );
 
   border-bottom:3px solid var(--gold);
@@ -1275,8 +1333,9 @@ main{
   color:var(--gold);
 
   font-size:8px;
+  font-weight:700;
 
-  letter-spacing:1.5px;
+  letter-spacing:1.6px;
 
   text-transform:uppercase;
 }
@@ -1286,57 +1345,50 @@ main{
 
   font-family:"Teko";
 
-  font-size:37px;
+  font-size:38px;
 
-  line-height:.9;
-
-  text-transform:uppercase;
+  line-height:.88;
 }
 
 .modal-close{
   position:absolute;
 
-  top:9px;
-  right:9px;
+  top:8px;
+  right:8px;
 
-  width:36px;
-  height:36px;
+  width:38px;
+  height:38px;
 
   display:flex;
-
   align-items:center;
   justify-content:center;
 
   border:0;
-
   border-radius:50%;
 
-  background:rgba(255,255,255,.14);
+  background:
+    rgba(255,255,255,.13);
 
   color:white;
 
   font-family:Arial,sans-serif;
 
-  font-size:23px;
-
-  line-height:1;
+  font-size:25px;
 }
 
 .modal-body{
   overflow-y:auto;
 
   max-height:
-    calc(
-      100dvh - 115px
-    );
+    calc(100dvh - 115px);
 
-  padding:14px;
+  padding:13px;
 }
 
 .modal-status{
   text-align:center;
 
-  margin-bottom:8px;
+  margin-bottom:7px;
 }
 
 .modal-score{
@@ -1344,14 +1396,13 @@ main{
 
   font-family:"Teko";
 
-  font-size:48px;
-  font-weight:700;
+  font-size:50px;
 
   line-height:.9;
 
   text-align:center;
 
-  margin:3px 0 14px;
+  margin:2px 0 14px;
 }
 
 .info-grid{
@@ -1364,21 +1415,21 @@ main{
 }
 
 .info-box{
-  padding:9px;
+  padding:10px;
 
   background:white;
 
   border:1px solid var(--border);
 
-  border-radius:7px;
+  border-radius:8px;
 }
 
 .info-label{
-  color:var(--muted);
+  color:#7b8b99;
 
   font-size:7px;
 
-  letter-spacing:.8px;
+  letter-spacing:1px;
 
   text-transform:uppercase;
 }
@@ -1401,7 +1452,7 @@ main{
 
   border:1px solid var(--border);
 
-  border-radius:7px;
+  border-radius:8px;
 
   color:var(--muted);
 
@@ -1414,54 +1465,73 @@ main{
 ========================================================= */
 
 .history-modal-title{
+  margin-top:3px;
+
   font-family:"Teko";
 
-  font-size:36px;
+  font-size:37px;
 
-  line-height:.9;
+  line-height:.88;
 }
 
 .history-modal-record{
-  margin-top:4px;
+  margin-top:5px;
 
-  color:#dbe6ee;
+  color:#d8e5ed;
 
   font-size:10px;
-  font-weight:600;
+  font-weight:700;
 }
 
 .history-modal-body{
   overflow-y:auto;
 
   max-height:
-    calc(
-      100dvh - 105px
-    );
+    calc(100dvh - 110px);
 
-  padding:12px;
+  padding:13px;
 }
 
 .history-section-title{
-  margin:2px 0 7px;
+  display:flex;
+  align-items:center;
+
+  margin:1px 0 8px;
 
   color:var(--navy);
 
   font-family:"Teko";
 
-  font-size:25px;
+  font-size:26px;
 
   line-height:1;
 }
 
+.history-section-title::after{
+  content:"";
+
+  flex:1;
+
+  height:2px;
+
+  margin-left:8px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--gold),
+      transparent
+    );
+}
+
 .history-game{
   display:flex;
-
   align-items:center;
   justify-content:space-between;
 
   gap:8px;
 
-  padding:8px 10px;
+  padding:9px 10px;
 
   margin-bottom:5px;
 
@@ -1469,7 +1539,7 @@ main{
 
   border:1px solid var(--border);
 
-  border-radius:7px;
+  border-radius:8px;
 }
 
 .history-opponent{
@@ -1477,7 +1547,7 @@ main{
 
   font-family:"Teko";
 
-  font-size:19px;
+  font-size:20px;
 
   line-height:1;
 }
@@ -1487,8 +1557,7 @@ main{
 
   font-family:"Teko";
 
-  font-size:20px;
-
+  font-size:21px;
   font-weight:700;
 }
 
@@ -1502,12 +1571,11 @@ main{
 
 .achievement-row{
   display:flex;
-
   align-items:center;
 
-  gap:8px;
+  gap:9px;
 
-  padding:9px;
+  padding:10px;
 
   margin-bottom:5px;
 
@@ -1517,13 +1585,17 @@ main{
 
   border-left:3px solid var(--gold);
 
-  border-radius:7px;
+  border-radius:8px;
 }
 
 .achievement-row-icon{
-  color:var(--gold-dark);
+  width:27px;
 
-  font-size:17px;
+  flex-shrink:0;
+
+  font-size:19px;
+
+  text-align:center;
 }
 
 .achievement-row-text{
@@ -1531,7 +1603,7 @@ main{
 
   font-family:"Teko";
 
-  font-size:19px;
+  font-size:20px;
 
   line-height:1;
 }
@@ -1558,7 +1630,6 @@ main{
 
 .admin-header{
   display:flex;
-
   align-items:center;
   justify-content:space-between;
 
@@ -1573,29 +1644,29 @@ main{
   background:
     linear-gradient(
       135deg,
-      var(--navy-dark),
-      var(--navy-light)
+      var(--navy3),
+      var(--navy2)
     );
 
   border-bottom:3px solid var(--gold);
 
-  border-radius:var(--radius);
+  border-radius:13px;
 
-  box-shadow:var(--shadow-md);
+  box-shadow:var(--shadow);
 }
 
 .admin-header-title{
   font-family:"Teko";
 
-  font-size:30px;
+  font-size:32px;
 
-  line-height:.9;
+  line-height:.85;
 }
 
 .admin-header-sub{
-  margin-top:4px;
+  margin-top:5px;
 
-  color:#d7e4ed;
+  color:#d7e4ec;
 
   font-size:8px;
 
@@ -1607,13 +1678,15 @@ main{
 .admin-back{
   padding:8px 10px;
 
-  border:1px solid rgba(255,255,255,.25);
+  color:white;
+
+  background:
+    rgba(255,255,255,.09);
+
+  border:1px solid
+    rgba(255,255,255,.22);
 
   border-radius:6px;
-
-  background:rgba(255,255,255,.09);
-
-  color:white;
 
   font-size:8px;
   font-weight:700;
@@ -1628,16 +1701,15 @@ main{
 
   border:1px solid var(--border);
 
-  border-radius:var(--radius);
+  border-radius:12px;
 
-  box-shadow:var(--shadow-sm);
+  box-shadow:var(--shadow);
 }
 
 .admin-section-toggle{
   width:100%;
 
   display:flex;
-
   align-items:center;
 
   gap:10px;
@@ -1652,23 +1724,27 @@ main{
 }
 
 .admin-icon{
-  width:37px;
-  height:37px;
+  width:39px;
+  height:39px;
 
   flex-shrink:0;
 
   display:flex;
-
   align-items:center;
   justify-content:center;
 
-  background:var(--navy);
+  background:
+    linear-gradient(
+      145deg,
+      var(--navy2),
+      var(--navy)
+    );
 
   color:white;
 
-  border-radius:7px;
+  border-radius:8px;
 
-  font-size:17px;
+  font-size:18px;
 }
 
 .admin-section-text{
@@ -1682,15 +1758,15 @@ main{
 
   font-family:"Teko";
 
-  font-size:25px;
+  font-size:26px;
 
-  line-height:.9;
+  line-height:.85;
 }
 
 .admin-section-text span{
   display:block;
 
-  margin-top:3px;
+  margin-top:4px;
 
   color:var(--muted);
 
@@ -1698,9 +1774,9 @@ main{
 }
 
 .admin-arrow{
-  color:#82919e;
+  color:#81909d;
 
-  font-size:12px;
+  font-size:11px;
 }
 
 .admin-section-body{
@@ -1720,11 +1796,11 @@ main{
 
   margin-top:9px;
 
-  background:var(--surface-soft);
+  background:#f7f9fa;
 
   border:1px solid var(--border);
 
-  border-radius:8px;
+  border-radius:9px;
 }
 
 .admin-subsection h3{
@@ -1734,7 +1810,7 @@ main{
 
   font-family:"Teko";
 
-  font-size:23px;
+  font-size:24px;
 
   line-height:1;
 }
@@ -1749,7 +1825,57 @@ main{
 
 
 /* =========================================================
-   ADMIN FORMS
+   ADMIN STATS
+========================================================= */
+
+.admin-stats{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
+  gap:6px;
+
+  margin-bottom:9px;
+}
+
+.admin-stat{
+  padding:11px 6px;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:9px;
+
+  box-shadow:var(--shadow);
+
+  text-align:center;
+}
+
+.admin-stat-number{
+  color:var(--navy);
+
+  font-family:"Teko";
+
+  font-size:31px;
+
+  line-height:.85;
+}
+
+.admin-stat-label{
+  margin-top:4px;
+
+  color:#7b8b98;
+
+  font-size:7px;
+
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   FORMS
 ========================================================= */
 
 .form-grid{
@@ -1770,7 +1896,7 @@ main{
 
   margin-bottom:3px;
 
-  color:#53697b;
+  color:#536a7c;
 
   font-size:8px;
   font-weight:700;
@@ -1785,19 +1911,15 @@ main{
 
   padding:8px;
 
-  margin:0;
+  color:var(--text);
 
   background:white;
 
-  color:var(--text);
-
   border:1px solid var(--border);
 
-  border-radius:6px;
+  border-radius:7px;
 
   outline:none;
-
-  font-size:16px;
 }
 
 .field textarea{
@@ -1809,10 +1931,10 @@ main{
 .field input:focus,
 .field select:focus,
 .field textarea:focus{
-  border-color:#9eb0bf;
+  border-color:#9db0bf;
 
   box-shadow:
-    0 0 0 2px
+    0 0 0 3px
     rgba(0,38,74,.05);
 }
 
@@ -1821,60 +1943,69 @@ main{
 
   padding:10px;
 
+  color:white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--navy2),
+      var(--navy)
+    );
+
   border:0;
 
-  border-radius:6px;
-
-  background:var(--navy);
-
-  color:white;
+  border-radius:7px;
 
   font-size:10px;
   font-weight:700;
+
+  box-shadow:
+    0 3px 8px
+    rgba(0,30,60,.12);
 }
 
 .secondary-button{
   padding:8px 10px;
 
+  color:var(--navy);
+
+  background:#e9eff3;
+
   border:0;
 
   border-radius:6px;
 
-  background:#e9eef2;
-
-  color:var(--navy);
-
-  font-size:9px;
+  font-size:8px;
   font-weight:700;
 }
 
 .danger-button{
   padding:8px 10px;
 
+  color:var(--red);
+
+  background:#fde8e8;
+
   border:0;
 
   border-radius:6px;
 
-  background:#fde8e8;
-
-  color:var(--red);
-
-  font-size:9px;
+  font-size:8px;
   font-weight:700;
 }
 
 .message{
-  padding:8px;
+  padding:9px;
 
-  margin-top:8px;
+  margin-top:7px;
 
-  background:#edf3f7;
+  color:#637789;
+
+  background:#eef3f6;
 
   border:1px solid var(--border);
 
-  border-radius:6px;
-
-  color:var(--muted);
+  border-radius:7px;
 
   font-size:9px;
 }
@@ -1886,31 +2017,26 @@ main{
 
 .position-picker{
   position:relative;
-
-  margin-bottom:8px;
 }
 
 .position-trigger{
   width:100%;
 
-  min-height:39px;
+  min-height:40px;
 
   display:flex;
-
   align-items:center;
   justify-content:space-between;
 
   padding:8px 10px;
 
+  color:#667a8b;
+
   background:white;
 
   border:1px solid var(--border);
 
-  border-radius:6px;
-
-  color:var(--muted);
-
-  font-size:11px;
+  border-radius:7px;
 
   text-align:left;
 }
@@ -1929,7 +2055,7 @@ main{
   left:0;
   right:0;
 
-  z-index:500;
+  z-index:600;
 
   display:none;
 
@@ -1939,9 +2065,9 @@ main{
 
   border:1px solid var(--border);
 
-  border-radius:8px;
+  border-radius:9px;
 
-  box-shadow:var(--shadow-lg);
+  box-shadow:var(--shadow-heavy);
 }
 
 .position-picker.open .position-menu{
@@ -1963,20 +2089,19 @@ main{
 
 .position-option{
   display:flex;
-
   align-items:center;
 
   gap:5px;
 
   padding:7px;
 
-  background:#f7f9fb;
+  color:#53697a;
+
+  background:#f6f8fa;
 
   border:1px solid var(--border);
 
   border-radius:5px;
-
-  color:#455b6d;
 
   font-size:9px;
 }
@@ -1986,8 +2111,6 @@ main{
   height:14px;
 
   margin:0;
-
-  padding:0;
 
   accent-color:var(--navy);
 }
@@ -2003,9 +2126,9 @@ main{
   grid-template-columns:
     1fr auto;
 
-  gap:8px;
-
   align-items:center;
+
+  gap:8px;
 
   padding:9px;
 
@@ -2015,7 +2138,7 @@ main{
 
   border:1px solid var(--border);
 
-  border-radius:7px;
+  border-radius:8px;
 }
 
 .admin-game-name{
@@ -2038,24 +2161,11 @@ main{
 
 .admin-actions{
   display:flex;
-
   gap:4px;
-}
-
-.admin-actions button{
-  padding:7px 8px;
-
-  border:0;
-
-  border-radius:5px;
-
-  font-size:8px;
-  font-weight:700;
 }
 
 .admin-roster{
   display:flex;
-
   flex-direction:column;
 
   gap:5px;
@@ -2079,7 +2189,7 @@ main{
 
   border:1px solid var(--border);
 
-  border-radius:7px;
+  border-radius:8px;
 }
 
 .admin-number{
@@ -2087,7 +2197,7 @@ main{
 
   font-family:"Teko";
 
-  font-size:26px;
+  font-size:27px;
 
   text-align:center;
 }
@@ -2103,17 +2213,11 @@ main{
 }
 
 .admin-player-position{
-  margin-top:2px;
+  margin-top:3px;
 
   color:var(--muted);
 
   font-size:8px;
-}
-
-.admin-player-actions{
-  display:flex;
-
-  gap:3px;
 }
 
 
@@ -2123,7 +2227,6 @@ main{
 
 .admin-login{
   position:fixed;
-
   inset:0;
 
   z-index:9000;
@@ -2140,9 +2243,9 @@ main{
     max(12px,env(safe-area-inset-left));
 
   background:
-    rgba(0,18,35,.75);
+    rgba(0,17,33,.76);
 
-  backdrop-filter:blur(8px);
+  backdrop-filter:blur(9px);
 
   overscroll-behavior:none;
 
@@ -2154,27 +2257,23 @@ main{
 }
 
 .login-window{
-  position:relative;
-
   width:min(
     390px,
     calc(100vw - 24px)
   );
 
-  max-height:
-    calc(
-      100dvh - 24px
-    );
+  background:#f4f7f9;
 
-  overflow:visible;
+  border-radius:15px;
 
-  background:#f5f8fa;
+  box-shadow:var(--shadow-heavy);
 
-  border-radius:14px;
-
-  box-shadow:var(--shadow-lg);
+  overflow:hidden;
 
   flex-shrink:0;
+
+  animation:
+    modalIn .2s ease both;
 }
 
 .login-header{
@@ -2189,31 +2288,25 @@ main{
   background:
     linear-gradient(
       135deg,
-      var(--navy-dark),
-      var(--navy-light)
+      var(--navy3),
+      var(--navy2)
     );
 
   border-bottom:3px solid var(--gold);
-
-  border-radius:
-    14px
-    14px
-    0
-    0;
 }
 
 .login-gear{
-  display:flex;
+  width:49px;
+  height:49px;
 
+  display:flex;
   align-items:center;
   justify-content:center;
 
-  width:48px;
-  height:48px;
-
   margin:0 auto 8px;
 
-  background:rgba(255,255,255,.1);
+  background:
+    rgba(255,255,255,.1);
 
   border-radius:50%;
 
@@ -2225,7 +2318,7 @@ main{
 
   font-family:"Teko";
 
-  font-size:32px;
+  font-size:33px;
 
   line-height:1;
 }
@@ -2233,7 +2326,7 @@ main{
 .login-header p{
   margin:4px 0 0;
 
-  color:#d8e4ed;
+  color:#d6e4ec;
 
   font-size:8px;
 
@@ -2252,7 +2345,6 @@ main{
   height:38px;
 
   display:flex;
-
   align-items:center;
   justify-content:center;
 
@@ -2260,15 +2352,14 @@ main{
 
   border-radius:50%;
 
-  background:rgba(255,255,255,.14);
+  background:
+    rgba(255,255,255,.13);
 
   color:white;
 
   font-family:Arial,sans-serif;
 
-  font-size:24px;
-
-  line-height:1;
+  font-size:25px;
 }
 
 .login-body{
@@ -2277,16 +2368,11 @@ main{
 
 .login-code{
   width:100%;
-
   height:50px;
-
-  padding:10px;
 
   margin:0 0 8px;
 
-  text-align:center;
-
-  letter-spacing:7px;
+  padding:10px;
 
   color:var(--navy);
 
@@ -2298,33 +2384,30 @@ main{
 
   outline:none;
 
+  text-align:center;
+
+  letter-spacing:7px;
+
   font-family:Arial,sans-serif;
 
   font-size:16px!important;
   font-weight:700;
-
-  -webkit-appearance:none;
-  appearance:none;
-}
-
-.login-code:focus{
-  border-color:#8da2b3;
-
-  box-shadow:
-    0 0 0 3px
-    rgba(0,38,74,.06);
 }
 
 .login-submit{
   width:100%;
-
   height:44px;
 
   border:0;
 
-  border-radius:6px;
+  border-radius:7px;
 
-  background:var(--navy);
+  background:
+    linear-gradient(
+      135deg,
+      var(--navy2),
+      var(--navy)
+    );
 
   color:white;
 
@@ -2333,15 +2416,15 @@ main{
 }
 
 .login-error{
-  min-height:13px;
+  min-height:14px;
 
   margin-top:7px;
 
   color:var(--red);
 
-  text-align:center;
-
   font-size:9px;
+
+  text-align:center;
 }
 
 
@@ -2356,12 +2439,24 @@ main{
     padding-right:45px;
   }
 
+  .site-header h1{
+    font-size:37px;
+  }
+
+  .achievement-grid{
+    gap:6px;
+  }
+
+  .achievement{
+    padding:8px;
+  }
+
   .achievement-title{
     font-size:15px;
   }
 
   .achievement-years{
-    font-size:8px;
+    font-size:7px;
   }
 
   .main-nav{
@@ -2370,11 +2465,7 @@ main{
   }
 
   .main-nav button{
-    min-height:49px;
-    border-radius:8px;
-  }
-
-  .nav-label{
+    min-height:48px;
     font-size:9px;
   }
 
@@ -2383,7 +2474,7 @@ main{
   }
 
   .matchup-vs{
-    font-size:19px;
+    font-size:20px;
   }
 
   .roster-grid{
@@ -2402,6 +2493,11 @@ main{
     grid-template-columns:1fr;
   }
 
+  .admin-stats{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
   .overlay{
     padding:0;
   }
@@ -2415,18 +2511,10 @@ main{
     border-radius:0;
   }
 
-  .modal-body{
-    max-height:
-      calc(
-        100dvh - 105px
-      );
-  }
-
+  .modal-body,
   .history-modal-body{
     max-height:
-      calc(
-        100dvh - 105px
-      );
+      calc(100dvh - 115px);
   }
 
 }
@@ -2442,16 +2530,13 @@ main{
     font-size:30px;
   }
 
+  .main-nav button{
+    min-height:46px;
+    font-size:8px;
+  }
+
   .achievement-title{
     font-size:14px;
-  }
-
-  .main-nav button{
-    min-height:47px;
-  }
-
-  .nav-label{
-    font-size:8px;
   }
 
 }
@@ -2506,7 +2591,7 @@ main{
 
 
 <!-- =======================================================
-     SITE HEADER
+     HEADER
 ======================================================= -->
 
 <header
@@ -2534,7 +2619,6 @@ main{
     NDGP FOOTBALL
   </h1>
 
-
   <p>
     Notre Dame Green Pond Crusaders
   </p>
@@ -2555,7 +2639,7 @@ main{
     <div class="achievement">
 
       <div class="achievement-title">
-        Colonial League Champions
+        🏆 Colonial League Champions
       </div>
 
       <div class="achievement-years">
@@ -2568,7 +2652,7 @@ main{
     <div class="achievement">
 
       <div class="achievement-title">
-        PIAA District XI Champions
+        🏆 PIAA District XI Champions
       </div>
 
       <div class="achievement-years">
@@ -2584,6 +2668,7 @@ main{
 
 <!-- =======================================================
      NAVIGATION
+     NO EMOJIS
 ======================================================= -->
 
 <nav
@@ -2593,41 +2678,22 @@ main{
   <button
     class="active"
     onclick="showPage('home',this)">
-
-    <span class="nav-label">
-      Home
-    </span>
-
+    HOME
   </button>
-
 
   <button
     onclick="showPage('schedule',this)">
-
-    <span class="nav-label">
-      Schedule
-    </span>
-
+    SCHEDULE
   </button>
-
 
   <button
     onclick="showPage('history',this)">
-
-    <span class="nav-label">
-      History
-    </span>
-
+    HISTORY
   </button>
-
 
   <button
     onclick="showPage('roster',this)">
-
-    <span class="nav-label">
-      Roster
-    </span>
-
+    ROSTER
   </button>
 
 </nav>
@@ -2640,7 +2706,7 @@ main{
 <main id="publicMain">
 
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
 
 <section
   id="home"
@@ -2651,7 +2717,7 @@ main{
     <div class="next-header">
 
       <strong>
-        NEXT GAME
+        🏈 NEXT GAME
       </strong>
 
       <span>
@@ -2706,30 +2772,34 @@ main{
   </div>
 
 
-  <div class="card record-card">
+  <div class="record-card card">
 
-    <div>
+    <div class="record-item">
 
       <div class="record-label">
-        2026 Record
+        📊 2026 Record
       </div>
 
       <div
         id="recordNumber"
         class="record-number">
-
         0–0
-
       </div>
 
     </div>
 
 
-    <div
-      id="recordSide"
-      class="record-side">
+    <div class="record-item">
 
-      0 Wins • 0 Losses
+      <div class="record-label">
+        🏆 Wins / Losses
+      </div>
+
+      <div
+        id="recordSide"
+        class="record-side">
+        0 Wins • 0 Losses
+      </div>
 
     </div>
 
@@ -2738,7 +2808,7 @@ main{
 </section>
 
 
-<!-- SCHEDULE -->
+<!-- ================= SCHEDULE ================= -->
 
 <section
   id="schedule"
@@ -2747,7 +2817,7 @@ main{
   <div class="card">
 
     <h2 class="page-title">
-      2026 Schedule
+      🏈 2026 Schedule
     </h2>
 
     <div id="scheduleList">
@@ -2759,7 +2829,7 @@ main{
 </section>
 
 
-<!-- HISTORY -->
+<!-- ================= HISTORY ================= -->
 
 <section
   id="history"
@@ -2768,11 +2838,11 @@ main{
   <div class="card">
 
     <h2 class="page-title">
-      Football History
+      🏆 Football History
     </h2>
 
     <div class="history-intro">
-      2016–2025 • Notre Dame Green Pond Football
+      Notre Dame Green Pond Football • 2016–2025
     </div>
 
     <div id="historyList"></div>
@@ -2782,7 +2852,7 @@ main{
 </section>
 
 
-<!-- ROSTER -->
+<!-- ================= ROSTER ================= -->
 
 <section
   id="roster"
@@ -2791,7 +2861,7 @@ main{
   <div class="card">
 
     <h2 class="page-title">
-      2026 Roster
+      👥 2026 Roster
     </h2>
 
 
@@ -2801,7 +2871,7 @@ main{
         id="rosterSearch"
         class="roster-search"
         type="search"
-        placeholder="Search player...">
+        placeholder="🔎 Search player...">
 
 
       <select
@@ -2863,7 +2933,7 @@ main{
     <div>
 
       <div class="admin-header-title">
-        ADMIN DASHBOARD
+        ⚙️ ADMIN DASHBOARD
       </div>
 
       <div class="admin-header-sub">
@@ -2880,6 +2950,70 @@ main{
       ← BACK TO SITE
 
     </button>
+
+  </div>
+
+
+  <div class="admin-stats">
+
+    <div class="admin-stat">
+
+      <div
+        id="adminGamesCount"
+        class="admin-stat-number">
+        0
+      </div>
+
+      <div class="admin-stat-label">
+        🏈 Games
+      </div>
+
+    </div>
+
+
+    <div class="admin-stat">
+
+      <div
+        id="adminPlayersCount"
+        class="admin-stat-number">
+        0
+      </div>
+
+      <div class="admin-stat-label">
+        👥 Players
+      </div>
+
+    </div>
+
+
+    <div class="admin-stat">
+
+      <div
+        id="adminWinsCount"
+        class="admin-stat-number">
+        0
+      </div>
+
+      <div class="admin-stat-label">
+        🏆 Wins
+      </div>
+
+    </div>
+
+
+    <div class="admin-stat">
+
+      <div
+        id="adminLossesCount"
+        class="admin-stat-number">
+        0
+      </div>
+
+      <div class="admin-stat-label">
+        ❌ Losses
+      </div>
+
+    </div>
 
   </div>
 
@@ -2922,7 +3056,7 @@ main{
       <div class="admin-subsection">
 
         <h3>
-          Add Game
+          ➕ Add Game
         </h3>
 
         <div class="admin-description">
@@ -3000,11 +3134,11 @@ main{
             <select id="gameHomeAway">
 
               <option value="Home">
-                Home
+                🏠 Home
               </option>
 
               <option value="Away">
-                Away
+                ✈️ Away
               </option>
 
             </select>
@@ -3031,7 +3165,7 @@ main{
           class="primary-button"
           onclick="addGame()">
 
-          + ADD GAME
+          🏈 ADD GAME
 
         </button>
 
@@ -3044,11 +3178,11 @@ main{
       <div class="admin-subsection">
 
         <h3>
-          Existing Games
+          📅 Existing Games
         </h3>
 
         <div class="admin-description">
-          Manage your current schedule.
+          Edit scores, times, locations or remove games.
         </div>
 
         <div id="adminGameList">
@@ -3100,11 +3234,11 @@ main{
       <div class="admin-subsection">
 
         <h3>
-          Add Player
+          ➕ Add Player
         </h3>
 
         <div class="admin-description">
-          Select multiple positions or enter your own.
+          Select multiple positions or enter a custom position.
         </div>
 
 
@@ -3231,7 +3365,7 @@ main{
           class="primary-button"
           onclick="addPlayer()">
 
-          + ADD PLAYER
+          👤 ADD PLAYER
 
         </button>
 
@@ -3241,7 +3375,7 @@ main{
       <div class="admin-subsection">
 
         <h3>
-          Current Roster
+          👥 Current Roster
         </h3>
 
         <div class="admin-description">
@@ -3319,7 +3453,7 @@ main{
         class="login-submit"
         onclick="loginAdmin()">
 
-        ENTER ADMIN
+        🔐 ENTER ADMIN
 
       </button>
 
@@ -3337,7 +3471,7 @@ main{
 
 
 <!-- =======================================================
-     GAME MODAL
+     GAME DETAILS MODAL
 ======================================================= -->
 
 <div
@@ -3359,11 +3493,9 @@ main{
 
       </button>
 
-
       <div class="modal-kicker">
-        NDGP FOOTBALL
+        🏈 NDGP FOOTBALL
       </div>
-
 
       <div
         id="modalTitle"
@@ -3427,17 +3559,14 @@ main{
 
       </button>
 
-
       <div class="modal-kicker">
-        NDGP FOOTBALL HISTORY
+        🏆 NDGP FOOTBALL HISTORY
       </div>
-
 
       <div
         id="historyModalTitle"
         class="history-modal-title">
       </div>
-
 
       <div
         id="historyModalRecord"
@@ -3494,7 +3623,7 @@ window.addEventListener(
           .getElementById("splash")
           .classList.add("hide");
       },
-      900
+      850
     );
 
   }
@@ -3554,7 +3683,9 @@ function showPage(id,button){
 function openAdminLogin(){
 
   const modal=
-    document.getElementById("adminLogin");
+    document.getElementById(
+      "adminLogin"
+    );
 
   modal.classList.add("show");
 
@@ -3571,7 +3702,7 @@ function openAdminLogin(){
           preventScroll:true
         });
     },
-    220
+    200
   );
 
 }
@@ -3590,7 +3721,6 @@ function closeAdminLogin(event){
   document
     .getElementById("adminLogin")
     .classList.remove("show");
-
 
   document.body.classList.remove(
     "modal-open"
@@ -3756,6 +3886,7 @@ function openAdmin(){
 
   loadAdminData();
 
+
   window.scrollTo({
     top:0,
     behavior:"smooth"
@@ -3862,6 +3993,8 @@ async function loadGames(){
   renderSchedule();
 
   renderAdminGames();
+
+  updateAdminStats();
 
 }
 
@@ -4045,9 +4178,33 @@ function renderHome(){
   if(!next){
 
     document.getElementById(
+      "nextMatchup"
+    ).innerHTML=`
+
+      <span class="matchup-team">
+        NDGP
+      </span>
+
+      <span class="matchup-vs">
+        VS
+      </span>
+
+      <span class="matchup-team">
+        TBD
+      </span>
+
+    `;
+
+
+    document.getElementById(
       "nextInfo"
     ).textContent=
-      "No upcoming games.";
+      "🏈 No upcoming games";
+
+
+    document
+      .getElementById("countdown")
+      .classList.add("hidden");
 
     return;
 
@@ -4073,25 +4230,22 @@ function renderHome(){
   `;
 
 
-  /*
-    Home/Away is now normal text.
-    No emoji and no bubble.
-  */
-
   document.getElementById(
     "nextInfo"
   ).innerHTML=`
 
-    ${formatDate(next.date)}
+    📅 ${formatDate(next.date)}
     <br>
 
-    ${escapeHTML(next.time||"Time TBD")}
+    ⏰ ${escapeHTML(next.time||"Time TBD")}
     <br>
 
-    ${escapeHTML(next.location||"Location TBD")}
+    📍 ${escapeHTML(next.location||"Location TBD")}
     <br>
 
-    ${escapeHTML(next.home_away||"")}
+    ${next.home_away==="Home"
+      ?"🏠 Home"
+      :"✈️ Away"}
 
   `;
 
@@ -4141,7 +4295,7 @@ function renderHome(){
 
 
 /* =========================================================
-   LIVE ONLY
+   LIVE
 ========================================================= */
 
 function updateCountdown(game){
@@ -4152,39 +4306,21 @@ function updateCountdown(game){
     );
 
 
-  const update=()=>{
+  if(isLive(game)){
 
-    if(isLive(game)){
+    box.classList.remove("hidden");
 
-      box.classList.remove("hidden");
+    box.textContent=
+      "🔴 LIVE";
 
-      box.textContent=
-        "🔴 LIVE";
+    return;
 
-      return;
-
-    }
+  }
 
 
-    /*
-      Do not show another countdown bubble.
-      Only LIVE gets a bubble.
-    */
+  box.classList.add("hidden");
 
-    box.classList.add("hidden");
-
-    box.textContent="";
-
-  };
-
-
-  update();
-
-
-  setTimeout(
-    update,
-    60000
-  );
+  box.textContent="";
 
 }
 
@@ -4205,7 +4341,7 @@ function renderSchedule(){
 
     container.innerHTML=
       `<div class="message">
-        No games have been added yet.
+        🏈 No games have been added yet.
       </div>`;
 
     return;
@@ -4238,7 +4374,7 @@ function renderSchedule(){
                 <div>
 
                   <div class="game-date">
-                    ${formatDate(game.date)}
+                    📅 ${formatDate(game.date)}
                   </div>
 
                   <div class="game-opponent">
@@ -4295,15 +4431,19 @@ function renderSchedule(){
               <div class="game-meta">
 
                 <span>
-                  ${escapeHTML(game.time||"Time TBD")}
+                  ⏰ ${escapeHTML(game.time||"Time TBD")}
                 </span>
 
                 <span>
-                  ${escapeHTML(game.location||"Location TBD")}
+                  📍 ${escapeHTML(game.location||"Location TBD")}
                 </span>
 
                 <span>
-                  ${escapeHTML(game.home_away||"")}
+                  ${
+                    game.home_away==="Home"
+                    ?"🏠 Home"
+                    :"✈️ Away"
+                  }
                 </span>
 
               </div>
@@ -4314,7 +4454,7 @@ function renderSchedule(){
                 ?
                 `
                   <div class="game-score">
-                    FINAL:
+                    🏈 FINAL:
                     ${game.our_score}
                     –
                     ${game.opponent_score}
@@ -4379,10 +4519,10 @@ function openGameDetails(id){
     );
 
 
-  if(status){
-
-    statusBox.innerHTML=`
-
+  statusBox.innerHTML=
+    status
+    ?
+    `
       <span
         class="
           status
@@ -4398,16 +4538,9 @@ function openGameDetails(id){
         ${status.text}
 
       </span>
-
-    `;
-
-  }
-
-  else{
-
-    statusBox.innerHTML="";
-
-  }
+    `
+    :
+    "";
 
 
   scoreBox.textContent=
@@ -4425,7 +4558,7 @@ function openGameDetails(id){
     <div class="info-box">
 
       <div class="info-label">
-        Date
+        📅 Date
       </div>
 
       <div class="info-value">
@@ -4438,7 +4571,7 @@ function openGameDetails(id){
     <div class="info-box">
 
       <div class="info-label">
-        Kickoff
+        ⏰ Kickoff
       </div>
 
       <div class="info-value">
@@ -4451,7 +4584,7 @@ function openGameDetails(id){
     <div class="info-box">
 
       <div class="info-label">
-        Location
+        📍 Location
       </div>
 
       <div class="info-value">
@@ -4464,11 +4597,15 @@ function openGameDetails(id){
     <div class="info-box">
 
       <div class="info-label">
-        Game Location
+        🏠 Game Location
       </div>
 
       <div class="info-value">
-        ${escapeHTML(game.home_away||"")}
+        ${
+          game.home_away==="Home"
+          ?"Home"
+          :"Away"
+        }
       </div>
 
     </div>
@@ -4483,7 +4620,7 @@ function openGameDetails(id){
     ?
     `
       <div class="modal-notes">
-        ${escapeHTML(game.notes)}
+        📝 ${escapeHTML(game.notes)}
       </div>
     `
     :
@@ -4525,7 +4662,7 @@ function closeGameModal(event){
 
 
 /* =========================================================
-   HISTORY
+   HISTORY DATA
 ========================================================= */
 
 const historyData=[
@@ -4553,7 +4690,9 @@ const historyData=[
       "PIAA District XI Class 3A Runner-Up",
       "Tied School Record — Most Wins"
     ]
+
   },
+
 
   {
     year:2024,
@@ -4562,7 +4701,7 @@ const historyData=[
     games:[
       ["Garden Spot","—","W"],
       ["Salisbury","—","W"],
-      ["North Schuylkill","—","L"],
+      ["North Schuylkill","—","W"],
       ["Saucon Valley","—","W"],
       ["Catasauqua","—","W"],
       ["Northern Lehigh","—","W"],
@@ -4576,7 +4715,9 @@ const historyData=[
     achievements:[
       "Colonial League White Division Champions"
     ]
+
   },
+
 
   {
     year:2023,
@@ -4621,6 +4762,10 @@ const historyData=[
 ];
 
 
+/* =========================================================
+   HISTORY LIST
+========================================================= */
+
 function renderHistory(){
 
   const list=
@@ -4649,8 +4794,7 @@ function renderHistory(){
                 </div>
 
                 <div class="season-record">
-                  Final Record:
-                  ${season.record}
+                  Final Record: ${season.record}
                 </div>
 
               </div>
@@ -4669,6 +4813,10 @@ function renderHistory(){
 
 }
 
+
+/* =========================================================
+   HISTORY MODAL
+========================================================= */
 
 function openHistory(year){
 
@@ -4705,7 +4853,7 @@ function openHistory(year){
     html+=`
 
       <div class="history-section-title">
-        Games
+        🏈 Games
       </div>
 
     `;
@@ -4719,8 +4867,7 @@ function openHistory(year){
           <div class="history-game">
 
             <div class="history-opponent">
-              NDGP VS
-              ${escapeHTML(game[0])}
+              NDGP VS ${escapeHTML(game[0])}
             </div>
 
             <div
@@ -4752,9 +4899,9 @@ function openHistory(year){
 
       <div
         class="history-section-title"
-        style="margin-top:14px">
+        style="margin-top:15px">
 
-        Achievements
+        🏆 Achievements
 
       </div>
 
@@ -4792,7 +4939,7 @@ function openHistory(year){
 
       <div class="message">
 
-        Final Record:
+        📊 Final Record:
         ${season.record}
 
       </div>
@@ -4877,6 +5024,8 @@ async function loadRoster(){
 
   renderAdminRoster();
 
+  updateAdminStats();
+
 }
 
 
@@ -4920,11 +5069,11 @@ function renderRoster(){
 
 
         return(
-          (!search||
+          (!search ||
             text.includes(search))
           &&
           (
-            filter==="all"||
+            filter==="all" ||
             String(
               player.position||""
             )
@@ -4940,7 +5089,7 @@ function renderRoster(){
   document.getElementById(
     "rosterCount"
   ).textContent=
-    `${filtered.length} players`;
+    `👥 ${filtered.length} players`;
 
 
   if(!filtered.length){
@@ -5040,6 +5189,10 @@ function buildPositionOptions(){
     document.getElementById(
       "positionOptions"
     );
+
+
+  if(!container)
+    return;
 
 
   container.innerHTML=
@@ -5229,7 +5382,7 @@ function renderAdminRoster(){
 
     list.innerHTML=
       `<div class="message">
-        No players have been added.
+        👥 No players have been added.
       </div>`;
 
     return;
@@ -5265,7 +5418,7 @@ function renderAdminRoster(){
                 </div>
 
 
-                <div class="admin-player-actions">
+                <div class="admin-actions">
 
                   <button
                     class="secondary-button"
@@ -5370,6 +5523,7 @@ async function addPlayer(){
 
   clearPositions();
 
+  closePositions();
 
   await loadRoster();
 
@@ -5431,7 +5585,7 @@ async function editPlayer(id){
 
   const name=
     prompt(
-      "Player name:",
+      "👤 Player name:",
       player.name
     );
 
@@ -5442,7 +5596,7 @@ async function editPlayer(id){
 
   const number=
     prompt(
-      "Jersey number:",
+      "🔢 Jersey number:",
       player.number
     );
 
@@ -5453,7 +5607,7 @@ async function editPlayer(id){
 
   const position=
     prompt(
-      "Position(s):",
+      "🏈 Position(s):",
       player.position
     );
 
@@ -5516,7 +5670,7 @@ function renderAdminGames(){
 
     list.innerHTML=
       `<div class="message">
-        No games have been added.
+        🏈 No games have been added.
       </div>`;
 
     return;
@@ -5539,16 +5693,16 @@ function renderAdminGames(){
 
               <div class="admin-game-meta">
 
-                ${formatDate(game.date)}
+                📅 ${formatDate(game.date)}
                 •
-                ${escapeHTML(game.time||"Time TBD")}
+                ⏰ ${escapeHTML(game.time||"Time TBD")}
 
                 ${
                   hasScore(game)
                   ?
                   `
                     •
-                    FINAL
+                    🏈 FINAL
                     ${game.our_score}–
                     ${game.opponent_score}
                   `
@@ -5666,7 +5820,7 @@ async function addGame(){
       "adminGameMessage"
     ).innerHTML=
       `<div class="message">
-        Unable to add game.
+        ❌ Unable to add game.
       </div>`;
 
     return;
@@ -5678,7 +5832,7 @@ async function addGame(){
     "adminGameMessage"
   ).innerHTML=
     `<div class="message">
-      Game added successfully.
+      ✅ Game added successfully.
     </div>`;
 
 
@@ -5761,7 +5915,7 @@ async function editGame(id){
 
   const score=
     prompt(
-      "Enter final score as NDGP score - opponent score.\n\nLeave blank if the game is not final.",
+      "🏈 Enter final score as NDGP score - opponent score.\n\nLeave blank if not final.",
       hasScore(game)
       ?
       `${game.our_score}-${game.opponent_score}`
@@ -5810,7 +5964,7 @@ async function editGame(id){
 
   const time=
     prompt(
-      "Kickoff time:",
+      "⏰ Kickoff time:",
       game.time||""
     );
 
@@ -5821,7 +5975,7 @@ async function editGame(id){
 
   const location=
     prompt(
-      "Location:",
+      "📍 Location:",
       game.location||""
     );
 
@@ -5866,6 +6020,66 @@ async function editGame(id){
 
 
 /* =========================================================
+   ADMIN STATS
+========================================================= */
+
+function updateAdminStats(){
+
+  let wins=0;
+  let losses=0;
+
+
+  games.forEach(
+    game=>{
+
+      if(!hasScore(game))
+        return;
+
+
+      const our=
+        Number(game.our_score);
+
+      const opp=
+        Number(game.opponent_score);
+
+
+      if(our>opp)
+        wins++;
+
+      if(our<opp)
+        losses++;
+
+    }
+  );
+
+
+  document.getElementById(
+    "adminGamesCount"
+  ).textContent=
+    games.length;
+
+
+  document.getElementById(
+    "adminPlayersCount"
+  ).textContent=
+    roster.length;
+
+
+  document.getElementById(
+    "adminWinsCount"
+  ).textContent=
+    wins;
+
+
+  document.getElementById(
+    "adminLossesCount"
+  ).textContent=
+    losses;
+
+}
+
+
+/* =========================================================
    HELPERS
 ========================================================= */
 
@@ -5894,7 +6108,7 @@ function formatDate(value){
 function escapeHTML(value){
 
   if(
-    value===null||
+    value===null ||
     value===undefined
   )
     return "";
@@ -5967,7 +6181,7 @@ if(window.visualViewport){
 
 
 /* =========================================================
-   INITIAL LOAD
+   INITIALIZE
 ========================================================= */
 
 renderHistory();
