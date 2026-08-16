@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 
 <meta
@@ -26,7 +25,7 @@
 <style>
 
 /* =========================================================
-   DESIGN SYSTEM
+   COLORS
 ========================================================= */
 
 :root{
@@ -38,16 +37,14 @@
   --gold-dark:#d9a900;
 
   --white:#ffffff;
+
   --background:#f3f6f8;
   --surface:#ffffff;
   --surface-soft:#f7f9fb;
 
   --text:#102a43;
   --muted:#66798b;
-  --muted-light:#91a0ad;
-
   --border:#d6e0e7;
-  --border-dark:#c4d0d9;
 
   --green:#198754;
   --green-bg:#e8f6ed;
@@ -55,17 +52,11 @@
   --red:#d92f2f;
   --red-bg:#fdeaea;
 
-  --shadow-sm:
-    0 2px 8px rgba(0,30,60,.06);
-
-  --shadow-md:
-    0 5px 18px rgba(0,30,60,.08);
-
-  --shadow-lg:
-    0 18px 50px rgba(0,20,40,.20);
+  --shadow-sm:0 2px 8px rgba(0,30,60,.06);
+  --shadow-md:0 5px 18px rgba(0,30,60,.08);
+  --shadow-lg:0 18px 50px rgba(0,20,40,.20);
 
   --radius:11px;
-  --radius-sm:7px;
 }
 
 
@@ -353,7 +344,7 @@ textarea{
 
   border-left:3px solid var(--gold);
 
-  border-radius:var(--radius-sm);
+  border-radius:7px;
 }
 
 .achievement-title{
@@ -378,7 +369,7 @@ textarea{
 
 
 /* =========================================================
-   COOL APP NAVIGATION
+   NAVIGATION
 ========================================================= */
 
 .main-nav{
@@ -397,7 +388,7 @@ textarea{
   gap:6px;
 
   background:
-    rgba(248,250,251,.96);
+    rgba(248,250,251,.97);
 
   border-bottom:1px solid var(--border);
 
@@ -415,111 +406,101 @@ textarea{
 
   min-width:0;
 
-  min-height:50px;
+  min-height:47px;
 
   display:flex;
-
-  flex-direction:column;
 
   align-items:center;
   justify-content:center;
 
-  gap:2px;
-
-  padding:5px 3px;
+  padding:7px 5px;
 
   border:1px solid transparent;
 
-  border-radius:9px;
+  border-radius:8px;
 
   background:transparent;
 
-  color:#718392;
+  color:#63788a;
 
-  font-size:9px;
+  font-family:"Oswald",Arial,sans-serif;
+
+  font-size:11px;
   font-weight:700;
+
+  letter-spacing:.5px;
 
   text-transform:uppercase;
 
   transition:
     background .18s ease,
     color .18s ease,
-    border .18s ease,
-    transform .15s ease,
-    box-shadow .18s ease;
+    border-color .18s ease,
+    box-shadow .18s ease,
+    transform .15s ease;
 }
 
-.main-nav button::before{
-  content:"";
+/* NO TAB EMOJIS */
+.nav-icon{
+  display:none!important;
+}
 
-  width:4px;
-  height:4px;
-
-  position:absolute;
-
-  left:50%;
-  bottom:3px;
-
-  transform:
-    translateX(-50%)
-    scale(0);
-
-  border-radius:50%;
-
-  background:var(--gold);
-
-  transition:
-    transform .18s ease;
+.nav-label{
+  font-size:11px;
+  line-height:1;
+  letter-spacing:.6px;
 }
 
 .main-nav button:hover{
   color:var(--navy);
 
-  background:#ffffff;
+  background:#fffdf3;
 
-  border-color:var(--border);
+  border-color:#eee1a8;
 
   transform:translateY(-1px);
 }
 
+/* ACTIVE TAB = LIGHT GOLD */
 .main-nav button.active{
-  color:white;
+  color:var(--navy);
 
   background:
     linear-gradient(
       135deg,
-      var(--navy-dark),
-      var(--navy-light)
+      #fff8d9,
+      #fffdf1
     );
 
-  border-color:
-    rgba(0,38,74,.45);
+  border-color:#eadb9b;
 
   box-shadow:
-    0 4px 10px
-    rgba(0,38,74,.18);
+    inset 0 0 0 1px
+    rgba(244,197,66,.08),
+
+    0 2px 7px
+    rgba(120,100,30,.08);
 }
 
-.main-nav button.active::before{
-  transform:
-    translateX(-50%)
-    scale(1);
+.main-nav button.active::after{
+  content:"";
+
+  position:absolute;
+
+  left:15%;
+  right:15%;
+
+  bottom:3px;
+
+  height:2px;
+
+  border-radius:2px;
+
+  background:var(--gold);
 }
 
-.nav-icon{
-  font-size:17px;
-
-  line-height:1;
-
-  filter:
-    grayscale(.1);
-}
-
-.nav-label{
-  font-size:8px;
-
-  line-height:1;
-  letter-spacing:.5px;
+.main-nav button::before{
+  display:none!important;
 }
 
 
@@ -566,7 +547,7 @@ main{
 
 
 /* =========================================================
-   UNIVERSAL CARD
+   CARDS
 ========================================================= */
 
 .card{
@@ -585,6 +566,7 @@ main{
 
 .page-title{
   display:flex;
+
   align-items:center;
 
   margin:0 0 10px;
@@ -620,7 +602,7 @@ main{
 
 
 /* =========================================================
-   HOME HERO
+   NEXT GAME
 ========================================================= */
 
 .next-game{
@@ -653,6 +635,8 @@ main{
       var(--navy-dark),
       var(--navy-light)
     );
+
+  border-bottom:2px solid var(--gold);
 }
 
 .next-header strong{
@@ -722,61 +706,63 @@ main{
   color:var(--muted);
 
   font-size:11px;
+  font-weight:500;
 
-  line-height:1.8;
+  line-height:1.9;
+
+  text-align:center;
 }
 
+/* HOME/AWAY IS NOW NORMAL TEXT */
 .home-away{
-  display:inline-flex;
+  display:inline;
 
-  align-items:center;
-  justify-content:center;
+  margin:0;
+  padding:0;
 
-  margin-top:4px;
+  color:var(--muted);
 
-  padding:6px 10px;
+  background:none;
 
-  color:var(--navy);
-
-  background:#f1f5f8;
-
-  border:1px solid var(--border);
-
-  border-radius:7px;
+  border:0;
+  border-radius:0;
 
   font-size:11px;
-  font-weight:700;
+  font-weight:500;
 }
 
+/* LIVE IS THE ONLY BUBBLE */
 .countdown{
   display:inline-flex;
 
   align-items:center;
   justify-content:center;
 
-  margin-top:11px;
+  margin-top:12px;
 
-  padding:8px 12px;
+  padding:8px 13px;
 
-  color:#465b6d;
+  color:#435769;
 
   background:
     linear-gradient(
       135deg,
-      #f0f3f5,
-      #e2e7eb
+      #eef2f5,
+      #e2e8ec
     );
 
-  border:1px solid #bdc9d2;
+  border:1px solid #bcc9d2;
 
-  border-radius:8px;
+  border-radius:9px;
 
-  font-size:10px;
+  font-size:11px;
   font-weight:700;
 
+  line-height:1;
+
   box-shadow:
-    inset 0 1px 0
-    rgba(255,255,255,.8);
+    0 2px 5px
+    rgba(0,30,60,.08);
 }
 
 
@@ -2380,22 +2366,16 @@ main{
 
   .main-nav{
     gap:4px;
-
     padding:6px;
   }
 
   .main-nav button{
     min-height:49px;
-
     border-radius:8px;
   }
 
-  .nav-icon{
-    font-size:16px;
-  }
-
   .nav-label{
-    font-size:7px;
+    font-size:9px;
   }
 
   .matchup-team{
@@ -2452,10 +2432,6 @@ main{
 }
 
 
-/* =========================================================
-   SMALL PHONES
-========================================================= */
-
 @media(max-width:380px){
 
   .site-header h1{
@@ -2474,12 +2450,8 @@ main{
     min-height:47px;
   }
 
-  .nav-icon{
-    font-size:15px;
-  }
-
   .nav-label{
-    font-size:6.5px;
+    font-size:8px;
   }
 
 }
@@ -2534,7 +2506,7 @@ main{
 
 
 <!-- =======================================================
-     HEADER
+     SITE HEADER
 ======================================================= -->
 
 <header
@@ -2571,7 +2543,7 @@ main{
 
 
 <!-- =======================================================
-     ACHIEVEMENTS
+     PROGRAM ACHIEVEMENTS
 ======================================================= -->
 
 <section
@@ -2622,10 +2594,6 @@ main{
     class="active"
     onclick="showPage('home',this)">
 
-    <span class="nav-icon">
-      🏠
-    </span>
-
     <span class="nav-label">
       Home
     </span>
@@ -2635,10 +2603,6 @@ main{
 
   <button
     onclick="showPage('schedule',this)">
-
-    <span class="nav-icon">
-      📅
-    </span>
 
     <span class="nav-label">
       Schedule
@@ -2650,10 +2614,6 @@ main{
   <button
     onclick="showPage('history',this)">
 
-    <span class="nav-icon">
-      🏆
-    </span>
-
     <span class="nav-label">
       History
     </span>
@@ -2663,10 +2623,6 @@ main{
 
   <button
     onclick="showPage('roster',this)">
-
-    <span class="nav-icon">
-      👥
-    </span>
 
     <span class="nav-label">
       Roster
@@ -3066,8 +3022,7 @@ main{
 
           <textarea
             id="gameNotes"
-            placeholder="Optional notes">
-          </textarea>
+            placeholder="Optional notes"></textarea>
 
         </div>
 
@@ -3083,9 +3038,7 @@ main{
       </div>
 
 
-      <div
-        id="adminGameMessage">
-      </div>
+      <div id="adminGameMessage"></div>
 
 
       <div class="admin-subsection">
@@ -3205,11 +3158,8 @@ main{
               class="position-trigger"
               onclick="togglePositions()">
 
-              <span
-                id="positionText">
-
+              <span id="positionText">
                 Select position(s)...
-
               </span>
 
               <span>
@@ -3320,11 +3270,9 @@ main{
   class="admin-login"
   onclick="closeAdminLogin(event)">
 
-
   <div
     class="login-window"
     onclick="event.stopPropagation()">
-
 
     <div class="login-header">
 
@@ -4125,23 +4073,25 @@ function renderHome(){
   `;
 
 
+  /*
+    Home/Away is now normal text.
+    No emoji and no bubble.
+  */
+
   document.getElementById(
     "nextInfo"
   ).innerHTML=`
 
-    📅 ${formatDate(next.date)}
+    ${formatDate(next.date)}
     <br>
 
-    ⏰ ${escapeHTML(next.time||"Time TBD")}
+    ${escapeHTML(next.time||"Time TBD")}
     <br>
 
-    📍 ${escapeHTML(next.location||"Location TBD")}
+    ${escapeHTML(next.location||"Location TBD")}
     <br>
 
-    <span class="home-away">
-      ${homeAwayIcon(next.home_away)}
-      ${escapeHTML(next.home_away||"")}
-    </span>
+    ${escapeHTML(next.home_away||"")}
 
   `;
 
@@ -4190,6 +4140,10 @@ function renderHome(){
 }
 
 
+/* =========================================================
+   LIVE ONLY
+========================================================= */
+
 function updateCountdown(game){
 
   const box=
@@ -4212,73 +4166,20 @@ function updateCountdown(game){
     }
 
 
-    const kickoff=
-      kickoffDate(game);
+    /*
+      Do not show another countdown bubble.
+      Only LIVE gets a bubble.
+    */
 
+    box.classList.add("hidden");
 
-    if(!kickoff){
-
-      box.classList.add("hidden");
-
-      return;
-
-    }
-
-
-    const diff=
-      kickoff-
-      new Date();
-
-
-    if(diff<=0){
-
-      box.classList.add("hidden");
-
-      return;
-
-    }
-
-
-    const totalMinutes=
-      Math.floor(
-        diff/60000
-      );
-
-
-    const days=
-      Math.floor(
-        totalMinutes/1440
-      );
-
-
-    const hours=
-      Math.floor(
-        (totalMinutes%1440)/60
-      );
-
-
-    const minutes=
-      totalMinutes%60;
-
-
-    let text="";
-
-
-    if(days>0)
-      text+=`${days}d `;
-
-    text+=`${hours}h ${minutes}m until kickoff`;
-
-
-    box.classList.remove("hidden");
-
-    box.textContent=
-      `🏈 ${text}`;
+    box.textContent="";
 
   };
 
 
   update();
+
 
   setTimeout(
     update,
@@ -4394,15 +4295,14 @@ function renderSchedule(){
               <div class="game-meta">
 
                 <span>
-                  ⏰ ${escapeHTML(game.time||"Time TBD")}
+                  ${escapeHTML(game.time||"Time TBD")}
                 </span>
 
                 <span>
-                  📍 ${escapeHTML(game.location||"Location TBD")}
+                  ${escapeHTML(game.location||"Location TBD")}
                 </span>
 
                 <span>
-                  ${homeAwayIcon(game.home_away)}
                   ${escapeHTML(game.home_away||"")}
                 </span>
 
@@ -4568,7 +4468,6 @@ function openGameDetails(id){
       </div>
 
       <div class="info-value">
-        ${homeAwayIcon(game.home_away)}
         ${escapeHTML(game.home_away||"")}
       </div>
 
@@ -4626,7 +4525,7 @@ function closeGameModal(event){
 
 
 /* =========================================================
-   HISTORY DATA
+   HISTORY
 ========================================================= */
 
 const historyData=[
@@ -5992,21 +5891,6 @@ function formatDate(value){
 }
 
 
-function homeAwayIcon(value){
-
-  return String(
-    value||""
-  )
-    .toLowerCase()
-    .includes("away")
-    ?
-    "➡️"
-    :
-    "🏠";
-
-}
-
-
 function escapeHTML(value){
 
   if(
@@ -6027,7 +5911,7 @@ function escapeHTML(value){
 
 
 /* =========================================================
-   MOBILE KEYBOARD SAFETY
+   MOBILE ADMIN LOGIN FIX
 ========================================================= */
 
 if(window.visualViewport){
