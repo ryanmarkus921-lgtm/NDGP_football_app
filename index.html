@@ -17,23 +17,38 @@
 
 <style>
 
+/* =========================================================
+   ROOT
+========================================================= */
+
 :root{
   --navy:#00264a;
-  --navy-dark:#00182d;
-  --navy-light:#074675;
-  --gold:#f2c335;
-  --gold-dark:#c99e13;
-  --bg:#f4f7f9;
-  --white:#fff;
+  --navy-dark:#001a30;
+  --navy-light:#064674;
+  --gold:#e7b928;
+  --gold-light:#fff8dd;
+
+  --bg:#f3f6f8;
+  --white:#ffffff;
+
   --text:#082742;
-  --muted:#536b7d;
-  --border:#d4dfe7;
+  --muted:#5c7181;
+
+  --border:#d4dfe6;
+
   --green:#16834d;
-  --green-bg:#e8f7ef;
-  --red:#cf3535;
+  --green-bg:#e9f7ef;
+
+  --red:#c93636;
   --red-bg:#fdeaea;
-  --shadow:0 4px 16px rgba(0,30,60,.07);
+
+  --shadow:0 3px 12px rgba(0,35,65,.055);
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
   box-sizing:border-box;
@@ -47,9 +62,16 @@ html{
 body{
   margin:0;
   min-height:100vh;
-  background:linear-gradient(180deg,#edf3f6,#f9fafb);
+  background:linear-gradient(
+    180deg,
+    #edf3f6 0%,
+    #f8fafb 100%
+  );
+
   color:var(--text);
+
   font-family:"Oswald",Arial,sans-serif;
+
   -webkit-font-smoothing:antialiased;
 }
 
@@ -88,11 +110,20 @@ textarea{
   position:fixed;
   inset:0;
   z-index:99999;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  background:linear-gradient(145deg,#063f6d,#00182e);
+
   color:white;
+
+  background:
+    linear-gradient(
+      145deg,
+      #064673,
+      #001a30
+    );
+
   transition:.4s ease;
 }
 
@@ -114,6 +145,7 @@ textarea{
 
 .splash-title{
   margin-top:8px;
+
   font-family:Teko;
   font-size:54px;
   line-height:.8;
@@ -122,7 +154,9 @@ textarea{
 
 .splash-subtitle{
   margin-top:10px;
-  color:#dce6ed;
+
+  color:#dce7ee;
+
   font-size:12px;
   font-weight:600;
   letter-spacing:1.5px;
@@ -136,24 +170,39 @@ textarea{
 
 .site-header{
   position:relative;
+
   padding:18px 45px 20px;
-  color:#fff;
+
+  color:white;
   text-align:center;
-  background:linear-gradient(135deg,var(--navy-dark),var(--navy-light));
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--navy-dark),
+      var(--navy-light)
+    );
+
   border-bottom:3px solid var(--gold);
-  box-shadow:0 4px 18px rgba(0,30,60,.14);
+
+  box-shadow:
+    0 4px 18px rgba(0,30,60,.14);
 }
 
 .header-logo{
   width:70px;
   height:70px;
+
   display:block;
+
   margin:0 auto 4px;
+
   object-fit:contain;
 }
 
 .site-header h1{
   margin:0;
+
   font-family:Teko;
   font-size:42px;
   line-height:.82;
@@ -162,7 +211,9 @@ textarea{
 
 .site-header p{
   margin:7px 0 0;
+
   color:#d8e4eb;
+
   font-size:12px;
   font-weight:600;
   letter-spacing:1.5px;
@@ -173,9 +224,12 @@ textarea{
   position:absolute;
   top:14px;
   right:15px;
+
   padding:0;
+
   border:0;
   background:none;
+
   color:white;
   font-size:24px;
 }
@@ -187,29 +241,38 @@ textarea{
 
 .achievements{
   padding:10px;
+
   background:white;
+
   border-bottom:1px solid var(--border);
 }
 
 .achievement-grid{
   width:100%;
   max-width:760px;
+
   margin:auto;
+
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
+
   gap:8px;
 }
 
 .achievement{
   padding:12px;
+
   background:white;
+
   border:1px solid var(--border);
   border-left:3px solid var(--gold);
+
   border-radius:9px;
 }
 
 .achievement-title{
   color:var(--navy);
+
   font-family:Teko;
   font-size:21px;
   font-weight:700;
@@ -218,40 +281,57 @@ textarea{
 
 .achievement-years{
   margin-top:5px;
+
   color:var(--muted);
+
   font-size:12px;
   font-weight:600;
 }
 
 
 /* =========================================================
-   NAVIGATION
+   NAV
 ========================================================= */
 
 .main-nav{
   position:sticky;
   top:0;
   z-index:300;
+
   display:flex;
   gap:5px;
+
   padding:7px;
+
   background:rgba(248,250,251,.97);
+
   border-bottom:1px solid var(--border);
-  box-shadow:0 4px 14px rgba(0,30,60,.06);
+
+  box-shadow:
+    0 4px 14px rgba(0,30,60,.06);
+
   backdrop-filter:blur(12px);
 }
 
 .main-nav button{
   position:relative;
+
   flex:1;
+
   min-height:54px;
+
   border:1px solid transparent;
   border-radius:9px;
+
   background:transparent;
+
   color:#536a7c;
+
   font-size:17px;
   font-weight:700;
+
   letter-spacing:.8px;
+
   text-transform:uppercase;
 }
 
@@ -262,18 +342,30 @@ textarea{
 
 .main-nav button.active{
   color:var(--navy);
-  background:linear-gradient(135deg,#fff9df,#fffdf5);
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff8dc,
+      #fffdf7
+    );
+
   border-color:#eadb9c;
 }
 
 .main-nav button.active::after{
   content:"";
+
   position:absolute;
+
   left:17%;
   right:17%;
   bottom:3px;
+
   height:3px;
+
   border-radius:4px;
+
   background:var(--gold);
 }
 
@@ -285,7 +377,9 @@ textarea{
 main{
   width:100%;
   max-width:760px;
+
   margin:auto;
+
   padding:10px 9px 35px;
 }
 
@@ -295,6 +389,7 @@ main{
 
 .page.active{
   display:block;
+
   animation:pageIn .18s ease;
 }
 
@@ -303,6 +398,7 @@ main{
     opacity:0;
     transform:translateY(4px);
   }
+
   to{
     opacity:1;
     transform:none;
@@ -311,18 +407,25 @@ main{
 
 .card{
   margin-bottom:9px;
+
   padding:13px;
+
   background:white;
+
   border:1px solid var(--border);
   border-radius:13px;
+
   box-shadow:var(--shadow);
 }
 
 .page-title{
   display:flex;
   align-items:center;
+
   margin:0 0 11px;
+
   color:var(--navy);
+
   font-family:Teko;
   font-size:33px;
   line-height:1;
@@ -330,32 +433,54 @@ main{
 
 .page-title::after{
   content:"";
+
   flex:1;
+
   height:2px;
+
   margin-left:9px;
-  background:linear-gradient(90deg,var(--gold),transparent);
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--gold),
+      transparent
+    );
 }
 
 
 /* =========================================================
-   HOME
+   HOME / NEXT GAME
 ========================================================= */
 
 .next-game{
   overflow:hidden;
+
   background:white;
+
   border:1px solid var(--border);
   border-radius:14px;
-  box-shadow:0 7px 25px rgba(0,30,60,.08);
+
+  box-shadow:
+    0 7px 25px rgba(0,30,60,.08);
 }
 
 .next-header{
   display:flex;
   align-items:center;
   justify-content:space-between;
+
   padding:11px 13px;
+
   color:white;
-  background:linear-gradient(90deg,var(--navy-dark),var(--navy-light));
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--navy-dark),
+      var(--navy-light)
+    );
+
   border-bottom:3px solid var(--gold);
 }
 
@@ -367,57 +492,128 @@ main{
 
 .next-header span{
   color:var(--gold);
+
   font-size:11px;
   font-weight:700;
   letter-spacing:1px;
 }
 
 .next-body{
-  padding:21px 12px;
+  padding:23px 14px 22px;
+
   text-align:center;
 }
 
+
+/* ---------------------------------------------------------
+   NEXT GAME MATCHUP
+--------------------------------------------------------- */
+
 .next-label{
   color:var(--muted);
+
   font-size:12px;
   font-weight:600;
+
   letter-spacing:1.5px;
+
   text-transform:uppercase;
 }
 
+
+/*
+  The matchup is now treated as ONE unit.
+
+  This prevents:
+  NDGP
+  VS
+  LONG OPPONENT
+
+  from independently resizing and looking uneven.
+*/
+
 .matchup{
+  width:100%;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:9px;
-  margin:11px 0 15px;
+
+  gap:10px;
+
+  margin:12px auto 17px;
+
+  overflow:hidden;
 }
 
 .matchup-team{
-  max-width:47%;
   min-width:0;
-  overflow:visible;
+  max-width:43%;
+
   color:var(--navy);
+
   font-family:Teko;
+
   font-size:40px;
   font-weight:700;
+
   line-height:.82;
+
   white-space:nowrap;
+
   text-transform:uppercase;
 }
 
 .matchup-vs{
-  flex-shrink:0;
-  color:var(--gold-dark);
+  flex:0 0 auto;
+
+  color:var(--gold);
+
   font-family:Teko;
-  font-size:24px;
+
+  font-size:25px;
   font-weight:700;
+
+  line-height:.8;
 }
+
+
+/*
+  JS adds this class when the matchup needs
+  to shrink. Both teams AND VS shrink together.
+*/
+
+.matchup.compact .matchup-team{
+  font-size:32px;
+}
+
+.matchup.compact .matchup-vs{
+  font-size:21px;
+}
+
+.matchup.small .matchup-team{
+  font-size:26px;
+}
+
+.matchup.small .matchup-vs{
+  font-size:18px;
+}
+
+.matchup.tiny .matchup-team{
+  font-size:22px;
+}
+
+.matchup.tiny .matchup-vs{
+  font-size:16px;
+}
+
 
 .next-info{
   color:var(--muted);
+
   font-size:13px;
   font-weight:600;
+
   line-height:2;
 }
 
@@ -425,19 +621,33 @@ main{
   display:inline-flex;
   align-items:center;
   justify-content:center;
+
   margin-top:12px;
+
   padding:8px 14px;
+
   color:#344b5d;
+
   background:#e8eef2;
+
   border:1px solid #bdcbd4;
+
   border-radius:9px;
+
   font-size:13px;
   font-weight:700;
 }
 
+
+/* =========================================================
+   RECORD
+========================================================= */
+
 .record-card{
   padding:0;
+
   overflow:hidden;
+
   text-align:center;
 }
 
@@ -447,18 +657,25 @@ main{
 
 .record-label{
   color:var(--muted);
+
   font-size:12px;
   font-weight:600;
+
   letter-spacing:1px;
+
   text-transform:uppercase;
 }
 
 .record-number{
   margin-top:4px;
+
   color:var(--navy);
+
   font-family:Teko;
+
   font-size:46px;
   font-weight:700;
+
   line-height:.85;
 }
 
@@ -470,20 +687,31 @@ main{
 .game-list{
   display:flex;
   flex-direction:column;
+
   gap:8px;
 }
 
 .game-card{
   position:relative;
+
   display:grid;
-  grid-template-columns:72px 1fr auto;
+
+  grid-template-columns:72px minmax(0,1fr) 88px;
+
   align-items:center;
+
   min-height:94px;
-  padding:11px 13px;
+
+  padding:10px 13px;
+
   background:white;
+
   border:1px solid var(--border);
+
   border-radius:11px;
-  box-shadow:0 2px 8px rgba(0,30,60,.045);
+
+  box-shadow:
+    0 2px 8px rgba(0,30,60,.045);
 }
 
 .game-card.win{
@@ -498,90 +726,125 @@ main{
   border-left:4px solid var(--navy);
 }
 
-.game-card.live{
-  border-left:4px solid var(--red);
-}
-
 .game-date-box{
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
+
   min-height:65px;
+
   padding-right:10px;
+
   border-right:1px solid #e1e7eb;
 }
 
 .game-month{
-  color:var(--gold-dark);
+  color:var(--gold);
+
   font-size:11px;
   font-weight:700;
+
   letter-spacing:1px;
+
   text-transform:uppercase;
 }
 
 .game-day{
   color:var(--navy);
+
   font-family:Teko;
+
   font-size:35px;
+
   line-height:.75;
 }
 
 .game-weekday{
   margin-top:5px;
+
   color:var(--muted);
+
   font-size:9px;
   font-weight:700;
+
   text-transform:uppercase;
 }
 
 .game-main{
   min-width:0;
+
   padding:0 13px;
 }
 
 .game-opponent{
   overflow:hidden;
+
   color:var(--navy);
+
   font-family:Teko;
+
   font-size:30px;
   font-weight:700;
+
   line-height:.85;
+
   white-space:nowrap;
+
   text-overflow:ellipsis;
+
   text-transform:uppercase;
 }
 
 .game-details{
   display:flex;
   flex-wrap:wrap;
+
   gap:5px 11px;
+
   margin-top:7px;
+
   color:var(--muted);
+
   font-size:11px;
   font-weight:600;
 }
 
 .game-location{
   overflow:hidden;
+
   max-width:180px;
+
   white-space:nowrap;
+
   text-overflow:ellipsis;
 }
 
 .game-result{
-  min-width:88px;
+  min-width:0;
+
   text-align:right;
 }
 
 .game-status{
-  display:inline-block;
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  min-width:58px;
+
   margin-bottom:4px;
-  padding:4px 7px;
+
+  padding:5px 7px;
+
   border-radius:5px;
+
   font-size:9px;
   font-weight:700;
+
   letter-spacing:.4px;
+
   text-transform:uppercase;
 }
 
@@ -595,11 +858,6 @@ main{
   background:var(--red-bg);
 }
 
-.game-status.live{
-  color:var(--red);
-  background:var(--red-bg);
-}
-
 .game-status.upcoming{
   color:var(--navy);
   background:#edf2f5;
@@ -607,17 +865,23 @@ main{
 
 .game-score{
   color:var(--navy);
+
   font-family:Teko;
+
   font-size:32px;
   font-weight:700;
+
   line-height:.8;
 }
 
 .game-score-label{
   margin-top:4px;
+
   color:var(--muted);
+
   font-size:9px;
   font-weight:600;
+
   text-transform:uppercase;
 }
 
@@ -628,18 +892,25 @@ main{
 
 .history-intro{
   margin:-2px 0 10px;
+
   color:var(--muted);
+
   font-size:12px;
   font-weight:600;
+
   text-align:center;
 }
 
 .season-card{
   overflow:hidden;
+
   margin-bottom:7px;
+
   background:white;
+
   border:1px solid var(--border);
   border-left:4px solid var(--navy);
+
   border-radius:10px;
 }
 
@@ -649,14 +920,21 @@ main{
 
 .season-button{
   width:100%;
+
   min-height:76px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
+
   padding:11px 14px;
+
   border:0;
+
   background:white;
+
   color:var(--navy);
+
   text-align:left;
 }
 
@@ -666,8 +944,10 @@ main{
 
 .season-name{
   font-family:Teko;
+
   font-size:32px;
   font-weight:700;
+
   line-height:.86;
 }
 
@@ -677,117 +957,214 @@ main{
 
 .season-record{
   margin-top:6px;
+
   color:var(--muted);
+
   font-size:12px;
   font-weight:600;
 }
 
 .season-arrow{
-  color:var(--gold-dark);
+  color:var(--gold);
+
   font-size:34px;
 }
 
 
 /* =========================================================
-   HISTORY POPUP
+   HISTORY MODAL
 ========================================================= */
 
 .history-modal-title{
   margin-top:3px;
+
   font-family:Teko;
+
   font-size:40px;
+
   line-height:.88;
 }
 
 .history-modal-record{
   margin-top:6px;
+
   color:#d8e5ed;
+
   font-size:13px;
   font-weight:600;
 }
 
 .history-modal-body{
   overflow-y:auto;
-  max-height:calc(100dvh - 120px);
+
+  max-height:
+    calc(100dvh - 120px);
+
   padding:15px;
 }
 
 .history-section-title{
   display:flex;
   align-items:center;
+
   margin:1px 0 9px;
+
   color:var(--navy);
+
   font-family:Teko;
+
   font-size:30px;
+
   line-height:1;
 }
 
 .history-section-title::after{
   content:"";
+
   flex:1;
+
   height:2px;
+
   margin-left:8px;
-  background:linear-gradient(90deg,var(--gold),transparent);
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--gold),
+      transparent
+    );
 }
 
 
 /* =========================================================
-   HISTORY GAME — NEW CLEAN DESIGN
+   HISTORY GAME CARDS
 ========================================================= */
+
+/*
+  IMPORTANT:
+  Fixed grid columns keep every card perfectly aligned.
+
+  LEFT  = matchup
+  CENTER = score
+  RIGHT = result
+*/
 
 .history-game-list{
   display:flex;
   flex-direction:column;
+
   gap:8px;
 }
 
 .history-game{
-  display:flex;
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    105px
+    64px;
+
   align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  min-height:72px;
-  padding:12px 14px;
+
+  min-height:78px;
+
+  padding:10px 13px;
+
   background:white;
+
   border:1px solid var(--border);
+
   border-left:4px solid var(--green);
+
   border-radius:10px;
-  box-shadow:0 2px 7px rgba(0,30,60,.04);
+
+  box-shadow:
+    0 2px 7px rgba(0,30,60,.04);
 }
 
 .history-game.loss{
   border-left-color:var(--red);
 }
 
+
+/*
+  Matchup column.
+
+  It never affects the score or result columns.
+*/
+
 .history-game-matchup{
   min-width:0;
+
+  padding-right:12px;
+
   color:var(--navy);
+
   font-family:Teko;
-  font-size:25px;
+
+  font-size:24px;
   font-weight:700;
+
   line-height:.9;
+
   text-transform:uppercase;
+
+  overflow:hidden;
 }
+
+.history-game-matchup-text{
+  display:block;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+  text-overflow:clip;
+}
+
+
+/*
+  Score is always centered in exactly
+  the same column.
+*/
 
 .history-game-score{
-  flex-shrink:0;
+  width:100%;
+
   color:var(--navy);
+
   font-family:Teko;
-  font-size:35px;
+
+  font-size:36px;
   font-weight:700;
+
   line-height:.8;
-  text-align:right;
+
+  text-align:center;
+
+  white-space:nowrap;
 }
 
+
+/*
+  Result is always the same width.
+*/
+
 .history-game-result{
-  flex-shrink:0;
-  min-width:58px;
-  padding:5px 7px;
-  border-radius:5px;
-  font-size:10px;
+  width:58px;
+
+  justify-self:end;
+
+  padding:6px 4px;
+
+  border-radius:6px;
+
+  font-size:9px;
   font-weight:700;
-  text-align:center;
+
   letter-spacing:.5px;
+
+  text-align:center;
 }
 
 .history-game-result.win{
@@ -807,19 +1184,28 @@ main{
 
 .roster-tools{
   display:flex;
+
   gap:7px;
+
   margin-bottom:8px;
 }
 
 .roster-search,
 .roster-filter{
   height:44px;
+
   min-width:0;
+
   padding:8px 10px;
+
   background:white;
+
   border:1px solid var(--border);
+
   border-radius:7px;
+
   color:var(--text);
+
   outline:none;
 }
 
@@ -833,35 +1219,51 @@ main{
 
 .roster-count{
   margin:0 0 8px;
+
   color:var(--muted);
+
   font-size:11px;
   font-weight:600;
 }
 
 .roster-grid{
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
   gap:7px;
 }
 
 .roster-card{
   display:flex;
   align-items:center;
+
   gap:9px;
+
   padding:10px;
+
   background:white;
+
   border:1px solid var(--border);
+
   border-left:4px solid var(--navy);
+
   border-radius:9px;
 }
 
 .roster-number{
   width:41px;
+
   flex-shrink:0;
+
   color:var(--navy);
+
   font-family:Teko;
+
   font-size:31px;
   font-weight:700;
+
   text-align:center;
 }
 
@@ -871,19 +1273,28 @@ main{
 
 .roster-name{
   overflow:hidden;
+
   color:var(--navy);
+
   font-family:Teko;
+
   font-size:23px;
+
   line-height:.9;
+
   white-space:nowrap;
+
   text-overflow:ellipsis;
 }
 
 .roster-position{
   margin-top:5px;
+
   color:var(--muted);
+
   font-size:11px;
   font-weight:700;
+
   text-transform:uppercase;
 }
 
@@ -895,12 +1306,19 @@ main{
 .overlay{
   position:fixed;
   inset:0;
+
   z-index:5000;
+
   display:none;
+
   align-items:center;
   justify-content:center;
+
   padding:12px;
-  background:rgba(0,17,33,.72);
+
+  background:
+    rgba(0,17,33,.72);
+
   backdrop-filter:blur(7px);
 }
 
@@ -910,51 +1328,87 @@ main{
 
 .modal,
 .form-modal{
-  width:min(620px,calc(100vw - 24px));
-  max-height:calc(100dvh - 24px);
+  width:min(
+    620px,
+    calc(100vw - 24px)
+  );
+
+  max-height:
+    calc(100dvh - 24px);
+
   overflow:hidden;
+
   background:#f4f7f9;
+
   border:1px solid rgba(255,255,255,.3);
+
   border-radius:15px;
-  box-shadow:0 18px 50px rgba(0,20,40,.25);
+
+  box-shadow:
+    0 18px 50px rgba(0,20,40,.25);
 }
 
 .modal-header{
   position:relative;
+
   padding:17px 19px;
+
   color:white;
-  background:linear-gradient(135deg,var(--navy-dark),var(--navy-light));
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--navy-dark),
+      var(--navy-light)
+    );
+
   border-bottom:3px solid var(--gold);
 }
 
 .modal-kicker{
   color:var(--gold);
+
   font-size:11px;
   font-weight:700;
+
   letter-spacing:1.5px;
+
   text-transform:uppercase;
 }
 
 .modal-close{
   position:absolute;
+
   top:8px;
   right:8px;
+
   width:38px;
   height:38px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   border:0;
+
   border-radius:50%;
-  background:rgba(255,255,255,.12);
+
+  background:
+    rgba(255,255,255,.12);
+
   color:white;
+
   font-family:Arial,sans-serif;
+
   font-size:25px;
 }
 
 .form-modal-body{
   overflow-y:auto;
-  max-height:calc(100dvh - 115px);
+
+  max-height:
+    calc(100dvh - 115px);
+
   padding:14px;
 }
 
@@ -965,22 +1419,30 @@ main{
 
 .form-grid{
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
   gap:7px;
 }
 
 .field{
   width:100%;
   min-width:0;
+
   margin-bottom:8px;
 }
 
 .field label{
   display:block;
+
   margin-bottom:4px;
+
   color:var(--muted);
+
   font-size:11px;
   font-weight:700;
+
   text-transform:uppercase;
 }
 
@@ -988,13 +1450,20 @@ main{
 .field select,
 .field textarea{
   display:block;
+
   width:100%;
   max-width:100%;
+
   padding:9px;
+
   color:var(--text);
+
   background:white;
+
   border:1px solid var(--border);
+
   border-radius:7px;
+
   outline:none;
 }
 
@@ -1005,16 +1474,20 @@ main{
 
 .field input[type="date"]{
   width:100%;
+
   height:40px;
   min-height:40px;
   max-height:40px;
+
   padding:7px 9px;
+
   appearance:none;
   -webkit-appearance:none;
 }
 
 .field textarea{
   min-height:70px;
+
   resize:vertical;
 }
 
@@ -1022,39 +1495,65 @@ main{
 .field select:focus,
 .field textarea:focus{
   border-color:#9db0bf;
-  box-shadow:0 0 0 3px rgba(0,38,74,.05);
+
+  box-shadow:
+    0 0 0 3px rgba(0,38,74,.05);
 }
 
 .primary-button{
   width:100%;
+
   min-height:42px;
+
   padding:10px;
+
   color:white;
-  background:linear-gradient(135deg,var(--navy-light),var(--navy));
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--navy-light),
+      var(--navy)
+    );
+
   border:0;
+
   border-radius:7px;
+
   font-size:11px;
   font-weight:700;
 }
 
 .secondary-button{
   min-height:38px;
+
   padding:8px 11px;
+
   color:var(--navy);
+
   background:#e8eef2;
+
   border:0;
+
   border-radius:6px;
+
   font-size:10px;
   font-weight:700;
 }
 
 .danger-button{
   min-height:38px;
+
   padding:8px 11px;
+
   color:var(--red);
+
   background:var(--red-bg);
+
   border:0;
+
   border-radius:6px;
+
   font-size:10px;
   font-weight:700;
 }
@@ -1066,9 +1565,12 @@ main{
 
 .admin-page{
   display:none;
+
   width:100%;
   max-width:760px;
+
   margin:auto;
+
   padding:10px 9px 30px;
 }
 
@@ -1080,102 +1582,164 @@ main{
   display:flex;
   align-items:center;
   justify-content:space-between;
+
   gap:10px;
+
   padding:14px;
+
   margin-bottom:9px;
+
   color:white;
-  background:linear-gradient(135deg,var(--navy-dark),var(--navy-light));
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--navy-dark),
+      var(--navy-light)
+    );
+
   border-bottom:3px solid var(--gold);
+
   border-radius:13px;
+
   box-shadow:var(--shadow);
 }
 
 .admin-header-title{
   font-family:Teko;
+
   font-size:34px;
+
   line-height:.85;
 }
 
 .admin-header-sub{
   margin-top:5px;
+
   color:#d7e4ec;
+
   font-size:11px;
   font-weight:600;
+
   letter-spacing:1px;
+
   text-transform:uppercase;
 }
 
 .admin-back{
   padding:8px 10px;
+
   color:white;
-  background:rgba(255,255,255,.09);
+
+  background:
+    rgba(255,255,255,.09);
+
   border:1px solid rgba(255,255,255,.22);
+
   border-radius:6px;
+
   font-size:10px;
   font-weight:700;
 }
 
 .admin-stats{
   display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
   gap:6px;
+
   margin-bottom:9px;
 }
 
 .admin-stat{
   padding:11px 6px;
+
   background:white;
+
   border:1px solid var(--border);
+
   border-radius:9px;
+
   box-shadow:var(--shadow);
+
   text-align:center;
 }
 
 .admin-stat-number{
   color:var(--navy);
+
   font-family:Teko;
+
   font-size:32px;
+
   line-height:.85;
 }
 
 .admin-stat-label{
   margin-top:4px;
+
   color:var(--muted);
+
   font-size:10px;
   font-weight:600;
+
   text-transform:uppercase;
 }
 
 .admin-section{
   overflow:hidden;
+
   margin-bottom:8px;
+
   background:white;
+
   border:1px solid var(--border);
+
   border-radius:12px;
+
   box-shadow:var(--shadow);
 }
 
 .admin-section-toggle{
   width:100%;
+
   display:flex;
   align-items:center;
+
   gap:10px;
+
   padding:12px;
+
   border:0;
+
   background:white;
+
   text-align:left;
 }
 
 .admin-icon{
   width:39px;
   height:39px;
+
   flex-shrink:0;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   color:white;
-  background:linear-gradient(145deg,var(--navy-light),var(--navy));
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--navy-light),
+      var(--navy)
+    );
+
   border-radius:8px;
+
   font-size:18px;
 }
 
@@ -1185,28 +1749,38 @@ main{
 
 .admin-section-text strong{
   display:block;
+
   color:var(--navy);
+
   font-family:Teko;
+
   font-size:28px;
+
   line-height:.85;
 }
 
 .admin-section-text span{
   display:block;
+
   margin-top:4px;
+
   color:var(--muted);
+
   font-size:11px;
   font-weight:600;
 }
 
 .admin-arrow{
   color:#718392;
+
   font-size:12px;
 }
 
 .admin-section-body{
   display:none;
+
   padding:0 12px 12px;
+
   border-top:1px solid var(--border);
 }
 
@@ -1216,55 +1790,80 @@ main{
 
 .admin-subsection{
   padding:11px;
+
   margin-top:9px;
+
   background:#f7f9fa;
+
   border:1px solid var(--border);
+
   border-radius:9px;
 }
 
 .admin-subsection h3{
   margin:0;
+
   color:var(--navy);
+
   font-family:Teko;
+
   font-size:27px;
+
   line-height:1;
 }
 
 .admin-description{
   margin:4px 0 9px;
+
   color:var(--muted);
+
   font-size:11px;
   font-weight:600;
 }
 
 .admin-game{
   display:grid;
-  grid-template-columns:1fr auto;
+
+  grid-template-columns:
+    1fr auto;
+
   align-items:center;
+
   gap:8px;
+
   padding:9px;
+
   margin-bottom:5px;
+
   background:white;
+
   border:1px solid var(--border);
+
   border-radius:8px;
 }
 
 .admin-game-name{
   color:var(--navy);
+
   font-family:Teko;
+
   font-size:21px;
+
   line-height:1;
 }
 
 .admin-game-meta{
   margin-top:3px;
+
   color:var(--muted);
+
   font-size:10px;
   font-weight:600;
 }
 
 .admin-actions{
   display:flex;
+
   gap:4px;
 }
 
@@ -1279,35 +1878,54 @@ main{
 
 .position-trigger{
   width:100%;
+
   min-height:40px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
+
   padding:8px 10px;
+
   color:#667a8b;
+
   background:white;
+
   border:1px solid var(--border);
+
   border-radius:7px;
+
   text-align:left;
 }
 
 .position-selected{
   color:var(--navy);
+
   font-weight:700;
 }
 
 .position-menu{
   position:absolute;
+
   top:calc(100% + 4px);
+
   left:0;
   right:0;
+
   z-index:600;
+
   display:none;
+
   padding:8px;
+
   background:white;
+
   border:1px solid var(--border);
+
   border-radius:9px;
-  box-shadow:0 18px 50px rgba(0,20,40,.22);
+
+  box-shadow:
+    0 18px 50px rgba(0,20,40,.22);
 }
 
 .position-picker.open .position-menu{
@@ -1316,21 +1934,33 @@ main{
 
 .position-options{
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
   gap:4px;
+
   max-height:190px;
+
   overflow-y:auto;
 }
 
 .position-option{
   display:flex;
   align-items:center;
+
   gap:5px;
+
   padding:7px;
+
   color:var(--muted);
+
   background:#f6f8fa;
+
   border:1px solid var(--border);
+
   border-radius:5px;
+
   font-size:10px;
   font-weight:600;
 }
@@ -1338,7 +1968,9 @@ main{
 .position-option input{
   width:14px;
   height:14px;
+
   margin:0;
+
   accent-color:var(--navy);
 }
 
@@ -1350,37 +1982,54 @@ main{
 .admin-roster{
   display:flex;
   flex-direction:column;
+
   gap:5px;
 }
 
 .admin-player{
   display:grid;
-  grid-template-columns:43px 1fr auto;
+
+  grid-template-columns:
+    43px 1fr auto;
+
   align-items:center;
+
   gap:7px;
+
   padding:8px;
+
   background:white;
+
   border:1px solid var(--border);
+
   border-radius:8px;
 }
 
 .admin-number{
   color:var(--navy);
+
   font-family:Teko;
+
   font-size:28px;
+
   text-align:center;
 }
 
 .admin-player-name{
   color:var(--navy);
+
   font-family:Teko;
+
   font-size:21px;
+
   line-height:1;
 }
 
 .admin-player-position{
   margin-top:3px;
+
   color:var(--muted);
+
   font-size:10px;
   font-weight:600;
 }
@@ -1392,27 +2041,44 @@ main{
 
 .login-code{
   width:100%;
+
   height:50px;
+
   margin-bottom:8px;
+
   padding:10px;
+
   color:var(--navy);
+
   background:white;
+
   border:1px solid var(--border);
+
   border-radius:7px;
+
   outline:none;
+
   text-align:center;
+
   letter-spacing:7px;
+
   font-family:Arial,sans-serif;
+
   font-size:16px!important;
+
   font-weight:700;
 }
 
 .login-error{
   min-height:15px;
+
   margin-top:7px;
+
   color:var(--red);
+
   font-size:11px;
   font-weight:600;
+
   text-align:center;
 }
 
@@ -1424,26 +2090,36 @@ main{
 .confirm-icon{
   width:48px;
   height:48px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   margin:0 auto 8px;
+
   background:#fff4d2;
+
   border-radius:50%;
+
   font-size:23px;
 }
 
 .confirm-text{
   color:var(--muted);
+
   font-size:13px;
   font-weight:600;
+
   text-align:center;
+
   line-height:1.5;
 }
 
 .confirm-buttons{
   display:flex;
+
   gap:7px;
+
   margin-top:13px;
 }
 
@@ -1458,20 +2134,35 @@ main{
 
 .admin-message-popup{
   position:fixed;
+
   left:50%;
   bottom:25px;
+
   z-index:10000;
-  max-width:calc(100vw - 30px);
+
+  max-width:
+    calc(100vw - 30px);
+
   transform:translateX(-50%);
+
   padding:11px 15px;
+
   color:white;
+
   background:var(--navy);
+
   border:1px solid #41637d;
+
   border-bottom:3px solid var(--gold);
+
   border-radius:8px;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.25);
+
   font-size:12px;
   font-weight:600;
+
   text-align:center;
 }
 
@@ -1491,6 +2182,9 @@ main{
     font-size:37px;
   }
 
+
+  /* ACHIEVEMENTS */
+
   .achievement-grid{
     gap:6px;
   }
@@ -1507,6 +2201,9 @@ main{
     font-size:11px;
   }
 
+
+  /* NAV */
+
   .main-nav{
     gap:3px;
     padding:6px;
@@ -1514,18 +2211,75 @@ main{
 
   .main-nav button{
     min-height:50px;
+
     font-size:14px;
+
     letter-spacing:.4px;
   }
 
+
+  /* HOME */
+
+  .next-body{
+    padding:21px 10px;
+  }
+
+  .matchup{
+    gap:7px;
+    margin-top:11px;
+  }
+
+  .matchup-team{
+    max-width:43%;
+
+    font-size:34px;
+  }
+
+  .matchup-vs{
+    font-size:21px;
+  }
+
+  .matchup.compact .matchup-team{
+    font-size:28px;
+  }
+
+  .matchup.compact .matchup-vs{
+    font-size:19px;
+  }
+
+  .matchup.small .matchup-team{
+    font-size:23px;
+  }
+
+  .matchup.small .matchup-vs{
+    font-size:17px;
+  }
+
+  .matchup.tiny .matchup-team{
+    font-size:19px;
+  }
+
+  .matchup.tiny .matchup-vs{
+    font-size:15px;
+  }
+
+
+  /* SCHEDULE */
+
   .game-card{
-    grid-template-columns:55px 1fr auto;
+    grid-template-columns:
+      55px
+      minmax(0,1fr)
+      69px;
+
     min-height:83px;
+
     padding:9px 10px;
   }
 
   .game-date-box{
     min-height:60px;
+
     padding-right:8px;
   }
 
@@ -1551,7 +2305,9 @@ main{
 
   .game-details{
     gap:3px 8px;
+
     margin-top:6px;
+
     font-size:9px;
   }
 
@@ -1560,7 +2316,7 @@ main{
   }
 
   .game-result{
-    min-width:69px;
+    min-width:0;
   }
 
   .game-score{
@@ -1568,7 +2324,10 @@ main{
   }
 
   .game-status{
+    min-width:50px;
+
     font-size:7px;
+
     padding:4px 5px;
   }
 
@@ -1576,13 +2335,8 @@ main{
     font-size:7px;
   }
 
-  .matchup-team{
-    font-size:34px;
-  }
 
-  .matchup-vs{
-    font-size:20px;
-  }
+  /* HISTORY */
 
   .history-modal-title{
     font-size:36px;
@@ -1596,14 +2350,31 @@ main{
     font-size:28px;
   }
 
+
+  /*
+    Mobile history layout.
+
+    Slightly wider score column so every
+    score remains visually centered.
+  */
+
   .history-game{
+    grid-template-columns:
+      minmax(0,1fr)
+      82px
+      57px;
+
     min-height:76px;
-    gap:7px;
-    padding:11px;
+
+    padding:10px 10px;
+
+    gap:3px;
   }
 
   .history-game-matchup{
-    font-size:22px;
+    padding-right:7px;
+
+    font-size:21px;
   }
 
   .history-game-score{
@@ -1611,9 +2382,13 @@ main{
   }
 
   .history-game-result{
-    min-width:53px;
-    font-size:9px;
+    width:52px;
+
+    font-size:8px;
   }
+
+
+  /* ROSTER */
 
   .roster-grid{
     grid-template-columns:1fr;
@@ -1627,20 +2402,29 @@ main{
     width:100%;
   }
 
+
+  /* FORMS */
+
   .form-grid{
     grid-template-columns:1fr;
+
     gap:0;
   }
 
   .field input[type="date"]{
     width:100%;
+
     height:40px!important;
     min-height:40px!important;
     max-height:40px!important;
   }
 
+
+  /* ADMIN */
+
   .admin-stats{
-    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
   }
 
   .admin-game{
@@ -1652,21 +2436,32 @@ main{
   }
 
   .admin-player{
-    grid-template-columns:43px 1fr;
+    grid-template-columns:
+      43px 1fr;
   }
 
   .admin-player .admin-actions{
     grid-column:1/-1;
   }
 
+
+  /* MODALS */
+
   .modal,
   .form-modal{
-    width:calc(100vw - 24px);
-    max-height:calc(100dvh - 24px);
+    width:
+      calc(100vw - 24px);
+
+    max-height:
+      calc(100dvh - 24px);
   }
 
 }
 
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
 
 @media(max-width:380px){
 
@@ -1678,12 +2473,23 @@ main{
     font-size:12px;
   }
 
+  .history-game{
+    grid-template-columns:
+      minmax(0,1fr)
+      76px
+      54px;
+  }
+
   .history-game-matchup{
-    font-size:20px;
+    font-size:19px;
   }
 
   .history-game-score{
     font-size:28px;
+  }
+
+  .history-game-result{
+    width:49px;
   }
 
 }
@@ -1741,7 +2547,10 @@ main{
      HEADER
 ======================================================= -->
 
-<header id="siteHeader" class="site-header">
+<header
+  id="siteHeader"
+  class="site-header"
+>
 
   <button
     id="adminGear"
@@ -1773,7 +2582,10 @@ main{
      ACHIEVEMENTS
 ======================================================= -->
 
-<section id="achievements" class="achievements">
+<section
+  id="achievements"
+  class="achievements"
+>
 
   <div class="achievement-grid">
 
@@ -1811,7 +2623,10 @@ main{
      NAV
 ======================================================= -->
 
-<nav id="mainNav" class="main-nav">
+<nav
+  id="mainNav"
+  class="main-nav"
+>
 
   <button
     class="active"
@@ -1848,9 +2663,14 @@ main{
 <main id="publicMain">
 
 
-<!-- HOME -->
+<!-- =======================================================
+     HOME
+======================================================= -->
 
-<section id="home" class="page active">
+<section
+  id="home"
+  class="page active"
+>
 
   <div class="next-game">
 
@@ -1866,13 +2686,18 @@ main{
 
     </div>
 
+
     <div class="next-body">
 
       <div class="next-label">
         Notre Dame Green Pond
       </div>
 
-      <div id="nextMatchup" class="matchup">
+
+      <div
+        id="nextMatchup"
+        class="matchup"
+      >
 
         <span class="matchup-team">
           NDGP
@@ -1888,9 +2713,14 @@ main{
 
       </div>
 
-      <div id="nextInfo" class="next-info">
+
+      <div
+        id="nextInfo"
+        class="next-info"
+      >
         Loading...
       </div>
+
 
       <div
         id="countdown"
@@ -1924,9 +2754,14 @@ main{
 </section>
 
 
-<!-- SCHEDULE -->
+<!-- =======================================================
+     SCHEDULE
+======================================================= -->
 
-<section id="schedule" class="page">
+<section
+  id="schedule"
+  class="page"
+>
 
   <div class="card">
 
@@ -1934,7 +2769,10 @@ main{
       🏈 2026 Schedule
     </h2>
 
-    <div id="scheduleList" class="game-list">
+    <div
+      id="scheduleList"
+      class="game-list"
+    >
       Loading...
     </div>
 
@@ -1943,9 +2781,14 @@ main{
 </section>
 
 
-<!-- HISTORY -->
+<!-- =======================================================
+     HISTORY
+======================================================= -->
 
-<section id="history" class="page">
+<section
+  id="history"
+  class="page"
+>
 
   <div class="card">
 
@@ -1964,15 +2807,21 @@ main{
 </section>
 
 
-<!-- ROSTER -->
+<!-- =======================================================
+     ROSTER
+======================================================= -->
 
-<section id="roster" class="page">
+<section
+  id="roster"
+  class="page"
+>
 
   <div class="card">
 
     <h2 class="page-title">
       👥 2026 Roster
     </h2>
+
 
     <div class="roster-tools">
 
@@ -1982,6 +2831,7 @@ main{
         type="search"
         placeholder="🔎 Search player..."
       >
+
 
       <select
         id="rosterFilter"
@@ -2007,10 +2857,12 @@ main{
 
     </div>
 
+
     <div
       id="rosterCount"
       class="roster-count"
     ></div>
+
 
     <div
       id="rosterList"
@@ -2027,10 +2879,13 @@ main{
 
 
 <!-- =======================================================
-     ADMIN
+     ADMIN PAGE
 ======================================================= -->
 
-<section id="adminPage" class="admin-page">
+<section
+  id="adminPage"
+  class="admin-page"
+>
 
   <div class="admin-header">
 
@@ -2046,6 +2901,7 @@ main{
 
     </div>
 
+
     <button
       class="admin-back"
       onclick="closeAdmin()"
@@ -2059,23 +2915,66 @@ main{
   <div class="admin-stats">
 
     <div class="admin-stat">
-      <div id="adminGamesCount" class="admin-stat-number">0</div>
-      <div class="admin-stat-label">🏈 Games</div>
+
+      <div
+        id="adminGamesCount"
+        class="admin-stat-number"
+      >
+        0
+      </div>
+
+      <div class="admin-stat-label">
+        🏈 Games
+      </div>
+
     </div>
 
-    <div class="admin-stat">
-      <div id="adminPlayersCount" class="admin-stat-number">0</div>
-      <div class="admin-stat-label">👥 Players</div>
-    </div>
 
     <div class="admin-stat">
-      <div id="adminWinsCount" class="admin-stat-number">0</div>
-      <div class="admin-stat-label">🏆 Wins</div>
+
+      <div
+        id="adminPlayersCount"
+        class="admin-stat-number"
+      >
+        0
+      </div>
+
+      <div class="admin-stat-label">
+        👥 Players
+      </div>
+
     </div>
 
+
     <div class="admin-stat">
-      <div id="adminLossesCount" class="admin-stat-number">0</div>
-      <div class="admin-stat-label">❌ Losses</div>
+
+      <div
+        id="adminWinsCount"
+        class="admin-stat-number"
+      >
+        0
+      </div>
+
+      <div class="admin-stat-label">
+        🏆 Wins
+      </div>
+
+    </div>
+
+
+    <div class="admin-stat">
+
+      <div
+        id="adminLossesCount"
+        class="admin-stat-number"
+      >
+        0
+      </div>
+
+      <div class="admin-stat-label">
+        ❌ Losses
+      </div>
+
     </div>
 
   </div>
@@ -2083,18 +2982,25 @@ main{
 
   <!-- ADMIN GAMES -->
 
-  <div id="adminGames" class="admin-section">
+  <div
+    id="adminGames"
+    class="admin-section"
+  >
 
     <button
       class="admin-section-toggle"
       onclick="toggleAdmin('adminGames')"
     >
 
-      <div class="admin-icon">🏈</div>
+      <div class="admin-icon">
+        🏈
+      </div>
 
       <div class="admin-section-text">
 
-        <strong>GAMES</strong>
+        <strong>
+          GAMES
+        </strong>
 
         <span>
           Add and manage the schedule
@@ -2113,7 +3019,9 @@ main{
 
       <div class="admin-subsection">
 
-        <h3>➕ Add Game</h3>
+        <h3>
+          ➕ Add Game
+        </h3>
 
         <div class="admin-description">
           Add a game to the 2026 schedule.
@@ -2124,7 +3032,9 @@ main{
 
           <div class="field">
 
-            <label>Date</label>
+            <label>
+              Date
+            </label>
 
             <input
               id="gameDate"
@@ -2136,7 +3046,9 @@ main{
 
           <div class="field">
 
-            <label>Time</label>
+            <label>
+              Time
+            </label>
 
             <input
               id="gameTime"
@@ -2151,7 +3063,9 @@ main{
 
         <div class="field">
 
-          <label>Opponent</label>
+          <label>
+            Opponent
+          </label>
 
           <input
             id="gameOpponent"
@@ -2166,7 +3080,9 @@ main{
 
           <div class="field">
 
-            <label>Location</label>
+            <label>
+              Location
+            </label>
 
             <input
               id="gameLocation"
@@ -2179,7 +3095,9 @@ main{
 
           <div class="field">
 
-            <label>Home / Away</label>
+            <label>
+              Home / Away
+            </label>
 
             <select id="gameHomeAway">
 
@@ -2200,7 +3118,9 @@ main{
 
         <div class="field">
 
-          <label>Notes</label>
+          <label>
+            Notes
+          </label>
 
           <textarea
             id="gameNotes"
@@ -2222,7 +3142,9 @@ main{
 
       <div class="admin-subsection">
 
-        <h3>📅 Existing Games</h3>
+        <h3>
+          📅 Existing Games
+        </h3>
 
         <div class="admin-description">
           Edit scores, details, or remove games.
@@ -2241,7 +3163,10 @@ main{
 
   <!-- ADMIN ROSTER -->
 
-  <div id="adminRoster" class="admin-section">
+  <div
+    id="adminRoster"
+    class="admin-section"
+  >
 
     <button
       class="admin-section-toggle"
@@ -2254,7 +3179,9 @@ main{
 
       <div class="admin-section-text">
 
-        <strong>ROSTER</strong>
+        <strong>
+          ROSTER
+        </strong>
 
         <span>
           Add, edit and remove players
@@ -2273,7 +3200,9 @@ main{
 
       <div class="admin-subsection">
 
-        <h3>➕ Add Player</h3>
+        <h3>
+          ➕ Add Player
+        </h3>
 
         <div class="admin-description">
           Select multiple positions or enter a custom position.
@@ -2284,7 +3213,9 @@ main{
 
           <div class="field">
 
-            <label>Jersey Number</label>
+            <label>
+              Jersey Number
+            </label>
 
             <input
               id="playerNumber"
@@ -2299,7 +3230,9 @@ main{
 
           <div class="field">
 
-            <label>Player Name</label>
+            <label>
+              Player Name
+            </label>
 
             <input
               id="playerName"
@@ -2314,7 +3247,9 @@ main{
 
         <div class="field">
 
-          <label>Position</label>
+          <label>
+            Position
+          </label>
 
           <div
             id="positionPicker"
@@ -2331,7 +3266,9 @@ main{
                 Select position(s)...
               </span>
 
-              <span>▼</span>
+              <span>
+                ▼
+              </span>
 
             </button>
 
@@ -2344,7 +3281,10 @@ main{
               ></div>
 
 
-              <div class="field" style="margin-top:8px">
+              <div
+                class="field"
+                style="margin-top:8px"
+              >
 
                 <label>
                   Custom Position
@@ -2359,7 +3299,13 @@ main{
               </div>
 
 
-              <div style="display:flex;justify-content:flex-end;gap:5px">
+              <div
+                style="
+                  display:flex;
+                  justify-content:flex-end;
+                  gap:5px
+                "
+              >
 
                 <button
                   type="button"
@@ -2398,7 +3344,9 @@ main{
 
       <div class="admin-subsection">
 
-        <h3>👥 Current Roster</h3>
+        <h3>
+          👥 Current Roster
+        </h3>
 
         <div class="admin-description">
           Edit or remove players.
@@ -2418,7 +3366,7 @@ main{
 
 
 <!-- =======================================================
-     ADMIN LOGIN
+     ADMIN LOGIN MODAL
 ======================================================= -->
 
 <div
@@ -2445,7 +3393,13 @@ main{
         ⚙️ NDGP FOOTBALL
       </div>
 
-      <div style="font-family:Teko;font-size:40px;line-height:.88">
+      <div
+        style="
+          font-family:Teko;
+          font-size:40px;
+          line-height:.88
+        "
+      >
         ADMIN ACCESS
       </div>
 
@@ -2547,7 +3501,7 @@ main{
 
 
 <!-- =======================================================
-     EDIT GAME
+     EDIT GAME MODAL
 ======================================================= -->
 
 <div
@@ -2574,7 +3528,13 @@ main{
         🏈 ADMIN • GAMES
       </div>
 
-      <div style="font-family:Teko;font-size:40px;line-height:.88">
+      <div
+        style="
+          font-family:Teko;
+          font-size:40px;
+          line-height:.88
+        "
+      >
         EDIT GAME
       </div>
 
@@ -2593,7 +3553,9 @@ main{
 
         <div class="field">
 
-          <label>Date</label>
+          <label>
+            Date
+          </label>
 
           <input
             id="editGameDate"
@@ -2605,7 +3567,9 @@ main{
 
         <div class="field">
 
-          <label>Time</label>
+          <label>
+            Time
+          </label>
 
           <input
             id="editGameTime"
@@ -2620,7 +3584,9 @@ main{
 
       <div class="field">
 
-        <label>Opponent</label>
+        <label>
+          Opponent
+        </label>
 
         <input
           id="editGameOpponent"
@@ -2634,7 +3600,9 @@ main{
 
         <div class="field">
 
-          <label>Location</label>
+          <label>
+            Location
+          </label>
 
           <input
             id="editGameLocation"
@@ -2646,7 +3614,9 @@ main{
 
         <div class="field">
 
-          <label>Home / Away</label>
+          <label>
+            Home / Away
+          </label>
 
           <select id="editGameHomeAway">
 
@@ -2669,7 +3639,9 @@ main{
 
         <div class="field">
 
-          <label>NDGP Score</label>
+          <label>
+            NDGP Score
+          </label>
 
           <input
             id="editGameOurScore"
@@ -2684,7 +3656,9 @@ main{
 
         <div class="field">
 
-          <label>Opponent Score</label>
+          <label>
+            Opponent Score
+          </label>
 
           <input
             id="editGameOpponentScore"
@@ -2706,7 +3680,9 @@ main{
 
       <div class="field">
 
-        <label>Notes</label>
+        <label>
+          Notes
+        </label>
 
         <textarea
           id="editGameNotes"
@@ -2748,7 +3724,7 @@ main{
 
 
 <!-- =======================================================
-     EDIT PLAYER
+     EDIT PLAYER MODAL
 ======================================================= -->
 
 <div
@@ -2775,7 +3751,13 @@ main{
         👥 ADMIN • ROSTER
       </div>
 
-      <div style="font-family:Teko;font-size:40px;line-height:.88">
+      <div
+        style="
+          font-family:Teko;
+          font-size:40px;
+          line-height:.88
+        "
+      >
         EDIT PLAYER
       </div>
 
@@ -2794,7 +3776,9 @@ main{
 
         <div class="field">
 
-          <label>Jersey Number</label>
+          <label>
+            Jersey Number
+          </label>
 
           <input
             id="editPlayerNumber"
@@ -2808,7 +3792,9 @@ main{
 
         <div class="field">
 
-          <label>Player Name</label>
+          <label>
+            Player Name
+          </label>
 
           <input
             id="editPlayerName"
@@ -2822,7 +3808,9 @@ main{
 
       <div class="field">
 
-        <label>Position(s)</label>
+        <label>
+          Position(s)
+        </label>
 
         <div
           id="editPositionPicker"
@@ -2839,7 +3827,9 @@ main{
               Select position(s)...
             </span>
 
-            <span>▼</span>
+            <span>
+              ▼
+            </span>
 
           </button>
 
@@ -2852,7 +3842,10 @@ main{
             ></div>
 
 
-            <div class="field" style="margin-top:8px">
+            <div
+              class="field"
+              style="margin-top:8px"
+            >
 
               <label>
                 Custom Position
@@ -2867,7 +3860,13 @@ main{
             </div>
 
 
-            <div style="display:flex;justify-content:flex-end;gap:5px">
+            <div
+              style="
+                display:flex;
+                justify-content:flex-end;
+                gap:5px
+              "
+            >
 
               <button
                 type="button"
@@ -2920,7 +3919,7 @@ main{
 
 
 <!-- =======================================================
-     CONFIRM
+     CONFIRM MODAL
 ======================================================= -->
 
 <div
@@ -2947,7 +3946,13 @@ main{
         ⚠️ ADMIN
       </div>
 
-      <div style="font-family:Teko;font-size:40px;line-height:.88">
+      <div
+        style="
+          font-family:Teko;
+          font-size:40px;
+          line-height:.88
+        "
+      >
         ARE YOU SURE?
       </div>
 
@@ -2964,6 +3969,7 @@ main{
         id="confirmText"
         class="confirm-text"
       ></div>
+
 
       <div class="confirm-buttons">
 
@@ -3008,6 +4014,7 @@ supabase.createClient(
   SUPABASE_KEY
 );
 
+
 let games=[];
 let roster=[];
 let confirmAction=null;
@@ -3017,17 +4024,21 @@ let confirmAction=null;
    SPLASH
 ========================================================= */
 
-window.addEventListener("load",()=>{
+window.addEventListener(
+  "load",
+  ()=>{
 
-  setTimeout(()=>{
+    setTimeout(
+      ()=>{
+        document
+          .getElementById("splash")
+          .classList.add("hide");
+      },
+      700
+    );
 
-    document
-      .getElementById("splash")
-      .classList.add("hide");
-
-  },700);
-
-});
+  }
+);
 
 
 /* =========================================================
@@ -3048,22 +4059,27 @@ function showPage(id,button){
   if(page)
     page.classList.add("active");
 
+
   document
     .querySelectorAll(".main-nav button")
     .forEach(btn=>{
       btn.classList.remove("active");
     });
 
+
   if(button)
     button.classList.add("active");
+
 
   window.scrollTo({
     top:0,
     behavior:"smooth"
   });
 
+
   if(id==="history")
     renderHistory();
+
 
   if(id==="roster")
     renderRoster();
@@ -3081,17 +4097,21 @@ function openAdminLogin(){
     .getElementById("adminLogin")
     .classList.add("show");
 
-  document.body.classList.add("modal-open");
+  document.body.classList.add(
+    "modal-open"
+  );
 
-  setTimeout(()=>{
 
-    document
-      .getElementById("adminCode")
-      ?.focus({
-        preventScroll:true
-      });
-
-  },100);
+  setTimeout(
+    ()=>{
+      document
+        .getElementById("adminCode")
+        ?.focus({
+          preventScroll:true
+        });
+    },
+    100
+  );
 
 }
 
@@ -3105,38 +4125,55 @@ function closeAdminLogin(event){
   )
     return;
 
+
   document
     .getElementById("adminLogin")
     .classList.remove("show");
 
-  document.body.classList.remove("modal-open");
 
-  document.getElementById("adminCode").value="";
-  document.getElementById("loginError").textContent="";
+  document.body.classList.remove(
+    "modal-open"
+  );
+
+
+  document.getElementById(
+    "adminCode"
+  ).value="";
+
+
+  document.getElementById(
+    "loginError"
+  ).textContent="";
 
 }
 
 
 document
   .getElementById("adminCode")
-  .addEventListener("input",event=>{
+  .addEventListener(
+    "input",
+    event=>{
 
-    event.target.value=
-      event.target.value
-        .replace(/\D/g,"")
-        .slice(0,4);
+      event.target.value=
+        event.target.value
+          .replace(/\D/g,"")
+          .slice(0,4);
 
-  });
+    }
+  );
 
 
 document
   .getElementById("adminCode")
-  .addEventListener("keydown",event=>{
+  .addEventListener(
+    "keydown",
+    event=>{
 
-    if(event.key==="Enter")
-      loginAdmin();
+      if(event.key==="Enter")
+        loginAdmin();
 
-  });
+    }
+  );
 
 
 async function loginAdmin(){
@@ -3148,7 +4185,10 @@ async function loginAdmin(){
       .trim();
 
   const error=
-    document.getElementById("loginError");
+    document.getElementById(
+      "loginError"
+    );
+
 
   if(!/^\d{4}$/.test(code)){
 
@@ -3159,7 +4199,10 @@ async function loginAdmin(){
 
   }
 
-  error.textContent="Checking...";
+
+  error.textContent=
+    "Checking...";
+
 
   try{
 
@@ -3174,8 +4217,10 @@ async function loginAdmin(){
       }
     );
 
+
     if(rpcError)
       throw rpcError;
+
 
     if(!data){
 
@@ -3186,10 +4231,13 @@ async function loginAdmin(){
 
     }
 
+
     closeAdminLogin();
+
     openAdmin();
 
-  }catch(err){
+  }
+  catch(err){
 
     console.error(
       "ADMIN LOGIN ERROR:",
@@ -3205,7 +4253,7 @@ async function loginAdmin(){
 
 
 /* =========================================================
-   ADMIN PAGE
+   ADMIN
 ========================================================= */
 
 function openAdmin(){
@@ -3234,11 +4282,13 @@ function openAdmin(){
     .getElementById("adminPage")
     .classList.add("active");
 
+
   document
     .querySelectorAll(".admin-section")
     .forEach(section=>{
       section.classList.remove("open");
     });
+
 
   loadAdminData();
 
@@ -3270,6 +4320,7 @@ function closeAdmin(){
   document
     .getElementById("adminGear")
     .classList.remove("hidden");
+
 
   showPage(
     "home",
@@ -3313,6 +4364,7 @@ function hasScore(game){
     game.our_score!==null &&
     game.our_score!==undefined &&
     game.our_score!=="" &&
+
     game.opponent_score!==null &&
     game.opponent_score!==undefined &&
     game.opponent_score!==""
@@ -3331,17 +4383,26 @@ function getStatus(game){
     const opponent=
       Number(game.opponent_score);
 
-    if(our>opponent)
+
+    if(our>opponent){
+
       return{
         text:"WIN",
         cls:"win"
       };
 
-    if(our<opponent)
+    }
+
+
+    if(our<opponent){
+
       return{
         text:"LOSS",
         cls:"loss"
       };
+
+    }
+
 
     return{
       text:"TIE",
@@ -3349,6 +4410,7 @@ function getStatus(game){
     };
 
   }
+
 
   return{
     text:"UPCOMING",
@@ -3378,6 +4440,7 @@ async function loadGames(){
       }
     );
 
+
   if(error){
 
     console.error(
@@ -3393,10 +4456,12 @@ async function loadGames(){
 
   }
 
+
   games=
     Array.isArray(data)
     ? data
     : [];
+
 
   renderHome();
   renderSchedule();
@@ -3417,11 +4482,13 @@ function renderHome(){
       .toISOString()
       .split("T")[0];
 
+
   const upcoming=
     games
-      .filter(game=>
-        !hasScore(game) &&
-        game.date>=today
+      .filter(
+        game=>
+          !hasScore(game) &&
+          game.date>=today
       )
       .sort(
         (a,b)=>
@@ -3429,8 +4496,10 @@ function renderHome(){
           new Date(b.date)
       );
 
+
   const next=
     upcoming[0];
+
 
   if(!next){
 
@@ -3451,6 +4520,7 @@ function renderHome(){
       </span>
 
     `;
+
 
     document.getElementById(
       "nextInfo"
@@ -3478,16 +4548,26 @@ function renderHome(){
 
     `;
 
+
     document.getElementById(
       "nextInfo"
     ).innerHTML=`
 
       📅 ${formatDate(next.date)}
       <br>
-      ⏰ ${escapeHTML(next.time||"Time TBD")}
+
+      ⏰ ${escapeHTML(
+        next.time||"Time TBD"
+      )}
+
       <br>
-      📍 ${escapeHTML(next.location||"Location TBD")}
+
+      📍 ${escapeHTML(
+        next.location||"Location TBD"
+      )}
+
       <br>
+
       ${
         next.home_away==="Home"
         ? "🏠 Home"
@@ -3498,19 +4578,23 @@ function renderHome(){
 
   }
 
+
   let wins=0;
   let losses=0;
+
 
   games.forEach(game=>{
 
     if(!hasScore(game))
       return;
 
+
     const our=
       Number(game.our_score);
 
     const opponent=
       Number(game.opponent_score);
+
 
     if(our>opponent)
       wins++;
@@ -3520,59 +4604,113 @@ function renderHome(){
 
   });
 
+
   document.getElementById(
     "recordNumber"
   ).textContent=
     `${wins}–${losses}`;
 
+
+  /*
+    Wait for the matchup to render,
+    then resize the ENTIRE matchup
+    as a single visual unit.
+  */
+
   requestAnimationFrame(
-    fitMatchupText
+    fitNextMatchup
   );
 
 }
 
 
 /* =========================================================
-   HOME FONT AUTO FIT
+   NEXT GAME MATCHUP AUTO FIT
 ========================================================= */
 
-function fitMatchupText(){
+function fitNextMatchup(){
 
-  document
-    .querySelectorAll(".matchup-team")
-    .forEach(team=>{
+  const matchup=
+    document.getElementById(
+      "nextMatchup"
+    );
 
-      let size=
-        window.innerWidth<=600
-        ? 34
-        : 40;
+  if(!matchup)
+    return;
 
-      team.style.fontSize=
-        `${size}px`;
 
-      const maxWidth=
-        team.parentElement.clientWidth*.43;
+  /*
+    Start clean.
+  */
 
-      while(
-        team.scrollWidth>maxWidth &&
-        size>18
-      ){
+  matchup.classList.remove(
+    "compact",
+    "small",
+    "tiny"
+  );
 
-        size--;
 
-        team.style.fontSize=
-          `${size}px`;
+  /*
+    Check if the matchup actually
+    fits inside its container.
+  */
 
-      }
+  if(
+    matchup.scrollWidth <=
+    matchup.clientWidth
+  ){
 
-    });
+    return;
+
+  }
+
+
+  matchup.classList.add(
+    "compact"
+  );
+
+
+  if(
+    matchup.scrollWidth >
+    matchup.clientWidth
+  ){
+
+    matchup.classList.remove(
+      "compact"
+    );
+
+    matchup.classList.add(
+      "small"
+    );
+
+  }
+
+
+  if(
+    matchup.scrollWidth >
+    matchup.clientWidth
+  ){
+
+    matchup.classList.remove(
+      "small"
+    );
+
+    matchup.classList.add(
+      "tiny"
+    );
+
+  }
 
 }
 
 
 window.addEventListener(
   "resize",
-  fitMatchupText
+  ()=>{
+    requestAnimationFrame(
+      fitNextMatchup
+    );
+  }
 );
 
 
@@ -3586,6 +4724,7 @@ function renderSchedule(){
     document.getElementById(
       "scheduleList"
     );
+
 
   if(!games.length){
 
@@ -3601,6 +4740,7 @@ function renderSchedule(){
 
   }
 
+
   container.innerHTML=
     games
       .map(game=>{
@@ -3608,10 +4748,12 @@ function renderSchedule(){
         const status=
           getStatus(game);
 
+
         const date=
           new Date(
             `${game.date}T12:00:00`
           );
+
 
         const month=
           date.toLocaleDateString(
@@ -3621,8 +4763,10 @@ function renderSchedule(){
             }
           );
 
+
         const day=
           date.getDate();
+
 
         const weekday=
           date.toLocaleDateString(
@@ -3631,6 +4775,7 @@ function renderSchedule(){
               weekday:"short"
             }
           );
+
 
         return`
 
@@ -3661,14 +4806,19 @@ function renderSchedule(){
                 ${escapeHTML(game.opponent)}
               </div>
 
+
               <div class="game-details">
 
                 <span>
-                  ⏰ ${escapeHTML(game.time||"TBD")}
+                  ⏰ ${escapeHTML(
+                    game.time||"TBD"
+                  )}
                 </span>
 
                 <span class="game-location">
-                  📍 ${escapeHTML(game.location||"TBD")}
+                  📍 ${escapeHTML(
+                    game.location||"TBD"
+                  )}
                 </span>
 
                 <span>
@@ -3686,12 +4836,16 @@ function renderSchedule(){
 
             <div class="game-result">
 
-              <div class="game-status ${status.cls}">
+              <div
+                class="game-status ${status.cls}"
+              >
                 ${status.text}
               </div>
 
+
               ${
                 hasScore(game)
+
                 ?
 
                 `
@@ -3732,6 +4886,7 @@ const historyData=[
 
   {
     year:2025,
+
     record:"12–1",
 
     achievements:[
@@ -3762,6 +4917,7 @@ const historyData=[
 
   {
     year:2024,
+
     record:"9–2",
 
     achievements:[
@@ -3840,13 +4996,15 @@ function renderHistory(){
       "historyList"
     );
 
+
   list.innerHTML=
     historyData
       .map(season=>{
 
         const clickable=
-          season.year===2025||
+          season.year===2025 ||
           season.year===2024;
+
 
         return`
 
@@ -3860,10 +5018,13 @@ function renderHistory(){
 
             <button
               class="season-button"
+
               ${
                 clickable
-                ? `onclick="openHistory(${season.year})"`
-                : "disabled"
+                ?
+                `onclick="openHistory(${season.year})"`
+                :
+                "disabled"
               }
             >
 
@@ -3883,12 +5044,15 @@ function renderHistory(){
               ${
                 clickable
                 ?
+
                 `
                   <div class="season-arrow">
                     ›
                   </div>
                 `
+
                 :
+
                 ""
               }
 
@@ -3915,13 +5079,16 @@ function openHistory(year){
       item=>item.year===year
     );
 
+
   if(!season)
     return;
+
 
   document.getElementById(
     "historyModalTitle"
   ).textContent=
     `${season.year} Football Season`;
+
 
   document.getElementById(
     "historyModalRecord"
@@ -3931,8 +5098,6 @@ function openHistory(year){
 
   let html="";
 
-
-  /* ACHIEVEMENTS */
 
   if(
     season.achievements &&
@@ -3944,6 +5109,7 @@ function openHistory(year){
       <div class="history-section-title">
         Achievements
       </div>
+
 
       <div
         style="
@@ -3977,13 +5143,12 @@ function openHistory(year){
   }
 
 
-  /* GAMES */
-
   html+=`
 
     <div class="history-section-title">
       Games
     </div>
+
 
     <div class="history-game-list">
 
@@ -4000,32 +5165,47 @@ function openHistory(year){
             const result=
               game[2];
 
+
             return`
 
               <div
-                class="history-game ${
-                  result==="W"
-                  ? "win"
-                  : "loss"
-                }"
+                class="
+                  history-game
+                  ${result==="W"
+                    ? "win"
+                    : "loss"
+                  }
+                "
               >
 
-                <div class="history-game-matchup">
-                  NDGP VS ${escapeHTML(opponent)}
+                <div
+                  class="history-game-matchup"
+                >
+
+                  <span
+                    class="history-game-matchup-text"
+                  >
+                    NDGP VS ${escapeHTML(opponent)}
+                  </span>
+
                 </div>
 
 
-                <div class="history-game-score">
+                <div
+                  class="history-game-score"
+                >
                   ${escapeHTML(score)}
                 </div>
 
 
                 <div
-                  class="history-game-result ${
-                    result==="W"
-                    ? "win"
-                    : "loss"
-                  }"
+                  class="
+                    history-game-result
+                    ${result==="W"
+                      ? "win"
+                      : "loss"
+                    }
+                  "
                 >
                   ${
                     result==="W"
@@ -4056,9 +5236,60 @@ function openHistory(year){
     .getElementById("historyModal")
     .classList.add("show");
 
+
   document.body.classList.add(
     "modal-open"
   );
+
+
+  /*
+    Give long opponent names a smaller
+    font without changing the score
+    or WIN/LOSS columns.
+  */
+
+  requestAnimationFrame(
+    fitHistoryMatchups
+  );
+
+}
+
+
+function fitHistoryMatchups(){
+
+  document
+    .querySelectorAll(
+      ".history-game-matchup-text"
+    )
+    .forEach(text=>{
+
+      const parent=
+        text.parentElement;
+
+      let size=
+        window.innerWidth<=600
+        ? 21
+        : 24;
+
+
+      text.style.fontSize=
+        `${size}px`;
+
+
+      while(
+        text.scrollWidth>
+        parent.clientWidth &&
+        size>15
+      ){
+
+        size--;
+
+        text.style.fontSize=
+          `${size}px`;
+
+      }
+
+    });
 
 }
 
@@ -4072,9 +5303,11 @@ function closeHistoryModal(event){
   )
     return;
 
+
   document
     .getElementById("historyModal")
     .classList.remove("show");
+
 
   document.body.classList.remove(
     "modal-open"
@@ -4103,6 +5336,7 @@ async function loadRoster(){
       }
     );
 
+
   if(error){
 
     console.error(
@@ -4114,10 +5348,12 @@ async function loadRoster(){
 
   }
 
+
   roster=
     Array.isArray(data)
     ? data
     : [];
+
 
   renderRoster();
   renderAdminRoster();
@@ -4133,8 +5369,10 @@ function renderRoster(){
       "rosterList"
     );
 
+
   if(!list)
     return;
+
 
   const search=
     (
@@ -4145,34 +5383,52 @@ function renderRoster(){
       .toLowerCase()
       .trim();
 
+
   const filter=
     document.getElementById(
       "rosterFilter"
     )?.value||"all";
 
+
   const filtered=
     roster.filter(player=>{
 
       const text=
-        `${player.name} ${player.number} ${player.position}`
-          .toLowerCase();
+        `
+          ${player.name}
+          ${player.number}
+          ${player.position}
+        `
+        .toLowerCase();
+
 
       return(
-        (!search||text.includes(search)) &&
+
+        (!search||
+          text.includes(search))
+
+        &&
+
         (
           filter==="all" ||
-          String(player.position||"")
-            .toUpperCase()
-            .includes(filter)
+
+          String(
+            player.position||""
+          )
+          .toUpperCase()
+          .includes(filter)
         )
+
       );
 
     });
+
 
   document.getElementById(
     "rosterCount"
   ).textContent=
     `👥 ${filtered.length} players`;
+
 
   if(!filtered.length){
 
@@ -4188,6 +5444,7 @@ function renderRoster(){
 
   }
 
+
   list.innerHTML=
     filtered
       .map(player=>`
@@ -4195,17 +5452,24 @@ function renderRoster(){
         <div class="roster-card">
 
           <div class="roster-number">
-            ${escapeHTML(player.number)}
+            ${escapeHTML(
+              player.number
+            )}
           </div>
+
 
           <div class="roster-info">
 
             <div class="roster-name">
-              ${escapeHTML(player.name)}
+              ${escapeHTML(
+                player.name
+              )}
             </div>
 
             <div class="roster-position">
-              ${escapeHTML(player.position||"")}
+              ${escapeHTML(
+                player.position||""
+              )}
             </div>
 
           </div>
@@ -4239,6 +5503,7 @@ document
 ========================================================= */
 
 const positions=[
+
   "QB",
   "RB",
   "FB",
@@ -4262,6 +5527,7 @@ const positions=[
   "K",
   "P",
   "LS"
+
 ];
 
 
@@ -4340,9 +5606,11 @@ function clearPositions(){
       input.checked=false;
     });
 
+
   document.getElementById(
     "customPosition"
   ).value="";
+
 
   updatePositionText();
 
@@ -4359,18 +5627,22 @@ function updatePositionText(){
     )
     .map(input=>input.value);
 
+
   const custom=
     document.getElementById(
       "customPosition"
     ).value.trim();
 
+
   if(custom)
     selected.push(custom);
+
 
   const text=
     document.getElementById(
       "positionText"
     );
+
 
   if(!selected.length){
 
@@ -4383,7 +5655,8 @@ function updatePositionText(){
   else{
 
     text.textContent=
-      [...new Set(selected)].join(", ");
+      [...new Set(selected)]
+        .join(", ");
 
     text.className=
       "position-selected";
@@ -4411,13 +5684,16 @@ function getPositions(){
     )
     .map(input=>input.value);
 
+
   const custom=
     document.getElementById(
       "customPosition"
     ).value.trim();
 
+
   if(custom)
     selected.push(custom);
+
 
   return[
     ...new Set(selected)
@@ -4460,9 +5736,11 @@ function clearEditPositions(){
       input.checked=false;
     });
 
+
   document.getElementById(
     "editCustomPosition"
   ).value="";
+
 
   updateEditPositionText();
 
@@ -4479,18 +5757,22 @@ function updateEditPositionText(){
     )
     .map(input=>input.value);
 
+
   const custom=
     document.getElementById(
       "editCustomPosition"
     ).value.trim();
 
+
   if(custom)
     selected.push(custom);
+
 
   const text=
     document.getElementById(
       "editPositionText"
     );
+
 
   if(!selected.length){
 
@@ -4503,7 +5785,8 @@ function updateEditPositionText(){
   else{
 
     text.textContent=
-      [...new Set(selected)].join(", ");
+      [...new Set(selected)]
+        .join(", ");
 
     text.className=
       "position-selected";
@@ -4531,13 +5814,16 @@ function getEditPositions(){
     )
     .map(input=>input.value);
 
+
   const custom=
     document.getElementById(
       "editCustomPosition"
     ).value.trim();
 
+
   if(custom)
     selected.push(custom);
+
 
   return[
     ...new Set(selected)
@@ -4557,15 +5843,22 @@ async function addPlayer(){
       "playerNumber"
     ).value.trim();
 
+
   const name=
     document.getElementById(
       "playerName"
     ).value.trim();
 
+
   const position=
     getPositions();
 
-  if(!number||!name||!position){
+
+  if(
+    !number||
+    !name||
+    !position
+  ){
 
     showMessage(
       "Please enter a number, name and position."
@@ -4574,6 +5867,7 @@ async function addPlayer(){
     return;
 
   }
+
 
   const {
     error
@@ -4585,6 +5879,7 @@ async function addPlayer(){
       name,
       position
     });
+
 
   if(error){
 
@@ -4598,18 +5893,23 @@ async function addPlayer(){
 
   }
 
+
   document.getElementById(
     "playerNumber"
   ).value="";
+
 
   document.getElementById(
     "playerName"
   ).value="";
 
+
   clearPositions();
   closePositions();
 
+
   await loadRoster();
+
 
   showMessage(
     "✅ Player added successfully."
@@ -4629,8 +5929,10 @@ function renderAdminRoster(){
       "adminRosterList"
     );
 
+
   if(!list)
     return;
+
 
   if(!roster.length){
 
@@ -4646,6 +5948,7 @@ function renderAdminRoster(){
 
   }
 
+
   list.innerHTML=`
 
     <div class="admin-roster">
@@ -4657,33 +5960,50 @@ function renderAdminRoster(){
             <div class="admin-player">
 
               <div class="admin-number">
-                ${escapeHTML(player.number)}
+                ${escapeHTML(
+                  player.number
+                )}
               </div>
+
 
               <div>
 
                 <div class="admin-player-name">
-                  ${escapeHTML(player.name)}
+                  ${escapeHTML(
+                    player.name
+                  )}
                 </div>
 
                 <div class="admin-player-position">
-                  ${escapeHTML(player.position||"")}
+                  ${escapeHTML(
+                    player.position||""
+                  )}
                 </div>
 
               </div>
+
 
               <div class="admin-actions">
 
                 <button
                   class="secondary-button"
-                  onclick="openEditPlayer('${escapeAttribute(player.id)}')"
+                  onclick="
+                    openEditPlayer(
+                      '${escapeAttribute(player.id)}'
+                    )
+                  "
                 >
                   EDIT
                 </button>
 
+
                 <button
                   class="danger-button"
-                  onclick="confirmDeletePlayer('${escapeAttribute(player.id)}')"
+                  onclick="
+                    confirmDeletePlayer(
+                      '${escapeAttribute(player.id)}'
+                    )
+                  "
                 >
                   DELETE
                 </button>
@@ -4711,23 +6031,30 @@ function openEditPlayer(id){
 
   const player=
     roster.find(
-      p=>String(p.id)===String(id)
+      p=>
+        String(p.id)===
+        String(id)
     );
+
 
   if(!player)
     return;
+
 
   document.getElementById(
     "editPlayerId"
   ).value=player.id;
 
+
   document.getElementById(
     "editPlayerNumber"
   ).value=player.number;
 
+
   document.getElementById(
     "editPlayerName"
   ).value=player.name;
+
 
   document
     .querySelectorAll(
@@ -4737,49 +6064,63 @@ function openEditPlayer(id){
       input.checked=false;
     });
 
+
   document.getElementById(
     "editCustomPosition"
   ).value="";
 
+
   const playerPositions=
-    String(player.position||"")
+    String(
+      player.position||""
+    )
       .split(",")
       .map(x=>x.trim())
       .filter(Boolean);
 
+
   const custom=[];
 
-  playerPositions.forEach(position=>{
 
-    const checkbox=
-      Array.from(
-        document.querySelectorAll(
-          '[data-position-group="edit"]'
+  playerPositions.forEach(
+    position=>{
+
+      const checkbox=
+        Array.from(
+          document.querySelectorAll(
+            '[data-position-group="edit"]'
+          )
         )
-      )
-      .find(
-        input=>
-          input.value.toUpperCase()===
-          position.toUpperCase()
-      );
+        .find(
+          input=>
+            input.value.toUpperCase()===
+            position.toUpperCase()
+        );
 
-    if(checkbox)
-      checkbox.checked=true;
-    else
-      custom.push(position);
 
-  });
+      if(checkbox)
+        checkbox.checked=true;
+
+      else
+        custom.push(position);
+
+    }
+  );
+
 
   document.getElementById(
     "editCustomPosition"
   ).value=
     custom.join(", ");
 
+
   updateEditPositionText();
+
 
   document
     .getElementById("editPlayerModal")
     .classList.add("show");
+
 
   document.body.classList.add(
     "modal-open"
@@ -4797,9 +6138,11 @@ function closeEditPlayer(event){
   )
     return;
 
+
   document
     .getElementById("editPlayerModal")
     .classList.remove("show");
+
 
   document.body.classList.remove(
     "modal-open"
@@ -4815,20 +6158,29 @@ async function savePlayerEdit(){
       "editPlayerId"
     ).value;
 
+
   const number=
     document.getElementById(
       "editPlayerNumber"
     ).value.trim();
+
 
   const name=
     document.getElementById(
       "editPlayerName"
     ).value.trim();
 
+
   const position=
     getEditPositions();
 
-  if(!id||!number||!name||!position){
+
+  if(
+    !id||
+    !number||
+    !name||
+    !position
+  ){
 
     showMessage(
       "Please complete all player fields."
@@ -4837,6 +6189,7 @@ async function savePlayerEdit(){
     return;
 
   }
+
 
   const {
     error
@@ -4849,6 +6202,7 @@ async function savePlayerEdit(){
       position
     })
     .eq("id",id);
+
 
   if(error){
 
@@ -4865,9 +6219,12 @@ async function savePlayerEdit(){
 
   }
 
+
   closeEditPlayer();
 
+
   await loadRoster();
+
 
   showMessage(
     "✅ Player updated successfully."
@@ -4887,32 +6244,41 @@ async function addGame(){
       "gameDate"
     ).value;
 
+
   const time=
     document.getElementById(
       "gameTime"
     ).value.trim();
+
 
   const opponent=
     document.getElementById(
       "gameOpponent"
     ).value.trim();
 
+
   const location=
     document.getElementById(
       "gameLocation"
     ).value.trim();
+
 
   const homeAway=
     document.getElementById(
       "gameHomeAway"
     ).value;
 
+
   const notes=
     document.getElementById(
       "gameNotes"
     ).value.trim();
 
-  if(!date||!opponent){
+
+  if(
+    !date||
+    !opponent
+  ){
 
     showMessage(
       "Please enter the date and opponent."
@@ -4921,6 +6287,7 @@ async function addGame(){
     return;
 
   }
+
 
   const {
     error
@@ -4935,6 +6302,7 @@ async function addGame(){
       home_away:homeAway,
       notes:notes||null
     });
+
 
   if(error){
 
@@ -4951,13 +6319,34 @@ async function addGame(){
 
   }
 
-  document.getElementById("gameDate").value="";
-  document.getElementById("gameTime").value="";
-  document.getElementById("gameOpponent").value="";
-  document.getElementById("gameLocation").value="";
-  document.getElementById("gameNotes").value="";
+
+  document.getElementById(
+    "gameDate"
+  ).value="";
+
+
+  document.getElementById(
+    "gameTime"
+  ).value="";
+
+
+  document.getElementById(
+    "gameOpponent"
+  ).value="";
+
+
+  document.getElementById(
+    "gameLocation"
+  ).value="";
+
+
+  document.getElementById(
+    "gameNotes"
+  ).value="";
+
 
   await loadGames();
+
 
   showMessage(
     "✅ Game added successfully."
@@ -4977,8 +6366,10 @@ function renderAdminGames(){
       "adminGameList"
     );
 
+
   if(!list)
     return;
+
 
   if(!games.length){
 
@@ -4994,6 +6385,7 @@ function renderAdminGames(){
 
   }
 
+
   list.innerHTML=
     games
       .map(game=>`
@@ -5003,24 +6395,35 @@ function renderAdminGames(){
           <div>
 
             <div class="admin-game-name">
-              ${escapeHTML(game.opponent)}
+              ${escapeHTML(
+                game.opponent
+              )}
             </div>
+
 
             <div class="admin-game-meta">
 
-              📅 ${formatDate(game.date)}
+              📅 ${formatDate(
+                game.date
+              )}
 
-              • ⏰ ${escapeHTML(game.time||"Time TBD")}
+              • ⏰ ${escapeHTML(
+                game.time||"Time TBD"
+              )}
 
               ${
                 hasScore(game)
+
                 ?
+
                 `
                   • 🏈 FINAL
                   ${game.our_score}–
                   ${game.opponent_score}
                 `
+
                 :
+
                 ""
               }
 
@@ -5028,18 +6431,28 @@ function renderAdminGames(){
 
           </div>
 
+
           <div class="admin-actions">
 
             <button
               class="secondary-button"
-              onclick="openEditGame('${escapeAttribute(game.id)}')"
+              onclick="
+                openEditGame(
+                  '${escapeAttribute(game.id)}'
+                )
+              "
             >
               EDIT
             </button>
 
+
             <button
               class="danger-button"
-              onclick="confirmDeleteGame('${escapeAttribute(game.id)}')"
+              onclick="
+                confirmDeleteGame(
+                  '${escapeAttribute(game.id)}'
+                )
+              "
             >
               DELETE
             </button>
@@ -5061,7 +6474,9 @@ function renderAdminGames(){
 function findGame(id){
 
   return games.find(
-    game=>String(game.id)===String(id)
+    game=>
+      String(game.id)===
+      String(id)
   );
 
 }
@@ -5071,6 +6486,7 @@ function openEditGame(id){
 
   const game=
     findGame(id);
+
 
   if(!game){
 
@@ -5082,25 +6498,31 @@ function openEditGame(id){
 
   }
 
+
   document.getElementById(
     "editGameId"
   ).value=String(game.id);
+
 
   document.getElementById(
     "editGameDate"
   ).value=game.date||"";
 
+
   document.getElementById(
     "editGameTime"
   ).value=game.time||"";
+
 
   document.getElementById(
     "editGameOpponent"
   ).value=game.opponent||"";
 
+
   document.getElementById(
     "editGameLocation"
   ).value=game.location||"";
+
 
   document.getElementById(
     "editGameHomeAway"
@@ -5108,6 +6530,7 @@ function openEditGame(id){
     game.home_away==="Away"
     ? "Away"
     : "Home";
+
 
   document.getElementById(
     "editGameOurScore"
@@ -5117,6 +6540,7 @@ function openEditGame(id){
     ? game.our_score
     : "";
 
+
   document.getElementById(
     "editGameOpponentScore"
   ).value=
@@ -5125,17 +6549,22 @@ function openEditGame(id){
     ? game.opponent_score
     : "";
 
+
   document.getElementById(
     "editGameNotes"
-  ).value=game.notes||"";
+  ).value=
+    game.notes||"";
+
 
   document.getElementById(
     "editGameError"
   ).textContent="";
 
+
   document
     .getElementById("editGameModal")
     .classList.add("show");
+
 
   document.body.classList.add(
     "modal-open"
@@ -5153,9 +6582,11 @@ function closeEditGame(event){
   )
     return;
 
+
   document
     .getElementById("editGameModal")
     .classList.remove("show");
+
 
   document.body.classList.remove(
     "modal-open"
@@ -5175,57 +6606,69 @@ async function saveGameEdit(){
       "editGameError"
     );
 
+
   const saveButton=
     document.getElementById(
       "saveGameButton"
     );
 
+
   errorBox.textContent="";
+
 
   const id=
     document.getElementById(
       "editGameId"
     ).value;
 
+
   const date=
     document.getElementById(
       "editGameDate"
     ).value;
+
 
   const time=
     document.getElementById(
       "editGameTime"
     ).value.trim();
 
+
   const opponent=
     document.getElementById(
       "editGameOpponent"
     ).value.trim();
+
 
   const location=
     document.getElementById(
       "editGameLocation"
     ).value.trim();
 
+
   const homeAway=
     document.getElementById(
       "editGameHomeAway"
     ).value;
+
 
   const ourRaw=
     document.getElementById(
       "editGameOurScore"
     ).value.trim();
 
+
   const opponentRaw=
     document.getElementById(
       "editGameOpponentScore"
     ).value.trim();
 
+
   const notes=
     document.getElementById(
       "editGameNotes"
     ).value.trim();
+
 
   if(!id){
 
@@ -5236,7 +6679,11 @@ async function saveGameEdit(){
 
   }
 
-  if(!date||!opponent){
+
+  if(
+    !date||
+    !opponent
+  ){
 
     errorBox.textContent=
       "Date and opponent are required.";
@@ -5245,8 +6692,10 @@ async function saveGameEdit(){
 
   }
 
+
   let ourScore=null;
   let opponentScore=null;
+
 
   if(
     ourRaw!==""||
@@ -5265,8 +6714,14 @@ async function saveGameEdit(){
 
     }
 
-    ourScore=Number(ourRaw);
-    opponentScore=Number(opponentRaw);
+
+    ourScore=
+      Number(ourRaw);
+
+
+    opponentScore=
+      Number(opponentRaw);
+
 
     if(
       !Number.isInteger(ourScore)||
@@ -5284,21 +6739,39 @@ async function saveGameEdit(){
 
   }
 
+
   const updateData={
 
     date,
-    time:time||null,
+
+    time:
+      time||null,
+
     opponent,
-    location:location||null,
-    home_away:homeAway,
-    our_score:ourScore,
-    opponent_score:opponentScore,
-    notes:notes||null
+
+    location:
+      location||null,
+
+    home_away:
+      homeAway,
+
+    our_score:
+      ourScore,
+
+    opponent_score:
+      opponentScore,
+
+    notes:
+      notes||null
 
   };
 
+
   saveButton.disabled=true;
-  saveButton.textContent="SAVING...";
+
+  saveButton.textContent=
+    "SAVING...";
+
 
   try{
 
@@ -5310,23 +6783,29 @@ async function saveGameEdit(){
       .update(updateData)
       .eq("id",id);
 
+
     if(error)
       throw error;
 
+
     await loadGames();
 
+
     closeEditGame();
+
 
     showMessage(
       "✅ Game updated successfully!"
     );
 
-  }catch(err){
+  }
+  catch(err){
 
     console.error(
       "SAVE GAME ERROR:",
       err
     );
+
 
     errorBox.textContent=
       err?.message||
@@ -5336,7 +6815,9 @@ async function saveGameEdit(){
   finally{
 
     saveButton.disabled=false;
-    saveButton.textContent="SAVE CHANGES";
+
+    saveButton.textContent=
+      "SAVE CHANGES";
 
   }
 
@@ -5347,17 +6828,25 @@ async function saveGameEdit(){
    CONFIRM / DELETE
 ========================================================= */
 
-function openConfirm(message,action){
+function openConfirm(
+  message,
+  action
+){
 
   document.getElementById(
     "confirmText"
-  ).textContent=message;
+  ).textContent=
+    message;
 
-  confirmAction=action;
+
+  confirmAction=
+    action;
+
 
   document
     .getElementById("confirmModal")
     .classList.add("show");
+
 
   document.body.classList.add(
     "modal-open"
@@ -5375,13 +6864,16 @@ function closeConfirm(event){
   )
     return;
 
+
   document
     .getElementById("confirmModal")
     .classList.remove("show");
 
+
   document.body.classList.remove(
     "modal-open"
   );
+
 
   confirmAction=null;
 
@@ -5397,7 +6889,9 @@ document
       const action=
         confirmAction;
 
+
       closeConfirm();
+
 
       if(action)
         await action();
@@ -5411,12 +6905,17 @@ function confirmDeleteGame(id){
   const game=
     findGame(id);
 
+
   if(!game)
     return;
 
+
   openConfirm(
+
     `Delete the game against ${game.opponent}? This cannot be undone.`,
+
     ()=>deleteGame(id)
+
   );
 
 }
@@ -5432,6 +6931,7 @@ async function deleteGame(id){
     .delete()
     .eq("id",id);
 
+
   if(error){
 
     showMessage(
@@ -5442,7 +6942,9 @@ async function deleteGame(id){
 
   }
 
+
   await loadGames();
+
 
   showMessage(
     "Game deleted."
@@ -5455,15 +6957,22 @@ function confirmDeletePlayer(id){
 
   const player=
     roster.find(
-      p=>String(p.id)===String(id)
+      p=>
+        String(p.id)===
+        String(id)
     );
+
 
   if(!player)
     return;
 
+
   openConfirm(
+
     `Remove ${player.name} from the roster? This cannot be undone.`,
+
     ()=>deletePlayer(id)
+
   );
 
 }
@@ -5479,6 +6988,7 @@ async function deletePlayer(id){
     .delete()
     .eq("id",id);
 
+
   if(error){
 
     showMessage(
@@ -5489,7 +6999,9 @@ async function deletePlayer(id){
 
   }
 
+
   await loadRoster();
+
 
   showMessage(
     "Player removed."
@@ -5507,16 +7019,20 @@ function updateAdminStats(){
   let wins=0;
   let losses=0;
 
+
   games.forEach(game=>{
 
     if(!hasScore(game))
       return;
 
+
     const our=
       Number(game.our_score);
 
+
     const opponent=
       Number(game.opponent_score);
+
 
     if(our>opponent)
       wins++;
@@ -5526,21 +7042,29 @@ function updateAdminStats(){
 
   });
 
+
   document.getElementById(
     "adminGamesCount"
-  ).textContent=games.length;
+  ).textContent=
+    games.length;
+
 
   document.getElementById(
     "adminPlayersCount"
-  ).textContent=roster.length;
+  ).textContent=
+    roster.length;
+
 
   document.getElementById(
     "adminWinsCount"
-  ).textContent=wins;
+  ).textContent=
+    wins;
+
 
   document.getElementById(
     "adminLossesCount"
-  ).textContent=losses;
+  ).textContent=
+    losses;
 
 }
 
@@ -5557,15 +7081,25 @@ function showMessage(message){
     )
     ?.remove();
 
+
   const box=
-    document.createElement("div");
+    document.createElement(
+      "div"
+    );
+
 
   box.className=
     "admin-message-popup";
 
-  box.textContent=message;
 
-  document.body.appendChild(box);
+  box.textContent=
+    message;
+
+
+  document.body.appendChild(
+    box
+  );
+
 
   setTimeout(
     ()=>{
@@ -5586,11 +7120,20 @@ function formatDate(value){
   if(!value)
     return "";
 
-  const date=
-    new Date(`${value}T12:00:00`);
 
-  if(Number.isNaN(date.getTime()))
+  const date=
+    new Date(
+      `${value}T12:00:00`
+    );
+
+
+  if(
+    Number.isNaN(
+      date.getTime()
+    )
+  )
     return "";
+
 
   return date.toLocaleDateString(
     "en-US",
@@ -5613,12 +7156,33 @@ function escapeHTML(value){
   )
     return "";
 
+
   return String(value)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+
+    .replace(
+      /&/g,
+      "&amp;"
+    )
+
+    .replace(
+      /</g,
+      "&lt;"
+    )
+
+    .replace(
+      />/g,
+      "&gt;"
+    )
+
+    .replace(
+      /"/g,
+      "&quot;"
+    )
+
+    .replace(
+      /'/g,
+      "&#039;"
+    );
 
 }
 
@@ -5631,9 +7195,18 @@ function escapeAttribute(value){
   )
     return "";
 
+
   return String(value)
-    .replace(/\\/g,"\\\\")
-    .replace(/'/g,"\\'");
+
+    .replace(
+      /\\/g,
+      "\\\\"
+    )
+
+    .replace(
+      /'/g,
+      "\\'"
+    );
 
 }
 
@@ -5646,16 +7219,22 @@ document.addEventListener(
   "keydown",
   event=>{
 
-    if(event.key!=="Escape")
+    if(
+      event.key!=="Escape"
+    )
       return;
+
 
     document
       .querySelectorAll(
         ".overlay.show"
       )
       .forEach(modal=>{
-        modal.classList.remove("show");
+        modal.classList.remove(
+          "show"
+        );
       });
+
 
     document.body.classList.remove(
       "modal-open"
@@ -5670,11 +7249,13 @@ document.addEventListener(
 ========================================================= */
 
 buildPositionOptions();
+
 buildEditPositionOptions();
 
 renderHistory();
 
 loadGames();
+
 loadRoster();
 
 </script>
