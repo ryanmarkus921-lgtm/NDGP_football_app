@@ -572,14 +572,14 @@ main{
 
   margin:13px auto 16px;
 
-  overflow:hidden;
+  overflow:visible;
 }
 
 .matchup-team{
   min-width:0;
   max-width:43%;
 
-  overflow:hidden;
+  overflow:visible;
 
   color:var(--navy);
 
@@ -591,6 +591,8 @@ main{
   line-height:.8;
 
   white-space:nowrap;
+
+  flex-shrink:1;
 }
 
 .matchup-vs{
@@ -4336,6 +4338,16 @@ function fitMatchup(){
     return;
 
 
+  const teams =
+    el.querySelectorAll(
+      ".matchup-team"
+    );
+
+
+  if(!teams.length)
+    return;
+
+
   el.classList.remove(
     "compact",
     "small",
@@ -4343,45 +4355,34 @@ function fitMatchup(){
   );
 
 
-  if(
-    el.scrollWidth <=
-    el.clientWidth
-  )
-    return;
+  let size =
+    window.innerWidth <= 380
+      ? 29
+      : window.innerWidth <= 600
+        ? 32
+        : 40;
 
 
-  el.classList.add(
-    "compact"
+  teams.forEach(
+    team=>{
+      team.style.fontSize =
+        size + "px";
+    }
   );
 
 
-  if(
-    el.scrollWidth >
-    el.clientWidth
+  while(
+    size > 14 &&
+    el.scrollWidth > el.clientWidth
   ){
 
-    el.classList.remove(
-      "compact"
-    );
+    size--;
 
-    el.classList.add(
-      "small"
-    );
-
-  }
-
-
-  if(
-    el.scrollWidth >
-    el.clientWidth
-  ){
-
-    el.classList.remove(
-      "small"
-    );
-
-    el.classList.add(
-      "tiny"
+    teams.forEach(
+      team=>{
+        team.style.fontSize =
+          size + "px";
+      }
     );
 
   }
