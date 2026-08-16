@@ -31,11 +31,11 @@
 
 :root{
   --navy:#00264a;
-  --navy-dark:#001a33;
-  --navy-light:#073e6b;
+  --navy-dark:#00182d;
+  --navy-light:#073f6d;
 
   --gold:#f4c542;
-  --gold-dark:#dcae19;
+  --gold-dark:#d9a900;
 
   --white:#ffffff;
   --background:#f3f6f8;
@@ -44,22 +44,27 @@
 
   --text:#102a43;
   --muted:#66798b;
-  --muted-light:#8796a4;
+  --muted-light:#91a0ad;
 
-  --border:#d7e0e7;
-  --border-dark:#c5d0d9;
+  --border:#d6e0e7;
+  --border-dark:#c4d0d9;
 
   --green:#198754;
   --green-bg:#e8f6ed;
 
-  --red:#dc3030;
+  --red:#d92f2f;
   --red-bg:#fdeaea;
 
-  --shadow-sm:0 2px 8px rgba(0,30,60,.06);
-  --shadow-md:0 5px 18px rgba(0,30,60,.08);
-  --shadow-lg:0 16px 45px rgba(0,20,40,.18);
+  --shadow-sm:
+    0 2px 8px rgba(0,30,60,.06);
 
-  --radius:10px;
+  --shadow-md:
+    0 5px 18px rgba(0,30,60,.08);
+
+  --shadow-lg:
+    0 18px 50px rgba(0,20,40,.20);
+
+  --radius:11px;
   --radius-sm:7px;
 }
 
@@ -85,7 +90,7 @@ body{
   background:
     linear-gradient(
       180deg,
-      #eef3f6 0%,
+      #edf2f5 0%,
       #f8fafb 100%
     );
 
@@ -119,10 +124,6 @@ textarea{
   font-size:16px;
 }
 
-img{
-  max-width:100%;
-}
-
 .hidden{
   display:none!important;
 }
@@ -145,7 +146,7 @@ img{
     linear-gradient(
       145deg,
       #00172d,
-      #002f59
+      #00345f
     );
 
   color:white;
@@ -169,9 +170,10 @@ img{
 .splash-logo{
   width:120px;
   height:120px;
+
   object-fit:contain;
 
-  margin-bottom:12px;
+  margin-bottom:10px;
 
   filter:
     drop-shadow(
@@ -186,8 +188,8 @@ img{
   font-family:"Teko";
   font-size:54px;
   font-weight:700;
-  line-height:.85;
 
+  line-height:.85;
   letter-spacing:2px;
 }
 
@@ -198,6 +200,7 @@ img{
 
   font-size:9px;
   letter-spacing:1.5px;
+
   text-transform:uppercase;
 }
 
@@ -249,8 +252,10 @@ img{
   margin:0;
 
   font-family:"Teko";
+
   font-size:39px;
   font-weight:700;
+
   line-height:.9;
 
   letter-spacing:2px;
@@ -263,6 +268,7 @@ img{
 
   font-size:9px;
   letter-spacing:1.2px;
+
   text-transform:uppercase;
 }
 
@@ -304,7 +310,7 @@ img{
 
 
 /* =========================================================
-   ACHIEVEMENTS BAR
+   ACHIEVEMENTS
 ========================================================= */
 
 .achievements{
@@ -357,6 +363,7 @@ img{
 
   font-size:18px;
   font-weight:700;
+
   line-height:1;
 }
 
@@ -371,7 +378,7 @@ img{
 
 
 /* =========================================================
-   NAVIGATION
+   COOL APP NAVIGATION
 ========================================================= */
 
 .main-nav{
@@ -381,18 +388,24 @@ img{
 
   z-index:200;
 
+  width:100%;
+
+  padding:7px 8px;
+
   display:flex;
 
+  gap:6px;
+
   background:
-    rgba(255,255,255,.97);
+    rgba(248,250,251,.96);
 
   border-bottom:1px solid var(--border);
 
   box-shadow:
-    0 2px 10px
-    rgba(0,30,60,.06);
+    0 3px 12px
+    rgba(0,30,60,.07);
 
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(12px);
 }
 
 .main-nav button{
@@ -402,40 +415,111 @@ img{
 
   min-width:0;
 
-  padding:11px 3px 10px;
+  min-height:50px;
 
-  border:0;
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:2px;
+
+  padding:5px 3px;
+
+  border:1px solid transparent;
+
+  border-radius:9px;
 
   background:transparent;
 
-  color:var(--muted);
+  color:#718392;
 
-  font-size:10px;
+  font-size:9px;
   font-weight:700;
 
   text-transform:uppercase;
+
+  transition:
+    background .18s ease,
+    color .18s ease,
+    border .18s ease,
+    transform .15s ease,
+    box-shadow .18s ease;
 }
 
-.main-nav button.active{
-  color:var(--navy);
-
-  background:#fafcfd;
-}
-
-.main-nav button.active::after{
+.main-nav button::before{
   content:"";
+
+  width:4px;
+  height:4px;
 
   position:absolute;
 
-  left:22%;
-  right:22%;
-  bottom:0;
+  left:50%;
+  bottom:3px;
 
-  height:3px;
+  transform:
+    translateX(-50%)
+    scale(0);
 
-  border-radius:3px 3px 0 0;
+  border-radius:50%;
 
   background:var(--gold);
+
+  transition:
+    transform .18s ease;
+}
+
+.main-nav button:hover{
+  color:var(--navy);
+
+  background:#ffffff;
+
+  border-color:var(--border);
+
+  transform:translateY(-1px);
+}
+
+.main-nav button.active{
+  color:white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--navy-dark),
+      var(--navy-light)
+    );
+
+  border-color:
+    rgba(0,38,74,.45);
+
+  box-shadow:
+    0 4px 10px
+    rgba(0,38,74,.18);
+}
+
+.main-nav button.active::before{
+  transform:
+    translateX(-50%)
+    scale(1);
+}
+
+.nav-icon{
+  font-size:17px;
+
+  line-height:1;
+
+  filter:
+    grayscale(.1);
+}
+
+.nav-label{
+  font-size:8px;
+
+  line-height:1;
+  letter-spacing:.5px;
 }
 
 
@@ -467,6 +551,7 @@ main{
 }
 
 @keyframes pageIn{
+
   from{
     opacity:0;
     transform:translateY(5px);
@@ -476,6 +561,7 @@ main{
     opacity:1;
     transform:translateY(0);
   }
+
 }
 
 
@@ -509,6 +595,7 @@ main{
 
   font-size:29px;
   font-weight:700;
+
   line-height:1;
 
   text-transform:uppercase;
@@ -589,14 +676,6 @@ main{
 
   text-align:center;
 }
-
-
-/*
-  IMPORTANT:
-  There is intentionally NO decorative circle,
-  ::before, ::after, radial-gradient or circular
-  background behind the matchup.
-*/
 
 .next-label{
   color:var(--muted);
@@ -910,31 +989,6 @@ main{
 
 
 /* =========================================================
-   BADGE
-========================================================= */
-
-.badge-live{
-  display:inline-flex;
-
-  align-items:center;
-  justify-content:center;
-
-  padding:6px 9px;
-
-  color:var(--red);
-
-  background:#fee8e8;
-
-  border:1px solid #f6caca;
-
-  border-radius:6px;
-
-  font-size:8px;
-  font-weight:700;
-}
-
-
-/* =========================================================
    ROSTER
 ========================================================= */
 
@@ -1120,10 +1174,18 @@ main{
   color:var(--navy);
 
   text-align:left;
+
+  transition:
+    background .15s ease,
+    padding .15s ease;
 }
 
 .season-button:hover{
-  background:#fafcfd;
+  background:#f8fafb;
+}
+
+.season-button:active{
+  padding-left:16px;
 }
 
 .season-name{
@@ -1148,6 +1210,13 @@ main{
   color:var(--navy);
 
   font-size:27px;
+
+  transition:
+    transform .15s ease;
+}
+
+.season-button:hover .season-arrow{
+  transform:translateX(3px);
 }
 
 
@@ -1185,8 +1254,7 @@ main{
 
   max-height:
     calc(
-      100dvh -
-      24px
+      100dvh - 24px
     );
 
   overflow:hidden;
@@ -1273,8 +1341,7 @@ main{
 
   max-height:
     calc(
-      100dvh -
-      115px
+      100dvh - 115px
     );
 
   padding:14px;
@@ -1382,8 +1449,7 @@ main{
 
   max-height:
     calc(
-      100dvh -
-      105px
+      100dvh - 105px
     );
 
   padding:12px;
@@ -1482,109 +1548,6 @@ main{
   font-size:19px;
 
   line-height:1;
-}
-
-
-/* =========================================================
-   PHOTOS
-========================================================= */
-
-.photo-grid{
-  display:grid;
-
-  grid-template-columns:
-    repeat(3,minmax(0,1fr));
-
-  gap:6px;
-}
-
-.photo-item{
-  overflow:hidden;
-
-  background:#e8edf1;
-
-  border:1px solid var(--border);
-
-  border-radius:7px;
-
-  cursor:pointer;
-}
-
-.photo-item img{
-  display:block;
-
-  width:100%;
-  aspect-ratio:1;
-
-  object-fit:cover;
-}
-
-.photo-caption{
-  padding:4px;
-
-  color:var(--muted);
-
-  font-size:8px;
-}
-
-
-/* =========================================================
-   PHOTO VIEWER
-========================================================= */
-
-.photo-viewer{
-  position:fixed;
-
-  inset:0;
-
-  z-index:7000;
-
-  display:none;
-
-  align-items:center;
-  justify-content:center;
-
-  background:rgba(0,0,0,.86);
-}
-
-.photo-viewer.show{
-  display:flex;
-}
-
-.photo-viewer img{
-  max-width:94%;
-  max-height:86%;
-
-  object-fit:contain;
-
-  border-radius:7px;
-}
-
-.photo-close{
-  position:absolute;
-
-  top:
-    calc(
-      12px +
-      env(safe-area-inset-top)
-    );
-
-  right:12px;
-
-  width:40px;
-  height:40px;
-
-  border:0;
-
-  border-radius:50%;
-
-  background:rgba(255,255,255,.15);
-
-  color:white;
-
-  font-family:Arial,sans-serif;
-
-  font-size:25px;
 }
 
 
@@ -2415,6 +2378,26 @@ main{
     font-size:8px;
   }
 
+  .main-nav{
+    gap:4px;
+
+    padding:6px;
+  }
+
+  .main-nav button{
+    min-height:49px;
+
+    border-radius:8px;
+  }
+
+  .nav-icon{
+    font-size:16px;
+  }
+
+  .nav-label{
+    font-size:7px;
+  }
+
   .matchup-team{
     font-size:34px;
   }
@@ -2439,11 +2422,6 @@ main{
     grid-template-columns:1fr;
   }
 
-  .photo-grid{
-    grid-template-columns:
-      repeat(3,minmax(0,1fr));
-  }
-
   .overlay{
     padding:0;
   }
@@ -2451,6 +2429,7 @@ main{
   .overlay .modal{
     width:100%;
     height:100dvh;
+
     max-height:100dvh;
 
     border-radius:0;
@@ -2467,18 +2446,6 @@ main{
     max-height:
       calc(
         100dvh - 105px
-      );
-  }
-
-  .login-window{
-    width:
-      calc(
-        100vw - 24px
-      );
-
-    max-height:
-      calc(
-        100dvh - 24px
       );
   }
 
@@ -2503,11 +2470,16 @@ main{
     font-size:14px;
   }
 
-  .login-window{
-    width:
-      calc(
-        100vw - 18px
-      );
+  .main-nav button{
+    min-height:47px;
+  }
+
+  .nav-icon{
+    font-size:15px;
+  }
+
+  .nav-label{
+    font-size:6.5px;
   }
 
 }
@@ -2562,7 +2534,7 @@ main{
 
 
 <!-- =======================================================
-     PUBLIC HEADER
+     HEADER
 ======================================================= -->
 
 <header
@@ -2639,7 +2611,7 @@ main{
 
 
 <!-- =======================================================
-     NAV
+     NAVIGATION
 ======================================================= -->
 
 <nav
@@ -2649,27 +2621,57 @@ main{
   <button
     class="active"
     onclick="showPage('home',this)">
-    Home
+
+    <span class="nav-icon">
+      🏠
+    </span>
+
+    <span class="nav-label">
+      Home
+    </span>
+
   </button>
+
 
   <button
     onclick="showPage('schedule',this)">
-    Schedule
+
+    <span class="nav-icon">
+      📅
+    </span>
+
+    <span class="nav-label">
+      Schedule
+    </span>
+
   </button>
+
 
   <button
     onclick="showPage('history',this)">
-    History
+
+    <span class="nav-icon">
+      🏆
+    </span>
+
+    <span class="nav-label">
+      History
+    </span>
+
   </button>
+
 
   <button
     onclick="showPage('roster',this)">
-    Roster
-  </button>
 
-  <button
-    onclick="showPage('photos',this)">
-    Photos
+    <span class="nav-icon">
+      👥
+    </span>
+
+    <span class="nav-label">
+      Roster
+    </span>
+
   </button>
 
 </nav>
@@ -2882,27 +2884,6 @@ main{
 
       Loading...
 
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- PHOTOS -->
-
-<section
-  id="photos"
-  class="page">
-
-  <div class="card">
-
-    <h2 class="page-title">
-      Football Photos
-    </h2>
-
-    <div id="photoList">
-      Loading...
     </div>
 
   </div>
@@ -3327,108 +3308,6 @@ main{
 
   </div>
 
-
-  <!-- PHOTOS -->
-
-  <div
-    id="adminPhotos"
-    class="admin-section">
-
-    <button
-      class="admin-section-toggle"
-      onclick="toggleAdmin('adminPhotos')">
-
-      <div class="admin-icon">
-        📸
-      </div>
-
-      <div class="admin-section-text">
-
-        <strong>
-          PHOTOS
-        </strong>
-
-        <span>
-          Upload and manage football photos
-        </span>
-
-      </div>
-
-      <div class="admin-arrow">
-        ▼
-      </div>
-
-    </button>
-
-
-    <div class="admin-section-body">
-
-      <div class="admin-subsection">
-
-        <h3>
-          Upload Photo
-        </h3>
-
-        <div class="admin-description">
-          Add a photo to the public gallery.
-        </div>
-
-
-        <div class="field">
-
-          <label>
-            Photo
-          </label>
-
-          <input
-            id="photoFile"
-            type="file"
-            accept="image/*">
-
-        </div>
-
-
-        <div class="field">
-
-          <label>
-            Caption
-          </label>
-
-          <input
-            id="photoCaption"
-            type="text"
-            placeholder="Optional caption">
-
-        </div>
-
-
-        <button
-          class="primary-button"
-          onclick="uploadPhoto()">
-
-          + UPLOAD PHOTO
-
-        </button>
-
-      </div>
-
-
-      <div class="admin-subsection">
-
-        <h3>
-          Photo Library
-        </h3>
-
-        <div id="adminPhotoList">
-          Loading...
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
 </section>
 
 
@@ -3451,8 +3330,7 @@ main{
 
       <button
         class="login-close"
-        onclick="closeAdminLogin()"
-        aria-label="Close">
+        onclick="closeAdminLogin()">
 
         ×
 
@@ -3631,32 +3509,6 @@ main{
 </div>
 
 
-<!-- =======================================================
-     PHOTO VIEWER
-======================================================= -->
-
-<div
-  id="photoViewer"
-  class="photo-viewer"
-  onclick="closePhotoViewer(event)">
-
-  <button
-    class="photo-close"
-    onclick="closePhotoViewer()">
-
-    ×
-
-  </button>
-
-
-  <img
-    id="photoViewerImage"
-    src=""
-    alt="NDGP Football">
-
-</div>
-
-
 <script>
 
 /* =========================================================
@@ -3678,7 +3530,6 @@ supabase.createClient(
 
 let games=[];
 let roster=[];
-let photos=[];
 
 
 /* =========================================================
@@ -3703,7 +3554,7 @@ window.addEventListener(
 
 
 /* =========================================================
-   PAGE NAVIGATION
+   NAVIGATION
 ========================================================= */
 
 function showPage(id,button){
@@ -3745,9 +3596,6 @@ function showPage(id,button){
   if(id==="roster")
     renderRoster();
 
-  if(id==="photos")
-    renderPhotos();
-
 }
 
 
@@ -3762,7 +3610,9 @@ function openAdminLogin(){
 
   modal.classList.add("show");
 
-  document.body.classList.add("modal-open");
+  document.body.classList.add(
+    "modal-open"
+  );
 
 
   setTimeout(
@@ -3818,6 +3668,21 @@ document
 
       if(event.key==="Enter")
         loginAdmin();
+
+    }
+  );
+
+
+document
+  .getElementById("adminCode")
+  .addEventListener(
+    "input",
+    event=>{
+
+      event.target.value=
+        event.target.value
+          .replace(/\D/g,"")
+          .slice(0,4);
 
     }
   );
@@ -4008,8 +3873,6 @@ async function loadAdminData(){
   await loadGames();
 
   await loadRoster();
-
-  await loadPhotos();
 
 }
 
@@ -4417,6 +4280,11 @@ function updateCountdown(game){
 
   update();
 
+  setTimeout(
+    update,
+    60000
+  );
+
 }
 
 
@@ -4573,7 +4441,7 @@ function renderSchedule(){
 
 
 /* =========================================================
-   GAME DETAILS
+   GAME MODAL
 ========================================================= */
 
 function openGameDetails(id){
@@ -4758,7 +4626,7 @@ function closeGameModal(event){
 
 
 /* =========================================================
-   HISTORY
+   HISTORY DATA
 ========================================================= */
 
 const historyData=[
@@ -6099,368 +5967,6 @@ async function editGame(id){
 
 
 /* =========================================================
-   PHOTOS
-========================================================= */
-
-async function loadPhotos(){
-
-  const {
-    data,
-    error
-  }=
-  await db
-    .from("photos")
-    .select("*")
-    .order(
-      "created_at",
-      {
-        ascending:false
-      }
-    );
-
-
-  if(error){
-
-    console.error(error);
-
-    return;
-
-  }
-
-
-  photos=data||[];
-
-  renderPhotos();
-
-  renderAdminPhotos();
-
-}
-
-
-function renderPhotos(){
-
-  const container=
-    document.getElementById(
-      "photoList"
-    );
-
-
-  if(!container)
-    return;
-
-
-  if(!photos.length){
-
-    container.innerHTML=
-      `<div class="message">
-        No photos have been uploaded yet.
-      </div>`;
-
-    return;
-
-  }
-
-
-  container.innerHTML=
-    `<div class="photo-grid">
-
-      ${
-        photos
-          .map(
-            photo=>`
-
-              <div
-                class="photo-item"
-                onclick="
-                  openPhoto(
-                    '${escapeAttribute(photo.url)}',
-                    '${escapeAttribute(photo.caption||"")}'
-                  )
-                ">
-
-                <img
-                  src="${escapeAttribute(photo.url)}"
-                  alt="NDGP Football">
-
-                ${
-                  photo.caption
-                  ?
-                  `
-                    <div class="photo-caption">
-                      ${escapeHTML(photo.caption)}
-                    </div>
-                  `
-                  :
-                  ""
-                }
-
-              </div>
-
-            `
-          )
-          .join("")
-      }
-
-    </div>`;
-
-}
-
-
-function openPhoto(url,caption){
-
-  document.getElementById(
-    "photoViewerImage"
-  ).src=url;
-
-
-  document
-    .getElementById(
-      "photoViewer"
-    )
-    .classList.add("show");
-
-
-  document.body.classList.add(
-    "modal-open"
-  );
-
-}
-
-
-function closePhotoViewer(event){
-
-  if(
-    event &&
-    event.target &&
-    event.target.id!=="photoViewer"
-  )
-    return;
-
-
-  document
-    .getElementById(
-      "photoViewer"
-    )
-    .classList.remove("show");
-
-
-  document.body.classList.remove(
-    "modal-open"
-  );
-
-}
-
-
-function renderAdminPhotos(){
-
-  const list=
-    document.getElementById(
-      "adminPhotoList"
-    );
-
-
-  if(!list)
-    return;
-
-
-  if(!photos.length){
-
-    list.innerHTML=
-      `<div class="message">
-        No photos uploaded.
-      </div>`;
-
-    return;
-
-  }
-
-
-  list.innerHTML=
-    photos
-      .map(
-        photo=>`
-
-          <div
-            class="admin-game">
-
-            <div>
-
-              <div class="admin-game-name">
-                ${escapeHTML(photo.caption||"Photo")}
-              </div>
-
-            </div>
-
-
-            <button
-              class="danger-button"
-              onclick="
-                deletePhoto(${Number(photo.id)})
-              ">
-
-              DELETE
-
-            </button>
-
-          </div>
-
-        `
-      )
-      .join("");
-
-}
-
-
-async function uploadPhoto(){
-
-  const file=
-    document
-      .getElementById("photoFile")
-      .files[0];
-
-
-  const caption=
-    document
-      .getElementById("photoCaption")
-      .value
-      .trim();
-
-
-  if(!file){
-
-    alert(
-      "Choose a photo first."
-    );
-
-    return;
-
-  }
-
-
-  const extension=
-    file.name
-      .split(".")
-      .pop();
-
-
-  const path=
-    `${Date.now()}-${Math.random().toString(36).slice(2)}.${extension}`;
-
-
-  const {
-    error:uploadError
-  }=
-  await db.storage
-    .from("photos")
-    .upload(
-      path,
-      file,
-      {
-        upsert:false
-      }
-    );
-
-
-  if(uploadError){
-
-    console.error(uploadError);
-
-    alert(
-      "Unable to upload photo. Make sure your Supabase photos bucket is configured."
-    );
-
-    return;
-
-  }
-
-
-  const {
-    data:urlData
-  }=
-  db.storage
-    .from("photos")
-    .getPublicUrl(path);
-
-
-  const {
-    error
-  }=
-  await db
-    .from("photos")
-    .insert({
-      url:urlData.publicUrl,
-      caption
-    });
-
-
-  if(error){
-
-    console.error(error);
-
-    alert(
-      "Photo uploaded but could not be saved."
-    );
-
-    return;
-
-  }
-
-
-  document.getElementById(
-    "photoFile"
-  ).value="";
-
-  document.getElementById(
-    "photoCaption"
-  ).value="";
-
-
-  await loadPhotos();
-
-}
-
-
-async function deletePhoto(id){
-
-  if(
-    !confirm(
-      "Delete this photo?"
-    )
-  )
-    return;
-
-
-  const {
-    error
-  }=
-  await db
-    .from("photos")
-    .delete()
-    .eq(
-      "id",
-      id
-    );
-
-
-  if(error){
-
-    console.error(error);
-
-    alert(
-      "Unable to delete photo."
-    );
-
-    return;
-
-  }
-
-
-  await loadPhotos();
-
-}
-
-
-/* =========================================================
    HELPERS
 ========================================================= */
 
@@ -6516,13 +6022,6 @@ function escapeHTML(value){
     .replace(/>/g,"&gt;")
     .replace(/"/g,"&quot;")
     .replace(/'/g,"&#039;");
-
-}
-
-
-function escapeAttribute(value){
-
-  return escapeHTML(value);
 
 }
 
@@ -6594,8 +6093,6 @@ buildPositionOptions();
 loadGames();
 
 loadRoster();
-
-loadPhotos();
 
 </script>
 
