@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>NDGP Football</title>
 
@@ -20,7 +20,7 @@
 <style>
 
 /* =========================================================
-   NDGP COLORS
+   COLORS
 ========================================================= */
 
 :root{
@@ -85,7 +85,6 @@ header{
     );
 
   color:white;
-
   text-align:center;
 
   padding:18px 12px 20px;
@@ -130,7 +129,7 @@ header p{
 
 
 /* =========================================================
-   CHAMPIONSHIPS / ACHIEVEMENTS BAR
+   CHAMPIONSHIP BAR
 ========================================================= */
 
 .achievements-bar{
@@ -141,30 +140,27 @@ header p{
   box-shadow:
     0 2px 10px rgba(0,31,63,.07);
 
-  padding:10px 10px 9px;
+  padding:10px;
 }
 
 .achievements-inner{
   width:100%;
 
-  max-width:900px;
+  max-width:650px;
 
   margin:auto;
 
   display:grid;
 
-  grid-template-columns:
-    repeat(5,1fr);
+  grid-template-columns:1fr 1fr;
 
-  gap:7px;
+  gap:8px;
 }
 
 .achievement-item{
-  position:relative;
-
   min-width:0;
 
-  padding:8px 8px 7px;
+  padding:10px 9px 9px;
 
   background:
     linear-gradient(
@@ -177,7 +173,7 @@ header p{
 
   border-top:3px solid var(--gold);
 
-  border-radius:7px;
+  border-radius:8px;
 
   text-align:center;
 
@@ -190,7 +186,7 @@ header p{
 
   font-family:"Teko";
 
-  font-size:15px;
+  font-size:17px;
 
   line-height:.95;
 
@@ -202,66 +198,20 @@ header p{
 }
 
 .achievement-years{
-  margin-top:4px;
+  margin-top:5px;
 
   color:#52677a;
 
-  font-size:8px;
+  font-size:9px;
 
   line-height:1.2;
 
   font-weight:600;
 }
 
-@media(max-width:750px){
-
-  .achievements-inner{
-    grid-template-columns:
-      repeat(3,1fr);
-  }
-
-}
-
-@media(max-width:500px){
-
-  .achievements-bar{
-    padding:8px 7px;
-  }
-
-  .achievements-inner{
-    grid-template-columns:
-      repeat(2,1fr);
-
-    gap:5px;
-  }
-
-  .achievement-item{
-    padding:7px 5px 6px;
-  }
-
-  .achievement-title{
-    font-size:14px;
-  }
-
-  .achievement-years{
-    font-size:7px;
-  }
-
-  .achievement-item:last-child{
-    grid-column:1/-1;
-
-    max-width:50%;
-
-    width:100%;
-
-    margin:auto;
-  }
-
-}
-
 
 /* =========================================================
-   NAVIGATION
+   NAV
 ========================================================= */
 
 nav{
@@ -962,8 +912,7 @@ main{
   box-shadow:
     0 20px 60px rgba(0,0,0,.35);
 
-  animation:
-    historyIn .22s ease;
+  animation:historyIn .22s ease;
 }
 
 @keyframes historyIn{
@@ -1241,8 +1190,7 @@ main{
 .photo-grid{
   display:grid;
 
-  grid-template-columns:
-    repeat(3,1fr);
+  grid-template-columns:repeat(3,1fr);
 
   gap:7px;
 }
@@ -1426,8 +1374,7 @@ main{
 .modal-info-grid{
   display:grid;
 
-  grid-template-columns:
-    1fr 1fr;
+  grid-template-columns:1fr 1fr;
 
   gap:7px;
 }
@@ -1689,8 +1636,7 @@ textarea{
 .form-row{
   display:grid;
 
-  grid-template-columns:
-    1fr 1fr;
+  grid-template-columns:1fr 1fr;
 
   gap:7px;
 }
@@ -1851,8 +1797,7 @@ button.danger{
 .compact-edit-grid{
   display:grid;
 
-  grid-template-columns:
-    1fr 1fr;
+  grid-template-columns:1fr 1fr;
 
   gap:0 7px;
 }
@@ -1906,8 +1851,7 @@ button.danger{
 .admin-photo-grid{
   display:grid;
 
-  grid-template-columns:
-    repeat(4,1fr);
+  grid-template-columns:repeat(4,1fr);
 
   gap:5px;
 }
@@ -1990,6 +1934,28 @@ button.danger{
     font-size:8px;
   }
 
+  .achievements-bar{
+    padding:8px 7px;
+  }
+
+  .achievements-inner{
+    grid-template-columns:1fr 1fr;
+
+    gap:5px;
+  }
+
+  .achievement-item{
+    padding:8px 5px 7px;
+  }
+
+  .achievement-title{
+    font-size:14px;
+  }
+
+  .achievement-years{
+    font-size:7px;
+  }
+
   .form-row{
     grid-template-columns:1fr;
   }
@@ -2020,11 +1986,15 @@ button.danger{
 
 }
 
+
+/* =========================================================
+   LARGER PHOTO GRID
+========================================================= */
+
 @media(min-width:650px){
 
   .photo-grid{
-    grid-template-columns:
-      repeat(4,1fr);
+    grid-template-columns:repeat(4,1fr);
   }
 
 }
@@ -2059,13 +2029,12 @@ button.danger{
 
 
 <!-- =====================================================
-     CHAMPIONSHIPS / ACHIEVEMENTS
+     CHAMPIONSHIPS
 ===================================================== -->
 
 <section class="achievements-bar">
 
   <div class="achievements-inner">
-
 
     <div class="achievement-item">
 
@@ -2092,53 +2061,13 @@ button.danger{
 
     </div>
 
-
-    <div class="achievement-item">
-
-      <div class="achievement-title">
-        PIAA District XI Runner-Up
-      </div>
-
-      <div class="achievement-years">
-        1984 • 2018 • 2020 • 2025 (AAA)
-      </div>
-
-    </div>
-
-
-    <div class="achievement-item">
-
-      <div class="achievement-title">
-        PIAA State Semifinalist
-      </div>
-
-      <div class="achievement-years">
-        2016 (AAA)
-      </div>
-
-    </div>
-
-
-    <div class="achievement-item">
-
-      <div class="achievement-title">
-        PIAA State Qualifier
-      </div>
-
-      <div class="achievement-years">
-        2015 (AA)
-      </div>
-
-    </div>
-
-
   </div>
 
 </section>
 
 
 <!-- =====================================================
-     NAV
+     NAVIGATION
 ===================================================== -->
 
 <nav>
@@ -2547,8 +2476,7 @@ button.danger{
                 Home / Away
               </label>
 
-              <select
-                id="gameHomeAway">
+              <select id="gameHomeAway">
 
                 <option value="Home">
                   🏠 Home
@@ -2864,10 +2792,9 @@ const seasonHistory = [
     ],
 
     achievements:[
-      "Colonial-Schuylkill League White Division Champions",
-      "District 11 Class 3A Runner-Up",
-      "Tied School Record — Most Wins",
-      "12–0 Start"
+      "Colonial League White Division Champions",
+      "PIAA District XI Class 3A Runner-Up",
+      "Tied School Record — Most Wins"
     ]
   },
 
@@ -2892,7 +2819,7 @@ const seasonHistory = [
     ],
 
     achievements:[
-      "Colonial-Schuylkill League White Division Champions"
+      "Colonial League White Division Champions"
     ]
   },
 
@@ -2964,7 +2891,7 @@ const seasonHistory = [
 
 
 /* =========================================================
-   HISTORY BUTTONS
+   HISTORY
 ========================================================= */
 
 function renderHistory(){
@@ -2976,6 +2903,7 @@ function renderHistory(){
 
   if(!container)
     return;
+
 
   container.innerHTML =
     seasonHistory.map(
@@ -3015,10 +2943,6 @@ function renderHistory(){
     ).join("");
 }
 
-
-/* =========================================================
-   HISTORY POPUP
-========================================================= */
 
 function openHistorySeason(year){
 
@@ -3217,10 +3141,6 @@ function openHistorySeason(year){
 }
 
 
-/* =========================================================
-   CLOSE HISTORY
-========================================================= */
-
 function closeHistoryModal(event){
 
   if(
@@ -3360,7 +3280,7 @@ async function loadGames(){
 
 
 /* =========================================================
-   SCORE CHECKING
+   SCORE / LIVE
 ========================================================= */
 
 function hasScore(game){
@@ -3479,10 +3399,6 @@ function isGameLive(game){
   return new Date() >= kickoff;
 }
 
-
-/* =========================================================
-   GAME STATUS
-========================================================= */
 
 function getGameStatus(game){
 
@@ -3699,8 +3615,6 @@ function updateHome(){
 
   let losses = 0;
 
-  let ties = 0;
-
 
   games.forEach(
     g => {
@@ -3722,12 +3636,6 @@ function updateHome(){
         ){
 
           losses++;
-
-        }
-
-        else{
-
-          ties++;
 
         }
 
@@ -4435,7 +4343,6 @@ function closeGameModal(event){
 
 /* =========================================================
    ADMIN LOGIN
-   EXACTLY 4 DIGITS
 ========================================================= */
 
 async function login(){
@@ -4693,7 +4600,7 @@ async function addGame(){
 
 
 /* =========================================================
-   ADMIN GAME LIST
+   ADMIN GAMES
 ========================================================= */
 
 function updateAdminGames(){
@@ -5784,7 +5691,7 @@ function showAdminMessage(message){
 
 
 /* =========================================================
-   ESCAPE KEY
+   KEYBOARD
 ========================================================= */
 
 document.addEventListener(
