@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -31,8 +30,8 @@
   --gold:#f4c542;
 
   --text:#14283d;
-  --muted:#687b8e;
-  --border:#d8e1e9;
+  --muted:#637689;
+  --border:#d5dfe8;
 
   --green:#198754;
   --red:#dc2626;
@@ -94,7 +93,7 @@ header{
 
   text-align:center;
 
-  padding:17px 50px 20px;
+  padding:18px 50px 20px;
 
   border-bottom:4px solid var(--gold);
 }
@@ -115,7 +114,7 @@ header h1{
 
   font-family:"Teko";
 
-  font-size:39px;
+  font-size:40px;
 
   line-height:.9;
 
@@ -123,11 +122,11 @@ header h1{
 }
 
 header p{
-  margin:5px 0 0;
+  margin:6px 0 0;
 
   color:#dbe7f2;
 
-  font-size:9px;
+  font-size:10px;
 
   letter-spacing:1.3px;
 
@@ -142,17 +141,17 @@ header p{
 .admin-gear{
   position:absolute;
 
-  top:14px;
-  right:14px;
+  top:16px;
+  right:16px;
 
-  width:35px;
-  height:35px;
+  width:38px;
+  height:38px;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  border:1px solid rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.22);
 
   border-radius:50%;
 
@@ -160,10 +159,9 @@ header p{
 
   color:white;
 
-  font-size:18px;
+  font-size:20px;
 
-  transition:
-    .15s ease;
+  transition:.15s ease;
 
   z-index:10;
 }
@@ -182,7 +180,7 @@ header p{
 
 
 /* =========================================================
-   CHAMPIONSHIP BAR
+   ACHIEVEMENTS BAR
 ========================================================= */
 
 .achievements-bar{
@@ -210,9 +208,7 @@ header p{
 }
 
 .achievement-item{
-  min-width:0;
-
-  padding:10px 9px 9px;
+  padding:10px;
 
   background:
     linear-gradient(
@@ -235,9 +231,9 @@ header p{
 
   font-family:"Teko";
 
-  font-size:17px;
+  font-size:18px;
 
-  line-height:.95;
+  line-height:1;
 
   font-weight:700;
 
@@ -249,14 +245,14 @@ header p{
 
   color:#52677a;
 
-  font-size:9px;
+  font-size:10px;
 
   font-weight:600;
 }
 
 
 /* =========================================================
-   NAV
+   NAVIGATION
 ========================================================= */
 
 nav{
@@ -287,9 +283,9 @@ nav button{
 
   color:#617284;
 
-  padding:11px 3px;
+  padding:12px 3px;
 
-  font-size:9px;
+  font-size:10px;
 
   font-weight:700;
 
@@ -366,7 +362,7 @@ main{
 
   font-family:"Teko";
 
-  font-size:28px;
+  font-size:30px;
 
   line-height:1;
 
@@ -412,7 +408,7 @@ main{
 
   justify-content:space-between;
 
-  padding:9px 12px;
+  padding:10px 12px;
 
   color:white;
 
@@ -427,7 +423,7 @@ main{
 .hero-top span{
   font-family:"Teko";
 
-  font-size:20px;
+  font-size:21px;
 
   line-height:1;
 }
@@ -435,7 +431,7 @@ main{
 .hero-top small{
   color:var(--gold);
 
-  font-size:8px;
+  font-size:9px;
 
   letter-spacing:1px;
 }
@@ -443,13 +439,13 @@ main{
 .hero-body{
   text-align:center;
 
-  padding:15px 10px 16px;
+  padding:16px 10px;
 }
 
 .next-label{
   color:var(--muted);
 
-  font-size:8px;
+  font-size:9px;
 
   letter-spacing:1.3px;
 
@@ -463,15 +459,15 @@ main{
 
   justify-content:center;
 
-  gap:7px;
+  gap:8px;
 
-  margin:4px 0 7px;
+  margin:5px 0 8px;
 }
 
 .next-team{
   font-family:"Teko";
 
-  font-size:29px;
+  font-size:31px;
 
   font-weight:700;
 
@@ -485,7 +481,7 @@ main{
 
   font-family:"Teko";
 
-  font-size:17px;
+  font-size:18px;
 
   font-weight:700;
 }
@@ -493,9 +489,9 @@ main{
 .game-info{
   color:#637487;
 
-  font-size:10px;
+  font-size:11px;
 
-  line-height:1.65;
+  line-height:1.7;
 }
 
 .home-away{
@@ -507,7 +503,7 @@ main{
 
   margin-top:3px;
 
-  padding:3px 7px;
+  padding:4px 8px;
 
   background:#f1f5f8;
 
@@ -515,7 +511,7 @@ main{
 
   color:var(--navy);
 
-  font-size:9px;
+  font-size:10px;
 
   font-weight:700;
 }
@@ -527,27 +523,27 @@ main{
 
   justify-content:center;
 
-  gap:6px;
+  gap:7px;
 
-  margin-top:9px;
+  margin-top:10px;
 
-  padding:7px 12px;
+  padding:8px 13px;
 
   border-radius:8px;
 
   background:
     linear-gradient(
       135deg,
-      #f5f7f9,
-      #dfe5ea,
-      #f7f9fb
+      #f1f4f6,
+      #d9e0e5,
+      #f5f7f9
     );
 
-  border:1px solid #b9c4cd;
+  border:1px solid #b7c3cc;
 
   color:#344451;
 
-  font-size:9px;
+  font-size:10px;
 
   font-weight:700;
 
@@ -566,7 +562,7 @@ main{
 .last-label{
   color:var(--muted);
 
-  font-size:8px;
+  font-size:9px;
 
   letter-spacing:1.1px;
 
@@ -578,7 +574,7 @@ main{
 
   font-family:"Teko";
 
-  font-size:42px;
+  font-size:44px;
 
   font-weight:700;
 
@@ -588,7 +584,7 @@ main{
 .record-sub{
   color:var(--muted);
 
-  font-size:8px;
+  font-size:9px;
 }
 
 
@@ -607,14 +603,12 @@ main{
 
   margin-bottom:7px;
 
-  padding:8px 10px 5px;
+  padding:9px 11px 5px;
 
   box-shadow:
     0 2px 8px rgba(0,31,63,.05);
 
-  transition:
-    transform .12s ease,
-    box-shadow .12s ease;
+  transition:.12s ease;
 }
 
 .game:hover{
@@ -641,7 +635,7 @@ main{
 .game-date{
   color:var(--muted);
 
-  font-size:8px;
+  font-size:9px;
 }
 
 .game-opponent{
@@ -649,7 +643,7 @@ main{
 
   font-family:"Teko";
 
-  font-size:23px;
+  font-size:25px;
 
   line-height:.9;
 
@@ -667,7 +661,7 @@ main{
 
   color:#5f7182;
 
-  font-size:9px;
+  font-size:10px;
 }
 
 .game-team{
@@ -687,13 +681,13 @@ main{
 
   flex-wrap:wrap;
 
-  gap:4px 9px;
+  gap:4px 10px;
 
-  margin-top:4px;
+  margin-top:5px;
 
   color:#637487;
 
-  font-size:8px;
+  font-size:9px;
 }
 
 .game-score{
@@ -701,7 +695,7 @@ main{
 
   font-family:"Teko";
 
-  font-size:19px;
+  font-size:20px;
 
   font-weight:700;
 
@@ -709,13 +703,13 @@ main{
 }
 
 .game-details-link{
-  margin-top:2px;
+  margin-top:1px;
 
   text-align:right;
 
-  color:#9aa8b5;
+  color:#8998a6;
 
-  font-size:7px;
+  font-size:8px;
 
   text-transform:uppercase;
 }
@@ -732,11 +726,11 @@ main{
 
   justify-content:center;
 
-  padding:6px 9px;
+  padding:7px 10px;
 
   border-radius:6px;
 
-  font-size:8px;
+  font-size:9px;
 
   line-height:1;
 
@@ -789,7 +783,23 @@ main{
 
   margin:0;
 
-  padding:9px 10px;
+  padding:10px;
+
+  border:1px solid var(--border);
+
+  border-radius:8px;
+
+  background:#f8fafc;
+
+  font-size:11px;
+}
+
+.roster-filter{
+  width:140px;
+
+  margin:0;
+
+  padding:10px 7px;
 
   border:1px solid var(--border);
 
@@ -800,26 +810,10 @@ main{
   font-size:10px;
 }
 
-.roster-filter{
-  width:130px;
-
-  margin:0;
-
-  padding:9px 7px;
-
-  border:1px solid var(--border);
-
-  border-radius:8px;
-
-  background:#f8fafc;
-
-  font-size:9px;
-}
-
 .roster-count{
   color:var(--muted);
 
-  font-size:8px;
+  font-size:9px;
 
   margin:0 0 8px 2px;
 }
@@ -841,7 +835,7 @@ main{
 
   min-width:0;
 
-  padding:8px;
+  padding:9px;
 
   background:white;
 
@@ -850,13 +844,10 @@ main{
   border-left:4px solid var(--navy);
 
   border-radius:8px;
-
-  box-shadow:
-    0 2px 6px rgba(0,31,63,.04);
 }
 
 .roster-number{
-  width:38px;
+  width:40px;
 
   flex-shrink:0;
 
@@ -866,7 +857,7 @@ main{
 
   font-family:"Teko";
 
-  font-size:27px;
+  font-size:28px;
 
   font-weight:700;
 
@@ -882,7 +873,7 @@ main{
 
   font-family:"Teko";
 
-  font-size:20px;
+  font-size:21px;
 
   line-height:.95;
 
@@ -900,7 +891,7 @@ main{
 
   color:#627589;
 
-  font-size:8px;
+  font-size:9px;
 
   font-weight:600;
 
@@ -908,7 +899,7 @@ main{
 }
 
 .roster-empty{
-  padding:18px;
+  padding:20px;
 
   text-align:center;
 
@@ -920,185 +911,7 @@ main{
 
   border-radius:8px;
 
-  font-size:9px;
-}
-
-
-/* =========================================================
-   POSITION PICKER
-========================================================= */
-
-.position-picker{
-  position:relative;
-
-  width:100%;
-
-  margin-bottom:7px;
-}
-
-.position-trigger{
-  width:100%;
-
-  min-height:36px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  gap:8px;
-
-  padding:8px 10px;
-
-  background:white;
-
-  border:1px solid #ccd7e1;
-
-  border-radius:6px;
-
-  color:#536779;
-
-  text-align:left;
-
   font-size:10px;
-}
-
-.position-trigger:hover{
-  border-color:#9eb0c0;
-}
-
-.position-trigger-arrow{
-  font-size:11px;
-
-  color:var(--navy);
-
-  transition:
-    transform .15s ease;
-}
-
-.position-picker.open
-.position-trigger-arrow{
-  transform:rotate(180deg);
-}
-
-.position-placeholder{
-  color:#8a9aa8;
-}
-
-.position-selected-text{
-  color:var(--navy);
-
-  font-weight:700;
-}
-
-.position-menu{
-  position:absolute;
-
-  left:0;
-  right:0;
-
-  top:calc(100% + 4px);
-
-  z-index:300;
-
-  display:none;
-
-  padding:7px;
-
-  background:white;
-
-  border:1px solid #cbd7e1;
-
-  border-radius:8px;
-
-  box-shadow:
-    0 12px 30px rgba(0,31,63,.16);
-}
-
-.position-picker.open
-.position-menu{
-  display:block;
-}
-
-.position-options{
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:4px;
-
-  max-height:220px;
-
-  overflow-y:auto;
-}
-
-.position-option{
-  display:flex;
-
-  align-items:center;
-
-  gap:6px;
-
-  padding:6px 7px;
-
-  margin:0;
-
-  border:1px solid #e1e7ec;
-
-  border-radius:5px;
-
-  background:#f8fafc;
-
-  color:#3e5366;
-
-  font-size:9px;
-
-  font-weight:600;
-
-  cursor:pointer;
-}
-
-.position-option input{
-  width:13px;
-
-  height:13px;
-
-  margin:0;
-
-  padding:0;
-
-  accent-color:var(--navy);
-}
-
-.position-custom{
-  margin-top:7px;
-
-  padding-top:7px;
-
-  border-top:1px solid var(--border);
-}
-
-.position-custom input{
-  margin-bottom:0;
-}
-
-.position-picker-note{
-  margin-top:5px;
-
-  color:#7b8b99;
-
-  font-size:7px;
-}
-
-.position-save-row{
-  display:flex;
-
-  justify-content:flex-end;
-
-  gap:5px;
-
-  margin-top:7px;
 }
 
 
@@ -1111,7 +924,7 @@ main{
 
   color:var(--muted);
 
-  font-size:8px;
+  font-size:9px;
 
   margin:-3px 0 10px;
 }
@@ -1133,7 +946,7 @@ main{
 .season-button{
   width:100%;
 
-  min-height:66px;
+  min-height:70px;
 
   display:flex;
 
@@ -1141,7 +954,7 @@ main{
 
   justify-content:space-between;
 
-  padding:11px 13px;
+  padding:12px 14px;
 
   border:0;
 
@@ -1155,7 +968,7 @@ main{
 
   font-family:"Teko";
 
-  font-size:29px;
+  font-size:31px;
 
   line-height:.9;
 
@@ -1175,7 +988,7 @@ main{
 .season-arrow{
   color:var(--navy);
 
-  font-size:27px;
+  font-size:28px;
 }
 
 
@@ -1238,14 +1051,12 @@ main{
 
 .admin-login-window{
   max-width:390px;
-
-  overflow:hidden;
 }
 
 .admin-login-top{
   position:relative;
 
-  padding:24px 20px 21px;
+  padding:25px 20px 22px;
 
   text-align:center;
 
@@ -1262,24 +1073,22 @@ main{
 }
 
 .admin-login-gear{
-  width:52px;
-  height:52px;
+  width:54px;
+  height:54px;
 
   display:flex;
 
   align-items:center;
   justify-content:center;
 
-  margin:0 auto 9px;
+  margin:0 auto 10px;
 
   border-radius:50%;
 
   background:
     rgba(255,255,255,.1);
 
-  border:1px solid rgba(255,255,255,.2);
-
-  font-size:25px;
+  font-size:27px;
 }
 
 .admin-login-top h2{
@@ -1287,7 +1096,7 @@ main{
 
   font-family:"Teko";
 
-  font-size:31px;
+  font-size:33px;
 
   line-height:1;
 }
@@ -1297,7 +1106,7 @@ main{
 
   color:#d8e5ef;
 
-  font-size:8px;
+  font-size:9px;
 
   text-transform:uppercase;
 
@@ -1310,15 +1119,14 @@ main{
   right:10px;
   top:10px;
 
-  width:31px;
-  height:31px;
+  width:32px;
+  height:32px;
 
   border:0;
 
   border-radius:50%;
 
-  background:
-    rgba(255,255,255,.12);
+  background:rgba(255,255,255,.12);
 
   color:white;
 
@@ -1326,21 +1134,21 @@ main{
 }
 
 .admin-login-body{
-  padding:16px;
+  padding:17px;
 }
 
 .admin-code-input{
   width:100%;
 
-  padding:13px;
+  padding:14px;
 
-  margin:0 0 9px;
+  margin:0 0 10px;
 
   text-align:center;
 
   letter-spacing:7px;
 
-  font-size:21px;
+  font-size:22px;
 
   font-weight:700;
 
@@ -1352,7 +1160,7 @@ main{
 .admin-login-button{
   width:100%;
 
-  padding:11px;
+  padding:12px;
 
   border:0;
 
@@ -1362,7 +1170,7 @@ main{
 
   color:white;
 
-  font-size:10px;
+  font-size:11px;
 
   font-weight:700;
 }
@@ -1370,13 +1178,13 @@ main{
 .login-error{
   min-height:0;
 
-  margin-top:7px;
+  margin-top:8px;
 
   color:var(--red);
 
   text-align:center;
 
-  font-size:9px;
+  font-size:10px;
 }
 
 
@@ -1387,7 +1195,7 @@ main{
 .history-modal-header{
   position:relative;
 
-  padding:17px 18px;
+  padding:18px;
 
   color:white;
 
@@ -1404,7 +1212,7 @@ main{
 .history-modal-kicker{
   color:var(--gold);
 
-  font-size:8px;
+  font-size:9px;
 
   letter-spacing:1.7px;
 
@@ -1414,7 +1222,7 @@ main{
 .history-modal-title{
   font-family:"Teko";
 
-  font-size:37px;
+  font-size:39px;
 
   line-height:.9;
 
@@ -1426,9 +1234,9 @@ main{
 
   font-family:"Teko";
 
-  font-size:17px;
+  font-size:18px;
 
-  margin-top:4px;
+  margin-top:5px;
 }
 
 .history-close,
@@ -1438,24 +1246,22 @@ main{
   right:10px;
   top:10px;
 
-  width:32px;
-  height:32px;
+  width:34px;
+  height:34px;
 
   border:0;
 
   border-radius:50%;
 
-  background:
-    rgba(255,255,255,.13);
+  background:rgba(255,255,255,.13);
 
   color:white;
 
-  font-size:22px;
+  font-size:23px;
 }
 
 .history-modal-body{
-  max-height:
-    calc(92vh - 105px);
+  max-height:calc(92vh - 110px);
 
   overflow-y:auto;
 
@@ -1463,7 +1269,7 @@ main{
 }
 
 .history-modal-section{
-  margin-top:10px;
+  margin-top:11px;
 }
 
 .history-modal-section:first-child{
@@ -1477,13 +1283,13 @@ main{
 
   gap:7px;
 
-  margin:0 0 6px;
+  margin:0 0 7px;
 
   color:var(--navy);
 
   font-family:"Teko";
 
-  font-size:23px;
+  font-size:25px;
 
   line-height:1;
 }
@@ -1511,7 +1317,7 @@ main{
 .modal-header{
   position:relative;
 
-  padding:17px 18px;
+  padding:18px;
 
   color:white;
 
@@ -1528,7 +1334,7 @@ main{
 .modal-kicker{
   color:var(--gold);
 
-  font-size:8px;
+  font-size:9px;
 
   letter-spacing:1.7px;
 
@@ -1538,7 +1344,7 @@ main{
 .modal-matchup{
   font-family:"Teko";
 
-  font-size:33px;
+  font-size:35px;
 
   line-height:1;
 
@@ -1546,7 +1352,7 @@ main{
 }
 
 .modal-body{
-  padding:15px;
+  padding:16px;
 }
 
 .modal-score{
@@ -1554,7 +1360,7 @@ main{
 
   font-family:"Teko";
 
-  font-size:50px;
+  font-size:52px;
 
   line-height:.9;
 
@@ -1562,7 +1368,7 @@ main{
 
   text-align:center;
 
-  margin:3px 0 14px;
+  margin:4px 0 15px;
 }
 
 .modal-info-grid{
@@ -1574,7 +1380,7 @@ main{
 }
 
 .modal-info{
-  padding:8px;
+  padding:9px;
 
   background:#f5f8fa;
 
@@ -1586,7 +1392,7 @@ main{
 .modal-info-label{
   color:var(--muted);
 
-  font-size:7px;
+  font-size:8px;
 
   text-transform:uppercase;
 }
@@ -1594,17 +1400,17 @@ main{
 .modal-info-value{
   color:var(--navy);
 
-  font-size:11px;
+  font-size:12px;
 
   font-weight:600;
 
-  margin-top:2px;
+  margin-top:3px;
 }
 
 .modal-notes{
-  margin-top:9px;
+  margin-top:10px;
 
-  padding:9px;
+  padding:10px;
 
   background:#f7f9fb;
 
@@ -1612,7 +1418,7 @@ main{
 
   color:#5f7182;
 
-  font-size:10px;
+  font-size:11px;
 }
 
 
@@ -1622,6 +1428,14 @@ main{
 
 .admin-page{
   display:none;
+
+  width:100%;
+
+  max-width:760px;
+
+  margin:0 auto;
+
+  padding:10px 9px 30px;
 }
 
 .admin-page.active{
@@ -1629,7 +1443,9 @@ main{
 }
 
 
-/* Top bar */
+/* =========================================================
+   ADMIN TOP BAR
+========================================================= */
 
 .admin-topbar{
   display:flex;
@@ -1638,11 +1454,11 @@ main{
 
   justify-content:space-between;
 
-  gap:8px;
+  gap:10px;
 
-  padding:11px 13px;
+  padding:14px 15px;
 
-  margin-bottom:9px;
+  margin-bottom:10px;
 
   color:white;
 
@@ -1661,17 +1477,19 @@ main{
 .admin-topbar-title{
   font-family:"Teko";
 
-  font-size:27px;
+  font-size:30px;
 
   line-height:.9;
+
+  letter-spacing:.3px;
 }
 
 .admin-topbar-subtitle{
   color:#d7e4ed;
 
-  font-size:7px;
+  font-size:9px;
 
-  margin-top:3px;
+  margin-top:4px;
 
   text-transform:uppercase;
 
@@ -1679,9 +1497,9 @@ main{
 }
 
 .admin-back-button{
-  padding:7px 10px;
+  padding:8px 11px;
 
-  border:1px solid rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.22);
 
   border-radius:6px;
 
@@ -1689,68 +1507,15 @@ main{
 
   color:white;
 
-  font-size:8px;
+  font-size:9px;
 
   font-weight:700;
 }
 
 
-/* Admin overview */
-
-.admin-overview{
-  display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap:6px;
-
-  margin-bottom:9px;
-}
-
-.admin-stat{
-  min-width:0;
-
-  padding:9px 7px;
-
-  background:white;
-
-  border:1px solid var(--border);
-
-  border-radius:8px;
-
-  text-align:center;
-
-  box-shadow:
-    0 2px 8px rgba(0,31,63,.05);
-}
-
-.admin-stat-number{
-  color:var(--navy);
-
-  font-family:"Teko";
-
-  font-size:27px;
-
-  line-height:.9;
-
-  font-weight:700;
-}
-
-.admin-stat-label{
-  margin-top:3px;
-
-  color:var(--muted);
-
-  font-size:7px;
-
-  font-weight:700;
-
-  text-transform:uppercase;
-}
-
-
-/* Admin accordion */
+/* =========================================================
+   ADMIN SECTIONS
+========================================================= */
 
 .admin-section{
   overflow:hidden;
@@ -1761,7 +1526,7 @@ main{
 
   border-radius:10px;
 
-  margin-bottom:7px;
+  margin-bottom:8px;
 
   box-shadow:
     0 3px 12px rgba(0,31,63,.06);
@@ -1774,9 +1539,9 @@ main{
 
   align-items:center;
 
-  gap:9px;
+  gap:11px;
 
-  padding:11px;
+  padding:13px;
 
   border:0;
 
@@ -1790,8 +1555,8 @@ main{
 }
 
 .admin-section-icon{
-  width:34px;
-  height:34px;
+  width:38px;
+  height:38px;
 
   flex-shrink:0;
 
@@ -1800,13 +1565,13 @@ main{
   align-items:center;
   justify-content:center;
 
-  border-radius:7px;
+  border-radius:8px;
 
   background:var(--navy);
 
   color:white;
 
-  font-size:15px;
+  font-size:18px;
 }
 
 .admin-section-title{
@@ -1820,23 +1585,25 @@ main{
 
   font-family:"Teko";
 
-  font-size:21px;
+  font-size:26px;
 
   line-height:1;
 }
 
 .admin-section-title p{
-  margin:2px 0 0;
+  margin:3px 0 0;
 
   color:var(--muted);
 
-  font-size:7px;
+  font-size:9px;
+
+  line-height:1.2;
 }
 
 .admin-section-arrow{
   color:#8293a2;
 
-  font-size:13px;
+  font-size:14px;
 
   transition:
     transform .15s ease;
@@ -1850,7 +1617,7 @@ main{
 .admin-section-body{
   display:none;
 
-  padding:0 10px 10px;
+  padding:0 13px 13px;
 
   border-top:1px solid var(--border);
 }
@@ -1861,14 +1628,16 @@ main{
 }
 
 
-/* Admin subsections */
+/* =========================================================
+   ADMIN SUBSECTIONS
+========================================================= */
 
 .admin-subsection{
-  padding:10px;
+  padding:13px;
 
-  margin-top:8px;
+  margin-top:10px;
 
-  background:#f8fafc;
+  background:#f7f9fb;
 
   border:1px solid var(--border);
 
@@ -1882,7 +1651,7 @@ main{
 
   font-family:"Teko";
 
-  font-size:20px;
+  font-size:24px;
 
   line-height:1;
 }
@@ -1890,26 +1659,28 @@ main{
 .admin-description{
   color:var(--muted);
 
-  font-size:7px;
+  font-size:9px;
 
-  margin:3px 0 8px;
+  margin:4px 0 10px;
 }
 
 
-/* Forms */
+/* =========================================================
+   ADMIN FORMS
+========================================================= */
 
 label{
   display:block;
 
   color:#40566b;
 
-  font-size:8px;
+  font-size:9px;
 
   font-weight:700;
 
   text-transform:uppercase;
 
-  margin-bottom:3px;
+  margin-bottom:4px;
 }
 
 input,
@@ -1917,9 +1688,9 @@ select,
 textarea{
   width:100%;
 
-  padding:7px;
+  padding:9px;
 
-  margin:0 0 7px;
+  margin:0 0 8px;
 
   background:white;
 
@@ -1929,11 +1700,11 @@ textarea{
 
   border-radius:6px;
 
-  font-size:11px;
+  font-size:12px;
 }
 
 textarea{
-  min-height:55px;
+  min-height:65px;
 
   resize:vertical;
 }
@@ -1943,19 +1714,19 @@ textarea{
 
   grid-template-columns:1fr 1fr;
 
-  gap:7px;
+  gap:8px;
 }
 
 button.primary,
 button.secondary,
 button.danger{
-  padding:7px 10px;
+  padding:9px 12px;
 
   border:0;
 
   border-radius:6px;
 
-  font-size:9px;
+  font-size:10px;
 
   font-weight:700;
 }
@@ -1979,9 +1750,9 @@ button.danger{
 }
 
 .message{
-  padding:7px;
+  padding:9px;
 
-  margin:6px 0;
+  margin:7px 0;
 
   background:#edf2f7;
 
@@ -1989,27 +1760,26 @@ button.danger{
 
   color:#536779;
 
-  font-size:9px;
+  font-size:10px;
 }
 
 
 /* =========================================================
-   ADMIN GAMES
+   ADMIN GAME LIST
 ========================================================= */
 
 .admin-game-row{
   display:grid;
 
-  grid-template-columns:
-    1fr auto;
+  grid-template-columns:1fr auto;
 
   align-items:center;
 
-  gap:8px;
+  gap:10px;
 
-  padding:8px;
+  padding:10px;
 
-  margin-bottom:5px;
+  margin-bottom:6px;
 
   background:white;
 
@@ -2027,17 +1797,17 @@ button.danger{
 
   font-family:"Teko";
 
-  font-size:19px;
+  font-size:22px;
 
   line-height:1;
 }
 
 .admin-game-meta{
-  margin-top:2px;
+  margin-top:3px;
 
   color:var(--muted);
 
-  font-size:7px;
+  font-size:9px;
 }
 
 .admin-game-actions{
@@ -2047,13 +1817,13 @@ button.danger{
 }
 
 .admin-game-actions button{
-  padding:5px 7px;
+  padding:7px 9px;
 
   border:0;
 
   border-radius:5px;
 
-  font-size:8px;
+  font-size:9px;
 
   font-weight:700;
 }
@@ -2068,20 +1838,19 @@ button.danger{
 
   flex-direction:column;
 
-  gap:5px;
+  gap:6px;
 }
 
 .admin-roster-row{
   display:grid;
 
-  grid-template-columns:
-    42px 1fr auto;
+  grid-template-columns:48px 1fr auto;
 
   align-items:center;
 
-  gap:7px;
+  gap:8px;
 
-  padding:6px;
+  padding:8px;
 
   background:white;
 
@@ -2095,7 +1864,7 @@ button.danger{
 
   font-family:"Teko";
 
-  font-size:22px;
+  font-size:25px;
 
   font-weight:700;
 
@@ -2107,7 +1876,7 @@ button.danger{
 
   font-family:"Teko";
 
-  font-size:18px;
+  font-size:21px;
 
   line-height:1;
 
@@ -2117,7 +1886,9 @@ button.danger{
 .admin-roster-position{
   color:var(--muted);
 
-  font-size:8px;
+  font-size:9px;
+
+  margin-top:2px;
 }
 
 .admin-roster-actions{
@@ -2127,13 +1898,13 @@ button.danger{
 }
 
 .admin-roster-actions button{
-  padding:5px 7px;
+  padding:7px 8px;
 
   border:0;
 
   border-radius:5px;
 
-  font-size:8px;
+  font-size:9px;
 
   font-weight:700;
 }
@@ -2155,7 +1926,7 @@ button.danger{
 
   grid-column:1/-1;
 
-  padding:7px;
+  padding:9px;
 
   background:#f5f8fa;
 
@@ -2174,10 +1945,9 @@ button.danger{
 .admin-photo-grid{
   display:grid;
 
-  grid-template-columns:
-    repeat(5,1fr);
+  grid-template-columns:repeat(5,1fr);
 
-  gap:5px;
+  gap:6px;
 }
 
 .admin-photo-card{
@@ -2205,7 +1975,7 @@ button.danger{
 .admin-photo-caption{
   color:var(--muted);
 
-  font-size:7px;
+  font-size:8px;
 
   margin:3px 1px;
 
@@ -2219,7 +1989,7 @@ button.danger{
 .admin-photo-delete{
   width:100%;
 
-  padding:4px;
+  padding:5px;
 
   border:0;
 
@@ -2229,21 +1999,20 @@ button.danger{
 
   color:var(--red);
 
-  font-size:7px;
+  font-size:8px;
 
   font-weight:700;
 }
 
 
 /* =========================================================
-   PUBLIC PHOTOS
+   PHOTOS
 ========================================================= */
 
 .photo-grid{
   display:grid;
 
-  grid-template-columns:
-    repeat(3,1fr);
+  grid-template-columns:repeat(3,1fr);
 
   gap:7px;
 }
@@ -2261,9 +2030,157 @@ button.danger{
 .photo-caption{
   color:var(--muted);
 
-  font-size:8px;
+  font-size:9px;
 
   margin:3px;
+}
+
+
+/* =========================================================
+   POSITION PICKER
+========================================================= */
+
+.position-picker{
+  position:relative;
+
+  width:100%;
+
+  margin-bottom:8px;
+}
+
+.position-trigger{
+  width:100%;
+
+  min-height:39px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:8px;
+
+  padding:9px 10px;
+
+  background:white;
+
+  border:1px solid #ccd7e1;
+
+  border-radius:6px;
+
+  color:#536779;
+
+  text-align:left;
+
+  font-size:11px;
+}
+
+.position-trigger-arrow{
+  font-size:12px;
+
+  color:var(--navy);
+}
+
+.position-placeholder{
+  color:#8a9aa8;
+}
+
+.position-selected-text{
+  color:var(--navy);
+
+  font-weight:700;
+}
+
+.position-menu{
+  position:absolute;
+
+  left:0;
+  right:0;
+
+  top:calc(100% + 4px);
+
+  z-index:300;
+
+  display:none;
+
+  padding:8px;
+
+  background:white;
+
+  border:1px solid #cbd7e1;
+
+  border-radius:8px;
+
+  box-shadow:
+    0 12px 30px rgba(0,31,63,.16);
+}
+
+.position-picker.open .position-menu{
+  display:block;
+}
+
+.position-options{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:4px;
+
+  max-height:220px;
+
+  overflow-y:auto;
+}
+
+.position-option{
+  display:flex;
+
+  align-items:center;
+
+  gap:6px;
+
+  padding:7px;
+
+  border:1px solid #e1e7ec;
+
+  border-radius:5px;
+
+  background:#f8fafc;
+
+  color:#3e5366;
+
+  font-size:10px;
+
+  font-weight:600;
+
+  cursor:pointer;
+}
+
+.position-option input{
+  width:14px;
+  height:14px;
+
+  margin:0;
+
+  padding:0;
+
+  accent-color:var(--navy);
+}
+
+.position-custom{
+  margin-top:8px;
+
+  padding-top:8px;
+
+  border-top:1px solid var(--border);
+}
+
+.position-picker-note{
+  margin-top:5px;
+
+  color:#7b8b99;
+
+  font-size:8px;
 }
 
 
@@ -2275,7 +2192,6 @@ button.danger{
 
   header{
     padding-left:45px;
-
     padding-right:45px;
   }
 
@@ -2283,16 +2199,12 @@ button.danger{
     gap:5px;
   }
 
-  .achievement-item{
-    padding:8px 5px 7px;
-  }
-
   .achievement-title{
-    font-size:14px;
+    font-size:15px;
   }
 
   .achievement-years{
-    font-size:7px;
+    font-size:8px;
   }
 
   .roster-tools{
@@ -2311,24 +2223,12 @@ button.danger{
     grid-template-columns:1fr;
   }
 
-  .admin-overview{
-    grid-template-columns:
-      1fr 1fr;
-  }
-
   .admin-roster-row{
-    grid-template-columns:
-      40px 1fr auto;
+    grid-template-columns:43px 1fr auto;
   }
 
   .admin-photo-grid{
-    grid-template-columns:
-      repeat(4,1fr);
-  }
-
-  .position-options{
-    grid-template-columns:
-      1fr 1fr;
+    grid-template-columns:repeat(4,1fr);
   }
 
   .history-modal,
@@ -2348,8 +2248,7 @@ button.danger{
   }
 
   .history-modal-body{
-    max-height:
-      calc(100vh - 105px);
+    max-height:calc(100vh - 110px);
   }
 
 }
@@ -2357,8 +2256,7 @@ button.danger{
 @media(min-width:650px){
 
   .photo-grid{
-    grid-template-columns:
-      repeat(4,1fr);
+    grid-template-columns:repeat(4,1fr);
   }
 
 }
@@ -2371,12 +2269,15 @@ button.danger{
 
 
 <!-- =========================================================
-     HEADER
+     PUBLIC HEADER
 ========================================================= -->
 
 <header>
 
+  <!-- THIS GEAR IS HIDDEN WHEN ADMIN IS OPEN -->
+
   <button
+    id="adminGear"
     class="admin-gear"
     onclick="openAdminLogin()"
     aria-label="Admin">
@@ -2408,7 +2309,9 @@ button.danger{
      ACHIEVEMENTS
 ========================================================= -->
 
-<section class="achievements-bar">
+<section
+  id="publicAchievements"
+  class="achievements-bar">
 
   <div class="achievements-inner">
 
@@ -2446,7 +2349,7 @@ button.danger{
      PUBLIC NAV
 ========================================================= -->
 
-<nav>
+<nav id="publicNav">
 
   <button
     class="active"
@@ -2491,7 +2394,7 @@ button.danger{
 </nav>
 
 
-<main>
+<main id="publicMain">
 
 
 <!-- =========================================================
@@ -2501,7 +2404,6 @@ button.danger{
 <section
   id="home"
   class="page active">
-
 
   <div class="card hero-card">
 
@@ -2557,9 +2459,7 @@ button.danger{
         id="countdown"
         class="countdown hidden">
 
-        <span>
-          🏈
-        </span>
+        <span>🏈</span>
 
         <span id="countdownText"></span>
 
@@ -2610,13 +2510,11 @@ button.danger{
   id="schedule"
   class="page">
 
-
   <div class="card">
 
     <h2 class="page-heading">
       🏈 2026 Schedule
     </h2>
-
 
     <div id="scheduleList">
       Loading...
@@ -2635,18 +2533,15 @@ button.danger{
   id="history"
   class="page">
 
-
   <div class="card">
 
     <h2 class="page-heading">
       🏆 Football History
     </h2>
 
-
     <div class="history-intro">
       2016–2025 • Notre Dame Green Pond Football
     </div>
-
 
     <div id="historyList"></div>
 
@@ -2662,7 +2557,6 @@ button.danger{
 <section
   id="roster"
   class="page">
-
 
   <div class="card">
 
@@ -2688,45 +2582,16 @@ button.danger{
           All Positions
         </option>
 
-        <option value="QB">
-          Quarterbacks
-        </option>
-
-        <option value="RB">
-          Running Backs
-        </option>
-
-        <option value="WR">
-          Wide Receivers
-        </option>
-
-        <option value="TE">
-          Tight Ends
-        </option>
-
-        <option value="OL">
-          Offensive Line
-        </option>
-
-        <option value="DL">
-          Defensive Line
-        </option>
-
-        <option value="LB">
-          Linebackers
-        </option>
-
-        <option value="DB">
-          Defensive Backs
-        </option>
-
-        <option value="K">
-          Kickers
-        </option>
-
-        <option value="P">
-          Punters
-        </option>
+        <option value="QB">Quarterbacks</option>
+        <option value="RB">Running Backs</option>
+        <option value="WR">Wide Receivers</option>
+        <option value="TE">Tight Ends</option>
+        <option value="OL">Offensive Line</option>
+        <option value="DL">Defensive Line</option>
+        <option value="LB">Linebackers</option>
+        <option value="DB">Defensive Backs</option>
+        <option value="K">Kickers</option>
+        <option value="P">Punters</option>
 
       </select>
 
@@ -2760,13 +2625,11 @@ button.danger{
   id="photos"
   class="page">
 
-
   <div class="card">
 
     <h2 class="page-heading">
       📸 Football Photos
     </h2>
-
 
     <div id="photoList">
       Loading...
@@ -2777,8 +2640,11 @@ button.danger{
 </section>
 
 
+</main>
+
+
 <!-- =========================================================
-     ADMIN PAGE
+     ADMIN DASHBOARD
 ========================================================= -->
 
 <section
@@ -2812,84 +2678,8 @@ button.danger{
   </div>
 
 
-  <!-- OVERVIEW -->
-
-  <div
-    id="adminOverview"
-    class="admin-overview">
-
-    <div class="admin-stat">
-
-      <div
-        id="adminGameCount"
-        class="admin-stat-number">
-
-        0
-
-      </div>
-
-      <div class="admin-stat-label">
-        Games
-      </div>
-
-    </div>
-
-
-    <div class="admin-stat">
-
-      <div
-        id="adminRosterCount"
-        class="admin-stat-number">
-
-        0
-
-      </div>
-
-      <div class="admin-stat-label">
-        Players
-      </div>
-
-    </div>
-
-
-    <div class="admin-stat">
-
-      <div
-        id="adminPhotoCount"
-        class="admin-stat-number">
-
-        0
-
-      </div>
-
-      <div class="admin-stat-label">
-        Photos
-      </div>
-
-    </div>
-
-
-    <div class="admin-stat">
-
-      <div
-        id="adminRecord"
-        class="admin-stat-number">
-
-        0–0
-
-      </div>
-
-      <div class="admin-stat-label">
-        Record
-      </div>
-
-    </div>
-
-  </div>
-
-
   <!-- =====================================================
-       GAMES SECTION
+       GAMES
   ===================================================== -->
 
   <div
@@ -2900,7 +2690,6 @@ button.danger{
     <button
       class="admin-section-header"
       onclick="toggleAdminSection('adminGamesSection')">
-
 
       <div class="admin-section-icon">
         🏈
@@ -2930,8 +2719,6 @@ button.danger{
     <div class="admin-section-body">
 
 
-      <!-- ADD GAME -->
-
       <div class="admin-subsection">
 
         <h4>
@@ -2947,9 +2734,7 @@ button.danger{
 
           <div>
 
-            <label>
-              Date
-            </label>
+            <label>Date</label>
 
             <input
               id="gameDate"
@@ -2960,9 +2745,7 @@ button.danger{
 
           <div>
 
-            <label>
-              Time
-            </label>
+            <label>Time</label>
 
             <input
               id="gameTime"
@@ -2974,9 +2757,7 @@ button.danger{
         </div>
 
 
-        <label>
-          Opponent
-        </label>
+        <label>Opponent</label>
 
         <input
           id="gameOpponent"
@@ -2988,9 +2769,7 @@ button.danger{
 
           <div>
 
-            <label>
-              Location
-            </label>
+            <label>Location</label>
 
             <input
               id="gameLocation"
@@ -3002,12 +2781,9 @@ button.danger{
 
           <div>
 
-            <label>
-              Home / Away
-            </label>
+            <label>Home / Away</label>
 
-            <select
-              id="gameHomeAway">
+            <select id="gameHomeAway">
 
               <option value="Home">
                 Home
@@ -3024,9 +2800,7 @@ button.danger{
         </div>
 
 
-        <label>
-          Notes
-        </label>
+        <label>Notes</label>
 
         <textarea
           id="gameNotes"
@@ -3048,8 +2822,6 @@ button.danger{
       <div id="adminMessage"></div>
 
 
-      <!-- MANAGE GAMES -->
-
       <div class="admin-subsection">
 
         <h4>
@@ -3057,7 +2829,7 @@ button.danger{
         </h4>
 
         <div class="admin-description">
-          Select a game to edit its information or score.
+          Edit scores, times, locations and other game information.
         </div>
 
 
@@ -3073,7 +2845,7 @@ button.danger{
 
 
   <!-- =====================================================
-       ROSTER SECTION
+       ROSTER
   ===================================================== -->
 
   <div
@@ -3084,7 +2856,6 @@ button.danger{
     <button
       class="admin-section-header"
       onclick="toggleAdminSection('adminRosterSection')">
-
 
       <div class="admin-section-icon">
         👥
@@ -3114,8 +2885,6 @@ button.danger{
     <div class="admin-section-body">
 
 
-      <!-- ADD PLAYER -->
-
       <div class="admin-subsection">
 
         <h4>
@@ -3131,9 +2900,7 @@ button.danger{
 
           <div>
 
-            <label>
-              Jersey Number
-            </label>
+            <label>Jersey Number</label>
 
             <input
               id="playerNumber"
@@ -3147,9 +2914,7 @@ button.danger{
 
           <div>
 
-            <label>
-              Player Name
-            </label>
+            <label>Player Name</label>
 
             <input
               id="playerName"
@@ -3176,7 +2941,6 @@ button.danger{
             class="position-trigger"
             onclick="togglePositionPicker('add')">
 
-
             <span
               id="addPositionText"
               class="position-placeholder">
@@ -3185,8 +2949,7 @@ button.danger{
 
             </span>
 
-
-            <span class="position-trigger-arrow">
+            <span>
               ▼
             </span>
 
@@ -3194,7 +2957,6 @@ button.danger{
 
 
           <div class="position-menu">
-
 
             <div
               id="addPositionOptions"
@@ -3213,14 +2975,16 @@ button.danger{
                 type="text"
                 placeholder="Type another position...">
 
-              <div class="position-picker-note">
-                You can select multiple positions and/or add your own.
-              </div>
-
             </div>
 
 
-            <div class="position-save-row">
+            <div
+              style="
+                display:flex;
+                justify-content:flex-end;
+                gap:5px;
+                margin-top:7px;
+              ">
 
               <button
                 type="button"
@@ -3260,8 +3024,6 @@ button.danger{
       </div>
 
 
-      <!-- CURRENT ROSTER -->
-
       <div class="admin-subsection">
 
         <h4>
@@ -3289,7 +3051,7 @@ button.danger{
 
 
   <!-- =====================================================
-       PHOTOS SECTION
+       PHOTOS
   ===================================================== -->
 
   <div
@@ -3300,7 +3062,6 @@ button.danger{
     <button
       class="admin-section-header"
       onclick="toggleAdminSection('adminPhotosSection')">
-
 
       <div class="admin-section-icon">
         📸
@@ -3398,11 +3159,8 @@ button.danger{
 </section>
 
 
-</main>
-
-
 <!-- =========================================================
-     ADMIN LOGIN MODAL
+     ADMIN LOGIN
 ========================================================= -->
 
 <div
@@ -3417,7 +3175,6 @@ button.danger{
 
 
     <div class="admin-login-top">
-
 
       <button
         class="admin-login-close"
@@ -3446,7 +3203,6 @@ button.danger{
 
 
     <div class="admin-login-body">
-
 
       <input
         id="adminCode"
@@ -3498,7 +3254,6 @@ button.danger{
 
     <div class="history-modal-header">
 
-
       <button
         class="history-close"
         onclick="closeHistoryModal()">
@@ -3538,7 +3293,7 @@ button.danger{
 
 
 <!-- =========================================================
-     GAME MODAL
+     GAME DETAILS MODAL
 ========================================================= -->
 
 <div
@@ -3553,7 +3308,6 @@ button.danger{
 
 
     <div class="modal-header">
-
 
       <button
         class="modal-close"
@@ -3578,7 +3332,6 @@ button.danger{
 
 
     <div class="modal-body">
-
 
       <div
         id="modalStatus"
@@ -3627,9 +3380,7 @@ window.supabase.createClient(
 
 
 let games=[];
-
 let roster=[];
-
 let countdownTimer=null;
 
 
@@ -3689,47 +3440,370 @@ const startingRoster=[
 ];
 
 
+const positionOptions=[
+  "QB","RB","FB","WR","TE",
+  "OL","T","G","C",
+  "DL","DE","DT","NG",
+  "LB","MLB","OLB",
+  "DB","CB","FS","SS",
+  "K","P","LS"
+];
+
+
 /* =========================================================
-   POSITIONS
+   NAVIGATION
 ========================================================= */
 
-const positionOptions=[
+function showPage(id,button){
 
-  "QB",
-  "RB",
-  "FB",
-  "WR",
-  "TE",
-  "OL",
-  "T",
-  "G",
-  "C",
-  "DL",
-  "DE",
-  "DT",
-  "NG",
-  "LB",
-  "MLB",
-  "OLB",
-  "DB",
-  "CB",
-  "FS",
-  "SS",
-  "K",
-  "P",
-  "LS"
+  document
+    .querySelectorAll(".page")
+    .forEach(page=>{
+      page.classList.remove("active");
+    });
 
-];
+
+  const page=
+    document.getElementById(id);
+
+  if(page)
+    page.classList.add("active");
+
+
+  document
+    .querySelectorAll("nav button")
+    .forEach(btn=>{
+      btn.classList.remove("active");
+    });
+
+
+  if(button)
+    button.classList.add("active");
+
+
+  if(id==="schedule")
+    loadGames();
+
+  if(id==="history")
+    renderHistory();
+
+  if(id==="roster")
+    loadRoster();
+
+  if(id==="photos")
+    loadPhotos();
+
+}
+
+
+/* =========================================================
+   ADMIN LOGIN
+========================================================= */
+
+function openAdminLogin(){
+
+  document
+    .getElementById("adminLoginOverlay")
+    .classList.add("show");
+
+  document.body.style.overflow="hidden";
+
+  setTimeout(()=>{
+    document
+      .getElementById("adminCode")
+      .focus();
+  },100);
+
+}
+
+
+function closeAdminLogin(event){
+
+  if(
+    event &&
+    event.target &&
+    event.target.id!=="adminLoginOverlay"
+  )
+    return;
+
+
+  document
+    .getElementById("adminLoginOverlay")
+    .classList.remove("show");
+
+  document.body.style.overflow="";
+
+  document.getElementById(
+    "adminCode"
+  ).value="";
+
+  document.getElementById(
+    "loginMessage"
+  ).textContent="";
+
+}
+
+
+document
+  .getElementById("adminCode")
+  .addEventListener(
+    "keydown",
+    event=>{
+
+      if(event.key==="Enter")
+        login();
+
+    }
+  );
+
+
+async function login(){
+
+  const code=
+    document
+      .getElementById("adminCode")
+      .value
+      .trim();
+
+
+  const message=
+    document.getElementById(
+      "loginMessage"
+    );
+
+
+  if(!/^\d{4}$/.test(code)){
+
+    message.textContent=
+      "Enter exactly 4 digits.";
+
+    return;
+
+  }
+
+
+  message.textContent=
+    "Checking...";
+
+
+  const {
+    data,
+    error
+  }=
+  await db.rpc(
+    "check_admin_code",
+    {
+      p_code:code
+    }
+  );
+
+
+  if(error){
+
+    console.error(error);
+
+    message.textContent=
+      "Unable to verify code.";
+
+    return;
+
+  }
+
+
+  if(!data){
+
+    message.textContent=
+      "Incorrect admin code.";
+
+    document.getElementById(
+      "adminCode"
+    ).value="";
+
+    return;
+
+  }
+
+
+  sessionStorage.setItem(
+    "adminCode",
+    code
+  );
+
+
+  closeAdminLogin();
+
+  openAdmin();
+
+}
+
+
+/* =========================================================
+   OPEN ADMIN
+========================================================= */
+
+function openAdmin(){
+
+  /* Hide public content */
+
+  document
+    .getElementById("publicNav")
+    .classList.add("hidden");
+
+
+  document
+    .getElementById("publicAchievements")
+    .classList.add("hidden");
+
+
+  document
+    .getElementById("publicMain")
+    .classList.add("hidden");
+
+
+  /* Hide gear */
+
+  document
+    .getElementById("adminGear")
+    .classList.add("hidden");
+
+
+  /* Show admin */
+
+  document
+    .getElementById("adminPage")
+    .classList.add("active");
+
+
+  /*
+     IMPORTANT:
+     Everything is CLOSED when admin opens.
+  */
+
+  document
+    .querySelectorAll(".admin-section")
+    .forEach(section=>{
+      section.classList.remove("open");
+    });
+
+
+  loadAdminData();
+
+}
+
+
+/* =========================================================
+   CLOSE ADMIN
+========================================================= */
+
+function closeAdmin(){
+
+  /*
+     Hide admin
+  */
+
+  document
+    .getElementById("adminPage")
+    .classList.remove("active");
+
+
+  /*
+     Bring public site back
+  */
+
+  document
+    .getElementById("publicNav")
+    .classList.remove("hidden");
+
+
+  document
+    .getElementById("publicAchievements")
+    .classList.remove("hidden");
+
+
+  document
+    .getElementById("publicMain")
+    .classList.remove("hidden");
+
+
+  /*
+     BRING GEAR BACK
+  */
+
+  document
+    .getElementById("adminGear")
+    .classList.remove("hidden");
+
+
+  /*
+     Make sure Home is active
+  */
+
+  const homeButton=
+    document.querySelector(
+      "nav button"
+    );
+
+  if(homeButton)
+    showPage(
+      "home",
+      homeButton
+    );
+
+}
+
+
+/* =========================================================
+   ADMIN SECTIONS
+========================================================= */
+
+function toggleAdminSection(id){
+
+  const section=
+    document.getElementById(id);
+
+  if(!section)
+    return;
+
+
+  section.classList.toggle("open");
+
+}
+
+
+/* =========================================================
+   ADMIN LOAD
+========================================================= */
+
+async function loadAdminData(){
+
+  buildPositionPicker("add");
+
+  await loadGames();
+
+  await loadRoster();
+
+  await loadPhotos();
+
+
+  /*
+     DO NOT OPEN ANY SECTION.
+     User opens whichever one they want.
+  */
+
+  document
+    .querySelectorAll(".admin-section")
+    .forEach(section=>{
+      section.classList.remove("open");
+    });
+
+}
 
 
 /* =========================================================
    POSITION PICKER
 ========================================================= */
 
-function buildPositionPicker(
-  type,
-  selected=""
-){
+function buildPositionPicker(type,selected=""){
 
   const container=
     document.getElementById(
@@ -3748,31 +3822,33 @@ function buildPositionPicker(
 
 
   container.innerHTML=
-    positionOptions.map(position=>`
+    positionOptions
+      .map(position=>`
 
-      <label class="position-option">
+        <label class="position-option">
 
-        <input
-          type="checkbox"
-          value="${position}"
-          ${
-            selectedPositions.includes(position)
-            ?
-            "checked"
-            :
-            ""
-          }
-          onchange="
-            updatePositionText('${type}')
-          ">
+          <input
+            type="checkbox"
+            value="${position}"
+            ${
+              selectedPositions.includes(position)
+              ?
+              "checked"
+              :
+              ""
+            }
+            onchange="
+              updatePositionText('${type}')
+            ">
 
-        <span>
-          ${position}
-        </span>
+          <span>
+            ${position}
+          </span>
 
-      </label>
+        </label>
 
-    `).join("");
+      `)
+      .join("");
 
 
   updatePositionText(type);
@@ -3798,16 +3874,12 @@ function togglePositionPicker(type){
     .forEach(other=>{
 
       if(other!==picker)
-        other.classList.remove(
-          "open"
-        );
+        other.classList.remove("open");
 
     });
 
 
-  picker.classList.toggle(
-    "open"
-  );
+  picker.classList.toggle("open");
 
 }
 
@@ -3820,9 +3892,7 @@ function closePositionPicker(type){
     );
 
   if(picker)
-    picker.classList.remove(
-      "open"
-    );
+    picker.classList.remove("open");
 
 
   updatePositionText(type);
@@ -3885,9 +3955,8 @@ function updatePositionText(type){
       picker.querySelectorAll(
         'input[type="checkbox"]:checked'
       )
-    ).map(
-      box=>box.value
-    );
+    )
+    .map(box=>box.value);
 
 
   const custom=
@@ -3939,9 +4008,8 @@ function getSelectedPositions(type){
       picker.querySelectorAll(
         'input[type="checkbox"]:checked'
       )
-    ).map(
-      box=>box.value
-    );
+    )
+    .map(box=>box.value);
 
 
   const custom=
@@ -3964,11 +4032,8 @@ function getSelectedPositions(type){
               existing.toLowerCase()===
               position.toLowerCase()
           )
-        ){
-
+        )
           selected.push(position);
-
-        }
 
       });
 
@@ -3985,30 +4050,9 @@ document.addEventListener(
   event=>{
 
     if(
-      event.target.id===
-      "addCustomPosition"
-    ){
-
+      event.target.id==="addCustomPosition"
+    )
       updatePositionText("add");
-
-    }
-
-
-    if(
-      event.target.id.startsWith(
-        "edit-player-custom-"
-      )
-    ){
-
-      const type=
-        event.target.id.replace(
-          "edit-player-custom-",
-          "edit-"
-        );
-
-      updatePositionText(type);
-
-    }
 
   }
 );
@@ -4019,9 +4063,7 @@ document.addEventListener(
   event=>{
 
     if(
-      !event.target.closest(
-        ".position-picker"
-      )
+      !event.target.closest(".position-picker")
     ){
 
       document
@@ -4029,1142 +4071,13 @@ document.addEventListener(
           ".position-picker.open"
         )
         .forEach(picker=>{
-          picker.classList.remove(
-            "open"
-          );
+          picker.classList.remove("open");
         });
 
     }
 
   }
 );
-
-
-/* =========================================================
-   PUBLIC NAVIGATION
-========================================================= */
-
-function showPage(
-  id,
-  button
-){
-
-  document
-    .querySelectorAll(
-      ".page"
-    )
-    .forEach(page=>{
-      page.classList.remove(
-        "active"
-      );
-    });
-
-
-  const page=
-    document.getElementById(id);
-
-  if(page)
-    page.classList.add(
-      "active"
-    );
-
-
-  document
-    .querySelectorAll(
-      "nav button"
-    )
-    .forEach(btn=>{
-      btn.classList.remove(
-        "active"
-      );
-    });
-
-
-  if(button)
-    button.classList.add(
-      "active"
-    );
-
-
-  if(id==="schedule")
-    loadGames();
-
-
-  if(id==="history")
-    renderHistory();
-
-
-  if(id==="roster")
-    loadRoster();
-
-
-  if(id==="photos")
-    loadPhotos();
-
-}
-
-
-/* =========================================================
-   ADMIN LOGIN MODAL
-========================================================= */
-
-function openAdminLogin(){
-
-  document
-    .getElementById(
-      "adminLoginOverlay"
-    )
-    .classList.add(
-      "show"
-    );
-
-
-  setTimeout(
-    ()=>{
-      document
-        .getElementById(
-          "adminCode"
-        )
-        .focus();
-    },
-    100
-  );
-
-
-  document.body.style.overflow=
-    "hidden";
-
-}
-
-
-function closeAdminLogin(event){
-
-  if(
-    event &&
-    event.target &&
-    event.target.id!==
-    "adminLoginOverlay"
-  )
-    return;
-
-
-  document
-    .getElementById(
-      "adminLoginOverlay"
-    )
-    .classList.remove(
-      "show"
-    );
-
-
-  document.body.style.overflow="";
-
-
-  document.getElementById(
-    "adminCode"
-  ).value="";
-
-
-  document.getElementById(
-    "loginMessage"
-  ).textContent="";
-
-}
-
-
-/* Enter key for login */
-
-document
-  .getElementById(
-    "adminCode"
-  )
-  .addEventListener(
-    "keydown",
-    event=>{
-
-      if(
-        event.key==="Enter"
-      ){
-
-        login();
-
-      }
-
-    }
-  );
-
-
-/* =========================================================
-   ADMIN LOGIN
-========================================================= */
-
-async function login(){
-
-  const code=
-    document.getElementById(
-      "adminCode"
-    ).value.trim();
-
-
-  const message=
-    document.getElementById(
-      "loginMessage"
-    );
-
-
-  if(!/^\d{4}$/.test(code)){
-
-    message.textContent=
-      "Enter exactly 4 digits.";
-
-    return;
-
-  }
-
-
-  message.textContent=
-    "Checking...";
-
-
-  const {
-    data,
-    error
-  } =
-  await db.rpc(
-    "check_admin_code",
-    {
-      p_code:code
-    }
-  );
-
-
-  if(error){
-
-    console.error(error);
-
-    message.textContent=
-      "Unable to verify code.";
-
-    return;
-
-  }
-
-
-  if(!data){
-
-    message.textContent=
-      "Incorrect admin code.";
-
-    document.getElementById(
-      "adminCode"
-    ).value="";
-
-    return;
-
-  }
-
-
-  sessionStorage.setItem(
-    "adminCode",
-    code
-  );
-
-
-  closeAdminLogin();
-
-
-  openAdmin();
-
-}
-
-
-/* =========================================================
-   OPEN ADMIN
-========================================================= */
-
-function openAdmin(){
-
-  document
-    .querySelectorAll(
-      ".page"
-    )
-    .forEach(page=>{
-      page.classList.remove(
-        "active"
-      );
-    });
-
-
-  document
-    .querySelector(
-      "nav"
-    )
-    .classList.add(
-      "hidden"
-    );
-
-
-  document
-    .getElementById(
-      "adminPage"
-    )
-    .classList.add(
-      "active"
-    );
-
-
-  document
-    .querySelector(
-      ".achievements-bar"
-    )
-    .classList.add(
-      "hidden"
-    );
-
-
-  loadAdminDashboard();
-
-}
-
-
-/* =========================================================
-   CLOSE ADMIN
-========================================================= */
-
-function closeAdmin(){
-
-  document
-    .getElementById(
-      "adminPage"
-    )
-    .classList.remove(
-      "active"
-    );
-
-
-  document
-    .querySelector(
-      "nav"
-    )
-    .classList.remove(
-      "hidden"
-    );
-
-
-  document
-    .querySelector(
-      ".achievements-bar"
-    )
-    .classList.remove(
-      "hidden"
-    );
-
-
-  document
-    .querySelector(
-      "nav button"
-    )
-    .click();
-
-}
-
-
-/* =========================================================
-   LOGOUT
-========================================================= */
-
-function logout(){
-
-  sessionStorage.removeItem(
-    "adminCode"
-  );
-
-  closeAdmin();
-
-}
-
-
-/* =========================================================
-   ADMIN ACCORDIONS
-========================================================= */
-
-function toggleAdminSection(id){
-
-  const section=
-    document.getElementById(id);
-
-  if(!section)
-    return;
-
-
-  section.classList.toggle(
-    "open"
-  );
-
-}
-
-
-/* =========================================================
-   ADMIN DASHBOARD
-========================================================= */
-
-async function loadAdminDashboard(){
-
-  buildPositionPicker(
-    "add"
-  );
-
-
-  await loadGames();
-
-  await loadRoster();
-
-  await loadPhotos();
-
-
-  updateAdminStats();
-
-
-  /* Start with Games open */
-
-  document
-    .getElementById(
-      "adminGamesSection"
-    )
-    .classList.add(
-      "open"
-    );
-
-}
-
-
-/* =========================================================
-   ROSTER LOAD
-========================================================= */
-
-async function loadRoster(){
-
-  const {
-    data,
-    error
-  } =
-  await db
-    .from("roster")
-    .select("*")
-    .order(
-      "number",
-      {
-        ascending:true
-      }
-    );
-
-
-  if(
-    error ||
-    !data ||
-    data.length===0
-  ){
-
-    roster=
-      startingRoster.map(
-        player=>({
-
-          id:null,
-
-          number:player[0],
-
-          name:player[1],
-
-          position:player[2]
-
-        })
-      );
-
-  }
-
-  else{
-
-    roster=data;
-
-  }
-
-
-  renderRoster();
-
-
-  if(
-    sessionStorage.getItem(
-      "adminCode"
-    )
-  ){
-
-    renderAdminRoster();
-
-  }
-
-
-  updateAdminStats();
-
-}
-
-
-/* =========================================================
-   PUBLIC ROSTER
-========================================================= */
-
-function renderRoster(){
-
-  const list=
-    document.getElementById(
-      "rosterList"
-    );
-
-
-  const search=
-    (
-      document.getElementById(
-        "rosterSearch"
-      )?.value||""
-    )
-    .toLowerCase()
-    .trim();
-
-
-  const filter=
-    document.getElementById(
-      "rosterFilter"
-    )?.value||"all";
-
-
-  const filtered=
-    roster.filter(player=>{
-
-      const matchesSearch=
-        !search ||
-        player.name
-          .toLowerCase()
-          .includes(search) ||
-        String(player.number)
-          .includes(search) ||
-        player.position
-          .toLowerCase()
-          .includes(search);
-
-
-      const matchesPosition=
-        filter==="all" ||
-        player.position
-          .toUpperCase()
-          .includes(filter);
-
-
-      return(
-        matchesSearch &&
-        matchesPosition
-      );
-
-    });
-
-
-  document.getElementById(
-    "rosterCount"
-  ).textContent=
-    `${filtered.length} players`;
-
-
-  if(!filtered.length){
-
-    list.innerHTML=`
-
-      <div class="roster-empty">
-
-        No players found.
-
-      </div>
-
-    `;
-
-    return;
-
-  }
-
-
-  list.innerHTML=
-    filtered.map(player=>`
-
-      <div class="roster-card">
-
-        <div class="roster-number">
-
-          ${escapeHtml(
-            player.number
-          )}
-
-        </div>
-
-
-        <div class="roster-info">
-
-          <div class="roster-name">
-
-            ${escapeHtml(
-              player.name
-            )}
-
-          </div>
-
-
-          <div class="roster-position">
-
-            ${escapeHtml(
-              player.position
-            )}
-
-          </div>
-
-        </div>
-
-      </div>
-
-    `).join("");
-
-}
-
-
-document
-  .getElementById(
-    "rosterSearch"
-  )
-  .addEventListener(
-    "input",
-    renderRoster
-  );
-
-
-document
-  .getElementById(
-    "rosterFilter"
-  )
-  .addEventListener(
-    "change",
-    renderRoster
-  );
-
-
-/* =========================================================
-   ADMIN ROSTER
-========================================================= */
-
-function renderAdminRoster(){
-
-  const list=
-    document.getElementById(
-      "adminRosterList"
-    );
-
-  if(!list)
-    return;
-
-
-  if(!roster.length){
-
-    list.innerHTML=
-      `<div class="message">
-        No players found.
-      </div>`;
-
-    return;
-
-  }
-
-
-  list.innerHTML=
-    roster.map(player=>{
-
-      const type=
-        `edit-${player.id}`;
-
-
-      return`
-
-      <div class="admin-roster-row">
-
-        <div class="admin-roster-number">
-
-          ${escapeHtml(
-            player.number
-          )}
-
-        </div>
-
-
-        <div>
-
-          <div class="admin-roster-name">
-
-            ${escapeHtml(
-              player.name
-            )}
-
-          </div>
-
-
-          <div class="admin-roster-position">
-
-            ${escapeHtml(
-              player.position
-            )}
-
-          </div>
-
-        </div>
-
-
-        <div class="admin-roster-actions">
-
-          <button
-            class="edit-roster"
-            onclick="
-              toggleRosterEdit(${player.id})
-            ">
-
-            Edit
-
-          </button>
-
-
-          <button
-            class="delete-roster"
-            onclick="
-              deletePlayer(${player.id})
-            ">
-
-            Delete
-
-          </button>
-
-        </div>
-
-
-        <div
-          id="roster-edit-${player.id}"
-          class="roster-edit-area">
-
-
-          <div class="form-row">
-
-            <div>
-
-              <label>
-                Number
-              </label>
-
-              <input
-                id="edit-player-number-${player.id}"
-                type="number"
-                value="${escapeAttribute(
-                  player.number
-                )}">
-
-            </div>
-
-
-            <div>
-
-              <label>
-                Name
-              </label>
-
-              <input
-                id="edit-player-name-${player.id}"
-                type="text"
-                value="${escapeAttribute(
-                  player.name
-                )}">
-
-            </div>
-
-          </div>
-
-
-          <label>
-            Position
-          </label>
-
-
-          <div
-            id="${type}PositionPicker"
-            class="position-picker">
-
-
-            <button
-              type="button"
-              class="position-trigger"
-              onclick="
-                togglePositionPicker('${type}')
-              ">
-
-
-              <span
-                id="${type}PositionText"
-                class="position-placeholder">
-
-                Select position(s)...
-
-              </span>
-
-
-              <span class="position-trigger-arrow">
-                ▼
-              </span>
-
-            </button>
-
-
-            <div class="position-menu">
-
-
-              <div
-                id="${type}PositionOptions"
-                class="position-options">
-              </div>
-
-
-              <div class="position-custom">
-
-                <label>
-                  Custom Position
-                </label>
-
-                <input
-                  id="${type}CustomPosition"
-                  type="text"
-                  placeholder="Type another position...">
-
-                <div class="position-picker-note">
-                  Select multiple positions or type your own.
-                </div>
-
-              </div>
-
-
-              <div class="position-save-row">
-
-                <button
-                  type="button"
-                  class="secondary"
-                  onclick="
-                    clearPositionPicker('${type}')
-                  ">
-
-                  Clear
-
-                </button>
-
-
-                <button
-                  type="button"
-                  class="primary"
-                  onclick="
-                    closePositionPicker('${type}')
-                  ">
-
-                  Done
-
-                </button>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <button
-            class="primary"
-            style="width:100%"
-            onclick="
-              savePlayer(${player.id})
-            ">
-
-            SAVE PLAYER
-
-          </button>
-
-        </div>
-
-      </div>
-
-    `;
-
-    }).join("");
-
-
-  roster.forEach(player=>{
-
-    buildPositionPicker(
-      `edit-${player.id}`,
-      player.position
-    );
-
-  });
-
-}
-
-
-function toggleRosterEdit(id){
-
-  const area=
-    document.getElementById(
-      `roster-edit-${id}`
-    );
-
-  if(area)
-    area.classList.toggle(
-      "open"
-    );
-
-}
-
-
-/* =========================================================
-   ADD PLAYER
-========================================================= */
-
-async function addPlayer(){
-
-  const code=
-    sessionStorage.getItem(
-      "adminCode"
-    );
-
-
-  const number=
-    document.getElementById(
-      "playerNumber"
-    ).value;
-
-
-  const name=
-    document.getElementById(
-      "playerName"
-    ).value.trim();
-
-
-  const position=
-    getSelectedPositions(
-      "add"
-    );
-
-
-  if(
-    number==="" ||
-    !name ||
-    !position
-  ){
-
-    showAdminMessage(
-      "Enter the number, name and at least one position."
-    );
-
-    return;
-
-  }
-
-
-  const {
-    error
-  } =
-  await db.rpc(
-    "add_roster_player",
-    {
-      p_code:code,
-      p_number:Number(number),
-      p_name:name,
-      p_position:position
-    }
-  );
-
-
-  if(error){
-
-    console.error(error);
-
-    showAdminMessage(
-      "Could not add player."
-    );
-
-    return;
-
-  }
-
-
-  document.getElementById(
-    "playerNumber"
-  ).value="";
-
-
-  document.getElementById(
-    "playerName"
-  ).value="";
-
-
-  clearPositionPicker(
-    "add"
-  );
-
-
-  showAdminMessage(
-    "Player added!"
-  );
-
-
-  loadRoster();
-
-}
-
-
-/* =========================================================
-   SAVE PLAYER
-========================================================= */
-
-async function savePlayer(id){
-
-  const code=
-    sessionStorage.getItem(
-      "adminCode"
-    );
-
-
-  const number=
-    document.getElementById(
-      `edit-player-number-${id}`
-    ).value;
-
-
-  const name=
-    document.getElementById(
-      `edit-player-name-${id}`
-    ).value.trim();
-
-
-  const position=
-    getSelectedPositions(
-      `edit-${id}`
-    );
-
-
-  if(
-    number==="" ||
-    !name ||
-    !position
-  ){
-
-    showAdminMessage(
-      "Enter the number, name and at least one position."
-    );
-
-    return;
-
-  }
-
-
-  const {
-    error
-  } =
-  await db.rpc(
-    "update_roster_player",
-    {
-      p_code:code,
-
-      p_id:id,
-
-      p_number:Number(number),
-
-      p_name:name,
-
-      p_position:position
-
-    }
-  );
-
-
-  if(error){
-
-    console.error(error);
-
-    showAdminMessage(
-      "Could not update player."
-    );
-
-    return;
-
-  }
-
-
-  showAdminMessage(
-    "Player updated!"
-  );
-
-
-  loadRoster();
-
-}
-
-
-/* =========================================================
-   DELETE PLAYER
-========================================================= */
-
-async function deletePlayer(id){
-
-  if(
-    !confirm(
-      "Delete this player from the roster?"
-    )
-  )
-    return;
-
-
-  const code=
-    sessionStorage.getItem(
-      "adminCode"
-    );
-
-
-  const {
-    error
-  } =
-  await db.rpc(
-    "delete_roster_player",
-    {
-      p_code:code,
-      p_id:id
-    }
-  );
-
-
-  if(error){
-
-    console.error(error);
-
-    showAdminMessage(
-      "Could not delete player."
-    );
-
-    return;
-
-  }
-
-
-  showAdminMessage(
-    "Player deleted."
-  );
-
-
-  loadRoster();
-
-}
 
 
 /* =========================================================
@@ -5176,26 +4089,19 @@ async function loadGames(){
   const {
     data,
     error
-  } =
+  }=
   await db
     .from("games")
     .select("*")
     .order(
       "date",
-      {
-        ascending:true
-      }
+      {ascending:true}
     );
 
 
   if(error){
 
-    document.getElementById(
-      "scheduleList"
-    ).innerHTML=
-      `<div class="message">
-        Could not load games.
-      </div>`;
+    console.error(error);
 
     return;
 
@@ -5204,31 +4110,17 @@ async function loadGames(){
 
   games=data||[];
 
-
   updateHome();
 
   updateSchedule();
 
-
   if(
-    sessionStorage.getItem(
-      "adminCode"
-    )
-  ){
-
+    sessionStorage.getItem("adminCode")
+  )
     updateAdminGames();
-
-  }
-
-
-  updateAdminStats();
 
 }
 
-
-/* =========================================================
-   GAME HELPERS
-========================================================= */
 
 function hasScore(game){
 
@@ -5236,7 +4128,6 @@ function hasScore(game){
     game.our_score!==null &&
     game.our_score!==undefined &&
     game.our_score!=="" &&
-
     game.opponent_score!==null &&
     game.opponent_score!==undefined &&
     game.opponent_score!==""
@@ -5252,7 +4143,6 @@ function parseKickoff(game){
 
 
   let hours=19;
-
   let minutes=0;
 
 
@@ -5329,9 +4219,7 @@ function isGameLive(game){
     return false;
 
 
-  return(
-    new Date()>=kickoff
-  );
+  return new Date()>=kickoff;
 
 }
 
@@ -5347,27 +4235,21 @@ function getGameStatus(game){
       Number(game.opponent_score);
 
 
-    if(a>b){
-
-      return{
+    if(a>b)
+      return {
         text:"FINAL • WIN",
         className:"win"
       };
 
-    }
 
-
-    if(a<b){
-
-      return{
+    if(a<b)
+      return {
         text:"FINAL • LOSS",
         className:"loss"
       };
 
-    }
 
-
-    return{
+    return {
       text:"FINAL • TIE",
       className:"tie"
     };
@@ -5377,7 +4259,7 @@ function getGameStatus(game){
 
   if(isGameLive(game)){
 
-    return{
+    return {
       text:"🔴 LIVE",
       className:"live"
     };
@@ -5446,7 +4328,6 @@ function updateHome(){
     ).textContent=
       "No upcoming games";
 
-
     return;
 
   }
@@ -5465,9 +4346,7 @@ function updateHome(){
     </span>
 
     <span class="next-team">
-      ${escapeHtml(
-        next.opponent
-      )}
+      ${escapeHtml(next.opponent)}
     </span>
 
   `;
@@ -5481,27 +4360,19 @@ function updateHome(){
 
     <br>
 
-    ⏰ ${escapeHtml(
-      next.time||"Time TBD"
-    )}
+    ⏰ ${escapeHtml(next.time||"Time TBD")}
 
     <br>
 
-    📍 ${escapeHtml(
-      next.location||"Location TBD"
-    )}
+    📍 ${escapeHtml(next.location||"Location TBD")}
 
     <br>
 
     <span class="home-away">
 
-      ${getHomeAwayIcon(
-        next.home_away
-      )}
+      ${getHomeAwayIcon(next.home_away)}
 
-      ${escapeHtml(
-        next.home_away||""
-      )}
+      ${escapeHtml(next.home_away||"")}
 
     </span>
 
@@ -5512,7 +4383,6 @@ function updateHome(){
 
 
   let wins=0;
-
   let losses=0;
 
 
@@ -5552,22 +4422,14 @@ function updateHome(){
 }
 
 
-/* =========================================================
-   COUNTDOWN
-========================================================= */
-
 function startCountdown(game){
 
   const box=
-    document.getElementById(
-      "countdown"
-    );
+    document.getElementById("countdown");
 
 
   if(countdownTimer)
-    clearInterval(
-      countdownTimer
-    );
+    clearInterval(countdownTimer);
 
 
   const kickoff=
@@ -5585,9 +4447,7 @@ function startCountdown(game){
       box.innerHTML=
         "<span>🔴 LIVE</span>";
 
-      box.classList.remove(
-        "hidden"
-      );
+      box.classList.remove("hidden");
 
       return;
 
@@ -5627,9 +4487,7 @@ function startCountdown(game){
 
     box.innerHTML=`
 
-      <span>
-        🏈
-      </span>
+      <span>🏈</span>
 
       <span>
         ${days}d ${hours}h ${minutes}m
@@ -5639,9 +4497,7 @@ function startCountdown(game){
     `;
 
 
-    box.classList.remove(
-      "hidden"
-    );
+    box.classList.remove("hidden");
 
   }
 
@@ -5689,45 +4545,29 @@ function updateSchedule(){
         getGameStatus(game);
 
 
-      const live=
-        isGameLive(game);
-
-
       return`
 
         <div
           class="game ${
-            live
+            isGameLive(game)
             ?
             "live-game"
             :
             ""
           }"
-          onclick="
-            openGameDetails(${game.id})
-          ">
+          onclick="openGameDetails(${game.id})">
 
 
           <div class="game-top">
 
-
             <div>
 
               <div class="game-date">
-
-                ${formatDate(
-                  game.date
-                )}
-
+                ${formatDate(game.date)}
               </div>
 
-
               <div class="game-opponent">
-
-                ${escapeHtml(
-                  game.opponent
-                )}
-
+                ${escapeHtml(game.opponent)}
               </div>
 
             </div>
@@ -5737,12 +4577,8 @@ function updateSchedule(){
               status
               ?
               `
-                <span class="badge ${
-                  status.className
-                }">
-
+                <span class="badge ${status.className}">
                   ${status.text}
-
                 </span>
               `
               :
@@ -5763,9 +4599,7 @@ function updateSchedule(){
             </span>
 
             <span class="game-team">
-              ${escapeHtml(
-                game.opponent
-              )}
+              ${escapeHtml(game.opponent)}
             </span>
 
           </div>
@@ -5774,29 +4608,16 @@ function updateSchedule(){
           <div class="game-details">
 
             <span>
-              ⏰ ${escapeHtml(
-                game.time||"Time TBD"
-              )}
+              ⏰ ${escapeHtml(game.time||"Time TBD")}
             </span>
 
-
             <span>
-              📍 ${escapeHtml(
-                game.location||"Location TBD"
-              )}
+              📍 ${escapeHtml(game.location||"Location TBD")}
             </span>
 
-
             <span>
-
-              ${getHomeAwayIcon(
-                game.home_away
-              )}
-
-              ${escapeHtml(
-                game.home_away||""
-              )}
-
+              ${getHomeAwayIcon(game.home_away)}
+              ${escapeHtml(game.home_away||"")}
             </span>
 
           </div>
@@ -5807,12 +4628,10 @@ function updateSchedule(){
             ?
             `
               <div class="game-score">
-
                 FINAL:
                 ${game.our_score}
                 –
                 ${game.opponent_score}
-
               </div>
             `
             :
@@ -5821,9 +4640,7 @@ function updateSchedule(){
 
 
           <div class="game-details-link">
-
             TAP FOR GAME DETAILS →
-
           </div>
 
         </div>
@@ -5836,7 +4653,7 @@ function updateSchedule(){
 
 
 /* =========================================================
-   ADMIN GAME LIST
+   ADMIN GAMES
 ========================================================= */
 
 function updateAdminGames(){
@@ -5865,60 +4682,38 @@ function updateAdminGames(){
 
   container.innerHTML=
     games.map(
-      (game,index)=>{
-
-        let score=
-          "No score";
-
-
-        if(hasScore(game)){
-
-          score=
-            `FINAL ${game.our_score}–${game.opponent_score}`;
-
-        }
-
-        else if(
-          isGameLive(game)
-        ){
-
-          score="LIVE";
-
-        }
-
-
-        return`
+      (game,index)=>`
 
         <div class="admin-game-row">
-
 
           <div>
 
             <div class="admin-game-title">
 
               ${index+1}.
-              ${escapeHtml(
-                game.opponent
-              )}
+              ${escapeHtml(game.opponent)}
 
             </div>
 
 
             <div class="admin-game-meta">
 
-              ${formatShortDate(
-                game.date
-              )}
+              ${formatShortDate(game.date)}
+              •
+              ${escapeHtml(game.time||"TBD")}
 
               •
-
-              ${escapeHtml(
-                game.time||"TBD"
-              )}
-
-              •
-
-              ${score}
+              ${
+                hasScore(game)
+                ?
+                `FINAL ${game.our_score}–${game.opponent_score}`
+                :
+                isGameLive(game)
+                ?
+                "LIVE"
+                :
+                "NOT STARTED"
+              }
 
             </div>
 
@@ -5929,16 +4724,13 @@ function updateAdminGames(){
 
             <button
               class="secondary"
-              onclick="
-                toggleGameEdit(${game.id})
-              ">
+              onclick="toggleGameEdit(${game.id})">
 
               Edit
 
             </button>
 
           </div>
-
 
         </div>
 
@@ -5948,7 +4740,7 @@ function updateAdminGames(){
           class="hidden"
           style="
             margin:0 0 7px;
-            padding:9px;
+            padding:10px;
             background:#f5f8fa;
             border:1px solid var(--border);
             border-radius:7px;
@@ -5959,31 +4751,23 @@ function updateAdminGames(){
 
             <div>
 
-              <label>
-                Date
-              </label>
+              <label>Date</label>
 
               <input
                 id="edit-date-${game.id}"
                 type="date"
-                value="${escapeAttribute(
-                  game.date||""
-                )}">
+                value="${escapeAttribute(game.date||"")}">
 
             </div>
 
 
             <div>
 
-              <label>
-                Time
-              </label>
+              <label>Time</label>
 
               <input
                 id="edit-time-${game.id}"
-                value="${escapeAttribute(
-                  game.time||""
-                )}">
+                value="${escapeAttribute(game.time||"")}">
 
             </div>
 
@@ -5994,104 +4778,66 @@ function updateAdminGames(){
 
             <div>
 
-              <label>
-                NDGP Score
-              </label>
+              <label>NDGP Score</label>
 
               <input
                 id="edit-our-${game.id}"
                 type="number"
-                value="${
-                  game.our_score??""
-                }">
+                value="${game.our_score??""}">
 
             </div>
 
 
             <div>
 
-              <label>
-                Opponent Score
-              </label>
+              <label>Opponent Score</label>
 
               <input
                 id="edit-opp-${game.id}"
                 type="number"
-                value="${
-                  game.opponent_score??""
-                }">
+                value="${game.opponent_score??""}">
 
             </div>
 
           </div>
 
 
-          <label>
-            Location
-          </label>
+          <label>Location</label>
 
           <input
             id="edit-location-${game.id}"
-            value="${escapeAttribute(
-              game.location||""
-            )}">
+            value="${escapeAttribute(game.location||"")}">
 
 
-          <label>
-            Home / Away
-          </label>
+          <label>Home / Away</label>
 
-          <select
-            id="edit-ha-${game.id}">
+          <select id="edit-ha-${game.id}">
 
             <option
               value="Home"
-              ${
-                game.home_away==="Home"
-                ?
-                "selected"
-                :
-                ""
-              }>
-
+              ${game.home_away==="Home"?"selected":""}>
               Home
-
             </option>
-
 
             <option
               value="Away"
-              ${
-                game.home_away==="Away"
-                ?
-                "selected"
-                :
-                ""
-              }>
-
+              ${game.home_away==="Away"?"selected":""}>
               Away
-
             </option>
 
           </select>
 
 
-          <label>
-            Notes
-          </label>
+          <label>Notes</label>
 
           <textarea
-            id="edit-notes-${game.id}">${escapeHtml(
-              game.notes||""
-            )}</textarea>
+            id="edit-notes-${game.id}">${escapeHtml(game.notes||"")}</textarea>
 
 
           <button
             class="primary"
             style="width:100%"
-            onclick="
-              saveGame(${game.id})
-            ">
+            onclick="saveGame(${game.id})">
 
             SAVE CHANGES
 
@@ -6104,9 +4850,7 @@ function updateAdminGames(){
               width:100%;
               margin-top:5px
             "
-            onclick="
-              deleteGame(${game.id})
-            ">
+            onclick="deleteGame(${game.id})">
 
             DELETE GAME
 
@@ -6114,17 +4858,11 @@ function updateAdminGames(){
 
         </div>
 
-        `;
-
-      }
+      `
     ).join("");
 
 }
 
-
-/* =========================================================
-   TOGGLE GAME EDIT
-========================================================= */
 
 function toggleGameEdit(id){
 
@@ -6133,11 +4871,8 @@ function toggleGameEdit(id){
       `game-edit-${id}`
     );
 
-
   if(el)
-    el.classList.toggle(
-      "hidden"
-    );
+    el.classList.toggle("hidden");
 
 }
 
@@ -6149,45 +4884,26 @@ function toggleGameEdit(id){
 async function addGame(){
 
   const code=
-    sessionStorage.getItem(
-      "adminCode"
-    );
+    sessionStorage.getItem("adminCode");
 
 
   const date=
-    document.getElementById(
-      "gameDate"
-    ).value;
-
+    document.getElementById("gameDate").value;
 
   const time=
-    document.getElementById(
-      "gameTime"
-    ).value;
-
+    document.getElementById("gameTime").value;
 
   const opponent=
-    document.getElementById(
-      "gameOpponent"
-    ).value.trim();
-
+    document.getElementById("gameOpponent").value.trim();
 
   const location=
-    document.getElementById(
-      "gameLocation"
-    ).value.trim();
-
+    document.getElementById("gameLocation").value.trim();
 
   const homeAway=
-    document.getElementById(
-      "gameHomeAway"
-    ).value;
-
+    document.getElementById("gameHomeAway").value;
 
   const notes=
-    document.getElementById(
-      "gameNotes"
-    ).value.trim();
+    document.getElementById("gameNotes").value.trim();
 
 
   if(!date||!opponent){
@@ -6201,28 +4917,19 @@ async function addGame(){
   }
 
 
-  const {
-    error
-  } =
-  await db.rpc(
-    "add_game",
-    {
-      p_code:code,
-
-      p_date:date,
-
-      p_time:time,
-
-      p_opponent:opponent,
-
-      p_location:location,
-
-      p_home_away:homeAway,
-
-      p_notes:notes
-
-    }
-  );
+  const {error}=
+    await db.rpc(
+      "add_game",
+      {
+        p_code:code,
+        p_date:date,
+        p_time:time,
+        p_opponent:opponent,
+        p_location:location,
+        p_home_away:homeAway,
+        p_notes:notes
+      }
+    );
 
 
   if(error){
@@ -6238,35 +4945,14 @@ async function addGame(){
   }
 
 
-  document.getElementById(
-    "gameDate"
-  ).value="";
+  document.getElementById("gameDate").value="";
+  document.getElementById("gameTime").value="";
+  document.getElementById("gameOpponent").value="";
+  document.getElementById("gameLocation").value="";
+  document.getElementById("gameNotes").value="";
 
 
-  document.getElementById(
-    "gameTime"
-  ).value="";
-
-
-  document.getElementById(
-    "gameOpponent"
-  ).value="";
-
-
-  document.getElementById(
-    "gameLocation"
-  ).value="";
-
-
-  document.getElementById(
-    "gameNotes"
-  ).value="";
-
-
-  showAdminMessage(
-    "Game added!"
-  );
-
+  showAdminMessage("Game added!");
 
   loadGames();
 
@@ -6280,16 +4966,12 @@ async function addGame(){
 async function saveGame(id){
 
   const code=
-    sessionStorage.getItem(
-      "adminCode"
-    );
+    sessionStorage.getItem("adminCode");
 
 
   const game=
     games.find(
-      g=>
-        Number(g.id)===
-        Number(id)
+      g=>Number(g.id)===Number(id)
     );
 
 
@@ -6310,76 +4992,60 @@ async function saveGame(id){
 
 
   const ourScore=
-    our===""
-    ?
-    null
-    :
-    Number(our);
-
+    our===""?null:Number(our);
 
   const oppScore=
-    opp===""
-    ?
-    null
-    :
-    Number(opp);
+    opp===""?null:Number(opp);
 
 
-  const {
-    error
-  } =
-  await db.rpc(
-    "update_game",
-    {
+  const {error}=
+    await db.rpc(
+      "update_game",
+      {
+        p_code:code,
+        p_id:id,
 
-      p_code:code,
+        p_date:
+          document.getElementById(
+            `edit-date-${id}`
+          ).value,
 
-      p_id:id,
+        p_time:
+          document.getElementById(
+            `edit-time-${id}`
+          ).value,
 
-      p_date:
-        document.getElementById(
-          `edit-date-${id}`
-        ).value,
+        p_opponent:
+          game.opponent,
 
-      p_time:
-        document.getElementById(
-          `edit-time-${id}`
-        ).value,
+        p_location:
+          document.getElementById(
+            `edit-location-${id}`
+          ).value,
 
-      p_opponent:
-        game.opponent,
+        p_home_away:
+          document.getElementById(
+            `edit-ha-${id}`
+          ).value,
 
-      p_location:
-        document.getElementById(
-          `edit-location-${id}`
-        ).value,
+        p_our_score:ourScore,
 
-      p_home_away:
-        document.getElementById(
-          `edit-ha-${id}`
-        ).value,
+        p_opponent_score:oppScore,
 
-      p_our_score:
-        ourScore,
+        p_status:
+          ourScore!==null &&
+          oppScore!==null
+          ?
+          "Final"
+          :
+          "Scheduled",
 
-      p_opponent_score:
-        oppScore,
-
-      p_status:
-        ourScore!==null &&
-        oppScore!==null
-        ?
-        "Final"
-        :
-        "Scheduled",
-
-      p_notes:
-        document.getElementById(
-          `edit-notes-${id}`
-        ).value
-
-    }
-  );
+        p_notes:
+          document.getElementById(
+            `edit-notes-${id}`
+          ).value
+      }
+    );
 
 
   if(error){
@@ -6420,21 +5086,17 @@ async function deleteGame(id){
 
 
   const code=
-    sessionStorage.getItem(
-      "adminCode"
+    sessionStorage.getItem("adminCode");
+
+
+  const {error}=
+    await db.rpc(
+      "delete_game",
+      {
+        p_code:code,
+        p_id:id
+      }
     );
-
-
-  const {
-    error
-  } =
-  await db.rpc(
-    "delete_game",
-    {
-      p_code:code,
-      p_id:id
-    }
-  );
 
 
   if(error){
@@ -6461,227 +5123,617 @@ async function deleteGame(id){
 
 
 /* =========================================================
-   GAME DETAILS
+   ROSTER
 ========================================================= */
 
-function openGameDetails(id){
+async function loadRoster(){
 
-  const game=
-    games.find(
-      g=>
-        Number(g.id)===
-        Number(id)
-    );
-
-
-  if(!game)
-    return;
+  const {data,error}=
+    await db
+      .from("roster")
+      .select("*")
+      .order(
+        "number",
+        {ascending:true}
+      );
 
 
-  document.getElementById(
-    "modalMatchup"
-  ).textContent=
-    `NDGP VS ${game.opponent}`;
+  if(
+    error||
+    !data||
+    data.length===0
+  ){
 
-
-  const status=
-    document.getElementById(
-      "modalStatus"
-    );
-
-
-  const score=
-    document.getElementById(
-      "modalScore"
-    );
-
-
-  if(isGameLive(game)){
-
-    status.innerHTML=
-      `<span class="badge live">
-        🔴 LIVE
-      </span>`;
-
-    score.textContent="";
+    roster=
+      startingRoster.map(
+        player=>({
+          id:null,
+          number:player[0],
+          name:player[1],
+          position:player[2]
+        })
+      );
 
   }
-
-
-  else if(hasScore(game)){
-
-    const a=
-      Number(game.our_score);
-
-    const b=
-      Number(game.opponent_score);
-
-
-    let result=
-      "FINAL • TIE";
-
-    let cls="tie";
-
-
-    if(a>b){
-
-      result=
-        "FINAL • WIN";
-
-      cls="win";
-
-    }
-
-
-    else if(a<b){
-
-      result=
-        "FINAL • LOSS";
-
-      cls="loss";
-
-    }
-
-
-    status.innerHTML=
-      `<span class="badge ${cls}">
-        ${result}
-      </span>`;
-
-
-    score.textContent=
-      `${game.our_score} – ${game.opponent_score}`;
-
-  }
-
 
   else{
 
-    status.innerHTML="";
-
-    score.textContent="";
+    roster=data;
 
   }
 
 
-  document.getElementById(
-    "modalInfo"
-  ).innerHTML=`
-
-    <div class="modal-info">
-
-      <div class="modal-info-label">
-        Date
-      </div>
-
-      <div class="modal-info-value">
-        ${formatDate(game.date)}
-      </div>
-
-    </div>
+  renderRoster();
 
 
-    <div class="modal-info">
-
-      <div class="modal-info-label">
-        Kickoff
-      </div>
-
-      <div class="modal-info-value">
-        ${escapeHtml(
-          game.time||"Time TBD"
-        )}
-      </div>
-
-    </div>
-
-
-    <div class="modal-info">
-
-      <div class="modal-info-label">
-        Location
-      </div>
-
-      <div class="modal-info-value">
-        ${escapeHtml(
-          game.location||"Location TBD"
-        )}
-      </div>
-
-    </div>
-
-
-    <div class="modal-info">
-
-      <div class="modal-info-label">
-        Home / Away
-      </div>
-
-      <div class="modal-info-value">
-
-        ${getHomeAwayIcon(
-          game.home_away
-        )}
-
-        ${escapeHtml(
-          game.home_away||""
-        )}
-
-      </div>
-
-    </div>
-
-  `;
-
-
-  document.getElementById(
-    "modalNotes"
-  ).innerHTML=
-    game.notes
-    ?
-    `<div class="modal-notes">
-      ${escapeHtml(game.notes)}
-    </div>`
-    :
-    "";
-
-
-  document
-    .getElementById(
-      "gameModal"
-    )
-    .classList.add(
-      "show"
-    );
-
-
-  document.body.style.overflow=
-    "hidden";
+  if(
+    sessionStorage.getItem("adminCode")
+  )
+    renderAdminRoster();
 
 }
 
 
-function closeGameModal(event){
+function renderRoster(){
+
+  const list=
+    document.getElementById(
+      "rosterList"
+    );
+
+
+  const search=
+    (
+      document.getElementById(
+        "rosterSearch"
+      )?.value||""
+    )
+    .toLowerCase()
+    .trim();
+
+
+  const filter=
+    document.getElementById(
+      "rosterFilter"
+    )?.value||"all";
+
+
+  const filtered=
+    roster.filter(player=>{
+
+      const searchMatch=
+        !search||
+        player.name
+          .toLowerCase()
+          .includes(search)||
+        String(player.number)
+          .includes(search)||
+        player.position
+          .toLowerCase()
+          .includes(search);
+
+
+      const positionMatch=
+        filter==="all"||
+        player.position
+          .toUpperCase()
+          .includes(filter);
+
+
+      return(
+        searchMatch&&
+        positionMatch
+      );
+
+    });
+
+
+  document.getElementById(
+    "rosterCount"
+  ).textContent=
+    `${filtered.length} players`;
+
+
+  if(!filtered.length){
+
+    list.innerHTML=
+      `<div class="roster-empty">
+        No players found.
+      </div>`;
+
+    return;
+
+  }
+
+
+  list.innerHTML=
+    filtered
+      .map(player=>`
+
+        <div class="roster-card">
+
+          <div class="roster-number">
+            ${escapeHtml(player.number)}
+          </div>
+
+          <div class="roster-info">
+
+            <div class="roster-name">
+              ${escapeHtml(player.name)}
+            </div>
+
+            <div class="roster-position">
+              ${escapeHtml(player.position)}
+            </div>
+
+          </div>
+
+        </div>
+
+      `)
+      .join("");
+
+}
+
+
+document
+  .getElementById("rosterSearch")
+  .addEventListener(
+    "input",
+    renderRoster
+  );
+
+
+document
+  .getElementById("rosterFilter")
+  .addEventListener(
+    "change",
+    renderRoster
+  );
+
+
+/* =========================================================
+   ADMIN ROSTER
+========================================================= */
+
+function renderAdminRoster(){
+
+  const list=
+    document.getElementById(
+      "adminRosterList"
+    );
+
+
+  if(!list)
+    return;
+
+
+  list.innerHTML=
+    roster
+      .map(player=>{
+
+        const type=
+          `edit-${player.id}`;
+
+
+        return`
+
+          <div class="admin-roster-row">
+
+            <div class="admin-roster-number">
+              ${escapeHtml(player.number)}
+            </div>
+
+
+            <div>
+
+              <div class="admin-roster-name">
+                ${escapeHtml(player.name)}
+              </div>
+
+              <div class="admin-roster-position">
+                ${escapeHtml(player.position)}
+              </div>
+
+            </div>
+
+
+            <div class="admin-roster-actions">
+
+              <button
+                class="edit-roster"
+                onclick="toggleRosterEdit(${player.id})">
+
+                Edit
+
+              </button>
+
+
+              <button
+                class="delete-roster"
+                onclick="deletePlayer(${player.id})">
+
+                Delete
+
+              </button>
+
+            </div>
+
+
+            <div
+              id="roster-edit-${player.id}"
+              class="roster-edit-area">
+
+
+              <div class="form-row">
+
+                <div>
+
+                  <label>
+                    Number
+                  </label>
+
+                  <input
+                    id="edit-player-number-${player.id}"
+                    type="number"
+                    value="${escapeAttribute(player.number)}">
+
+                </div>
+
+
+                <div>
+
+                  <label>
+                    Name
+                  </label>
+
+                  <input
+                    id="edit-player-name-${player.id}"
+                    value="${escapeAttribute(player.name)}">
+
+                </div>
+
+              </div>
+
+
+              <label>
+                Position
+              </label>
+
+
+              <div
+                id="${type}PositionPicker"
+                class="position-picker">
+
+
+                <button
+                  type="button"
+                  class="position-trigger"
+                  onclick="
+                    togglePositionPicker('${type}')
+                  ">
+
+                  <span
+                    id="${type}PositionText"
+                    class="position-placeholder">
+
+                    Select position(s)...
+
+                  </span>
+
+                  <span>
+                    ▼
+                  </span>
+
+                </button>
+
+
+                <div class="position-menu">
+
+                  <div
+                    id="${type}PositionOptions"
+                    class="position-options">
+                  </div>
+
+
+                  <div class="position-custom">
+
+                    <label>
+                      Custom Position
+                    </label>
+
+                    <input
+                      id="${type}CustomPosition"
+                      type="text"
+                      placeholder="Type another position...">
+
+                  </div>
+
+
+                  <div
+                    style="
+                      display:flex;
+                      justify-content:flex-end;
+                      gap:5px;
+                      margin-top:7px;
+                    ">
+
+                    <button
+                      type="button"
+                      class="secondary"
+                      onclick="
+                        clearPositionPicker('${type}')
+                      ">
+
+                      Clear
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      class="primary"
+                      onclick="
+                        closePositionPicker('${type}')
+                      ">
+
+                      Done
+
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <button
+                class="primary"
+                style="width:100%"
+                onclick="savePlayer(${player.id})">
+
+                SAVE PLAYER
+
+              </button>
+
+            </div>
+
+          </div>
+
+        `;
+
+      })
+      .join("");
+
+
+  roster.forEach(player=>{
+
+    buildPositionPicker(
+      `edit-${player.id}`,
+      player.position
+    );
+
+  });
+
+}
+
+
+function toggleRosterEdit(id){
+
+  const area=
+    document.getElementById(
+      `roster-edit-${id}`
+    );
+
+  if(area)
+    area.classList.toggle("open");
+
+}
+
+
+async function addPlayer(){
+
+  const code=
+    sessionStorage.getItem("adminCode");
+
+
+  const number=
+    document.getElementById(
+      "playerNumber"
+    ).value;
+
+
+  const name=
+    document.getElementById(
+      "playerName"
+    ).value.trim();
+
+
+  const position=
+    getSelectedPositions("add");
+
 
   if(
-    event &&
-    event.target &&
-    event.target.id!==
-    "gameModal"
+    number===""||
+    !name||
+    !position
+  ){
+
+    showAdminMessage(
+      "Enter the number, name and at least one position."
+    );
+
+    return;
+
+  }
+
+
+  const {error}=
+    await db.rpc(
+      "add_roster_player",
+      {
+        p_code:code,
+        p_number:Number(number),
+        p_name:name,
+        p_position:position
+      }
+    );
+
+
+  if(error){
+
+    console.error(error);
+
+    showAdminMessage(
+      "Could not add player."
+    );
+
+    return;
+
+  }
+
+
+  document.getElementById(
+    "playerNumber"
+  ).value="";
+
+  document.getElementById(
+    "playerName"
+  ).value="";
+
+
+  clearPositionPicker("add");
+
+
+  showAdminMessage(
+    "Player added!"
+  );
+
+
+  loadRoster();
+
+}
+
+
+async function savePlayer(id){
+
+  const code=
+    sessionStorage.getItem("adminCode");
+
+
+  const number=
+    document.getElementById(
+      `edit-player-number-${id}`
+    ).value;
+
+
+  const name=
+    document.getElementById(
+      `edit-player-name-${id}`
+    ).value.trim();
+
+
+  const position=
+    getSelectedPositions(
+      `edit-${id}`
+    );
+
+
+  if(
+    number===""||
+    !name||
+    !position
+  ){
+
+    showAdminMessage(
+      "Enter the number, name and at least one position."
+    );
+
+    return;
+
+  }
+
+
+  const {error}=
+    await db.rpc(
+      "update_roster_player",
+      {
+        p_code:code,
+        p_id:id,
+        p_number:Number(number),
+        p_name:name,
+        p_position:position
+      }
+    );
+
+
+  if(error){
+
+    console.error(error);
+
+    showAdminMessage(
+      "Could not update player."
+    );
+
+    return;
+
+  }
+
+
+  showAdminMessage(
+    "Player updated!"
+  );
+
+
+  loadRoster();
+
+}
+
+
+async function deletePlayer(id){
+
+  if(
+    !confirm(
+      "Delete this player from the roster?"
+    )
   )
     return;
 
 
-  document
-    .getElementById(
-      "gameModal"
-    )
-    .classList.remove(
-      "show"
+  const code=
+    sessionStorage.getItem("adminCode");
+
+
+  const {error}=
+    await db.rpc(
+      "delete_roster_player",
+      {
+        p_code:code,
+        p_id:id
+      }
     );
 
 
-  document.body.style.overflow="";
+  if(error){
+
+    console.error(error);
+
+    showAdminMessage(
+      "Could not delete player."
+    );
+
+    return;
+
+  }
+
+
+  showAdminMessage(
+    "Player deleted."
+  );
+
+
+  loadRoster();
 
 }
 
@@ -6692,19 +5744,14 @@ function closeGameModal(event){
 
 async function loadPhotos(){
 
-  const {
-    data,
-    error
-  } =
-  await db
-    .from("photos")
-    .select("*")
-    .order(
-      "created_at",
-      {
-        ascending:false
-      }
-    );
+  const {data,error}=
+    await db
+      .from("photos")
+      .select("*")
+      .order(
+        "created_at",
+        {ascending:false}
+      );
 
 
   if(error){
@@ -6716,8 +5763,7 @@ async function loadPhotos(){
   }
 
 
-  const photos=
-    data||[];
+  const photos=data||[];
 
 
   const publicList=
@@ -6735,7 +5781,6 @@ async function loadPhotos(){
 
   }
 
-
   else{
 
     publicList.innerHTML=`
@@ -6743,31 +5788,31 @@ async function loadPhotos(){
       <div class="photo-grid">
 
         ${
-          photos.map(photo=>`
+          photos
+            .map(photo=>`
 
-            <div class="photo-item">
+              <div class="photo-item">
 
-              <img
-                src="${escapeAttribute(
-                  photo.image_url
-                )}"
-                alt="NDGP Football">
+                <img
+                  src="${escapeAttribute(photo.image_url)}"
+                  alt="NDGP Football">
 
-              ${
-                photo.caption
-                ?
-                `<div class="photo-caption">
-                  ${escapeHtml(
-                    photo.caption
-                  )}
-                </div>`
-                :
-                ""
-              }
+                ${
+                  photo.caption
+                  ?
+                  `
+                    <div class="photo-caption">
+                      ${escapeHtml(photo.caption)}
+                    </div>
+                  `
+                  :
+                  ""
+                }
 
-            </div>
+              </div>
 
-          `).join("")
+            `)
+            .join("")
         }
 
       </div>
@@ -6783,12 +5828,7 @@ async function loadPhotos(){
     );
 
 
-  if(
-    admin &&
-    sessionStorage.getItem(
-      "adminCode"
-    )
-  ){
+  if(admin){
 
     if(!photos.length){
 
@@ -6806,45 +5846,41 @@ async function loadPhotos(){
         <div class="admin-photo-grid">
 
           ${
-            photos.map(photo=>`
+            photos
+              .map(photo=>`
 
-              <div class="admin-photo-card">
+                <div class="admin-photo-card">
 
-                <img
-                  src="${escapeAttribute(
-                    photo.image_url
-                  )}"
-                  alt="Football photo">
+                  <img
+                    src="${escapeAttribute(photo.image_url)}"
+                    alt="Football photo">
 
 
-                <div class="admin-photo-caption">
+                  <div class="admin-photo-caption">
 
-                  ${
-                    photo.caption
-                    ?
-                    escapeHtml(
+                    ${
                       photo.caption
-                    )
-                    :
-                    "No caption"
-                  }
+                      ?
+                      escapeHtml(photo.caption)
+                      :
+                      "No caption"
+                    }
+
+                  </div>
+
+
+                  <button
+                    class="admin-photo-delete"
+                    onclick="deletePhoto(${photo.id})">
+
+                    Delete
+
+                  </button>
 
                 </div>
 
-
-                <button
-                  class="admin-photo-delete"
-                  onclick="
-                    deletePhoto(${photo.id})
-                  ">
-
-                  Delete
-
-                </button>
-
-              </div>
-
-            `).join("")
+              `)
+              .join("")
           }
 
         </div>
@@ -6855,22 +5891,13 @@ async function loadPhotos(){
 
   }
 
-
-  updateAdminStats();
-
 }
 
-
-/* =========================================================
-   ADD PHOTO
-========================================================= */
 
 async function addPhoto(){
 
   const code=
-    sessionStorage.getItem(
-      "adminCode"
-    );
+    sessionStorage.getItem("adminCode");
 
 
   const file=
@@ -6903,23 +5930,15 @@ async function addPhoto(){
   reader.onload=
     async function(){
 
-      const {
-        error
-      } =
-      await db.rpc(
-        "add_photo",
-        {
-
-          p_code:code,
-
-          p_image_url:
-            reader.result,
-
-          p_caption:
-            caption
-
-        }
-      );
+      const {error}=
+        await db.rpc(
+          "add_photo",
+          {
+            p_code:code,
+            p_image_url:reader.result,
+            p_caption:caption
+          }
+        );
 
 
       if(error){
@@ -6960,10 +5979,6 @@ async function addPhoto(){
 }
 
 
-/* =========================================================
-   DELETE PHOTO
-========================================================= */
-
 async function deletePhoto(id){
 
   if(
@@ -6975,21 +5990,17 @@ async function deletePhoto(id){
 
 
   const code=
-    sessionStorage.getItem(
-      "adminCode"
+    sessionStorage.getItem("adminCode");
+
+
+  const {error}=
+    await db.rpc(
+      "delete_photo",
+      {
+        p_code:code,
+        p_id:id
+      }
     );
-
-
-  const {
-    error
-  } =
-  await db.rpc(
-    "delete_photo",
-    {
-      p_code:code,
-      p_id:id
-    }
-  );
 
 
   if(error){
@@ -7016,80 +6027,6 @@ async function deletePhoto(id){
 
 
 /* =========================================================
-   ADMIN STATS
-========================================================= */
-
-function updateAdminStats(){
-
-  const gameCount=
-    document.getElementById(
-      "adminGameCount"
-    );
-
-  const rosterCount=
-    document.getElementById(
-      "adminRosterCount"
-    );
-
-  const photoCount=
-    document.getElementById(
-      "adminPhotoCount"
-    );
-
-
-  if(gameCount)
-    gameCount.textContent=
-      games.length;
-
-
-  if(rosterCount)
-    rosterCount.textContent=
-      roster.length;
-
-
-  /* Record */
-
-  let wins=0;
-
-  let losses=0;
-
-
-  games.forEach(game=>{
-
-    if(hasScore(game)){
-
-      const a=
-        Number(game.our_score);
-
-      const b=
-        Number(game.opponent_score);
-
-
-      if(a>b)
-        wins++;
-
-      else if(a<b)
-        losses++;
-
-    }
-
-  });
-
-
-  const record=
-    document.getElementById(
-      "adminRecord"
-    );
-
-
-  if(record)
-    record.textContent=
-      `${wins}–${losses}`;
-
-}
-
-
-/* =========================================================
    ADMIN MESSAGE
 ========================================================= */
 
@@ -7111,12 +6048,205 @@ function showAdminMessage(message){
     </div>`;
 
 
-  setTimeout(
-    ()=>{
-      box.innerHTML="";
-    },
-    4000
-  );
+  setTimeout(()=>{
+    box.innerHTML="";
+  },4000);
+
+}
+
+
+/* =========================================================
+   GAME DETAILS
+========================================================= */
+
+function openGameDetails(id){
+
+  const game=
+    games.find(
+      g=>Number(g.id)===Number(id)
+    );
+
+
+  if(!game)
+    return;
+
+
+  document.getElementById(
+    "modalMatchup"
+  ).textContent=
+    `NDGP VS ${game.opponent}`;
+
+
+  const status=
+    document.getElementById(
+      "modalStatus"
+    );
+
+
+  const score=
+    document.getElementById(
+      "modalScore"
+    );
+
+
+  if(isGameLive(game)){
+
+    status.innerHTML=
+      `<span class="badge live">
+        🔴 LIVE
+      </span>`;
+
+    score.textContent="";
+
+  }
+
+  else if(hasScore(game)){
+
+    const a=
+      Number(game.our_score);
+
+    const b=
+      Number(game.opponent_score);
+
+
+    let result="FINAL • TIE";
+    let cls="tie";
+
+
+    if(a>b){
+
+      result="FINAL • WIN";
+      cls="win";
+
+    }
+
+    else if(a<b){
+
+      result="FINAL • LOSS";
+      cls="loss";
+
+    }
+
+
+    status.innerHTML=
+      `<span class="badge ${cls}">
+        ${result}
+      </span>`;
+
+
+    score.textContent=
+      `${game.our_score} – ${game.opponent_score}`;
+
+  }
+
+  else{
+
+    status.innerHTML="";
+    score.textContent="";
+
+  }
+
+
+  document.getElementById(
+    "modalInfo"
+  ).innerHTML=`
+
+    <div class="modal-info">
+
+      <div class="modal-info-label">
+        Date
+      </div>
+
+      <div class="modal-info-value">
+        ${formatDate(game.date)}
+      </div>
+
+    </div>
+
+
+    <div class="modal-info">
+
+      <div class="modal-info-label">
+        Kickoff
+      </div>
+
+      <div class="modal-info-value">
+        ${escapeHtml(game.time||"Time TBD")}
+      </div>
+
+    </div>
+
+
+    <div class="modal-info">
+
+      <div class="modal-info-label">
+        Location
+      </div>
+
+      <div class="modal-info-value">
+        ${escapeHtml(game.location||"Location TBD")}
+      </div>
+
+    </div>
+
+
+    <div class="modal-info">
+
+      <div class="modal-info-label">
+        Game Location
+      </div>
+
+      <div class="modal-info-value">
+
+        ${getHomeAwayIcon(game.home_away)}
+
+        ${escapeHtml(game.home_away||"")}
+
+      </div>
+
+    </div>
+
+  `;
+
+
+  document.getElementById(
+    "modalNotes"
+  ).innerHTML=
+    game.notes
+    ?
+    `<div class="modal-notes">
+      ${escapeHtml(game.notes)}
+    </div>`
+    :
+    "";
+
+
+  document
+    .getElementById("gameModal")
+    .classList.add("show");
+
+
+  document.body.style.overflow="hidden";
+
+}
+
+
+function closeGameModal(event){
+
+  if(
+    event &&
+    event.target &&
+    event.target.id!=="gameModal"
+  )
+    return;
+
+
+  document
+    .getElementById("gameModal")
+    .classList.remove("show");
+
+
+  document.body.style.overflow="";
 
 }
 
@@ -7129,11 +6259,9 @@ const seasonHistory=[
 
   {
     year:2025,
-
     record:"12–1",
 
     games:[
-
       ["Garden Spot","21–3","W"],
       ["Salisbury Township","63–0","W"],
       ["North Schuylkill","21–20","W"],
@@ -7146,29 +6274,20 @@ const seasonHistory=[
       ["Salisbury Township","56–6","W"],
       ["Tamaqua","59–16","W"],
       ["Northwestern Lehigh","14–25","L"]
-
     ],
 
     achievements:[
-
       "Colonial League White Division Champions",
-
       "PIAA District XI Class 3A Runner-Up",
-
       "Tied School Record — Most Wins"
-
     ]
-
   },
-
 
   {
     year:2024,
-
     record:"9–2",
 
     games:[
-
       ["Garden Spot","71–64","W"],
       ["Salisbury Township","56–0","W"],
       ["North Schuylkill","29–31","L"],
@@ -7180,64 +6299,21 @@ const seasonHistory=[
       ["Palmerton","52–0","W"],
       ["Wilson Area","52–11","W"],
       ["North Schuylkill","23–26","L"]
-
     ],
 
     achievements:[
-
       "Colonial League White Division Champions"
-
     ]
-
   },
 
-
-  {
-    year:2023,
-    record:"8–4"
-  },
-
-
-  {
-    year:2022,
-    record:"9–3"
-  },
-
-
-  {
-    year:2021,
-    record:"7–3"
-  },
-
-
-  {
-    year:2020,
-    record:"7–1"
-  },
-
-
-  {
-    year:2019,
-    record:"7–4"
-  },
-
-
-  {
-    year:2018,
-    record:"10–2"
-  },
-
-
-  {
-    year:2017,
-    record:"9–3"
-  },
-
-
-  {
-    year:2016,
-    record:"12–3"
-  }
+  {year:2023,record:"8–4"},
+  {year:2022,record:"9–3"},
+  {year:2021,record:"7–3"},
+  {year:2020,record:"7–1"},
+  {year:2019,record:"7–4"},
+  {year:2018,record:"10–2"},
+  {year:2017,record:"9–3"},
+  {year:2016,record:"12–3"}
 
 ];
 
@@ -7251,34 +6327,25 @@ function renderHistory(){
 
 
   list.innerHTML=
-    seasonHistory.map(
-      season=>`
+    seasonHistory
+      .map(season=>`
 
         <div class="season-history">
 
           <button
             class="season-button"
-            onclick="
-              openHistorySeason(
-                ${season.year}
-              )
-            ">
+            onclick="openHistorySeason(${season.year})">
 
 
             <div>
 
               <div class="season-name">
-
                 ${season.year} Season
-
               </div>
 
 
               <div class="season-record-small">
-
-                Final Record:
-                ${season.record}
-
+                Final Record: ${season.record}
               </div>
 
             </div>
@@ -7292,8 +6359,8 @@ function renderHistory(){
 
         </div>
 
-      `
-    ).join("");
+      `)
+      .join("");
 
 }
 
@@ -7340,16 +6407,17 @@ function openHistorySeason(year){
 
 
         ${
-          season.games.map(
-            game=>`
+          season.games
+            .map(game=>`
 
               <div style="
                 display:flex;
                 justify-content:space-between;
+                align-items:center;
                 background:white;
                 border:1px solid var(--border);
                 border-radius:7px;
-                padding:8px;
+                padding:9px;
                 margin-bottom:5px;
               ">
 
@@ -7359,11 +6427,10 @@ function openHistorySeason(year){
                   <strong style="
                     color:var(--navy);
                     font-family:Teko;
-                    font-size:18px;
+                    font-size:19px;
                   ">
 
-                    NDGP VS
-                    ${escapeHtml(game[0])}
+                    NDGP VS ${escapeHtml(game[0])}
 
                   </strong>
 
@@ -7379,7 +6446,7 @@ function openHistorySeason(year){
                     "var(--red)"
                   };
                   font-family:Teko;
-                  font-size:20px;
+                  font-size:21px;
                 ">
 
                   ${game[1]}
@@ -7388,8 +6455,8 @@ function openHistorySeason(year){
 
               </div>
 
-            `
-          ).join("")
+            `)
+            .join("")
         }
 
       </div>
@@ -7414,37 +6481,30 @@ function openHistorySeason(year){
 
 
         ${
-          season.achievements.map(
-            achievement=>`
+          season.achievements
+            .map(achievement=>`
 
               <div
                 class="roster-card"
                 style="margin-bottom:5px">
 
-                <div
-                  style="font-size:17px">
-
+                <div style="font-size:18px">
                   🏆
-
                 </div>
 
 
                 <div class="roster-info">
 
                   <div class="roster-name">
-
-                    ${escapeHtml(
-                      achievement
-                    )}
-
+                    ${escapeHtml(achievement)}
                   </div>
 
                 </div>
 
               </div>
 
-            `
-          ).join("")
+            `)
+            .join("")
         }
 
       </div>
@@ -7460,10 +6520,7 @@ function openHistorySeason(year){
 
       <div class="roster-empty">
 
-        Final Record:
-        ${escapeHtml(
-          season.record
-        )}
+        Final Record: ${escapeHtml(season.record)}
 
       </div>
 
@@ -7478,16 +6535,11 @@ function openHistorySeason(year){
 
 
   document
-    .getElementById(
-      "historyModal"
-    )
-    .classList.add(
-      "show"
-    );
+    .getElementById("historyModal")
+    .classList.add("show");
 
 
-  document.body.style.overflow=
-    "hidden";
+  document.body.style.overflow="hidden";
 
 }
 
@@ -7497,19 +6549,14 @@ function closeHistoryModal(event){
   if(
     event &&
     event.target &&
-    event.target.id!==
-    "historyModal"
+    event.target.id!=="historyModal"
   )
     return;
 
 
   document
-    .getElementById(
-      "historyModal"
-    )
-    .classList.remove(
-      "show"
-    );
+    .getElementById("historyModal")
+    .classList.remove("show");
 
 
   document.body.style.overflow="";
@@ -7587,37 +6634,18 @@ function formatShortDate(value){
 function escapeHtml(value){
 
   if(
-    value===null ||
+    value===null||
     value===undefined
   )
     return "";
 
+
   return String(value)
-
-    .replace(
-      /&/g,
-      "&amp;"
-    )
-
-    .replace(
-      /</g,
-      "&lt;"
-    )
-
-    .replace(
-      />/g,
-      "&gt;"
-    )
-
-    .replace(
-      /"/g,
-      "&quot;"
-    )
-
-    .replace(
-      /'/g,
-      "&#039;"
-    );
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
 }
 
@@ -7630,16 +6658,14 @@ function escapeAttribute(value){
 
 
 /* =========================================================
-   KEYBOARD
+   ESCAPE KEY
 ========================================================= */
 
 document.addEventListener(
   "keydown",
   event=>{
 
-    if(
-      event.key==="Escape"
-    ){
+    if(event.key==="Escape"){
 
       closeHistoryModal();
 
@@ -7652,9 +6678,7 @@ document.addEventListener(
           ".position-picker.open"
         )
         .forEach(picker=>{
-          picker.classList.remove(
-            "open"
-          );
+          picker.classList.remove("open");
         });
 
     }
@@ -7664,15 +6688,13 @@ document.addEventListener(
 
 
 /* =========================================================
-   AUTO REFRESH
+   AUTO LIVE REFRESH
 ========================================================= */
 
 setInterval(
   ()=>{
 
-    if(
-      games.length
-    ){
+    if(games.length){
 
       updateHome();
 
