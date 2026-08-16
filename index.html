@@ -19,23 +19,16 @@
 
 <style>
 
-/* =========================================================
-   COLORS
-========================================================= */
-
 :root{
   --navy:#001f3f;
   --dark:#00152b;
   --blue:#063b69;
   --gold:#f4c542;
-
   --text:#14283d;
   --muted:#637689;
   --border:#d5dfe8;
-
   --green:#198754;
   --red:#dc2626;
-
   --light:#f5f8fa;
 }
 
@@ -50,16 +43,8 @@ html{
 body{
   margin:0;
   min-height:100vh;
-
-  background:
-    linear-gradient(
-      180deg,
-      #edf2f7 0%,
-      #f8fafc 100%
-    );
-
+  background:linear-gradient(180deg,#edf2f7 0%,#f8fafc 100%);
   color:var(--text);
-
   font-family:"Oswald",Arial,sans-serif;
 }
 
@@ -81,71 +66,50 @@ button{
 
 header{
   position:relative;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--dark),
-      var(--blue)
-    );
-
+  background:linear-gradient(135deg,var(--dark),var(--blue));
   color:white;
-
   text-align:center;
-
   padding:18px 50px 20px;
-
   border-bottom:4px solid var(--gold);
 }
 
 .logo{
   width:82px;
   height:82px;
-
   object-fit:contain;
-
   display:block;
-
   margin:0 auto 5px;
 }
 
 header h1{
   margin:0;
-
   font-family:"Teko";
-
   font-size:40px;
-
   line-height:.9;
-
   letter-spacing:2px;
 }
 
 header p{
   margin:6px 0 0;
-
   color:#dbe7f2;
-
   font-size:10px;
-
   letter-spacing:1.3px;
-
   text-transform:uppercase;
 }
 
 
 /* =========================================================
    ADMIN GEAR
+   NO BUBBLE
 ========================================================= */
 
 .admin-gear{
   position:absolute;
-
-  top:16px;
+  top:15px;
   right:16px;
 
-  width:38px;
-  height:38px;
+  width:auto;
+  height:auto;
 
   display:flex;
   align-items:center;
@@ -154,50 +118,37 @@ header p{
   padding:0;
   margin:0;
 
-  border:1px solid rgba(255,255,255,.22);
+  border:0;
+  outline:0;
 
-  border-radius:50%;
-
-  background:rgba(255,255,255,.1);
-
+  background:transparent;
   color:white;
 
   font-family:Arial,sans-serif;
-  font-size:20px;
-  font-weight:400;
-
+  font-size:24px;
   line-height:1;
 
   text-align:center;
 
   z-index:10;
 
-  transition:.15s ease;
+  transition:transform .15s ease;
 }
 
 .gear-icon{
   display:block;
-
-  width:20px;
-  height:20px;
-
-  line-height:20px;
-
-  text-align:center;
-
-  transform:translateY(-1px);
+  line-height:1;
+  transform:none;
 }
 
 .admin-gear:hover{
-  background:rgba(244,197,66,.18);
-
-  border-color:var(--gold);
-
-  transform:rotate(20deg);
+  background:transparent;
+  border:0;
+  transform:rotate(20deg) scale(1.08);
 }
 
 .admin-gear:active{
-  transform:scale(.94);
+  transform:scale(.92);
 }
 
 
@@ -207,68 +158,42 @@ header p{
 
 .achievements-bar{
   background:white;
-
   border-bottom:1px solid var(--border);
-
-  box-shadow:
-    0 2px 10px rgba(0,31,63,.07);
-
+  box-shadow:0 2px 10px rgba(0,31,63,.07);
   padding:10px;
 }
 
 .achievements-inner{
   width:100%;
   max-width:650px;
-
   margin:auto;
-
   display:grid;
-
   grid-template-columns:1fr 1fr;
-
   gap:8px;
 }
 
 .achievement-item{
   padding:10px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #f9fbfc,
-      #eef3f7
-    );
-
+  background:linear-gradient(145deg,#f9fbfc,#eef3f7);
   border:1px solid #d4dee6;
-
   border-top:3px solid var(--gold);
-
   border-radius:8px;
-
   text-align:center;
 }
 
 .achievement-title{
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:18px;
-
   line-height:1;
-
   font-weight:700;
-
   text-transform:uppercase;
 }
 
 .achievement-years{
   margin-top:5px;
-
   color:#52677a;
-
   font-size:10px;
-
   font-weight:600;
 }
 
@@ -279,59 +204,38 @@ header p{
 
 nav{
   position:sticky;
-
   top:0;
-
   z-index:100;
-
   display:flex;
-
   background:rgba(255,255,255,.97);
-
   border-bottom:1px solid var(--border);
-
-  box-shadow:
-    0 2px 10px rgba(0,31,63,.07);
+  box-shadow:0 2px 10px rgba(0,31,63,.07);
 }
 
 nav button{
   position:relative;
-
   flex:1;
-
   border:0;
-
   background:transparent;
-
   color:#617284;
-
   padding:12px 3px;
-
   font-size:10px;
-
   font-weight:700;
-
   text-transform:uppercase;
 }
 
 nav button.active{
   color:var(--navy);
-
   background:#f7f9fb;
 }
 
 nav button.active:after{
   content:"";
-
   position:absolute;
-
   left:20%;
   right:20%;
-
   bottom:0;
-
   height:3px;
-
   background:var(--gold);
 }
 
@@ -342,11 +246,8 @@ nav button.active:after{
 
 main{
   width:100%;
-
   max-width:760px;
-
   margin:auto;
-
   padding:10px 9px 25px;
 }
 
@@ -360,52 +261,30 @@ main{
 
 .card{
   background:white;
-
   border:1px solid var(--border);
-
   border-radius:13px;
-
   margin-bottom:9px;
-
   padding:12px;
-
-  box-shadow:
-    0 3px 12px rgba(0,31,63,.06);
+  box-shadow:0 3px 12px rgba(0,31,63,.06);
 }
 
 .page-heading{
   display:flex;
-
   align-items:center;
-
   gap:7px;
-
   margin:0 0 10px;
-
   font-family:"Teko";
-
   font-size:30px;
-
   line-height:1;
-
   color:var(--navy);
-
   text-transform:uppercase;
 }
 
 .page-heading:after{
   content:"";
-
   height:2px;
-
   flex:1;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--gold),
-      transparent
-    );
+  background:linear-gradient(90deg,var(--gold),transparent);
 }
 
 .hidden{
@@ -419,193 +298,124 @@ main{
 
 .hero-card{
   padding:0;
-
   overflow:hidden;
 }
 
 .hero-top{
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   padding:10px 12px;
-
   color:white;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--dark),
-      var(--blue)
-    );
+  background:linear-gradient(90deg,var(--dark),var(--blue));
 }
 
 .hero-top span{
   font-family:"Teko";
-
   font-size:21px;
-
   line-height:1;
 }
 
 .hero-top small{
   color:var(--gold);
-
   font-size:9px;
-
   letter-spacing:1px;
 }
 
 .hero-body{
   text-align:center;
-
   padding:16px 10px;
 }
 
 .next-label{
   color:var(--muted);
-
   font-size:9px;
-
   letter-spacing:1.3px;
-
   text-transform:uppercase;
 }
 
 .next-matchup{
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   gap:8px;
-
   margin:5px 0 8px;
 }
 
 .next-team{
   font-family:"Teko";
-
   font-size:31px;
-
   font-weight:700;
-
   line-height:1;
-
   color:var(--navy);
 }
 
 .next-vs{
   color:#d3a817;
-
   font-family:"Teko";
-
   font-size:18px;
-
   font-weight:700;
 }
 
 .game-info{
   color:#637487;
-
   font-size:11px;
-
   line-height:1.7;
 }
 
 .home-away{
   display:inline-flex;
-
   align-items:center;
-
   gap:4px;
-
   margin-top:3px;
-
   padding:4px 8px;
-
   background:#f1f5f8;
-
   border-radius:5px;
-
   color:var(--navy);
-
   font-size:10px;
-
   font-weight:700;
 }
 
 .countdown{
   display:inline-flex;
-
   align-items:center;
-
   justify-content:center;
-
   gap:7px;
-
   margin-top:10px;
-
   padding:8px 13px;
-
   border-radius:8px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f1f4f6,
-      #d9e0e5,
-      #f5f7f9
-    );
-
+  background:linear-gradient(135deg,#f1f4f6,#d9e0e5,#f5f7f9);
   border:1px solid #b7c3cc;
-
   color:#344451;
-
   font-size:10px;
-
   font-weight:700;
-
   text-transform:uppercase;
 }
 
 .record-card{
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
 }
 
 .record-label,
 .last-label{
   color:var(--muted);
-
   font-size:9px;
-
   letter-spacing:1.1px;
-
   text-transform:uppercase;
 }
 
 .record{
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:44px;
-
   font-weight:700;
-
   line-height:.9;
 }
 
 .record-sub{
   color:var(--muted);
-
   font-size:9px;
 }
 
@@ -616,28 +426,18 @@ main{
 
 .game{
   background:white;
-
   border:1px solid var(--border);
-
   border-left:4px solid var(--navy);
-
   border-radius:10px;
-
   margin-bottom:7px;
-
   padding:9px 11px 5px;
-
-  box-shadow:
-    0 2px 8px rgba(0,31,63,.05);
-
+  box-shadow:0 2px 8px rgba(0,31,63,.05);
   transition:.12s ease;
 }
 
 .game:hover{
   transform:translateY(-1px);
-
-  box-shadow:
-    0 5px 14px rgba(0,31,63,.09);
+  box-shadow:0 5px 14px rgba(0,31,63,.09);
 }
 
 .game.live-game{
@@ -646,93 +446,65 @@ main{
 
 .game-top{
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   gap:7px;
 }
 
 .game-date{
   color:var(--muted);
-
   font-size:9px;
 }
 
 .game-opponent{
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:25px;
-
   line-height:.9;
-
   font-weight:700;
-
   text-transform:uppercase;
 }
 
 .game-matchup{
   display:flex;
-
   gap:4px;
-
   margin-top:4px;
-
   color:#5f7182;
-
   font-size:10px;
 }
 
 .game-team{
   color:var(--navy);
-
   font-weight:700;
 }
 
 .game-vs{
   color:#d3a817;
-
   font-weight:700;
 }
 
 .game-details{
   display:flex;
-
   flex-wrap:wrap;
-
   gap:4px 10px;
-
   margin-top:5px;
-
   color:#637487;
-
   font-size:9px;
 }
 
 .game-score{
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:20px;
-
   font-weight:700;
-
   margin-top:4px;
 }
 
 .game-details-link{
   margin-top:1px;
-
   text-align:right;
-
   color:#8998a6;
-
   font-size:8px;
-
   text-transform:uppercase;
 }
 
@@ -743,47 +515,34 @@ main{
 
 .badge{
   display:inline-flex;
-
   align-items:center;
-
   justify-content:center;
-
   padding:7px 10px;
-
   border-radius:6px;
-
   font-size:9px;
-
   line-height:1;
-
   font-weight:700;
-
   text-transform:uppercase;
-
   white-space:nowrap;
 }
 
 .badge.win{
   background:#e3f5e9;
-
   color:var(--green);
 }
 
 .badge.loss{
   background:#fde8e8;
-
   color:var(--red);
 }
 
 .badge.tie{
   background:#eee9fb;
-
   color:#7252a6;
 }
 
 .badge.live{
   background:#fee2e2;
-
   color:var(--red);
 }
 
@@ -794,95 +553,62 @@ main{
 
 .roster-tools{
   display:flex;
-
   gap:6px;
-
   margin-bottom:9px;
 }
 
 .roster-search{
   flex:1;
-
   margin:0;
-
   padding:10px;
-
   border:1px solid var(--border);
-
   border-radius:8px;
-
   background:#f8fafc;
-
   font-size:11px;
 }
 
 .roster-filter{
   width:140px;
-
   margin:0;
-
   padding:10px 7px;
-
   border:1px solid var(--border);
-
   border-radius:8px;
-
   background:#f8fafc;
-
   font-size:10px;
 }
 
 .roster-count{
   color:var(--muted);
-
   font-size:9px;
-
   margin:0 0 8px 2px;
 }
 
 .roster-grid{
   display:grid;
-
   grid-template-columns:1fr 1fr;
-
   gap:6px;
 }
 
 .roster-card{
   display:flex;
-
   align-items:center;
-
   gap:8px;
-
   min-width:0;
-
   padding:9px;
-
   background:white;
-
   border:1px solid var(--border);
-
   border-left:4px solid var(--navy);
-
   border-radius:8px;
 }
 
 .roster-number{
   width:40px;
-
   flex-shrink:0;
-
   text-align:center;
-
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:28px;
-
   font-weight:700;
-
   line-height:1;
 }
 
@@ -892,47 +618,30 @@ main{
 
 .roster-name{
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:21px;
-
   line-height:.95;
-
   font-weight:700;
-
   white-space:nowrap;
-
   overflow:hidden;
-
   text-overflow:ellipsis;
 }
 
 .roster-position{
   margin-top:3px;
-
   color:#627589;
-
   font-size:9px;
-
   font-weight:600;
-
   text-transform:uppercase;
 }
 
 .roster-empty{
   padding:20px;
-
   text-align:center;
-
   color:var(--muted);
-
   background:#f8fafc;
-
   border:1px dashed #c8d3dc;
-
   border-radius:8px;
-
   font-size:10px;
 }
 
@@ -943,73 +652,49 @@ main{
 
 .history-intro{
   text-align:center;
-
   color:var(--muted);
-
   font-size:9px;
-
   margin:-3px 0 10px;
 }
 
 .season-history{
   overflow:hidden;
-
   background:white;
-
   border:1px solid var(--border);
-
   border-left:4px solid var(--navy);
-
   border-radius:9px;
-
   margin-bottom:7px;
 }
 
 .season-button{
   width:100%;
-
   min-height:70px;
-
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   padding:12px 14px;
-
   border:0;
-
   background:white;
-
   text-align:left;
 }
 
 .season-name{
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:31px;
-
   line-height:.9;
-
   font-weight:700;
 }
 
 .season-record-small{
   color:#536779;
-
   font-size:10px;
-
   font-weight:700;
-
   margin-top:5px;
 }
 
 .season-arrow{
   color:var(--navy);
-
   font-size:28px;
 }
 
@@ -1022,21 +707,13 @@ main{
 .modal-overlay,
 .admin-login-overlay{
   position:fixed;
-
   inset:0;
-
   z-index:1000;
-
   display:none;
-
   align-items:center;
-
   justify-content:center;
-
   padding:12px;
-
   background:rgba(0,15,30,.78);
-
   backdrop-filter:blur(7px);
 }
 
@@ -1050,19 +727,12 @@ main{
 .modal,
 .admin-login-window{
   width:100%;
-
   max-width:620px;
-
   max-height:92vh;
-
   overflow:hidden;
-
   background:#f5f8fa;
-
   border-radius:16px;
-
-  box-shadow:
-    0 20px 60px rgba(0,0,0,.35);
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
 }
 
 
@@ -1076,82 +746,51 @@ main{
 
 .admin-login-top{
   position:relative;
-
   padding:25px 20px 22px;
-
   text-align:center;
-
   color:white;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--dark),
-      var(--blue)
-    );
-
+  background:linear-gradient(135deg,var(--dark),var(--blue));
   border-bottom:4px solid var(--gold);
 }
 
 .admin-login-gear{
   width:54px;
   height:54px;
-
   display:flex;
-
   align-items:center;
   justify-content:center;
-
   margin:0 auto 10px;
-
   border-radius:50%;
-
   background:rgba(255,255,255,.1);
-
   font-size:27px;
-
   line-height:1;
 }
 
 .admin-login-top h2{
   margin:0;
-
   font-family:"Teko";
-
   font-size:33px;
-
   line-height:1;
 }
 
 .admin-login-top p{
   margin:5px 0 0;
-
   color:#d8e5ef;
-
   font-size:9px;
-
   text-transform:uppercase;
-
   letter-spacing:1px;
 }
 
 .admin-login-close{
   position:absolute;
-
   right:10px;
   top:10px;
-
   width:32px;
   height:32px;
-
   border:0;
-
   border-radius:50%;
-
   background:rgba(255,255,255,.12);
-
   color:white;
-
   font-size:20px;
 }
 
@@ -1161,51 +800,32 @@ main{
 
 .admin-code-input{
   width:100%;
-
   padding:14px;
-
   margin:0 0 10px;
-
   text-align:center;
-
   letter-spacing:7px;
-
   font-size:22px;
-
   font-weight:700;
-
   border:1px solid #ccd7e1;
-
   border-radius:8px;
 }
 
 .admin-login-button{
   width:100%;
-
   padding:12px;
-
   border:0;
-
   border-radius:7px;
-
   background:var(--navy);
-
   color:white;
-
   font-size:11px;
-
   font-weight:700;
 }
 
 .login-error{
   min-height:0;
-
   margin-top:8px;
-
   color:var(--red);
-
   text-align:center;
-
   font-size:10px;
 }
 
@@ -1216,77 +836,50 @@ main{
 
 .history-modal-header{
   position:relative;
-
   padding:18px;
-
   color:white;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--dark),
-      var(--blue)
-    );
-
+  background:linear-gradient(135deg,var(--dark),var(--blue));
   border-bottom:4px solid var(--gold);
 }
 
 .history-modal-kicker{
   color:var(--gold);
-
   font-size:9px;
-
   letter-spacing:1.7px;
-
   text-transform:uppercase;
 }
 
 .history-modal-title{
   font-family:"Teko";
-
   font-size:39px;
-
   line-height:.9;
-
   font-weight:700;
 }
 
 .history-modal-record{
   color:#d9e6ef;
-
   font-family:"Teko";
-
   font-size:18px;
-
   margin-top:5px;
 }
 
 .history-close,
 .modal-close{
   position:absolute;
-
   right:10px;
   top:10px;
-
   width:34px;
   height:34px;
-
   border:0;
-
   border-radius:50%;
-
   background:rgba(255,255,255,.13);
-
   color:white;
-
   font-size:23px;
 }
 
 .history-modal-body{
   max-height:calc(92vh - 110px);
-
   overflow-y:auto;
-
   padding:12px;
 }
 
@@ -1300,35 +893,20 @@ main{
 
 .history-modal-section-title{
   display:flex;
-
   align-items:center;
-
   gap:7px;
-
   margin:0 0 7px;
-
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:25px;
-
   line-height:1;
 }
 
 .history-modal-section-title:after{
   content:"";
-
   flex:1;
-
   height:2px;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--gold),
-      transparent
-    );
+  background:linear-gradient(90deg,var(--gold),transparent);
 }
 
 
@@ -1338,38 +916,23 @@ main{
 
 .modal-header{
   position:relative;
-
   padding:18px;
-
   color:white;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--dark),
-      var(--blue)
-    );
-
+  background:linear-gradient(135deg,var(--dark),var(--blue));
   border-bottom:4px solid var(--gold);
 }
 
 .modal-kicker{
   color:var(--gold);
-
   font-size:9px;
-
   letter-spacing:1.7px;
-
   text-transform:uppercase;
 }
 
 .modal-matchup{
   font-family:"Teko";
-
   font-size:35px;
-
   line-height:1;
-
   text-transform:uppercase;
 }
 
@@ -1379,67 +942,46 @@ main{
 
 .modal-score{
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:52px;
-
   line-height:.9;
-
   font-weight:700;
-
   text-align:center;
-
   margin:4px 0 15px;
 }
 
 .modal-info-grid{
   display:grid;
-
   grid-template-columns:1fr 1fr;
-
   gap:7px;
 }
 
 .modal-info{
   padding:9px;
-
   background:#f5f8fa;
-
   border:1px solid var(--border);
-
   border-radius:7px;
 }
 
 .modal-info-label{
   color:var(--muted);
-
   font-size:8px;
-
   text-transform:uppercase;
 }
 
 .modal-info-value{
   color:var(--navy);
-
   font-size:12px;
-
   font-weight:600;
-
   margin-top:3px;
 }
 
 .modal-notes{
   margin-top:10px;
-
   padding:10px;
-
   background:#f7f9fb;
-
   border-radius:7px;
-
   color:#5f7182;
-
   font-size:11px;
 }
 
@@ -1450,13 +992,9 @@ main{
 
 .admin-page{
   display:none;
-
   width:100%;
-
   max-width:760px;
-
   margin:0 auto;
-
   padding:10px 9px 30px;
 }
 
@@ -1464,111 +1002,60 @@ main{
   display:block;
 }
 
-
-/* =========================================================
-   ADMIN TOP BAR
-========================================================= */
-
 .admin-topbar{
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   gap:10px;
-
   padding:14px 15px;
-
   margin-bottom:10px;
-
   color:white;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--dark),
-      var(--blue)
-    );
-
+  background:linear-gradient(135deg,var(--dark),var(--blue));
   border-radius:11px;
-
   border-bottom:3px solid var(--gold);
 }
 
 .admin-topbar-title{
   font-family:"Teko";
-
   font-size:30px;
-
   line-height:.9;
-
-  letter-spacing:.3px;
 }
 
 .admin-topbar-subtitle{
   color:#d7e4ed;
-
   font-size:9px;
-
   margin-top:4px;
-
   text-transform:uppercase;
-
   letter-spacing:1px;
 }
 
 .admin-back-button{
   padding:8px 11px;
-
   border:1px solid rgba(255,255,255,.22);
-
   border-radius:6px;
-
   background:rgba(255,255,255,.1);
-
   color:white;
-
   font-size:9px;
-
   font-weight:700;
 }
 
-
-/* =========================================================
-   ADMIN SECTIONS
-========================================================= */
-
 .admin-section{
   overflow:hidden;
-
   background:white;
-
   border:1px solid var(--border);
-
   border-radius:10px;
-
   margin-bottom:8px;
-
-  box-shadow:
-    0 3px 12px rgba(0,31,63,.06);
+  box-shadow:0 3px 12px rgba(0,31,63,.06);
 }
 
 .admin-section-header{
   width:100%;
-
   display:flex;
-
   align-items:center;
-
   gap:11px;
-
   padding:13px;
-
   border:0;
-
   background:white;
-
   text-align:left;
 }
 
@@ -1579,20 +1066,13 @@ main{
 .admin-section-icon{
   width:38px;
   height:38px;
-
   flex-shrink:0;
-
   display:flex;
-
   align-items:center;
   justify-content:center;
-
   border-radius:8px;
-
   background:var(--navy);
-
   color:white;
-
   font-size:18px;
 }
 
@@ -1602,31 +1082,22 @@ main{
 
 .admin-section-title h3{
   margin:0;
-
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:26px;
-
   line-height:1;
 }
 
 .admin-section-title p{
   margin:3px 0 0;
-
   color:var(--muted);
-
   font-size:9px;
-
   line-height:1.2;
 }
 
 .admin-section-arrow{
   color:#8293a2;
-
   font-size:14px;
-
   transition:transform .15s ease;
 }
 
@@ -1636,9 +1107,7 @@ main{
 
 .admin-section-body{
   display:none;
-
   padding:0 13px 13px;
-
   border-top:1px solid var(--border);
 }
 
@@ -1646,40 +1115,25 @@ main{
   display:block;
 }
 
-
-/* =========================================================
-   ADMIN SUBSECTIONS
-========================================================= */
-
 .admin-subsection{
   padding:13px;
-
   margin-top:10px;
-
   background:#f7f9fb;
-
   border:1px solid var(--border);
-
   border-radius:8px;
 }
 
 .admin-subsection h4{
   margin:0;
-
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:24px;
-
   line-height:1;
 }
 
 .admin-description{
   color:var(--muted);
-
   font-size:9px;
-
   margin:4px 0 10px;
 }
 
@@ -1690,15 +1144,10 @@ main{
 
 label{
   display:block;
-
   color:#40566b;
-
   font-size:9px;
-
   font-weight:700;
-
   text-transform:uppercase;
-
   margin-bottom:4px;
 }
 
@@ -1706,33 +1155,23 @@ input,
 select,
 textarea{
   width:100%;
-
   padding:9px;
-
   margin:0 0 8px;
-
   background:white;
-
   color:var(--text);
-
   border:1px solid #ccd7e1;
-
   border-radius:6px;
-
   font-size:12px;
 }
 
 textarea{
   min-height:65px;
-
   resize:vertical;
 }
 
 .form-row{
   display:grid;
-
   grid-template-columns:1fr 1fr;
-
   gap:8px;
 }
 
@@ -1740,110 +1179,76 @@ button.primary,
 button.secondary,
 button.danger{
   padding:9px 12px;
-
   border:0;
-
   border-radius:6px;
-
   font-size:10px;
-
   font-weight:700;
 }
 
 button.primary{
   color:white;
-
   background:var(--navy);
 }
 
 button.secondary{
   color:var(--navy);
-
   background:#e8edf2;
 }
 
 button.danger{
   color:var(--red);
-
   background:#fde7e7;
 }
 
 .message{
   padding:9px;
-
   margin:7px 0;
-
   background:#edf2f7;
-
   border-radius:6px;
-
   color:#536779;
-
   font-size:10px;
 }
 
 
 /* =========================================================
-   ADMIN GAME LIST
+   ADMIN GAMES
 ========================================================= */
 
 .admin-game-row{
   display:grid;
-
   grid-template-columns:1fr auto;
-
   align-items:center;
-
   gap:10px;
-
   padding:10px;
-
   margin-bottom:6px;
-
   background:white;
-
   border:1px solid var(--border);
-
   border-radius:7px;
-}
-
-.admin-game-row:last-child{
-  margin-bottom:0;
 }
 
 .admin-game-title{
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:22px;
-
   line-height:1;
 }
 
 .admin-game-meta{
   margin-top:3px;
-
   color:var(--muted);
-
   font-size:9px;
 }
 
 .admin-game-actions{
   display:flex;
-
   gap:4px;
 }
 
 .admin-game-actions button{
   padding:7px 9px;
-
   border:0;
-
   border-radius:5px;
-
   font-size:9px;
-
   font-weight:700;
 }
 
@@ -1854,101 +1259,71 @@ button.danger{
 
 .admin-roster-list{
   display:flex;
-
   flex-direction:column;
-
   gap:6px;
 }
 
 .admin-roster-row{
   display:grid;
-
   grid-template-columns:48px 1fr auto;
-
   align-items:center;
-
   gap:8px;
-
   padding:8px;
-
   background:white;
-
   border:1px solid var(--border);
-
   border-radius:7px;
 }
 
 .admin-roster-number{
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:25px;
-
   font-weight:700;
-
   text-align:center;
 }
 
 .admin-roster-name{
   color:var(--navy);
-
   font-family:"Teko";
-
   font-size:21px;
-
   line-height:1;
-
   font-weight:700;
 }
 
 .admin-roster-position{
   color:var(--muted);
-
   font-size:9px;
-
   margin-top:2px;
 }
 
 .admin-roster-actions{
   display:flex;
-
   gap:3px;
 }
 
 .admin-roster-actions button{
   padding:7px 8px;
-
   border:0;
-
   border-radius:5px;
-
   font-size:9px;
-
   font-weight:700;
 }
 
 .edit-roster{
   background:#e8eff6;
-
   color:var(--navy);
 }
 
 .delete-roster{
   background:#fde7e7;
-
   color:var(--red);
 }
 
 .roster-edit-area{
   display:none;
-
   grid-column:1/-1;
-
   padding:9px;
-
   background:#f5f8fa;
-
   border-top:1px solid var(--border);
 }
 
@@ -1963,63 +1338,42 @@ button.danger{
 
 .admin-photo-grid{
   display:grid;
-
   grid-template-columns:repeat(5,1fr);
-
   gap:6px;
 }
 
 .admin-photo-card{
   overflow:hidden;
-
   padding:3px;
-
   border:1px solid var(--border);
-
   border-radius:6px;
-
   background:white;
 }
 
 .admin-photo-card img{
   width:100%;
-
   aspect-ratio:1;
-
   object-fit:cover;
-
   border-radius:4px;
 }
 
 .admin-photo-caption{
   color:var(--muted);
-
   font-size:8px;
-
   margin:3px 1px;
-
   white-space:nowrap;
-
   overflow:hidden;
-
   text-overflow:ellipsis;
 }
 
 .admin-photo-delete{
   width:100%;
-
   padding:5px;
-
   border:0;
-
   border-radius:4px;
-
   background:#fde7e7;
-
   color:var(--red);
-
   font-size:8px;
-
   font-weight:700;
 }
 
@@ -2030,27 +1384,20 @@ button.danger{
 
 .photo-grid{
   display:grid;
-
   grid-template-columns:repeat(3,1fr);
-
   gap:7px;
 }
 
 .photo-item img{
   width:100%;
-
   aspect-ratio:1;
-
   object-fit:cover;
-
   border-radius:7px;
 }
 
 .photo-caption{
   color:var(--muted);
-
   font-size:9px;
-
   margin:3px;
 }
 
@@ -2061,44 +1408,24 @@ button.danger{
 
 .position-picker{
   position:relative;
-
   width:100%;
-
   margin-bottom:8px;
 }
 
 .position-trigger{
   width:100%;
-
   min-height:39px;
-
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   gap:8px;
-
   padding:9px 10px;
-
   background:white;
-
   border:1px solid #ccd7e1;
-
   border-radius:6px;
-
   color:#536779;
-
   text-align:left;
-
   font-size:11px;
-}
-
-.position-trigger-arrow{
-  font-size:12px;
-
-  color:var(--navy);
 }
 
 .position-placeholder{
@@ -2107,32 +1434,21 @@ button.danger{
 
 .position-selected-text{
   color:var(--navy);
-
   font-weight:700;
 }
 
 .position-menu{
   position:absolute;
-
   left:0;
   right:0;
-
   top:calc(100% + 4px);
-
   z-index:300;
-
   display:none;
-
   padding:8px;
-
   background:white;
-
   border:1px solid #cbd7e1;
-
   border-radius:8px;
-
-  box-shadow:
-    0 12px 30px rgba(0,31,63,.16);
+  box-shadow:0 12px 30px rgba(0,31,63,.16);
 }
 
 .position-picker.open .position-menu{
@@ -2141,65 +1457,38 @@ button.danger{
 
 .position-options{
   display:grid;
-
   grid-template-columns:1fr 1fr;
-
   gap:4px;
-
   max-height:220px;
-
   overflow-y:auto;
 }
 
 .position-option{
   display:flex;
-
   align-items:center;
-
   gap:6px;
-
   padding:7px;
-
   border:1px solid #e1e7ec;
-
   border-radius:5px;
-
   background:#f8fafc;
-
   color:#3e5366;
-
   font-size:10px;
-
   font-weight:600;
-
   cursor:pointer;
 }
 
 .position-option input{
   width:14px;
   height:14px;
-
   margin:0;
-
   padding:0;
-
   accent-color:var(--navy);
 }
 
 .position-custom{
   margin-top:8px;
-
   padding-top:8px;
-
   border-top:1px solid var(--border);
-}
-
-.position-picker-note{
-  margin-top:5px;
-
-  color:#7b8b99;
-
-  font-size:8px;
 }
 
 
@@ -2260,9 +1549,7 @@ button.danger{
   .modal,
   .admin-login-window{
     height:100vh;
-
     max-height:100vh;
-
     border-radius:0;
   }
 
@@ -2283,7 +1570,6 @@ button.danger{
 </style>
 </head>
 
-
 <body>
 
 
@@ -2299,7 +1585,7 @@ button.danger{
     onclick="openAdminLogin()"
     aria-label="Admin">
 
-    <span class="gear-icon">⚙</span>
+    <span class="gear-icon">⚙️</span>
 
   </button>
 
@@ -2404,9 +1690,7 @@ button.danger{
      HOME
 ========================================================= -->
 
-<section
-  id="home"
-  class="page active">
+<section id="home" class="page active">
 
   <div class="card hero-card">
 
@@ -2505,9 +1789,7 @@ button.danger{
      SCHEDULE
 ========================================================= -->
 
-<section
-  id="schedule"
-  class="page">
+<section id="schedule" class="page">
 
   <div class="card">
 
@@ -2528,9 +1810,7 @@ button.danger{
      HISTORY
 ========================================================= -->
 
-<section
-  id="history"
-  class="page">
+<section id="history" class="page">
 
   <div class="card">
 
@@ -2553,9 +1833,7 @@ button.danger{
      ROSTER
 ========================================================= -->
 
-<section
-  id="roster"
-  class="page">
+<section id="roster" class="page">
 
   <div class="card">
 
@@ -2597,10 +1875,7 @@ button.danger{
     </div>
 
 
-    <div
-      id="rosterCount"
-      class="roster-count">
-    </div>
+    <div id="rosterCount" class="roster-count"></div>
 
 
     <div
@@ -2620,9 +1895,7 @@ button.danger{
      PHOTOS
 ========================================================= -->
 
-<section
-  id="photos"
-  class="page">
+<section id="photos" class="page">
 
   <div class="card">
 
@@ -2646,10 +1919,7 @@ button.danger{
      ADMIN DASHBOARD
 ========================================================= -->
 
-<section
-  id="adminPage"
-  class="admin-page">
-
+<section id="adminPage" class="admin-page">
 
   <div class="admin-topbar">
 
@@ -3136,7 +2406,6 @@ button.danger{
 
   </div>
 
-
 </section>
 
 
@@ -3167,7 +2436,7 @@ button.danger{
 
 
       <div class="admin-login-gear">
-        ⚙
+        ⚙️
       </div>
 
 
@@ -4105,11 +3374,8 @@ function parseKickoff(game){
 
     if(match){
 
-      hours=
-        Number(match[1]);
-
-      minutes=
-        Number(match[2]||0);
+      hours=Number(match[1]);
+      minutes=Number(match[2]||0);
 
 
       const period=
@@ -4177,11 +3443,8 @@ function getGameStatus(game){
 
   if(hasScore(game)){
 
-    const a=
-      Number(game.our_score);
-
-    const b=
-      Number(game.opponent_score);
+    const a=Number(game.our_score);
+    const b=Number(game.opponent_score);
 
 
     if(a>b)
@@ -4247,8 +3510,7 @@ function updateHome(){
       );
 
 
-  const next=
-    upcoming[0];
+  const next=upcoming[0];
 
 
   if(!next){
@@ -4345,7 +3607,6 @@ function updateHome(){
       )
         wins++;
 
-
       else if(
         Number(game.our_score)<
         Number(game.opponent_score)
@@ -4417,21 +3678,15 @@ function startCountdown(game){
 
 
     const days=
-      Math.floor(
-        diff/86400000
-      );
+      Math.floor(diff/86400000);
 
 
     const hours=
-      Math.floor(
-        diff/3600000
-      )%24;
+      Math.floor(diff/3600000)%24;
 
 
     const minutes=
-      Math.floor(
-        diff/60000
-      )%60;
+      Math.floor(diff/60000)%60;
 
 
     box.innerHTML=`
@@ -4499,10 +3754,8 @@ function updateSchedule(){
         <div
           class="game ${
             isGameLive(game)
-            ?
-            "live-game"
-            :
-            ""
+            ? "live-game"
+            : ""
           }"
           onclick="openGameDetails(${game.id})">
 
@@ -4650,7 +3903,6 @@ function updateAdminGames(){
               ${formatShortDate(game.date)}
               •
               ${escapeHtml(game.time||"TBD")}
-
               •
               ${
                 hasScore(game)
@@ -4694,7 +3946,6 @@ function updateAdminGames(){
             border:1px solid var(--border);
             border-radius:7px;
           ">
-
 
           <div class="form-row">
 
@@ -4795,10 +4046,7 @@ function updateAdminGames(){
 
           <button
             class="danger"
-            style="
-              width:100%;
-              margin-top:5px
-            "
+            style="width:100%;margin-top:5px"
             onclick="deleteGame(${game.id})">
 
             DELETE GAME
@@ -4956,8 +4204,7 @@ async function saveGame(id){
             `edit-time-${id}`
           ).value,
 
-        p_opponent:
-          game.opponent,
+        p_opponent:game.opponent,
 
         p_location:
           document.getElementById(
@@ -5157,10 +4404,7 @@ function renderRoster(){
           .includes(filter);
 
 
-      return(
-        searchMatch&&
-        positionMatch
-      );
+      return searchMatch&&positionMatch;
 
     });
 
@@ -5342,9 +4586,7 @@ function renderAdminRoster(){
                 <button
                   type="button"
                   class="position-trigger"
-                  onclick="
-                    togglePositionPicker('${type}')
-                  ">
+                  onclick="togglePositionPicker('${type}')">
 
                   <span
                     id="${type}PositionText"
@@ -5394,9 +4636,7 @@ function renderAdminRoster(){
                     <button
                       type="button"
                       class="secondary"
-                      onclick="
-                        clearPositionPicker('${type}')
-                      ">
+                      onclick="clearPositionPicker('${type}')">
 
                       Clear
 
@@ -5406,9 +4646,7 @@ function renderAdminRoster(){
                     <button
                       type="button"
                       class="primary"
-                      onclick="
-                        closePositionPicker('${type}')
-                      ">
+                      onclick="closePositionPicker('${type}')">
 
                       Done
 
@@ -6269,13 +5507,11 @@ function renderHistory(){
             class="season-button"
             onclick="openHistorySeason(${season.year})">
 
-
             <div>
 
               <div class="season-name">
                 ${season.year} Season
               </div>
-
 
               <div class="season-record-small">
                 Final Record: ${season.record}
@@ -6600,9 +5836,7 @@ document.addEventListener(
     if(event.key==="Escape"){
 
       closeHistoryModal();
-
       closeGameModal();
-
       closeAdminLogin();
 
       document
@@ -6629,7 +5863,6 @@ setInterval(
     if(games.length){
 
       updateHome();
-
       updateSchedule();
 
     }
