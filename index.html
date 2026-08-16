@@ -10,45 +10,28 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
 
-/* =========================================================
-   ROOT
-========================================================= */
-
 :root{
   --navy:#00264a;
   --navy-dark:#001a30;
   --navy-light:#064674;
   --gold:#e7b928;
-  --gold-light:#fff8dd;
-
   --bg:#f3f6f8;
-  --white:#ffffff;
-
+  --white:#fff;
   --text:#082742;
   --muted:#5c7181;
-
   --border:#d4dfe6;
-
   --green:#16834d;
   --green-bg:#e9f7ef;
-
   --red:#c93636;
   --red-bg:#fdeaea;
-
   --shadow:0 3px 12px rgba(0,35,65,.055);
 }
-
-
-/* =========================================================
-   RESET
-========================================================= */
 
 *{
   box-sizing:border-box;
@@ -62,16 +45,9 @@ html{
 body{
   margin:0;
   min-height:100vh;
-  background:linear-gradient(
-    180deg,
-    #edf3f6 0%,
-    #f8fafb 100%
-  );
-
+  background:linear-gradient(180deg,#edf3f6 0%,#f8fafb 100%);
   color:var(--text);
-
   font-family:"Oswald",Arial,sans-serif;
-
   -webkit-font-smoothing:antialiased;
 }
 
@@ -117,12 +93,7 @@ textarea{
 
   color:white;
 
-  background:
-    linear-gradient(
-      145deg,
-      #064673,
-      #001a30
-    );
+  background:linear-gradient(145deg,#064673,#001a30);
 
   transition:.4s ease;
 }
@@ -145,7 +116,6 @@ textarea{
 
 .splash-title{
   margin-top:8px;
-
   font-family:Teko;
   font-size:54px;
   line-height:.8;
@@ -154,9 +124,7 @@ textarea{
 
 .splash-subtitle{
   margin-top:10px;
-
   color:#dce7ee;
-
   font-size:12px;
   font-weight:600;
   letter-spacing:1.5px;
@@ -170,39 +138,31 @@ textarea{
 
 .site-header{
   position:relative;
-
   padding:18px 45px 20px;
-
   color:white;
   text-align:center;
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--navy-dark),
-      var(--navy-light)
-    );
+  background:linear-gradient(
+    135deg,
+    var(--navy-dark),
+    var(--navy-light)
+  );
 
   border-bottom:3px solid var(--gold);
 
-  box-shadow:
-    0 4px 18px rgba(0,30,60,.14);
+  box-shadow:0 4px 18px rgba(0,30,60,.14);
 }
 
 .header-logo{
   width:70px;
   height:70px;
-
   display:block;
-
   margin:0 auto 4px;
-
   object-fit:contain;
 }
 
 .site-header h1{
   margin:0;
-
   font-family:Teko;
   font-size:42px;
   line-height:.82;
@@ -211,9 +171,7 @@ textarea{
 
 .site-header p{
   margin:7px 0 0;
-
   color:#d8e4eb;
-
   font-size:12px;
   font-weight:600;
   letter-spacing:1.5px;
@@ -224,12 +182,9 @@ textarea{
   position:absolute;
   top:14px;
   right:15px;
-
   padding:0;
-
   border:0;
   background:none;
-
   color:white;
   font-size:24px;
 }
@@ -241,16 +196,13 @@ textarea{
 
 .achievements{
   padding:10px;
-
   background:white;
-
   border-bottom:1px solid var(--border);
 }
 
 .achievement-grid{
   width:100%;
   max-width:760px;
-
   margin:auto;
 
   display:grid;
@@ -261,18 +213,14 @@ textarea{
 
 .achievement{
   padding:12px;
-
   background:white;
-
   border:1px solid var(--border);
   border-left:3px solid var(--gold);
-
   border-radius:9px;
 }
 
 .achievement-title{
   color:var(--navy);
-
   font-family:Teko;
   font-size:21px;
   font-weight:700;
@@ -281,16 +229,14 @@ textarea{
 
 .achievement-years{
   margin-top:5px;
-
   color:var(--muted);
-
   font-size:12px;
   font-weight:600;
 }
 
 
 /* =========================================================
-   NAV
+   NAVIGATION
 ========================================================= */
 
 .main-nav{
@@ -307,8 +253,7 @@ textarea{
 
   border-bottom:1px solid var(--border);
 
-  box-shadow:
-    0 4px 14px rgba(0,30,60,.06);
+  box-shadow:0 4px 14px rgba(0,30,60,.06);
 
   backdrop-filter:blur(12px);
 }
@@ -317,7 +262,6 @@ textarea{
   position:relative;
 
   flex:1;
-
   min-height:54px;
 
   border:1px solid transparent;
@@ -329,9 +273,7 @@ textarea{
 
   font-size:17px;
   font-weight:700;
-
   letter-spacing:.8px;
-
   text-transform:uppercase;
 }
 
@@ -342,14 +284,7 @@ textarea{
 
 .main-nav button.active{
   color:var(--navy);
-
-  background:
-    linear-gradient(
-      135deg,
-      #fff8dc,
-      #fffdf7
-    );
-
+  background:linear-gradient(135deg,#fff8dc,#fffdf7);
   border-color:#eadb9c;
 }
 
@@ -357,7 +292,6 @@ textarea{
   content:"";
 
   position:absolute;
-
   left:17%;
   right:17%;
   bottom:3px;
@@ -377,9 +311,7 @@ textarea{
 main{
   width:100%;
   max-width:760px;
-
   margin:auto;
-
   padding:10px 9px 35px;
 }
 
@@ -389,7 +321,6 @@ main{
 
 .page.active{
   display:block;
-
   animation:pageIn .18s ease;
 }
 
@@ -407,7 +338,6 @@ main{
 
 .card{
   margin-bottom:9px;
-
   padding:13px;
 
   background:white;
@@ -440,17 +370,16 @@ main{
 
   margin-left:9px;
 
-  background:
-    linear-gradient(
-      90deg,
-      var(--gold),
-      transparent
-    );
+  background:linear-gradient(
+    90deg,
+    var(--gold),
+    transparent
+  );
 }
 
 
 /* =========================================================
-   HOME / NEXT GAME
+   HOME
 ========================================================= */
 
 .next-game{
@@ -461,8 +390,7 @@ main{
   border:1px solid var(--border);
   border-radius:14px;
 
-  box-shadow:
-    0 7px 25px rgba(0,30,60,.08);
+  box-shadow:0 7px 25px rgba(0,30,60,.08);
 }
 
 .next-header{
@@ -474,12 +402,11 @@ main{
 
   color:white;
 
-  background:
-    linear-gradient(
-      90deg,
-      var(--navy-dark),
-      var(--navy-light)
-    );
+  background:linear-gradient(
+    90deg,
+    var(--navy-dark),
+    var(--navy-light)
+  );
 
   border-bottom:3px solid var(--gold);
 }
@@ -492,7 +419,6 @@ main{
 
 .next-header span{
   color:var(--gold);
-
   font-size:11px;
   font-weight:700;
   letter-spacing:1px;
@@ -500,37 +426,16 @@ main{
 
 .next-body{
   padding:23px 14px 22px;
-
   text-align:center;
 }
 
-
-/* ---------------------------------------------------------
-   NEXT GAME MATCHUP
---------------------------------------------------------- */
-
 .next-label{
   color:var(--muted);
-
   font-size:12px;
   font-weight:600;
-
   letter-spacing:1.5px;
-
   text-transform:uppercase;
 }
-
-
-/*
-  The matchup is now treated as ONE unit.
-
-  This prevents:
-  NDGP
-  VS
-  LONG OPPONENT
-
-  from independently resizing and looking uneven.
-*/
 
 .matchup{
   width:100%;
@@ -577,12 +482,6 @@ main{
   line-height:.8;
 }
 
-
-/*
-  JS adds this class when the matchup needs
-  to shrink. Both teams AND VS shrink together.
-*/
-
 .matchup.compact .matchup-team{
   font-size:32px;
 }
@@ -607,13 +506,10 @@ main{
   font-size:16px;
 }
 
-
 .next-info{
   color:var(--muted);
-
   font-size:13px;
   font-weight:600;
-
   line-height:2;
 }
 
@@ -623,7 +519,6 @@ main{
   justify-content:center;
 
   margin-top:12px;
-
   padding:8px 14px;
 
   color:#344b5d;
@@ -645,9 +540,7 @@ main{
 
 .record-card{
   padding:0;
-
   overflow:hidden;
-
   text-align:center;
 }
 
@@ -657,12 +550,9 @@ main{
 
 .record-label{
   color:var(--muted);
-
   font-size:12px;
   font-weight:600;
-
   letter-spacing:1px;
-
   text-transform:uppercase;
 }
 
@@ -687,7 +577,6 @@ main{
 .game-list{
   display:flex;
   flex-direction:column;
-
   gap:8px;
 }
 
@@ -710,8 +599,7 @@ main{
 
   border-radius:11px;
 
-  box-shadow:
-    0 2px 8px rgba(0,30,60,.045);
+  box-shadow:0 2px 8px rgba(0,30,60,.045);
 }
 
 .game-card.win{
@@ -741,39 +629,29 @@ main{
 
 .game-month{
   color:var(--gold);
-
   font-size:11px;
   font-weight:700;
-
   letter-spacing:1px;
-
   text-transform:uppercase;
 }
 
 .game-day{
   color:var(--navy);
-
   font-family:Teko;
-
   font-size:35px;
-
   line-height:.75;
 }
 
 .game-weekday{
   margin-top:5px;
-
   color:var(--muted);
-
   font-size:9px;
   font-weight:700;
-
   text-transform:uppercase;
 }
 
 .game-main{
   min-width:0;
-
   padding:0 13px;
 }
 
@@ -790,7 +668,6 @@ main{
   line-height:.85;
 
   white-space:nowrap;
-
   text-overflow:ellipsis;
 
   text-transform:uppercase;
@@ -812,39 +689,31 @@ main{
 
 .game-location{
   overflow:hidden;
-
   max-width:180px;
-
   white-space:nowrap;
-
   text-overflow:ellipsis;
 }
 
 .game-result{
   min-width:0;
-
   text-align:right;
 }
 
 .game-status{
   display:inline-flex;
-
   align-items:center;
   justify-content:center;
 
   min-width:58px;
 
   margin-bottom:4px;
-
   padding:5px 7px;
 
   border-radius:5px;
 
   font-size:9px;
   font-weight:700;
-
   letter-spacing:.4px;
-
   text-transform:uppercase;
 }
 
@@ -865,23 +734,17 @@ main{
 
 .game-score{
   color:var(--navy);
-
   font-family:Teko;
-
   font-size:32px;
   font-weight:700;
-
   line-height:.8;
 }
 
 .game-score-label{
   margin-top:4px;
-
   color:var(--muted);
-
   font-size:9px;
   font-weight:600;
-
   text-transform:uppercase;
 }
 
@@ -944,10 +807,8 @@ main{
 
 .season-name{
   font-family:Teko;
-
   font-size:32px;
   font-weight:700;
-
   line-height:.86;
 }
 
@@ -966,7 +827,6 @@ main{
 
 .season-arrow{
   color:var(--gold);
-
   font-size:34px;
 }
 
@@ -997,8 +857,7 @@ main{
 .history-modal-body{
   overflow-y:auto;
 
-  max-height:
-    calc(100dvh - 120px);
+  max-height:calc(100dvh - 120px);
 
   padding:15px;
 }
@@ -1027,32 +886,29 @@ main{
 
   margin-left:8px;
 
-  background:
-    linear-gradient(
-      90deg,
-      var(--gold),
-      transparent
-    );
+  background:linear-gradient(
+    90deg,
+    var(--gold),
+    transparent
+  );
 }
 
 
 /* =========================================================
-   HISTORY GAME CARDS
+   HISTORY GAMES
 ========================================================= */
 
 /*
-  IMPORTANT:
-  Fixed grid columns keep every card perfectly aligned.
+   The history cards use three fixed columns:
 
-  LEFT  = matchup
-  CENTER = score
-  RIGHT = result
+   OPPONENT | SCORE | RESULT
+
+   The opponent no longer says "NDGP VS".
 */
 
 .history-game-list{
   display:flex;
   flex-direction:column;
-
   gap:8px;
 }
 
@@ -1078,20 +934,12 @@ main{
 
   border-radius:10px;
 
-  box-shadow:
-    0 2px 7px rgba(0,30,60,.04);
+  box-shadow:0 2px 7px rgba(0,30,60,.04);
 }
 
 .history-game.loss{
   border-left-color:var(--red);
 }
-
-
-/*
-  Matchup column.
-
-  It never affects the score or result columns.
-*/
 
 .history-game-matchup{
   min-width:0;
@@ -1122,12 +970,6 @@ main{
   text-overflow:clip;
 }
 
-
-/*
-  Score is always centered in exactly
-  the same column.
-*/
-
 .history-game-score{
   width:100%;
 
@@ -1144,11 +986,6 @@ main{
 
   white-space:nowrap;
 }
-
-
-/*
-  Result is always the same width.
-*/
 
 .history-game-result{
   width:58px;
@@ -1184,16 +1021,13 @@ main{
 
 .roster-tools{
   display:flex;
-
   gap:7px;
-
   margin-bottom:8px;
 }
 
 .roster-search,
 .roster-filter{
   height:44px;
-
   min-width:0;
 
   padding:8px 10px;
@@ -1283,7 +1117,6 @@ main{
   line-height:.9;
 
   white-space:nowrap;
-
   text-overflow:ellipsis;
 }
 
@@ -1316,8 +1149,7 @@ main{
 
   padding:12px;
 
-  background:
-    rgba(0,17,33,.72);
+  background:rgba(0,17,33,.72);
 
   backdrop-filter:blur(7px);
 }
@@ -1328,13 +1160,9 @@ main{
 
 .modal,
 .form-modal{
-  width:min(
-    620px,
-    calc(100vw - 24px)
-  );
+  width:min(620px,calc(100vw - 24px));
 
-  max-height:
-    calc(100dvh - 24px);
+  max-height:calc(100dvh - 24px);
 
   overflow:hidden;
 
@@ -1344,8 +1172,7 @@ main{
 
   border-radius:15px;
 
-  box-shadow:
-    0 18px 50px rgba(0,20,40,.25);
+  box-shadow:0 18px 50px rgba(0,20,40,.25);
 }
 
 .modal-header{
@@ -1355,12 +1182,11 @@ main{
 
   color:white;
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--navy-dark),
-      var(--navy-light)
-    );
+  background:linear-gradient(
+    135deg,
+    var(--navy-dark),
+    var(--navy-light)
+  );
 
   border-bottom:3px solid var(--gold);
 }
@@ -1393,8 +1219,7 @@ main{
 
   border-radius:50%;
 
-  background:
-    rgba(255,255,255,.12);
+  background:rgba(255,255,255,.12);
 
   color:white;
 
@@ -1406,8 +1231,7 @@ main{
 .form-modal-body{
   overflow-y:auto;
 
-  max-height:
-    calc(100dvh - 115px);
+  max-height:calc(100dvh - 115px);
 
   padding:14px;
 }
@@ -1429,7 +1253,6 @@ main{
 .field{
   width:100%;
   min-width:0;
-
   margin-bottom:8px;
 }
 
@@ -1487,7 +1310,6 @@ main{
 
 .field textarea{
   min-height:70px;
-
   resize:vertical;
 }
 
@@ -1496,8 +1318,7 @@ main{
 .field textarea:focus{
   border-color:#9db0bf;
 
-  box-shadow:
-    0 0 0 3px rgba(0,38,74,.05);
+  box-shadow:0 0 0 3px rgba(0,38,74,.05);
 }
 
 .primary-button{
@@ -1509,15 +1330,13 @@ main{
 
   color:white;
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--navy-light),
-      var(--navy)
-    );
+  background:linear-gradient(
+    135deg,
+    var(--navy-light),
+    var(--navy)
+  );
 
   border:0;
-
   border-radius:7px;
 
   font-size:11px;
@@ -1591,12 +1410,11 @@ main{
 
   color:white;
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--navy-dark),
-      var(--navy-light)
-    );
+  background:linear-gradient(
+    135deg,
+    var(--navy-dark),
+    var(--navy-light)
+  );
 
   border-bottom:3px solid var(--gold);
 
@@ -1607,9 +1425,7 @@ main{
 
 .admin-header-title{
   font-family:Teko;
-
   font-size:34px;
-
   line-height:.85;
 }
 
@@ -1631,8 +1447,7 @@ main{
 
   color:white;
 
-  background:
-    rgba(255,255,255,.09);
+  background:rgba(255,255,255,.09);
 
   border:1px solid rgba(255,255,255,.22);
 
@@ -1731,12 +1546,11 @@ main{
 
   color:white;
 
-  background:
-    linear-gradient(
-      145deg,
-      var(--navy-light),
-      var(--navy)
-    );
+  background:linear-gradient(
+    145deg,
+    var(--navy-light),
+    var(--navy)
+  );
 
   border-radius:8px;
 
@@ -1772,7 +1586,6 @@ main{
 
 .admin-arrow{
   color:#718392;
-
   font-size:12px;
 }
 
@@ -1863,7 +1676,6 @@ main{
 
 .admin-actions{
   display:flex;
-
   gap:4px;
 }
 
@@ -1900,7 +1712,6 @@ main{
 
 .position-selected{
   color:var(--navy);
-
   font-weight:700;
 }
 
@@ -1924,8 +1735,7 @@ main{
 
   border-radius:9px;
 
-  box-shadow:
-    0 18px 50px rgba(0,20,40,.22);
+  box-shadow:0 18px 50px rgba(0,20,40,.22);
 }
 
 .position-picker.open .position-menu{
@@ -1982,7 +1792,6 @@ main{
 .admin-roster{
   display:flex;
   flex-direction:column;
-
   gap:5px;
 }
 
@@ -2041,7 +1850,6 @@ main{
 
 .login-code{
   width:100%;
-
   height:50px;
 
   margin-bottom:8px;
@@ -2117,9 +1925,7 @@ main{
 
 .confirm-buttons{
   display:flex;
-
   gap:7px;
-
   margin-top:13px;
 }
 
@@ -2140,8 +1946,7 @@ main{
 
   z-index:10000;
 
-  max-width:
-    calc(100vw - 30px);
+  max-width:calc(100vw - 30px);
 
   transform:translateX(-50%);
 
@@ -2157,8 +1962,7 @@ main{
 
   border-radius:8px;
 
-  box-shadow:
-    0 10px 30px rgba(0,0,0,.25);
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
 
   font-size:12px;
   font-weight:600;
@@ -2182,9 +1986,6 @@ main{
     font-size:37px;
   }
 
-
-  /* ACHIEVEMENTS */
-
   .achievement-grid{
     gap:6px;
   }
@@ -2201,9 +2002,6 @@ main{
     font-size:11px;
   }
 
-
-  /* NAV */
-
   .main-nav{
     gap:3px;
     padding:6px;
@@ -2211,14 +2009,9 @@ main{
 
   .main-nav button{
     min-height:50px;
-
     font-size:14px;
-
     letter-spacing:.4px;
   }
-
-
-  /* HOME */
 
   .next-body{
     padding:21px 10px;
@@ -2231,7 +2024,6 @@ main{
 
   .matchup-team{
     max-width:43%;
-
     font-size:34px;
   }
 
@@ -2263,9 +2055,6 @@ main{
     font-size:15px;
   }
 
-
-  /* SCHEDULE */
-
   .game-card{
     grid-template-columns:
       55px
@@ -2279,7 +2068,6 @@ main{
 
   .game-date-box{
     min-height:60px;
-
     padding-right:8px;
   }
 
@@ -2305,18 +2093,12 @@ main{
 
   .game-details{
     gap:3px 8px;
-
     margin-top:6px;
-
     font-size:9px;
   }
 
   .game-location{
     max-width:120px;
-  }
-
-  .game-result{
-    min-width:0;
   }
 
   .game-score{
@@ -2325,18 +2107,13 @@ main{
 
   .game-status{
     min-width:50px;
-
     font-size:7px;
-
     padding:4px 5px;
   }
 
   .game-score-label{
     font-size:7px;
   }
-
-
-  /* HISTORY */
 
   .history-modal-title{
     font-size:36px;
@@ -2350,14 +2127,6 @@ main{
     font-size:28px;
   }
 
-
-  /*
-    Mobile history layout.
-
-    Slightly wider score column so every
-    score remains visually centered.
-  */
-
   .history-game{
     grid-template-columns:
       minmax(0,1fr)
@@ -2366,14 +2135,13 @@ main{
 
     min-height:76px;
 
-    padding:10px 10px;
+    padding:10px;
 
     gap:3px;
   }
 
   .history-game-matchup{
     padding-right:7px;
-
     font-size:21px;
   }
 
@@ -2383,12 +2151,8 @@ main{
 
   .history-game-result{
     width:52px;
-
     font-size:8px;
   }
-
-
-  /* ROSTER */
 
   .roster-grid{
     grid-template-columns:1fr;
@@ -2402,25 +2166,17 @@ main{
     width:100%;
   }
 
-
-  /* FORMS */
-
   .form-grid{
     grid-template-columns:1fr;
-
     gap:0;
   }
 
   .field input[type="date"]{
     width:100%;
-
     height:40px!important;
     min-height:40px!important;
     max-height:40px!important;
   }
-
-
-  /* ADMIN */
 
   .admin-stats{
     grid-template-columns:
@@ -2444,23 +2200,17 @@ main{
     grid-column:1/-1;
   }
 
-
-  /* MODALS */
-
   .modal,
   .form-modal{
-    width:
-      calc(100vw - 24px);
-
-    max-height:
-      calc(100dvh - 24px);
+    width:calc(100vw - 24px);
+    max-height:calc(100dvh - 24px);
   }
 
 }
 
 
 /* =========================================================
-   VERY SMALL PHONES
+   SMALL PHONES
 ========================================================= */
 
 @media(max-width:380px){
@@ -2620,7 +2370,7 @@ main{
 
 
 <!-- =======================================================
-     NAV
+     NAVIGATION
 ======================================================= -->
 
 <nav
@@ -2663,9 +2413,7 @@ main{
 <main id="publicMain">
 
 
-<!-- =======================================================
-     HOME
-======================================================= -->
+<!-- HOME -->
 
 <section
   id="home"
@@ -2754,9 +2502,7 @@ main{
 </section>
 
 
-<!-- =======================================================
-     SCHEDULE
-======================================================= -->
+<!-- SCHEDULE -->
 
 <section
   id="schedule"
@@ -2781,9 +2527,7 @@ main{
 </section>
 
 
-<!-- =======================================================
-     HISTORY
-======================================================= -->
+<!-- HISTORY -->
 
 <section
   id="history"
@@ -2807,9 +2551,7 @@ main{
 </section>
 
 
-<!-- =======================================================
-     ROSTER
-======================================================= -->
+<!-- ROSTER -->
 
 <section
   id="roster"
@@ -2879,7 +2621,7 @@ main{
 
 
 <!-- =======================================================
-     ADMIN PAGE
+     ADMIN
 ======================================================= -->
 
 <section
@@ -2980,7 +2722,7 @@ main{
   </div>
 
 
-  <!-- ADMIN GAMES -->
+  <!-- GAMES -->
 
   <div
     id="adminGames"
@@ -3161,7 +2903,7 @@ main{
   </div>
 
 
-  <!-- ADMIN ROSTER -->
+  <!-- ROSTER -->
 
   <div
     id="adminRoster"
@@ -3366,7 +3108,7 @@ main{
 
 
 <!-- =======================================================
-     ADMIN LOGIN MODAL
+     ADMIN LOGIN
 ======================================================= -->
 
 <div
@@ -3501,7 +3243,7 @@ main{
 
 
 <!-- =======================================================
-     EDIT GAME MODAL
+     EDIT GAME
 ======================================================= -->
 
 <div
@@ -3724,7 +3466,7 @@ main{
 
 
 <!-- =======================================================
-     EDIT PLAYER MODAL
+     EDIT PLAYER
 ======================================================= -->
 
 <div
@@ -3919,7 +3661,7 @@ main{
 
 
 <!-- =======================================================
-     CONFIRM MODAL
+     CONFIRM
 ======================================================= -->
 
 <div
@@ -4027,7 +3769,6 @@ let confirmAction=null;
 window.addEventListener(
   "load",
   ()=>{
-
     setTimeout(
       ()=>{
         document
@@ -4036,7 +3777,6 @@ window.addEventListener(
       },
       700
     );
-
   }
 );
 
@@ -4101,7 +3841,6 @@ function openAdminLogin(){
     "modal-open"
   );
 
-
   setTimeout(
     ()=>{
       document
@@ -4153,12 +3892,10 @@ document
   .addEventListener(
     "input",
     event=>{
-
       event.target.value=
         event.target.value
           .replace(/\D/g,"")
           .slice(0,4);
-
     }
   );
 
@@ -4168,10 +3905,8 @@ document
   .addEventListener(
     "keydown",
     event=>{
-
       if(event.key==="Enter")
         loginAdmin();
-
     }
   );
 
@@ -4183,6 +3918,7 @@ async function loginAdmin(){
       .getElementById("adminCode")
       .value
       .trim();
+
 
   const error=
     document.getElementById(
@@ -4384,24 +4120,18 @@ function getStatus(game){
       Number(game.opponent_score);
 
 
-    if(our>opponent){
-
+    if(our>opponent)
       return{
         text:"WIN",
         cls:"win"
       };
 
-    }
 
-
-    if(our<opponent){
-
+    if(our<opponent)
       return{
         text:"LOSS",
         cls:"loss"
       };
-
-    }
 
 
     return{
@@ -4611,22 +4341,12 @@ function renderHome(){
     `${wins}–${losses}`;
 
 
-  /*
-    Wait for the matchup to render,
-    then resize the ENTIRE matchup
-    as a single visual unit.
-  */
-
   requestAnimationFrame(
     fitNextMatchup
   );
 
 }
 
-
-/* =========================================================
-   NEXT GAME MATCHUP AUTO FIT
-========================================================= */
 
 function fitNextMatchup(){
 
@@ -4635,13 +4355,10 @@ function fitNextMatchup(){
       "nextMatchup"
     );
 
+
   if(!matchup)
     return;
 
-
-  /*
-    Start clean.
-  */
 
   matchup.classList.remove(
     "compact",
@@ -4650,19 +4367,11 @@ function fitNextMatchup(){
   );
 
 
-  /*
-    Check if the matchup actually
-    fits inside its container.
-  */
-
   if(
     matchup.scrollWidth <=
     matchup.clientWidth
-  ){
-
+  )
     return;
-
-  }
 
 
   matchup.classList.add(
@@ -5166,6 +4875,12 @@ function openHistory(year){
               game[2];
 
 
+            /*
+              IMPORTANT CHANGE:
+              Only the opponent is displayed here.
+              "NDGP VS" has been completely removed.
+            */
+
             return`
 
               <div
@@ -5185,7 +4900,7 @@ function openHistory(year){
                   <span
                     class="history-game-matchup-text"
                   >
-                    NDGP VS ${escapeHTML(opponent)}
+                    ${escapeHTML(opponent)}
                   </span>
 
                 </div>
@@ -5242,18 +4957,16 @@ function openHistory(year){
   );
 
 
-  /*
-    Give long opponent names a smaller
-    font without changing the score
-    or WIN/LOSS columns.
-  */
-
   requestAnimationFrame(
     fitHistoryMatchups
   );
 
 }
 
+
+/* =========================================================
+   HISTORY TEXT FIT
+========================================================= */
 
 function fitHistoryMatchups(){
 
@@ -5265,6 +4978,7 @@ function fitHistoryMatchups(){
 
       const parent=
         text.parentElement;
+
 
       let size=
         window.innerWidth<=600
@@ -5403,12 +5117,9 @@ function renderRoster(){
 
 
       return(
-
         (!search||
           text.includes(search))
-
         &&
-
         (
           filter==="all" ||
 
@@ -5418,7 +5129,6 @@ function renderRoster(){
           .toUpperCase()
           .includes(filter)
         )
-
       );
 
     });
@@ -5503,7 +5213,6 @@ document
 ========================================================= */
 
 const positions=[
-
   "QB",
   "RB",
   "FB",
@@ -5527,7 +5236,6 @@ const positions=[
   "K",
   "P",
   "LS"
-
 ];
 
 
@@ -6222,7 +5930,6 @@ async function savePlayerEdit(){
 
   closeEditPlayer();
 
-
   await loadRoster();
 
 
@@ -6324,21 +6031,17 @@ async function addGame(){
     "gameDate"
   ).value="";
 
-
   document.getElementById(
     "gameTime"
   ).value="";
-
 
   document.getElementById(
     "gameOpponent"
   ).value="";
 
-
   document.getElementById(
     "gameLocation"
   ).value="";
-
 
   document.getElementById(
     "gameNotes"
@@ -6718,7 +6421,6 @@ async function saveGameEdit(){
     ourScore=
       Number(ourRaw);
 
-
     opponentScore=
       Number(opponentRaw);
 
@@ -6885,17 +6587,13 @@ document
   .addEventListener(
     "click",
     async()=>{
-
       const action=
         confirmAction;
 
-
       closeConfirm();
-
 
       if(action)
         await action();
-
     }
   );
 
@@ -7029,7 +6727,6 @@ function updateAdminStats(){
     const our=
       Number(game.our_score);
 
-
     const opponent=
       Number(game.opponent_score);
 
@@ -7158,31 +6855,11 @@ function escapeHTML(value){
 
 
   return String(value)
-
-    .replace(
-      /&/g,
-      "&amp;"
-    )
-
-    .replace(
-      /</g,
-      "&lt;"
-    )
-
-    .replace(
-      />/g,
-      "&gt;"
-    )
-
-    .replace(
-      /"/g,
-      "&quot;"
-    )
-
-    .replace(
-      /'/g,
-      "&#039;"
-    );
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
 }
 
@@ -7197,16 +6874,8 @@ function escapeAttribute(value){
 
 
   return String(value)
-
-    .replace(
-      /\\/g,
-      "\\\\"
-    )
-
-    .replace(
-      /'/g,
-      "\\'"
-    );
+    .replace(/\\/g,"\\\\")
+    .replace(/'/g,"\\'");
 
 }
 
@@ -7219,9 +6888,7 @@ document.addEventListener(
   "keydown",
   event=>{
 
-    if(
-      event.key!=="Escape"
-    )
+    if(event.key!=="Escape")
       return;
 
 
@@ -7230,9 +6897,7 @@ document.addEventListener(
         ".overlay.show"
       )
       .forEach(modal=>{
-        modal.classList.remove(
-          "show"
-        );
+        modal.classList.remove("show");
       });
 
 
