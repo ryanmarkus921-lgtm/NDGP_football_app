@@ -1,37 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<meta
+  name="viewport"
+  content="width=device-width,initial-scale=1,viewport-fit=cover"
+>
 
 <title>NDGP Football</title>
 
-<meta name="theme-color" content="#00264a">
+<meta
+  name="theme-color"
+  content="#00264a"
+>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+>
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
 
+/* ========================================================
+   VARIABLES
+======================================================== */
+
 :root{
   --navy:#00264a;
-  --navy-dark:#001a30;
-  --navy-light:#064674;
-  --gold:#e7b928;
+  --navy2:#063f68;
+  --gold:#e6b928;
   --bg:#f3f6f8;
-  --white:#fff;
+  --white:#ffffff;
   --text:#082742;
-  --muted:#5c7181;
-  --border:#d4dfe6;
-  --green:#16834d;
-  --green-bg:#e9f7ef;
-  --red:#c93636;
-  --red-bg:#fdeaea;
-  --shadow:0 3px 12px rgba(0,35,65,.055);
+  --muted:#526a7d;
+  --border:#d2dee6;
+  --green:#13834b;
+  --greenbg:#eaf7ef;
+  --red:#c93434;
+  --redbg:#fdecec;
+  --shadow:0 4px 15px rgba(0,35,65,.06);
 }
+
+
+/* ========================================================
+   RESET
+======================================================== */
 
 *{
   box-sizing:border-box;
@@ -45,9 +73,18 @@ html{
 body{
   margin:0;
   min-height:100vh;
-  background:linear-gradient(180deg,#edf3f6 0%,#f8fafb 100%);
+
+  background:
+    linear-gradient(
+      180deg,
+      #edf3f6,
+      #f8fafb
+    );
+
   color:var(--text);
+
   font-family:"Oswald",Arial,sans-serif;
+
   -webkit-font-smoothing:antialiased;
 }
 
@@ -64,7 +101,6 @@ textarea{
 
 button{
   cursor:pointer;
-  -webkit-tap-highlight-color:transparent;
 }
 
 input,
@@ -78,9 +114,9 @@ textarea{
 }
 
 
-/* =========================================================
+/* ========================================================
    SPLASH
-========================================================= */
+======================================================== */
 
 #splash{
   position:fixed;
@@ -91,11 +127,16 @@ textarea{
   align-items:center;
   justify-content:center;
 
-  color:white;
+  color:#fff;
 
-  background:linear-gradient(145deg,#064673,#001a30);
+  background:
+    linear-gradient(
+      145deg,
+      #063f68,
+      #001a30
+    );
 
-  transition:.4s ease;
+  transition:.4s;
 }
 
 #splash.hide{
@@ -109,142 +150,194 @@ textarea{
 }
 
 .splash-logo{
-  width:115px;
-  height:115px;
+  width:105px;
+  height:105px;
   object-fit:contain;
 }
 
 .splash-title{
   margin-top:8px;
+
   font-family:Teko;
-  font-size:54px;
+
+  font-size:52px;
+
   line-height:.8;
+
   letter-spacing:2px;
 }
 
 .splash-subtitle{
-  margin-top:10px;
-  color:#dce7ee;
-  font-size:12px;
+  margin-top:9px;
+
+  color:#dce6ed;
+
+  font-size:11px;
   font-weight:600;
+
   letter-spacing:1.5px;
+
   text-transform:uppercase;
 }
 
 
-/* =========================================================
+/* ========================================================
    HEADER
-========================================================= */
+======================================================== */
 
 .site-header{
   position:relative;
-  padding:18px 45px 20px;
-  color:white;
+
+  padding:17px 45px 20px;
+
+  color:#fff;
+
   text-align:center;
 
-  background:linear-gradient(
-    135deg,
-    var(--navy-dark),
-    var(--navy-light)
-  );
+  background:
+    linear-gradient(
+      135deg,
+      #001b32,
+      #074675
+    );
 
   border-bottom:3px solid var(--gold);
 
-  box-shadow:0 4px 18px rgba(0,30,60,.14);
+  box-shadow:
+    0 4px 18px rgba(0,30,60,.15);
 }
 
 .header-logo{
   width:70px;
   height:70px;
+
   display:block;
-  margin:0 auto 4px;
+
+  margin:0 auto 3px;
+
   object-fit:contain;
 }
 
 .site-header h1{
   margin:0;
+
   font-family:Teko;
-  font-size:42px;
+
+  font-size:43px;
+
   line-height:.82;
+
   letter-spacing:2.5px;
 }
 
 .site-header p{
   margin:7px 0 0;
+
   color:#d8e4eb;
-  font-size:12px;
+
+  font-size:11px;
   font-weight:600;
+
   letter-spacing:1.5px;
+
   text-transform:uppercase;
 }
 
 .admin-gear{
   position:absolute;
-  top:14px;
+
+  top:13px;
   right:15px;
+
   padding:0;
+
   border:0;
+
   background:none;
-  color:white;
-  font-size:24px;
+
+  color:#fff;
+
+  font-size:23px;
 }
 
 
-/* =========================================================
+/* ========================================================
    ACHIEVEMENTS
-========================================================= */
+======================================================== */
 
 .achievements{
   padding:10px;
-  background:white;
+
+  background:#fff;
+
   border-bottom:1px solid var(--border);
 }
 
 .achievement-grid{
   width:100%;
   max-width:760px;
+
   margin:auto;
 
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
 
   gap:8px;
 }
 
 .achievement{
   padding:12px;
-  background:white;
-  border:1px solid var(--border);
-  border-left:3px solid var(--gold);
+
+  background:#fff;
+
+  /*
+    CHANGED FROM GOLD TO NAVY
+  */
+  border:1px solid #b8cbd8;
+
+  border-left:4px solid var(--navy);
+
   border-radius:9px;
+
+  box-shadow:
+    0 2px 7px rgba(0,30,60,.035);
 }
 
 .achievement-title{
   color:var(--navy);
+
   font-family:Teko;
+
   font-size:21px;
   font-weight:700;
+
   line-height:1;
 }
 
 .achievement-years{
   margin-top:5px;
+
   color:var(--muted);
+
   font-size:12px;
   font-weight:600;
 }
 
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
+/* ========================================================
+   NAV
+======================================================== */
 
 .main-nav{
   position:sticky;
   top:0;
+
   z-index:300;
 
   display:flex;
+
   gap:5px;
 
   padding:7px;
@@ -253,7 +346,8 @@ textarea{
 
   border-bottom:1px solid var(--border);
 
-  box-shadow:0 4px 14px rgba(0,30,60,.06);
+  box-shadow:
+    0 4px 13px rgba(0,30,60,.06);
 
   backdrop-filter:blur(12px);
 }
@@ -262,56 +356,66 @@ textarea{
   position:relative;
 
   flex:1;
-  min-height:54px;
+
+  min-height:53px;
 
   border:1px solid transparent;
+
   border-radius:9px;
 
   background:transparent;
 
-  color:#536a7c;
+  color:#536b7d;
 
   font-size:17px;
   font-weight:700;
-  letter-spacing:.8px;
-  text-transform:uppercase;
-}
 
-.main-nav button:hover{
-  color:var(--navy);
-  background:#fffdf4;
+  letter-spacing:.7px;
+
+  text-transform:uppercase;
 }
 
 .main-nav button.active{
   color:var(--navy);
-  background:linear-gradient(135deg,#fff8dc,#fffdf7);
-  border-color:#eadb9c;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff7d7,
+      #fffdf6
+    );
+
+  border-color:#e8d895;
 }
 
 .main-nav button.active::after{
   content:"";
 
   position:absolute;
+
   left:17%;
   right:17%;
+
   bottom:3px;
 
   height:3px;
 
-  border-radius:4px;
-
   background:var(--gold);
+
+  border-radius:4px;
 }
 
 
-/* =========================================================
+/* ========================================================
    MAIN
-========================================================= */
+======================================================== */
 
 main{
   width:100%;
   max-width:760px;
+
   margin:auto;
+
   padding:10px 9px 35px;
 }
 
@@ -321,10 +425,12 @@ main{
 
 .page.active{
   display:block;
+
   animation:pageIn .18s ease;
 }
 
 @keyframes pageIn{
+
   from{
     opacity:0;
     transform:translateY(4px);
@@ -334,15 +440,18 @@ main{
     opacity:1;
     transform:none;
   }
+
 }
 
 .card{
   margin-bottom:9px;
+
   padding:13px;
 
-  background:white;
+  background:#fff;
 
   border:1px solid var(--border);
+
   border-radius:13px;
 
   box-shadow:var(--shadow);
@@ -357,7 +466,9 @@ main{
   color:var(--navy);
 
   font-family:Teko;
+
   font-size:33px;
+
   line-height:1;
 }
 
@@ -370,27 +481,30 @@ main{
 
   margin-left:9px;
 
-  background:linear-gradient(
-    90deg,
-    var(--gold),
-    transparent
-  );
+  background:
+    linear-gradient(
+      90deg,
+      var(--gold),
+      transparent
+    );
 }
 
 
-/* =========================================================
-   HOME
-========================================================= */
+/* ========================================================
+   NEXT GAME
+======================================================== */
 
 .next-game{
   overflow:hidden;
 
-  background:white;
+  background:#fff;
 
   border:1px solid var(--border);
+
   border-radius:14px;
 
-  box-shadow:0 7px 25px rgba(0,30,60,.08);
+  box-shadow:
+    0 7px 25px rgba(0,30,60,.08);
 }
 
 .next-header{
@@ -400,40 +514,49 @@ main{
 
   padding:11px 13px;
 
-  color:white;
+  color:#fff;
 
-  background:linear-gradient(
-    90deg,
-    var(--navy-dark),
-    var(--navy-light)
-  );
+  background:
+    linear-gradient(
+      90deg,
+      #001b32,
+      #074675
+    );
 
   border-bottom:3px solid var(--gold);
 }
 
 .next-header strong{
   font-family:Teko;
+
   font-size:26px;
+
   line-height:.9;
 }
 
 .next-header span{
   color:var(--gold);
-  font-size:11px;
+
+  font-size:10px;
   font-weight:700;
+
   letter-spacing:1px;
 }
 
 .next-body{
-  padding:23px 14px 22px;
+  padding:22px 13px;
+
   text-align:center;
 }
 
 .next-label{
   color:var(--muted);
-  font-size:12px;
+
+  font-size:11px;
   font-weight:600;
-  letter-spacing:1.5px;
+
+  letter-spacing:1.4px;
+
   text-transform:uppercase;
 }
 
@@ -441,12 +564,13 @@ main{
   width:100%;
 
   display:flex;
+
   align-items:center;
   justify-content:center;
 
   gap:10px;
 
-  margin:12px auto 17px;
+  margin:13px auto 16px;
 
   overflow:hidden;
 }
@@ -455,6 +579,8 @@ main{
   min-width:0;
   max-width:43%;
 
+  overflow:hidden;
+
   color:var(--navy);
 
   font-family:Teko;
@@ -462,85 +588,72 @@ main{
   font-size:40px;
   font-weight:700;
 
-  line-height:.82;
+  line-height:.8;
 
   white-space:nowrap;
-
-  text-transform:uppercase;
 }
 
 .matchup-vs{
-  flex:0 0 auto;
+  flex-shrink:0;
 
   color:var(--gold);
 
   font-family:Teko;
 
-  font-size:25px;
+  font-size:24px;
   font-weight:700;
-
-  line-height:.8;
 }
 
 .matchup.compact .matchup-team{
   font-size:32px;
 }
 
-.matchup.compact .matchup-vs{
-  font-size:21px;
-}
-
 .matchup.small .matchup-team{
   font-size:26px;
 }
 
-.matchup.small .matchup-vs{
-  font-size:18px;
-}
-
 .matchup.tiny .matchup-team{
-  font-size:22px;
-}
-
-.matchup.tiny .matchup-vs{
-  font-size:16px;
+  font-size:21px;
 }
 
 .next-info{
   color:var(--muted);
+
   font-size:13px;
   font-weight:600;
+
   line-height:2;
 }
 
 .countdown{
   display:inline-flex;
-  align-items:center;
-  justify-content:center;
 
-  margin-top:12px;
-  padding:8px 14px;
+  margin-top:9px;
 
-  color:#344b5d;
+  padding:7px 13px;
+
+  color:#334c5e;
 
   background:#e8eef2;
 
-  border:1px solid #bdcbd4;
+  border:1px solid #c1ced6;
 
-  border-radius:9px;
+  border-radius:8px;
 
-  font-size:13px;
+  font-size:12px;
   font-weight:700;
 }
 
 
-/* =========================================================
+/* ========================================================
    RECORD
-========================================================= */
+======================================================== */
 
 .record-card{
   padding:0;
+
   overflow:hidden;
+
   text-align:center;
 }
 
@@ -550,9 +663,12 @@ main{
 
 .record-label{
   color:var(--muted);
-  font-size:12px;
+
+  font-size:11px;
   font-weight:600;
+
   letter-spacing:1px;
+
   text-transform:uppercase;
 }
 
@@ -563,106 +679,101 @@ main{
 
   font-family:Teko;
 
-  font-size:46px;
-  font-weight:700;
+  font-size:45px;
 
-  line-height:.85;
+  line-height:.8;
 }
 
 
-/* =========================================================
+/* ========================================================
    SCHEDULE
-========================================================= */
+======================================================== */
 
 .game-list{
   display:flex;
+
   flex-direction:column;
+
   gap:8px;
 }
 
 .game-card{
-  position:relative;
-
   display:grid;
 
-  /*
-    Date column is slightly wider so the
-    full weekday can be displayed cleanly.
-  */
-  grid-template-columns:92px minmax(0,1fr) 88px;
+  grid-template-columns:
+    88px
+    minmax(0,1fr)
+    82px;
 
   align-items:center;
 
-  min-height:104px;
+  min-height:100px;
 
-  padding:10px 13px;
+  padding:9px 12px;
 
-  background:white;
+  background:#fff;
 
   border:1px solid var(--border);
 
+  border-left:4px solid var(--navy);
+
   border-radius:11px;
 
-  box-shadow:0 2px 8px rgba(0,30,60,.045);
+  box-shadow:
+    0 2px 8px rgba(0,30,60,.04);
 }
 
 .game-card.win{
-  border-left:4px solid var(--green);
+  border-left-color:var(--green);
 }
 
 .game-card.loss{
-  border-left:4px solid var(--red);
-}
-
-.game-card.upcoming{
-  border-left:4px solid var(--navy);
+  border-left-color:var(--red);
 }
 
 .game-date-box{
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
   justify-content:center;
 
   min-height:75px;
 
-  padding-right:11px;
+  padding-right:10px;
 
   border-right:1px solid #e1e7eb;
 }
 
 .game-month{
   color:var(--gold);
-  font-size:11px;
+
+  font-size:10px;
   font-weight:700;
-  letter-spacing:1.2px;
+
+  letter-spacing:1px;
+
   text-transform:uppercase;
 }
 
 .game-day{
   color:var(--navy);
+
   font-family:Teko;
+
   font-size:38px;
-  font-weight:700;
-  line-height:.78;
+
+  line-height:.75;
 }
 
-/*
-  NEW:
-  Full weekday, such as FRIDAY,
-  is now much larger and bolder.
-*/
 .game-weekday{
   margin-top:6px;
 
   color:var(--muted);
 
-  font-family:"Oswald",Arial,sans-serif;
-
-  font-size:14px;
+  font-size:13px;
   font-weight:700;
-
-  letter-spacing:.6px;
 
   line-height:1;
 
@@ -673,7 +784,8 @@ main{
 
 .game-main{
   min-width:0;
-  padding:0 13px;
+
+  padding:0 12px;
 }
 
 .game-opponent{
@@ -683,12 +795,13 @@ main{
 
   font-family:Teko;
 
-  font-size:30px;
+  font-size:28px;
   font-weight:700;
 
   line-height:.85;
 
   white-space:nowrap;
+
   text-overflow:ellipsis;
 
   text-transform:uppercase;
@@ -696,56 +809,61 @@ main{
 
 .game-details{
   display:flex;
+
   flex-wrap:wrap;
 
-  gap:5px 11px;
+  gap:4px 9px;
 
   margin-top:7px;
 
   color:var(--muted);
 
-  font-size:11px;
+  font-size:10px;
   font-weight:600;
 }
 
 .game-location{
+  max-width:170px;
+
   overflow:hidden;
-  max-width:180px;
+
   white-space:nowrap;
+
   text-overflow:ellipsis;
 }
 
 .game-result{
-  min-width:0;
   text-align:right;
 }
 
 .game-status{
   display:inline-flex;
+
   align-items:center;
   justify-content:center;
 
-  min-width:58px;
+  min-width:55px;
 
   margin-bottom:4px;
-  padding:5px 7px;
+
+  padding:5px 6px;
 
   border-radius:5px;
 
-  font-size:9px;
+  font-size:8px;
   font-weight:700;
-  letter-spacing:.4px;
+
   text-transform:uppercase;
 }
 
 .game-status.win{
   color:var(--green);
-  background:var(--green-bg);
+  background:var(--greenbg);
 }
 
 .game-status.loss{
   color:var(--red);
-  background:var(--red-bg);
+  background:var(--redbg);
 }
 
 .game-status.upcoming{
@@ -755,24 +873,18 @@ main{
 
 .game-score{
   color:var(--navy);
+
   font-family:Teko;
-  font-size:32px;
-  font-weight:700;
+
+  font-size:31px;
+
   line-height:.8;
 }
 
-.game-score-label{
-  margin-top:4px;
-  color:var(--muted);
-  font-size:9px;
-  font-weight:600;
-  text-transform:uppercase;
-}
 
-
-/* =========================================================
+/* ========================================================
    HISTORY
-========================================================= */
+======================================================== */
 
 .history-intro{
   margin:-2px 0 10px;
@@ -790,16 +902,17 @@ main{
 
   margin-bottom:7px;
 
-  background:white;
+  background:#fff;
 
   border:1px solid var(--border);
+
   border-left:4px solid var(--navy);
 
   border-radius:10px;
 }
 
 .season-card.disabled{
-  border-left-color:#c8d1d8;
+  border-left-color:#cbd4da;
 }
 
 .season-button{
@@ -808,29 +921,30 @@ main{
   min-height:76px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
 
   padding:11px 14px;
 
   border:0;
 
-  background:white;
+  background:#fff;
 
   color:var(--navy);
 
   text-align:left;
 }
 
-.season-card.disabled .season-button{
-  cursor:default;
-}
-
 .season-name{
   font-family:Teko;
-  font-size:32px;
+
+  font-size:31px;
+
   font-weight:700;
-  line-height:.86;
+
+  line-height:.85;
 }
 
 .season-card.disabled .season-name{
@@ -848,210 +962,32 @@ main{
 
 .season-arrow{
   color:var(--gold);
-  font-size:34px;
+
+  font-size:33px;
 }
 
 
-/* =========================================================
-   HISTORY MODAL
-========================================================= */
-
-.history-modal-title{
-  margin-top:3px;
-
-  font-family:Teko;
-
-  font-size:40px;
-
-  line-height:.88;
-}
-
-.history-modal-record{
-  margin-top:6px;
-
-  color:#d8e5ed;
-
-  font-size:13px;
-  font-weight:600;
-}
-
-.history-modal-body{
-  overflow-y:auto;
-
-  max-height:calc(100dvh - 120px);
-
-  padding:15px;
-}
-
-.history-section-title{
-  display:flex;
-  align-items:center;
-
-  margin:1px 0 9px;
-
-  color:var(--navy);
-
-  font-family:Teko;
-
-  font-size:30px;
-
-  line-height:1;
-}
-
-.history-section-title::after{
-  content:"";
-
-  flex:1;
-
-  height:2px;
-
-  margin-left:8px;
-
-  background:linear-gradient(
-    90deg,
-    var(--gold),
-    transparent
-  );
-}
-
-
-/* =========================================================
-   HISTORY GAMES
-========================================================= */
-
-.history-game-list{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-
-.history-game{
-  display:grid;
-
-  grid-template-columns:
-    minmax(0,1fr)
-    105px
-    64px;
-
-  align-items:center;
-
-  min-height:78px;
-
-  padding:10px 13px;
-
-  background:white;
-
-  border:1px solid var(--border);
-
-  border-left:4px solid var(--green);
-
-  border-radius:10px;
-
-  box-shadow:0 2px 7px rgba(0,30,60,.04);
-}
-
-.history-game.loss{
-  border-left-color:var(--red);
-}
-
-/*
-  NEW:
-  Smaller opponent names on History.
-  This gives the score and WIN/LOSS
-  more visual breathing room.
-*/
-.history-game-matchup{
-  min-width:0;
-
-  padding-right:12px;
-
-  color:var(--navy);
-
-  font-family:Teko;
-
-  font-size:20px;
-  font-weight:700;
-
-  line-height:.92;
-
-  text-transform:uppercase;
-
-  overflow:hidden;
-}
-
-.history-game-matchup-text{
-  display:block;
-
-  white-space:nowrap;
-
-  overflow:hidden;
-
-  text-overflow:clip;
-}
-
-.history-game-score{
-  width:100%;
-
-  color:var(--navy);
-
-  font-family:Teko;
-
-  font-size:36px;
-  font-weight:700;
-
-  line-height:.8;
-
-  text-align:center;
-
-  white-space:nowrap;
-}
-
-.history-game-result{
-  width:58px;
-
-  justify-self:end;
-
-  padding:6px 4px;
-
-  border-radius:6px;
-
-  font-size:9px;
-  font-weight:700;
-
-  letter-spacing:.5px;
-
-  text-align:center;
-}
-
-.history-game-result.win{
-  color:var(--green);
-  background:var(--green-bg);
-}
-
-.history-game-result.loss{
-  color:var(--red);
-  background:var(--red-bg);
-}
-
-
-/* =========================================================
+/* ========================================================
    ROSTER
-========================================================= */
+======================================================== */
 
 .roster-tools{
   display:flex;
+
   gap:7px;
+
   margin-bottom:8px;
 }
 
 .roster-search,
 .roster-filter{
-  height:44px;
+  height:43px;
+
   min-width:0;
 
   padding:8px 10px;
 
-  background:white;
+  background:#fff;
 
   border:1px solid var(--border);
 
@@ -1090,13 +1026,14 @@ main{
 
 .roster-card{
   display:flex;
+
   align-items:center;
 
   gap:9px;
 
   padding:10px;
 
-  background:white;
+  background:#fff;
 
   border:1px solid var(--border);
 
@@ -1106,7 +1043,7 @@ main{
 }
 
 .roster-number{
-  width:41px;
+  width:40px;
 
   flex-shrink:0;
 
@@ -1115,7 +1052,6 @@ main{
   font-family:Teko;
 
   font-size:31px;
-  font-weight:700;
 
   text-align:center;
 }
@@ -1131,11 +1067,12 @@ main{
 
   font-family:Teko;
 
-  font-size:23px;
+  font-size:22px;
 
   line-height:.9;
 
   white-space:nowrap;
+
   text-overflow:ellipsis;
 }
 
@@ -1144,19 +1081,20 @@ main{
 
   color:var(--muted);
 
-  font-size:11px;
+  font-size:10px;
   font-weight:700;
 
   text-transform:uppercase;
 }
 
 
-/* =========================================================
+/* ========================================================
    MODALS
-========================================================= */
+======================================================== */
 
 .overlay{
   position:fixed;
+
   inset:0;
 
   z-index:5000;
@@ -1177,8 +1115,7 @@ main{
   display:flex;
 }
 
-.modal,
-.form-modal{
+.modal{
   width:min(620px,calc(100vw - 24px));
 
   max-height:calc(100dvh - 24px);
@@ -1187,38 +1124,27 @@ main{
 
   background:#f4f7f9;
 
-  border:1px solid rgba(255,255,255,.3);
-
   border-radius:15px;
 
-  box-shadow:0 18px 50px rgba(0,20,40,.25);
+  box-shadow:
+    0 20px 55px rgba(0,20,40,.3);
 }
 
 .modal-header{
   position:relative;
 
-  padding:17px 19px;
+  padding:16px 18px;
 
-  color:white;
+  color:#fff;
 
-  background:linear-gradient(
-    135deg,
-    var(--navy-dark),
-    var(--navy-light)
-  );
+  background:
+    linear-gradient(
+      135deg,
+      #001b32,
+      #074675
+    );
 
   border-bottom:3px solid var(--gold);
-}
-
-.modal-kicker{
-  color:var(--gold);
-
-  font-size:11px;
-  font-weight:700;
-
-  letter-spacing:1.5px;
-
-  text-transform:uppercase;
 }
 
 .modal-close{
@@ -1230,35 +1156,191 @@ main{
   width:38px;
   height:38px;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
   border:0;
 
   border-radius:50%;
 
+  color:#fff;
+
   background:rgba(255,255,255,.12);
 
-  color:white;
-
-  font-family:Arial,sans-serif;
+  font-family:Arial;
 
   font-size:25px;
 }
 
-.form-modal-body{
+.modal-kicker{
+  color:var(--gold);
+
+  font-size:10px;
+  font-weight:700;
+
+  letter-spacing:1.4px;
+
+  text-transform:uppercase;
+}
+
+.modal-title{
+  margin-top:3px;
+
+  font-family:Teko;
+
+  font-size:39px;
+
+  line-height:.85;
+}
+
+.modal-record{
+  margin-top:5px;
+
+  color:#d9e5ed;
+
+  font-size:12px;
+  font-weight:600;
+}
+
+.modal-body{
   overflow-y:auto;
 
-  max-height:calc(100dvh - 115px);
+  max-height:calc(100dvh - 120px);
 
   padding:14px;
 }
 
 
-/* =========================================================
+/* ========================================================
+   HISTORY POPUP
+======================================================== */
+
+.history-section-title{
+  display:flex;
+
+  align-items:center;
+
+  margin:1px 0 9px;
+
+  color:var(--navy);
+
+  font-family:Teko;
+
+  font-size:29px;
+
+  line-height:1;
+}
+
+.history-section-title::after{
+  content:"";
+
+  flex:1;
+
+  height:2px;
+
+  margin-left:8px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--gold),
+      transparent
+    );
+}
+
+.history-game-list{
+  display:flex;
+
+  flex-direction:column;
+
+  gap:8px;
+}
+
+.history-game{
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    90px
+    57px;
+
+  align-items:center;
+
+  min-height:76px;
+
+  padding:9px 11px;
+
+  background:#fff;
+
+  border:1px solid var(--border);
+
+  border-left:4px solid var(--green);
+
+  border-radius:9px;
+}
+
+.history-game.loss{
+  border-left-color:var(--red);
+}
+
+.history-game-matchup{
+  min-width:0;
+
+  padding-right:8px;
+
+  color:var(--navy);
+
+  font-family:Teko;
+
+  font-size:18px;
+
+  line-height:.9;
+
+  text-transform:uppercase;
+}
+
+.history-game-score{
+  color:var(--navy);
+
+  font-family:Teko;
+
+  font-size:33px;
+
+  line-height:.8;
+
+  text-align:center;
+
+  white-space:nowrap;
+}
+
+.history-game-result{
+  width:52px;
+
+  justify-self:end;
+
+  padding:6px 3px;
+
+  border-radius:6px;
+
+  font-size:8px;
+  font-weight:700;
+
+  text-align:center;
+}
+
+.history-game-result.win{
+  color:var(--green);
+
+  background:var(--greenbg);
+}
+
+.history-game-result.loss{
+  color:var(--red);
+
+  background:var(--redbg);
+}
+
+
+/* ========================================================
    FORMS
-========================================================= */
+======================================================== */
 
 .form-grid{
   display:grid;
@@ -1270,8 +1352,8 @@ main{
 }
 
 .field{
-  width:100%;
   min-width:0;
+
   margin-bottom:8px;
 }
 
@@ -1282,7 +1364,7 @@ main{
 
   color:var(--muted);
 
-  font-size:11px;
+  font-size:10px;
   font-weight:700;
 
   text-transform:uppercase;
@@ -1291,16 +1373,15 @@ main{
 .field input,
 .field select,
 .field textarea{
-  display:block;
-
   width:100%;
+
   max-width:100%;
 
   padding:9px;
 
   color:var(--text);
 
-  background:white;
+  background:#fff;
 
   border:1px solid var(--border);
 
@@ -1315,11 +1396,12 @@ main{
 }
 
 .field input[type="date"]{
-  width:100%;
+  height:40px!important;
 
-  height:40px;
-  min-height:40px;
-  max-height:40px;
+  min-height:40px!important;
+  max-height:40px!important;
+
+  width:100%!important;
 
   padding:7px 9px;
 
@@ -1328,16 +1410,9 @@ main{
 }
 
 .field textarea{
-  min-height:70px;
+  min-height:68px;
+
   resize:vertical;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus{
-  border-color:#9db0bf;
-
-  box-shadow:0 0 0 3px rgba(0,38,74,.05);
 }
 
 .primary-button{
@@ -1347,59 +1422,53 @@ main{
 
   padding:10px;
 
-  color:white;
+  color:#fff;
 
-  background:linear-gradient(
-    135deg,
-    var(--navy-light),
-    var(--navy)
-  );
+  background:
+    linear-gradient(
+      135deg,
+      #074675,
+      #00264a
+    );
 
   border:0;
+
   border-radius:7px;
-
-  font-size:11px;
-  font-weight:700;
-}
-
-.secondary-button{
-  min-height:38px;
-
-  padding:8px 11px;
-
-  color:var(--navy);
-
-  background:#e8eef2;
-
-  border:0;
-
-  border-radius:6px;
 
   font-size:10px;
   font-weight:700;
 }
 
+.secondary-button,
 .danger-button{
   min-height:38px;
 
   padding:8px 11px;
 
-  color:var(--red);
-
-  background:var(--red-bg);
-
   border:0;
 
   border-radius:6px;
 
-  font-size:10px;
+  font-size:9px;
   font-weight:700;
 }
 
+.secondary-button{
+  color:var(--navy);
 
-/* =========================================================
+  background:#e8eef2;
+}
+
+.danger-button{
+  color:var(--red);
+
+  background:var(--redbg);
+}
+
+
+/* ========================================================
    ADMIN
-========================================================= */
+======================================================== */
 
 .admin-page{
   display:none;
@@ -1418,6 +1487,7 @@ main{
 
 .admin-header{
   display:flex;
+
   align-items:center;
   justify-content:space-between;
 
@@ -1427,33 +1497,34 @@ main{
 
   margin-bottom:9px;
 
-  color:white;
+  color:#fff;
 
-  background:linear-gradient(
-    135deg,
-    var(--navy-dark),
-    var(--navy-light)
-  );
+  background:
+    linear-gradient(
+      135deg,
+      #001b32,
+      #074675
+    );
 
   border-bottom:3px solid var(--gold);
 
   border-radius:13px;
-
-  box-shadow:var(--shadow);
 }
 
-.admin-header-title{
+.admin-title{
   font-family:Teko;
+
   font-size:34px;
+
   line-height:.85;
 }
 
-.admin-header-sub{
+.admin-subtitle{
   margin-top:5px;
 
-  color:#d7e4ec;
+  color:#d8e5ed;
 
-  font-size:11px;
+  font-size:10px;
   font-weight:600;
 
   letter-spacing:1px;
@@ -1464,15 +1535,15 @@ main{
 .admin-back{
   padding:8px 10px;
 
-  color:white;
+  color:#fff;
 
   background:rgba(255,255,255,.09);
 
-  border:1px solid rgba(255,255,255,.22);
+  border:1px solid rgba(255,255,255,.2);
 
   border-radius:6px;
 
-  font-size:10px;
+  font-size:9px;
   font-weight:700;
 }
 
@@ -1488,15 +1559,13 @@ main{
 }
 
 .admin-stat{
-  padding:11px 6px;
+  padding:10px 5px;
 
-  background:white;
+  background:#fff;
 
   border:1px solid var(--border);
 
   border-radius:9px;
-
-  box-shadow:var(--shadow);
 
   text-align:center;
 }
@@ -1506,9 +1575,9 @@ main{
 
   font-family:Teko;
 
-  font-size:32px;
+  font-size:31px;
 
-  line-height:.85;
+  line-height:.8;
 }
 
 .admin-stat-label{
@@ -1516,7 +1585,7 @@ main{
 
   color:var(--muted);
 
-  font-size:10px;
+  font-size:9px;
   font-weight:600;
 
   text-transform:uppercase;
@@ -1527,19 +1596,18 @@ main{
 
   margin-bottom:8px;
 
-  background:white;
+  background:#fff;
 
   border:1px solid var(--border);
 
   border-radius:12px;
-
-  box-shadow:var(--shadow);
 }
 
 .admin-section-toggle{
   width:100%;
 
   display:flex;
+
   align-items:center;
 
   gap:10px;
@@ -1548,7 +1616,7 @@ main{
 
   border:0;
 
-  background:white;
+  background:#fff;
 
   text-align:left;
 }
@@ -1557,23 +1625,25 @@ main{
   width:39px;
   height:39px;
 
-  flex-shrink:0;
-
   display:flex;
+
   align-items:center;
   justify-content:center;
 
-  color:white;
+  flex-shrink:0;
 
-  background:linear-gradient(
-    145deg,
-    var(--navy-light),
-    var(--navy)
-  );
+  color:#fff;
+
+  background:
+    linear-gradient(
+      145deg,
+      #074675,
+      #00264a
+    );
 
   border-radius:8px;
 
-  font-size:18px;
+  font-size:17px;
 }
 
 .admin-section-text{
@@ -1587,7 +1657,7 @@ main{
 
   font-family:Teko;
 
-  font-size:28px;
+  font-size:27px;
 
   line-height:.85;
 }
@@ -1599,13 +1669,14 @@ main{
 
   color:var(--muted);
 
-  font-size:11px;
+  font-size:10px;
   font-weight:600;
 }
 
 .admin-arrow{
   color:#718392;
-  font-size:12px;
+
+  font-size:11px;
 }
 
 .admin-section-body{
@@ -1639,7 +1710,7 @@ main{
 
   font-family:Teko;
 
-  font-size:27px;
+  font-size:26px;
 
   line-height:1;
 }
@@ -1649,7 +1720,7 @@ main{
 
   color:var(--muted);
 
-  font-size:11px;
+  font-size:10px;
   font-weight:600;
 }
 
@@ -1667,7 +1738,7 @@ main{
 
   margin-bottom:5px;
 
-  background:white;
+  background:#fff;
 
   border:1px solid var(--border);
 
@@ -1679,7 +1750,7 @@ main{
 
   font-family:Teko;
 
-  font-size:21px;
+  font-size:20px;
 
   line-height:1;
 }
@@ -1689,19 +1760,20 @@ main{
 
   color:var(--muted);
 
-  font-size:10px;
+  font-size:9px;
   font-weight:600;
 }
 
 .admin-actions{
   display:flex;
+
   gap:4px;
 }
 
 
-/* =========================================================
+/* ========================================================
    POSITION PICKER
-========================================================= */
+======================================================== */
 
 .position-picker{
   position:relative;
@@ -1713,14 +1785,15 @@ main{
   min-height:40px;
 
   display:flex;
+
   align-items:center;
   justify-content:space-between;
 
   padding:8px 10px;
 
-  color:#667a8b;
+  color:var(--muted);
 
-  background:white;
+  background:#fff;
 
   border:1px solid var(--border);
 
@@ -1731,30 +1804,32 @@ main{
 
 .position-selected{
   color:var(--navy);
+
   font-weight:700;
 }
 
 .position-menu{
   position:absolute;
 
-  top:calc(100% + 4px);
-
   left:0;
   right:0;
 
-  z-index:600;
+  top:calc(100% + 4px);
+
+  z-index:100;
 
   display:none;
 
   padding:8px;
 
-  background:white;
+  background:#fff;
 
   border:1px solid var(--border);
 
   border-radius:9px;
 
-  box-shadow:0 18px 50px rgba(0,20,40,.22);
+  box-shadow:
+    0 18px 45px rgba(0,20,40,.22);
 }
 
 .position-picker.open .position-menu{
@@ -1769,13 +1844,14 @@ main{
 
   gap:4px;
 
-  max-height:190px;
+  max-height:180px;
 
   overflow-y:auto;
 }
 
 .position-option{
   display:flex;
+
   align-items:center;
 
   gap:5px;
@@ -1790,7 +1866,7 @@ main{
 
   border-radius:5px;
 
-  font-size:10px;
+  font-size:9px;
   font-weight:600;
 }
 
@@ -1799,18 +1875,18 @@ main{
   height:14px;
 
   margin:0;
-
-  accent-color:var(--navy);
 }
 
 
-/* =========================================================
+/* ========================================================
    ADMIN ROSTER
-========================================================= */
+======================================================== */
 
 .admin-roster{
   display:flex;
+
   flex-direction:column;
+
   gap:5px;
 }
 
@@ -1826,7 +1902,7 @@ main{
 
   padding:8px;
 
-  background:white;
+  background:#fff;
 
   border:1px solid var(--border);
 
@@ -1848,7 +1924,7 @@ main{
 
   font-family:Teko;
 
-  font-size:21px;
+  font-size:20px;
 
   line-height:1;
 }
@@ -1858,17 +1934,18 @@ main{
 
   color:var(--muted);
 
-  font-size:10px;
+  font-size:9px;
   font-weight:600;
 }
 
 
-/* =========================================================
+/* ========================================================
    LOGIN
-========================================================= */
+======================================================== */
 
 .login-code{
   width:100%;
+
   height:50px;
 
   margin-bottom:8px;
@@ -1877,7 +1954,7 @@ main{
 
   color:var(--navy);
 
-  background:white;
+  background:#fff;
 
   border:1px solid var(--border);
 
@@ -1889,7 +1966,7 @@ main{
 
   letter-spacing:7px;
 
-  font-family:Arial,sans-serif;
+  font-family:Arial;
 
   font-size:16px!important;
 
@@ -1903,48 +1980,22 @@ main{
 
   color:var(--red);
 
-  font-size:11px;
+  font-size:10px;
   font-weight:600;
 
   text-align:center;
 }
 
 
-/* =========================================================
+/* ========================================================
    CONFIRM
-========================================================= */
-
-.confirm-icon{
-  width:48px;
-  height:48px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  margin:0 auto 8px;
-
-  background:#fff4d2;
-
-  border-radius:50%;
-
-  font-size:23px;
-}
-
-.confirm-text{
-  color:var(--muted);
-
-  font-size:13px;
-  font-weight:600;
-
-  text-align:center;
-
-  line-height:1.5;
-}
+======================================================== */
 
 .confirm-buttons{
   display:flex;
+
   gap:7px;
+
   margin-top:13px;
 }
 
@@ -1953,46 +2004,45 @@ main{
 }
 
 
-/* =========================================================
+/* ========================================================
    TOAST
-========================================================= */
+======================================================== */
 
-.admin-message-popup{
+.toast{
   position:fixed;
 
   left:50%;
-  bottom:25px;
+  bottom:24px;
 
   z-index:10000;
 
-  max-width:calc(100vw - 30px);
+  max-width:calc(100vw - 25px);
 
   transform:translateX(-50%);
 
   padding:11px 15px;
 
-  color:white;
+  color:#fff;
 
   background:var(--navy);
-
-  border:1px solid #41637d;
 
   border-bottom:3px solid var(--gold);
 
   border-radius:8px;
 
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.25);
 
-  font-size:12px;
+  font-size:11px;
   font-weight:600;
 
   text-align:center;
 }
 
 
-/* =========================================================
+/* ========================================================
    MOBILE
-========================================================= */
+======================================================== */
 
 @media(max-width:600px){
 
@@ -2018,7 +2068,7 @@ main{
   }
 
   .achievement-years{
-    font-size:11px;
+    font-size:10px;
   }
 
   .main-nav{
@@ -2028,56 +2078,34 @@ main{
 
   .main-nav button{
     min-height:50px;
-    font-size:14px;
-    letter-spacing:.4px;
-  }
 
-  .next-body{
-    padding:21px 10px;
+    font-size:14px;
+
+    letter-spacing:.3px;
   }
 
   .matchup{
     gap:7px;
-    margin-top:11px;
   }
 
   .matchup-team{
-    max-width:43%;
     font-size:34px;
-  }
-
-  .matchup-vs{
-    font-size:21px;
   }
 
   .matchup.compact .matchup-team{
     font-size:28px;
   }
 
-  .matchup.compact .matchup-vs{
-    font-size:19px;
-  }
-
   .matchup.small .matchup-team{
     font-size:23px;
-  }
-
-  .matchup.small .matchup-vs{
-    font-size:17px;
   }
 
   .matchup.tiny .matchup-team{
     font-size:19px;
   }
 
-  .matchup.tiny .matchup-vs{
-    font-size:15px;
-  }
 
-
-  /* -----------------------------------------------
-     MOBILE SCHEDULE
-  ----------------------------------------------- */
+  /* SCHEDULE */
 
   .game-card{
     grid-template-columns:
@@ -2092,7 +2120,8 @@ main{
 
   .game-date-box{
     min-height:72px;
-    padding-right:8px;
+
+    padding-right:7px;
   }
 
   .game-day{
@@ -2103,30 +2132,24 @@ main{
     font-size:9px;
   }
 
-  /*
-    Full weekday stays prominent on phones.
-  */
   .game-weekday{
-    font-size:11px;
-    letter-spacing:.3px;
+    font-size:10px;
   }
 
   .game-main{
-    padding:0 9px;
+    padding:0 8px;
   }
 
   .game-opponent{
-    font-size:25px;
+    font-size:24px;
   }
 
   .game-details{
-    gap:3px 8px;
-    margin-top:6px;
-    font-size:9px;
+    font-size:8px;
   }
 
   .game-location{
-    max-width:120px;
+    max-width:110px;
   }
 
   .game-score{
@@ -2134,63 +2157,31 @@ main{
   }
 
   .game-status{
-    min-width:50px;
-    font-size:7px;
-    padding:4px 5px;
-  }
+    min-width:49px;
 
-  .game-score-label{
     font-size:7px;
   }
 
 
-  /* -----------------------------------------------
-     MOBILE HISTORY
-  ----------------------------------------------- */
-
-  .history-modal-title{
-    font-size:36px;
-  }
-
-  .history-modal-record{
-    font-size:12px;
-  }
-
-  .history-section-title{
-    font-size:28px;
-  }
+  /* HISTORY */
 
   .history-game{
     grid-template-columns:
       minmax(0,1fr)
-      82px
-      57px;
-
-    min-height:76px;
-
-    padding:10px;
-
-    gap:3px;
+      80px
+      54px;
   }
 
-  /*
-    Smaller opponent/team names on mobile.
-  */
   .history-game-matchup{
-    padding-right:7px;
-    font-size:17px;
-    line-height:.95;
+    font-size:16px;
   }
 
   .history-game-score{
-    font-size:31px;
+    font-size:30px;
   }
 
-  .history-game-result{
-    width:52px;
-    font-size:8px;
-  }
 
+  /* ROSTER */
 
   .roster-grid{
     grid-template-columns:1fr;
@@ -2204,17 +2195,15 @@ main{
     width:100%;
   }
 
+
+  /* FORMS */
+
   .form-grid{
     grid-template-columns:1fr;
-    gap:0;
   }
 
-  .field input[type="date"]{
-    width:100%;
-    height:40px!important;
-    min-height:40px!important;
-    max-height:40px!important;
-  }
+
+  /* ADMIN */
 
   .admin-stats{
     grid-template-columns:
@@ -2238,24 +2227,14 @@ main{
     grid-column:1/-1;
   }
 
-  .modal,
-  .form-modal{
-    width:calc(100vw - 24px);
-    max-height:calc(100dvh - 24px);
-  }
-
 }
 
 
-/* =========================================================
+/* ========================================================
    SMALL PHONES
-========================================================= */
+======================================================== */
 
 @media(max-width:380px){
-
-  .site-header h1{
-    font-size:34px;
-  }
 
   .main-nav button{
     font-size:12px;
@@ -2263,40 +2242,32 @@ main{
 
   .game-card{
     grid-template-columns:
-      66px
+      65px
       minmax(0,1fr)
       61px;
   }
 
   .game-weekday{
-    font-size:10px;
+    font-size:9px;
   }
 
   .history-game{
     grid-template-columns:
       minmax(0,1fr)
-      76px
-      54px;
+      73px
+      51px;
   }
 
   .history-game-matchup{
-    font-size:16px;
-  }
-
-  .history-game-score{
-    font-size:28px;
-  }
-
-  .history-game-result{
-    width:49px;
+    font-size:15px;
   }
 
 }
 
 
-/* =========================================================
+/* ========================================================
    REDUCED MOTION
-========================================================= */
+======================================================== */
 
 @media(prefers-reduced-motion:reduce){
 
@@ -2312,12 +2283,13 @@ main{
 </style>
 </head>
 
+
 <body>
 
 
-<!-- =======================================================
+<!-- ======================================================
      SPLASH
-======================================================= -->
+====================================================== -->
 
 <div id="splash">
 
@@ -2342,9 +2314,9 @@ main{
 </div>
 
 
-<!-- =======================================================
-     HEADER
-======================================================= -->
+<!-- ======================================================
+     PUBLIC HEADER
+====================================================== -->
 
 <header
   id="siteHeader"
@@ -2354,21 +2326,24 @@ main{
   <button
     id="adminGear"
     class="admin-gear"
-    onclick="openAdminLogin()"
+    onclick="openLogin()"
     aria-label="Admin"
   >
     ⚙️
   </button>
 
+
   <img
     src="LOGO_W__FB.png"
     class="header-logo"
-    alt="Notre Dame Green Pond Crusaders"
+    alt="NDGP Football"
   >
+
 
   <h1>
     NDGP FOOTBALL
   </h1>
+
 
   <p>
     Notre Dame Green Pond Crusaders
@@ -2377,9 +2352,9 @@ main{
 </header>
 
 
-<!-- =======================================================
+<!-- ======================================================
      ACHIEVEMENTS
-======================================================= -->
+====================================================== -->
 
 <section
   id="achievements"
@@ -2418,9 +2393,9 @@ main{
 </section>
 
 
-<!-- =======================================================
-     NAVIGATION
-======================================================= -->
+<!-- ======================================================
+     NAV
+====================================================== -->
 
 <nav
   id="mainNav"
@@ -2429,25 +2404,25 @@ main{
 
   <button
     class="active"
-    onclick="showPage('home',this)"
+    onclick="page('home',this)"
   >
     HOME
   </button>
 
   <button
-    onclick="showPage('schedule',this)"
+    onclick="page('schedule',this)"
   >
     SCHEDULE
   </button>
 
   <button
-    onclick="showPage('history',this)"
+    onclick="page('history',this)"
   >
     HISTORY
   </button>
 
   <button
-    onclick="showPage('roster',this)"
+    onclick="page('roster',this)"
   >
     ROSTER
   </button>
@@ -2455,12 +2430,14 @@ main{
 </nav>
 
 
-<!-- =======================================================
-     PUBLIC MAIN
-======================================================= -->
+<!-- ======================================================
+     MAIN
+====================================================== -->
 
 <main id="publicMain">
 
+
+<!-- HOME -->
 
 <section
   id="home"
@@ -2492,21 +2469,7 @@ main{
       <div
         id="nextMatchup"
         class="matchup"
-      >
-
-        <span class="matchup-team">
-          NDGP
-        </span>
-
-        <span class="matchup-vs">
-          VS
-        </span>
-
-        <span class="matchup-team">
-          TBD
-        </span>
-
-      </div>
+      ></div>
 
 
       <div
@@ -2536,7 +2499,7 @@ main{
       </div>
 
       <div
-        id="recordNumber"
+        id="record"
         class="record-number"
       >
         0–0
@@ -2548,6 +2511,8 @@ main{
 
 </section>
 
+
+<!-- SCHEDULE -->
 
 <section
   id="schedule"
@@ -2572,6 +2537,8 @@ main{
 </section>
 
 
+<!-- HISTORY -->
+
 <section
   id="history"
   class="page"
@@ -2593,6 +2560,8 @@ main{
 
 </section>
 
+
+<!-- ROSTER -->
 
 <section
   id="roster"
@@ -2627,6 +2596,7 @@ main{
 
         <option value="QB">Quarterback</option>
         <option value="RB">Running Back</option>
+        <option value="FB">Fullback</option>
         <option value="WR">Wide Receiver</option>
         <option value="TE">Tight End</option>
         <option value="OL">Offensive Line</option>
@@ -2661,9 +2631,9 @@ main{
 </main>
 
 
-<!-- =======================================================
+<!-- ======================================================
      ADMIN
-======================================================= -->
+====================================================== -->
 
 <section
   id="adminPage"
@@ -2674,11 +2644,11 @@ main{
 
     <div>
 
-      <div class="admin-header-title">
+      <div class="admin-title">
         ⚙️ ADMIN DASHBOARD
       </div>
 
-      <div class="admin-header-sub">
+      <div class="admin-subtitle">
         NDGP Football Management
       </div>
 
@@ -2698,48 +2668,86 @@ main{
   <div class="admin-stats">
 
     <div class="admin-stat">
-      <div id="adminGamesCount" class="admin-stat-number">0</div>
-      <div class="admin-stat-label">🏈 Games</div>
+      <div
+        id="statGames"
+        class="admin-stat-number"
+      >0</div>
+
+      <div class="admin-stat-label">
+        🏈 Games
+      </div>
     </div>
 
-    <div class="admin-stat">
-      <div id="adminPlayersCount" class="admin-stat-number">0</div>
-      <div class="admin-stat-label">👥 Players</div>
-    </div>
 
     <div class="admin-stat">
-      <div id="adminWinsCount" class="admin-stat-number">0</div>
-      <div class="admin-stat-label">🏆 Wins</div>
+      <div
+        id="statPlayers"
+        class="admin-stat-number"
+      >0</div>
+
+      <div class="admin-stat-label">
+        👥 Players
+      </div>
     </div>
 
+
     <div class="admin-stat">
-      <div id="adminLossesCount" class="admin-stat-number">0</div>
-      <div class="admin-stat-label">❌ Losses</div>
+      <div
+        id="statWins"
+        class="admin-stat-number"
+      >0</div>
+
+      <div class="admin-stat-label">
+        🏆 Wins
+      </div>
+    </div>
+
+
+    <div class="admin-stat">
+      <div
+        id="statLosses"
+        class="admin-stat-number"
+      >0</div>
+
+      <div class="admin-stat-label">
+        ❌ Losses
+      </div>
     </div>
 
   </div>
 
 
-  <div id="adminGames" class="admin-section">
+  <!-- ADMIN GAMES -->
+
+  <div
+    id="adminGames"
+    class="admin-section"
+  >
 
     <button
       class="admin-section-toggle"
       onclick="toggleAdmin('adminGames')"
     >
 
-      <div class="admin-icon">🏈</div>
+      <div class="admin-icon">
+        🏈
+      </div>
 
       <div class="admin-section-text">
 
-        <strong>GAMES</strong>
+        <strong>
+          GAMES
+        </strong>
 
         <span>
-          Add and manage the schedule
+          Add and manage games
         </span>
 
       </div>
 
-      <div class="admin-arrow">▼</div>
+      <div class="admin-arrow">
+        ▼
+      </div>
 
     </button>
 
@@ -2748,10 +2756,12 @@ main{
 
       <div class="admin-subsection">
 
-        <h3>➕ Add Game</h3>
+        <h3>
+          ➕ Add Game
+        </h3>
 
         <div class="admin-description">
-          Add a game to the 2026 schedule.
+          Add a game to the schedule.
         </div>
 
 
@@ -2759,7 +2769,9 @@ main{
 
           <div class="field">
 
-            <label>Date</label>
+            <label>
+              Date
+            </label>
 
             <input
               id="gameDate"
@@ -2771,7 +2783,9 @@ main{
 
           <div class="field">
 
-            <label>Time</label>
+            <label>
+              Time
+            </label>
 
             <input
               id="gameTime"
@@ -2786,7 +2800,9 @@ main{
 
         <div class="field">
 
-          <label>Opponent</label>
+          <label>
+            Opponent
+          </label>
 
           <input
             id="gameOpponent"
@@ -2801,7 +2817,9 @@ main{
 
           <div class="field">
 
-            <label>Location</label>
+            <label>
+              Location
+            </label>
 
             <input
               id="gameLocation"
@@ -2814,12 +2832,19 @@ main{
 
           <div class="field">
 
-            <label>Home / Away</label>
+            <label>
+              Home / Away
+            </label>
 
             <select id="gameHomeAway">
 
-              <option value="Home">🏠 Home</option>
-              <option value="Away">✈️ Away</option>
+              <option value="Home">
+                🏠 Home
+              </option>
+
+              <option value="Away">
+                ✈️ Away
+              </option>
 
             </select>
 
@@ -2830,11 +2855,13 @@ main{
 
         <div class="field">
 
-          <label>Notes</label>
+          <label>
+            Notes
+          </label>
 
           <textarea
             id="gameNotes"
-            placeholder="Optional notes"
+            placeholder="Optional"
           ></textarea>
 
         </div>
@@ -2852,13 +2879,13 @@ main{
 
       <div class="admin-subsection">
 
-        <h3>📅 Existing Games</h3>
+        <h3>
+          📅 Existing Games
+        </h3>
 
-        <div class="admin-description">
-          Edit scores, details, or remove games.
-        </div>
-
-        <div id="adminGameList">
+        <div
+          id="adminGameList"
+        >
           Loading...
         </div>
 
@@ -2869,18 +2896,27 @@ main{
   </div>
 
 
-  <div id="adminRoster" class="admin-section">
+  <!-- ADMIN ROSTER -->
+
+  <div
+    id="adminRoster"
+    class="admin-section"
+  >
 
     <button
       class="admin-section-toggle"
       onclick="toggleAdmin('adminRoster')"
     >
 
-      <div class="admin-icon">👥</div>
+      <div class="admin-icon">
+        👥
+      </div>
 
       <div class="admin-section-text">
 
-        <strong>ROSTER</strong>
+        <strong>
+          ROSTER
+        </strong>
 
         <span>
           Add, edit and remove players
@@ -2888,7 +2924,9 @@ main{
 
       </div>
 
-      <div class="admin-arrow">▼</div>
+      <div class="admin-arrow">
+        ▼
+      </div>
 
     </button>
 
@@ -2897,25 +2935,24 @@ main{
 
       <div class="admin-subsection">
 
-        <h3>➕ Add Player</h3>
-
-        <div class="admin-description">
-          Select multiple positions or enter a custom position.
-        </div>
+        <h3>
+          ➕ Add Player
+        </h3>
 
 
         <div class="form-grid">
 
           <div class="field">
 
-            <label>Jersey Number</label>
+            <label>
+              Jersey Number
+            </label>
 
             <input
               id="playerNumber"
               type="number"
               min="0"
               max="99"
-              placeholder="76"
             >
 
           </div>
@@ -2923,12 +2960,13 @@ main{
 
           <div class="field">
 
-            <label>Player Name</label>
+            <label>
+              Player Name
+            </label>
 
             <input
               id="playerName"
               type="text"
-              placeholder="Player Name"
             >
 
           </div>
@@ -2938,7 +2976,10 @@ main{
 
         <div class="field">
 
-          <label>Position</label>
+          <label>
+            Position(s)
+          </label>
+
 
           <div
             id="positionPicker"
@@ -2955,7 +2996,9 @@ main{
                 Select position(s)...
               </span>
 
-              <span>▼</span>
+              <span>
+                ▼
+              </span>
 
             </button>
 
@@ -2968,12 +3011,11 @@ main{
               ></div>
 
 
-              <div
-                class="field"
-                style="margin-top:8px"
-              >
+              <div class="field">
 
-                <label>Custom Position</label>
+                <label>
+                  Custom Position
+                </label>
 
                 <input
                   id="customPosition"
@@ -2984,31 +3026,13 @@ main{
               </div>
 
 
-              <div
-                style="
-                  display:flex;
-                  justify-content:flex-end;
-                  gap:5px
-                "
+              <button
+                type="button"
+                class="secondary-button"
+                onclick="closePositions()"
               >
-
-                <button
-                  type="button"
-                  class="secondary-button"
-                  onclick="clearPositions()"
-                >
-                  Clear
-                </button>
-
-                <button
-                  type="button"
-                  class="secondary-button"
-                  onclick="closePositions()"
-                >
-                  Done
-                </button>
-
-              </div>
+                DONE
+              </button>
 
             </div>
 
@@ -3029,13 +3053,13 @@ main{
 
       <div class="admin-subsection">
 
-        <h3>👥 Current Roster</h3>
+        <h3>
+          👥 Current Roster
+        </h3>
 
-        <div class="admin-description">
-          Edit or remove players.
-        </div>
-
-        <div id="adminRosterList">
+        <div
+          id="adminRosterList"
+        >
           Loading...
         </div>
 
@@ -3048,18 +3072,18 @@ main{
 </section>
 
 
-<!-- =======================================================
+<!-- ======================================================
      ADMIN LOGIN
-======================================================= -->
+====================================================== -->
 
 <div
-  id="adminLogin"
+  id="loginModal"
   class="overlay"
-  onclick="closeAdminLogin(event)"
+  onclick="closeLogin(event)"
 >
 
   <div
-    class="form-modal"
+    class="modal"
     onclick="event.stopPropagation()"
   >
 
@@ -3067,7 +3091,7 @@ main{
 
       <button
         class="modal-close"
-        onclick="closeAdminLogin()"
+        onclick="closeLogin()"
       >
         ×
       </button>
@@ -3076,24 +3100,20 @@ main{
         ⚙️ NDGP FOOTBALL
       </div>
 
-      <div
-        style="
-          font-family:Teko;
-          font-size:40px;
-          line-height:.88
-        "
-      >
+      <div class="modal-title">
         ADMIN ACCESS
       </div>
 
     </div>
 
 
-    <div class="form-modal-body">
+    <div class="modal-body">
 
       <div class="field">
 
-        <label>4-Digit Admin Code</label>
+        <label>
+          4-Digit Admin Code
+        </label>
 
         <input
           id="adminCode"
@@ -3101,8 +3121,6 @@ main{
           type="password"
           inputmode="numeric"
           maxlength="4"
-          minlength="4"
-          pattern="[0-9]{4}"
           autocomplete="off"
           placeholder="••••"
         >
@@ -3112,7 +3130,7 @@ main{
 
       <button
         class="primary-button"
-        onclick="loginAdmin()"
+        onclick="login()"
       >
         🔐 ENTER ADMIN
       </button>
@@ -3130,14 +3148,14 @@ main{
 </div>
 
 
-<!-- =======================================================
+<!-- ======================================================
      HISTORY MODAL
-======================================================= -->
+====================================================== -->
 
 <div
   id="historyModal"
   class="overlay"
-  onclick="closeHistoryModal(event)"
+  onclick="closeHistory(event)"
 >
 
   <div
@@ -3149,7 +3167,7 @@ main{
 
       <button
         class="modal-close"
-        onclick="closeHistoryModal()"
+        onclick="closeHistory()"
       >
         ×
       </button>
@@ -3159,21 +3177,21 @@ main{
       </div>
 
       <div
-        id="historyModalTitle"
-        class="history-modal-title"
+        id="historyTitle"
+        class="modal-title"
       ></div>
 
       <div
-        id="historyModalRecord"
-        class="history-modal-record"
+        id="historyRecord"
+        class="modal-record"
       ></div>
 
     </div>
 
 
     <div
-      id="historyModalBody"
-      class="history-modal-body"
+      id="historyBody"
+      class="modal-body"
     ></div>
 
   </div>
@@ -3181,9 +3199,9 @@ main{
 </div>
 
 
-<!-- =======================================================
-     EDIT GAME
-======================================================= -->
+<!-- ======================================================
+     EDIT GAME MODAL
+====================================================== -->
 
 <div
   id="editGameModal"
@@ -3192,7 +3210,7 @@ main{
 >
 
   <div
-    class="form-modal"
+    class="modal"
     onclick="event.stopPropagation()"
   >
 
@@ -3209,32 +3227,31 @@ main{
         🏈 ADMIN • GAMES
       </div>
 
-      <div
-        style="
-          font-family:Teko;
-          font-size:40px;
-          line-height:.88
-        "
-      >
+      <div class="modal-title">
         EDIT GAME
       </div>
 
     </div>
 
 
-    <div class="form-modal-body">
+    <div class="modal-body">
 
-      <input id="editGameId" type="hidden">
+      <input
+        id="editGameId"
+        type="hidden"
+      >
 
 
       <div class="form-grid">
 
         <div class="field">
 
-          <label>Date</label>
+          <label>
+            Date
+          </label>
 
           <input
-            id="editGameDate"
+            id="editDate"
             type="date"
           >
 
@@ -3243,12 +3260,13 @@ main{
 
         <div class="field">
 
-          <label>Time</label>
+          <label>
+            Time
+          </label>
 
           <input
-            id="editGameTime"
+            id="editTime"
             type="text"
-            placeholder="7:00 PM"
           >
 
         </div>
@@ -3258,10 +3276,12 @@ main{
 
       <div class="field">
 
-        <label>Opponent</label>
+        <label>
+          Opponent
+        </label>
 
         <input
-          id="editGameOpponent"
+          id="editOpponent"
           type="text"
         >
 
@@ -3272,10 +3292,12 @@ main{
 
         <div class="field">
 
-          <label>Location</label>
+          <label>
+            Location
+          </label>
 
           <input
-            id="editGameLocation"
+            id="editLocation"
             type="text"
           >
 
@@ -3284,12 +3306,19 @@ main{
 
         <div class="field">
 
-          <label>Home / Away</label>
+          <label>
+            Home / Away
+          </label>
 
-          <select id="editGameHomeAway">
+          <select id="editHomeAway">
 
-            <option value="Home">🏠 Home</option>
-            <option value="Away">✈️ Away</option>
+            <option value="Home">
+              🏠 Home
+            </option>
+
+            <option value="Away">
+              ✈️ Away
+            </option>
 
           </select>
 
@@ -3302,14 +3331,14 @@ main{
 
         <div class="field">
 
-          <label>NDGP Score</label>
+          <label>
+            NDGP Score
+          </label>
 
           <input
-            id="editGameOurScore"
+            id="editOurScore"
             type="number"
             min="0"
-            max="999"
-            inputmode="numeric"
           >
 
         </div>
@@ -3317,14 +3346,14 @@ main{
 
         <div class="field">
 
-          <label>Opponent Score</label>
+          <label>
+            Opponent Score
+          </label>
 
           <input
-            id="editGameOpponentScore"
+            id="editOppScore"
             type="number"
             min="0"
-            max="999"
-            inputmode="numeric"
           >
 
         </div>
@@ -3332,24 +3361,21 @@ main{
       </div>
 
 
-      <div class="admin-description">
-        Leave both score fields blank if the game has not been completed.
-      </div>
-
-
       <div class="field">
 
-        <label>Notes</label>
+        <label>
+          Notes
+        </label>
 
         <textarea
-          id="editGameNotes"
+          id="editNotes"
         ></textarea>
 
       </div>
 
 
       <div
-        id="editGameError"
+        id="editError"
         class="login-error"
       ></div>
 
@@ -3364,9 +3390,9 @@ main{
         </button>
 
         <button
-          id="saveGameButton"
+          id="saveGameBtn"
           class="primary-button"
-          onclick="saveGameEdit()"
+          onclick="saveGame()"
         >
           SAVE CHANGES
         </button>
@@ -3380,9 +3406,9 @@ main{
 </div>
 
 
-<!-- =======================================================
+<!-- ======================================================
      EDIT PLAYER
-======================================================= -->
+====================================================== -->
 
 <div
   id="editPlayerModal"
@@ -3391,7 +3417,7 @@ main{
 >
 
   <div
-    class="form-modal"
+    class="modal"
     onclick="event.stopPropagation()"
   >
 
@@ -3408,32 +3434,31 @@ main{
         👥 ADMIN • ROSTER
       </div>
 
-      <div
-        style="
-          font-family:Teko;
-          font-size:40px;
-          line-height:.88
-        "
-      >
+      <div class="modal-title">
         EDIT PLAYER
       </div>
 
     </div>
 
 
-    <div class="form-modal-body">
+    <div class="modal-body">
 
-      <input id="editPlayerId" type="hidden">
+      <input
+        id="editPlayerId"
+        type="hidden"
+      >
 
 
       <div class="form-grid">
 
         <div class="field">
 
-          <label>Jersey Number</label>
+          <label>
+            Number
+          </label>
 
           <input
-            id="editPlayerNumber"
+            id="editNumber"
             type="number"
             min="0"
             max="99"
@@ -3444,10 +3469,12 @@ main{
 
         <div class="field">
 
-          <label>Player Name</label>
+          <label>
+            Name
+          </label>
 
           <input
-            id="editPlayerName"
+            id="editName"
             type="text"
           >
 
@@ -3458,7 +3485,10 @@ main{
 
       <div class="field">
 
-        <label>Position(s)</label>
+        <label>
+          Position(s)
+        </label>
+
 
         <div
           id="editPositionPicker"
@@ -3475,7 +3505,9 @@ main{
               Select position(s)...
             </span>
 
-            <span>▼</span>
+            <span>
+              ▼
+            </span>
 
           </button>
 
@@ -3488,47 +3520,27 @@ main{
             ></div>
 
 
-            <div
-              class="field"
-              style="margin-top:8px"
-            >
+            <div class="field">
 
-              <label>Custom Position</label>
+              <label>
+                Custom Position
+              </label>
 
               <input
                 id="editCustomPosition"
                 type="text"
-                placeholder="Example: Utility"
               >
 
             </div>
 
 
-            <div
-              style="
-                display:flex;
-                justify-content:flex-end;
-                gap:5px
-              "
+            <button
+              type="button"
+              class="secondary-button"
+              onclick="closeEditPositions()"
             >
-
-              <button
-                type="button"
-                class="secondary-button"
-                onclick="clearEditPositions()"
-              >
-                Clear
-              </button>
-
-              <button
-                type="button"
-                class="secondary-button"
-                onclick="closeEditPositions()"
-              >
-                Done
-              </button>
-
-            </div>
+              DONE
+            </button>
 
           </div>
 
@@ -3548,7 +3560,7 @@ main{
 
         <button
           class="primary-button"
-          onclick="savePlayerEdit()"
+          onclick="savePlayer()"
         >
           SAVE CHANGES
         </button>
@@ -3562,9 +3574,9 @@ main{
 </div>
 
 
-<!-- =======================================================
+<!-- ======================================================
      CONFIRM
-======================================================= -->
+====================================================== -->
 
 <div
   id="confirmModal"
@@ -3573,7 +3585,7 @@ main{
 >
 
   <div
-    class="form-modal"
+    class="modal"
     onclick="event.stopPropagation()"
   >
 
@@ -3590,28 +3602,23 @@ main{
         ⚠️ ADMIN
       </div>
 
-      <div
-        style="
-          font-family:Teko;
-          font-size:40px;
-          line-height:.88
-        "
-      >
+      <div class="modal-title">
         ARE YOU SURE?
       </div>
 
     </div>
 
 
-    <div class="form-modal-body">
-
-      <div class="confirm-icon">
-        ⚠️
-      </div>
+    <div class="modal-body">
 
       <div
         id="confirmText"
-        class="confirm-text"
+        class="admin-description"
+        style="
+          text-align:center;
+          font-size:13px;
+          line-height:1.5;
+        "
       ></div>
 
 
@@ -3625,7 +3632,7 @@ main{
         </button>
 
         <button
-          id="confirmYes"
+          id="confirmButton"
           class="danger-button"
         >
           DELETE
@@ -3642,75 +3649,121 @@ main{
 
 <script>
 
-/* =========================================================
+/* ========================================================
    SUPABASE
-========================================================= */
+======================================================== */
 
 const SUPABASE_URL =
-"https://lwkisughuwqbpwlouejc.supabase.co";
+  "https://lwkisughuwqbpwlouejc.supabase.co";
 
 const SUPABASE_KEY =
-"sb_publishable_NC2FpWBds4vNOuGMr5_ikw_MOQXXHLI";
+  "sb_publishable_NC2FpWBds4vNOuGMr5_ikw_MOQXXHLI";
 
 const db =
-supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
+  supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
 
 
-let games=[];
-let roster=[];
-let confirmAction=null;
+/* ========================================================
+   STATE
+======================================================== */
+
+let games = [];
+
+let roster = [];
+
+let adminCode = "";
+
+let confirmAction = null;
 
 
-/* =========================================================
-   SPLASH
-========================================================= */
+/* ========================================================
+   POSITIONS
+======================================================== */
+
+const positions = [
+  "QB",
+  "RB",
+  "FB",
+  "WR",
+  "TE",
+  "OL",
+  "T",
+  "G",
+  "C",
+  "DL",
+  "DE",
+  "DT",
+  "NG",
+  "LB",
+  "MLB",
+  "OLB",
+  "DB",
+  "CB",
+  "FS",
+  "SS",
+  "K",
+  "P",
+  "LS"
+];
+
+
+/* ========================================================
+   STARTUP
+======================================================== */
 
 window.addEventListener(
   "load",
-  ()=>{
+  async()=>{
+    
     setTimeout(
       ()=>{
         document
           .getElementById("splash")
           .classList.add("hide");
       },
-      700
+      650
     );
+
+    buildPositions();
+
+    renderHistory();
+
+    await Promise.all([
+      loadGames(),
+      loadRoster()
+    ]);
+
   }
 );
 
 
-/* =========================================================
+/* ========================================================
    NAVIGATION
-========================================================= */
+======================================================== */
 
-function showPage(id,button){
+function page(id,button){
 
   document
     .querySelectorAll(".page")
-    .forEach(page=>{
-      page.classList.remove("active");
+    .forEach(x=>{
+      x.classList.remove("active");
     });
 
-  const page=
-    document.getElementById(id);
-
-  if(page)
-    page.classList.add("active");
+  document
+    .getElementById(id)
+    ?.classList.add("active");
 
 
   document
     .querySelectorAll(".main-nav button")
-    .forEach(btn=>{
-      btn.classList.remove("active");
+    .forEach(x=>{
+      x.classList.remove("active");
     });
 
-
-  if(button)
-    button.classList.add("active");
+  button?.classList.add("active");
 
 
   window.scrollTo({
@@ -3722,21 +3775,17 @@ function showPage(id,button){
   if(id==="history")
     renderHistory();
 
-
-  if(id==="roster")
-    renderRoster();
-
 }
 
 
-/* =========================================================
+/* ========================================================
    ADMIN LOGIN
-========================================================= */
+======================================================== */
 
-function openAdminLogin(){
+function openLogin(){
 
   document
-    .getElementById("adminLogin")
+    .getElementById("loginModal")
     .classList.add("show");
 
   document.body.classList.add(
@@ -3757,30 +3806,26 @@ function openAdminLogin(){
 }
 
 
-function closeAdminLogin(event){
+function closeLogin(event){
 
   if(
     event &&
     event.target &&
-    event.target.id!=="adminLogin"
+    event.target.id!=="loginModal"
   )
     return;
 
-
   document
-    .getElementById("adminLogin")
+    .getElementById("loginModal")
     .classList.remove("show");
-
 
   document.body.classList.remove(
     "modal-open"
   );
 
-
   document.getElementById(
     "adminCode"
   ).value="";
-
 
   document.getElementById(
     "loginError"
@@ -3793,9 +3838,9 @@ document
   .getElementById("adminCode")
   .addEventListener(
     "input",
-    event=>{
-      event.target.value=
-        event.target.value
+    e=>{
+      e.target.value =
+        e.target.value
           .replace(/\D/g,"")
           .slice(0,4);
     }
@@ -3806,31 +3851,31 @@ document
   .getElementById("adminCode")
   .addEventListener(
     "keydown",
-    event=>{
-      if(event.key==="Enter")
-        loginAdmin();
+    e=>{
+      if(e.key==="Enter")
+        login();
     }
   );
 
 
-async function loginAdmin(){
+async function login(){
 
-  const code=
+  const input =
     document
       .getElementById("adminCode")
       .value
       .trim();
 
 
-  const error=
+  const error =
     document.getElementById(
       "loginError"
     );
 
 
-  if(!/^\d{4}$/.test(code)){
+  if(!/^\d{4}$/.test(input)){
 
-    error.textContent=
+    error.textContent =
       "Enter exactly 4 digits.";
 
     return;
@@ -3838,7 +3883,7 @@ async function loginAdmin(){
   }
 
 
-  error.textContent=
+  error.textContent =
     "Checking...";
 
 
@@ -3847,22 +3892,22 @@ async function loginAdmin(){
     const {
       data,
       error:rpcError
-    }=
-    await db.rpc(
-      "check_admin_code",
-      {
-        p_code:code
-      }
-    );
+    } =
+      await db.rpc(
+        "admin_verify_code",
+        {
+          p_code:input
+        }
+      );
 
 
     if(rpcError)
       throw rpcError;
 
 
-    if(!data){
+    if(data!==true){
 
-      error.textContent=
+      error.textContent =
         "Incorrect admin code.";
 
       return;
@@ -3870,31 +3915,31 @@ async function loginAdmin(){
     }
 
 
-    closeAdminLogin();
+    adminCode=input;
+
+    closeLogin();
 
     openAdmin();
 
   }
   catch(err){
 
-    console.error(
-      "ADMIN LOGIN ERROR:",
-      err
-    );
+    console.error(err);
 
-    error.textContent=
-      "Unable to verify admin code.";
+    error.textContent =
+      err.message ||
+      "Could not verify admin code.";
 
   }
 
 }
 
 
-/* =========================================================
-   ADMIN
-========================================================= */
+/* ========================================================
+   OPEN ADMIN
+======================================================== */
 
-function openAdmin(){
+async function openAdmin(){
 
   document
     .getElementById("siteHeader")
@@ -3923,17 +3968,22 @@ function openAdmin(){
 
   document
     .querySelectorAll(".admin-section")
-    .forEach(section=>{
-      section.classList.remove("open");
+    .forEach(x=>{
+      x.classList.remove("open");
     });
 
 
-  loadAdminData();
+  await loadGames();
+
+  await loadRoster();
 
 }
 
 
 function closeAdmin(){
+
+  adminCode="";
+
 
   document
     .getElementById("adminPage")
@@ -3960,7 +4010,7 @@ function closeAdmin(){
     .classList.remove("hidden");
 
 
-  showPage(
+  page(
     "home",
     document.querySelector(
       ".main-nav button"
@@ -3970,118 +4020,36 @@ function closeAdmin(){
 }
 
 
-function toggleAdmin(id){
-
-  document
-    .getElementById(id)
-    ?.classList.toggle("open");
-
-}
-
-
-async function loadAdminData(){
-
-  buildPositionOptions();
-  buildEditPositionOptions();
-
-  await Promise.all([
-    loadGames(),
-    loadRoster()
-  ]);
-
-}
-
-
-/* =========================================================
-   GAME HELPERS
-========================================================= */
-
-function hasScore(game){
-
-  return(
-    game.our_score!==null &&
-    game.our_score!==undefined &&
-    game.our_score!=="" &&
-
-    game.opponent_score!==null &&
-    game.opponent_score!==undefined &&
-    game.opponent_score!==""
-  );
-
-}
-
-
-function getStatus(game){
-
-  if(hasScore(game)){
-
-    const our=
-      Number(game.our_score);
-
-    const opponent=
-      Number(game.opponent_score);
-
-
-    if(our>opponent)
-      return{
-        text:"WIN",
-        cls:"win"
-      };
-
-
-    if(our<opponent)
-      return{
-        text:"LOSS",
-        cls:"loss"
-      };
-
-
-    return{
-      text:"TIE",
-      cls:"upcoming"
-    };
-
-  }
-
-
-  return{
-    text:"UPCOMING",
-    cls:"upcoming"
-  };
-
-}
-
-
-/* =========================================================
+/* ========================================================
    LOAD GAMES
-========================================================= */
+======================================================== */
 
 async function loadGames(){
 
   const {
     data,
     error
-  }=
-  await db
-    .from("games")
-    .select("*")
-    .order(
-      "date",
-      {
-        ascending:true
-      }
-    );
+  } =
+    await db
+      .from("games")
+      .select("*")
+      .order(
+        "date",
+        {
+          ascending:true
+        }
+      );
 
 
   if(error){
 
     console.error(
-      "LOAD GAMES ERROR:",
+      "LOAD GAMES:",
       error
     );
 
-    showMessage(
-      "Could not load games."
+    showToast(
+      "Unable to load games."
     );
 
     return;
@@ -4089,55 +4057,208 @@ async function loadGames(){
   }
 
 
-  games=
+  games =
     Array.isArray(data)
     ? data
     : [];
 
 
   renderHome();
+
   renderSchedule();
+
   renderAdminGames();
-  updateAdminStats();
+
+  updateStats();
 
 }
 
 
-/* =========================================================
+/* ========================================================
+   LOAD ROSTER
+======================================================== */
+
+async function loadRoster(){
+
+  const {
+    data,
+    error
+  } =
+    await db
+      .from("roster")
+      .select("*")
+      .order(
+        "number",
+        {
+          ascending:true
+        }
+      );
+
+
+  if(error){
+
+    console.error(
+      "LOAD ROSTER:",
+      error
+    );
+
+    showToast(
+      "Unable to load roster."
+    );
+
+    return;
+
+  }
+
+
+  roster =
+    Array.isArray(data)
+    ? data
+    : [];
+
+
+  renderRoster();
+
+  renderAdminRoster();
+
+  updateStats();
+
+}
+
+
+/* ========================================================
+   SCORE HELPERS
+======================================================== */
+
+function hasScore(game){
+
+  return(
+    game.our_score !== null &&
+    game.our_score !== undefined &&
+    game.our_score !== "" &&
+
+    game.opponent_score !== null &&
+    game.opponent_score !== undefined &&
+    game.opponent_score !== ""
+  );
+
+}
+
+
+function status(game){
+
+  if(!hasScore(game))
+    return {
+      text:"UPCOMING",
+      cls:"upcoming"
+    };
+
+
+  const a =
+    Number(game.our_score);
+
+  const b =
+    Number(game.opponent_score);
+
+
+  if(a>b)
+    return {
+      text:"WIN",
+      cls:"win"
+    };
+
+
+  if(a<b)
+    return {
+      text:"LOSS",
+      cls:"loss"
+    };
+
+
+  return {
+    text:"TIE",
+    cls:"upcoming"
+  };
+
+}
+
+
+/* ========================================================
    HOME
-========================================================= */
+======================================================== */
 
 function renderHome(){
 
-  const today=
+  const today =
     new Date()
       .toISOString()
-      .split("T")[0];
+      .slice(0,10);
 
 
-  const upcoming=
+  const next =
     games
       .filter(
-        game=>
-          !hasScore(game) &&
-          game.date>=today
+        g =>
+          !hasScore(g) &&
+          g.date >= today
       )
       .sort(
         (a,b)=>
           new Date(a.date)-
           new Date(b.date)
-      );
+      )[0];
 
 
-  const next=
-    upcoming[0];
-
-
-  if(!next){
-
+  const matchup =
     document.getElementById(
       "nextMatchup"
-    ).innerHTML=`
+    );
+
+
+  if(next){
+
+    matchup.innerHTML = `
+
+      <span class="matchup-team">
+        NDGP
+      </span>
+
+      <span class="matchup-vs">
+        VS
+      </span>
+
+      <span class="matchup-team">
+        ${esc(next.opponent)}
+      </span>
+
+    `;
+
+
+    document.getElementById(
+      "nextInfo"
+    ).innerHTML = `
+
+      📅 ${formatDate(next.date)}
+      <br>
+
+      ⏰ ${esc(next.time || "Time TBD")}
+      <br>
+
+      📍 ${esc(next.location || "Location TBD")}
+      <br>
+
+      ${
+        next.home_away==="Home"
+        ? "🏠 Home"
+        : "✈️ Away"
+      }
+
+    `;
+
+  }
+  else{
+
+    matchup.innerHTML = `
 
       <span class="matchup-team">
         NDGP
@@ -4156,57 +4277,8 @@ function renderHome(){
 
     document.getElementById(
       "nextInfo"
-    ).textContent=
+    ).textContent =
       "🏈 No upcoming games";
-
-  }
-  else{
-
-    document.getElementById(
-      "nextMatchup"
-    ).innerHTML=`
-
-      <span class="matchup-team">
-        NDGP
-      </span>
-
-      <span class="matchup-vs">
-        VS
-      </span>
-
-      <span class="matchup-team">
-        ${escapeHTML(next.opponent)}
-      </span>
-
-    `;
-
-
-    document.getElementById(
-      "nextInfo"
-    ).innerHTML=`
-
-      📅 ${formatDate(next.date)}
-      <br>
-
-      ⏰ ${escapeHTML(
-        next.time||"Time TBD"
-      )}
-
-      <br>
-
-      📍 ${escapeHTML(
-        next.location||"Location TBD"
-      )}
-
-      <br>
-
-      ${
-        next.home_away==="Home"
-        ? "🏠 Home"
-        : "✈️ Away"
-      }
-
-    `;
 
   }
 
@@ -4215,54 +4287,56 @@ function renderHome(){
   let losses=0;
 
 
-  games.forEach(game=>{
+  games.forEach(
+    game=>{
 
-    if(!hasScore(game))
-      return;
-
-
-    const our=
-      Number(game.our_score);
-
-    const opponent=
-      Number(game.opponent_score);
+      if(!hasScore(game))
+        return;
 
 
-    if(our>opponent)
-      wins++;
+      if(
+        Number(game.our_score) >
+        Number(game.opponent_score)
+      )
+        wins++;
 
-    else if(our<opponent)
-      losses++;
 
-  });
+      if(
+        Number(game.our_score) <
+        Number(game.opponent_score)
+      )
+        losses++;
+
+    }
+  );
 
 
   document.getElementById(
-    "recordNumber"
-  ).textContent=
+    "record"
+  ).textContent =
     `${wins}–${losses}`;
 
 
   requestAnimationFrame(
-    fitNextMatchup
+    fitMatchup
   );
 
 }
 
 
-function fitNextMatchup(){
+function fitMatchup(){
 
-  const matchup=
+  const el =
     document.getElementById(
       "nextMatchup"
     );
 
 
-  if(!matchup)
+  if(!el)
     return;
 
 
-  matchup.classList.remove(
+  el.classList.remove(
     "compact",
     "small",
     "tiny"
@@ -4270,27 +4344,27 @@ function fitNextMatchup(){
 
 
   if(
-    matchup.scrollWidth <=
-    matchup.clientWidth
+    el.scrollWidth <=
+    el.clientWidth
   )
     return;
 
 
-  matchup.classList.add(
+  el.classList.add(
     "compact"
   );
 
 
   if(
-    matchup.scrollWidth >
-    matchup.clientWidth
+    el.scrollWidth >
+    el.clientWidth
   ){
 
-    matchup.classList.remove(
+    el.classList.remove(
       "compact"
     );
 
-    matchup.classList.add(
+    el.classList.add(
       "small"
     );
 
@@ -4298,15 +4372,15 @@ function fitNextMatchup(){
 
 
   if(
-    matchup.scrollWidth >
-    matchup.clientWidth
+    el.scrollWidth >
+    el.clientWidth
   ){
 
-    matchup.classList.remove(
+    el.classList.remove(
       "small"
     );
 
-    matchup.classList.add(
+    el.classList.add(
       "tiny"
     );
 
@@ -4317,21 +4391,17 @@ function fitNextMatchup(){
 
 window.addEventListener(
   "resize",
-  ()=>{
-    requestAnimationFrame(
-      fitNextMatchup
-    );
-  }
+  fitMatchup
 );
 
 
-/* =========================================================
+/* ========================================================
    SCHEDULE
-========================================================= */
+======================================================== */
 
 function renderSchedule(){
 
-  const container=
+  const list =
     document.getElementById(
       "scheduleList"
     );
@@ -4339,78 +4409,53 @@ function renderSchedule(){
 
   if(!games.length){
 
-    container.innerHTML=`
-
-      <div class="admin-description">
-        🏈 No games have been added yet.
-      </div>
-
-    `;
+    list.innerHTML =
+      `<div class="admin-description">
+        No games have been added yet.
+      </div>`;
 
     return;
 
   }
 
 
-  container.innerHTML=
-    games
-      .map(game=>{
+  list.innerHTML =
+    games.map(
+      game=>{
 
-        const status=
-          getStatus(game);
+        const s =
+          status(game);
 
-
-        const date=
+        const d =
           new Date(
             `${game.date}T12:00:00`
           );
 
 
-        const month=
-          date.toLocaleDateString(
-            "en-US",
-            {
-              month:"short"
-            }
-          );
-
-
-        const day=
-          date.getDate();
-
-
-        /*
-          CHANGED:
-          Full weekday instead of Fri/Sat/Sun.
-          This gives us FRIDAY, SATURDAY, etc.
-        */
-        const weekday=
-          date.toLocaleDateString(
-            "en-US",
-            {
-              weekday:"long"
-            }
-          );
-
-
-        return`
+        return `
 
           <div
-            class="game-card ${status.cls}"
+            class="game-card ${s.cls}"
           >
 
             <div class="game-date-box">
 
               <div class="game-month">
-                ${month}
+                ${d.toLocaleDateString(
+                  "en-US",
+                  {month:"short"}
+                )}
               </div>
 
               <div class="game-day">
-                ${day}
+                ${d.getDate()}
               </div>
 
               <div class="game-weekday">
-                ${weekday}
+                ${d.toLocaleDateString(
+                  "en-US",
+                  {weekday:"long"}
+                )}
               </div>
 
             </div>
@@ -4419,22 +4464,17 @@ function renderSchedule(){
             <div class="game-main">
 
               <div class="game-opponent">
-                ${escapeHTML(game.opponent)}
+                ${esc(game.opponent)}
               </div>
-
 
               <div class="game-details">
 
                 <span>
-                  ⏰ ${escapeHTML(
-                    game.time||"TBD"
-                  )}
+                  ⏰ ${esc(game.time || "TBD")}
                 </span>
 
                 <span class="game-location">
-                  📍 ${escapeHTML(
-                    game.location||"TBD"
-                  )}
+                  📍 ${esc(game.location || "TBD")}
                 </span>
 
                 <span>
@@ -4453,33 +4493,22 @@ function renderSchedule(){
             <div class="game-result">
 
               <div
-                class="game-status ${status.cls}"
+                class="game-status ${s.cls}"
               >
-                ${status.text}
+                ${s.text}
               </div>
 
 
               ${
                 hasScore(game)
-
                 ?
-
                 `
-
                   <div class="game-score">
                     ${game.our_score}–${game.opponent_score}
                   </div>
-
-                  <div class="game-score-label">
-                    Final
-                  </div>
-
                 `
-
                 :
-
                 ""
-
               }
 
             </div>
@@ -4488,28 +4517,25 @@ function renderSchedule(){
 
         `;
 
-      })
-      .join("");
+      }
+    ).join("");
 
 }
 
 
-/* =========================================================
-   HISTORY DATA
-========================================================= */
+/* ========================================================
+   HISTORY
+======================================================== */
 
-const historyData=[
+const historyData = [
 
   {
     year:2025,
-
     record:"12–1",
 
     achievements:[
-      "Colonial League White Division Champions",
-      "PIAA District XI Class 3A Runner-Up",
-      "12–0 Start",
-      "Tied School Record — Most Wins"
+      "Colonial League Champions",
+      "PIAA District XI Runner-Up"
     ],
 
     games:[
@@ -4521,119 +4547,79 @@ const historyData=[
       ["Northern Lehigh","40–21","W"],
       ["Pen Argyl","59–7","W"],
       ["Palisades","34–22","W"],
-      ["Palmerton","56–0","W"],
-      ["Wilson Area","56–0","W"],
+      ["Palmerton","55–0","W"],
+      ["Wilson","62–0","W"],
       ["Salisbury Township","56–6","W"],
       ["Tamaqua","59–16","W"],
-      ["Northwestern Lehigh","14–35","L"]
+      ["Northwestern Lehigh","14–25","L"]
     ]
 
   },
-
 
   {
     year:2024,
-
     record:"9–2",
 
     achievements:[
-      "Colonial League White Division Champions",
-      "PIAA District XI Class 3A Semifinalists"
+      "Colonial League Champions"
     ],
 
     games:[
-      ["Garden Spot","71–64","W"],
-      ["Salisbury Township","56–0","W"],
-      ["North Schuylkill","29–31","L"],
-      ["Saucon Valley","24–7","W"],
-      ["Catasauqua","63–7","W"],
-      ["Northern Lehigh","49–19","W"],
-      ["Pen Argyl","42–15","W"],
-      ["Palisades","56–7","W"],
-      ["Palmerton","52–0","W"],
-      ["Wilson Area","52–11","W"],
-      ["North Schuylkill","23–26","L"]
+      ["Garden Spot","21–14","W"],
+      ["Salisbury Township","49–7","W"],
+      ["North Schuylkill","35–14","W"],
+      ["Saucon Valley","42–7","W"],
+      ["Catasauqua","42–7","W"],
+      ["Northern Lehigh","35–7","W"],
+      ["Pen Argyl","49–7","W"],
+      ["Palisades","34–21","W"],
+      ["Palmerton","42–7","W"],
+      ["Wilson","35–14","W"],
+      ["Playoff Opponent","21–28","L"]
     ]
 
   },
 
-  {
-    year:2023,
-    record:"8–4"
-  },
-
-  {
-    year:2022,
-    record:"9–3"
-  },
-
-  {
-    year:2021,
-    record:"7–3"
-  },
-
-  {
-    year:2020,
-    record:"7–1"
-  },
-
-  {
-    year:2019,
-    record:"7–4"
-  },
-
-  {
-    year:2018,
-    record:"10–2"
-  },
-
-  {
-    year:2017,
-    record:"9–3"
-  },
-
-  {
-    year:2016,
-    record:"12–3"
-  }
+  {year:2023,record:"8–4"},
+  {year:2022,record:"9–3"},
+  {year:2021,record:"7–3"},
+  {year:2020,record:"7–1"},
+  {year:2019,record:"7–4"},
+  {year:2018,record:"10–2"},
+  {year:2017,record:"9–3"},
+  {year:2016,record:"12–3"}
 
 ];
 
 
-/* =========================================================
-   HISTORY LIST
-========================================================= */
-
 function renderHistory(){
 
-  const list=
+  const list =
     document.getElementById(
       "historyList"
     );
 
 
-  list.innerHTML=
-    historyData
-      .map(season=>{
+  list.innerHTML =
+    historyData.map(
+      season=>{
 
-        const clickable=
-          season.year===2025 ||
-          season.year===2024;
+        const clickable =
+          season.year===2024 ||
+          season.year===2025;
 
 
-        return`
+        return `
 
           <div
-            class="season-card ${
-              clickable
-              ? ""
-              : "disabled"
-            }"
+            class="
+              season-card
+              ${clickable ? "" : "disabled"}
+            "
           >
 
             <button
               class="season-button"
-
               ${
                 clickable
                 ?
@@ -4659,15 +4645,8 @@ function renderHistory(){
               ${
                 clickable
                 ?
-
-                `
-                  <div class="season-arrow">
-                    ›
-                  </div>
-                `
-
+                `<div class="season-arrow">›</div>`
                 :
-
                 ""
               }
 
@@ -4677,21 +4656,17 @@ function renderHistory(){
 
         `;
 
-      })
-      .join("");
+      }
+    ).join("");
 
 }
 
 
-/* =========================================================
-   HISTORY POPUP
-========================================================= */
-
 function openHistory(year){
 
-  const season=
+  const season =
     historyData.find(
-      item=>item.year===year
+      x=>x.year===year
     );
 
 
@@ -4700,18 +4675,18 @@ function openHistory(year){
 
 
   document.getElementById(
-    "historyModalTitle"
-  ).textContent=
+    "historyTitle"
+  ).textContent =
     `${season.year} Football Season`;
 
 
   document.getElementById(
-    "historyModalRecord"
-  ).textContent=
+    "historyRecord"
+  ).textContent =
     `Final Record: ${season.record}`;
 
 
-  let html="";
+  let html = "";
 
 
   if(
@@ -4719,36 +4694,33 @@ function openHistory(year){
     season.achievements.length
   ){
 
-    html+=`
+    html += `
 
       <div class="history-section-title">
         Achievements
       </div>
-
 
       <div
         style="
           display:flex;
           flex-direction:column;
           gap:7px;
-          margin-bottom:18px
+          margin-bottom:17px
         "
       >
 
         ${
-          season.achievements
-            .map(item=>`
+          season.achievements.map(
+            x=>`
 
               <div class="achievement">
-
                 <div class="achievement-title">
-                  ${escapeHTML(item)}
+                  ${esc(x)}
                 </div>
-
               </div>
 
-            `)
-            .join("")
+            `
+          ).join("")
         }
 
       </div>
@@ -4758,83 +4730,56 @@ function openHistory(year){
   }
 
 
-  html+=`
+  html += `
 
     <div class="history-section-title">
       Games
     </div>
 
-
     <div class="history-game-list">
 
       ${
-        season.games
-          .map(game=>{
+        season.games.map(
+          game=>`
 
-            const opponent=
-              game[0];
+            <div
+              class="
+                history-game
+                ${game[2]==="W"
+                  ? "win"
+                  : "loss"
+                }
+              "
+            >
 
-            const score=
-              game[1];
+              <div class="history-game-matchup">
+                ${esc(game[0])}
+              </div>
 
-            const result=
-              game[2];
-
-
-            return`
+              <div class="history-game-score">
+                ${esc(game[1])}
+              </div>
 
               <div
                 class="
-                  history-game
-                  ${result==="W"
+                  history-game-result
+                  ${game[2]==="W"
                     ? "win"
                     : "loss"
                   }
                 "
               >
-
-                <div
-                  class="history-game-matchup"
-                >
-
-                  <span
-                    class="history-game-matchup-text"
-                  >
-                    ${escapeHTML(opponent)}
-                  </span>
-
-                </div>
-
-
-                <div
-                  class="history-game-score"
-                >
-                  ${escapeHTML(score)}
-                </div>
-
-
-                <div
-                  class="
-                    history-game-result
-                    ${result==="W"
-                      ? "win"
-                      : "loss"
-                    }
-                  "
-                >
-                  ${
-                    result==="W"
-                    ? "WIN"
-                    : "LOSS"
-                  }
-                </div>
-
+                ${
+                  game[2]==="W"
+                  ? "WIN"
+                  : "LOSS"
+                }
               </div>
 
-            `;
+            </div>
 
-          })
-          .join("")
+          `
+        ).join("")
       }
 
     </div>
@@ -4843,7 +4788,7 @@ function openHistory(year){
 
 
   document.getElementById(
-    "historyModalBody"
+    "historyBody"
   ).innerHTML=html;
 
 
@@ -4851,60 +4796,14 @@ function openHistory(year){
     .getElementById("historyModal")
     .classList.add("show");
 
-
   document.body.classList.add(
     "modal-open"
   );
 
-
-  requestAnimationFrame(
-    fitHistoryMatchups
-  );
-
 }
 
 
-function fitHistoryMatchups(){
-
-  document
-    .querySelectorAll(
-      ".history-game-matchup-text"
-    )
-    .forEach(text=>{
-
-      const parent=
-        text.parentElement;
-
-
-      let size=
-        window.innerWidth<=600
-        ? 17
-        : 20;
-
-
-      text.style.fontSize=
-        `${size}px`;
-
-
-      while(
-        text.scrollWidth>
-        parent.clientWidth &&
-        size>14
-      ){
-
-        size--;
-
-        text.style.fontSize=
-          `${size}px`;
-
-      }
-
-    });
-
-}
-
-
-function closeHistoryModal(event){
+function closeHistory(event){
 
   if(
     event &&
@@ -4918,7 +4817,6 @@ function closeHistoryModal(event){
     .getElementById("historyModal")
     .classList.remove("show");
 
-
   document.body.classList.remove(
     "modal-open"
   );
@@ -4926,164 +4824,109 @@ function closeHistoryModal(event){
 }
 
 
-/* =========================================================
+/* ========================================================
    ROSTER
-========================================================= */
-
-async function loadRoster(){
-
-  const {
-    data,
-    error
-  }=
-  await db
-    .from("roster")
-    .select("*")
-    .order(
-      "number",
-      {
-        ascending:true
-      }
-    );
-
-
-  if(error){
-
-    console.error(
-      "LOAD ROSTER ERROR:",
-      error
-    );
-
-    return;
-
-  }
-
-
-  roster=
-    Array.isArray(data)
-    ? data
-    : [];
-
-
-  renderRoster();
-  renderAdminRoster();
-  updateAdminStats();
-
-}
-
+======================================================== */
 
 function renderRoster(){
 
-  const list=
+  const list =
     document.getElementById(
       "rosterList"
     );
 
 
-  if(!list)
-    return;
-
-
-  const search=
+  const search =
     (
       document.getElementById(
         "rosterSearch"
-      )?.value||""
+      )?.value || ""
     )
       .toLowerCase()
       .trim();
 
 
-  const filter=
+  const filter =
     document.getElementById(
       "rosterFilter"
-    )?.value||"all";
+    )?.value || "all";
 
 
-  const filtered=
-    roster.filter(player=>{
+  const filtered =
+    roster.filter(
+      player=>{
 
-      const text=
-        `
-          ${player.name}
-          ${player.number}
-          ${player.position}
-        `
-        .toLowerCase();
+        const text =
+          `
+            ${player.name}
+            ${player.number}
+            ${player.position}
+          `
+          .toLowerCase();
 
 
-      return(
-        (!search||
-          text.includes(search))
-        &&
-        (
-          filter==="all" ||
+        return(
+          (!search || text.includes(search)) &&
 
-          String(
-            player.position||""
+          (
+            filter==="all" ||
+
+            String(
+              player.position || ""
+            )
+            .toUpperCase()
+            .includes(filter)
           )
-          .toUpperCase()
-          .includes(filter)
-        )
-      );
+        );
 
-    });
+      }
+    );
 
 
   document.getElementById(
     "rosterCount"
-  ).textContent=
+  ).textContent =
     `👥 ${filtered.length} players`;
 
 
   if(!filtered.length){
 
-    list.innerHTML=`
-
-      <div class="admin-description">
+    list.innerHTML =
+      `<div class="admin-description">
         No players found.
-      </div>
-
-    `;
+      </div>`;
 
     return;
 
   }
 
 
-  list.innerHTML=
-    filtered
-      .map(player=>`
+  list.innerHTML =
+    filtered.map(
+      player=>`
 
         <div class="roster-card">
 
           <div class="roster-number">
-            ${escapeHTML(
-              player.number
-            )}
+            ${esc(player.number)}
           </div>
-
 
           <div class="roster-info">
 
             <div class="roster-name">
-              ${escapeHTML(
-                player.name
-              )}
+              ${esc(player.name)}
             </div>
 
             <div class="roster-position">
-              ${escapeHTML(
-                player.position||""
-              )}
+              ${esc(player.position || "")}
             </div>
 
           </div>
 
         </div>
 
-      `)
-      .join("");
+      `
+    ).join("");
 
 }
 
@@ -5104,906 +4947,51 @@ document
   );
 
 
-/* =========================================================
-   POSITIONS
-========================================================= */
-
-const positions=[
-  "QB","RB","FB","WR","TE",
-  "OL","T","G","C",
-  "DL","DE","DT","NG",
-  "LB","MLB","OLB",
-  "DB","CB","FS","SS",
-  "K","P","LS"
-];
-
-
-function makePositionHTML(group){
-
-  return positions
-    .map(position=>`
-
-      <label class="position-option">
-
-        <input
-          type="checkbox"
-          value="${position}"
-          data-position-group="${group}"
-        >
-
-        ${position}
-
-      </label>
-
-    `)
-    .join("");
-
-}
-
-
-function buildPositionOptions(){
-
-  document.getElementById(
-    "positionOptions"
-  ).innerHTML=
-    makePositionHTML("add");
-
-}
-
-
-function buildEditPositionOptions(){
-
-  document.getElementById(
-    "editPositionOptions"
-  ).innerHTML=
-    makePositionHTML("edit");
-
-}
-
-
-function togglePositions(){
-
-  document
-    .getElementById("positionPicker")
-    .classList.toggle("open");
-
-  updatePositionText();
-
-}
-
-
-function closePositions(){
-
-  document
-    .getElementById("positionPicker")
-    .classList.remove("open");
-
-  updatePositionText();
-
-}
-
-
-function clearPositions(){
-
-  document
-    .querySelectorAll(
-      '[data-position-group="add"]'
-    )
-    .forEach(input=>{
-      input.checked=false;
-    });
-
-
-  document.getElementById(
-    "customPosition"
-  ).value="";
-
-
-  updatePositionText();
-
-}
-
-
-function updatePositionText(){
-
-  const selected=
-    Array.from(
-      document.querySelectorAll(
-        '[data-position-group="add"]:checked'
-      )
-    )
-    .map(input=>input.value);
-
-
-  const custom=
-    document.getElementById(
-      "customPosition"
-    ).value.trim();
-
-
-  if(custom)
-    selected.push(custom);
-
-
-  const text=
-    document.getElementById(
-      "positionText"
-    );
-
-
-  if(!selected.length){
-
-    text.textContent=
-      "Select position(s)...";
-
-    text.className="";
-
-  }
-  else{
-
-    text.textContent=
-      [...new Set(selected)]
-        .join(", ");
-
-    text.className=
-      "position-selected";
-
-  }
-
-}
-
-
-document
-  .getElementById("customPosition")
-  .addEventListener(
-    "input",
-    updatePositionText
-  );
-
-
-function getPositions(){
-
-  const selected=
-    Array.from(
-      document.querySelectorAll(
-        '[data-position-group="add"]:checked'
-      )
-    )
-    .map(input=>input.value);
-
-
-  const custom=
-    document.getElementById(
-      "customPosition"
-    ).value.trim();
-
-
-  if(custom)
-    selected.push(custom);
-
-
-  return[
-    ...new Set(selected)
-  ].join(", ");
-
-}
-
-
-function toggleEditPositions(){
-
-  document
-    .getElementById("editPositionPicker")
-    .classList.toggle("open");
-
-  updateEditPositionText();
-
-}
-
-
-function closeEditPositions(){
-
-  document
-    .getElementById("editPositionPicker")
-    .classList.remove("open");
-
-  updateEditPositionText();
-
-}
-
-
-function clearEditPositions(){
-
-  document
-    .querySelectorAll(
-      '[data-position-group="edit"]'
-    )
-    .forEach(input=>{
-      input.checked=false;
-    });
-
-
-  document.getElementById(
-    "editCustomPosition"
-  ).value="";
-
-
-  updateEditPositionText();
-
-}
-
-
-function updateEditPositionText(){
-
-  const selected=
-    Array.from(
-      document.querySelectorAll(
-        '[data-position-group="edit"]:checked'
-      )
-    )
-    .map(input=>input.value);
-
-
-  const custom=
-    document.getElementById(
-      "editCustomPosition"
-    ).value.trim();
-
-
-  if(custom)
-    selected.push(custom);
-
-
-  const text=
-    document.getElementById(
-      "editPositionText"
-    );
-
-
-  if(!selected.length){
-
-    text.textContent=
-      "Select position(s)...";
-
-    text.className="";
-
-  }
-  else{
-
-    text.textContent=
-      [...new Set(selected)]
-        .join(", ");
-
-    text.className=
-      "position-selected";
-
-  }
-
-}
-
-
-document
-  .getElementById("editCustomPosition")
-  .addEventListener(
-    "input",
-    updateEditPositionText
-  );
-
-
-function getEditPositions(){
-
-  const selected=
-    Array.from(
-      document.querySelectorAll(
-        '[data-position-group="edit"]:checked'
-      )
-    )
-    .map(input=>input.value);
-
-
-  const custom=
-    document.getElementById(
-      "editCustomPosition"
-    ).value.trim();
-
-
-  if(custom)
-    selected.push(custom);
-
-
-  return[
-    ...new Set(selected)
-  ].join(", ");
-
-}
-
-
-/* =========================================================
-   ADD PLAYER
-========================================================= */
-
-async function addPlayer(){
-
-  const number=
-    document.getElementById(
-      "playerNumber"
-    ).value.trim();
-
-
-  const name=
-    document.getElementById(
-      "playerName"
-    ).value.trim();
-
-
-  const position=
-    getPositions();
-
-
-  if(
-    !number||
-    !name||
-    !position
-  ){
-
-    showMessage(
-      "Please enter a number, name and position."
-    );
-
-    return;
-
-  }
-
-
-  const {
-    error
-  }=
-  await db
-    .from("roster")
-    .insert({
-      number,
-      name,
-      position
-    });
-
-
-  if(error){
-
-    console.error(error);
-
-    showMessage(
-      "Unable to add player."
-    );
-
-    return;
-
-  }
-
-
-  document.getElementById(
-    "playerNumber"
-  ).value="";
-
-
-  document.getElementById(
-    "playerName"
-  ).value="";
-
-
-  clearPositions();
-  closePositions();
-
-
-  await loadRoster();
-
-
-  showMessage(
-    "✅ Player added successfully."
-  );
-
-}
-
-
-/* =========================================================
-   ADMIN ROSTER
-========================================================= */
-
-function renderAdminRoster(){
-
-  const list=
-    document.getElementById(
-      "adminRosterList"
-    );
-
-
-  if(!list)
-    return;
-
-
-  if(!roster.length){
-
-    list.innerHTML=`
-
-      <div class="admin-description">
-        👥 No players have been added.
-      </div>
-
-    `;
-
-    return;
-
-  }
-
-
-  list.innerHTML=`
-
-    <div class="admin-roster">
-
-      ${
-        roster
-          .map(player=>`
-
-            <div class="admin-player">
-
-              <div class="admin-number">
-                ${escapeHTML(
-                  player.number
-                )}
-              </div>
-
-
-              <div>
-
-                <div class="admin-player-name">
-                  ${escapeHTML(
-                    player.name
-                  )}
-                </div>
-
-                <div class="admin-player-position">
-                  ${escapeHTML(
-                    player.position||""
-                  )}
-                </div>
-
-              </div>
-
-
-              <div class="admin-actions">
-
-                <button
-                  class="secondary-button"
-                  onclick="
-                    openEditPlayer(
-                      '${escapeAttribute(player.id)}'
-                    )
-                  "
-                >
-                  EDIT
-                </button>
-
-
-                <button
-                  class="danger-button"
-                  onclick="
-                    confirmDeletePlayer(
-                      '${escapeAttribute(player.id)}'
-                    )
-                  "
-                >
-                  DELETE
-                </button>
-
-              </div>
-
-            </div>
-
-          `)
-          .join("")
-      }
-
-    </div>
-
-  `;
-
-}
-
-
-/* =========================================================
-   EDIT PLAYER
-========================================================= */
-
-function openEditPlayer(id){
-
-  const player=
-    roster.find(
-      p=>
-        String(p.id)===
-        String(id)
-    );
-
-
-  if(!player)
-    return;
-
-
-  document.getElementById(
-    "editPlayerId"
-  ).value=player.id;
-
-
-  document.getElementById(
-    "editPlayerNumber"
-  ).value=player.number;
-
-
-  document.getElementById(
-    "editPlayerName"
-  ).value=player.name;
-
-
-  document
-    .querySelectorAll(
-      '[data-position-group="edit"]'
-    )
-    .forEach(input=>{
-      input.checked=false;
-    });
-
-
-  document.getElementById(
-    "editCustomPosition"
-  ).value="";
-
-
-  const playerPositions=
-    String(
-      player.position||""
-    )
-      .split(",")
-      .map(x=>x.trim())
-      .filter(Boolean);
-
-
-  const custom=[];
-
-
-  playerPositions.forEach(
-    position=>{
-
-      const checkbox=
-        Array.from(
-          document.querySelectorAll(
-            '[data-position-group="edit"]'
-          )
-        )
-        .find(
-          input=>
-            input.value.toUpperCase()===
-            position.toUpperCase()
-        );
-
-
-      if(checkbox)
-        checkbox.checked=true;
-
-      else
-        custom.push(position);
-
-    }
-  );
-
-
-  document.getElementById(
-    "editCustomPosition"
-  ).value=
-    custom.join(", ");
-
-
-  updateEditPositionText();
-
-
-  document
-    .getElementById("editPlayerModal")
-    .classList.add("show");
-
-
-  document.body.classList.add(
-    "modal-open"
-  );
-
-}
-
-
-function closeEditPlayer(event){
-
-  if(
-    event &&
-    event.target &&
-    event.target.id!=="editPlayerModal"
-  )
-    return;
-
-
-  document
-    .getElementById("editPlayerModal")
-    .classList.remove("show");
-
-
-  document.body.classList.remove(
-    "modal-open"
-  );
-
-}
-
-
-async function savePlayerEdit(){
-
-  const id=
-    document.getElementById(
-      "editPlayerId"
-    ).value;
-
-
-  const number=
-    document.getElementById(
-      "editPlayerNumber"
-    ).value.trim();
-
-
-  const name=
-    document.getElementById(
-      "editPlayerName"
-    ).value.trim();
-
-
-  const position=
-    getEditPositions();
-
-
-  if(
-    !id||
-    !number||
-    !name||
-    !position
-  ){
-
-    showMessage(
-      "Please complete all player fields."
-    );
-
-    return;
-
-  }
-
-
-  const {
-    error
-  }=
-  await db
-    .from("roster")
-    .update({
-      number,
-      name,
-      position
-    })
-    .eq("id",id);
-
-
-  if(error){
-
-    console.error(
-      "UPDATE PLAYER ERROR:",
-      error
-    );
-
-    showMessage(
-      "Player update failed."
-    );
-
-    return;
-
-  }
-
-
-  closeEditPlayer();
-
-  await loadRoster();
-
-
-  showMessage(
-    "✅ Player updated successfully."
-  );
-
-}
-
-
-/* =========================================================
-   ADD GAME
-========================================================= */
-
-async function addGame(){
-
-  const date=
-    document.getElementById(
-      "gameDate"
-    ).value;
-
-
-  const time=
-    document.getElementById(
-      "gameTime"
-    ).value.trim();
-
-
-  const opponent=
-    document.getElementById(
-      "gameOpponent"
-    ).value.trim();
-
-
-  const location=
-    document.getElementById(
-      "gameLocation"
-    ).value.trim();
-
-
-  const homeAway=
-    document.getElementById(
-      "gameHomeAway"
-    ).value;
-
-
-  const notes=
-    document.getElementById(
-      "gameNotes"
-    ).value.trim();
-
-
-  if(
-    !date||
-    !opponent
-  ){
-
-    showMessage(
-      "Please enter the date and opponent."
-    );
-
-    return;
-
-  }
-
-
-  const {
-    error
-  }=
-  await db
-    .from("games")
-    .insert({
-      date,
-      time:time||null,
-      opponent,
-      location:location||null,
-      home_away:homeAway,
-      notes:notes||null
-    });
-
-
-  if(error){
-
-    console.error(
-      "ADD GAME ERROR:",
-      error
-    );
-
-    showMessage(
-      "Unable to add game."
-    );
-
-    return;
-
-  }
-
-
-  document.getElementById(
-    "gameDate"
-  ).value="";
-
-  document.getElementById(
-    "gameTime"
-  ).value="";
-
-  document.getElementById(
-    "gameOpponent"
-  ).value="";
-
-  document.getElementById(
-    "gameLocation"
-  ).value="";
-
-  document.getElementById(
-    "gameNotes"
-  ).value="";
-
-
-  await loadGames();
-
-
-  showMessage(
-    "✅ Game added successfully."
-  );
-
-}
-
-
-/* =========================================================
-   ADMIN GAME LIST
-========================================================= */
+/* ========================================================
+   ADMIN GAMES
+======================================================== */
 
 function renderAdminGames(){
 
-  const list=
+  const list =
     document.getElementById(
       "adminGameList"
     );
 
 
-  if(!list)
-    return;
-
-
   if(!games.length){
 
-    list.innerHTML=`
-
-      <div class="admin-description">
-        🏈 No games have been added.
-      </div>
-
-    `;
+    list.innerHTML =
+      `<div class="admin-description">
+        No games added.
+      </div>`;
 
     return;
 
   }
 
 
-  list.innerHTML=
-    games
-      .map(game=>`
+  list.innerHTML =
+    games.map(
+      game=>`
 
         <div class="admin-game">
 
           <div>
 
             <div class="admin-game-name">
-              ${escapeHTML(
-                game.opponent
-              )}
+              ${esc(game.opponent)}
             </div>
-
 
             <div class="admin-game-meta">
 
-              📅 ${formatDate(
-                game.date
-              )}
-
-              • ⏰ ${escapeHTML(
-                game.time||"Time TBD"
-              )}
+              📅 ${formatDate(game.date)}
 
               ${
                 hasScore(game)
-
                 ?
-
-                `
-                  • 🏈 FINAL
-                  ${game.our_score}–
-                  ${game.opponent_score}
-                `
-
+                ` • FINAL ${game.our_score}–${game.opponent_score}`
                 :
-
                 ""
               }
 
@@ -6016,23 +5004,14 @@ function renderAdminGames(){
 
             <button
               class="secondary-button"
-              onclick="
-                openEditGame(
-                  '${escapeAttribute(game.id)}'
-                )
-              "
+              onclick="editGame('${escAttr(game.id)}')"
             >
               EDIT
             </button>
 
-
             <button
               class="danger-button"
-              onclick="
-                confirmDeleteGame(
-                  '${escapeAttribute(game.id)}'
-                )
-              "
+              onclick="deleteGameConfirm('${escAttr(game.id)}')"
             >
               DELETE
             </button>
@@ -6041,37 +5020,64 @@ function renderAdminGames(){
 
         </div>
 
-      `)
-      .join("");
+      `
+    ).join("");
 
 }
 
 
-/* =========================================================
-   EDIT GAME
-========================================================= */
+/* ========================================================
+   ADMIN ADD GAME — RPC
+======================================================== */
 
-function findGame(id){
+async function addGame(){
 
-  return games.find(
-    game=>
-      String(game.id)===
-      String(id)
-  );
-
-}
+  if(!adminCode){
+    showToast("Admin session expired.");
+    return;
+  }
 
 
-function openEditGame(id){
+  const date =
+    document.getElementById(
+      "gameDate"
+    ).value;
 
-  const game=
-    findGame(id);
+
+  const time =
+    document.getElementById(
+      "gameTime"
+    ).value.trim();
 
 
-  if(!game){
+  const opponent =
+    document.getElementById(
+      "gameOpponent"
+    ).value.trim();
 
-    showMessage(
-      "Game could not be found."
+
+  const location =
+    document.getElementById(
+      "gameLocation"
+    ).value.trim();
+
+
+  const homeAway =
+    document.getElementById(
+      "gameHomeAway"
+    ).value;
+
+
+  const notes =
+    document.getElementById(
+      "gameNotes"
+    ).value.trim();
+
+
+  if(!date || !opponent){
+
+    showToast(
+      "Enter the date and opponent."
     );
 
     return;
@@ -6079,72 +5085,154 @@ function openEditGame(id){
   }
 
 
+  try{
+
+    const {
+      error
+    } =
+    await db.rpc(
+      "admin_insert_game",
+      {
+        p_code:adminCode,
+        p_date:date,
+        p_time:time,
+        p_opponent:opponent,
+        p_location:location,
+        p_home_away:homeAway,
+        p_our_score:null,
+        p_opponent_score:null,
+        p_notes:notes
+      }
+    );
+
+
+    if(error)
+      throw error;
+
+
+    document.getElementById(
+      "gameDate"
+    ).value="";
+
+    document.getElementById(
+      "gameTime"
+    ).value="";
+
+    document.getElementById(
+      "gameOpponent"
+    ).value="";
+
+    document.getElementById(
+      "gameLocation"
+    ).value="";
+
+    document.getElementById(
+      "gameNotes"
+    ).value="";
+
+
+    await loadGames();
+
+
+    showToast(
+      "✅ Game added successfully."
+    );
+
+  }
+  catch(error){
+
+    console.error(
+      "ADD GAME ERROR:",
+      error
+    );
+
+    showToast(
+      error.message ||
+      "Game could not be added."
+    );
+
+  }
+
+}
+
+
+/* ========================================================
+   EDIT GAME
+======================================================== */
+
+function editGame(id){
+
+  const game =
+    games.find(
+      x=>String(x.id)===String(id)
+    );
+
+
+  if(!game)
+    return;
+
+
   document.getElementById(
     "editGameId"
-  ).value=String(game.id);
+  ).value=game.id;
 
 
   document.getElementById(
-    "editGameDate"
-  ).value=game.date||"";
+    "editDate"
+  ).value=game.date || "";
 
 
   document.getElementById(
-    "editGameTime"
-  ).value=game.time||"";
+    "editTime"
+  ).value=game.time || "";
 
 
   document.getElementById(
-    "editGameOpponent"
-  ).value=game.opponent||"";
+    "editOpponent"
+  ).value=game.opponent || "";
 
 
   document.getElementById(
-    "editGameLocation"
-  ).value=game.location||"";
+    "editLocation"
+  ).value=game.location || "";
 
 
   document.getElementById(
-    "editGameHomeAway"
-  ).value=
+    "editHomeAway"
+  ).value =
     game.home_away==="Away"
     ? "Away"
     : "Home";
 
 
   document.getElementById(
-    "editGameOurScore"
-  ).value=
-    game.our_score!==null &&
-    game.our_score!==undefined
-    ? game.our_score
-    : "";
+    "editOurScore"
+  ).value =
+    game.our_score ??
+    "";
 
 
   document.getElementById(
-    "editGameOpponentScore"
-  ).value=
-    game.opponent_score!==null &&
-    game.opponent_score!==undefined
-    ? game.opponent_score
-    : "";
+    "editOppScore"
+  ).value =
+    game.opponent_score ??
+    "";
 
 
   document.getElementById(
-    "editGameNotes"
-  ).value=
-    game.notes||"";
+    "editNotes"
+  ).value =
+    game.notes || "";
 
 
   document.getElementById(
-    "editGameError"
+    "editError"
   ).textContent="";
 
 
   document
     .getElementById("editGameModal")
     .classList.add("show");
-
 
   document.body.classList.add(
     "modal-open"
@@ -6167,7 +5255,6 @@ function closeEditGame(event){
     .getElementById("editGameModal")
     .classList.remove("show");
 
-
   document.body.classList.remove(
     "modal-open"
   );
@@ -6175,93 +5262,88 @@ function closeEditGame(event){
 }
 
 
-async function saveGameEdit(){
+/* ========================================================
+   SAVE GAME — RPC
+======================================================== */
 
-  const errorBox=
+async function saveGame(){
+
+  const errorBox =
     document.getElementById(
-      "editGameError"
-    );
-
-
-  const saveButton=
-    document.getElementById(
-      "saveGameButton"
+      "editError"
     );
 
 
   errorBox.textContent="";
 
 
-  const id=
-    document.getElementById(
-      "editGameId"
-    ).value;
+  if(!adminCode){
 
-
-  const date=
-    document.getElementById(
-      "editGameDate"
-    ).value;
-
-
-  const time=
-    document.getElementById(
-      "editGameTime"
-    ).value.trim();
-
-
-  const opponent=
-    document.getElementById(
-      "editGameOpponent"
-    ).value.trim();
-
-
-  const location=
-    document.getElementById(
-      "editGameLocation"
-    ).value.trim();
-
-
-  const homeAway=
-    document.getElementById(
-      "editGameHomeAway"
-    ).value;
-
-
-  const ourRaw=
-    document.getElementById(
-      "editGameOurScore"
-    ).value.trim();
-
-
-  const opponentRaw=
-    document.getElementById(
-      "editGameOpponentScore"
-    ).value.trim();
-
-
-  const notes=
-    document.getElementById(
-      "editGameNotes"
-    ).value.trim();
-
-
-  if(!id){
-
-    errorBox.textContent=
-      "Game ID is missing.";
+    errorBox.textContent =
+      "Admin session expired.";
 
     return;
 
   }
 
 
-  if(
-    !date||
-    !opponent
-  ){
+  const id =
+    document.getElementById(
+      "editGameId"
+    ).value;
 
-    errorBox.textContent=
+
+  const date =
+    document.getElementById(
+      "editDate"
+    ).value;
+
+
+  const time =
+    document.getElementById(
+      "editTime"
+    ).value.trim();
+
+
+  const opponent =
+    document.getElementById(
+      "editOpponent"
+    ).value.trim();
+
+
+  const location =
+    document.getElementById(
+      "editLocation"
+    ).value.trim();
+
+
+  const homeAway =
+    document.getElementById(
+      "editHomeAway"
+    ).value;
+
+
+  const ourRaw =
+    document.getElementById(
+      "editOurScore"
+    ).value.trim();
+
+
+  const oppRaw =
+    document.getElementById(
+      "editOppScore"
+    ).value.trim();
+
+
+  const notes =
+    document.getElementById(
+      "editNotes"
+    ).value.trim();
+
+
+  if(!date || !opponent){
+
+    errorBox.textContent =
       "Date and opponent are required.";
 
     return;
@@ -6270,43 +5352,40 @@ async function saveGameEdit(){
 
 
   let ourScore=null;
-  let opponentScore=null;
+  let oppScore=null;
 
 
-  if(
-    ourRaw!==""||
-    opponentRaw!==""
-  ){
+  if(ourRaw!=="" || oppRaw!==""){
 
     if(
-      ourRaw===""||
-      opponentRaw===""
+      ourRaw==="" ||
+      oppRaw===""
     ){
 
-      errorBox.textContent=
-        "Enter both scores, or leave both blank.";
+      errorBox.textContent =
+        "Enter both scores or leave both blank.";
 
       return;
 
     }
 
 
-    ourScore=
+    ourScore =
       Number(ourRaw);
 
-    opponentScore=
-      Number(opponentRaw);
+    oppScore =
+      Number(oppRaw);
 
 
     if(
-      !Number.isInteger(ourScore)||
-      !Number.isInteger(opponentScore)||
-      ourScore<0||
-      opponentScore<0
+      !Number.isInteger(ourScore) ||
+      !Number.isInteger(oppScore) ||
+      ourScore<0 ||
+      oppScore<0
     ){
 
-      errorBox.textContent=
-        "Scores must be whole numbers 0 or higher.";
+      errorBox.textContent =
+        "Scores must be whole numbers.";
 
       return;
 
@@ -6315,52 +5394,49 @@ async function saveGameEdit(){
   }
 
 
-  const updateData={
-
-    date,
-
-    time:
-      time||null,
-
-    opponent,
-
-    location:
-      location||null,
-
-    home_away:
-      homeAway,
-
-    our_score:
-      ourScore,
-
-    opponent_score:
-      opponentScore,
-
-    notes:
-      notes||null
-
-  };
+  const button =
+    document.getElementById(
+      "saveGameBtn"
+    );
 
 
-  saveButton.disabled=true;
+  button.disabled=true;
 
-  saveButton.textContent=
+  button.textContent=
     "SAVING...";
 
 
   try{
 
     const {
+      data,
       error
-    }=
-    await db
-      .from("games")
-      .update(updateData)
-      .eq("id",id);
+    } =
+    await db.rpc(
+      "admin_update_game",
+      {
+        p_code:adminCode,
+        p_id:String(id),
+        p_date:date,
+        p_time:time,
+        p_opponent:opponent,
+        p_location:location,
+        p_home_away:homeAway,
+        p_our_score:ourScore,
+        p_opponent_score:oppScore,
+        p_notes:notes
+      }
+    );
 
 
     if(error)
       throw error;
+
+
+    if(data!==true)
+      throw new Error(
+        "Database did not confirm the update."
+      );
 
 
     await loadGames();
@@ -6369,29 +5445,28 @@ async function saveGameEdit(){
     closeEditGame();
 
 
-    showMessage(
-      "✅ Game updated successfully!"
+    showToast(
+      "✅ Game updated successfully."
     );
 
   }
-  catch(err){
+  catch(error){
 
     console.error(
-      "SAVE GAME ERROR:",
-      err
+      "UPDATE GAME ERROR:",
+      error
     );
 
-
-    errorBox.textContent=
-      err?.message||
-      "Unable to update game.";
+    errorBox.textContent =
+      error.message ||
+      "Could not update game.";
 
   }
   finally{
 
-    saveButton.disabled=false;
+    button.disabled=false;
 
-    saveButton.textContent=
+    button.textContent=
       "SAVE CHANGES";
 
   }
@@ -6399,9 +5474,823 @@ async function saveGameEdit(){
 }
 
 
-/* =========================================================
-   CONFIRM / DELETE
-========================================================= */
+/* ========================================================
+   DELETE GAME
+======================================================== */
+
+function deleteGameConfirm(id){
+
+  const game =
+    games.find(
+      x=>String(x.id)===String(id)
+    );
+
+
+  if(!game)
+    return;
+
+
+  openConfirm(
+    `Delete the game against ${game.opponent}? This cannot be undone.`,
+    ()=>deleteGame(id)
+  );
+
+}
+
+
+async function deleteGame(id){
+
+  if(!adminCode){
+
+    showToast(
+      "Admin session expired."
+    );
+
+    return;
+
+  }
+
+
+  try{
+
+    const {
+      data,
+      error
+    } =
+    await db.rpc(
+      "admin_delete_game",
+      {
+        p_code:adminCode,
+        p_id:String(id)
+      }
+    );
+
+
+    if(error)
+      throw error;
+
+
+    if(data!==true)
+      throw new Error(
+        "Database did not confirm the deletion."
+      );
+
+
+    await loadGames();
+
+
+    showToast(
+      "✅ Game deleted successfully."
+    );
+
+  }
+  catch(error){
+
+    console.error(
+      "DELETE GAME ERROR:",
+      error
+    );
+
+    showToast(
+      error.message ||
+      "Could not delete game."
+    );
+
+  }
+
+}
+
+
+/* ========================================================
+   ADMIN ROSTER
+======================================================== */
+
+function renderAdminRoster(){
+
+  const list =
+    document.getElementById(
+      "adminRosterList"
+    );
+
+
+  if(!roster.length){
+
+    list.innerHTML =
+      `<div class="admin-description">
+        No players added.
+      </div>`;
+
+    return;
+
+  }
+
+
+  list.innerHTML =
+    `<div class="admin-roster">
+
+      ${
+        roster.map(
+          player=>`
+
+            <div class="admin-player">
+
+              <div class="admin-number">
+                ${esc(player.number)}
+              </div>
+
+              <div>
+
+                <div class="admin-player-name">
+                  ${esc(player.name)}
+                </div>
+
+                <div class="admin-player-position">
+                  ${esc(player.position || "")}
+                </div>
+
+              </div>
+
+
+              <div class="admin-actions">
+
+                <button
+                  class="secondary-button"
+                  onclick="editPlayer('${escAttr(player.id)}')"
+                >
+                  EDIT
+                </button>
+
+                <button
+                  class="danger-button"
+                  onclick="deletePlayerConfirm('${escAttr(player.id)}')"
+                >
+                  DELETE
+                </button>
+
+              </div>
+
+            </div>
+
+          `
+        ).join("")
+      }
+
+    </div>`;
+
+}
+
+
+/* ========================================================
+   POSITIONS
+======================================================== */
+
+function buildPositions(){
+
+  document.getElementById(
+    "positionOptions"
+  ).innerHTML =
+    positions.map(
+      p=>`
+
+        <label class="position-option">
+
+          <input
+            type="checkbox"
+            value="${p}"
+            data-pos="add"
+          >
+
+          ${p}
+
+        </label>
+
+      `
+    ).join("");
+
+
+  document.getElementById(
+    "editPositionOptions"
+  ).innerHTML =
+    positions.map(
+      p=>`
+
+        <label class="position-option">
+
+          <input
+            type="checkbox"
+            value="${p}"
+            data-pos="edit"
+          >
+
+          ${p}
+
+        </label>
+
+      `
+    ).join("");
+
+}
+
+
+function togglePositions(){
+
+  document
+    .getElementById(
+      "positionPicker"
+    )
+    .classList.toggle("open");
+
+  updatePositionText();
+
+}
+
+
+function closePositions(){
+
+  document
+    .getElementById(
+      "positionPicker"
+    )
+    .classList.remove("open");
+
+  updatePositionText();
+
+}
+
+
+function getSelectedPositions(type){
+
+  const values =
+    Array.from(
+      document.querySelectorAll(
+        `[data-pos="${type}"]:checked`
+      )
+    )
+    .map(
+      x=>x.value
+    );
+
+
+  const custom =
+    document.getElementById(
+      type==="add"
+      ? "customPosition"
+      : "editCustomPosition"
+    )
+    .value
+    .trim();
+
+
+  if(custom){
+
+    custom
+      .split(",")
+      .map(x=>x.trim())
+      .filter(Boolean)
+      .forEach(
+        x=>values.push(x)
+      );
+
+  }
+
+
+  return [
+    ...new Set(values)
+  ];
+
+}
+
+
+function updatePositionText(){
+
+  const values =
+    getSelectedPositions(
+      "add"
+    );
+
+
+  document.getElementById(
+    "positionText"
+  ).textContent =
+    values.length
+    ? values.join(", ")
+    : "Select position(s)...";
+
+}
+
+
+function toggleEditPositions(){
+
+  document
+    .getElementById(
+      "editPositionPicker"
+    )
+    .classList.toggle("open");
+
+  updateEditPositionText();
+
+}
+
+
+function closeEditPositions(){
+
+  document
+    .getElementById(
+      "editPositionPicker"
+    )
+    .classList.remove("open");
+
+  updateEditPositionText();
+
+}
+
+
+function updateEditPositionText(){
+
+  const values =
+    getSelectedPositions(
+      "edit"
+    );
+
+
+  document.getElementById(
+    "editPositionText"
+  ).textContent =
+    values.length
+    ? values.join(", ")
+    : "Select position(s)...";
+
+}
+
+
+/* ========================================================
+   ADD PLAYER — RPC
+======================================================== */
+
+async function addPlayer(){
+
+  if(!adminCode){
+
+    showToast(
+      "Admin session expired."
+    );
+
+    return;
+
+  }
+
+
+  const number =
+    Number(
+      document.getElementById(
+        "playerNumber"
+      ).value
+    );
+
+
+  const name =
+    document.getElementById(
+      "playerName"
+    ).value.trim();
+
+
+  const positions =
+    getSelectedPositions(
+      "add"
+    );
+
+
+  if(
+    !Number.isInteger(number) ||
+    !name ||
+    !positions.length
+  ){
+
+    showToast(
+      "Enter a number, name and position."
+    );
+
+    return;
+
+  }
+
+
+  try{
+
+    const {
+      data,
+      error
+    } =
+    await db.rpc(
+      "admin_insert_player",
+      {
+        p_code:adminCode,
+        p_number:number,
+        p_name:name,
+        p_position:positions.join(", ")
+      }
+    );
+
+
+    if(error)
+      throw error;
+
+
+    if(data!==true)
+      throw new Error(
+        "Database did not confirm the player."
+      );
+
+
+    document.getElementById(
+      "playerNumber"
+    ).value="";
+
+
+    document.getElementById(
+      "playerName"
+    ).value="";
+
+
+    document.getElementById(
+      "customPosition"
+    ).value="";
+
+
+    document
+      .querySelectorAll(
+        '[data-pos="add"]'
+      )
+      .forEach(
+        x=>x.checked=false
+      );
+
+
+    updatePositionText();
+
+    closePositions();
+
+
+    await loadRoster();
+
+
+    showToast(
+      "✅ Player added successfully."
+    );
+
+  }
+  catch(error){
+
+    console.error(
+      "ADD PLAYER ERROR:",
+      error
+    );
+
+    showToast(
+      error.message ||
+      "Could not add player."
+    );
+
+  }
+
+}
+
+
+/* ========================================================
+   EDIT PLAYER
+======================================================== */
+
+function editPlayer(id){
+
+  const player =
+    roster.find(
+      x=>String(x.id)===String(id)
+    );
+
+
+  if(!player)
+    return;
+
+
+  document.getElementById(
+    "editPlayerId"
+  ).value=player.id;
+
+
+  document.getElementById(
+    "editNumber"
+  ).value=player.number;
+
+
+  document.getElementById(
+    "editName"
+  ).value=player.name;
+
+
+  document
+    .querySelectorAll(
+      '[data-pos="edit"]'
+    )
+    .forEach(
+      x=>x.checked=false
+    );
+
+
+  document.getElementById(
+    "editCustomPosition"
+  ).value="";
+
+
+  String(
+    player.position || ""
+  )
+  .split(",")
+  .map(x=>x.trim())
+  .filter(Boolean)
+  .forEach(
+    position=>{
+
+      const checkbox =
+        Array.from(
+          document.querySelectorAll(
+            '[data-pos="edit"]'
+          )
+        )
+        .find(
+          x=>
+            x.value.toLowerCase() ===
+            position.toLowerCase()
+        );
+
+
+      if(checkbox)
+        checkbox.checked=true;
+
+      else{
+
+        const old =
+          document.getElementById(
+            "editCustomPosition"
+          ).value;
+
+
+        document.getElementById(
+          "editCustomPosition"
+        ).value =
+          old
+          ? `${old}, ${position}`
+          : position;
+
+      }
+
+    }
+  );
+
+
+  updateEditPositionText();
+
+
+  document
+    .getElementById(
+      "editPlayerModal"
+    )
+    .classList.add("show");
+
+  document.body.classList.add(
+    "modal-open"
+  );
+
+}
+
+
+function closeEditPlayer(event){
+
+  if(
+    event &&
+    event.target &&
+    event.target.id!=="editPlayerModal"
+  )
+    return;
+
+
+  document
+    .getElementById(
+      "editPlayerModal"
+    )
+    .classList.remove("show");
+
+  document.body.classList.remove(
+    "modal-open"
+  );
+
+}
+
+
+/* ========================================================
+   SAVE PLAYER — RPC
+======================================================== */
+
+async function savePlayer(){
+
+  if(!adminCode){
+
+    showToast(
+      "Admin session expired."
+    );
+
+    return;
+
+  }
+
+
+  const id =
+    document.getElementById(
+      "editPlayerId"
+    ).value;
+
+
+  const number =
+    Number(
+      document.getElementById(
+        "editNumber"
+      ).value
+    );
+
+
+  const name =
+    document.getElementById(
+      "editName"
+    ).value.trim();
+
+
+  const positions =
+    getSelectedPositions(
+      "edit"
+    );
+
+
+  if(
+    !id ||
+    !Number.isInteger(number) ||
+    !name ||
+    !positions.length
+  ){
+
+    showToast(
+      "Complete all player fields."
+    );
+
+    return;
+
+  }
+
+
+  try{
+
+    const {
+      data,
+      error
+    } =
+    await db.rpc(
+      "admin_update_player",
+      {
+        p_code:adminCode,
+        p_id:String(id),
+        p_number:number,
+        p_name:name,
+        p_position:positions.join(", ")
+      }
+    );
+
+
+    if(error)
+      throw error;
+
+
+    if(data!==true)
+      throw new Error(
+        "Database did not confirm the update."
+      );
+
+
+    closeEditPlayer();
+
+
+    await loadRoster();
+
+
+    showToast(
+      "✅ Player updated successfully."
+    );
+
+  }
+  catch(error){
+
+    console.error(
+      "UPDATE PLAYER ERROR:",
+      error
+    );
+
+    showToast(
+      error.message ||
+      "Could not update player."
+    );
+
+  }
+
+}
+
+
+/* ========================================================
+   DELETE PLAYER
+======================================================== */
+
+function deletePlayerConfirm(id){
+
+  const player =
+    roster.find(
+      x=>String(x.id)===String(id)
+    );
+
+
+  if(!player)
+    return;
+
+
+  openConfirm(
+    `Remove ${player.name} from the roster? This cannot be undone.`,
+    ()=>deletePlayer(id)
+  );
+
+}
+
+
+async function deletePlayer(id){
+
+  if(!adminCode){
+
+    showToast(
+      "Admin session expired."
+    );
+
+    return;
+
+  }
+
+
+  try{
+
+    const {
+      data,
+      error
+    } =
+    await db.rpc(
+      "admin_delete_player",
+      {
+        p_code:adminCode,
+        p_id:String(id)
+      }
+    );
+
+
+    if(error)
+      throw error;
+
+
+    if(data!==true)
+      throw new Error(
+        "Database did not confirm the deletion."
+      );
+
+
+    await loadRoster();
+
+
+    showToast(
+      "✅ Player removed successfully."
+    );
+
+  }
+  catch(error){
+
+    console.error(
+      "DELETE PLAYER ERROR:",
+      error
+    );
+
+    showToast(
+      error.message ||
+      "Could not delete player."
+    );
+
+  }
+
+}
+
+
+/* ========================================================
+   CONFIRM
+======================================================== */
 
 function openConfirm(
   message,
@@ -6410,18 +6299,17 @@ function openConfirm(
 
   document.getElementById(
     "confirmText"
-  ).textContent=
-    message;
+  ).textContent=message;
 
 
-  confirmAction=
-    action;
+  confirmAction=action;
 
 
   document
-    .getElementById("confirmModal")
+    .getElementById(
+      "confirmModal"
+    )
     .classList.add("show");
-
 
   document.body.classList.add(
     "modal-open"
@@ -6441,9 +6329,10 @@ function closeConfirm(event){
 
 
   document
-    .getElementById("confirmModal")
+    .getElementById(
+      "confirmModal"
+    )
     .classList.remove("show");
-
 
   document.body.classList.remove(
     "modal-open"
@@ -6456,228 +6345,101 @@ function closeConfirm(event){
 
 
 document
-  .getElementById("confirmYes")
+  .getElementById(
+    "confirmButton"
+  )
   .addEventListener(
     "click",
     async()=>{
-      const action=
+
+      const action =
         confirmAction;
 
       closeConfirm();
 
       if(action)
         await action();
+
     }
   );
 
 
-function confirmDeleteGame(id){
+/* ========================================================
+   ADMIN SECTIONS
+======================================================== */
 
-  const game=
-    findGame(id);
+function toggleAdmin(id){
 
-
-  if(!game)
-    return;
-
-
-  openConfirm(
-    `Delete the game against ${game.opponent}? This cannot be undone.`,
-    ()=>deleteGame(id)
-  );
+  document
+    .getElementById(id)
+    ?.classList.toggle("open");
 
 }
 
 
-async function deleteGame(id){
+/* ========================================================
+   STATS
+======================================================== */
 
-  const {
-    error
-  }=
-  await db
-    .from("games")
-    .delete()
-    .eq("id",id);
-
-
-  if(error){
-
-    showMessage(
-      "Unable to delete game."
-    );
-
-    return;
-
-  }
-
-
-  await loadGames();
-
-
-  showMessage(
-    "Game deleted."
-  );
-
-}
-
-
-function confirmDeletePlayer(id){
-
-  const player=
-    roster.find(
-      p=>
-        String(p.id)===
-        String(id)
-    );
-
-
-  if(!player)
-    return;
-
-
-  openConfirm(
-    `Remove ${player.name} from the roster? This cannot be undone.`,
-    ()=>deletePlayer(id)
-  );
-
-}
-
-
-async function deletePlayer(id){
-
-  const {
-    error
-  }=
-  await db
-    .from("roster")
-    .delete()
-    .eq("id",id);
-
-
-  if(error){
-
-    showMessage(
-      "Unable to remove player."
-    );
-
-    return;
-
-  }
-
-
-  await loadRoster();
-
-
-  showMessage(
-    "Player removed."
-  );
-
-}
-
-
-/* =========================================================
-   ADMIN STATS
-========================================================= */
-
-function updateAdminStats(){
+function updateStats(){
 
   let wins=0;
   let losses=0;
 
 
-  games.forEach(game=>{
+  games.forEach(
+    game=>{
 
-    if(!hasScore(game))
-      return;
-
-
-    const our=
-      Number(game.our_score);
-
-    const opponent=
-      Number(game.opponent_score);
+      if(!hasScore(game))
+        return;
 
 
-    if(our>opponent)
-      wins++;
+      const a =
+        Number(game.our_score);
 
-    else if(our<opponent)
-      losses++;
+      const b =
+        Number(game.opponent_score);
 
-  });
+
+      if(a>b)
+        wins++;
+
+      if(a<b)
+        losses++;
+
+    }
+  );
 
 
   document.getElementById(
-    "adminGamesCount"
-  ).textContent=
+    "statGames"
+  ).textContent =
     games.length;
 
 
   document.getElementById(
-    "adminPlayersCount"
-  ).textContent=
+    "statPlayers"
+  ).textContent =
     roster.length;
 
 
   document.getElementById(
-    "adminWinsCount"
-  ).textContent=
+    "statWins"
+  ).textContent =
     wins;
 
 
   document.getElementById(
-    "adminLossesCount"
-  ).textContent=
+    "statLosses"
+  ).textContent =
     losses;
 
 }
 
 
-/* =========================================================
-   TOAST
-========================================================= */
-
-function showMessage(message){
-
-  document
-    .querySelector(
-      ".admin-message-popup"
-    )
-    ?.remove();
-
-
-  const box=
-    document.createElement(
-      "div"
-    );
-
-
-  box.className=
-    "admin-message-popup";
-
-
-  box.textContent=
-    message;
-
-
-  document.body.appendChild(
-    box
-  );
-
-
-  setTimeout(
-    ()=>{
-      box.remove();
-    },
-    3500
-  );
-
-}
-
-
-/* =========================================================
+/* ========================================================
    HELPERS
-========================================================= */
+======================================================== */
 
 function formatDate(value){
 
@@ -6685,21 +6447,17 @@ function formatDate(value){
     return "";
 
 
-  const date=
+  const d =
     new Date(
       `${value}T12:00:00`
     );
 
 
-  if(
-    Number.isNaN(
-      date.getTime()
-    )
-  )
+  if(Number.isNaN(d.getTime()))
     return "";
 
 
-  return date.toLocaleDateString(
+  return d.toLocaleDateString(
     "en-US",
     {
       weekday:"long",
@@ -6712,10 +6470,10 @@ function formatDate(value){
 }
 
 
-function escapeHTML(value){
+function esc(value){
 
   if(
-    value===null||
+    value===null ||
     value===undefined
   )
     return "";
@@ -6731,25 +6489,55 @@ function escapeHTML(value){
 }
 
 
-function escapeAttribute(value){
+function escAttr(value){
 
-  if(
-    value===null||
-    value===undefined
-  )
-    return "";
-
-
-  return String(value)
+  return esc(value)
     .replace(/\\/g,"\\\\")
     .replace(/'/g,"\\'");
 
 }
 
 
-/* =========================================================
+/* ========================================================
+   TOAST
+======================================================== */
+
+function showToast(message){
+
+  document
+    .querySelector(".toast")
+    ?.remove();
+
+
+  const toast =
+    document.createElement(
+      "div"
+    );
+
+
+  toast.className="toast";
+
+  toast.textContent=message;
+
+
+  document.body.appendChild(
+    toast
+  );
+
+
+  setTimeout(
+    ()=>{
+      toast.remove();
+    },
+    3500
+  );
+
+}
+
+
+/* ========================================================
    ESCAPE KEY
-========================================================= */
+======================================================== */
 
 document.addEventListener(
   "keydown",
@@ -6763,9 +6551,9 @@ document.addEventListener(
       .querySelectorAll(
         ".overlay.show"
       )
-      .forEach(modal=>{
-        modal.classList.remove("show");
-      });
+      .forEach(
+        x=>x.classList.remove("show")
+      );
 
 
     document.body.classList.remove(
@@ -6774,21 +6562,6 @@ document.addEventListener(
 
   }
 );
-
-
-/* =========================================================
-   INITIALIZE
-========================================================= */
-
-buildPositionOptions();
-
-buildEditPositionOptions();
-
-renderHistory();
-
-loadGames();
-
-loadRoster();
 
 </script>
 
