@@ -11,90 +11,94 @@
 
 <title>NDGP Football</title>
 
-<meta name="theme-color" content="#001f3f">
-
-<meta
-  name="apple-mobile-web-app-capable"
-  content="yes"
->
-
-<meta
-  name="apple-mobile-web-app-status-bar-style"
-  content="black-translucent"
->
-
-<meta
-  name="apple-mobile-web-app-title"
-  content="NDGP Football"
->
-
-<link
-  rel="apple-touch-icon"
-  href="LOGO_W__FB.png"
->
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<meta name="theme-color" content="#00264a">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link
-  rel="preconnect"
-  href="https://fonts.gstatic.com"
-  crossorigin
->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
   href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap"
   rel="stylesheet"
 >
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <style>
 
 /* =========================================================
-   ROOT
+   DESIGN SYSTEM
 ========================================================= */
 
 :root{
-  --navy:#001f3f;
-  --dark:#00152b;
-  --blue:#063b69;
+  --navy:#00264a;
+  --navy-dark:#001a33;
+  --navy-light:#073e6b;
+
   --gold:#f4c542;
-  --gold2:#ffd95a;
-  --white:#fff;
-  --text:#14283d;
-  --muted:#637689;
-  --border:#d5dfe8;
-  --light:#f5f8fa;
+  --gold-dark:#dcae19;
+
+  --white:#ffffff;
+  --background:#f3f6f8;
+  --surface:#ffffff;
+  --surface-soft:#f7f9fb;
+
+  --text:#102a43;
+  --muted:#66798b;
+  --muted-light:#8796a4;
+
+  --border:#d7e0e7;
+  --border-dark:#c5d0d9;
+
   --green:#198754;
-  --red:#dc2626;
-  --shadow:0 4px 16px rgba(0,31,63,.07);
-  --shadow-heavy:0 20px 60px rgba(0,20,40,.28);
+  --green-bg:#e8f6ed;
+
+  --red:#dc3030;
+  --red-bg:#fdeaea;
+
+  --shadow-sm:0 2px 8px rgba(0,30,60,.06);
+  --shadow-md:0 5px 18px rgba(0,30,60,.08);
+  --shadow-lg:0 16px 45px rgba(0,20,40,.18);
+
+  --radius:10px;
+  --radius-sm:7px;
 }
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 *{
   box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
-  background:#edf2f7;
+  background:var(--background);
+  -webkit-text-size-adjust:100%;
 }
 
 body{
   margin:0;
   min-height:100vh;
-  background:linear-gradient(180deg,#edf2f7 0%,#f8fafc 100%);
-  color:var(--text);
-  font-family:"Oswald",Arial,sans-serif;
   overflow-x:hidden;
-  -webkit-tap-highlight-color:transparent;
+
+  background:
+    linear-gradient(
+      180deg,
+      #eef3f6 0%,
+      #f8fafb 100%
+    );
+
+  color:var(--text);
+
+  font-family:"Oswald",Arial,sans-serif;
+
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
 
-body.admin-login-open{
-  overflow:hidden!important;
-  position:fixed;
-  width:100%;
-  height:100%;
+body.modal-open{
+  overflow:hidden;
 }
 
 button,
@@ -106,6 +110,13 @@ textarea{
 
 button{
   cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+
+input,
+select,
+textarea{
+  font-size:16px;
 }
 
 img{
@@ -121,79 +132,73 @@ img{
    SPLASH
 ========================================================= */
 
-#splashScreen{
+#splash{
   position:fixed;
   inset:0;
   z-index:99999;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  text-align:center;
+
+  background:
+    linear-gradient(
+      145deg,
+      #00172d,
+      #002f59
+    );
+
   color:white;
-  background:radial-gradient(circle at center,#0b4c82 0%,#063b69 32%,#001f3f 68%,#00152b 100%);
-  transition:opacity .6s ease,visibility .6s ease;
+
+  transition:
+    opacity .45s ease,
+    visibility .45s ease;
 }
 
-#splashScreen.hide{
+#splash.hide{
   opacity:0;
   visibility:hidden;
   pointer-events:none;
 }
 
 .splash-content{
-  width:100%;
-  padding:30px;
-  animation:splashIn .8s cubic-bezier(.2,.8,.2,1) both;
-}
-
-@keyframes splashIn{
-  from{
-    opacity:0;
-    transform:translateY(20px) scale(.94);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0) scale(1);
-  }
+  text-align:center;
+  padding:25px;
 }
 
 .splash-logo{
-  width:145px;
-  height:145px;
+  width:120px;
+  height:120px;
   object-fit:contain;
-  margin:0 auto 15px;
-  filter:drop-shadow(0 8px 20px rgba(0,0,0,.3));
-  animation:logoFloat 2.8s ease-in-out infinite;
-}
 
-@keyframes logoFloat{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-7px)}
+  margin-bottom:12px;
+
+  filter:
+    drop-shadow(
+      0 8px 18px
+      rgba(0,0,0,.28)
+    );
 }
 
 .splash-title{
-  font-family:"Teko";
-  font-size:60px;
-  line-height:.8;
-  font-weight:700;
-  letter-spacing:3px;
   margin:0;
+
+  font-family:"Teko";
+  font-size:54px;
+  font-weight:700;
+  line-height:.85;
+
+  letter-spacing:2px;
 }
 
 .splash-subtitle{
-  margin-top:12px;
-  color:#dce8f1;
-  font-size:11px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
+  margin-top:9px;
 
-.splash-line{
-  width:70px;
-  height:4px;
-  margin:18px auto 0;
-  border-radius:10px;
-  background:var(--gold);
+  color:#d9e5ee;
+
+  font-size:9px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
 }
 
 
@@ -201,158 +206,236 @@ img{
    HEADER
 ========================================================= */
 
-header{
+.site-header{
   position:relative;
-  background:linear-gradient(135deg,var(--dark),var(--blue));
+
+  padding:
+    calc(18px + env(safe-area-inset-top))
+    55px
+    18px;
+
   color:white;
+
   text-align:center;
-  padding:calc(18px + env(safe-area-inset-top)) 55px 20px;
-  border-bottom:4px solid var(--gold);
-  overflow:hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--navy-dark),
+      var(--navy-light)
+    );
+
+  border-bottom:3px solid var(--gold);
 }
 
-.logo{
-  position:relative;
-  width:82px;
-  height:82px;
+.header-logo{
+  width:70px;
+  height:70px;
+
   object-fit:contain;
+
   display:block;
-  margin:0 auto 5px;
-  filter:drop-shadow(0 4px 8px rgba(0,0,0,.2));
+
+  margin:0 auto 3px;
+
+  filter:
+    drop-shadow(
+      0 4px 8px
+      rgba(0,0,0,.22)
+    );
 }
 
-header h1{
-  position:relative;
+.site-header h1{
   margin:0;
+
   font-family:"Teko";
-  font-size:40px;
+  font-size:39px;
+  font-weight:700;
   line-height:.9;
+
   letter-spacing:2px;
 }
 
-header p{
-  position:relative;
+.site-header p{
   margin:6px 0 0;
-  color:#dbe7f2;
-  font-size:10px;
-  letter-spacing:1.3px;
+
+  color:#dce7ef;
+
+  font-size:9px;
+  letter-spacing:1.2px;
   text-transform:uppercase;
 }
 
 
 /* =========================================================
-   GEAR
+   ADMIN GEAR
 ========================================================= */
 
 .admin-gear{
   position:absolute;
-  top:calc(15px + env(safe-area-inset-top));
-  right:16px;
-  width:auto;
-  height:auto;
-  padding:0;
+
+  top:
+    calc(
+      15px +
+      env(safe-area-inset-top)
+    );
+
+  right:15px;
+
   border:0;
+  padding:0;
+
   background:transparent;
+
   color:white;
-  font-size:24px;
+
+  font-size:23px;
   line-height:1;
-  z-index:10;
-  transition:transform .18s ease;
+
+  z-index:20;
+
+  transition:
+    transform .18s ease;
 }
 
 .admin-gear:hover{
-  background:transparent;
-  transform:rotate(20deg) scale(1.1);
+  transform:rotate(18deg) scale(1.08);
 }
 
 
 /* =========================================================
-   ACHIEVEMENTS
+   ACHIEVEMENTS BAR
 ========================================================= */
 
-.achievements-bar{
+.achievements{
+  padding:9px;
+
   background:white;
+
   border-bottom:1px solid var(--border);
-  box-shadow:0 2px 10px rgba(0,31,63,.07);
-  padding:10px;
+
+  box-shadow:
+    0 2px 8px
+    rgba(0,30,60,.05);
 }
 
-.achievements-inner{
+.achievement-grid{
   width:100%;
-  max-width:650px;
+  max-width:760px;
+
   margin:auto;
+
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+  gap:7px;
 }
 
-.achievement-item{
-  padding:10px;
-  background:linear-gradient(145deg,#f9fbfc,#eef3f7);
-  border:1px solid #d4dee6;
-  border-top:3px solid var(--gold);
-  border-radius:8px;
-  text-align:center;
+.achievement{
+  padding:9px 10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f3f6f8
+    );
+
+  border:1px solid var(--border);
+
+  border-left:3px solid var(--gold);
+
+  border-radius:var(--radius-sm);
 }
 
 .achievement-title{
   color:var(--navy);
+
   font-family:"Teko";
+
   font-size:18px;
-  line-height:1;
   font-weight:700;
-  text-transform:uppercase;
+  line-height:1;
 }
 
 .achievement-years{
-  margin-top:5px;
-  color:#52677a;
-  font-size:10px;
+  margin-top:4px;
+
+  color:var(--muted);
+
+  font-size:9px;
   font-weight:600;
 }
 
 
 /* =========================================================
-   NAV
+   NAVIGATION
 ========================================================= */
 
-nav{
+.main-nav{
   position:sticky;
+
   top:0;
-  z-index:100;
+
+  z-index:200;
+
   display:flex;
-  background:rgba(255,255,255,.97);
+
+  background:
+    rgba(255,255,255,.97);
+
   border-bottom:1px solid var(--border);
-  box-shadow:0 2px 10px rgba(0,31,63,.07);
-  backdrop-filter:blur(12px);
+
+  box-shadow:
+    0 2px 10px
+    rgba(0,30,60,.06);
+
+  backdrop-filter:blur(10px);
 }
 
-nav button{
+.main-nav button{
   position:relative;
+
   flex:1;
+
+  min-width:0;
+
+  padding:11px 3px 10px;
+
   border:0;
+
   background:transparent;
-  color:#617284;
-  padding:12px 3px;
+
+  color:var(--muted);
+
   font-size:10px;
   font-weight:700;
+
   text-transform:uppercase;
 }
 
-nav button.active{
+.main-nav button.active{
   color:var(--navy);
-  background:#f7f9fb;
+
+  background:#fafcfd;
 }
 
-nav button.active:after{
+.main-nav button.active::after{
   content:"";
+
   position:absolute;
-  left:20%;
-  right:20%;
+
+  left:22%;
+  right:22%;
   bottom:0;
+
   height:3px;
+
   border-radius:3px 3px 0 0;
-  background:linear-gradient(90deg,var(--gold),var(--gold2));
+
+  background:var(--gold);
 }
 
 
@@ -363,318 +446,491 @@ nav button.active:after{
 main{
   width:100%;
   max-width:760px;
+
   margin:auto;
-  padding:10px 9px 35px;
+
+  padding:
+    10px
+    9px
+    30px;
 }
 
 .page{
   display:none;
-  animation:pageIn .3s ease both;
 }
 
 .page.active{
   display:block;
+
+  animation:
+    pageIn .25s ease both;
 }
 
 @keyframes pageIn{
   from{
     opacity:0;
-    transform:translateY(10px);
+    transform:translateY(5px);
   }
+
   to{
     opacity:1;
     transform:translateY(0);
   }
 }
 
+
+/* =========================================================
+   UNIVERSAL CARD
+========================================================= */
+
 .card{
-  background:white;
+  background:var(--surface);
+
   border:1px solid var(--border);
-  border-radius:13px;
-  margin-bottom:9px;
+
+  border-radius:var(--radius);
+
+  box-shadow:var(--shadow-sm);
+
   padding:12px;
-  box-shadow:var(--shadow);
+
+  margin-bottom:9px;
 }
 
-.page-heading{
+.page-title{
   display:flex;
   align-items:center;
-  gap:7px;
+
   margin:0 0 10px;
-  font-family:"Teko";
-  font-size:30px;
-  line-height:1;
+
   color:var(--navy);
+
+  font-family:"Teko";
+
+  font-size:29px;
+  font-weight:700;
+  line-height:1;
+
   text-transform:uppercase;
 }
 
-.page-heading:after{
+.page-title::after{
   content:"";
+
   height:2px;
+
   flex:1;
-  background:linear-gradient(90deg,var(--gold),transparent);
+
+  margin-left:9px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--gold),
+      transparent
+    );
 }
 
 
 /* =========================================================
-   HOME
+   HOME HERO
 ========================================================= */
 
-.hero-card{
-  padding:0;
+.next-game{
   overflow:hidden;
+
+  padding:0;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:var(--radius);
+
+  box-shadow:var(--shadow-md);
 }
 
-.hero-top{
+.next-header{
   display:flex;
+
   align-items:center;
   justify-content:space-between;
-  padding:11px 13px;
+
+  padding:10px 12px;
+
   color:white;
-  background:linear-gradient(90deg,var(--dark),var(--blue));
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--navy-dark),
+      var(--navy-light)
+    );
 }
 
-.hero-top span{
+.next-header strong{
   font-family:"Teko";
-  font-size:22px;
+
+  font-size:21px;
+
   line-height:1;
 }
 
-.hero-top small{
+.next-header span{
   color:var(--gold);
-  font-size:9px;
+
+  font-size:8px;
+
   letter-spacing:1px;
 }
 
-.hero-body{
-  position:relative;
+.next-body{
+  padding:18px 12px 17px;
+
   text-align:center;
-  padding:18px 10px 19px;
 }
 
+
+/*
+  IMPORTANT:
+  There is intentionally NO decorative circle,
+  ::before, ::after, radial-gradient or circular
+  background behind the matchup.
+*/
+
 .next-label{
-  position:relative;
   color:var(--muted);
+
   font-size:9px;
+
   letter-spacing:1.3px;
+
   text-transform:uppercase;
 }
 
-.next-matchup{
-  position:relative;
+.matchup{
   display:flex;
+
   align-items:center;
   justify-content:center;
+
   gap:8px;
-  margin:7px 0 9px;
+
+  margin:7px 0 11px;
 }
 
-.next-team{
-  font-family:"Teko";
-  font-size:33px;
-  font-weight:700;
-  line-height:1;
+.matchup-team{
   color:var(--navy);
+
+  font-family:"Teko";
+
+  font-size:39px;
+  font-weight:700;
+
+  line-height:.85;
 }
 
-.next-vs{
-  color:#d3a817;
+.matchup-vs{
+  color:var(--gold-dark);
+
   font-family:"Teko";
-  font-size:18px;
+
+  font-size:22px;
   font-weight:700;
 }
 
-.game-info{
-  position:relative;
-  color:#637487;
+.next-info{
+  color:var(--muted);
+
   font-size:11px;
-  line-height:1.7;
+
+  line-height:1.8;
 }
 
 .home-away{
   display:inline-flex;
+
   align-items:center;
-  gap:4px;
-  margin-top:3px;
-  padding:4px 8px;
-  background:#f1f5f8;
-  border-radius:5px;
+  justify-content:center;
+
+  margin-top:4px;
+
+  padding:6px 10px;
+
   color:var(--navy);
-  font-size:10px;
+
+  background:#f1f5f8;
+
+  border:1px solid var(--border);
+
+  border-radius:7px;
+
+  font-size:11px;
   font-weight:700;
 }
 
 .countdown{
-  position:relative;
   display:inline-flex;
+
   align-items:center;
   justify-content:center;
-  gap:7px;
+
   margin-top:11px;
-  padding:8px 13px;
+
+  padding:8px 12px;
+
+  color:#465b6d;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f0f3f5,
+      #e2e7eb
+    );
+
+  border:1px solid #bdc9d2;
+
   border-radius:8px;
-  background:linear-gradient(135deg,#f1f4f6,#d9e0e5,#f5f7f9);
-  border:1px solid #b7c3cc;
-  color:#344451;
+
   font-size:10px;
   font-weight:700;
-  text-transform:uppercase;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,.8);
 }
+
+
+/* =========================================================
+   RECORD
+========================================================= */
 
 .record-card{
   display:flex;
+
   align-items:center;
   justify-content:space-between;
+
+  min-height:76px;
 }
 
-.record-label,
-.last-label{
+.record-label{
   color:var(--muted);
+
   font-size:9px;
-  letter-spacing:1.1px;
+
+  letter-spacing:1px;
+
   text-transform:uppercase;
 }
 
-.record{
+.record-number{
+  margin-top:1px;
+
   color:var(--navy);
+
   font-family:"Teko";
-  font-size:44px;
+
+  font-size:42px;
   font-weight:700;
-  line-height:.9;
+
+  line-height:.85;
 }
 
-.record-sub{
+.record-side{
+  text-align:right;
+
   color:var(--muted);
+
   font-size:9px;
 }
 
 
 /* =========================================================
-   GAMES
+   GAME CARDS
 ========================================================= */
 
-.game{
+.game-card{
   position:relative;
+
   overflow:hidden;
-  background:white;
-  border:1px solid var(--border);
-  border-left:4px solid var(--navy);
-  border-radius:10px;
+
+  padding:10px 11px 6px;
+
   margin-bottom:7px;
-  padding:9px 11px 5px;
-  box-shadow:0 2px 8px rgba(0,31,63,.05);
-  transition:transform .18s ease,box-shadow .18s ease;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-left:4px solid var(--navy);
+
+  border-radius:var(--radius);
+
+  box-shadow:var(--shadow-sm);
+
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease;
 }
 
-.game:hover{
-  transform:translateY(-2px);
-  box-shadow:0 7px 17px rgba(0,31,63,.1);
+.game-card:hover{
+  transform:translateY(-1px);
+
+  box-shadow:var(--shadow-md);
 }
 
-.game.live-game{
+.game-card.live{
   border-left-color:var(--red);
 }
 
 .game-top{
   display:flex;
-  align-items:center;
+
+  align-items:flex-start;
   justify-content:space-between;
-  gap:7px;
+
+  gap:8px;
 }
 
 .game-date{
   color:var(--muted);
+
   font-size:9px;
 }
 
 .game-opponent{
+  margin-top:2px;
+
   color:var(--navy);
+
   font-family:"Teko";
+
   font-size:25px;
-  line-height:.9;
   font-weight:700;
+
+  line-height:.9;
+
   text-transform:uppercase;
 }
 
+.status{
+  flex-shrink:0;
+
+  padding:6px 8px;
+
+  border-radius:6px;
+
+  font-size:8px;
+  font-weight:700;
+
+  line-height:1;
+
+  white-space:nowrap;
+
+  text-transform:uppercase;
+}
+
+.status.win{
+  color:var(--green);
+  background:var(--green-bg);
+}
+
+.status.loss{
+  color:var(--red);
+  background:var(--red-bg);
+}
+
+.status.live{
+  color:var(--red);
+  background:#fee7e7;
+}
+
+.status.tie{
+  color:#7554a5;
+  background:#eee9f8;
+}
+
 .game-matchup{
-  display:flex;
-  gap:4px;
-  margin-top:4px;
-  color:#5f7182;
+  margin-top:5px;
+
+  color:var(--muted);
+
   font-size:10px;
 }
 
-.game-team{
+.game-matchup strong{
   color:var(--navy);
-  font-weight:700;
 }
 
 .game-vs{
-  color:#d3a817;
-  font-weight:700;
+  color:var(--gold-dark);
+
+  margin:0 3px;
 }
 
-.game-details{
+.game-meta{
   display:flex;
+
   flex-wrap:wrap;
+
   gap:4px 10px;
+
   margin-top:5px;
-  color:#637487;
+
+  color:#687a8b;
+
   font-size:9px;
 }
 
 .game-score{
+  margin-top:3px;
+
   color:var(--navy);
+
   font-family:"Teko";
+
   font-size:20px;
   font-weight:700;
-  margin-top:4px;
+
+  line-height:1;
 }
 
-.game-details-link{
+.game-detail-hint{
   margin-top:1px;
+
+  color:#91a0ac;
+
   text-align:right;
-  color:#8998a6;
-  font-size:8px;
+
+  font-size:7px;
+
   text-transform:uppercase;
 }
 
 
 /* =========================================================
-   BADGES
+   BADGE
 ========================================================= */
 
-.badge{
+.badge-live{
   display:inline-flex;
+
   align-items:center;
   justify-content:center;
-  padding:7px 10px;
+
+  padding:6px 9px;
+
+  color:var(--red);
+
+  background:#fee8e8;
+
+  border:1px solid #f6caca;
+
   border-radius:6px;
-  font-size:9px;
-  line-height:1;
+
+  font-size:8px;
   font-weight:700;
-  text-transform:uppercase;
-  white-space:nowrap;
-}
-
-.badge.win{
-  background:#e3f5e9;
-  color:var(--green);
-}
-
-.badge.loss{
-  background:#fde8e8;
-  color:var(--red);
-}
-
-.badge.tie{
-  background:#eee9fb;
-  color:#7252a6;
-}
-
-.badge.live{
-  background:#fee2e2;
-  color:var(--red);
 }
 
 
@@ -684,18 +940,30 @@ main{
 
 .roster-tools{
   display:flex;
-  gap:6px;
-  margin-bottom:9px;
+
+  gap:7px;
+
+  margin-bottom:8px;
 }
 
 .roster-search,
 .roster-filter{
+  min-width:0;
+
+  height:39px;
+
   margin:0;
-  padding:10px;
+
+  padding:8px 10px;
+
+  color:var(--text);
+
+  background:white;
+
   border:1px solid var(--border);
-  border-radius:8px;
-  background:#f8fafc;
-  font-size:11px;
+
+  border-radius:7px;
+
   outline:none;
 }
 
@@ -704,42 +972,72 @@ main{
 }
 
 .roster-filter{
-  width:140px;
+  width:145px;
+}
+
+.roster-search:focus,
+.roster-filter:focus{
+  border-color:#9eb0bf;
+
+  box-shadow:
+    0 0 0 2px
+    rgba(0,38,74,.06);
 }
 
 .roster-count{
+  margin:0 0 7px;
+
   color:var(--muted);
+
   font-size:9px;
-  margin:0 0 8px 2px;
 }
 
 .roster-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
   gap:6px;
 }
 
 .roster-card{
   display:flex;
+
   align-items:center;
-  gap:8px;
+
   min-width:0;
+
+  gap:8px;
+
   padding:9px;
+
   background:white;
+
   border:1px solid var(--border);
+
   border-left:4px solid var(--navy);
+
   border-radius:8px;
+
+  box-shadow:var(--shadow-sm);
 }
 
 .roster-number{
-  width:40px;
+  width:39px;
+
   flex-shrink:0;
-  text-align:center;
+
   color:var(--navy);
+
   font-family:"Teko";
+
   font-size:28px;
   font-weight:700;
+
   line-height:1;
+
+  text-align:center;
 }
 
 .roster-info{
@@ -748,31 +1046,28 @@ main{
 
 .roster-name{
   color:var(--navy);
+
   font-family:"Teko";
+
   font-size:21px;
-  line-height:.95;
   font-weight:700;
+
+  line-height:.9;
+
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
 }
 
 .roster-position{
-  margin-top:3px;
-  color:#627589;
-  font-size:9px;
-  font-weight:600;
-  text-transform:uppercase;
-}
+  margin-top:4px;
 
-.roster-empty{
-  padding:20px;
-  text-align:center;
   color:var(--muted);
-  background:#f8fafc;
-  border:1px dashed #c8d3dc;
-  border-radius:8px;
-  font-size:10px;
+
+  font-size:8px;
+  font-weight:600;
+
+  text-transform:uppercase;
 }
 
 
@@ -781,51 +1076,78 @@ main{
 ========================================================= */
 
 .history-intro{
-  text-align:center;
+  margin:-2px 0 9px;
+
   color:var(--muted);
+
   font-size:9px;
-  margin:-3px 0 10px;
+
+  text-align:center;
 }
 
-.season-history{
+.season-card{
   overflow:hidden;
-  background:white;
-  border:1px solid var(--border);
-  border-left:4px solid var(--navy);
-  border-radius:9px;
+
   margin-bottom:7px;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-left:4px solid var(--navy);
+
+  border-radius:9px;
+
+  box-shadow:var(--shadow-sm);
 }
 
 .season-button{
   width:100%;
-  min-height:70px;
+
+  min-height:67px;
+
   display:flex;
+
   align-items:center;
   justify-content:space-between;
-  padding:12px 14px;
+
+  padding:11px 13px;
+
   border:0;
+
   background:white;
+
+  color:var(--navy);
+
   text-align:left;
 }
 
-.season-name{
-  color:var(--navy);
-  font-family:"Teko";
-  font-size:31px;
-  line-height:.9;
-  font-weight:700;
+.season-button:hover{
+  background:#fafcfd;
 }
 
-.season-record-small{
-  color:#536779;
+.season-name{
+  font-family:"Teko";
+
+  font-size:29px;
+  font-weight:700;
+
+  line-height:.9;
+}
+
+.season-record{
+  margin-top:4px;
+
+  color:#52687a;
+
   font-size:10px;
   font-weight:700;
-  margin-top:5px;
 }
 
 .season-arrow{
   color:var(--navy);
-  font-size:28px;
+
+  font-size:27px;
 }
 
 
@@ -833,196 +1155,333 @@ main{
    MODALS
 ========================================================= */
 
-.history-modal,
-.modal-overlay,
-.photo-viewer{
+.overlay{
   position:fixed;
+
   inset:0;
-  z-index:1000;
+
+  z-index:5000;
+
   display:none;
+
   align-items:center;
   justify-content:center;
+
   padding:12px;
-  background:rgba(0,15,30,.78);
-  backdrop-filter:blur(8px);
+
+  background:
+    rgba(0,18,35,.72);
+
+  backdrop-filter:blur(7px);
 }
 
-.history-modal.show,
-.modal-overlay.show,
-.photo-viewer.show{
+.overlay.show{
   display:flex;
 }
 
-.history-window,
 .modal{
   width:100%;
-  max-width:620px;
-  max-height:92dvh;
+  max-width:610px;
+
+  max-height:
+    calc(
+      100dvh -
+      24px
+    );
+
   overflow:hidden;
+
   background:#f5f8fa;
-  border-radius:16px;
-  box-shadow:var(--shadow-heavy);
+
+  border:1px solid rgba(255,255,255,.4);
+
+  border-radius:14px;
+
+  box-shadow:var(--shadow-lg);
 }
 
-.history-modal-header,
 .modal-header{
   position:relative;
-  padding:18px;
+
+  padding:17px 18px 16px;
+
   color:white;
-  background:linear-gradient(135deg,var(--dark),var(--blue));
-  border-bottom:4px solid var(--gold);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--navy-dark),
+      var(--navy-light)
+    );
+
+  border-bottom:3px solid var(--gold);
 }
 
-.history-modal-kicker,
 .modal-kicker{
   color:var(--gold);
-  font-size:9px;
-  letter-spacing:1.7px;
+
+  font-size:8px;
+
+  letter-spacing:1.5px;
+
   text-transform:uppercase;
 }
 
-.history-modal-title{
+.modal-title{
+  margin-top:3px;
+
   font-family:"Teko";
-  font-size:39px;
+
+  font-size:37px;
+
   line-height:.9;
-  font-weight:700;
+
+  text-transform:uppercase;
 }
 
-.history-modal-record{
-  color:#d9e6ef;
-  font-family:"Teko";
-  font-size:18px;
-  margin-top:5px;
-}
-
-.history-close,
 .modal-close{
   position:absolute;
-  top:10px;
-  right:10px;
+
+  top:9px;
+  right:9px;
+
   width:36px;
   height:36px;
-  z-index:20;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
   border:0;
+
   border-radius:50%;
-  background:rgba(255,255,255,.16);
+
+  background:rgba(255,255,255,.14);
+
   color:white;
+
+  font-family:Arial,sans-serif;
+
   font-size:23px;
-  line-height:36px;
-  text-align:center;
-  padding:0;
-}
 
-.history-modal-body{
-  max-height:calc(92dvh - 110px);
-  overflow-y:auto;
-  padding:12px;
-}
-
-.modal-matchup{
-  font-family:"Teko";
-  font-size:35px;
   line-height:1;
-  text-transform:uppercase;
 }
 
 .modal-body{
-  padding:16px;
+  overflow-y:auto;
+
+  max-height:
+    calc(
+      100dvh -
+      115px
+    );
+
+  padding:14px;
+}
+
+.modal-status{
+  text-align:center;
+
+  margin-bottom:8px;
 }
 
 .modal-score{
   color:var(--navy);
+
   font-family:"Teko";
-  font-size:52px;
-  line-height:.9;
+
+  font-size:48px;
   font-weight:700;
+
+  line-height:.9;
+
   text-align:center;
-  margin:4px 0 15px;
+
+  margin:3px 0 14px;
 }
 
-.modal-info-grid{
+.info-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:7px;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+  gap:6px;
 }
 
-.modal-info{
+.info-box{
   padding:9px;
-  background:#f5f8fa;
+
+  background:white;
+
   border:1px solid var(--border);
+
   border-radius:7px;
 }
 
-.modal-info-label{
+.info-label{
   color:var(--muted);
-  font-size:8px;
+
+  font-size:7px;
+
+  letter-spacing:.8px;
+
   text-transform:uppercase;
 }
 
-.modal-info-value{
-  color:var(--navy);
-  font-size:12px;
-  font-weight:600;
+.info-value{
   margin-top:3px;
+
+  color:var(--navy);
+
+  font-size:11px;
+  font-weight:700;
 }
 
 .modal-notes{
-  margin-top:10px;
+  margin-top:7px;
+
   padding:10px;
-  background:#f7f9fb;
+
+  background:white;
+
+  border:1px solid var(--border);
+
   border-radius:7px;
-  color:#5f7182;
-  font-size:11px;
+
+  color:var(--muted);
+
+  font-size:10px;
 }
 
 
 /* =========================================================
-   PHOTO VIEWER
+   HISTORY MODAL
 ========================================================= */
 
-.photo-viewer{
-  z-index:5000;
-  padding:0;
+.history-modal-title{
+  font-family:"Teko";
+
+  font-size:36px;
+
+  line-height:.9;
 }
 
-.photo-viewer-window{
-  width:100%;
-  height:100dvh;
+.history-modal-record{
+  margin-top:4px;
+
+  color:#dbe6ee;
+
+  font-size:10px;
+  font-weight:600;
+}
+
+.history-modal-body{
+  overflow-y:auto;
+
+  max-height:
+    calc(
+      100dvh -
+      105px
+    );
+
+  padding:12px;
+}
+
+.history-section-title{
+  margin:2px 0 7px;
+
+  color:var(--navy);
+
+  font-family:"Teko";
+
+  font-size:25px;
+
+  line-height:1;
+}
+
+.history-game{
   display:flex;
+
   align-items:center;
-  justify-content:center;
-  position:relative;
+  justify-content:space-between;
+
+  gap:8px;
+
+  padding:8px 10px;
+
+  margin-bottom:5px;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:7px;
 }
 
-.photo-viewer-image{
-  max-width:calc(100% - 30px);
-  max-height:calc(100% - 100px);
-  object-fit:contain;
-  border-radius:8px;
+.history-opponent{
+  color:var(--navy);
+
+  font-family:"Teko";
+
+  font-size:19px;
+
+  line-height:1;
 }
 
-.photo-viewer-close{
-  position:absolute;
-  top:calc(15px + env(safe-area-inset-top));
-  right:15px;
-  width:40px;
-  height:40px;
-  border:0;
-  border-radius:50%;
-  background:rgba(0,0,0,.45);
-  color:white;
-  font-size:26px;
-  z-index:5;
+.history-score{
+  flex-shrink:0;
+
+  font-family:"Teko";
+
+  font-size:20px;
+
+  font-weight:700;
 }
 
-.photo-viewer-caption{
-  position:absolute;
-  left:20px;
-  right:20px;
-  bottom:calc(20px + env(safe-area-inset-bottom));
-  text-align:center;
-  color:white;
-  font-size:11px;
+.history-score.win{
+  color:var(--green);
+}
+
+.history-score.loss{
+  color:var(--red);
+}
+
+.achievement-row{
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  padding:9px;
+
+  margin-bottom:5px;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-left:3px solid var(--gold);
+
+  border-radius:7px;
+}
+
+.achievement-row-icon{
+  color:var(--gold-dark);
+
+  font-size:17px;
+}
+
+.achievement-row-text{
+  color:var(--navy);
+
+  font-family:"Teko";
+
+  font-size:19px;
+
+  line-height:1;
 }
 
 
@@ -1032,28 +1491,100 @@ main{
 
 .photo-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:7px;
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
+  gap:6px;
 }
 
 .photo-item{
   overflow:hidden;
+
+  background:#e8edf1;
+
+  border:1px solid var(--border);
+
   border-radius:7px;
+
   cursor:pointer;
-  background:#e9eef2;
 }
 
 .photo-item img{
+  display:block;
+
   width:100%;
   aspect-ratio:1;
+
   object-fit:cover;
-  display:block;
 }
 
 .photo-caption{
+  padding:4px;
+
   color:var(--muted);
-  font-size:9px;
-  margin:3px;
+
+  font-size:8px;
+}
+
+
+/* =========================================================
+   PHOTO VIEWER
+========================================================= */
+
+.photo-viewer{
+  position:fixed;
+
+  inset:0;
+
+  z-index:7000;
+
+  display:none;
+
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(0,0,0,.86);
+}
+
+.photo-viewer.show{
+  display:flex;
+}
+
+.photo-viewer img{
+  max-width:94%;
+  max-height:86%;
+
+  object-fit:contain;
+
+  border-radius:7px;
+}
+
+.photo-close{
+  position:absolute;
+
+  top:
+    calc(
+      12px +
+      env(safe-area-inset-top)
+    );
+
+  right:12px;
+
+  width:40px;
+  height:40px;
+
+  border:0;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.15);
+
+  color:white;
+
+  font-family:Arial,sans-serif;
+
+  font-size:25px;
 }
 
 
@@ -1063,9 +1594,12 @@ main{
 
 .admin-page{
   display:none;
+
   width:100%;
   max-width:760px;
-  margin:0 auto;
+
+  margin:auto;
+
   padding:10px 9px 30px;
 }
 
@@ -1073,103 +1607,158 @@ main{
   display:block;
 }
 
-.admin-topbar{
+.admin-header{
   display:flex;
+
   align-items:center;
   justify-content:space-between;
+
   gap:10px;
-  padding:14px 15px;
-  margin-bottom:10px;
+
+  padding:14px;
+
+  margin-bottom:9px;
+
   color:white;
-  background:linear-gradient(135deg,var(--dark),var(--blue));
-  border-radius:11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--navy-dark),
+      var(--navy-light)
+    );
+
   border-bottom:3px solid var(--gold);
-  box-shadow:var(--shadow);
+
+  border-radius:var(--radius);
+
+  box-shadow:var(--shadow-md);
 }
 
-.admin-topbar-title{
+.admin-header-title{
   font-family:"Teko";
+
   font-size:30px;
+
   line-height:.9;
 }
 
-.admin-topbar-subtitle{
-  color:#d7e4ed;
-  font-size:9px;
+.admin-header-sub{
   margin-top:4px;
-  text-transform:uppercase;
+
+  color:#d7e4ed;
+
+  font-size:8px;
+
   letter-spacing:1px;
+
+  text-transform:uppercase;
 }
 
-.admin-back-button{
-  padding:8px 11px;
-  border:1px solid rgba(255,255,255,.22);
+.admin-back{
+  padding:8px 10px;
+
+  border:1px solid rgba(255,255,255,.25);
+
   border-radius:6px;
-  background:rgba(255,255,255,.1);
+
+  background:rgba(255,255,255,.09);
+
   color:white;
-  font-size:9px;
+
+  font-size:8px;
   font-weight:700;
 }
 
 .admin-section{
   overflow:hidden;
-  background:white;
-  border:1px solid var(--border);
-  border-radius:10px;
+
   margin-bottom:8px;
-  box-shadow:var(--shadow);
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:var(--radius);
+
+  box-shadow:var(--shadow-sm);
 }
 
-.admin-section-header{
+.admin-section-toggle{
   width:100%;
+
   display:flex;
+
   align-items:center;
-  gap:11px;
-  padding:13px;
+
+  gap:10px;
+
+  padding:12px;
+
   border:0;
+
   background:white;
+
   text-align:left;
 }
 
-.admin-section-icon{
-  width:38px;
-  height:38px;
+.admin-icon{
+  width:37px;
+  height:37px;
+
   flex-shrink:0;
+
   display:flex;
+
   align-items:center;
   justify-content:center;
-  border-radius:8px;
+
   background:var(--navy);
+
   color:white;
-  font-size:18px;
+
+  border-radius:7px;
+
+  font-size:17px;
 }
 
-.admin-section-title{
+.admin-section-text{
   flex:1;
 }
 
-.admin-section-title h3{
-  margin:0;
+.admin-section-text strong{
+  display:block;
+
   color:var(--navy);
+
   font-family:"Teko";
-  font-size:26px;
-  line-height:1;
+
+  font-size:25px;
+
+  line-height:.9;
 }
 
-.admin-section-title p{
-  margin:3px 0 0;
+.admin-section-text span{
+  display:block;
+
+  margin-top:3px;
+
   color:var(--muted);
-  font-size:9px;
+
+  font-size:8px;
 }
 
-.admin-section-arrow{
-  color:#8293a2;
-  font-size:14px;
+.admin-arrow{
+  color:#82919e;
+
+  font-size:12px;
 }
 
 .admin-section-body{
   display:none;
-  padding:0 13px 13px;
+
+  padding:0 12px 12px;
+
   border-top:1px solid var(--border);
 }
 
@@ -1178,529 +1767,167 @@ main{
 }
 
 .admin-subsection{
-  padding:13px;
-  margin-top:10px;
-  background:#f7f9fb;
+  padding:11px;
+
+  margin-top:9px;
+
+  background:var(--surface-soft);
+
   border:1px solid var(--border);
+
   border-radius:8px;
 }
 
-.admin-subsection h4{
+.admin-subsection h3{
   margin:0;
+
   color:var(--navy);
+
   font-family:"Teko";
-  font-size:24px;
+
+  font-size:23px;
+
   line-height:1;
 }
 
 .admin-description{
+  margin:4px 0 9px;
+
   color:var(--muted);
-  font-size:9px;
-  margin:4px 0 10px;
+
+  font-size:8px;
 }
 
 
 /* =========================================================
-   ADMIN LOGIN — MOBILE FIX
+   ADMIN FORMS
 ========================================================= */
 
-.admin-login-overlay{
+.form-grid{
+  display:grid;
 
-  position:fixed;
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
 
-  inset:0;
-
-  width:100vw;
-
-  height:100dvh;
-
-  min-height:100dvh;
-
-  z-index:9999;
-
-  display:none;
-
-  align-items:center;
-
-  justify-content:center;
-
-  padding:
-    max(12px, env(safe-area-inset-top))
-    max(12px, env(safe-area-inset-right))
-    max(12px, env(safe-area-inset-bottom))
-    max(12px, env(safe-area-inset-left));
-
-  background:rgba(0,15,30,.78);
-
-  backdrop-filter:blur(8px);
-
-  overscroll-behavior:none;
-
-  touch-action:none;
-
+  gap:7px;
 }
 
-.admin-login-overlay.show{
-  display:flex;
+.field{
+  margin-bottom:7px;
 }
 
-.admin-login-window{
+.field label{
+  display:block;
 
-  position:relative;
+  margin-bottom:3px;
 
-  width:min(
-    390px,
-    calc(100vw - 24px)
-  );
+  color:#53697b;
 
-  max-height:
-    calc(
-      100dvh -
-      env(safe-area-inset-top) -
-      env(safe-area-inset-bottom) -
-      24px
-    );
-
-  overflow:visible;
-
-  background:#f5f8fa;
-
-  border-radius:16px;
-
-  box-shadow:
-    0 20px 60px
-    rgba(0,20,40,.4);
-
-  flex-shrink:0;
-
-}
-
-.admin-login-top{
-
-  position:relative;
-
-  padding:25px 20px 22px;
-
-  text-align:center;
-
-  color:white;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--dark),
-      var(--blue)
-    );
-
-  border-bottom:4px solid var(--gold);
-
-  border-radius:
-    16px
-    16px
-    0
-    0;
-
-}
-
-.admin-login-gear{
-
-  width:54px;
-
-  height:54px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  margin:0 auto 10px;
-
-  border-radius:50%;
-
-  background:rgba(255,255,255,.1);
-
-  font-size:27px;
-
-}
-
-.admin-login-top h2{
-
-  margin:0;
-
-  font-family:"Teko";
-
-  font-size:33px;
-
-  line-height:1;
-
-}
-
-.admin-login-top p{
-
-  margin:5px 0 0;
-
-  color:#d8e5ef;
-
-  font-size:9px;
+  font-size:8px;
+  font-weight:700;
 
   text-transform:uppercase;
-
-  letter-spacing:1px;
-
 }
 
+.field input,
+.field select,
+.field textarea{
+  width:100%;
 
-/*
-  IMPORTANT:
-  The close button is now anchored to the
-  login header instead of the viewport.
-*/
-
-.admin-login-close{
-
-  position:absolute;
-
-  top:10px;
-
-  right:10px;
-
-  width:38px;
-
-  height:38px;
-
-  min-width:38px;
-
-  min-height:38px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  z-index:100;
-
-  border:0;
-
-  border-radius:50%;
-
-  background:rgba(255,255,255,.16);
-
-  color:white;
-
-  font-family:Arial,sans-serif;
-
-  font-size:25px;
-
-  line-height:1;
-
-  padding:0;
+  padding:8px;
 
   margin:0;
 
-  -webkit-appearance:none;
+  background:white;
 
-  appearance:none;
+  color:var(--text);
 
-}
+  border:1px solid var(--border);
 
-.admin-login-close:active{
-  transform:scale(.9);
-}
+  border-radius:6px;
 
-.admin-login-body{
-
-  padding:17px;
-
-  overflow:visible;
-
-}
-
-.admin-code-input{
-
-  width:100%;
-
-  height:52px;
-
-  padding:12px 14px;
-
-  margin:0 0 10px;
-
-  text-align:center;
-
-  letter-spacing:7px;
-
-  font-family:Arial,sans-serif;
-
-  /*
-    16px prevents Safari/mobile browsers
-    from automatically zooming the page.
-  */
+  outline:none;
 
   font-size:16px;
-
-  font-weight:700;
-
-  border:1px solid #ccd7e1;
-
-  border-radius:8px;
-
-  outline:none;
-
-  background:white;
-
-  color:var(--navy);
-
-  -webkit-appearance:none;
-
-  appearance:none;
-
-  transform:none!important;
-
 }
 
-.admin-code-input:focus{
-
-  border-color:var(--blue);
-
-  box-shadow:
-    0 0 0 3px
-    rgba(6,59,105,.08);
-
-  transform:none!important;
-
-}
-
-.admin-login-button{
-
-  width:100%;
-
-  height:46px;
-
-  padding:12px;
-
-  border:0;
-
-  border-radius:7px;
-
-  background:var(--navy);
-
-  color:white;
-
-  font-size:11px;
-
-  font-weight:700;
-
-}
-
-.login-error{
-
-  min-height:0;
-
-  margin-top:8px;
-
-  color:var(--red);
-
-  text-align:center;
-
-  font-size:10px;
-
-}
-
-
-/* =========================================================
-   FORMS
-========================================================= */
-
-label{
-  display:block;
-  color:#40566b;
-  font-size:9px;
-  font-weight:700;
-  text-transform:uppercase;
-  margin-bottom:4px;
-}
-
-input,
-select,
-textarea{
-  width:100%;
-  padding:9px;
-  margin:0 0 8px;
-  background:white;
-  color:var(--text);
-  border:1px solid #ccd7e1;
-  border-radius:6px;
-  font-size:12px;
-  outline:none;
-}
-
-textarea{
+.field textarea{
   min-height:65px;
+
   resize:vertical;
 }
 
-.form-row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:#9eb0bf;
+
+  box-shadow:
+    0 0 0 2px
+    rgba(0,38,74,.05);
 }
 
-button.primary,
-button.secondary,
-button.danger{
-  padding:9px 12px;
+.primary-button{
+  width:100%;
+
+  padding:10px;
+
   border:0;
+
   border-radius:6px;
+
+  background:var(--navy);
+
+  color:white;
+
   font-size:10px;
   font-weight:700;
 }
 
-button.primary{
-  color:white;
-  background:var(--navy);
-}
+.secondary-button{
+  padding:8px 10px;
 
-button.secondary{
+  border:0;
+
+  border-radius:6px;
+
+  background:#e9eef2;
+
   color:var(--navy);
-  background:#e8edf2;
+
+  font-size:9px;
+  font-weight:700;
 }
 
-button.danger{
+.danger-button{
+  padding:8px 10px;
+
+  border:0;
+
+  border-radius:6px;
+
+  background:#fde8e8;
+
   color:var(--red);
-  background:#fde7e7;
+
+  font-size:9px;
+  font-weight:700;
 }
 
 .message{
-  padding:9px;
-  margin:7px 0;
-  background:#edf2f7;
-  border-radius:6px;
-  color:#536779;
-  font-size:10px;
-}
-
-
-/* =========================================================
-   ADMIN GAMES
-========================================================= */
-
-.admin-game-row{
-  display:grid;
-  grid-template-columns:1fr auto;
-  align-items:center;
-  gap:10px;
-  padding:10px;
-  margin-bottom:6px;
-  background:white;
-  border:1px solid var(--border);
-  border-radius:7px;
-}
-
-.admin-game-title{
-  color:var(--navy);
-  font-family:"Teko";
-  font-size:22px;
-  line-height:1;
-}
-
-.admin-game-meta{
-  margin-top:3px;
-  color:var(--muted);
-  font-size:9px;
-}
-
-.admin-game-actions{
-  display:flex;
-  gap:4px;
-}
-
-.admin-game-actions button{
-  padding:7px 9px;
-  border:0;
-  border-radius:5px;
-  font-size:9px;
-  font-weight:700;
-}
-
-
-/* =========================================================
-   ADMIN ROSTER
-========================================================= */
-
-.admin-roster-list{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-
-.admin-roster-row{
-  display:grid;
-  grid-template-columns:48px 1fr auto;
-  align-items:center;
-  gap:8px;
   padding:8px;
-  background:white;
+
+  margin-top:8px;
+
+  background:#edf3f7;
+
   border:1px solid var(--border);
-  border-radius:7px;
-}
 
-.admin-roster-number{
-  color:var(--navy);
-  font-family:"Teko";
-  font-size:25px;
-  font-weight:700;
-  text-align:center;
-}
+  border-radius:6px;
 
-.admin-roster-name{
-  color:var(--navy);
-  font-family:"Teko";
-  font-size:21px;
-  line-height:1;
-  font-weight:700;
-}
-
-.admin-roster-position{
   color:var(--muted);
+
   font-size:9px;
-  margin-top:2px;
-}
-
-.admin-roster-actions{
-  display:flex;
-  gap:3px;
-}
-
-.admin-roster-actions button{
-  padding:7px 8px;
-  border:0;
-  border-radius:5px;
-  font-size:9px;
-  font-weight:700;
-}
-
-.edit-roster{
-  background:#e8eff6;
-  color:var(--navy);
-}
-
-.delete-roster{
-  background:#fde7e7;
-  color:var(--red);
-}
-
-.roster-edit-area{
-  display:none;
-  grid-column:1/-1;
-  padding:9px;
-  background:#f5f8fa;
-  border-top:1px solid var(--border);
-}
-
-.roster-edit-area.open{
-  display:block;
 }
 
 
@@ -1710,47 +1937,62 @@ button.danger{
 
 .position-picker{
   position:relative;
-  width:100%;
+
   margin-bottom:8px;
 }
 
 .position-trigger{
   width:100%;
+
   min-height:39px;
+
   display:flex;
+
   align-items:center;
   justify-content:space-between;
-  gap:8px;
-  padding:9px 10px;
+
+  padding:8px 10px;
+
   background:white;
-  border:1px solid #ccd7e1;
+
+  border:1px solid var(--border);
+
   border-radius:6px;
-  color:#536779;
-  text-align:left;
+
+  color:var(--muted);
+
   font-size:11px;
+
+  text-align:left;
 }
 
-.position-placeholder{
-  color:#8a9aa8;
-}
-
-.position-selected-text{
+.position-selected{
   color:var(--navy);
+
   font-weight:700;
 }
 
 .position-menu{
   position:absolute;
+
+  top:calc(100% + 4px);
+
   left:0;
   right:0;
-  top:calc(100% + 4px);
-  z-index:300;
+
+  z-index:500;
+
   display:none;
+
   padding:8px;
+
   background:white;
-  border:1px solid #cbd7e1;
+
+  border:1px solid var(--border);
+
   border-radius:8px;
-  box-shadow:0 12px 30px rgba(0,31,63,.16);
+
+  box-shadow:var(--shadow-lg);
 }
 
 .position-picker.open .position-menu{
@@ -1759,78 +2001,398 @@ button.danger{
 
 .position-options{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
   gap:4px;
-  max-height:220px;
+
+  max-height:190px;
+
   overflow-y:auto;
 }
 
 .position-option{
   display:flex;
+
   align-items:center;
-  gap:6px;
+
+  gap:5px;
+
   padding:7px;
-  border:1px solid #e1e7ec;
+
+  background:#f7f9fb;
+
+  border:1px solid var(--border);
+
   border-radius:5px;
-  background:#f8fafc;
-  color:#3e5366;
-  font-size:10px;
-  font-weight:600;
-  cursor:pointer;
+
+  color:#455b6d;
+
+  font-size:9px;
 }
 
 .position-option input{
   width:14px;
   height:14px;
+
   margin:0;
+
   padding:0;
+
   accent-color:var(--navy);
 }
 
 
 /* =========================================================
-   ADMIN PHOTOS
+   ADMIN LISTS
 ========================================================= */
 
-.admin-photo-grid{
+.admin-game{
   display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:6px;
-}
 
-.admin-photo-card{
-  overflow:hidden;
-  padding:3px;
-  border:1px solid var(--border);
-  border-radius:6px;
+  grid-template-columns:
+    1fr auto;
+
+  gap:8px;
+
+  align-items:center;
+
+  padding:9px;
+
+  margin-bottom:5px;
+
   background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:7px;
 }
 
-.admin-photo-card img{
-  width:100%;
-  aspect-ratio:1;
-  object-fit:cover;
-  border-radius:4px;
+.admin-game-name{
+  color:var(--navy);
+
+  font-family:"Teko";
+
+  font-size:20px;
+
+  line-height:1;
 }
 
-.admin-photo-caption{
+.admin-game-meta{
+  margin-top:3px;
+
   color:var(--muted);
+
   font-size:8px;
-  margin:3px 1px;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
 }
 
-.admin-photo-delete{
-  width:100%;
-  padding:5px;
+.admin-actions{
+  display:flex;
+
+  gap:4px;
+}
+
+.admin-actions button{
+  padding:7px 8px;
+
   border:0;
-  border-radius:4px;
-  background:#fde7e7;
-  color:var(--red);
+
+  border-radius:5px;
+
   font-size:8px;
   font-weight:700;
+}
+
+.admin-roster{
+  display:flex;
+
+  flex-direction:column;
+
+  gap:5px;
+}
+
+.admin-player{
+  display:grid;
+
+  grid-template-columns:
+    43px
+    1fr
+    auto;
+
+  align-items:center;
+
+  gap:7px;
+
+  padding:8px;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:7px;
+}
+
+.admin-number{
+  color:var(--navy);
+
+  font-family:"Teko";
+
+  font-size:26px;
+
+  text-align:center;
+}
+
+.admin-player-name{
+  color:var(--navy);
+
+  font-family:"Teko";
+
+  font-size:20px;
+
+  line-height:1;
+}
+
+.admin-player-position{
+  margin-top:2px;
+
+  color:var(--muted);
+
+  font-size:8px;
+}
+
+.admin-player-actions{
+  display:flex;
+
+  gap:3px;
+}
+
+
+/* =========================================================
+   ADMIN LOGIN
+========================================================= */
+
+.admin-login{
+  position:fixed;
+
+  inset:0;
+
+  z-index:9000;
+
+  display:none;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:
+    max(12px,env(safe-area-inset-top))
+    max(12px,env(safe-area-inset-right))
+    max(12px,env(safe-area-inset-bottom))
+    max(12px,env(safe-area-inset-left));
+
+  background:
+    rgba(0,18,35,.75);
+
+  backdrop-filter:blur(8px);
+
+  overscroll-behavior:none;
+
+  touch-action:none;
+}
+
+.admin-login.show{
+  display:flex;
+}
+
+.login-window{
+  position:relative;
+
+  width:min(
+    390px,
+    calc(100vw - 24px)
+  );
+
+  max-height:
+    calc(
+      100dvh - 24px
+    );
+
+  overflow:visible;
+
+  background:#f5f8fa;
+
+  border-radius:14px;
+
+  box-shadow:var(--shadow-lg);
+
+  flex-shrink:0;
+}
+
+.login-header{
+  position:relative;
+
+  padding:23px 20px 20px;
+
+  color:white;
+
+  text-align:center;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--navy-dark),
+      var(--navy-light)
+    );
+
+  border-bottom:3px solid var(--gold);
+
+  border-radius:
+    14px
+    14px
+    0
+    0;
+}
+
+.login-gear{
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  width:48px;
+  height:48px;
+
+  margin:0 auto 8px;
+
+  background:rgba(255,255,255,.1);
+
+  border-radius:50%;
+
+  font-size:24px;
+}
+
+.login-header h2{
+  margin:0;
+
+  font-family:"Teko";
+
+  font-size:32px;
+
+  line-height:1;
+}
+
+.login-header p{
+  margin:4px 0 0;
+
+  color:#d8e4ed;
+
+  font-size:8px;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+}
+
+.login-close{
+  position:absolute;
+
+  top:8px;
+  right:8px;
+
+  width:38px;
+  height:38px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border:0;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.14);
+
+  color:white;
+
+  font-family:Arial,sans-serif;
+
+  font-size:24px;
+
+  line-height:1;
+}
+
+.login-body{
+  padding:15px;
+}
+
+.login-code{
+  width:100%;
+
+  height:50px;
+
+  padding:10px;
+
+  margin:0 0 8px;
+
+  text-align:center;
+
+  letter-spacing:7px;
+
+  color:var(--navy);
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:7px;
+
+  outline:none;
+
+  font-family:Arial,sans-serif;
+
+  font-size:16px!important;
+  font-weight:700;
+
+  -webkit-appearance:none;
+  appearance:none;
+}
+
+.login-code:focus{
+  border-color:#8da2b3;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(0,38,74,.06);
+}
+
+.login-submit{
+  width:100%;
+
+  height:44px;
+
+  border:0;
+
+  border-radius:6px;
+
+  background:var(--navy);
+
+  color:white;
+
+  font-size:10px;
+  font-weight:700;
+}
+
+.login-error{
+  min-height:13px;
+
+  margin-top:7px;
+
+  color:var(--red);
+
+  text-align:center;
+
+  font-size:9px;
 }
 
 
@@ -1840,13 +2402,9 @@ button.danger{
 
 @media(max-width:600px){
 
-  header{
+  .site-header{
     padding-left:45px;
     padding-right:45px;
-  }
-
-  .achievements-inner{
-    gap:5px;
   }
 
   .achievement-title{
@@ -1857,6 +2415,18 @@ button.danger{
     font-size:8px;
   }
 
+  .matchup-team{
+    font-size:34px;
+  }
+
+  .matchup-vs{
+    font-size:19px;
+  }
+
+  .roster-grid{
+    grid-template-columns:1fr;
+  }
+
   .roster-tools{
     flex-direction:column;
   }
@@ -1865,118 +2435,79 @@ button.danger{
     width:100%;
   }
 
-  .roster-grid{
+  .form-grid{
     grid-template-columns:1fr;
-  }
-
-  .form-row{
-    grid-template-columns:1fr;
-  }
-
-  .admin-photo-grid{
-    grid-template-columns:repeat(4,1fr);
-  }
-
-  /*
-    Keep public modals full-screen on mobile,
-    but DO NOT do this to the admin login.
-  */
-
-  .history-modal,
-  .modal-overlay{
-    padding:0;
-  }
-
-  .history-window,
-  .modal{
-    width:100%;
-    height:100dvh;
-    max-height:100dvh;
-    border-radius:0;
-  }
-
-  .history-modal-body{
-    max-height:calc(100dvh - 110px);
   }
 
   .photo-grid{
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:
+      repeat(3,minmax(0,1fr));
   }
 
-  /*
-    ADMIN LOGIN MOBILE FIX
-  */
-
-  .admin-login-overlay{
-    align-items:center;
-    justify-content:center;
-    padding:12px;
+  .overlay{
+    padding:0;
   }
 
-  .admin-login-window{
-    width:calc(100vw - 24px);
-    max-width:390px;
+  .overlay .modal{
+    width:100%;
+    height:100dvh;
+    max-height:100dvh;
 
-    /*
-      Never allow the keyboard to push the
-      login box completely off screen.
-    */
-
-    max-height:calc(100dvh - 24px);
-
-    transform:none!important;
-    margin:0!important;
+    border-radius:0;
   }
 
-  .admin-login-top{
-    padding-top:24px;
-    padding-bottom:20px;
+  .modal-body{
+    max-height:
+      calc(
+        100dvh - 105px
+      );
   }
 
-  .admin-login-close{
-    top:8px;
-    right:8px;
-    width:40px;
-    height:40px;
+  .history-modal-body{
+    max-height:
+      calc(
+        100dvh - 105px
+      );
   }
 
-  .admin-login-body{
-    padding:15px;
-  }
+  .login-window{
+    width:
+      calc(
+        100vw - 24px
+      );
 
-  .admin-code-input{
-    font-size:16px!important;
+    max-height:
+      calc(
+        100dvh - 24px
+      );
   }
 
 }
 
 
 /* =========================================================
-   VERY SMALL PHONES
+   SMALL PHONES
 ========================================================= */
 
 @media(max-width:380px){
 
-  .admin-login-window{
-    width:calc(100vw - 18px);
+  .site-header h1{
+    font-size:34px;
   }
 
-  .admin-login-top{
-    padding:21px 14px 18px;
+  .matchup-team{
+    font-size:30px;
   }
 
-  .admin-login-gear{
-    width:45px;
-    height:45px;
-    font-size:23px;
+  .achievement-title{
+    font-size:14px;
   }
 
-  .admin-login-top h2{
-    font-size:29px;
-  }
-
-  .admin-login-body{
-    padding:12px;
+  .login-window{
+    width:
+      calc(
+        100vw - 18px
+      );
   }
 
 }
@@ -1989,8 +2520,8 @@ button.danger{
 @media(prefers-reduced-motion:reduce){
 
   *,
-  *:before,
-  *:after{
+  *::before,
+  *::after{
     animation:none!important;
     transition:none!important;
   }
@@ -2000,21 +2531,22 @@ button.danger{
 </style>
 </head>
 
+
 <body>
 
 
-<!-- =========================================================
+<!-- =======================================================
      SPLASH
-========================================================= -->
+======================================================= -->
 
-<div id="splashScreen">
+<div id="splash">
 
   <div class="splash-content">
 
     <img
       src="LOGO_W__FB.png"
       class="splash-logo"
-      alt="NDGP">
+      alt="NDGP Football">
 
     <h1 class="splash-title">
       NDGP FOOTBALL
@@ -2024,18 +2556,18 @@ button.danger{
       Notre Dame Green Pond Crusaders
     </div>
 
-    <div class="splash-line"></div>
-
   </div>
 
 </div>
 
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
+<!-- =======================================================
+     PUBLIC HEADER
+======================================================= -->
 
-<header id="siteHeader">
+<header
+  id="siteHeader"
+  class="site-header">
 
   <button
     id="adminGear"
@@ -2049,8 +2581,8 @@ button.danger{
 
 
   <img
-    class="logo"
     src="LOGO_W__FB.png"
+    class="header-logo"
     alt="Notre Dame Green Pond Crusaders">
 
 
@@ -2066,17 +2598,17 @@ button.danger{
 </header>
 
 
-<!-- =========================================================
+<!-- =======================================================
      ACHIEVEMENTS
-========================================================= -->
+======================================================= -->
 
 <section
-  id="publicAchievements"
-  class="achievements-bar">
+  id="achievements"
+  class="achievements">
 
-  <div class="achievements-inner">
+  <div class="achievement-grid">
 
-    <div class="achievement-item">
+    <div class="achievement">
 
       <div class="achievement-title">
         Colonial League Champions
@@ -2089,7 +2621,7 @@ button.danger{
     </div>
 
 
-    <div class="achievement-item">
+    <div class="achievement">
 
       <div class="achievement-title">
         PIAA District XI Champions
@@ -2106,68 +2638,72 @@ button.danger{
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      NAV
-========================================================= -->
+======================================================= -->
 
-<nav id="publicNav">
+<nav
+  id="mainNav"
+  class="main-nav">
 
   <button
     class="active"
     onclick="showPage('home',this)">
-    🏠 Home
+    Home
   </button>
 
   <button
     onclick="showPage('schedule',this)">
-    🏈 Schedule
+    Schedule
   </button>
 
   <button
     onclick="showPage('history',this)">
-    🏆 History
+    History
   </button>
 
   <button
     onclick="showPage('roster',this)">
-    👥 Roster
+    Roster
   </button>
 
   <button
     onclick="showPage('photos',this)">
-    📸 Photos
+    Photos
   </button>
 
 </nav>
 
 
-<!-- =========================================================
-     MAIN
-========================================================= -->
+<!-- =======================================================
+     PUBLIC MAIN
+======================================================= -->
 
 <main id="publicMain">
 
+
+<!-- HOME -->
 
 <section
   id="home"
   class="page active">
 
-  <div class="card hero-card">
+  <div class="next-game">
 
-    <div class="hero-top">
+    <div class="next-header">
+
+      <strong>
+        NEXT GAME
+      </strong>
 
       <span>
-        NEXT GAME
-      </span>
-
-      <small>
         2026 SEASON
-      </small>
+      </span>
 
     </div>
 
 
-    <div class="hero-body">
+    <div class="next-body">
 
       <div class="next-label">
         Notre Dame Green Pond
@@ -2176,17 +2712,17 @@ button.danger{
 
       <div
         id="nextMatchup"
-        class="next-matchup">
+        class="matchup">
 
-        <span class="next-team">
+        <span class="matchup-team">
           NDGP
         </span>
 
-        <span class="next-vs">
+        <span class="matchup-vs">
           VS
         </span>
 
-        <span class="next-team">
+        <span class="matchup-team">
           TBD
         </span>
 
@@ -2194,20 +2730,17 @@ button.danger{
 
 
       <div
-        id="nextDetails"
-        class="game-info">
+        id="nextInfo"
+        class="next-info">
+
         Loading...
+
       </div>
 
 
       <div
         id="countdown"
         class="countdown hidden">
-
-        🏈
-
-        <span id="countdownText"></span>
-
       </div>
 
     </div>
@@ -2224,18 +2757,22 @@ button.danger{
       </div>
 
       <div
-        id="record"
-        class="record">
+        id="recordNumber"
+        class="record-number">
+
         0–0
+
       </div>
 
     </div>
 
 
     <div
-      id="recordDetails"
-      class="record-sub">
-      Loading...
+      id="recordSide"
+      class="record-side">
+
+      0 Wins • 0 Losses
+
     </div>
 
   </div>
@@ -2243,14 +2780,16 @@ button.danger{
 </section>
 
 
+<!-- SCHEDULE -->
+
 <section
   id="schedule"
   class="page">
 
   <div class="card">
 
-    <h2 class="page-heading">
-      🏈 2026 Schedule
+    <h2 class="page-title">
+      2026 Schedule
     </h2>
 
     <div id="scheduleList">
@@ -2262,14 +2801,16 @@ button.danger{
 </section>
 
 
+<!-- HISTORY -->
+
 <section
   id="history"
   class="page">
 
   <div class="card">
 
-    <h2 class="page-heading">
-      🏆 Football History
+    <h2 class="page-title">
+      Football History
     </h2>
 
     <div class="history-intro">
@@ -2283,14 +2824,16 @@ button.danger{
 </section>
 
 
+<!-- ROSTER -->
+
 <section
   id="roster"
   class="page">
 
   <div class="card">
 
-    <h2 class="page-heading">
-      👥 2026 Roster
+    <h2 class="page-title">
+      2026 Roster
     </h2>
 
 
@@ -2311,16 +2854,16 @@ button.danger{
           All Positions
         </option>
 
-        <option value="QB">Quarterbacks</option>
-        <option value="RB">Running Backs</option>
-        <option value="WR">Wide Receivers</option>
-        <option value="TE">Tight Ends</option>
+        <option value="QB">Quarterback</option>
+        <option value="RB">Running Back</option>
+        <option value="WR">Wide Receiver</option>
+        <option value="TE">Tight End</option>
         <option value="OL">Offensive Line</option>
         <option value="DL">Defensive Line</option>
-        <option value="LB">Linebackers</option>
-        <option value="DB">Defensive Backs</option>
-        <option value="K">Kickers</option>
-        <option value="P">Punters</option>
+        <option value="LB">Linebacker</option>
+        <option value="DB">Defensive Back</option>
+        <option value="K">Kicker</option>
+        <option value="P">Punter</option>
 
       </select>
 
@@ -2336,7 +2879,9 @@ button.danger{
     <div
       id="rosterList"
       class="roster-grid">
+
       Loading...
+
     </div>
 
   </div>
@@ -2344,14 +2889,16 @@ button.danger{
 </section>
 
 
+<!-- PHOTOS -->
+
 <section
   id="photos"
   class="page">
 
   <div class="card">
 
-    <h2 class="page-heading">
-      📸 Football Photos
+    <h2 class="page-title">
+      Football Photos
     </h2>
 
     <div id="photoList">
@@ -2362,27 +2909,27 @@ button.danger{
 
 </section>
 
-
 </main>
 
 
-<!-- =========================================================
-     ADMIN
-========================================================= -->
+<!-- =======================================================
+     ADMIN PAGE
+======================================================= -->
 
 <section
   id="adminPage"
   class="admin-page">
 
-  <div class="admin-topbar">
+
+  <div class="admin-header">
 
     <div>
 
-      <div class="admin-topbar-title">
+      <div class="admin-header-title">
         ADMIN DASHBOARD
       </div>
 
-      <div class="admin-topbar-subtitle">
+      <div class="admin-header-sub">
         NDGP Football Management
       </div>
 
@@ -2390,7 +2937,7 @@ button.danger{
 
 
     <button
-      class="admin-back-button"
+      class="admin-back"
       onclick="closeAdmin()">
 
       ← BACK TO SITE
@@ -2403,32 +2950,30 @@ button.danger{
   <!-- GAMES -->
 
   <div
-    id="adminGamesSection"
+    id="adminGames"
     class="admin-section">
 
     <button
-      class="admin-section-header"
-      onclick="
-        toggleAdminSection('adminGamesSection')
-      ">
+      class="admin-section-toggle"
+      onclick="toggleAdmin('adminGames')">
 
-      <div class="admin-section-icon">
+      <div class="admin-icon">
         🏈
       </div>
 
-      <div class="admin-section-title">
+      <div class="admin-section-text">
 
-        <h3>
+        <strong>
           GAMES
-        </h3>
+        </strong>
 
-        <p>
-          Add games, update scores and manage the schedule
-        </p>
+        <span>
+          Add and manage the schedule
+        </span>
 
       </div>
 
-      <div class="admin-section-arrow">
+      <div class="admin-arrow">
         ▼
       </div>
 
@@ -2439,20 +2984,22 @@ button.danger{
 
       <div class="admin-subsection">
 
-        <h4>
-          ADD GAME
-        </h4>
+        <h3>
+          Add Game
+        </h3>
 
         <div class="admin-description">
-          Add a new game to the 2026 schedule.
+          Add a game to the 2026 schedule.
         </div>
 
 
-        <div class="form-row">
+        <div class="form-grid">
 
-          <div>
+          <div class="field">
 
-            <label>Date</label>
+            <label>
+              Date
+            </label>
 
             <input
               id="gameDate"
@@ -2461,9 +3008,11 @@ button.danger{
           </div>
 
 
-          <div>
+          <div class="field">
 
-            <label>Time</label>
+            <label>
+              Time
+            </label>
 
             <input
               id="gameTime"
@@ -2475,19 +3024,23 @@ button.danger{
         </div>
 
 
-        <label>
-          Opponent
-        </label>
+        <div class="field">
 
-        <input
-          id="gameOpponent"
-          type="text"
-          placeholder="Opponent">
+          <label>
+            Opponent
+          </label>
+
+          <input
+            id="gameOpponent"
+            type="text"
+            placeholder="Opponent">
+
+        </div>
 
 
-        <div class="form-row">
+        <div class="form-grid">
 
-          <div>
+          <div class="field">
 
             <label>
               Location
@@ -2501,7 +3054,7 @@ button.danger{
           </div>
 
 
-          <div>
+          <div class="field">
 
             <label>
               Home / Away
@@ -2524,20 +3077,23 @@ button.danger{
         </div>
 
 
-        <label>
-          Notes
-        </label>
+        <div class="field">
 
-        <textarea
-          id="gameNotes"
-          placeholder="Optional notes">
-        </textarea>
+          <label>
+            Notes
+          </label>
+
+          <textarea
+            id="gameNotes"
+            placeholder="Optional notes">
+          </textarea>
+
+        </div>
 
 
         <button
-          class="primary"
-          onclick="addGame()"
-          style="width:100%">
+          class="primary-button"
+          onclick="addGame()">
 
           + ADD GAME
 
@@ -2546,20 +3102,22 @@ button.danger{
       </div>
 
 
-      <div id="adminMessage"></div>
+      <div
+        id="adminGameMessage">
+      </div>
 
 
       <div class="admin-subsection">
 
-        <h4>
-          MANAGE EXISTING GAMES
-        </h4>
+        <h3>
+          Existing Games
+        </h3>
 
         <div class="admin-description">
-          Edit scores, times, locations and other game information.
+          Manage your current schedule.
         </div>
 
-        <div id="adminGames">
+        <div id="adminGameList">
           Loading...
         </div>
 
@@ -2573,32 +3131,30 @@ button.danger{
   <!-- ROSTER -->
 
   <div
-    id="adminRosterSection"
+    id="adminRoster"
     class="admin-section">
 
     <button
-      class="admin-section-header"
-      onclick="
-        toggleAdminSection('adminRosterSection')
-      ">
+      class="admin-section-toggle"
+      onclick="toggleAdmin('adminRoster')">
 
-      <div class="admin-section-icon">
+      <div class="admin-icon">
         👥
       </div>
 
-      <div class="admin-section-title">
+      <div class="admin-section-text">
 
-        <h3>
+        <strong>
           ROSTER
-        </h3>
+        </strong>
 
-        <p>
-          Add, edit or remove players
-        </p>
+        <span>
+          Add, edit and remove players
+        </span>
 
       </div>
 
-      <div class="admin-section-arrow">
+      <div class="admin-arrow">
         ▼
       </div>
 
@@ -2609,18 +3165,18 @@ button.danger{
 
       <div class="admin-subsection">
 
-        <h4>
-          ADD PLAYER
-        </h4>
+        <h3>
+          Add Player
+        </h3>
 
         <div class="admin-description">
-          Select multiple positions or enter a custom position.
+          Select multiple positions or enter your own.
         </div>
 
 
-        <div class="form-row">
+        <div class="form-grid">
 
-          <div>
+          <div class="field">
 
             <label>
               Jersey Number
@@ -2636,7 +3192,7 @@ button.danger{
           </div>
 
 
-          <div>
+          <div class="field">
 
             <label>
               Player Name
@@ -2652,89 +3208,86 @@ button.danger{
         </div>
 
 
-        <label>
-          Position
-        </label>
+        <div class="field">
+
+          <label>
+            Position
+          </label>
 
 
-        <div
-          id="addPositionPicker"
-          class="position-picker">
+          <div
+            id="positionPicker"
+            class="position-picker">
 
-          <button
-            type="button"
-            class="position-trigger"
-            onclick="
-              togglePositionPicker('add')
-            ">
+            <button
+              type="button"
+              class="position-trigger"
+              onclick="togglePositions()">
 
-            <span
-              id="addPositionText"
-              class="position-placeholder">
+              <span
+                id="positionText">
 
-              Select position(s)...
+                Select position(s)...
 
-            </span>
+              </span>
 
-            <span>
-              ▼
-            </span>
+              <span>
+                ▼
+              </span>
 
-          </button>
+            </button>
 
 
-          <div class="position-menu">
+            <div class="position-menu">
 
-            <div
-              id="addPositionOptions"
-              class="position-options">
-            </div>
-
-
-            <div class="position-custom">
-
-              <label>
-                Custom Position
-              </label>
-
-              <input
-                id="addCustomPosition"
-                type="text"
-                placeholder="Type another position...">
-
-            </div>
+              <div
+                id="positionOptions"
+                class="position-options">
+              </div>
 
 
-            <div
-              style="
-                display:flex;
-                justify-content:flex-end;
-                gap:5px;
-                margin-top:7px;
-              ">
+              <div
+                class="field"
+                style="margin-top:8px">
 
-              <button
-                type="button"
-                class="secondary"
-                onclick="
-                  clearPositionPicker('add')
+                <label>
+                  Custom Position
+                </label>
+
+                <input
+                  id="customPosition"
+                  type="text"
+                  placeholder="Example: Utility">
+
+              </div>
+
+
+              <div
+                style="
+                  display:flex;
+                  justify-content:flex-end;
+                  gap:5px;
                 ">
 
-                Clear
+                <button
+                  type="button"
+                  class="secondary-button"
+                  onclick="clearPositions()">
 
-              </button>
+                  Clear
 
+                </button>
 
-              <button
-                type="button"
-                class="primary"
-                onclick="
-                  closePositionPicker('add')
-                ">
+                <button
+                  type="button"
+                  class="secondary-button"
+                  onclick="closePositions()">
 
-                Done
+                  Done
 
-              </button>
+                </button>
+
+              </div>
 
             </div>
 
@@ -2744,9 +3297,8 @@ button.danger{
 
 
         <button
-          class="primary"
-          onclick="addPlayer()"
-          style="width:100%">
+          class="primary-button"
+          onclick="addPlayer()">
 
           + ADD PLAYER
 
@@ -2757,21 +3309,16 @@ button.danger{
 
       <div class="admin-subsection">
 
-        <h4>
-          CURRENT ROSTER
-        </h4>
+        <h3>
+          Current Roster
+        </h3>
 
         <div class="admin-description">
-          Edit or remove players below.
+          Edit or remove players.
         </div>
 
-
-        <div
-          id="adminRosterList"
-          class="admin-roster-list">
-
+        <div id="adminRosterList">
           Loading...
-
         </div>
 
       </div>
@@ -2784,32 +3331,30 @@ button.danger{
   <!-- PHOTOS -->
 
   <div
-    id="adminPhotosSection"
+    id="adminPhotos"
     class="admin-section">
 
     <button
-      class="admin-section-header"
-      onclick="
-        toggleAdminSection('adminPhotosSection')
-      ">
+      class="admin-section-toggle"
+      onclick="toggleAdmin('adminPhotos')">
 
-      <div class="admin-section-icon">
+      <div class="admin-icon">
         📸
       </div>
 
-      <div class="admin-section-title">
+      <div class="admin-section-text">
 
-        <h3>
+        <strong>
           PHOTOS
-        </h3>
+        </strong>
 
-        <p>
+        <span>
           Upload and manage football photos
-        </p>
+        </span>
 
       </div>
 
-      <div class="admin-section-arrow">
+      <div class="admin-arrow">
         ▼
       </div>
 
@@ -2820,39 +3365,46 @@ button.danger{
 
       <div class="admin-subsection">
 
-        <h4>
-          UPLOAD PHOTO
-        </h4>
+        <h3>
+          Upload Photo
+        </h3>
 
         <div class="admin-description">
           Add a photo to the public gallery.
         </div>
 
 
-        <label>
-          Photo
-        </label>
+        <div class="field">
 
-        <input
-          id="photoFile"
-          type="file"
-          accept="image/*">
+          <label>
+            Photo
+          </label>
+
+          <input
+            id="photoFile"
+            type="file"
+            accept="image/*">
+
+        </div>
 
 
-        <label>
-          Caption
-        </label>
+        <div class="field">
 
-        <input
-          id="photoCaption"
-          type="text"
-          placeholder="Optional caption">
+          <label>
+            Caption
+          </label>
+
+          <input
+            id="photoCaption"
+            type="text"
+            placeholder="Optional caption">
+
+        </div>
 
 
         <button
-          class="primary"
-          onclick="addPhoto()"
-          style="width:100%">
+          class="primary-button"
+          onclick="uploadPhoto()">
 
           + UPLOAD PHOTO
 
@@ -2863,16 +3415,11 @@ button.danger{
 
       <div class="admin-subsection">
 
-        <h4>
-          PHOTO LIBRARY
-        </h4>
+        <h3>
+          Photo Library
+        </h3>
 
-        <div class="admin-description">
-          Your uploaded photos.
-        </div>
-
-
-        <div id="adminPhotos">
+        <div id="adminPhotoList">
           Loading...
         </div>
 
@@ -2885,28 +3432,25 @@ button.danger{
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      ADMIN LOGIN
-========================================================= -->
+======================================================= -->
 
 <div
-  id="adminLoginOverlay"
-  class="admin-login-overlay"
+  id="adminLogin"
+  class="admin-login"
   onclick="closeAdminLogin(event)">
 
 
   <div
-    class="admin-login-window"
+    class="login-window"
     onclick="event.stopPropagation()">
 
 
-    <div class="admin-login-top">
-
-      <!-- THIS X WILL NOW STAY INSIDE THE MODAL -->
+    <div class="login-header">
 
       <button
-        type="button"
-        class="admin-login-close"
+        class="login-close"
         onclick="closeAdminLogin()"
         aria-label="Close">
 
@@ -2915,7 +3459,7 @@ button.danger{
       </button>
 
 
-      <div class="admin-login-gear">
+      <div class="login-gear">
         ⚙️
       </div>
 
@@ -2924,7 +3468,6 @@ button.danger{
         ADMIN ACCESS
       </h2>
 
-
       <p>
         NDGP Football Management
       </p>
@@ -2932,24 +3475,23 @@ button.danger{
     </div>
 
 
-    <div class="admin-login-body">
+    <div class="login-body">
 
       <input
         id="adminCode"
-        class="admin-code-input"
+        class="login-code"
         type="password"
         inputmode="numeric"
         maxlength="4"
         minlength="4"
         pattern="[0-9]{4}"
-        placeholder="••••"
-        autocomplete="off">
+        autocomplete="off"
+        placeholder="••••">
 
 
       <button
-        type="button"
-        class="admin-login-button"
-        onclick="login()">
+        class="login-submit"
+        onclick="loginAdmin()">
 
         ENTER ADMIN
 
@@ -2957,7 +3499,7 @@ button.danger{
 
 
       <div
-        id="loginMessage"
+        id="loginError"
         class="login-error">
       </div>
 
@@ -2968,62 +3510,13 @@ button.danger{
 </div>
 
 
-<!-- =========================================================
-     HISTORY MODAL
-========================================================= -->
-
-<div
-  id="historyModal"
-  class="history-modal"
-  onclick="closeHistoryModal(event)">
-
-  <div
-    class="history-window"
-    onclick="event.stopPropagation()">
-
-    <div class="history-modal-header">
-
-      <button
-        class="history-close"
-        onclick="closeHistoryModal()">
-
-        ×
-
-      </button>
-
-      <div class="history-modal-kicker">
-        NDGP FOOTBALL HISTORY
-      </div>
-
-      <div
-        id="historyModalTitle"
-        class="history-modal-title">
-      </div>
-
-      <div
-        id="historyModalRecord"
-        class="history-modal-record">
-      </div>
-
-    </div>
-
-    <div
-      id="historyModalBody"
-      class="history-modal-body">
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- =========================================================
+<!-- =======================================================
      GAME MODAL
-========================================================= -->
+======================================================= -->
 
 <div
   id="gameModal"
-  class="modal-overlay"
+  class="overlay"
   onclick="closeGameModal(event)">
 
   <div
@@ -3040,35 +3533,43 @@ button.danger{
 
       </button>
 
+
       <div class="modal-kicker">
         NDGP FOOTBALL
       </div>
 
+
       <div
-        id="modalMatchup"
-        class="modal-matchup">
+        id="modalTitle"
+        class="modal-title">
       </div>
 
     </div>
+
 
     <div class="modal-body">
 
       <div
         id="modalStatus"
-        style="text-align:center">
+        class="modal-status">
       </div>
+
 
       <div
         id="modalScore"
         class="modal-score">
       </div>
 
+
       <div
         id="modalInfo"
-        class="modal-info-grid">
+        class="info-grid">
       </div>
 
-      <div id="modalNotes"></div>
+
+      <div
+        id="modalNotes">
+      </div>
 
     </div>
 
@@ -3077,39 +3578,81 @@ button.danger{
 </div>
 
 
-<!-- =========================================================
+<!-- =======================================================
+     HISTORY MODAL
+======================================================= -->
+
+<div
+  id="historyModal"
+  class="overlay"
+  onclick="closeHistoryModal(event)">
+
+  <div
+    class="modal"
+    onclick="event.stopPropagation()">
+
+    <div class="modal-header">
+
+      <button
+        class="modal-close"
+        onclick="closeHistoryModal()">
+
+        ×
+
+      </button>
+
+
+      <div class="modal-kicker">
+        NDGP FOOTBALL HISTORY
+      </div>
+
+
+      <div
+        id="historyModalTitle"
+        class="history-modal-title">
+      </div>
+
+
+      <div
+        id="historyModalRecord"
+        class="history-modal-record">
+      </div>
+
+    </div>
+
+
+    <div
+      id="historyModalBody"
+      class="history-modal-body">
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =======================================================
      PHOTO VIEWER
-========================================================= -->
+======================================================= -->
 
 <div
   id="photoViewer"
   class="photo-viewer"
   onclick="closePhotoViewer(event)">
 
-  <div
-    class="photo-viewer-window"
-    onclick="event.stopPropagation()">
+  <button
+    class="photo-close"
+    onclick="closePhotoViewer()">
 
-    <button
-      class="photo-viewer-close"
-      onclick="closePhotoViewer()">
+    ×
 
-      ×
+  </button>
 
-    </button>
 
-    <img
-      id="photoViewerImage"
-      class="photo-viewer-image"
-      src=""
-      alt="NDGP Football">
-
-    <div
-      id="photoViewerCaption"
-      class="photo-viewer-caption">
-    </div>
-
-  </div>
+  <img
+    id="photoViewerImage"
+    src=""
+    alt="NDGP Football">
 
 </div>
 
@@ -3127,7 +3670,7 @@ const SUPABASE_KEY =
 "sb_publishable_NC2FpWBds4vNOuGMr5_ikw_MOQXXHLI";
 
 const db =
-window.supabase.createClient(
+supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
 );
@@ -3135,7 +3678,7 @@ window.supabase.createClient(
 
 let games=[];
 let roster=[];
-let currentPhotos=[];
+let photos=[];
 
 
 /* =========================================================
@@ -3148,15 +3691,11 @@ window.addEventListener(
 
     setTimeout(
       ()=>{
-
         document
-          .getElementById(
-            "splashScreen"
-          )
+          .getElementById("splash")
           .classList.add("hide");
-
       },
-      1200
+      900
     );
 
   }
@@ -3173,29 +3712,20 @@ function showPage(id,button){
     .querySelectorAll(".page")
     .forEach(
       page=>
-        page.classList.remove(
-          "active"
-        )
+        page.classList.remove("active")
     );
 
 
-  const page=
-    document.getElementById(id);
-
-
-  if(page)
-    page.classList.add("active");
+  document
+    .getElementById(id)
+    ?.classList.add("active");
 
 
   document
-    .querySelectorAll(
-      "#publicNav button"
-    )
+    .querySelectorAll(".main-nav button")
     .forEach(
       btn=>
-        btn.classList.remove(
-          "active"
-        )
+        btn.classList.remove("active")
     );
 
 
@@ -3209,17 +3739,14 @@ function showPage(id,button){
   });
 
 
-  if(id==="schedule")
-    loadGames();
-
   if(id==="history")
     renderHistory();
 
   if(id==="roster")
-    loadRoster();
+    renderRoster();
 
   if(id==="photos")
-    loadPhotos();
+    renderPhotos();
 
 }
 
@@ -3230,68 +3757,23 @@ function showPage(id,button){
 
 function openAdminLogin(){
 
-  const overlay=
-    document.getElementById(
-      "adminLoginOverlay"
-    );
+  const modal=
+    document.getElementById("adminLogin");
 
+  modal.classList.add("show");
 
-  overlay.classList.add(
-    "show"
-  );
+  document.body.classList.add("modal-open");
 
-
-  /*
-    Lock the body WITHOUT allowing
-    the page underneath to move.
-  */
-
-  document.body.classList.add(
-    "admin-login-open"
-  );
-
-
-  /*
-    Save the current scroll position.
-  */
-
-  document.body.dataset.loginScroll=
-    window.scrollY;
-
-
-  /*
-    Force the window back to the top of
-    the viewport before focusing the input.
-  */
-
-  window.scrollTo(
-    0,
-    0
-  );
-
-
-  /*
-    Don't focus immediately.
-    On mobile this prevents the browser
-    from jumping the modal when the
-    keyboard opens.
-  */
 
   setTimeout(
     ()=>{
-
-      const input=
-        document.getElementById(
-          "adminCode"
-        );
-
-      if(input)
-        input.focus({
+      document
+        .getElementById("adminCode")
+        ?.focus({
           preventScroll:true
         });
-
     },
-    250
+    220
   );
 
 }
@@ -3302,39 +3784,18 @@ function closeAdminLogin(event){
   if(
     event &&
     event.target &&
-    event.target.id!=="adminLoginOverlay"
+    event.target.id!=="adminLogin"
   )
     return;
 
 
   document
-    .getElementById(
-      "adminLoginOverlay"
-    )
-    .classList.remove(
-      "show"
-    );
+    .getElementById("adminLogin")
+    .classList.remove("show");
 
 
   document.body.classList.remove(
-    "admin-login-open"
-  );
-
-
-  /*
-    Restore the page exactly where
-    the user was before opening admin.
-  */
-
-  const oldScroll=
-    Number(
-      document.body.dataset.loginScroll||0
-    );
-
-
-  window.scrollTo(
-    0,
-    oldScroll
+    "modal-open"
   );
 
 
@@ -3342,49 +3803,44 @@ function closeAdminLogin(event){
     "adminCode"
   ).value="";
 
-
   document.getElementById(
-    "loginMessage"
+    "loginError"
   ).textContent="";
 
 }
 
 
 document
-  .getElementById(
-    "adminCode"
-  )
+  .getElementById("adminCode")
   .addEventListener(
     "keydown",
     event=>{
 
       if(event.key==="Enter")
-        login();
+        loginAdmin();
 
     }
   );
 
 
-async function login(){
+async function loginAdmin(){
 
   const code=
     document
-      .getElementById(
-        "adminCode"
-      )
+      .getElementById("adminCode")
       .value
       .trim();
 
 
-  const message=
+  const error=
     document.getElementById(
-      "loginMessage"
+      "loginError"
     );
 
 
   if(!/^\d{4}$/.test(code)){
 
-    message.textContent=
+    error.textContent=
       "Enter exactly 4 digits.";
 
     return;
@@ -3392,133 +3848,105 @@ async function login(){
   }
 
 
-  message.textContent=
+  error.textContent=
     "Checking...";
 
 
-  const {
-    data,
-    error
-  }=
-  await db.rpc(
-    "check_admin_code",
-    {
-      p_code:code
+  try{
+
+    const {
+      data,
+      error:rpcError
+    }=
+    await db.rpc(
+      "check_admin_code",
+      {
+        p_code:code
+      }
+    );
+
+
+    if(rpcError)
+      throw rpcError;
+
+
+    if(!data){
+
+      error.textContent=
+        "Incorrect admin code.";
+
+      document.getElementById(
+        "adminCode"
+      ).value="";
+
+      return;
+
     }
-  );
 
 
-  if(error){
+    closeAdminLogin();
 
-    console.error(error);
+    openAdmin();
 
-    message.textContent=
+  }
+
+  catch(err){
+
+    console.error(err);
+
+    error.textContent=
       "Unable to verify code.";
 
-    return;
-
   }
-
-
-  if(!data){
-
-    message.textContent=
-      "Incorrect admin code.";
-
-    document.getElementById(
-      "adminCode"
-    ).value="";
-
-    return;
-
-  }
-
-
-  sessionStorage.setItem(
-    "adminCode",
-    code
-  );
-
-
-  /*
-    Close the keyboard/login before
-    entering admin.
-  */
-
-  document
-    .getElementById(
-      "adminCode"
-    )
-    .blur();
-
-
-  closeAdminLogin();
-
-  openAdmin();
 
 }
 
 
 /* =========================================================
-   ADMIN
+   ADMIN PAGE
 ========================================================= */
 
 function openAdmin(){
 
   document
-    .getElementById(
-      "publicNav"
-    )
+    .getElementById("siteHeader")
     .classList.add("hidden");
 
-
   document
-    .getElementById(
-      "publicAchievements"
-    )
+    .getElementById("achievements")
     .classList.add("hidden");
 
-
   document
-    .getElementById(
-      "publicMain"
-    )
+    .getElementById("mainNav")
     .classList.add("hidden");
 
-
   document
-    .getElementById(
-      "adminGear"
-    )
+    .getElementById("publicMain")
     .classList.add("hidden");
 
+  document
+    .getElementById("adminGear")
+    .classList.add("hidden");
 
   document
-    .getElementById(
-      "adminPage"
-    )
+    .getElementById("adminPage")
     .classList.add("active");
 
 
   document
-    .querySelectorAll(
-      ".admin-section"
-    )
+    .querySelectorAll(".admin-section")
     .forEach(
       section=>
-        section.classList.remove(
-          "open"
-        )
+        section.classList.remove("open")
     );
 
+
+  loadAdminData();
 
   window.scrollTo({
     top:0,
     behavior:"smooth"
   });
-
-
-  loadAdminData();
 
 }
 
@@ -3526,74 +3954,56 @@ function openAdmin(){
 function closeAdmin(){
 
   document
-    .getElementById(
-      "adminPage"
-    )
-    .classList.remove(
-      "active"
-    );
-
+    .getElementById("adminPage")
+    .classList.remove("active");
 
   document
-    .getElementById(
-      "publicNav"
-    )
+    .getElementById("siteHeader")
+    .classList.remove("hidden");
+
+  document
+    .getElementById("achievements")
+    .classList.remove("hidden");
+
+  document
+    .getElementById("mainNav")
+    .classList.remove("hidden");
+
+  document
+    .getElementById("publicMain")
+    .classList.remove("hidden");
+
+  document
+    .getElementById("adminGear")
     .classList.remove("hidden");
 
 
-  document
-    .getElementById(
-      "publicAchievements"
-    )
-    .classList.remove("hidden");
-
-
-  document
-    .getElementById(
-      "publicMain"
-    )
-    .classList.remove("hidden");
-
-
-  document
-    .getElementById(
-      "adminGear"
-    )
-    .classList.remove("hidden");
-
-
-  const homeButton=
+  const home=
     document.querySelector(
-      "#publicNav button"
+      ".main-nav button"
     );
 
 
-  if(homeButton)
-    showPage(
-      "home",
-      homeButton
-    );
+  showPage(
+    "home",
+    home
+  );
 
 }
 
 
-function toggleAdminSection(id){
+function toggleAdmin(id){
 
-  const section=
-    document.getElementById(id);
-
-
-  if(section)
-    section.classList.toggle(
-      "open"
-    );
+  document
+    .getElementById(id)
+    ?.classList.toggle("open");
 
 }
 
 
 async function loadAdminData(){
 
-  buildPositionPicker("add");
+  buildPositionOptions();
 
   await loadGames();
 
@@ -3601,284 +4011,7 @@ async function loadAdminData(){
 
   await loadPhotos();
 
-
-  document
-    .querySelectorAll(
-      ".admin-section"
-    )
-    .forEach(
-      section=>
-        section.classList.remove(
-          "open"
-        )
-    );
-
 }
-
-
-/* =========================================================
-   POSITION PICKER
-========================================================= */
-
-const positionOptions=[
-  "QB","RB","FB","WR","TE",
-  "OL","T","G","C",
-  "DL","DE","DT","NG",
-  "LB","MLB","OLB",
-  "DB","CB","FS","SS",
-  "K","P","LS"
-];
-
-
-function buildPositionPicker(
-  type,
-  selected=""
-){
-
-  const container=
-    document.getElementById(
-      `${type}PositionOptions`
-    );
-
-
-  if(!container)
-    return;
-
-
-  const selectedPositions=
-    String(selected||"")
-      .split(",")
-      .map(x=>x.trim().toUpperCase())
-      .filter(Boolean);
-
-
-  container.innerHTML=
-    positionOptions
-      .map(
-        position=>`
-
-          <label
-            class="position-option">
-
-            <input
-              type="checkbox"
-              value="${position}"
-
-              ${
-                selectedPositions.includes(
-                  position
-                )
-                ?
-                "checked"
-                :
-                ""
-              }
-
-              onchange="
-                updatePositionText('${type}')
-              ">
-
-            ${position}
-
-          </label>
-
-        `
-      )
-      .join("");
-
-
-  updatePositionText(type);
-
-}
-
-
-function togglePositionPicker(type){
-
-  const picker=
-    document.getElementById(
-      `${type}PositionPicker`
-    );
-
-
-  if(picker)
-    picker.classList.toggle(
-      "open"
-    );
-
-}
-
-
-function closePositionPicker(type){
-
-  const picker=
-    document.getElementById(
-      `${type}PositionPicker`
-    );
-
-
-  if(picker)
-    picker.classList.remove(
-      "open"
-    );
-
-
-  updatePositionText(type);
-
-}
-
-
-function clearPositionPicker(type){
-
-  const picker=
-    document.getElementById(
-      `${type}PositionPicker`
-    );
-
-
-  if(!picker)
-    return;
-
-
-  picker
-    .querySelectorAll(
-      'input[type="checkbox"]'
-    )
-    .forEach(
-      box=>
-        box.checked=false
-    );
-
-
-  const custom=
-    document.getElementById(
-      `${type}CustomPosition`
-    );
-
-
-  if(custom)
-    custom.value="";
-
-
-  updatePositionText(type);
-
-}
-
-
-function updatePositionText(type){
-
-  const picker=
-    document.getElementById(
-      `${type}PositionPicker`
-    );
-
-
-  const text=
-    document.getElementById(
-      `${type}PositionText`
-    );
-
-
-  if(!picker||!text)
-    return;
-
-
-  const selected=
-    Array.from(
-      picker.querySelectorAll(
-        'input[type="checkbox"]:checked'
-      )
-    )
-    .map(
-      box=>box.value
-    );
-
-
-  const custom=
-    document.getElementById(
-      `${type}CustomPosition`
-    )?.value.trim();
-
-
-  if(custom)
-    selected.push(custom);
-
-
-  if(!selected.length){
-
-    text.textContent=
-      "Select position(s)...";
-
-    text.className=
-      "position-placeholder";
-
-  }
-
-  else{
-
-    text.textContent=
-      selected.join(", ");
-
-    text.className=
-      "position-selected-text";
-
-  }
-
-}
-
-
-function getSelectedPositions(type){
-
-  const picker=
-    document.getElementById(
-      `${type}PositionPicker`
-    );
-
-
-  if(!picker)
-    return "";
-
-
-  const selected=
-    Array.from(
-      picker.querySelectorAll(
-        'input[type="checkbox"]:checked'
-      )
-    )
-    .map(
-      box=>box.value
-    );
-
-
-  const custom=
-    document.getElementById(
-      `${type}CustomPosition`
-    )?.value.trim();
-
-
-  if(custom)
-    selected.push(custom);
-
-
-  return[
-    ...new Set(
-      selected
-    )
-  ].join(", ");
-
-}
-
-
-document.addEventListener(
-  "input",
-  event=>{
-
-    if(
-      event.target.id==="addCustomPosition"
-    )
-      updatePositionText("add");
-
-  }
-);
 
 
 /* =========================================================
@@ -3913,12 +4046,11 @@ async function loadGames(){
 
   games=data||[];
 
+  renderHome();
 
-  updateHome();
+  renderSchedule();
 
-  updateSchedule();
-
-  updateAdminGames();
+  renderAdminGames();
 
 }
 
@@ -3937,7 +4069,7 @@ function hasScore(game){
 }
 
 
-function parseKickoff(game){
+function kickoffDate(game){
 
   if(!game.date)
     return null;
@@ -3947,58 +4079,46 @@ function parseKickoff(game){
   let minutes=0;
 
 
-  if(game.time){
-
-    const match=
-      String(
-        game.time
-      ).match(
+  const match=
+    String(game.time||"")
+      .match(
         /(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?/i
       );
 
 
-    if(match){
+  if(match){
 
-      hours=
-        Number(
-          match[1]
-        );
+    hours=
+      Number(match[1]);
 
-      minutes=
-        Number(
-          match[2]||0
-        );
+    minutes=
+      Number(match[2]||0);
 
 
-      const period=
-        String(
-          match[3]||""
-        )
+    const period=
+      String(match[3]||"")
         .toUpperCase();
 
 
-      if(
-        period==="PM" &&
-        hours<12
-      )
-        hours+=12;
+    if(
+      period==="PM" &&
+      hours<12
+    )
+      hours+=12;
 
 
-      if(
-        period==="AM" &&
-        hours===12
-      )
-        hours=0;
-
-    }
+    if(
+      period==="AM" &&
+      hours===12
+    )
+      hours=0;
 
   }
 
 
   const date=
     new Date(
-      game.date+
-      "T00:00:00"
+      `${game.date}T00:00:00`
     );
 
 
@@ -4015,14 +4135,14 @@ function parseKickoff(game){
 }
 
 
-function isGameLive(game){
+function isLive(game){
 
   if(hasScore(game))
     return false;
 
 
   const kickoff=
-    parseKickoff(game);
+    kickoffDate(game);
 
 
   return(
@@ -4033,49 +4153,44 @@ function isGameLive(game){
 }
 
 
-function getGameStatus(game){
+function gameStatus(game){
 
   if(hasScore(game)){
 
-    const a=
-      Number(
-        game.our_score
-      );
+    const our=
+      Number(game.our_score);
+
+    const opp=
+      Number(game.opponent_score);
 
 
-    const b=
-      Number(
-        game.opponent_score
-      );
-
-
-    if(a>b)
+    if(our>opp)
       return{
         text:"FINAL • WIN",
-        className:"win"
+        cls:"win"
       };
 
 
-    if(a<b)
+    if(our<opp)
       return{
         text:"FINAL • LOSS",
-        className:"loss"
+        cls:"loss"
       };
 
 
     return{
       text:"FINAL • TIE",
-      className:"tie"
+      cls:"tie"
     };
 
   }
 
 
-  if(isGameLive(game)){
+  if(isLive(game)){
 
     return{
-      text:"🔴 LIVE",
-      className:"live"
+      text:"LIVE",
+      cls:"live"
     };
 
   }
@@ -4086,7 +4201,11 @@ function getGameStatus(game){
 }
 
 
-function updateHome(){
+/* =========================================================
+   HOME
+========================================================= */
+
+function renderHome(){
 
   const today=
     new Date()
@@ -4098,8 +4217,8 @@ function updateHome(){
     games
       .filter(
         game=>
-          game.date>=today &&
-          !hasScore(game)
+          !hasScore(game) &&
+          game.date>=today
       )
       .sort(
         (a,b)=>
@@ -4112,140 +4231,59 @@ function updateHome(){
     upcoming[0];
 
 
-  if(!next)
+  if(!next){
+
+    document.getElementById(
+      "nextInfo"
+    ).textContent=
+      "No upcoming games.";
+
     return;
+
+  }
 
 
   document.getElementById(
     "nextMatchup"
   ).innerHTML=`
 
-    <span class="next-team">
+    <span class="matchup-team">
       NDGP
     </span>
 
-    <span class="next-vs">
+    <span class="matchup-vs">
       VS
     </span>
 
-    <span class="next-team">
-      ${escapeHtml(
-        next.opponent
-      )}
+    <span class="matchup-team">
+      ${escapeHTML(next.opponent)}
     </span>
 
   `;
 
 
   document.getElementById(
-    "nextDetails"
+    "nextInfo"
   ).innerHTML=`
 
-    📅 ${formatDate(
-      next.date
-    )}
-
+    📅 ${formatDate(next.date)}
     <br>
 
-    ⏰ ${escapeHtml(
-      next.time||
-      "Time TBD"
-    )}
-
+    ⏰ ${escapeHTML(next.time||"Time TBD")}
     <br>
 
-    📍 ${escapeHtml(
-      next.location||
-      "Location TBD"
-    )}
-
+    📍 ${escapeHTML(next.location||"Location TBD")}
     <br>
 
     <span class="home-away">
-      ${getHomeAwayIcon(
-        next.home_away
-      )}
-
-      ${escapeHtml(
-        next.home_away||
-        ""
-      )}
+      ${homeAwayIcon(next.home_away)}
+      ${escapeHTML(next.home_away||"")}
     </span>
 
   `;
 
 
-  const kickoff=
-    parseKickoff(next);
-
-
-  if(kickoff){
-
-    const updateCountdown=()=>{
-
-      if(isGameLive(next)){
-
-        document
-          .getElementById(
-            "countdown"
-          )
-          .classList.remove(
-            "hidden"
-          );
-
-
-        document.getElementById(
-          "countdown"
-        ).innerHTML=
-          "🔴 LIVE";
-
-
-        return;
-
-      }
-
-
-      const diff=
-        kickoff-
-        new Date();
-
-
-      if(diff<=0)
-        return;
-
-
-      const hours=
-        Math.floor(
-          diff/3600000
-        );
-
-
-      const minutes=
-        Math.floor(
-          diff/60000
-        )%60;
-
-
-      document
-        .getElementById(
-          "countdown"
-        )
-        .classList.remove(
-          "hidden"
-        );
-
-
-      document.getElementById(
-        "countdown"
-      ).innerHTML=
-        `🏈 ${hours}h ${minutes}m until kickoff`;
-
-    };
-
-
-    updateCountdown();
-
-  }
+  updateCountdown(next);
 
 
   let wins=0;
@@ -4255,60 +4293,143 @@ function updateHome(){
   games.forEach(
     game=>{
 
+      if(!hasScore(game))
+        return;
+
+
       if(
-        hasScore(game)
-      ){
+        Number(game.our_score)>
+        Number(game.opponent_score)
+      )
+        wins++;
 
-        if(
-          Number(
-            game.our_score
-          )>
-          Number(
-            game.opponent_score
-          )
-        )
-          wins++;
-
-        else if(
-          Number(
-            game.our_score
-          )<
-          Number(
-            game.opponent_score
-          )
-        )
-          losses++;
-
-      }
+      else if(
+        Number(game.our_score)<
+        Number(game.opponent_score)
+      )
+        losses++;
 
     }
   );
 
 
   document.getElementById(
-    "record"
+    "recordNumber"
   ).textContent=
     `${wins}–${losses}`;
 
 
   document.getElementById(
-    "recordDetails"
+    "recordSide"
   ).textContent=
-    `${wins} W • ${losses} L`;
+    `${wins} Wins • ${losses} Losses`;
 
 }
 
 
-function updateSchedule(){
+function updateCountdown(game){
+
+  const box=
+    document.getElementById(
+      "countdown"
+    );
+
+
+  const update=()=>{
+
+    if(isLive(game)){
+
+      box.classList.remove("hidden");
+
+      box.textContent=
+        "🔴 LIVE";
+
+      return;
+
+    }
+
+
+    const kickoff=
+      kickoffDate(game);
+
+
+    if(!kickoff){
+
+      box.classList.add("hidden");
+
+      return;
+
+    }
+
+
+    const diff=
+      kickoff-
+      new Date();
+
+
+    if(diff<=0){
+
+      box.classList.add("hidden");
+
+      return;
+
+    }
+
+
+    const totalMinutes=
+      Math.floor(
+        diff/60000
+      );
+
+
+    const days=
+      Math.floor(
+        totalMinutes/1440
+      );
+
+
+    const hours=
+      Math.floor(
+        (totalMinutes%1440)/60
+      );
+
+
+    const minutes=
+      totalMinutes%60;
+
+
+    let text="";
+
+
+    if(days>0)
+      text+=`${days}d `;
+
+    text+=`${hours}h ${minutes}m until kickoff`;
+
+
+    box.classList.remove("hidden");
+
+    box.textContent=
+      `🏈 ${text}`;
+
+  };
+
+
+  update();
+
+}
+
+
+/* =========================================================
+   SCHEDULE
+========================================================= */
+
+function renderSchedule(){
 
   const container=
     document.getElementById(
       "scheduleList"
     );
-
-
-  if(!container)
-    return;
 
 
   if(!games.length){
@@ -4329,21 +4450,18 @@ function updateSchedule(){
         game=>{
 
           const status=
-            getGameStatus(game);
+            gameStatus(game);
 
 
           return`
 
             <div
-              class="game ${
-                isGameLive(game)
-                ?
-                "live-game"
-                :
-                ""
-              }"
+              class="
+                game-card
+                ${isLive(game)?"live":""}
+              "
               onclick="
-                openGameDetails(${game.id})
+                openGameDetails(${Number(game.id)})
               ">
 
               <div class="game-top">
@@ -4351,15 +4469,11 @@ function updateSchedule(){
                 <div>
 
                   <div class="game-date">
-                    ${formatDate(
-                      game.date
-                    )}
+                    ${formatDate(game.date)}
                   </div>
 
                   <div class="game-opponent">
-                    ${escapeHtml(
-                      game.opponent
-                    )}
+                    ${escapeHTML(game.opponent)}
                   </div>
 
                 </div>
@@ -4371,9 +4485,15 @@ function updateSchedule(){
                   `
                     <span
                       class="
-                        badge
-                        ${status.className}
+                        status
+                        ${status.cls}
                       ">
+
+                      ${
+                        status.cls==="live"
+                        ?"🔴 "
+                        :""
+                      }
 
                       ${status.text}
 
@@ -4388,47 +4508,34 @@ function updateSchedule(){
 
               <div class="game-matchup">
 
-                <span class="game-team">
+                <strong>
                   NDGP
-                </span>
+                </strong>
 
                 <span class="game-vs">
                   VS
                 </span>
 
-                <span class="game-team">
-                  ${escapeHtml(
-                    game.opponent
-                  )}
-                </span>
+                <strong>
+                  ${escapeHTML(game.opponent)}
+                </strong>
 
               </div>
 
 
-              <div class="game-details">
+              <div class="game-meta">
 
                 <span>
-                  ⏰ ${escapeHtml(
-                    game.time||
-                    "Time TBD"
-                  )}
+                  ⏰ ${escapeHTML(game.time||"Time TBD")}
                 </span>
 
                 <span>
-                  📍 ${escapeHtml(
-                    game.location||
-                    "Location TBD"
-                  )}
+                  📍 ${escapeHTML(game.location||"Location TBD")}
                 </span>
 
                 <span>
-                  ${getHomeAwayIcon(
-                    game.home_away
-                  )}
-                  ${escapeHtml(
-                    game.home_away||
-                    ""
-                  )}
+                  ${homeAwayIcon(game.home_away)}
+                  ${escapeHTML(game.home_away||"")}
                 </span>
 
               </div>
@@ -4450,7 +4557,7 @@ function updateSchedule(){
               }
 
 
-              <div class="game-details-link">
+              <div class="game-detail-hint">
                 TAP FOR GAME DETAILS →
               </div>
 
@@ -4461,6 +4568,508 @@ function updateSchedule(){
         }
       )
       .join("");
+
+}
+
+
+/* =========================================================
+   GAME DETAILS
+========================================================= */
+
+function openGameDetails(id){
+
+  const game=
+    games.find(
+      g=>
+        Number(g.id)===Number(id)
+    );
+
+
+  if(!game)
+    return;
+
+
+  document.getElementById(
+    "modalTitle"
+  ).textContent=
+    `NDGP VS ${game.opponent}`;
+
+
+  const status=
+    gameStatus(game);
+
+
+  const statusBox=
+    document.getElementById(
+      "modalStatus"
+    );
+
+
+  const scoreBox=
+    document.getElementById(
+      "modalScore"
+    );
+
+
+  if(status){
+
+    statusBox.innerHTML=`
+
+      <span
+        class="
+          status
+          ${status.cls}
+        ">
+
+        ${
+          status.cls==="live"
+          ?"🔴 "
+          :""
+        }
+
+        ${status.text}
+
+      </span>
+
+    `;
+
+  }
+
+  else{
+
+    statusBox.innerHTML="";
+
+  }
+
+
+  scoreBox.textContent=
+    hasScore(game)
+    ?
+    `${game.our_score} – ${game.opponent_score}`
+    :
+    "";
+
+
+  document.getElementById(
+    "modalInfo"
+  ).innerHTML=`
+
+    <div class="info-box">
+
+      <div class="info-label">
+        Date
+      </div>
+
+      <div class="info-value">
+        ${formatDate(game.date)}
+      </div>
+
+    </div>
+
+
+    <div class="info-box">
+
+      <div class="info-label">
+        Kickoff
+      </div>
+
+      <div class="info-value">
+        ${escapeHTML(game.time||"Time TBD")}
+      </div>
+
+    </div>
+
+
+    <div class="info-box">
+
+      <div class="info-label">
+        Location
+      </div>
+
+      <div class="info-value">
+        ${escapeHTML(game.location||"Location TBD")}
+      </div>
+
+    </div>
+
+
+    <div class="info-box">
+
+      <div class="info-label">
+        Game Location
+      </div>
+
+      <div class="info-value">
+        ${homeAwayIcon(game.home_away)}
+        ${escapeHTML(game.home_away||"")}
+      </div>
+
+    </div>
+
+  `;
+
+
+  document.getElementById(
+    "modalNotes"
+  ).innerHTML=
+    game.notes
+    ?
+    `
+      <div class="modal-notes">
+        ${escapeHTML(game.notes)}
+      </div>
+    `
+    :
+    "";
+
+
+  document
+    .getElementById("gameModal")
+    .classList.add("show");
+
+
+  document.body.classList.add(
+    "modal-open"
+  );
+
+}
+
+
+function closeGameModal(event){
+
+  if(
+    event &&
+    event.target &&
+    event.target.id!=="gameModal"
+  )
+    return;
+
+
+  document
+    .getElementById("gameModal")
+    .classList.remove("show");
+
+
+  document.body.classList.remove(
+    "modal-open"
+  );
+
+}
+
+
+/* =========================================================
+   HISTORY
+========================================================= */
+
+const historyData=[
+
+  {
+    year:2025,
+    record:"12–1",
+
+    games:[
+      ["Garden Spot","21–3","W"],
+      ["Salisbury","63–0","W"],
+      ["North Schuylkill","21–20","W"],
+      ["Pen Argyl","59–7","W"],
+      ["Catasauqua","58–0","W"],
+      ["Palisades","34–22","W"],
+      ["Palmerton","55–0","W"],
+      ["Wilson","62–0","W"],
+      ["Salisbury","56–6","W"],
+      ["Tamaqua","59–16","W"],
+      ["Northwestern Lehigh","14–25","L"]
+    ],
+
+    achievements:[
+      "Colonial League White Division Champions",
+      "PIAA District XI Class 3A Runner-Up",
+      "Tied School Record — Most Wins"
+    ]
+  },
+
+  {
+    year:2024,
+    record:"9–2",
+
+    games:[
+      ["Garden Spot","—","W"],
+      ["Salisbury","—","W"],
+      ["North Schuylkill","—","L"],
+      ["Saucon Valley","—","W"],
+      ["Catasauqua","—","W"],
+      ["Northern Lehigh","—","W"],
+      ["Pen Argyl","—","W"],
+      ["Palisades","—","W"],
+      ["Palmerton","—","W"],
+      ["Wilson","—","W"],
+      ["North Schuylkill","—","L"]
+    ],
+
+    achievements:[
+      "Colonial League White Division Champions"
+    ]
+  },
+
+  {
+    year:2023,
+    record:"8–4"
+  },
+
+  {
+    year:2022,
+    record:"9–3"
+  },
+
+  {
+    year:2021,
+    record:"7–3"
+  },
+
+  {
+    year:2020,
+    record:"7–1"
+  },
+
+  {
+    year:2019,
+    record:"7–4"
+  },
+
+  {
+    year:2018,
+    record:"10–2"
+  },
+
+  {
+    year:2017,
+    record:"9–3"
+  },
+
+  {
+    year:2016,
+    record:"12–3"
+  }
+
+];
+
+
+function renderHistory(){
+
+  const list=
+    document.getElementById(
+      "historyList"
+    );
+
+
+  list.innerHTML=
+    historyData
+      .map(
+        season=>`
+
+          <div class="season-card">
+
+            <button
+              class="season-button"
+              onclick="
+                openHistory(${season.year})
+              ">
+
+              <div>
+
+                <div class="season-name">
+                  ${season.year} Season
+                </div>
+
+                <div class="season-record">
+                  Final Record:
+                  ${season.record}
+                </div>
+
+              </div>
+
+              <div class="season-arrow">
+                ›
+              </div>
+
+            </button>
+
+          </div>
+
+        `
+      )
+      .join("");
+
+}
+
+
+function openHistory(year){
+
+  const season=
+    historyData.find(
+      s=>s.year===year
+    );
+
+
+  if(!season)
+    return;
+
+
+  document.getElementById(
+    "historyModalTitle"
+  ).textContent=
+    `${season.year} Football Season`;
+
+
+  document.getElementById(
+    "historyModalRecord"
+  ).textContent=
+    `Final Record: ${season.record}`;
+
+
+  let html="";
+
+
+  if(
+    season.games &&
+    season.games.length
+  ){
+
+    html+=`
+
+      <div class="history-section-title">
+        Games
+      </div>
+
+    `;
+
+
+    season.games.forEach(
+      game=>{
+
+        html+=`
+
+          <div class="history-game">
+
+            <div class="history-opponent">
+              NDGP VS
+              ${escapeHTML(game[0])}
+            </div>
+
+            <div
+              class="
+                history-score
+                ${game[2]==="W"?"win":"loss"}
+              ">
+
+              ${game[1]}
+
+            </div>
+
+          </div>
+
+        `;
+
+      }
+    );
+
+  }
+
+
+  if(
+    season.achievements &&
+    season.achievements.length
+  ){
+
+    html+=`
+
+      <div
+        class="history-section-title"
+        style="margin-top:14px">
+
+        Achievements
+
+      </div>
+
+    `;
+
+
+    season.achievements.forEach(
+      achievement=>{
+
+        html+=`
+
+          <div class="achievement-row">
+
+            <div class="achievement-row-icon">
+              🏆
+            </div>
+
+            <div class="achievement-row-text">
+              ${escapeHTML(achievement)}
+            </div>
+
+          </div>
+
+        `;
+
+      }
+    );
+
+  }
+
+
+  if(!html){
+
+    html=`
+
+      <div class="message">
+
+        Final Record:
+        ${season.record}
+
+      </div>
+
+    `;
+
+  }
+
+
+  document.getElementById(
+    "historyModalBody"
+  ).innerHTML=html;
+
+
+  document
+    .getElementById("historyModal")
+    .classList.add("show");
+
+
+  document.body.classList.add(
+    "modal-open"
+  );
+
+}
+
+
+function closeHistoryModal(event){
+
+  if(
+    event &&
+    event.target &&
+    event.target.id!=="historyModal"
+  )
+    return;
+
+
+  document
+    .getElementById("historyModal")
+    .classList.remove("show");
+
+
+  document.body.classList.remove(
+    "modal-open"
+  );
 
 }
 
@@ -4538,29 +5147,23 @@ function renderRoster(){
     roster.filter(
       player=>{
 
-        const matchesSearch=
-          !search||
-          player.name
-            .toLowerCase()
-            .includes(search)||
-          String(
-            player.number
-          ).includes(search)||
-          player.position
-            .toLowerCase()
-            .includes(search);
-
-
-        const matchesPosition=
-          filter==="all"||
-          player.position
-            .toUpperCase()
-            .includes(filter);
+        const text=
+          `${player.name} ${player.number} ${player.position}`
+            .toLowerCase();
 
 
         return(
-          matchesSearch&&
-          matchesPosition
+          (!search||
+            text.includes(search))
+          &&
+          (
+            filter==="all"||
+            String(
+              player.position||""
+            )
+            .toUpperCase()
+            .includes(filter)
+          )
         );
 
       }
@@ -4576,7 +5179,7 @@ function renderRoster(){
   if(!filtered.length){
 
     list.innerHTML=
-      `<div class="roster-empty">
+      `<div class="message">
         No players found.
       </div>`;
 
@@ -4593,23 +5196,17 @@ function renderRoster(){
           <div class="roster-card">
 
             <div class="roster-number">
-              ${escapeHtml(
-                player.number
-              )}
+              ${escapeHTML(player.number)}
             </div>
 
             <div class="roster-info">
 
               <div class="roster-name">
-                ${escapeHtml(
-                  player.name
-                )}
+                ${escapeHTML(player.name)}
               </div>
 
               <div class="roster-position">
-                ${escapeHtml(
-                  player.position
-                )}
+                ${escapeHTML(player.position||"")}
               </div>
 
             </div>
@@ -4624,9 +5221,7 @@ function renderRoster(){
 
 
 document
-  .getElementById(
-    "rosterSearch"
-  )
+  .getElementById("rosterSearch")
   .addEventListener(
     "input",
     renderRoster
@@ -4634,9 +5229,7 @@ document
 
 
 document
-  .getElementById(
-    "rosterFilter"
-  )
+  .getElementById("rosterFilter")
   .addEventListener(
     "change",
     renderRoster
@@ -4644,107 +5237,1068 @@ document
 
 
 /* =========================================================
-   HISTORY
+   POSITION PICKER
 ========================================================= */
 
-const seasonHistory=[
-
-  {
-    year:2025,
-    record:"12–1",
-    games:[
-      ["Garden Spot","21–3","W"],
-      ["Salisbury Township","63–0","W"],
-      ["North Schuylkill","21–20","W"],
-      ["Saucon Valley","55–13","W"],
-      ["Catasauqua","58–0","W"],
-      ["Pen Argyl","59–7","W"],
-      ["Palisades","34–22","W"],
-      ["Palmerton","55–0","W"],
-      ["Wilson Area","62–0","W"],
-      ["Salisbury Township","56–6","W"],
-      ["Tamaqua","59–16","W"],
-      ["Northwestern Lehigh","14–25","L"]
-    ],
-    achievements:[
-      "Colonial League White Division Champions",
-      "PIAA District XI Class 3A Runner-Up",
-      "Tied School Record — Most Wins"
-    ]
-  },
-
-  {
-    year:2024,
-    record:"9–2",
-    games:[
-      ["Garden Spot","71–64","W"],
-      ["Salisbury Township","56–0","W"],
-      ["North Schuylkill","29–31","L"],
-      ["Saucon Valley","24–7","W"],
-      ["Catasauqua","63–7","W"],
-      ["Northern Lehigh","49–19","W"],
-      ["Pen Argyl","42–15","W"],
-      ["Palisades","56–7","W"],
-      ["Palmerton","52–0","W"],
-      ["Wilson Area","52–11","W"],
-      ["North Schuylkill","23–26","L"]
-    ],
-    achievements:[
-      "Colonial League White Division Champions"
-    ]
-  },
-
-  {year:2023,record:"8–4"},
-  {year:2022,record:"9–3"},
-  {year:2021,record:"7–3"},
-  {year:2020,record:"7–1"},
-  {year:2019,record:"7–4"},
-  {year:2018,record:"10–2"},
-  {year:2017,record:"9–3"},
-  {year:2016,record:"12–3"}
-
+const positions=[
+  "QB",
+  "RB",
+  "FB",
+  "WR",
+  "TE",
+  "OL",
+  "T",
+  "G",
+  "C",
+  "DL",
+  "DE",
+  "DT",
+  "NG",
+  "LB",
+  "MLB",
+  "OLB",
+  "DB",
+  "CB",
+  "FS",
+  "SS",
+  "K",
+  "P",
+  "LS"
 ];
 
 
-function renderHistory(){
+function buildPositionOptions(){
 
-  const list=
+  const container=
     document.getElementById(
-      "historyList"
+      "positionOptions"
     );
 
 
-  list.innerHTML=
-    seasonHistory
+  container.innerHTML=
+    positions
       .map(
-        season=>`
+        position=>`
 
-          <div class="season-history">
+          <label class="position-option">
+
+            <input
+              type="checkbox"
+              value="${position}"
+              onchange="updatePositionText()">
+
+            ${position}
+
+          </label>
+
+        `
+      )
+      .join("");
+
+}
+
+
+function togglePositions(){
+
+  document
+    .getElementById(
+      "positionPicker"
+    )
+    .classList.toggle("open");
+
+}
+
+
+function closePositions(){
+
+  document
+    .getElementById(
+      "positionPicker"
+    )
+    .classList.remove("open");
+
+  updatePositionText();
+
+}
+
+
+function clearPositions(){
+
+  document
+    .querySelectorAll(
+      "#positionOptions input"
+    )
+    .forEach(
+      input=>
+        input.checked=false
+    );
+
+
+  document.getElementById(
+    "customPosition"
+  ).value="";
+
+
+  updatePositionText();
+
+}
+
+
+function updatePositionText(){
+
+  const selected=
+    Array.from(
+      document.querySelectorAll(
+        "#positionOptions input:checked"
+      )
+    )
+    .map(
+      input=>input.value
+    );
+
+
+  const custom=
+    document
+      .getElementById(
+        "customPosition"
+      )
+      .value
+      .trim();
+
+
+  if(custom)
+    selected.push(custom);
+
+
+  const text=
+    document.getElementById(
+      "positionText"
+    );
+
+
+  if(!selected.length){
+
+    text.textContent=
+      "Select position(s)...";
+
+    text.className="";
+
+  }
+
+  else{
+
+    text.textContent=
+      [...new Set(selected)]
+        .join(", ");
+
+    text.className=
+      "position-selected";
+
+  }
+
+}
+
+
+document
+  .getElementById(
+    "customPosition"
+  )
+  .addEventListener(
+    "input",
+    updatePositionText
+  );
+
+
+function getPositions(){
+
+  const selected=
+    Array.from(
+      document.querySelectorAll(
+        "#positionOptions input:checked"
+      )
+    )
+    .map(
+      input=>input.value
+    );
+
+
+  const custom=
+    document
+      .getElementById(
+        "customPosition"
+      )
+      .value
+      .trim();
+
+
+  if(custom)
+    selected.push(custom);
+
+
+  return[
+    ...new Set(selected)
+  ].join(", ");
+
+}
+
+
+/* =========================================================
+   ADMIN ROSTER
+========================================================= */
+
+function renderAdminRoster(){
+
+  const list=
+    document.getElementById(
+      "adminRosterList"
+    );
+
+
+  if(!list)
+    return;
+
+
+  if(!roster.length){
+
+    list.innerHTML=
+      `<div class="message">
+        No players have been added.
+      </div>`;
+
+    return;
+
+  }
+
+
+  list.innerHTML=
+    `<div class="admin-roster">
+
+      ${
+        roster
+          .map(
+            player=>`
+
+              <div class="admin-player">
+
+                <div class="admin-number">
+                  ${escapeHTML(player.number)}
+                </div>
+
+
+                <div>
+
+                  <div class="admin-player-name">
+                    ${escapeHTML(player.name)}
+                  </div>
+
+                  <div class="admin-player-position">
+                    ${escapeHTML(player.position||"")}
+                  </div>
+
+                </div>
+
+
+                <div class="admin-player-actions">
+
+                  <button
+                    class="secondary-button"
+                    onclick="
+                      editPlayer(${Number(player.id)})
+                    ">
+
+                    EDIT
+
+                  </button>
+
+
+                  <button
+                    class="danger-button"
+                    onclick="
+                      deletePlayer(${Number(player.id)})
+                    ">
+
+                    DELETE
+
+                  </button>
+
+                </div>
+
+              </div>
+
+            `
+          )
+          .join("")
+      }
+
+    </div>`;
+
+}
+
+
+async function addPlayer(){
+
+  const number=
+    document
+      .getElementById("playerNumber")
+      .value
+      .trim();
+
+
+  const name=
+    document
+      .getElementById("playerName")
+      .value
+      .trim();
+
+
+  const position=
+    getPositions();
+
+
+  if(!number||!name||!position){
+
+    alert(
+      "Please enter a number, name and position."
+    );
+
+    return;
+
+  }
+
+
+  const {
+    error
+  }=
+  await db
+    .from("roster")
+    .insert({
+      number,
+      name,
+      position
+    });
+
+
+  if(error){
+
+    console.error(error);
+
+    alert(
+      "Unable to add player."
+    );
+
+    return;
+
+  }
+
+
+  document.getElementById(
+    "playerNumber"
+  ).value="";
+
+
+  document.getElementById(
+    "playerName"
+  ).value="";
+
+
+  clearPositions();
+
+
+  await loadRoster();
+
+}
+
+
+async function deletePlayer(id){
+
+  if(
+    !confirm(
+      "Remove this player from the roster?"
+    )
+  )
+    return;
+
+
+  const {
+    error
+  }=
+  await db
+    .from("roster")
+    .delete()
+    .eq(
+      "id",
+      id
+    );
+
+
+  if(error){
+
+    alert(
+      "Unable to remove player."
+    );
+
+    console.error(error);
+
+    return;
+
+  }
+
+
+  await loadRoster();
+
+}
+
+
+async function editPlayer(id){
+
+  const player=
+    roster.find(
+      p=>
+        Number(p.id)===Number(id)
+    );
+
+
+  if(!player)
+    return;
+
+
+  const name=
+    prompt(
+      "Player name:",
+      player.name
+    );
+
+
+  if(name===null)
+    return;
+
+
+  const number=
+    prompt(
+      "Jersey number:",
+      player.number
+    );
+
+
+  if(number===null)
+    return;
+
+
+  const position=
+    prompt(
+      "Position(s):",
+      player.position
+    );
+
+
+  if(position===null)
+    return;
+
+
+  const {
+    error
+  }=
+  await db
+    .from("roster")
+    .update({
+      name:name.trim(),
+      number:number.trim(),
+      position:position.trim()
+    })
+    .eq(
+      "id",
+      id
+    );
+
+
+  if(error){
+
+    console.error(error);
+
+    alert(
+      "Unable to update player."
+    );
+
+    return;
+
+  }
+
+
+  await loadRoster();
+
+}
+
+
+/* =========================================================
+   ADMIN GAMES
+========================================================= */
+
+function renderAdminGames(){
+
+  const list=
+    document.getElementById(
+      "adminGameList"
+    );
+
+
+  if(!list)
+    return;
+
+
+  if(!games.length){
+
+    list.innerHTML=
+      `<div class="message">
+        No games have been added.
+      </div>`;
+
+    return;
+
+  }
+
+
+  list.innerHTML=
+    games
+      .map(
+        game=>`
+
+          <div class="admin-game">
+
+            <div>
+
+              <div class="admin-game-name">
+                ${escapeHTML(game.opponent)}
+              </div>
+
+              <div class="admin-game-meta">
+
+                ${formatDate(game.date)}
+                •
+                ${escapeHTML(game.time||"Time TBD")}
+
+                ${
+                  hasScore(game)
+                  ?
+                  `
+                    •
+                    FINAL
+                    ${game.our_score}–
+                    ${game.opponent_score}
+                  `
+                  :
+                  ""
+                }
+
+              </div>
+
+            </div>
+
+
+            <div class="admin-actions">
+
+              <button
+                class="secondary-button"
+                onclick="
+                  editGame(${Number(game.id)})
+                ">
+
+                EDIT
+
+              </button>
+
+
+              <button
+                class="danger-button"
+                onclick="
+                  deleteGame(${Number(game.id)})
+                ">
+
+                DELETE
+
+              </button>
+
+            </div>
+
+          </div>
+
+        `
+      )
+      .join("");
+
+}
+
+
+async function addGame(){
+
+  const date=
+    document
+      .getElementById("gameDate")
+      .value;
+
+  const time=
+    document
+      .getElementById("gameTime")
+      .value
+      .trim();
+
+  const opponent=
+    document
+      .getElementById("gameOpponent")
+      .value
+      .trim();
+
+  const location=
+    document
+      .getElementById("gameLocation")
+      .value
+      .trim();
+
+  const homeAway=
+    document
+      .getElementById("gameHomeAway")
+      .value;
+
+  const notes=
+    document
+      .getElementById("gameNotes")
+      .value
+      .trim();
+
+
+  if(!date||!opponent){
+
+    alert(
+      "Please enter the date and opponent."
+    );
+
+    return;
+
+  }
+
+
+  const {
+    error
+  }=
+  await db
+    .from("games")
+    .insert({
+      date,
+      time,
+      opponent,
+      location,
+      home_away:homeAway,
+      notes
+    });
+
+
+  if(error){
+
+    console.error(error);
+
+    document.getElementById(
+      "adminGameMessage"
+    ).innerHTML=
+      `<div class="message">
+        Unable to add game.
+      </div>`;
+
+    return;
+
+  }
+
+
+  document.getElementById(
+    "adminGameMessage"
+  ).innerHTML=
+    `<div class="message">
+      Game added successfully.
+    </div>`;
+
+
+  document.getElementById(
+    "gameDate"
+  ).value="";
+
+  document.getElementById(
+    "gameTime"
+  ).value="";
+
+  document.getElementById(
+    "gameOpponent"
+  ).value="";
+
+  document.getElementById(
+    "gameLocation"
+  ).value="";
+
+  document.getElementById(
+    "gameNotes"
+  ).value="";
+
+
+  await loadGames();
+
+}
+
+
+async function deleteGame(id){
+
+  if(
+    !confirm(
+      "Delete this game?"
+    )
+  )
+    return;
+
+
+  const {
+    error
+  }=
+  await db
+    .from("games")
+    .delete()
+    .eq(
+      "id",
+      id
+    );
+
+
+  if(error){
+
+    alert(
+      "Unable to delete game."
+    );
+
+    return;
+
+  }
+
+
+  await loadGames();
+
+}
+
+
+async function editGame(id){
+
+  const game=
+    games.find(
+      g=>
+        Number(g.id)===Number(id)
+    );
+
+
+  if(!game)
+    return;
+
+
+  const score=
+    prompt(
+      "Enter final score as NDGP score - opponent score.\n\nLeave blank if the game is not final.",
+      hasScore(game)
+      ?
+      `${game.our_score}-${game.opponent_score}`
+      :
+      ""
+    );
+
+
+  if(score===null)
+    return;
+
+
+  let ourScore=null;
+  let opponentScore=null;
+
+
+  if(score.trim()){
+
+    const match=
+      score
+        .trim()
+        .match(
+          /^(\d+)\s*[-:]\s*(\d+)$/
+        );
+
+
+    if(!match){
+
+      alert(
+        "Use the format 21-14."
+      );
+
+      return;
+
+    }
+
+
+    ourScore=
+      Number(match[1]);
+
+    opponentScore=
+      Number(match[2]);
+
+  }
+
+
+  const time=
+    prompt(
+      "Kickoff time:",
+      game.time||""
+    );
+
+
+  if(time===null)
+    return;
+
+
+  const location=
+    prompt(
+      "Location:",
+      game.location||""
+    );
+
+
+  if(location===null)
+    return;
+
+
+  const {
+    error
+  }=
+  await db
+    .from("games")
+    .update({
+      time:time.trim(),
+      location:location.trim(),
+      our_score:ourScore,
+      opponent_score:opponentScore
+    })
+    .eq(
+      "id",
+      id
+    );
+
+
+  if(error){
+
+    console.error(error);
+
+    alert(
+      "Unable to update game."
+    );
+
+    return;
+
+  }
+
+
+  await loadGames();
+
+}
+
+
+/* =========================================================
+   PHOTOS
+========================================================= */
+
+async function loadPhotos(){
+
+  const {
+    data,
+    error
+  }=
+  await db
+    .from("photos")
+    .select("*")
+    .order(
+      "created_at",
+      {
+        ascending:false
+      }
+    );
+
+
+  if(error){
+
+    console.error(error);
+
+    return;
+
+  }
+
+
+  photos=data||[];
+
+  renderPhotos();
+
+  renderAdminPhotos();
+
+}
+
+
+function renderPhotos(){
+
+  const container=
+    document.getElementById(
+      "photoList"
+    );
+
+
+  if(!container)
+    return;
+
+
+  if(!photos.length){
+
+    container.innerHTML=
+      `<div class="message">
+        No photos have been uploaded yet.
+      </div>`;
+
+    return;
+
+  }
+
+
+  container.innerHTML=
+    `<div class="photo-grid">
+
+      ${
+        photos
+          .map(
+            photo=>`
+
+              <div
+                class="photo-item"
+                onclick="
+                  openPhoto(
+                    '${escapeAttribute(photo.url)}',
+                    '${escapeAttribute(photo.caption||"")}'
+                  )
+                ">
+
+                <img
+                  src="${escapeAttribute(photo.url)}"
+                  alt="NDGP Football">
+
+                ${
+                  photo.caption
+                  ?
+                  `
+                    <div class="photo-caption">
+                      ${escapeHTML(photo.caption)}
+                    </div>
+                  `
+                  :
+                  ""
+                }
+
+              </div>
+
+            `
+          )
+          .join("")
+      }
+
+    </div>`;
+
+}
+
+
+function openPhoto(url,caption){
+
+  document.getElementById(
+    "photoViewerImage"
+  ).src=url;
+
+
+  document
+    .getElementById(
+      "photoViewer"
+    )
+    .classList.add("show");
+
+
+  document.body.classList.add(
+    "modal-open"
+  );
+
+}
+
+
+function closePhotoViewer(event){
+
+  if(
+    event &&
+    event.target &&
+    event.target.id!=="photoViewer"
+  )
+    return;
+
+
+  document
+    .getElementById(
+      "photoViewer"
+    )
+    .classList.remove("show");
+
+
+  document.body.classList.remove(
+    "modal-open"
+  );
+
+}
+
+
+function renderAdminPhotos(){
+
+  const list=
+    document.getElementById(
+      "adminPhotoList"
+    );
+
+
+  if(!list)
+    return;
+
+
+  if(!photos.length){
+
+    list.innerHTML=
+      `<div class="message">
+        No photos uploaded.
+      </div>`;
+
+    return;
+
+  }
+
+
+  list.innerHTML=
+    photos
+      .map(
+        photo=>`
+
+          <div
+            class="admin-game">
+
+            <div>
+
+              <div class="admin-game-name">
+                ${escapeHTML(photo.caption||"Photo")}
+              </div>
+
+            </div>
+
 
             <button
-              class="season-button"
+              class="danger-button"
               onclick="
-                openHistorySeason(
-                  ${season.year}
-                )
+                deletePhoto(${Number(photo.id)})
               ">
 
-              <div>
-
-                <div class="season-name">
-                  ${season.year} Season
-                </div>
-
-                <div class="season-record-small">
-                  Final Record:
-                  ${season.record}
-                </div>
-
-              </div>
-
-              <div class="season-arrow">
-                ›
-              </div>
+              DELETE
 
             </button>
 
@@ -4757,429 +6311,151 @@ function renderHistory(){
 }
 
 
-function openHistorySeason(year){
+async function uploadPhoto(){
 
-  const season=
-    seasonHistory.find(
-      s=>s.year===year
+  const file=
+    document
+      .getElementById("photoFile")
+      .files[0];
+
+
+  const caption=
+    document
+      .getElementById("photoCaption")
+      .value
+      .trim();
+
+
+  if(!file){
+
+    alert(
+      "Choose a photo first."
+    );
+
+    return;
+
+  }
+
+
+  const extension=
+    file.name
+      .split(".")
+      .pop();
+
+
+  const path=
+    `${Date.now()}-${Math.random().toString(36).slice(2)}.${extension}`;
+
+
+  const {
+    error:uploadError
+  }=
+  await db.storage
+    .from("photos")
+    .upload(
+      path,
+      file,
+      {
+        upsert:false
+      }
     );
 
 
-  if(!season)
+  if(uploadError){
+
+    console.error(uploadError);
+
+    alert(
+      "Unable to upload photo. Make sure your Supabase photos bucket is configured."
+    );
+
     return;
 
-
-  document.getElementById(
-    "historyModalTitle"
-  ).textContent=
-    `${season.year} Football Season`;
-
-
-  document.getElementById(
-    "historyModalRecord"
-  ).textContent=
-    `Final Record: ${season.record}`;
-
-
-  let html="";
-
-
-  if(
-    season.games &&
-    season.games.length
-  ){
-
-    html+=`
-
-      <div
-        style="margin-bottom:15px">
-
-        <div
-          class="page-heading"
-          style="font-size:25px">
-
-          Games
-
-        </div>
-
-
-        ${
-          season.games
-            .map(
-              game=>`
-
-                <div
-                  style="
-                    display:flex;
-                    justify-content:space-between;
-                    align-items:center;
-                    background:white;
-                    border:1px solid var(--border);
-                    border-radius:7px;
-                    padding:9px;
-                    margin-bottom:5px;
-                  ">
-
-                  <strong
-                    style="
-                      color:var(--navy);
-                      font-family:Teko;
-                      font-size:19px;
-                    ">
-
-                    NDGP VS
-                    ${escapeHtml(
-                      game[0]
-                    )}
-
-                  </strong>
-
-
-                  <strong
-                    style="
-                      color:${
-                        game[2]==="W"
-                        ?
-                        "var(--green)"
-                        :
-                        "var(--red)"
-                      };
-                      font-family:Teko;
-                      font-size:21px;
-                    ">
-
-                    ${game[1]}
-
-                  </strong>
-
-                </div>
-
-              `
-            )
-            .join("")
-        }
-
-      </div>
-
-    `;
-
   }
 
 
-  if(
-    season.achievements &&
-    season.achievements.length
-  ){
-
-    html+=`
-
-      <div>
-
-        <div
-          class="page-heading"
-          style="font-size:25px">
-
-          Achievements
-
-        </div>
+  const {
+    data:urlData
+  }=
+  db.storage
+    .from("photos")
+    .getPublicUrl(path);
 
 
-        ${
-          season.achievements
-            .map(
-              achievement=>`
-
-                <div
-                  class="roster-card"
-                  style="margin-bottom:5px">
-
-                  <div>
-                    🏆
-                  </div>
-
-                  <div
-                    class="roster-info">
-
-                    <div
-                      class="roster-name">
-
-                      ${escapeHtml(
-                        achievement
-                      )}
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-              `
-            )
-            .join("")
-        }
-
-      </div>
-
-    `;
-
-  }
+  const {
+    error
+  }=
+  await db
+    .from("photos")
+    .insert({
+      url:urlData.publicUrl,
+      caption
+    });
 
 
-  if(!html){
+  if(error){
 
-    html=
-      `<div class="roster-empty">
-        Final Record: ${season.record}
-      </div>`;
+    console.error(error);
+
+    alert(
+      "Photo uploaded but could not be saved."
+    );
+
+    return;
 
   }
 
 
   document.getElementById(
-    "historyModalBody"
-  ).innerHTML=html;
+    "photoFile"
+  ).value="";
+
+  document.getElementById(
+    "photoCaption"
+  ).value="";
 
 
-  document
-    .getElementById(
-      "historyModal"
-    )
-    .classList.add("show");
-
-
-  document.body.style.overflow="hidden";
+  await loadPhotos();
 
 }
 
 
-function closeHistoryModal(event){
+async function deletePhoto(id){
 
   if(
-    event &&
-    event.target &&
-    event.target.id!=="historyModal"
+    !confirm(
+      "Delete this photo?"
+    )
   )
     return;
 
 
-  document
-    .getElementById(
-      "historyModal"
-    )
-    .classList.remove("show");
-
-
-  document.body.style.overflow="";
-
-}
-
-
-/* =========================================================
-   GAME DETAILS
-========================================================= */
-
-function openGameDetails(id){
-
-  const game=
-    games.find(
-      g=>
-        Number(g.id)===
-        Number(id)
+  const {
+    error
+  }=
+  await db
+    .from("photos")
+    .delete()
+    .eq(
+      "id",
+      id
     );
 
 
-  if(!game)
+  if(error){
+
+    console.error(error);
+
+    alert(
+      "Unable to delete photo."
+    );
+
     return;
 
-
-  document.getElementById(
-    "modalMatchup"
-  ).textContent=
-    `NDGP VS ${game.opponent}`;
-
-
-  const status=
-    document.getElementById(
-      "modalStatus"
-    );
-
-
-  const score=
-    document.getElementById(
-      "modalScore"
-    );
-
-
-  if(isGameLive(game)){
-
-    status.innerHTML=
-      `<span class="badge live">
-        🔴 LIVE
-      </span>`;
-
-    score.textContent="";
-
-  }
-
-  else if(hasScore(game)){
-
-    const a=
-      Number(game.our_score);
-
-    const b=
-      Number(game.opponent_score);
-
-
-    let result="FINAL • TIE";
-    let cls="tie";
-
-
-    if(a>b){
-      result="FINAL • WIN";
-      cls="win";
-    }
-
-    else if(a<b){
-      result="FINAL • LOSS";
-      cls="loss";
-    }
-
-
-    status.innerHTML=
-      `<span class="badge ${cls}">
-        ${result}
-      </span>`;
-
-
-    score.textContent=
-      `${game.our_score} – ${game.opponent_score}`;
-
-  }
-
-  else{
-
-    status.innerHTML="";
-    score.textContent="";
-
   }
 
 
-  document.getElementById(
-    "modalInfo"
-  ).innerHTML=`
-
-    <div class="modal-info">
-
-      <div class="modal-info-label">
-        Date
-      </div>
-
-      <div class="modal-info-value">
-        ${formatDate(
-          game.date
-        )}
-      </div>
-
-    </div>
-
-
-    <div class="modal-info">
-
-      <div class="modal-info-label">
-        Kickoff
-      </div>
-
-      <div class="modal-info-value">
-        ${escapeHtml(
-          game.time||
-          "Time TBD"
-        )}
-      </div>
-
-    </div>
-
-
-    <div class="modal-info">
-
-      <div class="modal-info-label">
-        Location
-      </div>
-
-      <div class="modal-info-value">
-        ${escapeHtml(
-          game.location||
-          "Location TBD"
-        )}
-      </div>
-
-    </div>
-
-
-    <div class="modal-info">
-
-      <div class="modal-info-label">
-        Home / Away
-      </div>
-
-      <div class="modal-info-value">
-        ${getHomeAwayIcon(
-          game.home_away
-        )}
-        ${escapeHtml(
-          game.home_away||
-          ""
-        )}
-      </div>
-
-    </div>
-
-  `;
-
-
-  document.getElementById(
-    "modalNotes"
-  ).innerHTML=
-    game.notes
-    ?
-    `<div class="modal-notes">
-      ${escapeHtml(
-        game.notes
-      )}
-    </div>`
-    :
-    "";
-
-
-  document
-    .getElementById(
-      "gameModal"
-    )
-    .classList.add("show");
-
-
-  document.body.style.overflow="hidden";
-
-}
-
-
-function closeGameModal(event){
-
-  if(
-    event &&
-    event.target &&
-    event.target.id!=="gameModal"
-  )
-    return;
-
-
-  document
-    .getElementById(
-      "gameModal"
-    )
-    .classList.remove("show");
-
-
-  document.body.style.overflow="";
+  await loadPhotos();
 
 }
 
@@ -5188,35 +6464,16 @@ function closeGameModal(event){
    HELPERS
 ========================================================= */
 
-function getHomeAwayIcon(value){
-
-  if(
-    String(value||"")
-      .toLowerCase()
-      .includes("away")
-  )
-    return "➡️";
-
-
-  return "🏠";
-
-}
-
-
 function formatDate(value){
 
   if(!value)
     return "";
 
 
-  const date=
-    new Date(
-      value+
-      "T12:00:00"
-    );
-
-
-  return date.toLocaleDateString(
+  return new Date(
+    `${value}T12:00:00`
+  )
+  .toLocaleDateString(
     "en-US",
     {
       weekday:"long",
@@ -5229,7 +6486,22 @@ function formatDate(value){
 }
 
 
-function escapeHtml(value){
+function homeAwayIcon(value){
+
+  return String(
+    value||""
+  )
+    .toLowerCase()
+    .includes("away")
+    ?
+    "➡️"
+    :
+    "🏠";
+
+}
+
+
+function escapeHTML(value){
 
   if(
     value===null||
@@ -5248,31 +6520,16 @@ function escapeHtml(value){
 }
 
 
-/* =========================================================
-   INITIALIZE
-========================================================= */
+function escapeAttribute(value){
 
-renderHistory();
+  return escapeHTML(value);
 
-buildPositionPicker("add");
-
-loadGames();
-
-loadRoster();
-
-loadPhotos();
+}
 
 
 /* =========================================================
-   EXTRA MOBILE SAFETY
+   MOBILE KEYBOARD SAFETY
 ========================================================= */
-
-/*
-  Mobile browsers sometimes change the visual viewport
-  when the keyboard opens. This keeps the login overlay
-  locked to the visible viewport instead of letting the
-  entire page move.
-*/
 
 if(window.visualViewport){
 
@@ -5280,22 +6537,19 @@ if(window.visualViewport){
     "resize",
     ()=>{
 
-      const overlay=
+      const login=
         document.getElementById(
-          "adminLoginOverlay"
+          "adminLogin"
         );
 
 
       if(
-        overlay &&
-        overlay.classList.contains(
-          "show"
-        )
+        login &&
+        login.classList.contains("show")
       ){
 
-        overlay.style.height=
-          window.visualViewport.height+
-          "px";
+        login.style.height=
+          `${window.visualViewport.height}px`;
 
       }
 
@@ -5307,22 +6561,19 @@ if(window.visualViewport){
     "scroll",
     ()=>{
 
-      const overlay=
+      const login=
         document.getElementById(
-          "adminLoginOverlay"
+          "adminLogin"
         );
 
 
       if(
-        overlay &&
-        overlay.classList.contains(
-          "show"
-        )
+        login &&
+        login.classList.contains("show")
       ){
 
-        overlay.style.top=
-          window.visualViewport.offsetTop+
-          "px";
+        login.style.top=
+          `${window.visualViewport.offsetTop}px`;
 
       }
 
@@ -5332,14 +6583,19 @@ if(window.visualViewport){
 }
 
 
-/*
-  Clean up the viewport override whenever
-  the login closes.
-*/
+/* =========================================================
+   INITIAL LOAD
+========================================================= */
 
-const originalCloseAdminLogin=
-  closeAdminLogin;
+renderHistory();
 
+buildPositionOptions();
+
+loadGames();
+
+loadRoster();
+
+loadPhotos();
 
 </script>
 
