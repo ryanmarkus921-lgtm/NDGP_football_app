@@ -151,6 +151,9 @@ header p{
   align-items:center;
   justify-content:center;
 
+  padding:0;
+  margin:0;
+
   border:1px solid rgba(255,255,255,.22);
 
   border-radius:50%;
@@ -159,11 +162,30 @@ header p{
 
   color:white;
 
+  font-family:Arial,sans-serif;
   font-size:20px;
+  font-weight:400;
 
-  transition:.15s ease;
+  line-height:1;
+
+  text-align:center;
 
   z-index:10;
+
+  transition:.15s ease;
+}
+
+.gear-icon{
+  display:block;
+
+  width:20px;
+  height:20px;
+
+  line-height:20px;
+
+  text-align:center;
+
+  transform:translateY(-1px);
 }
 
 .admin-gear:hover{
@@ -180,7 +202,7 @@ header p{
 
 
 /* =========================================================
-   ACHIEVEMENTS BAR
+   ACHIEVEMENTS
 ========================================================= */
 
 .achievements-bar{
@@ -1013,8 +1035,7 @@ main{
 
   padding:12px;
 
-  background:
-    rgba(0,15,30,.78);
+  background:rgba(0,15,30,.78);
 
   backdrop-filter:blur(7px);
 }
@@ -1085,10 +1106,11 @@ main{
 
   border-radius:50%;
 
-  background:
-    rgba(255,255,255,.1);
+  background:rgba(255,255,255,.1);
 
   font-size:27px;
+
+  line-height:1;
 }
 
 .admin-login-top h2{
@@ -1605,12 +1627,10 @@ main{
 
   font-size:14px;
 
-  transition:
-    transform .15s ease;
+  transition:transform .15s ease;
 }
 
-.admin-section.open
-.admin-section-arrow{
+.admin-section.open .admin-section-arrow{
   transform:rotate(180deg);
 }
 
@@ -1622,8 +1642,7 @@ main{
   border-top:1px solid var(--border);
 }
 
-.admin-section.open
-.admin-section-body{
+.admin-section.open .admin-section-body{
   display:block;
 }
 
@@ -2274,15 +2293,13 @@ button.danger{
 
 <header>
 
-  <!-- THIS GEAR IS HIDDEN WHEN ADMIN IS OPEN -->
-
   <button
     id="adminGear"
     class="admin-gear"
     onclick="openAdminLogin()"
     aria-label="Admin">
 
-    ⚙️
+    <span class="gear-icon">⚙</span>
 
   </button>
 
@@ -2346,7 +2363,7 @@ button.danger{
 
 
 <!-- =========================================================
-     PUBLIC NAV
+     NAVIGATION
 ========================================================= -->
 
 <nav id="publicNav">
@@ -2354,41 +2371,27 @@ button.danger{
   <button
     class="active"
     onclick="showPage('home',this)">
-
     🏠 Home
-
   </button>
-
 
   <button
     onclick="showPage('schedule',this)">
-
     🏈 Schedule
-
   </button>
-
 
   <button
     onclick="showPage('history',this)">
-
     🏆 History
-
   </button>
-
 
   <button
     onclick="showPage('roster',this)">
-
     👥 Roster
-
   </button>
-
 
   <button
     onclick="showPage('photos',this)">
-
     📸 Photos
-
   </button>
 
 </nav>
@@ -2481,9 +2484,7 @@ button.danger{
       <div
         id="record"
         class="record">
-
         0–0
-
       </div>
 
     </div>
@@ -2492,9 +2493,7 @@ button.danger{
     <div
       id="recordDetails"
       class="record-sub">
-
       Loading...
-
     </div>
 
   </div>
@@ -2678,14 +2677,11 @@ button.danger{
   </div>
 
 
-  <!-- =====================================================
-       GAMES
-  ===================================================== -->
+  <!-- GAMES -->
 
   <div
     id="adminGamesSection"
     class="admin-section">
-
 
     <button
       class="admin-section-header"
@@ -2694,7 +2690,6 @@ button.danger{
       <div class="admin-section-icon">
         🏈
       </div>
-
 
       <div class="admin-section-title">
 
@@ -2708,7 +2703,6 @@ button.danger{
 
       </div>
 
-
       <div class="admin-section-arrow">
         ▼
       </div>
@@ -2717,7 +2711,6 @@ button.danger{
 
 
     <div class="admin-section-body">
-
 
       <div class="admin-subsection">
 
@@ -2844,14 +2837,11 @@ button.danger{
   </div>
 
 
-  <!-- =====================================================
-       ROSTER
-  ===================================================== -->
+  <!-- ROSTER -->
 
   <div
     id="adminRosterSection"
     class="admin-section">
-
 
     <button
       class="admin-section-header"
@@ -2860,7 +2850,6 @@ button.danger{
       <div class="admin-section-icon">
         👥
       </div>
-
 
       <div class="admin-section-title">
 
@@ -2874,7 +2863,6 @@ button.danger{
 
       </div>
 
-
       <div class="admin-section-arrow">
         ▼
       </div>
@@ -2883,7 +2871,6 @@ button.danger{
 
 
     <div class="admin-section-body">
-
 
       <div class="admin-subsection">
 
@@ -3050,14 +3037,11 @@ button.danger{
   </div>
 
 
-  <!-- =====================================================
-       PHOTOS
-  ===================================================== -->
+  <!-- PHOTOS -->
 
   <div
     id="adminPhotosSection"
     class="admin-section">
-
 
     <button
       class="admin-section-header"
@@ -3066,7 +3050,6 @@ button.danger{
       <div class="admin-section-icon">
         📸
       </div>
-
 
       <div class="admin-section-title">
 
@@ -3080,7 +3063,6 @@ button.danger{
 
       </div>
 
-
       <div class="admin-section-arrow">
         ▼
       </div>
@@ -3089,7 +3071,6 @@ button.danger{
 
 
     <div class="admin-section-body">
-
 
       <div class="admin-subsection">
 
@@ -3186,7 +3167,7 @@ button.danger{
 
 
       <div class="admin-login-gear">
-        ⚙️
+        ⚙
       </div>
 
 
@@ -3643,8 +3624,6 @@ async function login(){
 
 function openAdmin(){
 
-  /* Hide public content */
-
   document
     .getElementById("publicNav")
     .classList.add("hidden");
@@ -3660,24 +3639,15 @@ function openAdmin(){
     .classList.add("hidden");
 
 
-  /* Hide gear */
-
   document
     .getElementById("adminGear")
     .classList.add("hidden");
 
 
-  /* Show admin */
-
   document
     .getElementById("adminPage")
     .classList.add("active");
 
-
-  /*
-     IMPORTANT:
-     Everything is CLOSED when admin opens.
-  */
 
   document
     .querySelectorAll(".admin-section")
@@ -3697,18 +3667,10 @@ function openAdmin(){
 
 function closeAdmin(){
 
-  /*
-     Hide admin
-  */
-
   document
     .getElementById("adminPage")
     .classList.remove("active");
 
-
-  /*
-     Bring public site back
-  */
 
   document
     .getElementById("publicNav")
@@ -3725,18 +3687,10 @@ function closeAdmin(){
     .classList.remove("hidden");
 
 
-  /*
-     BRING GEAR BACK
-  */
-
   document
     .getElementById("adminGear")
     .classList.remove("hidden");
 
-
-  /*
-     Make sure Home is active
-  */
 
   const homeButton=
     document.querySelector(
@@ -3784,11 +3738,6 @@ async function loadAdminData(){
 
   await loadPhotos();
 
-
-  /*
-     DO NOT OPEN ANY SECTION.
-     User opens whichever one they want.
-  */
 
   document
     .querySelectorAll(".admin-section")
@@ -4877,10 +4826,6 @@ function toggleGameEdit(id){
 }
 
 
-/* =========================================================
-   ADD GAME
-========================================================= */
-
 async function addGame(){
 
   const code=
@@ -4958,10 +4903,6 @@ async function addGame(){
 
 }
 
-
-/* =========================================================
-   SAVE GAME
-========================================================= */
 
 async function saveGame(id){
 
@@ -5070,10 +5011,6 @@ async function saveGame(id){
 
 }
 
-
-/* =========================================================
-   DELETE GAME
-========================================================= */
 
 async function deleteGame(id){
 
@@ -5291,10 +5228,6 @@ document
     renderRoster
   );
 
-
-/* =========================================================
-   ADMIN ROSTER
-========================================================= */
 
 function renderAdminRoster(){
 
@@ -6420,7 +6353,6 @@ function openHistorySeason(year){
                 padding:9px;
                 margin-bottom:5px;
               ">
-
 
                 <div>
 
