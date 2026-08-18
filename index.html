@@ -572,14 +572,14 @@ main{
 
   margin:13px auto 16px;
 
-  overflow:visible;
+  overflow:hidden;
 }
 
 .matchup-team{
   min-width:0;
   max-width:43%;
 
-  overflow:visible;
+  overflow:hidden;
 
   color:var(--navy);
 
@@ -591,8 +591,6 @@ main{
   line-height:.8;
 
   white-space:nowrap;
-
-  flex-shrink:1;
 }
 
 .matchup-vs{
@@ -2973,6 +2971,38 @@ main{
 
           </div>
 
+          <div class="field">
+
+            <label>
+              Grade
+            </label>
+
+            <select id="playerGrade">
+
+              <option value="">
+                Select Grade
+              </option>
+
+              <option value="Freshman">
+                Freshman
+              </option>
+
+              <option value="Sophomore">
+                Sophomore
+              </option>
+
+              <option value="Junior">
+                Junior
+              </option>
+
+              <option value="Senior">
+                Senior
+              </option>
+
+            </select>
+
+          </div>
+
         </div>
 
 
@@ -3479,6 +3509,38 @@ main{
             id="editName"
             type="text"
           >
+
+        </div>
+
+        <div class="field">
+
+          <label>
+            Grade
+          </label>
+
+          <select id="editGrade">
+
+            <option value="">
+              Select Grade
+            </option>
+
+            <option value="Freshman">
+              Freshman
+            </option>
+
+            <option value="Sophomore">
+              Sophomore
+            </option>
+
+            <option value="Junior">
+              Junior
+            </option>
+
+            <option value="Senior">
+              Senior
+            </option>
+
+          </select>
 
         </div>
 
@@ -4338,16 +4400,6 @@ function fitMatchup(){
     return;
 
 
-  const teams =
-    el.querySelectorAll(
-      ".matchup-team"
-    );
-
-
-  if(!teams.length)
-    return;
-
-
   el.classList.remove(
     "compact",
     "small",
@@ -4355,34 +4407,45 @@ function fitMatchup(){
   );
 
 
-  let size =
-    window.innerWidth <= 380
-      ? 29
-      : window.innerWidth <= 600
-        ? 32
-        : 40;
+  if(
+    el.scrollWidth <=
+    el.clientWidth
+  )
+    return;
 
 
-  teams.forEach(
-    team=>{
-      team.style.fontSize =
-        size + "px";
-    }
+  el.classList.add(
+    "compact"
   );
 
 
-  while(
-    size > 14 &&
-    el.scrollWidth > el.clientWidth
+  if(
+    el.scrollWidth >
+    el.clientWidth
   ){
 
-    size--;
+    el.classList.remove(
+      "compact"
+    );
 
-    teams.forEach(
-      team=>{
-        team.style.fontSize =
-          size + "px";
-      }
+    el.classList.add(
+      "small"
+    );
+
+  }
+
+
+  if(
+    el.scrollWidth >
+    el.clientWidth
+  ){
+
+    el.classList.remove(
+      "small"
+    );
+
+    el.classList.add(
+      "tiny"
     );
 
   }
@@ -4920,6 +4983,7 @@ function renderRoster(){
 
             <div class="roster-position">
               ${esc(player.position || "")}
+              ${player.grade ? ` • ${esc(player.grade)}` : ""}
             </div>
 
           </div>
@@ -5607,6 +5671,7 @@ function renderAdminRoster(){
 
                 <div class="admin-player-position">
                   ${esc(player.position || "")}
+                  ${player.grade ? ` • ${esc(player.grade)}` : ""}
                 </div>
 
               </div>
@@ -5855,6 +5920,12 @@ async function addPlayer(){
     ).value.trim();
 
 
+  const grade =
+    document.getElementById(
+      "playerGrade"
+    ).value;
+
+
   const positions =
     getSelectedPositions(
       "add"
@@ -5864,11 +5935,12 @@ async function addPlayer(){
   if(
     !Number.isInteger(number) ||
     !name ||
+    !grade ||
     !positions.length
   ){
 
     showToast(
-      "Enter a number, name and position."
+      "Enter a number, name, grade and position."
     );
 
     return;
@@ -5888,7 +5960,8 @@ async function addPlayer(){
         p_code:adminCode,
         p_number:number,
         p_name:name,
-        p_position:positions.join(", ")
+        p_position:positions.join(", "),
+        p_grade:grade
       }
     );
 
@@ -5910,6 +5983,11 @@ async function addPlayer(){
 
     document.getElementById(
       "playerName"
+    ).value="";
+
+
+    document.getElementById(
+      "playerGrade"
     ).value="";
 
 
@@ -5986,6 +6064,11 @@ function editPlayer(id){
   document.getElementById(
     "editName"
   ).value=player.name;
+
+
+  document.getElementById(
+    "editGrade"
+  ).value=player.grade || "";
 
 
   document
@@ -6124,6 +6207,12 @@ async function savePlayer(){
     ).value.trim();
 
 
+  const grade =
+    document.getElementById(
+      "editGrade"
+    ).value;
+
+
   const positions =
     getSelectedPositions(
       "edit"
@@ -6134,11 +6223,12 @@ async function savePlayer(){
     !id ||
     !Number.isInteger(number) ||
     !name ||
+    !grade ||
     !positions.length
   ){
 
     showToast(
-      "Complete all player fields."
+      "Complete all player fields, including grade."
     );
 
     return;
@@ -6159,7 +6249,8 @@ async function savePlayer(){
         p_id:String(id),
         p_number:number,
         p_name:name,
-        p_position:positions.join(", ")
+        p_position:positions.join(", "),
+        p_grade:grade
       }
     );
 
