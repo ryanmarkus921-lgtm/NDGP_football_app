@@ -567,6 +567,7 @@ main{
 
   align-items:center;
   justify-content:center;
+  flex-wrap:wrap;
 
   gap:10px;
 
@@ -869,6 +870,63 @@ main{
 .game-status.upcoming{
   color:var(--navy);
   background:#edf2f5;
+}
+
+.game-status.live{
+  color:#fff;
+  background:var(--red);
+  box-shadow:0 0 0 2px rgba(201,52,52,.10);
+}
+
+.game-status.live::before{
+  content:"";
+  width:6px;
+  height:6px;
+  margin-right:4px;
+  border-radius:50%;
+  background:#fff;
+  animation:livePulse 1.3s infinite;
+}
+
+@keyframes livePulse{
+  0%,100%{opacity:1}
+  50%{opacity:.35}
+}
+
+.next-live{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  margin-top:10px;
+  padding:7px 13px;
+  color:#fff;
+  background:var(--red);
+  border:1px solid #b52c2c;
+  border-radius:7px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.next-live::before{
+  content:"";
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#fff;
+  animation:livePulse 1.3s infinite;
+}
+
+.next-live-score{
+  width:100%;
+  margin-top:8px;
+  color:var(--navy);
+  font-family:Teko;
+  font-size:39px;
+  font-weight:700;
+  line-height:.8;
 }
 
 .game-score{
@@ -3583,6 +3641,21 @@ main{
       </div>
 
 
+      <div class="field">
+
+        <label>
+          Game Status
+        </label>
+
+        <select id="editStatus">
+          <option value="Scheduled">Scheduled</option>
+          <option value="Live">🔴 Live</option>
+          <option value="Final">Final</option>
+        </select>
+
+      </div>
+
+
       <div class="form-grid">
 
         <div class="field">
@@ -4406,45 +4479,49 @@ function hasScore(game){
 
 function status(game){
 
-  if(!hasScore(game))
+  const gameStatus =
+    String(game.status || "").toLowerCase();
+
+
+  if(gameStatus === "live"){
     return {
-      text:"UPCOMING",
+      text:"LIVE",
+      cls:"live"
+    };
+  }
+
+
+  if(gameStatus === "final" || hasScore(game)){
+
+    const a = Number(game.our_score);
+    const b = Number(game.opponent_score);
+
+    if(a>b)
+      return {
+        text:"WIN",
+        cls:"win"
+      };
+
+    if(a<b)
+      return {
+        text:"LOSS",
+        cls:"loss"
+      };
+
+    return {
+      text:"TIE",
       cls:"upcoming"
     };
-
-
-  const a =
-    Number(game.our_score);
-
-  const b =
-    Number(game.opponent_score);
-
-
-  if(a>b)
-    return {
-      text:"WIN",
-      cls:"win"
-    };
-
-
-  if(a<b)
-    return {
-      text:"LOSS",
-      cls:"loss"
-    };
+  }
 
 
   return {
-    text:"TIE",
+    text:"UPCOMING",
     cls:"upcoming"
   };
 
 }
 
-
-/* ========================================================
-   HOME
-======================================================== */
 
 function renderHome(){
 
@@ -4454,11 +4531,19 @@ function renderHome(){
       .slice(0,10);
 
 
+  const live =
+    games.find(
+      g =>
+        String(g.status || "").toLowerCase() === "live"
+    );
+
+
   const next =
+    live ||
     games
       .filter(
         g =>
-          !hasScore(g) &&
+          String(g.status || "").toLowerCase() !== "final" &&
           g.date >= today
       )
       .sort(
@@ -4476,6 +4561,10 @@ function renderHome(){
 
   if(next){
 
+    const isLive =
+      String(next.status || "").toLowerCase() === "live";
+
+
     matchup.innerHTML = `
 
       <span class="matchup-team">
@@ -4490,29 +4579,55 @@ function renderHome(){
         ${esc(next.opponent)}
       </span>
 
+      ${
+        isLive && hasScore(next)
+        ? `
+          <div class="next-live-score">
+            ${esc(next.our_score)} – ${esc(next.opponent_score)}
+          </div>
+        `
+        : ""
+      }
+
     `;
 
 
     document.getElementById(
       "nextInfo"
-    ).innerHTML = `
+    ).innerHTML =
+      isLive
+      ? `
 
-      📅 ${formatDate(next.date)}
-      <br>
+        <div class="next-live">
+          LIVE
+        </div>
 
-      ⏰ ${esc(next.time || "Time TBD")}
-      <br>
+        <br>
 
-      📍 ${esc(next.location || "Location TBD")}
-      <br>
+        ⏰ ${esc(next.time || "Time TBD")}
+        <br>
 
-      ${
-        next.home_away==="Home"
-        ? "🏠 Home"
-        : "✈️ Away"
-      }
+        📍 ${esc(next.location || "Location TBD")}
 
-    `;
+      `
+      : `
+
+        📅 ${formatDate(next.date)}
+        <br>
+
+        ⏰ ${esc(next.time || "Time TBD")}
+        <br>
+
+        📍 ${esc(next.location || "Location TBD")}
+        <br>
+
+        ${
+          next.home_away==="Home"
+          ? "🏠 Home"
+          : "✈️ Away"
+        }
+
+      `;
 
   }
   else{
@@ -4548,6 +4663,17 @@ function renderHome(){
 
   games.forEach(
     game=>{
+
+      const gameStatus =
+        String(game.status || "").toLowerCase();
+
+
+      if(
+        gameStatus === "live" ||
+        gameStatus === "scheduled"
+      )
+        return;
+
 
       if(!hasScore(game))
         return;
@@ -4595,52 +4721,44 @@ function fitMatchup(){
     return;
 
 
-  el.classList.remove(
-    "compact",
-    "small",
-    "tiny"
-  );
+  const teams =
+    el.querySelectorAll(
+      ".matchup-team"
+    );
 
 
-  if(
-    el.scrollWidth <=
-    el.clientWidth
-  )
+  if(!teams.length)
     return;
 
 
-  el.classList.add(
-    "compact"
+  let size =
+    window.innerWidth <= 380
+    ? 29
+    : window.innerWidth <= 600
+      ? 32
+      : 40;
+
+
+  teams.forEach(
+    team=>{
+      team.style.fontSize =
+        size + "px";
+    }
   );
 
 
-  if(
-    el.scrollWidth >
-    el.clientWidth
+  while(
+    size > 14 &&
+    el.scrollWidth > el.clientWidth
   ){
 
-    el.classList.remove(
-      "compact"
-    );
+    size--;
 
-    el.classList.add(
-      "small"
-    );
-
-  }
-
-
-  if(
-    el.scrollWidth >
-    el.clientWidth
-  ){
-
-    el.classList.remove(
-      "small"
-    );
-
-    el.classList.add(
-      "tiny"
+    teams.forEach(
+      team=>{
+        team.style.fontSize =
+          size + "px";
+      }
     );
 
   }
@@ -5314,6 +5432,18 @@ function editGame(id){
 
 
   document.getElementById(
+    "editStatus"
+  ).value =
+    ["Scheduled","Live","Final"].includes(game.status)
+    ? game.status
+    : (
+        hasScore(game)
+        ? "Final"
+        : "Scheduled"
+      );
+
+
+  document.getElementById(
     "editOurScore"
   ).value =
     game.our_score ??
@@ -5544,6 +5674,36 @@ async function saveGame(){
     if(data!==true)
       throw new Error(
         "Database did not confirm the update."
+      );
+
+
+    const selectedStatus =
+      document.getElementById(
+        "editStatus"
+      ).value;
+
+
+    const {
+      data:statusData,
+      error:statusError
+    } =
+    await db.rpc(
+      "admin_set_game_status",
+      {
+        p_code:adminCode,
+        p_id:String(id),
+        p_status:selectedStatus
+      }
+    );
+
+
+    if(statusError)
+      throw statusError;
+
+
+    if(statusData!==true)
+      throw new Error(
+        "Database did not confirm the game status update."
       );
 
 
