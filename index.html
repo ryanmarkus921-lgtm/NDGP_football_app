@@ -2280,6 +2280,351 @@ main{
 
 }
 
+
+
+/* ========================================================
+   FINAL CONTENT-MANAGEMENT DESIGN
+======================================================== */
+.admin-page{
+  max-width:820px;
+}
+
+.final-admin-shell{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.final-admin-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:16px;
+  color:#fff;
+  background:linear-gradient(135deg,#001b32,#074675);
+  border:1px solid #0b4e7e;
+  border-bottom:3px solid var(--gold);
+  border-radius:14px;
+  box-shadow:0 7px 24px rgba(0,30,60,.12);
+}
+
+.final-admin-title{
+  font-family:Teko;
+  font-size:38px;
+  line-height:.82;
+  letter-spacing:.5px;
+}
+
+.final-admin-subtitle{
+  margin-top:5px;
+  color:#dbe7ee;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.final-admin-back{
+  min-height:40px;
+  padding:8px 12px;
+  color:#fff;
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:8px;
+  font-size:10px;
+  font-weight:700;
+}
+
+.final-admin-stats{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+}
+
+.final-admin-stat{
+  padding:12px 8px;
+  background:#fff;
+  border:1px solid #cbd9e2;
+  border-radius:11px;
+  text-align:center;
+  box-shadow:0 2px 8px rgba(0,30,60,.04);
+}
+
+.final-admin-stat-number{
+  color:var(--navy);
+  font-family:Teko;
+  font-size:34px;
+  line-height:.8;
+}
+
+.final-admin-stat-label{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.6px;
+  text-transform:uppercase;
+}
+
+.final-admin-nav{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+
+.final-admin-nav button{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  min-height:70px;
+  padding:12px;
+  color:var(--navy);
+  background:#fff;
+  border:1px solid #cbd9e2;
+  border-left:4px solid var(--navy);
+  border-radius:11px;
+  box-shadow:0 2px 8px rgba(0,30,60,.04);
+  text-align:left;
+}
+
+.final-admin-nav button.active{
+  background:linear-gradient(135deg,#fff9df,#fff);
+  border-color:#c2d0da;
+  border-left-color:var(--gold);
+}
+
+.final-admin-nav-icon{
+  width:40px;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  color:#fff;
+  background:linear-gradient(145deg,#074675,#00264a);
+  border-radius:8px;
+  font-size:17px;
+}
+
+.final-admin-nav strong{
+  display:block;
+  font-family:Teko;
+  font-size:27px;
+  line-height:.85;
+}
+
+.final-admin-nav span{
+  display:block;
+  margin-top:4px;
+  color:var(--muted);
+  font-size:10px;
+  font-weight:600;
+}
+
+.final-admin-page{
+  display:none;
+  padding:14px;
+  background:#fff;
+  border:1px solid #cbd9e2;
+  border-radius:13px;
+  box-shadow:0 4px 15px rgba(0,30,60,.05);
+}
+
+.final-admin-page.active{
+  display:block;
+}
+
+.final-admin-page-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:12px;
+  padding-bottom:11px;
+  border-bottom:1px solid #d7e1e7;
+}
+
+.final-admin-page-title{
+  color:var(--navy);
+  font-family:Teko;
+  font-size:33px;
+  line-height:.85;
+}
+
+.final-admin-page-description{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:600;
+  line-height:1.4;
+}
+
+.final-admin-table-list{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.final-admin-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:9px;
+  padding:11px;
+  background:#fbfcfd;
+  border:1px solid #d2dee6;
+  border-radius:9px;
+}
+
+.final-admin-row-title{
+  color:var(--navy);
+  font-family:Teko;
+  font-size:23px;
+  line-height:.9;
+}
+
+.final-admin-row-meta{
+  margin-top:4px;
+  color:var(--muted);
+  font-size:10px;
+  font-weight:600;
+  line-height:1.4;
+}
+
+.final-admin-row-actions{
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.final-admin-section{
+  margin-top:11px;
+  padding:12px;
+  background:#f7f9fa;
+  border:1px solid #d2dee6;
+  border-radius:10px;
+}
+
+.final-admin-section:first-child{
+  margin-top:0;
+}
+
+.final-admin-section h3{
+  margin:0 0 9px;
+  color:var(--navy);
+  font-family:Teko;
+  font-size:27px;
+  line-height:.9;
+}
+
+.final-admin-empty{
+  padding:18px 10px;
+  color:var(--muted);
+  background:#fff;
+  border:1px dashed #cbd9e2;
+  border-radius:8px;
+  font-size:11px;
+  font-weight:600;
+  text-align:center;
+}
+
+.final-season-picker{
+  width:100%;
+  height:42px;
+  padding:8px 10px;
+  color:var(--text);
+  background:#fff;
+  border:1px solid #cbd9e2;
+  border-radius:7px;
+}
+
+.final-switch-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px;
+  background:#fff;
+  border:1px solid #d2dee6;
+  border-radius:8px;
+}
+
+.final-switch-row strong{
+  color:var(--navy);
+  font-family:Teko;
+  font-size:22px;
+  line-height:.9;
+}
+
+.final-switch-row span{
+  display:block;
+  margin-top:4px;
+  color:var(--muted);
+  font-size:10px;
+  font-weight:600;
+}
+
+.final-checkbox{
+  width:20px;
+  height:20px;
+  accent-color:var(--navy);
+}
+
+.final-admin-form-actions{
+  display:flex;
+  gap:7px;
+  margin-top:8px;
+}
+
+.final-admin-form-actions button{
+  flex:1;
+}
+
+.final-achievement-preview{
+  margin-top:8px;
+}
+
+.final-public-achievements .achievement-grid{
+  max-width:820px;
+}
+
+.final-public-achievements .achievement{
+  border:1px solid #b8cbd8;
+  border-left:4px solid var(--navy);
+}
+
+@media(max-width:600px){
+  .final-admin-stats{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .final-admin-nav{
+    grid-template-columns:1fr;
+  }
+
+  .final-admin-top{
+    align-items:flex-start;
+  }
+
+  .final-admin-title{
+    font-size:34px;
+  }
+
+  .final-admin-row{
+    grid-template-columns:1fr;
+  }
+
+  .final-admin-row-actions{
+    justify-content:flex-start;
+  }
+
+  .final-admin-form-actions{
+    flex-direction:column;
+  }
+}
+
 </style>
 </head>
 
@@ -2358,37 +2703,13 @@ main{
 
 <section
   id="achievements"
-  class="achievements"
+  class="achievements final-public-achievements"
 >
 
-  <div class="achievement-grid">
-
-    <div class="achievement">
-
-      <div class="achievement-title">
-        Colonial League Champions
-      </div>
-
-      <div class="achievement-years">
-        2018 • 2020 • 2022 • 2024 • 2025
-      </div>
-
-    </div>
-
-
-    <div class="achievement">
-
-      <div class="achievement-title">
-        PIAA District XI Champions
-      </div>
-
-      <div class="achievement-years">
-        2015 (AA) • 2016 (AAA)
-      </div>
-
-    </div>
-
-  </div>
+  <div
+    id="achievementGrid"
+    class="achievement-grid"
+  ></div>
 
 </section>
 
@@ -2632,7 +2953,7 @@ main{
 
 
 <!-- ======================================================
-     ADMIN
+     ADMIN AREA
 ====================================================== -->
 
 <section
@@ -2640,463 +2961,366 @@ main{
   class="admin-page"
 >
 
-  <div class="admin-header">
+  <div class="final-admin-shell">
 
-    <div>
-
-      <div class="admin-title">
-        ⚙️ ADMIN DASHBOARD
+    <div class="final-admin-top">
+      <div>
+        <div class="final-admin-title">⚙️ ADMIN DASHBOARD</div>
+        <div class="final-admin-subtitle">NDGP Football Management Center</div>
       </div>
 
-      <div class="admin-subtitle">
-        NDGP Football Management
-      </div>
-
+      <button
+        class="final-admin-back"
+        onclick="closeAdmin()"
+      >
+        ← SITE
+      </button>
     </div>
 
 
-    <button
-      class="admin-back"
-      onclick="closeAdmin()"
-    >
-      ← BACK TO SITE
-    </button>
-
-  </div>
-
-
-  <div class="admin-stats">
-
-    <div class="admin-stat">
-      <div
-        id="statGames"
-        class="admin-stat-number"
-      >0</div>
-
-      <div class="admin-stat-label">
-        🏈 Games
+    <div class="final-admin-stats">
+      <div class="final-admin-stat">
+        <div id="statGames" class="final-admin-stat-number">0</div>
+        <div class="final-admin-stat-label">🏈 Games</div>
       </div>
-    </div>
-
-
-    <div class="admin-stat">
-      <div
-        id="statPlayers"
-        class="admin-stat-number"
-      >0</div>
-
-      <div class="admin-stat-label">
-        👥 Players
+      <div class="final-admin-stat">
+        <div id="statPlayers" class="final-admin-stat-number">0</div>
+        <div class="final-admin-stat-label">👥 Players</div>
+      </div>
+      <div class="final-admin-stat">
+        <div id="statWins" class="final-admin-stat-number">0</div>
+        <div class="final-admin-stat-label">🏆 Wins</div>
+      </div>
+      <div class="final-admin-stat">
+        <div id="statLosses" class="final-admin-stat-number">0</div>
+        <div class="final-admin-stat-label">❌ Losses</div>
       </div>
     </div>
 
 
-    <div class="admin-stat">
-      <div
-        id="statWins"
-        class="admin-stat-number"
-      >0</div>
+    <div class="final-admin-nav">
 
-      <div class="admin-stat-label">
-        🏆 Wins
-      </div>
-    </div>
-
-
-    <div class="admin-stat">
-      <div
-        id="statLosses"
-        class="admin-stat-number"
-      >0</div>
-
-      <div class="admin-stat-label">
-        ❌ Losses
-      </div>
-    </div>
-
-  </div>
-
-
-  <!-- ADMIN GAMES -->
-
-  <div
-    id="adminGames"
-    class="admin-section"
-  >
-
-    <button
-      class="admin-section-toggle"
-      onclick="toggleAdmin('adminGames')"
-    >
-
-      <div class="admin-icon">
-        🏈
-      </div>
-
-      <div class="admin-section-text">
-
-        <strong>
-          GAMES
-        </strong>
-
-        <span>
-          Add and manage games
-        </span>
-
-      </div>
-
-      <div class="admin-arrow">
-        ▼
-      </div>
-
-    </button>
-
-
-    <div class="admin-section-body">
-
-      <div class="admin-subsection">
-
-        <h3>
-          ➕ Add Game
-        </h3>
-
-        <div class="admin-description">
-          Add a game to the schedule.
+      <button class="active" onclick="showAdminPage('games',this)">
+        <div class="final-admin-nav-icon">🏈</div>
+        <div>
+          <strong>GAMES</strong>
+          <span>Current schedule and scores</span>
         </div>
+      </button>
 
+      <button onclick="showAdminPage('roster',this)">
+        <div class="final-admin-nav-icon">👥</div>
+        <div>
+          <strong>ROSTER</strong>
+          <span>Players, grades and positions</span>
+        </div>
+      </button>
+
+      <button onclick="showAdminPage('history',this)">
+        <div class="final-admin-nav-icon">📜</div>
+        <div>
+          <strong>HISTORY</strong>
+          <span>Seasons, games and records</span>
+        </div>
+      </button>
+
+      <button onclick="showAdminPage('achievements',this)">
+        <div class="final-admin-nav-icon">🏆</div>
+        <div>
+          <strong>ACHIEVEMENTS</strong>
+          <span>Team accomplishments</span>
+        </div>
+      </button>
+
+      <button onclick="showAdminPage('settings',this)">
+        <div class="final-admin-nav-icon">⚙️</div>
+        <div>
+          <strong>SITE SETTINGS</strong>
+          <span>Website information</span>
+        </div>
+      </button>
+
+    </div>
+
+
+    <!-- GAMES PAGE -->
+    <div id="adminPageGames" class="final-admin-page active">
+      <div class="final-admin-page-head">
+        <div>
+          <div class="final-admin-page-title">🏈 Games</div>
+          <div class="final-admin-page-description">Manage every game on the current schedule. Scores automatically determine the record.</div>
+        </div>
+      </div>
+
+      <div class="final-admin-section">
+        <h3>➕ Add Game</h3>
 
         <div class="form-grid">
-
           <div class="field">
-
-            <label>
-              Date
-            </label>
-
-            <input
-              id="gameDate"
-              type="date"
-            >
-
+            <label>Date</label>
+            <input id="gameDate" type="date">
           </div>
-
-
           <div class="field">
-
-            <label>
-              Time
-            </label>
-
-            <input
-              id="gameTime"
-              type="text"
-              placeholder="7:00 PM"
-            >
-
+            <label>Time</label>
+            <input id="gameTime" type="text" placeholder="7:00 PM">
           </div>
-
         </div>
-
 
         <div class="field">
-
-          <label>
-            Opponent
-          </label>
-
-          <input
-            id="gameOpponent"
-            type="text"
-            placeholder="Opponent"
-          >
-
+          <label>Opponent</label>
+          <input id="gameOpponent" type="text" placeholder="Opponent">
         </div>
 
-
         <div class="form-grid">
-
           <div class="field">
-
-            <label>
-              Location
-            </label>
-
-            <input
-              id="gameLocation"
-              type="text"
-              placeholder="Stadium"
-            >
-
+            <label>Location</label>
+            <input id="gameLocation" type="text" placeholder="Stadium">
           </div>
-
-
           <div class="field">
-
-            <label>
-              Home / Away
-            </label>
-
+            <label>Home / Away</label>
             <select id="gameHomeAway">
-
-              <option value="Home">
-                🏠 Home
-              </option>
-
-              <option value="Away">
-                ✈️ Away
-              </option>
-
+              <option value="Home">🏠 Home</option>
+              <option value="Away">✈️ Away</option>
             </select>
-
           </div>
-
         </div>
-
 
         <div class="field">
-
-          <label>
-            Notes
-          </label>
-
-          <textarea
-            id="gameNotes"
-            placeholder="Optional"
-          ></textarea>
-
+          <label>Notes</label>
+          <textarea id="gameNotes" placeholder="Optional"></textarea>
         </div>
 
-
-        <button
-          class="primary-button"
-          onclick="addGame()"
-        >
-          🏈 ADD GAME
-        </button>
-
+        <button class="primary-button" onclick="addGame()">🏈 ADD GAME</button>
       </div>
 
-
-      <div class="admin-subsection">
-
-        <h3>
-          📅 Existing Games
-        </h3>
-
-        <div
-          id="adminGameList"
-        >
-          Loading...
-        </div>
-
+      <div class="final-admin-section">
+        <h3>📅 Current Games</h3>
+        <div id="adminGameList" class="final-admin-table-list"></div>
       </div>
-
     </div>
 
-  </div>
 
-
-  <!-- ADMIN ROSTER -->
-
-  <div
-    id="adminRoster"
-    class="admin-section"
-  >
-
-    <button
-      class="admin-section-toggle"
-      onclick="toggleAdmin('adminRoster')"
-    >
-
-      <div class="admin-icon">
-        👥
+    <!-- ROSTER PAGE -->
+    <div id="adminPageRoster" class="final-admin-page">
+      <div class="final-admin-page-head">
+        <div>
+          <div class="final-admin-page-title">👥 Roster</div>
+          <div class="final-admin-page-description">Manage player numbers, names, grades and multiple positions.</div>
+        </div>
       </div>
 
-      <div class="admin-section-text">
-
-        <strong>
-          ROSTER
-        </strong>
-
-        <span>
-          Add, edit and remove players
-        </span>
-
-      </div>
-
-      <div class="admin-arrow">
-        ▼
-      </div>
-
-    </button>
-
-
-    <div class="admin-section-body">
-
-      <div class="admin-subsection">
-
-        <h3>
-          ➕ Add Player
-        </h3>
-
+      <div class="final-admin-section">
+        <h3>➕ Add Player</h3>
 
         <div class="form-grid">
-
           <div class="field">
-
-            <label>
-              Jersey Number
-            </label>
-
-            <input
-              id="playerNumber"
-              type="number"
-              min="0"
-              max="99"
-            >
-
+            <label>Jersey Number</label>
+            <input id="playerNumber" type="number" min="0" max="99">
           </div>
-
-
           <div class="field">
-
-            <label>
-              Player Name
-            </label>
-
-            <input
-              id="playerName"
-              type="text"
-            >
-
+            <label>Player Name</label>
+            <input id="playerName" type="text">
           </div>
-
-          <div class="field">
-
-            <label>
-              Grade
-            </label>
-
-            <select id="playerGrade">
-
-              <option value="">
-                Select Grade
-              </option>
-
-              <option value="Freshman">
-                Freshman
-              </option>
-
-              <option value="Sophomore">
-                Sophomore
-              </option>
-
-              <option value="Junior">
-                Junior
-              </option>
-
-              <option value="Senior">
-                Senior
-              </option>
-
-            </select>
-
-          </div>
-
         </div>
-
 
         <div class="field">
+          <label>Grade</label>
+          <select id="playerGrade">
+            <option value="">Select grade...</option>
+            <option value="Freshman">Freshman</option>
+            <option value="Sophomore">Sophomore</option>
+            <option value="Junior">Junior</option>
+            <option value="Senior">Senior</option>
+          </select>
+        </div>
 
-          <label>
-            Position(s)
-          </label>
-
-
-          <div
-            id="positionPicker"
-            class="position-picker"
-          >
-
-            <button
-              type="button"
-              class="position-trigger"
-              onclick="togglePositions()"
-            >
-
-              <span id="positionText">
-                Select position(s)...
-              </span>
-
-              <span>
-                ▼
-              </span>
-
+        <div class="field">
+          <label>Position(s)</label>
+          <div id="positionPicker" class="position-picker">
+            <button type="button" class="position-trigger" onclick="togglePositions()">
+              <span id="positionText">Select position(s)...</span>
+              <span>▼</span>
             </button>
-
-
             <div class="position-menu">
-
-              <div
-                id="positionOptions"
-                class="position-options"
-              ></div>
-
-
+              <div id="positionOptions" class="position-options"></div>
               <div class="field">
-
-                <label>
-                  Custom Position
-                </label>
-
-                <input
-                  id="customPosition"
-                  type="text"
-                  placeholder="Example: Utility"
-                >
-
+                <label>Custom Position</label>
+                <input id="customPosition" type="text" placeholder="Example: Utility">
               </div>
-
-
-              <button
-                type="button"
-                class="secondary-button"
-                onclick="closePositions()"
-              >
-                DONE
-              </button>
-
+              <button type="button" class="secondary-button" onclick="closePositions()">DONE</button>
             </div>
-
           </div>
-
         </div>
 
-
-        <button
-          class="primary-button"
-          onclick="addPlayer()"
-        >
-          👤 ADD PLAYER
-        </button>
-
+        <button class="primary-button" onclick="addPlayer()">👤 ADD PLAYER</button>
       </div>
 
+      <div class="final-admin-section">
+        <h3>👥 Current Roster</h3>
+        <div id="adminRosterList" class="final-admin-table-list"></div>
+      </div>
+    </div>
 
-      <div class="admin-subsection">
 
-        <h3>
-          👥 Current Roster
-        </h3>
-
-        <div
-          id="adminRosterList"
-        >
-          Loading...
+    <!-- HISTORY PAGE -->
+    <div id="adminPageHistory" class="final-admin-page">
+      <div class="final-admin-page-head">
+        <div>
+          <div class="final-admin-page-title">📜 History</div>
+          <div class="final-admin-page-description">Create seasons and manage historical records, games and scores without editing code.</div>
         </div>
-
       </div>
 
+      <div class="final-admin-section">
+        <h3>➕ Add Season</h3>
+        <div class="form-grid">
+          <div class="field">
+            <label>Season Year</label>
+            <input id="historyYear" type="number" min="1900" max="2100" placeholder="2027">
+          </div>
+          <div class="field">
+            <label>Final Record</label>
+            <input id="historyRecord" type="text" placeholder="0-0">
+          </div>
+        </div>
+        <div class="final-switch-row">
+          <div>
+            <strong>Show Publicly</strong>
+            <span>Turn this on when you want the season visible in History.</span>
+          </div>
+          <input id="historyPublic" class="final-checkbox" type="checkbox" checked>
+        </div>
+        <div class="final-admin-form-actions">
+          <button class="primary-button" onclick="addHistorySeason()">ADD SEASON</button>
+        </div>
+      </div>
+
+      <div class="final-admin-section">
+        <h3>📚 Seasons</h3>
+        <div id="adminSeasonList" class="final-admin-table-list"></div>
+      </div>
+
+      <div id="historySeasonEditor" class="final-admin-section hidden">
+        <h3>✏️ Manage Season</h3>
+        <input id="historyEditSeasonId" type="hidden">
+        <div class="form-grid">
+          <div class="field">
+            <label>Year</label>
+            <input id="historyEditYear" type="number" min="1900" max="2100">
+          </div>
+          <div class="field">
+            <label>Final Record</label>
+            <input id="historyEditRecord" type="text">
+          </div>
+        </div>
+        <div class="final-switch-row">
+          <div>
+            <strong>Show Publicly</strong>
+            <span>Only public seasons appear on the website.</span>
+          </div>
+          <input id="historyEditPublic" class="final-checkbox" type="checkbox">
+        </div>
+        <div class="final-admin-form-actions">
+          <button class="secondary-button" onclick="closeHistorySeasonEditor()">CANCEL</button>
+          <button class="primary-button" onclick="saveHistorySeason()">SAVE SEASON</button>
+        </div>
+      </div>
+
+      <div id="historyGamesEditor" class="final-admin-section hidden">
+        <h3>🏈 Season Games</h3>
+        <div id="historyGamesSeasonLabel" class="admin-description"></div>
+        <div class="form-grid">
+          <div class="field">
+            <label>Opponent</label>
+            <input id="historyGameOpponent" type="text">
+          </div>
+          <div class="field">
+            <label>Order</label>
+            <input id="historyGameOrder" type="number" value="0">
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label>NDGP Score</label>
+            <input id="historyGameOurScore" type="number" min="0">
+          </div>
+          <div class="field">
+            <label>Opponent Score</label>
+            <input id="historyGameOppScore" type="number" min="0">
+          </div>
+        </div>
+        <button class="primary-button" onclick="addHistoryGame()">ADD HISTORY GAME</button>
+        <div style="height:9px"></div>
+        <div id="adminHistoryGameList" class="final-admin-table-list"></div>
+      </div>
+    </div>
+
+
+    <!-- ACHIEVEMENTS PAGE -->
+    <div id="adminPageAchievements" class="final-admin-page">
+      <div class="final-admin-page-head">
+        <div>
+          <div class="final-admin-page-title">🏆 Achievements</div>
+          <div class="final-admin-page-description">Manage the championship and accomplishment cards shown on the website.</div>
+        </div>
+      </div>
+
+      <div class="final-admin-section">
+        <h3>➕ Add Achievement</h3>
+        <div class="field">
+          <label>Title</label>
+          <input id="achievementTitle" type="text" placeholder="Colonial League Champions">
+        </div>
+        <div class="field">
+          <label>Years</label>
+          <input id="achievementYears" type="text" placeholder="2018, 2020, 2022, 2024, 2025">
+        </div>
+        <div class="final-switch-row">
+          <div>
+            <strong>Show Publicly</strong>
+            <span>Hide an achievement without deleting it.</span>
+          </div>
+          <input id="achievementPublic" class="final-checkbox" type="checkbox" checked>
+        </div>
+        <button class="primary-button" onclick="addAchievement()">ADD ACHIEVEMENT</button>
+      </div>
+
+      <div class="final-admin-section">
+        <h3>🏆 Current Achievements</h3>
+        <div id="adminAchievementList" class="final-admin-table-list"></div>
+      </div>
+    </div>
+
+
+    <!-- SETTINGS PAGE -->
+    <div id="adminPageSettings" class="final-admin-page">
+      <div class="final-admin-page-head">
+        <div>
+          <div class="final-admin-page-title">⚙️ Site Settings</div>
+          <div class="final-admin-page-description">Change the website's basic information without editing the code.</div>
+        </div>
+      </div>
+
+      <div class="final-admin-section">
+        <h3>🌐 Website Information</h3>
+        <div class="field">
+          <label>Team Name</label>
+          <input id="settingTeamName" type="text">
+        </div>
+        <div class="field">
+          <label>Website Title</label>
+          <input id="settingSiteTitle" type="text">
+        </div>
+        <div class="field">
+          <label>Subtitle</label>
+          <input id="settingSubtitle" type="text">
+        </div>
+        <div class="field">
+          <label>Current Season</label>
+          <input id="settingCurrentSeason" type="number" min="1900" max="2100">
+        </div>
+        <button class="primary-button" onclick="saveSiteSettings()">SAVE SITE SETTINGS</button>
+      </div>
     </div>
 
   </div>
@@ -3793,11 +4017,10 @@ window.addEventListener(
 
     buildPositions();
 
-    renderHistory();
-
     await Promise.all([
       loadGames(),
-      loadRoster()
+      loadRoster(),
+      loadContentData()
     ]);
 
   }
@@ -4005,42 +4228,24 @@ async function login(){
 
 async function openAdmin(){
 
-  document
-    .getElementById("siteHeader")
-    .classList.add("hidden");
+  document.getElementById("siteHeader").classList.add("hidden");
+  document.getElementById("achievements").classList.add("hidden");
+  document.getElementById("mainNav").classList.add("hidden");
+  document.getElementById("publicMain").classList.add("hidden");
+  document.getElementById("adminGear").classList.add("hidden");
+  document.getElementById("adminPage").classList.add("active");
 
-  document
-    .getElementById("achievements")
-    .classList.add("hidden");
+  showAdminPage("games",document.querySelector(".final-admin-nav button"));
 
-  document
-    .getElementById("mainNav")
-    .classList.add("hidden");
+  await Promise.all([
+    loadGames(),
+    loadRoster(),
+    loadContentData()
+  ]);
 
-  document
-    .getElementById("publicMain")
-    .classList.add("hidden");
-
-  document
-    .getElementById("adminGear")
-    .classList.add("hidden");
-
-  document
-    .getElementById("adminPage")
-    .classList.add("active");
-
-
-  document
-    .querySelectorAll(".admin-section")
-    .forEach(x=>{
-      x.classList.remove("open");
-    });
-
-
-  await loadGames();
-
-  await loadRoster();
-
+  await loadAdminSeasons();
+  await loadAdminAchievements();
+  await loadAdminSettings();
 }
 
 
@@ -4048,39 +4253,29 @@ function closeAdmin(){
 
   adminCode="";
 
+  document.getElementById("adminPage").classList.remove("active");
+  document.getElementById("siteHeader").classList.remove("hidden");
+  document.getElementById("achievements").classList.remove("hidden");
+  document.getElementById("mainNav").classList.remove("hidden");
+  document.getElementById("publicMain").classList.remove("hidden");
+  document.getElementById("adminGear").classList.remove("hidden");
 
-  document
-    .getElementById("adminPage")
-    .classList.remove("active");
-
-  document
-    .getElementById("siteHeader")
-    .classList.remove("hidden");
-
-  document
-    .getElementById("achievements")
-    .classList.remove("hidden");
-
-  document
-    .getElementById("mainNav")
-    .classList.remove("hidden");
-
-  document
-    .getElementById("publicMain")
-    .classList.remove("hidden");
-
-  document
-    .getElementById("adminGear")
-    .classList.remove("hidden");
+  page("home",document.querySelector(".main-nav button"));
+}
 
 
-  page(
-    "home",
-    document.querySelector(
-      ".main-nav button"
-    )
-  );
+function showAdminPage(name,button){
 
+  document.querySelectorAll(".final-admin-page").forEach(p=>p.classList.remove("active"));
+  document.querySelectorAll(".final-admin-nav button").forEach(b=>b.classList.remove("active"));
+
+  const pageEl=document.getElementById(`adminPage${name.charAt(0).toUpperCase()+name.slice(1)}`);
+  if(pageEl) pageEl.classList.add("active");
+  if(button) button.classList.add("active");
+
+  if(name==="history") loadAdminSeasons();
+  if(name==="achievements") loadAdminAchievements();
+  if(name==="settings") loadAdminSettings();
 }
 
 
@@ -4591,292 +4786,195 @@ function renderSchedule(){
    HISTORY
 ======================================================== */
 
-const historyData = [
-
-  {
-    year:2025,
-    record:"12–1",
-
-    achievements:[
-      "Colonial League Champions",
-      "PIAA District XI Runner-Up"
-    ],
-
-    games:[
-      ["Garden Spot","21–3","W"],
-      ["Salisbury Township","63–0","W"],
-      ["North Schuylkill","21–20","W"],
-      ["Saucon Valley","55–13","W"],
-      ["Catasauqua","58–0","W"],
-      ["Northern Lehigh","40–21","W"],
-      ["Pen Argyl","59–7","W"],
-      ["Palisades","34–22","W"],
-      ["Palmerton","55–0","W"],
-      ["Wilson","62–0","W"],
-      ["Salisbury Township","56–6","W"],
-      ["Tamaqua","59–16","W"],
-      ["Northwestern Lehigh","14–25","L"]
-    ]
-
-  },
-
-  {
-    year:2024,
-    record:"9–2",
-
-    achievements:[
-      "Colonial League Champions"
-    ],
-
-    games:[
-      ["Garden Spot","21–14","W"],
-      ["Salisbury Township","49–7","W"],
-      ["North Schuylkill","35–14","W"],
-      ["Saucon Valley","42–7","W"],
-      ["Catasauqua","42–7","W"],
-      ["Northern Lehigh","35–7","W"],
-      ["Pen Argyl","49–7","W"],
-      ["Palisades","34–21","W"],
-      ["Palmerton","42–7","W"],
-      ["Wilson","35–14","W"],
-      ["Playoff Opponent","21–28","L"]
-    ]
-
-  },
+let historyData = [];
+let achievementsData = [];
+let seasonsData = [];
+let siteSettings = {
+  team_name:"Notre Dame Green Pond",
+  site_title:"NDGP Football",
+  subtitle:"Notre Dame Green Pond Crusaders",
+  current_season:2026
+};
 
 
-];
+async function loadContentData(){
+
+  const [seasonsResult, achievementsResult, settingsResult] = await Promise.all([
+    db.from("seasons").select("*").eq("is_public",true).order("year",{ascending:false}),
+    db.from("achievements").select("*").eq("is_public",true).order("sort_order",{ascending:true}),
+    db.from("site_settings").select("*").eq("id",1).maybeSingle()
+  ]);
+
+  if(seasonsResult.error) console.error("LOAD SEASONS:",seasonsResult.error);
+  if(achievementsResult.error) console.error("LOAD ACHIEVEMENTS:",achievementsResult.error);
+  if(settingsResult.error) console.error("LOAD SETTINGS:",settingsResult.error);
+
+  const seasons = seasonsResult.data || [];
+  achievementsData = achievementsResult.data || [];
+
+  if(settingsResult.data)
+    siteSettings = settingsResult.data;
+
+  const gameResults = await Promise.all(
+    seasons.map(season =>
+      db.from("history_games")
+        .select("*")
+        .eq("season_id",season.id)
+        .order("sort_order",{ascending:true})
+    )
+  );
+
+  historyData = seasons.map((season,index)=>({
+    ...season,
+    games: gameResults[index].data || [],
+    achievements: achievementsData.filter(a =>
+      String(a.years || "").split(",").some(y =>
+        y.trim().startsWith(String(season.year))
+      )
+    )
+  }));
+
+  renderAchievements();
+  renderHistory();
+  applySiteSettings();
+  renderAdminSeasons();
+  renderAdminAchievements();
+  renderAdminSettings();
+}
+
+
+function applySiteSettings(){
+
+  const title = siteSettings.site_title || "NDGP Football";
+  const team = siteSettings.team_name || "Notre Dame Green Pond";
+  const subtitle = siteSettings.subtitle || "Notre Dame Green Pond Crusaders";
+
+  document.title = title;
+
+  const headerTitle = document.querySelector(".site-header h1");
+  const headerSubtitle = document.querySelector(".site-header p");
+  const splashTitle = document.querySelector(".splash-title");
+  const splashSubtitle = document.querySelector(".splash-subtitle");
+
+  if(headerTitle) headerTitle.textContent = title.toUpperCase();
+  if(headerSubtitle) headerSubtitle.textContent = subtitle;
+  if(splashTitle) splashTitle.textContent = title.toUpperCase();
+  if(splashSubtitle) splashSubtitle.textContent = subtitle;
+
+  const nextLabel = document.querySelector(".next-label");
+  if(nextLabel) nextLabel.textContent = team;
+
+  const seasonLabel = document.querySelector(".next-header span");
+  if(seasonLabel) seasonLabel.textContent = `${siteSettings.current_season} SEASON`;
+
+  const recordLabel = document.querySelector(".record-label");
+  if(recordLabel) recordLabel.textContent = `📊 ${siteSettings.current_season} Record`;
+
+  const scheduleTitle = document.querySelector("#schedule .page-title");
+  if(scheduleTitle) scheduleTitle.textContent = `🏈 ${siteSettings.current_season} Schedule`;
+
+  const rosterTitle = document.querySelector("#roster .page-title");
+  if(rosterTitle) rosterTitle.textContent = `👥 ${siteSettings.current_season} Roster`;
+}
+
+
+function renderAchievements(){
+
+  const grid = document.getElementById("achievementGrid");
+  if(!grid) return;
+
+  if(!achievementsData.length){
+    grid.innerHTML = "";
+    return;
+  }
+
+  grid.innerHTML = achievementsData.map(a=>`
+    <div class="achievement">
+      <div class="achievement-title">${esc(a.title)}</div>
+      <div class="achievement-years">${esc(a.years)}</div>
+    </div>
+  `).join("");
+}
 
 
 function renderHistory(){
 
-  const list =
-    document.getElementById(
-      "historyList"
-    );
+  const list = document.getElementById("historyList");
+  if(!list) return;
 
+  if(!historyData.length){
+    list.innerHTML = `<div class="final-admin-empty">No public seasons have been added yet.</div>`;
+    return;
+  }
 
-  list.innerHTML =
-    historyData.map(
-      season=>{
-
-        const clickable =
-          season.year===2024 ||
-          season.year===2025;
-
-
-        return `
-
-          <div
-            class="
-              season-card
-              ${clickable ? "" : "disabled"}
-            "
-          >
-
-            <button
-              class="season-button"
-              ${
-                clickable
-                ?
-                `onclick="openHistory(${season.year})"`
-                :
-                "disabled"
-              }
-            >
-
-              <div>
-
-                <div class="season-name">
-                  ${season.year} Season
-                </div>
-
-                <div class="season-record">
-                  Final Record: ${season.record}
-                </div>
-
-              </div>
-
-
-              ${
-                clickable
-                ?
-                `<div class="season-arrow">›</div>`
-                :
-                ""
-              }
-
-            </button>
-
-          </div>
-
-        `;
-
-      }
-    ).join("");
-
+  list.innerHTML = historyData.map(season=>`
+    <div class="season-card">
+      <button class="season-button" onclick="openHistory(${Number(season.year)})">
+        <div>
+          <div class="season-name">${esc(season.year)} Season</div>
+          <div class="season-record">Final Record: ${esc(season.record)}</div>
+        </div>
+        <div class="season-arrow">›</div>
+      </button>
+    </div>
+  `).join("");
 }
 
 
 function openHistory(year){
 
-  const season =
-    historyData.find(
-      x=>x.year===year
-    );
+  const season = historyData.find(x=>Number(x.year)===Number(year));
+  if(!season) return;
 
-
-  if(!season)
-    return;
-
-
-  document.getElementById(
-    "historyTitle"
-  ).textContent =
-    `${season.year} Football Season`;
-
-
-  document.getElementById(
-    "historyRecord"
-  ).textContent =
-    `Final Record: ${season.record}`;
-
+  document.getElementById("historyTitle").textContent = `${season.year} Football Season`;
+  document.getElementById("historyRecord").textContent = `Final Record: ${season.record}`;
 
   let html = "";
 
-
-  if(
-    season.achievements &&
-    season.achievements.length
-  ){
-
+  if(season.achievements && season.achievements.length){
     html += `
-
-      <div class="history-section-title">
-        Achievements
+      <div class="history-section-title">Achievements</div>
+      <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:17px">
+        ${season.achievements.map(a=>`
+          <div class="achievement">
+            <div class="achievement-title">${esc(a.title)}</div>
+            <div class="achievement-years">${esc(a.years)}</div>
+          </div>
+        `).join("")}
       </div>
-
-      <div
-        style="
-          display:flex;
-          flex-direction:column;
-          gap:7px;
-          margin-bottom:17px
-        "
-      >
-
-        ${
-          season.achievements.map(
-            x=>`
-
-              <div class="achievement">
-                <div class="achievement-title">
-                  ${esc(x)}
-                </div>
-              </div>
-
-            `
-          ).join("")
-        }
-
-      </div>
-
     `;
-
   }
 
+  html += `<div class="history-section-title">Games</div><div class="history-game-list">`;
 
-  html += `
+  if(season.games.length){
+    html += season.games.map(game=>{
+      const result = Number(game.our_score) > Number(game.opponent_score) ? "W" : Number(game.our_score) < Number(game.opponent_score) ? "L" : "T";
+      const cls = result === "W" ? "win" : result === "L" ? "loss" : "upcoming";
+      return `
+        <div class="history-game ${cls}">
+          <div class="history-game-matchup">${esc(game.opponent)}</div>
+          <div class="history-game-score">${esc(game.our_score)}–${esc(game.opponent_score)}</div>
+          <div class="history-game-result ${cls}">${result === "W" ? "WIN" : result === "L" ? "LOSS" : "TIE"}</div>
+        </div>
+      `;
+    }).join("");
+  }else{
+    html += `<div class="final-admin-empty">No games have been entered for this season yet.</div>`;
+  }
 
-    <div class="history-section-title">
-      Games
-    </div>
+  html += `</div>`;
 
-    <div class="history-game-list">
-
-      ${
-        season.games.map(
-          game=>`
-
-            <div
-              class="
-                history-game
-                ${game[2]==="W"
-                  ? "win"
-                  : "loss"
-                }
-              "
-            >
-
-              <div class="history-game-matchup">
-                ${esc(game[0])}
-              </div>
-
-              <div class="history-game-score">
-                ${esc(game[1])}
-              </div>
-
-              <div
-                class="
-                  history-game-result
-                  ${game[2]==="W"
-                    ? "win"
-                    : "loss"
-                  }
-                "
-              >
-                ${
-                  game[2]==="W"
-                  ? "WIN"
-                  : "LOSS"
-                }
-              </div>
-
-            </div>
-
-          `
-        ).join("")
-      }
-
-    </div>
-
-  `;
-
-
-  document.getElementById(
-    "historyBody"
-  ).innerHTML=html;
-
-
-  document
-    .getElementById("historyModal")
-    .classList.add("show");
-
-  document.body.classList.add(
-    "modal-open"
-  );
-
+  document.getElementById("historyBody").innerHTML = html;
+  document.getElementById("historyModal").classList.add("show");
+  document.body.classList.add("modal-open");
 }
 
 
 function closeHistory(event){
-
-  if(
-    event &&
-    event.target &&
-    event.target.id!=="historyModal"
-  )
-    return;
-
-
-  document
-    .getElementById("historyModal")
-    .classList.remove("show");
-
-  document.body.classList.remove(
-    "modal-open"
-  );
-
+  if(event && event.target && event.target.id!=="historyModal") return;
+  document.getElementById("historyModal").classList.remove("show");
+  document.body.classList.remove("modal-open");
 }
 
 
@@ -5010,76 +5108,29 @@ document
 
 function renderAdminGames(){
 
-  const list =
-    document.getElementById(
-      "adminGameList"
-    );
-
+  const list=document.getElementById("adminGameList");
+  if(!list) return;
 
   if(!games.length){
-
-    list.innerHTML =
-      `<div class="admin-description">
-        No games added.
-      </div>`;
-
+    list.innerHTML=`<div class="final-admin-empty">No games have been added yet.</div>`;
     return;
-
   }
 
-
-  list.innerHTML =
-    games.map(
-      game=>`
-
-        <div class="admin-game">
-
-          <div>
-
-            <div class="admin-game-name">
-              ${esc(game.opponent)}
-            </div>
-
-            <div class="admin-game-meta">
-
-              📅 ${formatDate(game.date)}
-
-              ${
-                hasScore(game)
-                ?
-                ` • FINAL ${game.our_score}–${game.opponent_score}`
-                :
-                ""
-              }
-
-            </div>
-
-          </div>
-
-
-          <div class="admin-actions">
-
-            <button
-              class="secondary-button"
-              onclick="editGame('${escAttr(game.id)}')"
-            >
-              EDIT
-            </button>
-
-            <button
-              class="danger-button"
-              onclick="deleteGameConfirm('${escAttr(game.id)}')"
-            >
-              DELETE
-            </button>
-
-          </div>
-
+  list.innerHTML=games.map(game=>{
+    const s=status(game);
+    return `
+      <div class="final-admin-row">
+        <div>
+          <div class="final-admin-row-title">${esc(game.opponent)}</div>
+          <div class="final-admin-row-meta">${formatDate(game.date)} • ${s.text}${hasScore(game) ? ` • ${game.our_score}–${game.opponent_score}` : ""}</div>
         </div>
-
-      `
-    ).join("");
-
+        <div class="final-admin-row-actions">
+          <button class="secondary-button" onclick="editGame('${escAttr(game.id)}')">EDIT</button>
+          <button class="danger-button" onclick="deleteGameConfirm('${escAttr(game.id)}')">DELETE</button>
+        </div>
+      </div>
+    `;
+  }).join("");
 }
 
 
@@ -5624,77 +5675,26 @@ async function deleteGame(id){
 
 function renderAdminRoster(){
 
-  const list =
-    document.getElementById(
-      "adminRosterList"
-    );
-
+  const list=document.getElementById("adminRosterList");
+  if(!list) return;
 
   if(!roster.length){
-
-    list.innerHTML =
-      `<div class="admin-description">
-        No players added.
-      </div>`;
-
+    list.innerHTML=`<div class="final-admin-empty">No players have been added.</div>`;
     return;
-
   }
 
-
-  list.innerHTML =
-    `<div class="admin-roster">
-
-      ${
-        roster.map(
-          player=>`
-
-            <div class="admin-player">
-
-              <div class="admin-number">
-                ${esc(player.number)}
-              </div>
-
-              <div>
-
-                <div class="admin-player-name">
-                  ${esc(player.name)}
-                </div>
-
-                <div class="admin-player-position">
-                  ${esc(player.position || "")}
-                  ${player.grade ? ` • ${esc(player.grade)}` : ""}
-                </div>
-
-              </div>
-
-
-              <div class="admin-actions">
-
-                <button
-                  class="secondary-button"
-                  onclick="editPlayer('${escAttr(player.id)}')"
-                >
-                  EDIT
-                </button>
-
-                <button
-                  class="danger-button"
-                  onclick="deletePlayerConfirm('${escAttr(player.id)}')"
-                >
-                  DELETE
-                </button>
-
-              </div>
-
-            </div>
-
-          `
-        ).join("")
-      }
-
-    </div>`;
-
+  list.innerHTML=roster.map(player=>`
+    <div class="final-admin-row">
+      <div>
+        <div class="final-admin-row-title">#${esc(player.number)} • ${esc(player.name)}</div>
+        <div class="final-admin-row-meta">${esc(player.position || "No position")} ${player.grade ? `• ${esc(player.grade)}` : "• Grade not set"}</div>
+      </div>
+      <div class="final-admin-row-actions">
+        <button class="secondary-button" onclick="editPlayer('${escAttr(player.id)}')">EDIT</button>
+        <button class="danger-button" onclick="deletePlayerConfirm('${escAttr(player.id)}')">DELETE</button>
+      </div>
+    </div>
+  `).join("");
 }
 
 
@@ -6518,6 +6518,382 @@ function updateStats(){
   ).textContent =
     losses;
 
+}
+
+
+
+/* ========================================================
+   FINAL HISTORY / ACHIEVEMENT / SETTINGS ADMIN
+======================================================== */
+
+let adminSeasons=[];
+let adminAchievements=[];
+let selectedHistorySeasonId=null;
+
+
+async function adminRpc(name,args){
+  if(!adminCode) throw new Error("Admin session expired.");
+  const {data,error}=await db.rpc(name,args);
+  if(error) throw error;
+  return data;
+}
+
+
+async function loadAdminSeasons(){
+  try{
+    adminSeasons = await adminRpc("admin_list_seasons",{p_code:adminCode}) || [];
+    renderAdminSeasons();
+  }catch(error){
+    console.error("ADMIN SEASONS:",error);
+    const el=document.getElementById("adminSeasonList");
+    if(el) el.innerHTML=`<div class="final-admin-empty">${esc(error.message || "Could not load seasons.")}</div>`;
+  }
+}
+
+
+function renderAdminSeasons(){
+  const list=document.getElementById("adminSeasonList");
+  if(!list) return;
+
+  if(!adminSeasons.length){
+    list.innerHTML=`<div class="final-admin-empty">No seasons have been created.</div>`;
+    return;
+  }
+
+  list.innerHTML=adminSeasons.map(season=>`
+    <div class="final-admin-row">
+      <div>
+        <div class="final-admin-row-title">${esc(season.year)} Season</div>
+        <div class="final-admin-row-meta">Final Record: ${esc(season.record)} • ${season.is_public ? "Public" : "Hidden"}</div>
+      </div>
+      <div class="final-admin-row-actions">
+        <button class="secondary-button" onclick="openHistorySeasonEditor('${escAttr(season.id)}')">EDIT</button>
+        <button class="secondary-button" onclick="openHistoryGamesEditor('${escAttr(season.id)}')">GAMES</button>
+        <button class="danger-button" onclick="deleteHistorySeasonConfirm('${escAttr(season.id)}')">DELETE</button>
+      </div>
+    </div>
+  `).join("");
+}
+
+
+async function addHistorySeason(){
+  const year=Number(document.getElementById("historyYear").value);
+  const record=document.getElementById("historyRecord").value.trim();
+  const isPublic=document.getElementById("historyPublic").checked;
+
+  if(!Number.isInteger(year) || year<1900 || year>2100 || !record){
+    showToast("Enter a valid season year and record.");
+    return;
+  }
+
+  try{
+    await adminRpc("admin_insert_season",{p_code:adminCode,p_year:year,p_record:record,p_is_public:isPublic});
+    document.getElementById("historyYear").value="";
+    document.getElementById("historyRecord").value="";
+    await loadAdminSeasons();
+    await loadContentData();
+    showToast("✅ Season added successfully.");
+  }catch(error){
+    console.error(error);
+    showToast(error.message || "Could not add season.");
+  }
+}
+
+
+function openHistorySeasonEditor(id){
+  const season=adminSeasons.find(x=>String(x.id)===String(id));
+  if(!season) return;
+
+  document.getElementById("historyEditSeasonId").value=season.id;
+  document.getElementById("historyEditYear").value=season.year;
+  document.getElementById("historyEditRecord").value=season.record || "";
+  document.getElementById("historyEditPublic").checked=!!season.is_public;
+  document.getElementById("historySeasonEditor").classList.remove("hidden");
+  document.getElementById("historySeasonEditor").scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+
+function closeHistorySeasonEditor(){
+  document.getElementById("historySeasonEditor").classList.add("hidden");
+}
+
+
+async function saveHistorySeason(){
+  const id=document.getElementById("historyEditSeasonId").value;
+  const year=Number(document.getElementById("historyEditYear").value);
+  const record=document.getElementById("historyEditRecord").value.trim();
+  const isPublic=document.getElementById("historyEditPublic").checked;
+
+  if(!id || !Number.isInteger(year) || !record){
+    showToast("Complete the season fields.");
+    return;
+  }
+
+  try{
+    await adminRpc("admin_update_season",{p_code:adminCode,p_id:String(id),p_year:year,p_record:record,p_is_public:isPublic});
+    closeHistorySeasonEditor();
+    await loadAdminSeasons();
+    await loadContentData();
+    showToast("✅ Season updated successfully.");
+  }catch(error){
+    console.error(error);
+    showToast(error.message || "Could not update season.");
+  }
+}
+
+
+function deleteHistorySeasonConfirm(id){
+  const season=adminSeasons.find(x=>String(x.id)===String(id));
+  if(!season) return;
+  openConfirm(`Delete the ${season.year} season and all of its historical games? This cannot be undone.`,()=>deleteHistorySeason(id));
+}
+
+
+async function deleteHistorySeason(id){
+  try{
+    await adminRpc("admin_delete_season",{p_code:adminCode,p_id:String(id)});
+    closeHistorySeasonEditor();
+    document.getElementById("historyGamesEditor").classList.add("hidden");
+    await loadAdminSeasons();
+    await loadContentData();
+    showToast("✅ Season deleted successfully.");
+  }catch(error){
+    console.error(error);
+    showToast(error.message || "Could not delete season.");
+  }
+}
+
+
+async function openHistoryGamesEditor(id){
+  const season=adminSeasons.find(x=>String(x.id)===String(id));
+  if(!season) return;
+  selectedHistorySeasonId=String(id);
+  document.getElementById("historyGamesEditor").classList.remove("hidden");
+  document.getElementById("historyGamesSeasonLabel").textContent=`Managing ${season.year} Season • Final Record ${season.record}`;
+  document.getElementById("historyGamesEditor").scrollIntoView({behavior:"smooth",block:"start"});
+  await loadAdminHistoryGames();
+}
+
+
+async function loadAdminHistoryGames(){
+  if(!selectedHistorySeasonId) return;
+  const list=document.getElementById("adminHistoryGameList");
+  try{
+    const games=await adminRpc("admin_list_history_games",{p_code:adminCode,p_season_id:selectedHistorySeasonId}) || [];
+    if(!games.length){
+      list.innerHTML=`<div class="final-admin-empty">No games have been entered for this season.</div>`;
+      return;
+    }
+    list.innerHTML=games.map(game=>`
+      <div class="final-admin-row">
+        <div>
+          <div class="final-admin-row-title">${esc(game.opponent)}</div>
+          <div class="final-admin-row-meta">${esc(game.our_score)}–${esc(game.opponent_score)} • Order ${esc(game.sort_order)}</div>
+        </div>
+        <div class="final-admin-row-actions">
+          <button class="secondary-button" onclick="editHistoryGame('${escAttr(game.id)}')">EDIT</button>
+          <button class="danger-button" onclick="deleteHistoryGameConfirm('${escAttr(game.id)}')">DELETE</button>
+        </div>
+      </div>
+    `).join("");
+  }catch(error){
+    console.error(error);
+    list.innerHTML=`<div class="final-admin-empty">${esc(error.message || "Could not load history games.")}</div>`;
+  }
+}
+
+
+async function addHistoryGame(){
+  if(!selectedHistorySeasonId){showToast("Select a season first.");return;}
+  const opponent=document.getElementById("historyGameOpponent").value.trim();
+  const ourScore=Number(document.getElementById("historyGameOurScore").value);
+  const oppScore=Number(document.getElementById("historyGameOppScore").value);
+  const order=Number(document.getElementById("historyGameOrder").value || 0);
+
+  if(!opponent || !Number.isInteger(ourScore) || !Number.isInteger(oppScore)){
+    showToast("Enter the opponent and both scores.");
+    return;
+  }
+
+  try{
+    await adminRpc("admin_insert_history_game",{p_code:adminCode,p_season_id:selectedHistorySeasonId,p_opponent:opponent,p_our_score:ourScore,p_opponent_score:oppScore,p_sort_order:order});
+    document.getElementById("historyGameOpponent").value="";
+    document.getElementById("historyGameOurScore").value="";
+    document.getElementById("historyGameOppScore").value="";
+    await loadAdminHistoryGames();
+    await loadContentData();
+    showToast("✅ History game added.");
+  }catch(error){
+    console.error(error);
+    showToast(error.message || "Could not add history game.");
+  }
+}
+
+
+async function editHistoryGame(id){
+  const opponent=prompt("Opponent name:");
+  if(opponent===null) return;
+  const score=prompt("Score as NDGP-Opponent, for example 21-14:");
+  if(score===null) return;
+  const parts=score.split("-").map(x=>Number(x.trim()));
+  if(parts.length!==2 || parts.some(x=>!Number.isInteger(x))){showToast("Use a score like 21-14.");return;}
+  const order=Number(prompt("Order number:","0"));
+  try{
+    await adminRpc("admin_update_history_game",{p_code:adminCode,p_id:String(id),p_opponent:opponent.trim(),p_our_score:parts[0],p_opponent_score:parts[1],p_sort_order:Number.isInteger(order)?order:0});
+    await loadAdminHistoryGames();
+    await loadContentData();
+    showToast("✅ History game updated.");
+  }catch(error){
+    console.error(error);
+    showToast(error.message || "Could not update history game.");
+  }
+}
+
+
+function deleteHistoryGameConfirm(id){
+  openConfirm("Delete this historical game? This cannot be undone.",()=>deleteHistoryGame(id));
+}
+
+
+async function deleteHistoryGame(id){
+  try{
+    await adminRpc("admin_delete_history_game",{p_code:adminCode,p_id:String(id)});
+    await loadAdminHistoryGames();
+    await loadContentData();
+    showToast("✅ History game deleted.");
+  }catch(error){
+    console.error(error);
+    showToast(error.message || "Could not delete history game.");
+  }
+}
+
+
+async function loadAdminAchievements(){
+  try{
+    adminAchievements=await adminRpc("admin_list_achievements",{p_code:adminCode}) || [];
+    renderAdminAchievements();
+  }catch(error){
+    console.error(error);
+    const list=document.getElementById("adminAchievementList");
+    if(list) list.innerHTML=`<div class="final-admin-empty">${esc(error.message || "Could not load achievements.")}</div>`;
+  }
+}
+
+
+function renderAdminAchievements(){
+  const list=document.getElementById("adminAchievementList");
+  if(!list) return;
+  if(!adminAchievements.length){list.innerHTML=`<div class="final-admin-empty">No achievements have been added.</div>`;return;}
+
+  list.innerHTML=adminAchievements.map(a=>`
+    <div class="final-admin-row">
+      <div>
+        <div class="final-admin-row-title">${esc(a.title)}</div>
+        <div class="final-admin-row-meta">${esc(a.years)} • ${a.is_public ? "Public" : "Hidden"}</div>
+      </div>
+      <div class="final-admin-row-actions">
+        <button class="secondary-button" onclick="editAchievement('${escAttr(a.id)}')">EDIT</button>
+        <button class="danger-button" onclick="deleteAchievementConfirm('${escAttr(a.id)}')">DELETE</button>
+      </div>
+    </div>
+  `).join("");
+}
+
+
+async function addAchievement(){
+  const title=document.getElementById("achievementTitle").value.trim();
+  const years=document.getElementById("achievementYears").value.trim();
+  const isPublic=document.getElementById("achievementPublic").checked;
+  if(!title){showToast("Enter an achievement title.");return;}
+  try{
+    await adminRpc("admin_insert_achievement",{p_code:adminCode,p_title:title,p_years:years,p_is_public:isPublic,p_sort_order:adminAchievements.length+1});
+    document.getElementById("achievementTitle").value="";
+    document.getElementById("achievementYears").value="";
+    await loadAdminAchievements();
+    await loadContentData();
+    showToast("✅ Achievement added.");
+  }catch(error){console.error(error);showToast(error.message || "Could not add achievement.");}
+}
+
+
+async function editAchievement(id){
+  const item=adminAchievements.find(x=>String(x.id)===String(id));
+  if(!item) return;
+  const title=prompt("Achievement title:",item.title);
+  if(title===null) return;
+  const years=prompt("Years:",item.years || "");
+  if(years===null) return;
+  const publicValue=confirm("Show this achievement publicly?\nOK = Yes\nCancel = No");
+  try{
+    await adminRpc("admin_update_achievement",{p_code:adminCode,p_id:String(id),p_title:title.trim(),p_years:years.trim(),p_is_public:publicValue,p_sort_order:item.sort_order || 0});
+    await loadAdminAchievements();
+    await loadContentData();
+    showToast("✅ Achievement updated.");
+  }catch(error){console.error(error);showToast(error.message || "Could not update achievement.");}
+}
+
+
+function deleteAchievementConfirm(id){
+  const item=adminAchievements.find(x=>String(x.id)===String(id));
+  if(!item) return;
+  openConfirm(`Delete ${item.title}? This cannot be undone.`,()=>deleteAchievement(id));
+}
+
+
+async function deleteAchievement(id){
+  try{
+    await adminRpc("admin_delete_achievement",{p_code:adminCode,p_id:String(id)});
+    await loadAdminAchievements();
+    await loadContentData();
+    showToast("✅ Achievement deleted.");
+  }catch(error){console.error(error);showToast(error.message || "Could not delete achievement.");}
+}
+
+
+async function loadAdminSettings(){
+  try{
+    const data=await adminRpc("admin_get_site_settings",{p_code:adminCode});
+    if(data){
+      document.getElementById("settingTeamName").value=data.team_name || "";
+      document.getElementById("settingSiteTitle").value=data.site_title || "";
+      document.getElementById("settingSubtitle").value=data.subtitle || "";
+      document.getElementById("settingCurrentSeason").value=data.current_season || "";
+    }
+  }catch(error){console.error(error);showToast(error.message || "Could not load site settings.");}
+}
+
+
+function renderAdminSettings(){
+  if(siteSettings){
+    const a=document.getElementById("settingTeamName");
+    const b=document.getElementById("settingSiteTitle");
+    const c=document.getElementById("settingSubtitle");
+    const d=document.getElementById("settingCurrentSeason");
+    if(a) a.value=siteSettings.team_name || "";
+    if(b) b.value=siteSettings.site_title || "";
+    if(c) c.value=siteSettings.subtitle || "";
+    if(d) d.value=siteSettings.current_season || "";
+  }
+}
+
+
+async function saveSiteSettings(){
+  const teamName=document.getElementById("settingTeamName").value.trim();
+  const siteTitle=document.getElementById("settingSiteTitle").value.trim();
+  const subtitle=document.getElementById("settingSubtitle").value.trim();
+  const currentSeason=Number(document.getElementById("settingCurrentSeason").value);
+
+  if(!teamName || !siteTitle || !subtitle || !Number.isInteger(currentSeason)){
+    showToast("Complete all site settings.");
+    return;
+  }
+
+  try{
+    await adminRpc("admin_update_site_settings",{p_code:adminCode,p_team_name:teamName,p_site_title:siteTitle,p_subtitle:subtitle,p_current_season:currentSeason});
+    await loadContentData();
+    await loadAdminSettings();
+    showToast("✅ Site settings saved.");
+  }catch(error){console.error(error);showToast(error.message || "Could not save settings.");}
 }
 
 
